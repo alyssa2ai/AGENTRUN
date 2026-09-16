@@ -8,7 +8,7 @@
 
 ## Abstract
 
-This paper reports a controlled ablation study examining whether improvements in tool-using language model performance after fine-tuning arise from model-level capability gains or from infrastructure (serving-layer parser) fixes. We trained a Qwen2.5-7B-Instruct model with QLoRA on 35 tool-use trajectories (v1), observed a regression from 22/23 to 18/23 on a fixed 23-task benchmark, diagnosed two contributing factors (a brittle tool-call parser and insufficient training data coverage), and designed a controlled ablation (E4) that holds the V1 adapter constant while switching to a corrected two-pass parser. The result—E4 also scores 18/23—demonstrates that on this benchmark, the parser correction produced zero net aggregate improvement despite recovering two specific failure modes and introducing regressions on two others. The full +5-task recovery observed when moving from V1 to V2 coincides precisely with the addition of 11 targeted training trajectories. These findings caution against attributing post-fine-tuning improvements to infrastructure changes without controlled ablation, and highlight that targeted data augmentation can resolve failure modes that parser hardening alone cannot.
+This paper reports a controlled ablation study examining whether improvements in tool-using language model performance after fine-tuning arise from model-level capability gains or from infrastructure (serving-layer parser) fixes. We trained a Qwen2.5-7B-Instruct model with QLoRA on 35 tool-use trajectories (v1), observed a regression from 22/23 to 18/23 on a fixed 23-task benchmark, diagnosed two contributing factors (a brittle tool-call parser and insufficient training data coverage), and designed a controlled ablation (E4) that holds the V1 adapter constant while switching to a corrected two-pass parser. The result—E4 also scores 18/23—demonstrates that on this benchmark, the parser correction produced zero net aggregate improvement despite recovering two specific failure modes and introducing regressions on two others. The subsequent E4→V2 transition, which introduced 11 targeted training trajectories while retaining the corrected parser, recovered all five remaining failures. These findings caution against attributing post-fine-tuning improvements to infrastructure changes without controlled ablation, and highlight that targeted data augmentation can resolve failure modes that parser hardening alone cannot.
 
 **Keywords:** tool-use, function calling, fine-tuning, QLoRA, ablation study, benchmark contamination, parser failure, agent evaluation
 
@@ -16,16 +16,16 @@ This paper reports a controlled ablation study examining whether improvements in
 
 ## 1. Introduction
 
-The rapid adoption of large language models (LLMs) as agent backbones has intensified interest in how to reliably equip them with tool-use capabilities. A common pattern in practitioner workflows is iterative: train or fine-tune a model, evaluate on a benchmark, observe failures, diagnose root causes, intervene (either by modifying the model, the training data, or the serving infrastructure), and re-evaluate. This iterative loop is powerful but introduces a fundamental identification problem: when performance improves after an intervention, it is often unclear whether the gain arose from the model itself, from the training data, from serving-layer changes, or from some interaction between them.
+The rapid adoption of large language models (LLMs) as agent backbones has intensified interest in how to reliably equip them with tool-use capabilities. A typical evaluation pipeline treats the model as an isolated component: the model generates a tool call, a parser extracts it from the model's text output, the tool executes, and the result is fed back. However, this pipeline obscures a critical question: **when a benchmark score changes after an intervention, is the change due to the model, the training data, or the serving infrastructure?** A brittle parser can silently drop valid tool calls, making a well-trained model appear incompetent; conversely, a robust parser can mask underlying model weaknesses by recovering correct tool calls that the model intended but failed to format properly. Without controlled ablation, these effects are confounded, and practitioners may attribute infrastructure failures to model limitations—or vice versa.
 
-This paper documents a concrete instance of this problem in the context of QLoRA fine-tuning of Qwen2.5-7B-Instruct for multi-tool agent behavior. We first established a base-line score of 22/23 (95.7%). After QLoRA fine-tuning on 35 trajectories, the model regressed to 18/23 (78.3%)—a counterintuitive result that demanded diagnosis. Trace-level analysis revealed two classes of failure: (1) a serving-layer parser bug that silently dropped malformed tool-call outputs, and (2) gaps in training-data coverage for multi-step tool use, error handling, and false-premise reasoning. We then deployed a corrected two-pass parser and augmented the training set with 11 targeted trajectories to produce v2, which achieved 23/23 (100%).
+This paper documents a concrete instance of this problem in the context of QLoRA fine-tuning of Qwen2.5-7B-Instruct for multi-tool agent behavior. We first established a baseline score of 22/23 (95.7%) with the untuned base model. After QLoRA fine-tuning on 35 trajectories (v1), the model regressed to 18/23 (78.3%)—a counterintuitive result that demanded diagnosis. Trace-level analysis revealed two classes of failure: (1) a serving-layer parser bug that silently dropped malformed tool-call outputs, and (2) gaps in training-data coverage for multi-step tool use, error handling, and false-premise reasoning. We then deployed a corrected two-pass parser and augmented the training set with 11 targeted trajectories to produce v2, which achieved 23/23 (100%).
 
-The central scientific question is: **how much of the v1→v2 improvement is attributable to the parser fix versus the data augmentation?** To answer this, we designed Experiment E4—a controlled ablation that evaluates the V1 adapter (unchanged weights) with the V2 two-pass parser on the identical 23-task benchmark. The result, E4 = 18/23, shows that the parser fix alone produced zero net aggregate improvement. The full +5 improvement is therefore associated with the augmented training data.
+The central scientific question is: **how much of the v1→v2 improvement is attributable to the parser fix versus the data augmentation?** To answer this, we designed Experiment E4—a controlled ablation that evaluates the V1 adapter (unchanged weights) with the V2 two-pass parser on the identical 23-task benchmark. The result, E4 = 18/23, shows that the parser fix alone produced zero net aggregate improvement. The observed aggregate recovery from V1 to V2 (18/23 → 23/23) is associated with the transition from the E4 condition (V1 adapter + V2 parser) to the V2 condition (V2 adapter + V2 parser), which introduced 11 targeted training trajectories while retaining the corrected parser.
 
 Our contribution is threefold:
 
-1. **A cleanly identified ablation** that disentangles parser effects from data effects in a real fine-tuning workflow.
-2. **A per-task decomposition** showing that parser changes can have non-monotonic effects: recovering some failures while introducing others.
+1. **A cleanly identified ablation** that disentangles parser effects from data effects in a real fine-tuning workflow. The E4 experiment holds the V1 adapter constant while varying only the parser, providing the first controlled estimate of parser contribution in this setting.
+2. **A per-task decomposition** showing that parser changes can have non-monotonic effects: recovering some failures while introducing others. This demonstrates that aggregate scores can mask important per-task dynamics relevant for deployment.
 3. **An honest empirical record** of a fine-tuning regression, its diagnosis, and a controlled resolution—material that is rarely published but essential for the field's self-correction.
 
 ---
@@ -40,7 +40,7 @@ These benchmarks share a common limitation relative to our study: they report ag
 
 ### 2.2 Agent Reasoning and Tool-Use Prompts
 
-The **ReAct** framework (Yao et al., 2022) demonstrated that interleaving reasoning traces with tool calls improves LLM performance on complex tasks. Subsequent work has explored various prompting strategies for tool use, including Chain-of-Thought (Wei et al., 2022) and Tree-of-Thought (Yao et al., 2023). However, these works primarily focus on prompting rather than fine-tuning, and they typically assume a perfect parser between the model output and tool execution.
+The **ReAct** framework (Yao et al., 2022) demonstrated that interleaving reasoning traces with tool calls improves LLM performance on complex tasks. Subsequent work has explored various prompting strategies for tool use, including Chain-of-Thought (Wei et al., 2022) and Tree-of-Thought (Yao et al., 2023). However, these works primarily focus on prompting rather than fine-tuning, and they typically assume a perfect parser between the model output and tool execution—a simplification we relax by explicitly modeling parser behavior as part of the evaluation pipeline.
 
 ### 2.3 Agent Fine-Tuning
 
@@ -50,9 +50,9 @@ Our work shares the fine-tuning focus but distinguishes itself through the contr
 
 ### 2.4 Evaluation Reliability and Benchmark Contamination
 
-The issue of benchmark contamination has received increasing attention. **Hooker (2023)** argued that as models are trained on increasingly web-scraped data, evaluation benchmarks risk becoming part of the training set. **Roberts et al. (2023)** documented systematic contamination in NLP benchmarks. In the agent-specific context, **Mialon et al. (2023)** noted that many agent benchmarks are constructed from the same sources as training data, leading to inflated performance estimates.
+The issue of benchmark contamination has received increasing attention. **Hooker (2023)** argued that as models are trained on increasingly web-scraped data, evaluation benchmarks risk becoming part of the training set. The broader concern is that iterative benchmark use—where developers observe failures and adjust their models accordingly—can lead to **evaluation adaptation**: gradual alignment of the model to the benchmark through indirect exposure, even when the benchmark is not explicitly in the training data. This is distinct from direct contamination (where benchmark examples appear in training text) but equally problematic for generalization claims.
 
-Our 23-task benchmark was constructed independently and used iteratively during development, which introduces a mild form of alignment but not full contamination. We acknowledge this limitation explicitly and recommend a fresh held-out benchmark for future validation.
+Our 23-task benchmark was constructed independently of existing training corpora but was used iteratively during development, with v2's training data informed by observed v1 failures. This introduces a mild form of evaluation adaptation: the model was not exposed to the benchmark tasks during training, but the training data was curated to address failures observed on those specific tasks. We acknowledge this limitation explicitly and recommend a fresh held-out benchmark (E8) with novel task instances for robust generalization claims.
 
 ### 2.5 Parameter-Efficient Fine-Tuning
 
@@ -231,7 +231,7 @@ This finding has several implications:
 
 1. **Parser fixes are necessary but not sufficient.** The V2 parser recovered 2 tasks that the V1 parser was silently breaking. However, it introduced regressions on 2 other tasks where the V1 parser's incorrect behavior happened to produce correct answers by accident. The net effect is zero.
 
-2. **Data augmentation drives the full improvement.** The 11 additional trajectories, targeted at specific failure patterns, recovered all 5 remaining E4 failures. This suggests that for this benchmark, the bottleneck was model capability, not infrastructure.
+2. **The observed aggregate recovery is associated with the data augmentation.** The E4→V2 transition introduced 11 targeted trajectories that recovered all 5 E4 failures. We note that this is not a clean randomized causal estimate: the trajectories were targeted using knowledge of V1's specific failure patterns, so the comparison conflates data quantity with data quality. Nevertheless, on this benchmark, the parser change alone produced no aggregate improvement, while the addition of targeted trajectories coincided with full recovery.
 
 3. **Parser changes can have non-monotonic effects.** The V2 parser is strictly more robust than V1 (it handles malformed tags), but robustness does not translate to monotonic improvement in task success. This is because the parser change alters the execution trace, which in turn affects subsequent model decisions in complex ways.
 
@@ -239,12 +239,14 @@ This finding has several implications:
 
 ### 6.2 Limitations
 
-- **N=1 per condition.** No random seeds were set; results represent single runs. Variance estimates are unavailable.
-- **Single model family.** All results are on Qwen2.5-7B-Instruct. Generalization to other models is unknown.
-- **Small benchmark.** 23 tasks is insufficient for statistical claims. Category-level analysis is illustrative, not definitive.
-- **Iterative benchmark development.** The 23-task set was used during iterative development, introducing mild alignment risk. A fresh held-out benchmark (E8) is needed for robust generalization claims.
-- **Per-task trace incompleteness.** E4 results record only pass/fail; detailed traces (tool calls, final answers, latency) are unavailable for this condition.
-- **Environmental variance.** Tavily search results vary over time; task outcomes involving live search may differ across runs.
+- **N=1 per condition.** No random seeds were set; results represent single runs. Variance estimates are unavailable. Multi-seed evaluation (E7) would quantify reproducibility.
+- **Single model family.** All results are on Qwen2.5-7B-Instruct. Generalization to other models or model sizes is unknown.
+- **Small benchmark.** 23 tasks is insufficient for statistical claims. Category-level analysis is illustrative, not definitive. Some categories (e.g., adversarial_ambiguity) contain only 1 task.
+- **Iterative benchmark development.** The 23-task set was constructed and refined during project development. V2's training data was informed by observed V1 failures, introducing a mild form of evaluation adaptation. A fresh held-out benchmark (E8) with matched category distribution but novel task instances is needed for robust generalization claims.
+- **Per-task trace incompleteness.** E4 results record only pass/fail; detailed traces (tool calls, final answers, latency) are unavailable for this condition. The failure-mode analysis in Section 5.3 draws on V1 trace data for comparison but cannot definitively attribute each E4 failure to parser vs. model behavior without E4 traces.
+- **Environmental variance.** Tavily search results vary over time; task outcomes involving live search (e.g., `multi_search_weather`, `adversarial_chained_search_calc`) may differ across runs due to external API responses.
+- **Parser limitations.** The V2 two-pass parser has a known limitation: Pass 2 extracts only the first JSON object after any `` tag, which may truncate multi-call outputs with nested arguments. This likely contributes to the regressions on `multi_search_weather` and `adversarial_chained_search_calc`.
+- **Greedy decoding only.** All evaluations used greedy decoding (do_sample=False). Sampling-based decoding was not evaluated and may produce different results.
 
 ### 6.3 Practical Recommendations
 
@@ -278,11 +280,11 @@ All code, training data, and result artifacts are available at https://github.co
 
 ## 8. Conclusion
 
-This paper presented a controlled ablation (E4) that disentangles parser effects from data effects in a tool-using LLM fine-tuning workflow. The key finding is that on a 23-task held-out benchmark, replacing a brittle single-pass parser with a robust two-pass parser produced zero net aggregate improvement (V1: 18/23 → E4: 18/23), while targeted training-data augmentation produced the full +5 improvement (E4: 18/23 → V2: 23/23).
+This paper presented a controlled ablation (E4) that disentangles parser effects from data effects in a tool-using LLM fine-tuning workflow. The key finding is that on a 23-task benchmark, replacing a brittle single-pass parser with a robust two-pass parser produced zero net aggregate improvement when applied to the V1 adapter (V1: 18/23 → E4: 18/23). The subsequent transition from E4 to V2—which introduced 11 targeted training trajectories while retaining the corrected parser—produced full recovery (E4: 18/23 → V2: 23/23). We emphasize that this decomposition isolates the parser effect but does not provide a clean causal estimate of data augmentation alone, as the trajectories were selected based on observed V1 failures.
 
-The parser fix recovered 2 tasks but regressed 2 others, demonstrating that infrastructure improvements can have non-monotonic effects on task-level performance. The data augmentation recovered all 5 remaining failures, suggesting that for this benchmark, the primary bottleneck was model capability rather than serving infrastructure.
+The parser fix recovered 2 tasks but regressed 2 others, demonstrating that infrastructure improvements can have non-monotonic effects on task-level performance. The E4→V2 transition—introducing 11 targeted training trajectories while retaining the corrected parser—recovered all 5 remaining failures, consistent with the hypothesis that for this benchmark, the primary bottleneck was model capability rather than serving infrastructure. We emphasize this is an association observed under controlled conditions, not a general causal claim about data augmentation.
 
-These findings caution against attributing post-fine-tuning improvements to infrastructure changes without controlled ablation. They also highlight the importance of trace-level failure analysis in diagnosing the root causes of fine-tuning regressions.
+These findings caution against attributing post-fine-tuning improvements to infrastructure changes without controlled ablation. They also highlight the importance of trace-level failure analysis in diagnosing the root causes of fine-tuning regressions, and demonstrate that aggregate scores can mask important per-task dynamics.
 
 Future work should include: (1) multi-seed evaluation (E7) to quantify variance, (2) a fresh held-out benchmark (E8) to test generalization, and (3) a random-augmentation control (E5) to compare targeted vs. untargeted data expansion.
 
@@ -299,8 +301,6 @@ Future work should include: (1) multi-seed evaluation (E7) to quantify variance,
 7. Zeng, A., Liu, M., Lu, L., et al. (2024). AgentTuning: Enabling Generalized Agent Capabilities via SFT. *arXiv preprint arXiv:2310.03543*.
 8. Dettmers, T., Pagnoni, A., Holtzman, A., & Zettlemoyer, L. (2023). QLoRA: Efficient Finetuning of Quantized LLMs. *NeurIPS 2023*.
 9. Hooker, S. (2023). The AI Benchmarking Industrial Complex. *arXiv preprint arXiv:2311.06930*.
-10. Roberts, A., Raffel, C., & Lee, A. (2023). How Much Context Do LLMs Need? *arXiv preprint arXiv:2302.07847*.
-11. Mialon, G., Deshpande, K., Roberts, E., et al. (2023). CLUTRR: A Benchmark for Inductive Reasoning. *arXiv preprint arXiv:2306.15084*.
 
 ---
 
