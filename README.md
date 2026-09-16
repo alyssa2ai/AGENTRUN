@@ -6,16 +6,19 @@
 
 ## TL;DR
 
-We took a strong instruction-tuned 7B model (Qwen2.5-7B-Instruct), fine-tuned it with QLoRA on small numbers of clean tool-use trajectories, and measured what happened — including the regression that the first round of fine-tuning produced. We diagnosed the failure, fixed two contributing factors (a brittle tool-call parser and a gap in training-data coverage), and the resulting adapter (v2) reaches 23/23 on the same held-out benchmark where the base model was 22/23 and an early v1 attempt was 18/23.
+We took a strong instruction-tuned 7B model (Qwen2.5-7B-Instruct), fine-tuned it with QLoRA on small numbers of clean tool-use trajectories, and measured what happened — including the regression that the first round of fine-tuning produced. We diagnosed the failure, identified two contributing factors (a brittle tool-call parser and a gap in training-data coverage), and ran a controlled ablation (E4) to isolate their effects. The result: the parser fix produced zero net aggregate improvement, while targeted training-data augmentation produced the full +5-task recovery.
 
-| Model | Training trajectories | Tasks | Passed | Accuracy |
-|---|---|---|---|---|
-| **Base Qwen 7B** (untuned) | 0 | 23 | 22 | 95.7% |
-| **LoRA v1** | 35 | 23 | 18 | 78.3% |
-| **LoRA v2** | 46 | 23 | **23** | **100.0%** |
+| Model | Trajectories | Parser | Tasks | Passed | Accuracy |
+|---|---|---|---|---|---|
+| **Base Qwen 7B** (untuned) | 0 | single-pass | 23 | 22 | 95.7% |
+| **LoRA v1** | 35 | single-pass | 23 | 18 | 78.3% |
+| **E4** (V1 adapter + fixed parser) | 35 | two-pass | 23 | 18 | 78.3% |
+| **LoRA v2** | 46 | two-pass | 23 | **23** | **100.0%** |
 
-v1 → v2: **+21.7 pp** (recovered from regression)
-Base → v2: **+4.3 pp** (full pass on the held-out set)
+**Parser effect (E4 − V1): 0 tasks** — the two-pass parser recovered 2 tasks but regressed 2 others, netting zero change.  
+**Data effect (V2 − E4): +5 tasks** — the 11 additional targeted trajectories recovered all 5 remaining failures.  
+**v1 → v2: +21.7 pp** (full recovery, attributable to data augmentation)  
+**Base → v2: +4.3 pp** (one additional task vs. base)
 
 All claims are tied to the specific 23-task benchmark in `eval/tasks.py`. See [Scope & limitations](#scope--limitations).
 
@@ -66,12 +69,14 @@ AGENTRUN/
 ├── serving/                       # Colab inference servers
 │   ├── colab_server.py                    # v1 server
 │   ├── colab_server_base.py               # Base-model server
-│   └── colab_server_v2.py                 # v2 server with corrected parser
+│   ├── colab_server_v2.py                 # v2 server with corrected parser
+│   └── colab_server_e4.py                 # E4 server (V1 adapter + V2 parser, controlled ablation)
 │
 ├── evaluation/                    # Local evaluation scripts
 │   ├── run_eval_base.py                   # Eval base model
 │   ├── run_eval_finetuned.py              # Eval v1
 │   ├── run_eval_v2.py                     # Eval v2
+│   ├── run_eval_e4.py                     # Eval E4 (controlled ablation)
 │   ├── compare_results.py                 # Compare any two result JSONs
 │   └── run_eval.py                        # Phase 1 frontier-agent eval
 │
@@ -79,10 +84,12 @@ AGENTRUN/
 │   ├── eval_results_base.json
 │   ├── eval_results_v1.json
 │   ├── eval_results_v2.json
+│   ├── eval_results_e4.json               # E4: V1 adapter + V2 parser (18/23)
 │   ├── eval_results_finetuned.json        # Historical alias of v1
 │   ├── eval_report_base.md
 │   ├── eval_report_v1.md
 │   ├── eval_report_v2.md
+│   ├── eval_report_e4.md                  # E4 human-readable report
 │   ├── eval_comparison_report.md
 │   ├── eval_comparison_base_vs_v1.md
 │   └── experiment_summary.json
@@ -115,10 +122,20 @@ This is the same tool surface for all three evaluated models (Base, v1, v2). The
 Fine-tuning a 7B model on a free-tier Colab T4 (15 GB VRAM) is only feasible with quantization. We used:
 
 - 4-bit NF4 quantization for the base model
-- LoRA adapters with rank 16, alpha 32, applied to all attention and MLP projections
+- LoRA adapters with rank 16, alpha 16, applied to attention projections (`q_proj, k_proj, v_proj, o_proj`)
 - `paged_adamw_8bit` optimizer
-- Effective batch size 16 (per-device 1, grad-accum 16)
+- Per-device batch size 2 with gradient accumulation 4 (effective batch size 8)
 - 3 epochs, learning rate 2e-4
+
+**Important hyperparameter correction:** The `adapter_config.json` confirms `lora_alpha=16` and `target_modules=["q_proj", "k_proj", "v_proj", "o_proj"]` (attention-only). Both v1 and v2 used the exact same configuration:
+
+```json
+{
+  "lora_alpha": 16,
+  "r": 16,
+  "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"]
+}
+```
 
 A full run takes about 45 minutes on a T4. The same hyperparameters were used for v1 and v2 — only the training data changed.
 
@@ -182,25 +199,55 @@ The only differences were the LoRA adapter (or none) and the training data. **Th
 
 ### Headline
 
-| Model | Trajectories | Tasks | Passed | Accuracy |
-|---|---|---|---|---|
-| Base Qwen 7B | 0 | 23 | 22 | 95.7% |
-| LoRA v1 | 35 | 23 | 18 | 78.3% |
-| **LoRA v2** | **46** | **23** | **23** | **100.0%** |
+| Model | Trajectories | Parser | Tasks | Passed | Accuracy |
+|---|---|---|---|---|---|
+| Base Qwen 7B | 0 | single-pass | 23 | 22 | 95.7% |
+| LoRA v1 | 35 | single-pass | 23 | 18 | 78.3% |
+| **E4** (V1 adapter + fixed parser) | 35 | two-pass | 23 | 18 | 78.3% |
+| **LoRA v2** | **46** | two-pass | **23** | **23** | **100.0%** |
+
+### Controlled ablation: isolating parser vs. data effects
+
+The key question was whether the v1→v2 improvement came from the parser fix, the augmented training data, or both. E4 answers this directly: it runs the **V1 adapter** with the **V2 two-pass parser**, holding both model and benchmark constant and changing only the parser.
+
+**Result: E4 = 18/23, identical to V1.**
+
+| Effect | Tasks recovered | Tasks regressed | Net |
+|---|---|---|---|
+| Parser (V1→E4, same adapter) | 2 (`adversarial_false_premise`, `multi_three_tools`) | 2 (`multi_search_weather`, `adversarial_chained_search_calc`) | **0** |
+| Data (E4→V2, same parser) | 5 (all E4 failures) | 0 | **+5** |
+
+The parser fix is not useless — it recovered 2 tasks that the V1 parser was silently dropping. But it also introduced regressions on 2 other tasks where the V1 parser's incorrect behavior happened to produce a correct direct answer. On this benchmark, the net parser effect is zero.
+
+The **full +5 improvement** from V1 to V2 coincides with the 11 additional targeted training trajectories.
 
 ### Per-task outcome
 
-The full 23×3 matrix is in [`results/eval_comparison_report.md`](results/eval_comparison_report.md) (Base vs v2) and [`results/eval_comparison_base_vs_v1.md`](results/eval_comparison_base_vs_v1.md) (Base vs v1).
+The full 23×4 matrix (Base / V1 / E4 / V2) is in [`results/eval_report_e4.md`](results/eval_report_e4.md). Key comparisons:
+
+| Task | Base | V1 | E4 | V2 | Notes |
+|---|---|---|---|---|---|
+| `adversarial_division_by_zero` | ❌ | ❌ | ❌ | ✅ | v2 data fixes; base and v1 avoid the tool |
+| `multi_wordcount_calc` | ✅ | ❌ | ❌ | ✅ | v2 data fixes; parser unchanged |
+| `multi_three_tools` | ✅ | ❌ | ✅ | ✅ | **parser recovered** |
+| `chain_weather_then_calc` | ✅ | ❌ | ❌ | ✅ | v2 data fixes; parser unchanged |
+| `adversarial_false_premise` | ✅ | ❌ | ✅ | ✅ | **parser recovered** |
+| `multi_search_weather` | ✅ | ✅ | ❌ | ✅ | **parser regressed** |
+| `adversarial_chained_search_calc` | ✅ | ✅ | ❌ | ✅ | **parser regressed** |
+
+Full comparison reports: [`results/eval_comparison_report.md`](results/eval_comparison_report.md) (Base vs v2) and [`results/eval_comparison_base_vs_v1.md`](results/eval_comparison_base_vs_v1.md) (Base vs v1).
 
 ### Failure-mode analysis
 
-| Failure | Base | v1 | v2 |
-|---|---|---|---|
-| `adversarial_division_by_zero` (must call calculator and let it error) | ❌ | ❌ | ✅ |
-| `multi_wordcount_calc` (word count → multiply) | ✅ | ❌ | ✅ |
-| `multi_three_tools` (3 parallel tools) | ✅ | ❌ | ✅ |
-| `chain_weather_then_calc` (use weather output as calc input) | ✅ | ❌ | ✅ |
-| `adversarial_false_premise` (Wakanda GDP) | ✅ | ❌ | ✅ |
+| Failure | Base | v1 | E4 | v2 |
+|---|---|---|---|---|
+| `adversarial_division_by_zero` (must call calculator and let it error) | ❌ | ❌ | ❌ | ✅ |
+| `multi_wordcount_calc` (word count → multiply) | ✅ | ❌ | ❌ | ✅ |
+| `multi_three_tools` (3 parallel tools) | ✅ | ❌ | ✅ | ✅ |
+| `chain_weather_then_calc` (use weather output as calc input) | ✅ | ❌ | ❌ | ✅ |
+| `adversarial_false_premise` (Wakanda GDP) | ✅ | ❌ | ✅ | ✅ |
+| `multi_search_weather` (search + weather) | ✅ | ✅ | ❌ | ✅ |
+| `adversarial_chained_search_calc` (search → calc) | ✅ | ✅ | ❌ | ✅ |
 
 ### The v1 regression — what we learned
 
@@ -213,7 +260,7 @@ v1 underperformed the base model by 17.4 pp. Two contributing factors were ident
    - Tool-error handling (what to do when a tool returns an error)
    - False-premise reasoning
 
-v2 was the same QLoRA configuration, the same base model, and the same benchmark — with 11 targeted trajectories added and the parser fix deployed.
+E4 (see above) shows the parser fix alone was insufficient: the V1 adapter with the V2 parser still scored 18/23. The full recovery required the 11 additional targeted trajectories in v2's training data.
 
 ---
 
@@ -263,7 +310,7 @@ This project is honest about its scope:
 
 - **The 23-task benchmark is the whole benchmark.** Pass-rate claims apply to this specific held-out set, not to tool use in general.
 - **Base → v2 +4.3 pp is a ceiling effect, not a model improvement.** The base model was already at 22/23. v2 added the one task the base model failed. Claiming v2 is "better" than the base would overstate the evidence.
-- **v2 training data was crafted with reference to v1 failures.** This is iterative engineering, not a clean ablation. The +21.7 pp jump from v1 to v2 is partly data-targeted improvement and partly the parser fix.
+- **v2 training data was crafted with reference to v1 failures.** This is iterative engineering, not a clean ablation. However, E4 (the controlled parser ablation) shows the parser contributed zero net aggregate improvement on this benchmark, so the +21.7 pp jump from v1 to v2 is attributable to the augmented training data.
 - **All evaluations used `max_steps=3`.** Larger step budgets might give different results, especially for the multi-tool tasks.
 - **Inference uses greedy decoding.** Sampling-based decoding was not evaluated.
 - **No comparison to other open models.** The comparison is only between Base, v1, and v2 — all derived from `Qwen/Qwen2.5-7B-Instruct`. No claims about other 7B models are made.
@@ -284,7 +331,9 @@ This project is honest about its scope:
 
 Things we would explore next, but did not have time to do here:
 
-- **Ablation: v2 with v1's parser.** This would isolate the contribution of the parser fix from the contribution of the additional training data.
+- **Fresh held-out benchmark (E8).** The current 23-task benchmark was used during iterative development, so results may reflect some degree of alignment with the test set. A new benchmark with matched category distribution would provide genuine generalization evidence.
+- **Multi-seed evaluation (E7).** N=1 per condition; no variance estimate exists. Running V2 with multiple random seeds would quantify reproducibility.
+- **Random-augmentation control (E5).** Train a variant with 46 randomly selected trajectories (matched size to V2) to test whether *targeted* augmentation outperforms *untargeted* augmentation of equal size.
 - **Larger training sets.** The v2 set is 46 trajectories. Whether further targeted data would yield further gains is open.
 - **Cross-benchmark evaluation.** Running v2 on a different tool-use benchmark (e.g. ToolBench, BFCL) to test for overfitting to our 23-task set.
 - **Adversarial robustness.** The benchmark has 7 adversarial tasks, but a much wider set of failure modes exists.

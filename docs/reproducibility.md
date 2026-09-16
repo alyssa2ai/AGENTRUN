@@ -56,22 +56,26 @@ AGENTRUN/
 ├── serving/                               # Colab inference servers
 │   ├── colab_server.py                    # v1 server
 │   ├── colab_server_base.py               # Base-model server (for the base eval)
-│   └── colab_server_v2.py                 # v2 server with corrected parser
+│   ├── colab_server_v2.py                 # v2 server with corrected parser
+│   └── colab_server_e4.py                 # E4 server (V1 adapter + V2 parser, controlled ablation)
 ├── evaluation/                            # Local evaluation scripts
 │   ├── run_eval.py                        # Frontier-agent eval
 │   ├── run_eval_base.py                   # Base Qwen 7B eval
 │   ├── run_eval_finetuned.py              # v1 LoRA eval
 │   ├── run_eval_v2.py                     # v2 LoRA eval
+│   ├── run_eval_e4.py                     # E4 controlled ablation eval
 │   ├── compare_results.py                 # Compare any two result JSONs
 │   └── run_comparison.py                  # Legacy Phase 1 comparison
 ├── results/                               # Tracked benchmark outputs
 │   ├── eval_results_base.json
 │   ├── eval_results_v1.json
 │   ├── eval_results_v2.json
+│   ├── eval_results_e4.json               # E4: V1 adapter + V2 parser (18/23)
 │   ├── eval_results_finetuned.json        # Historical alias of v1
 │   ├── eval_report_base.md
 │   ├── eval_report_v1.md
 │   ├── eval_report_v2.md
+│   ├── eval_report_e4.md                  # E4 human-readable report
 │   ├── eval_comparison_report.md
 │   ├── eval_comparison_base_vs_v1.md
 │   └── experiment_summary.json
@@ -147,7 +151,25 @@ Expected output:
 - `results/eval_report_v2.md` — human-readable report
 - 23/23 = 100.0% pass rate
 
-### Step 7: Generate a comparison report
+### Step 7: Run E4 (controlled parser ablation)
+
+E4 isolates the parser effect by running the V1 adapter with the V2 two-pass parser.
+
+1. Upload the V1 adapter (`agentlab_qwen_lora_7b/`) to Colab (same as Step 3).
+2. Run `serving/colab_server_e4.py` in Colab (T4 GPU) — this server uses the V2 two-pass parser but loads the V1 adapter.
+3. Copy the printed ngrok URL.
+4. Run the benchmark locally:
+
+```bash
+export COLAB_SERVER_URL_E4=https://....ngrok.io
+python evaluation/run_eval_e4.py
+```
+
+Expected outputs:
+- `results/eval_results_e4.json` — machine-readable results (18/23 = 78.3%)
+- `results/eval_report_e4.md` — human-readable report
+
+### Step 8: Generate a comparison report
 
 ```bash
 python evaluation/compare_results.py results/eval_results_base.json results/eval_results_v2.json \
@@ -168,15 +190,22 @@ Both v1 and v2 used identical hyperparameters, except the training data file:
 | Base model | Qwen/Qwen2.5-7B-Instruct |
 | Quantization | 4-bit NF4, fp16 compute |
 | LoRA rank | 16 |
-| LoRA alpha | 32 |
-| LoRA target modules | q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj |
+| LoRA alpha | 16 |
+| LoRA target modules | q_proj, k_proj, v_proj, o_proj |
 | Optimizer | paged_adamw_8bit |
 | Learning rate | 2e-4 |
-| Batch size | 1 (with grad accumulation 16) |
+| Batch size | 2 (with grad accumulation 4, effective batch size 8) |
 | Epochs | 3 |
-| Max seq length | 2048 |
+| Max seq length | 1024 |
 
-Source: `training/colab_train_7b.py` and `training/colab_train_7b_v2.py`.
+Source: `training/colab_train_7b.py` and `training/colab_train_7b_v2.py`. The stored adapter_config.json confirms:
+```json
+{
+  "lora_alpha": 16,
+  "r": 16,
+  "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"]
+}
+```
 
 ---
 
@@ -186,15 +215,28 @@ Source: `training/colab_train_7b.py` and `training/colab_train_7b_v2.py`.
 
 | Score | Conditions |
 |---|---|
-| 22/23 (Base) | max_steps=3, 4-bit NF4, greedy decoding |
+| 22/23 (Base) | max_steps=3, 4-bit NF4, greedy decoding, original parser |
 | 18/23 (v1)   | max_steps=3, 4-bit NF4, greedy decoding, original parser |
-| 23/23 (v2)   | max_steps=3, 4-bit NF4, greedy decoding, corrected parser |
+| 18/23 (E4)   | max_steps=3, 4-bit NF4, greedy decoding, corrected parser (V1 adapter) |
+| 23/23 (v2)   | max_steps=3, 4-bit NF4, greedy decoding, corrected parser (V2 adapter) |
+
+Parser aggregate effect (E4 − V1): 0 tasks.  
+Data augmentation effect (V2 − E4): +5 tasks.
 
 Changing any of the following invalidates comparison: benchmark tasks, max_steps, generation mode, parser, base model.
 
+## 6. Random Seeds & Determinism
+
+No random seeds were set in the training scripts (`colab_train_7b.py`, `colab_train_7b_v2.py`) or evaluation scripts (`run_eval_base.py`, `run_eval_finetuned.py`, `run_eval_v2.py`). As a result:
+
+- **Training seed**: NOT SET / UNKNOWN — the QLoRA trainer's random number generation was not explicitly seeded. Model initialization (base weights), dataset shuffling, and weight initialization all used default behavior.
+- **Eval seed**: NOT SET / UNKNOWN — the evaluation harness uses greedy decoding (`do_sample=False`), which is deterministic given the same model output. However, model generation without an explicit seed may have non-determinism from CUDA operations on GPU.
+
+**For future reproducibility:** Set `torch.manual_seed(seed)` and `random.seed(seed)` before training/eval, and log the seed value. When using 4-bit NF4 quantization on Colab T4, also consider that CUDA non-determinism can affect reproducibility even with the same seed.
+
 ---
 
-## 6. Security Precautions
+## 7. Security Precautions
 
 **Before pushing to GitHub:**
 
@@ -214,7 +256,7 @@ Changing any of the following invalidates comparison: benchmark tasks, max_steps
 
 ---
 
-## 7. Expected Artifact Files
+## 8. Expected Artifact Files
 
 After a successful end-to-end reproduction, you should have:
 
@@ -230,7 +272,7 @@ After a successful end-to-end reproduction, you should have:
 
 ---
 
-## 8. Differences from the original Phase 1 frontier-agent code
+## 9. Differences from the original Phase 1 frontier-agent code
 
 This repository contains both the Phase 1 frontier-agent code and the Phase 4–5 QLoRA distillation code. The two are decoupled:
 
