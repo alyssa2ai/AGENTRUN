@@ -1,10 +1,10 @@
 # AGENTRUN
 
-**A controlled QLoRA distillation study of tool-use capability on Qwen2.5-7B-Instruct, evaluated against a held-out 23-task multi-tool agent benchmark.**
+**Failure-driven QLoRA specialization of a 7B tool-using language model, evaluated on a fixed 23-task multi-tool benchmark.**
 
----
+## Overview
 
-## TL;DR
+AGENTRUN is an experimental agent system for studying whether a small instruction-tuned open model can be specialized for structured tool use with a small number of high-quality trajectories.
 
 We took a strong instruction-tuned 7B model (Qwen2.5-7B-Instruct), fine-tuned it with QLoRA on small numbers of clean tool-use trajectories, and measured what happened — including the regression that the first round of fine-tuning produced. We diagnosed the failure, identified two contributing factors (a brittle tool-call parser and a gap in training-data coverage), and ran a controlled ablation (E4) to isolate their effects. The result: the parser fix produced zero net aggregate improvement, while targeted training-data augmentation produced the full +5-task recovery.
 
@@ -221,7 +221,8 @@ The parser fix is not useless — it recovered 2 tasks that the V1 parser was si
 
 The **full +5 improvement** from V1 to V2 coincides with the 11 additional targeted training trajectories.
 
-### Per-task outcome
+- **v1 → v2:** +21.7 percentage points
+- **Base → v2:** +4.3 percentage points
 
 The full 23×4 matrix (Base / V1 / E4 / V2) is in [`results/eval_report_e4.md`](results/eval_report_e4.md). Key comparisons:
 
@@ -237,7 +238,7 @@ The full 23×4 matrix (Base / V1 / E4 / V2) is in [`results/eval_report_e4.md`](
 
 Full comparison reports: [`results/eval_comparison_report.md`](results/eval_comparison_report.md) (Base vs v2) and [`results/eval_comparison_base_vs_v1.md`](results/eval_comparison_base_vs_v1.md) (Base vs v1).
 
-### Failure-mode analysis
+## Research Question
 
 | Failure | Base | v1 | E4 | v2 |
 |---|---|---|---|---|
@@ -249,64 +250,182 @@ Full comparison reports: [`results/eval_comparison_report.md`](results/eval_comp
 | `multi_search_weather` (search + weather) | ✅ | ✅ | ❌ | ✅ |
 | `adversarial_chained_search_calc` (search → calc) | ✅ | ✅ | ❌ | ✅ |
 
-### The v1 regression — what we learned
+A secondary objective is to distinguish model-behavior failures from inference/protocol failures by inspecting execution traces rather than relying only on aggregate accuracy.
 
-v1 underperformed the base model by 17.4 pp. Two contributing factors were identified by trace-level analysis:
+## Architecture
 
-1. **Tool-call parser bug.** The v1 Colab server used a single-pass regex to extract `<tool_call>...</tool_call>` blocks. When the fine-tuned model emitted malformed tags (missing closing tag before the next opening tag), the parser returned empty and the server treated it as a final answer. The fix is in `serving/colab_server_v2.py`: a two-pass parser that falls back to extracting the first JSON object after any `<tool_call>` tag.
+```text
+                     ┌─────────────────────────┐
+                     │      User Request       │
+                     └────────────┬────────────┘
+                                  │
+                                  ▼
+                     ┌─────────────────────────┐
+                     │  Qwen2.5-7B-Instruct    │
+                     │   + LoRA adapter        │
+                     └────────────┬────────────┘
+                                  │ tool call / answer
+                                  ▼
+                     ┌─────────────────────────┐
+                     │   Tool-call parser      │
+                     │  (v2 robust fallback)   │
+                     └────────────┬────────────┘
+                                  │
+                                  ▼
+                     ┌─────────────────────────┐
+                     │     MCP tool layer      │
+                     │ calculator              │
+                     │ word_count              │
+                     │ web_search              │
+                     │ get_weather             │
+                     └────────────┬────────────┘
+                                  │ observation
+                                  └──────────────► model
+```
 
-2. **Training data gap.** Trace-level analysis of v1 failures clustered in multi-step tasks. v1 had limited exposure to:
-   - Chained tool use (one tool's output feeding another tool's input)
-   - Tool-error handling (what to do when a tool returns an error)
-   - False-premise reasoning
+The local client executes tools through MCP and feeds structured observations back to the remote Qwen model. Evaluation uses the same tool surface and execution harness across Base, v1, and v2.
 
 E4 (see above) shows the parser fix alone was insufficient: the V1 adapter with the V2 parser still scored 18/23. The full recovery required the 11 additional targeted trajectories in v2's training data.
 
----
+The four benchmark tools are:
+
+| Tool | Purpose |
+|---|---|
+| `calculator` | exact arithmetic |
+| `word_count` | word-count computation |
+| `web_search` | live web retrieval |
+| `get_weather` | current weather retrieval |
+
+## QLoRA Configuration
+
+The actual v1/v2 training script is the source of truth for training configuration. The core settings are:
+
+| Parameter | Setting |
+|---|---|
+| Base model | `Qwen/Qwen2.5-7B-Instruct` |
+| Quantization | 4-bit NF4 |
+| LoRA rank | 16 |
+| LoRA alpha | 16 |
+| LoRA dropout | 0.05 |
+| Target modules | `q_proj`, `k_proj`, `v_proj`, `o_proj` |
+| Epochs | 3 |
+| Learning rate | 2e-4 |
+| Per-device batch size | 2 |
+| Gradient accumulation | 4 |
+| Effective batch size | 8 |
+| Maximum sequence length | 1024 |
+| Decoding for evaluation | greedy (`do_sample=False`) |
+| Evaluation step budget | `max_steps=3` |
+
+For v2, memory-saving measures were added so the 46-trajectory run could fit on a free-tier T4: gradient checkpointing, `use_cache=False`, input-gradient support for checkpointing, an 8-bit paged AdamW optimizer, and explicit CUDA cache cleanup.
+
+## Experimental Progression
+
+### Base
+
+The untuned Qwen2.5-7B-Instruct model achieved **22/23 (95.7%)** on the fixed benchmark.
+
+### LoRA v1
+
+A first LoRA adapter was trained on **35 trajectories**. It achieved **18/23 (78.3%)**, a regression relative to the base model.
+
+Trace analysis exposed several distinct failure modes, including prematurely stopping after one tool, manually computing values that the benchmark required the calculator to produce, sequential multi-tool execution that exhausted the fixed step budget, and explicit tool-error handling failures.
+
+A separate trace also exposed a serving-layer parser weakness: malformed/nested `<tool_call>` tags could cause a valid intended tool request to be missed.
+
+### Intervention
+
+The parser was hardened and the training set was augmented with **11 targeted trajectories**, bringing the dataset from 35 to 46 examples. The added examples specifically covered:
+
+- `word_count` → `calculator` chains;
+- `get_weather` → `calculator` chains;
+- 3-tool sequences with explicit final synthesis;
+- calculator error / division-by-zero behavior;
+- false-premise correction.
+
+The 23 evaluation prompts remained unchanged and were kept disjoint from training prompts.
+
+### LoRA v2
+
+The resulting v2 adapter achieved **23/23 (100.0%)** on the same held-out benchmark.
+
+## Benchmark
+
+The 23 tasks cover:
+
+| Category | Tasks |
+|---|---:|
+| Math | 3 |
+| Text | 1 |
+| Weather | 2 |
+| Search | 2 |
+| Multi-tool | 4 |
+| Chained reasoning | 1 |
+| Time-sensitive | 1 |
+| No-tool expected | 2 |
+| Adversarial math | 3 |
+| Adversarial reasoning | 2 |
+| Adversarial error handling | 1 |
+| Adversarial ambiguity | 1 |
+
+All three evaluated Qwen conditions use the same 23 tasks, same tool infrastructure, same scoring harness, same `max_steps=3`, and greedy decoding.
+
+## Key Failure-Mode Recovery
+
+| Task / behavior | Base | v1 | v2 |
+|---|:---:|:---:|:---:|
+| `multi_wordcount_calc` | ✓ | ✗ | ✓ |
+| `multi_three_tools` | ✓ | ✗ | ✓ |
+| `chain_weather_then_calc` | ✓ | ✗ | ✓ |
+| `adversarial_false_premise` | ✓ | ✗ | ✓ |
+| `adversarial_division_by_zero` | ✗ | ✗ | ✓ |
+| `adversarial_chained_search_calc` | ✓ | trace/parser issue | ✓ |
+
+The v1→v2 improvement should **not** be attributed solely to the 11 new trajectories because the serving-layer parser was also corrected between the effective v1 and v2 systems.
 
 ## Reproducibility
 
-End-to-end reproduction steps are in [`docs/reproducibility.md`](docs/reproducibility.md). The short version:
+See [`docs/reproducibility.md`](docs/reproducibility.md) for the full procedure.
+
+Typical workflow:
 
 ```bash
 git clone https://github.com/Alyssa-286/AGENTRUN.git
 cd AGENTRUN
 python -m venv .venv
-source .venv/bin/activate          # or: .venv\Scripts\activate on Windows
+# Windows: .venv\Scripts\activate
+# Linux/macOS: source .venv/bin/activate
 pip install -r requirements.txt
-
-# Train v1 on Colab (paste training/colab_train_7b.py into a T4 cell)
-# Train v2 on Colab (paste training/colab_train_7b_v2.py into a T4 cell)
-
-# Serve v2 from Colab (paste serving/colab_server_v2.py into a T4 cell)
-# Set NGROK_AUTH_TOKEN, run all cells, copy the printed ngrok URL
-
-# Run the benchmark locally:
-export COLAB_SERVER_URL_V2=https://....ngrok.io
-python evaluation/run_eval_v2.py
-
-# Generate a comparison:
-python evaluation/compare_results.py \
-    results/eval_results_base.json results/eval_results_v2.json \
-    --label-a "Base Qwen 7B" --label-b "LoRA v2" \
-    --output results/eval_comparison_report.md
 ```
 
-### Expected artifacts
+Training is performed on a GPU-backed Colab runtime using the scripts in `training/`. Inference for the 7B model is served from Colab and reached by the local evaluator through a temporary tunnel.
 
-| File | Score |
-|---|---|
-| `results/eval_results_base.json` | 22/23 |
-| `results/eval_results_v1.json` | 18/23 |
-| `results/eval_results_v2.json` | 23/23 |
+Run the final evaluator with a live v2 server URL:
 
-These exact values are what the repository contains. They were generated by the scripts in `evaluation/` and have not been altered.
+```powershell
+$env:COLAB_SERVER_URL_V2="https://<your-v2-server>"
+python evaluation/run_eval_v2.py
+```
 
----
+The benchmark writes machine-readable JSON and a Markdown report under `results/`.
 
-## Scope & limitations
+## Repository Layout
 
-This project is honest about its scope:
+```text
+AGENTRUN/
+├── agent.py                     # original frontier-model agent
+├── ft_agent.py                  # local remote-Qwen agent client
+├── mcp_server.py                # MCP tool server
+├── tools.py                     # tool definitions
+├── memory.py                    # local vector memory
+├── providers/                  # external-service adapters
+├── eval/                       # 23-task benchmark + harness
+├── training/                   # datasets and QLoRA training scripts
+├── serving/                    # Base/v1/v2 Colab servers
+├── evaluation/                # benchmark runners + comparisons
+├── results/                   # verified benchmark artifacts
+└── docs/                      # experiment log + reproducibility docs
+```
 
 - **The 23-task benchmark is the whole benchmark.** Pass-rate claims apply to this specific held-out set, not to tool use in general.
 - **Base → v2 +4.3 pp is a ceiling effect, not a model improvement.** The base model was already at 22/23. v2 added the one task the base model failed. Claiming v2 is "better" than the base would overstate the evidence.
@@ -316,7 +435,25 @@ This project is honest about its scope:
 - **No comparison to other open models.** The comparison is only between Base, v1, and v2 — all derived from `Qwen/Qwen2.5-7B-Instruct`. No claims about other 7B models are made.
 - **No claim of generalization.** The fine-tuned v2 adapter was evaluated only on this benchmark. It has not been evaluated on other agent benchmarks, on production tool-use tasks, or on safety-related adversarial cases.
 
----
+This project is deliberately conservative about its conclusions:
+
+- The benchmark contains 23 tasks; all pass-rate claims refer only to this benchmark.
+- The Base model already scored 22/23, so the Base→v2 gain is a one-task ceiling-effect improvement.
+- v2 was developed after observing v1 failures, so the v1→v2 result is an iterative intervention rather than a blind pre-registered ablation.
+- The parser correction and training-data augmentation changed together; their individual contributions are therefore not separately identified.
+- `max_steps=3` is fixed for comparability but can disadvantage models that emit multi-tool calls sequentially rather than in parallel.
+- Only one base model family and one decoding mode were evaluated.
+- No independent external agent benchmark was used to establish cross-benchmark generalization.
+
+## Future Work
+
+The most informative next experiments would be:
+
+1. parser-only ablation;
+2. training-data-only ablation;
+3. evaluation on an independent tool-use benchmark;
+4. multiple seeds and larger datasets;
+5. broader adversarial and error-recovery evaluation.
 
 ## Security
 
@@ -343,30 +480,4 @@ Things we would explore next, but did not have time to do here:
 
 ## Citation
 
-If you use this codebase or benchmark, please cite the model and the MCP protocol:
-
-```bibtex
-@software{agentrun,
-  title  = {AgentLab: a controlled QLoRA distillation study of tool-use on Qwen2.5-7B-Instruct},
-  year   = {2026},
-  url    = {https://github.com/Alyssa-286/AGENTRUN},
-}
-
-@model{qwen2.5-7b,
-  title  = {Qwen2.5-7B-Instruct},
-  url    = {https://huggingface.co/Qwen/Qwen2.5-7B-Instruct},
-}
-
-@software{mcp,
-  title  = {Model Context Protocol},
-  url    = {https://modelcontextprotocol.io/},
-}
-```
-
----
-
-## License
-
-This project is released under the MIT License. See `LICENSE`.
-
-The base model `Qwen/Qwen2.5-7B-Instruct` is subject to the Qwen Research License; see the model card for details.
+A formal manuscript for this work is being prepared from the experiment log and verified artifacts in this repository.
