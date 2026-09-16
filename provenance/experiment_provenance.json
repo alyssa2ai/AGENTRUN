@@ -1,0 +1,82 @@
+{
+  "$schema": "agentrun-provenance-v1",
+  "experiment": "AgentLab QLoRA tool-use distillation",
+  "base_model": {
+    "value": "Qwen/Qwen2.5-7B-Instruct",
+    "label": "VERIFIED",
+    "evidence": "adapter_config.json base_model_name_or_path; training scripts; results JSON"
+  },
+  "training_config": {
+    "label": "VERIFIED",
+    "evidence": "colab_train_7b.py, colab_train_7b_v2.py, adapter_config.json, reproducibility.md, NEXTAGENTRUNV2final (2).ipynb",
+    "lora_alpha": 16,
+    "r": 16,
+    "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj"],
+    "batch_size_per_device": 2,
+    "gradient_accumulation_steps": 4,
+    "effective_batch_size": 8,
+    "learning_rate": 2e-4,
+    "epochs": 3,
+    "max_seq_length": 1024,
+    "quantization": "4-bit NF4",
+    "optimizer": "paged_adamw_8bit",
+    "loRA_dropout": 0.05,
+    "gradient_checkpointing": true,
+    "use_cache": false,
+    "note": "README vs reproducibility.md previously disagreed (alpha=32 vs alpha=16; full attn vs attn-only). Fixed after checking adapter_config.json — both v1 and v2 used alpha=16, attention-only."
+  },
+  "results": {
+    "label": "VERIFIED",
+    "evidence": "results/eval_results_*.json, eval_results_e4.json (root, original artifact)",
+    "base": {"score": "22/23 (95.7%)", "timestamp": "2026-09-01 15:55:51", "adapter": "none", "parser": "single_pass"},
+    "v1_lora": {"score": "18/23 (78.3%)", "timestamp": "2026-09-01 18:01:23", "adapter": "agentlab_qwen_lora_7b", "parser": "single_pass"},
+    "e4_lora_fixed_parser": {"score": "18/23 (78.3%)", "timestamp": "2026-09-16", "adapter": "agentlab_qwen_lora_7b", "parser": "v2_two_pass", "notes": "Controlled ablation: V1 adapter + V2 parser. Tavily real API. Per-task traces not captured."},
+    "v2_lora": {"score": "23/23 (100.0%)", "timestamp": "2026-09-01 22:32:05", "adapter": "agentlab_qwen_lora_7b_v2", "parser": "v2_two_pass"}
+  },
+  "confound": {
+    "label": "RESOLVED by E4",
+    "statement": "E4 (V1 adapter + V2 parser = 18/23) isolates the parser effect from the data effect. Parser aggregate effect = E4 − V1 = 0 tasks. Data augmentation effect = V2 − E4 = +5 tasks.",
+    "parser_change": "serving/colab_server.py (single-pass) → serving/colab_server_v2.py / colab_server_e4.py (two-pass regex)",
+    "data_change": "training/training_data.jsonl (35) → training/training_data_augmented.jsonl (35+11=46 trajectories)",
+    "resolution_evidence": "E4 controlled ablation completed 2026-09-16 on Colab T4 with real Tavily API. Same V1 adapter weights, same benchmark, different parser. Score unchanged at 18/23."
+  },
+  "environment": {
+    "label": "VERIFIED",
+    "python_version": "3.11.9",
+    "torch_version": "2.13.0+cpu",
+    "transformers_version": "5.15.1",
+    "peft_version": "0.20.0",
+    "accelerate_version": "1.14.0",
+    "hardware": "Google Colab T4 GPU (15 GB VRAM)",
+    "cuda_version": "12.x (Colab default; exact version not recorded in scripts)",
+    "driver_version": "not recorded",
+    "note": "Training and inference on Colab T4. Local eval client on CPU-only venv."
+  },
+  "random_seeds": {
+    "label": "VERIFIED — NOT SET",
+    "training_seed": "UNKNOWN",
+    "eval_seed": "UNKNOWN",
+    "evidence": "No torch.manual_seed / random.seed calls in training or eval scripts",
+    "recommendation": "Set seeds before training/eval and log seed values for future runs"
+  },
+  "benchmark": {
+    "file": "eval/tasks.py",
+    "total_tasks": 23,
+    "categories": {
+      "math": 3,
+      "text": 1,
+      "weather": 2,
+      "search": 2,
+      "multi_tool": 4,
+      "chained_reasoning": 1,
+      "time_sensitive": 1,
+      "no_tool_expected": 2,
+      "adversarial_math": 3,
+      "adversarial_reasoning": 2,
+      "adversarial_error_handling": 1,
+      "adversarial_ambiguity": 1
+    },
+    "max_steps": 3,
+    "scoring": "harness.py: required_tools, answer_contains, answer_contains_any, numeric_check, expect_tool_error"
+  }
+}

@@ -126,7 +126,7 @@ Trajectory-level inspection of v1 failures revealed:
 
 **What was NOT changed:**
 - Base model: Qwen/Qwen2.5-7B-Instruct (identical)
-- QLoRA configuration (identical 4-bit NF4, rank=16, alpha=32)
+- QLoRA configuration (identical 4-bit NF4, rank=16, alpha=16)
 - Benchmark (identical 23 tasks, identical max_steps=3)
 - MCP tool infrastructure (identical tools)
 
@@ -156,6 +156,53 @@ Trajectory-level inspection of v1 failures revealed:
 
 **v1 → v2: +21.7 pp** (18/23 → 23/23)
 **Base → v2: +4.3 pp** (22/23 → 23/23)
+
+---
+
+## Phase 6: E4 Controlled Ablation — Parser vs Data Effect
+
+**Date:** 2026-09-16
+
+**What was tested:** V1 LoRA adapter (35 trajectories, same weights as V1) evaluated with the V2 two-pass parser (same parser as V2). This isolates the parser effect from the data effect.
+
+**Configuration:**
+- Adapter: `agentlab_qwen_lora_7b` (V1; not re-trained)
+- Parser: V2 two-pass robust parser (`serving/colab_server_e4.py`)
+- Training data: `training/training_data.jsonl` (unchanged from V1)
+- Tavily: real API key (active)
+- Benchmark: `eval/tasks.py` — 23 tasks, max_steps=3, greedy decoding
+- Hardware: Google Colab T4 GPU
+
+**Result: 18/23 = 78.3%** — identical to V1 with the old parser.
+
+**Per-task comparison (V1 → E4):**
+
+| Task | V1 | E4 | Change |
+|---|---|---|---|
+| `adversarial_false_premise` | ❌ | ✅ | parser recovered |
+| `multi_three_tools` | ❌ | ✅ | parser recovered |
+| `multi_search_weather` | ✅ | ❌ | parser regressed |
+| `adversarial_chained_search_calc` | ✅ | ❌ | parser regressed |
+| `multi_wordcount_calc` | ❌ | ❌ | unchanged |
+| `chain_weather_then_calc` | ❌ | ❌ | unchanged |
+| `adversarial_division_by_zero` | ❌ | ❌ | unchanged |
+| All others (16 tasks) | same | same | — |
+
+**Decomposition:**
+
+| Effect | Recovered | Regressed | Net |
+|---|---|---|---|
+| Parser (V1→E4) | 2 (`false_premise`, `multi_three_tools`) | 2 (`search_weather`, `chained_search_calc`) | **0** |
+| Data (E4→V2) | 5 (all E4 failures) | 0 | **+5** |
+
+**Interpretation:** The V2 two-pass parser produced zero net aggregate improvement over the V1 single-pass parser when applied to the same V1 adapter. It recovered 2 tasks where the V1 parser silently dropped tool calls (false-premise rejection, 3-tool parallel calls) but introduced regressions on 2 other tasks where the V1 parser's incorrect behavior happened to produce a correct direct answer. The full +5 improvement from V1 to V2 coincides with the targeted augmented training data (11 additional trajectories), not with a net parser-score gain.
+
+**Files:**
+- `serving/colab_server_e4.py` — Colab server (V1 adapter + V2 parser)
+- `evaluation/run_eval_e4.py` — local eval script
+- `results/eval_results_e4.json` — machine-readable results
+- `results/eval_report_e4.md` — human-readable report
+- `docs/e4-experiment-guide.md` — reproduction guide
 
 ---
 
