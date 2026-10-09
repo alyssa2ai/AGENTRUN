@@ -84,17 +84,38 @@ def test_well_formed_single_call():
 def test_malformed_no_closing_tag():
     """v1 fails malformed output (no </tool_call>); v2 recovers via pass-2.
 
-    Pass-2 limitation: only works when arguments are flat (empty dict or no
-    nested objects) because the regex stops at the first '}'. See
-    test_parser_fixed.py for the full documentation of this limitation.
+    Pass-2 limitation: the fallback regex r'<tool_call>\\s*(\\{.*?\\})' stops
+    at the FIRST '}', so it only recovers calls whose JSON contains no
+    nested object. The call below therefore has no "arguments" member.
+    See test_malformed_nested_args_not_recovered and test_parser_fixed.py.
     """
-    # Model emits <tool_call> without closing tag — flat args case
-    raw = '<tool_call>\n{"name": "word_count", "arguments": {}}\n<tool_call>\n<tool_call>\n'
+    # Model emits <tool_call> without closing tag — no nested arguments
+    raw = '<tool_call>\n{"name": "word_count"}\n<tool_call>\n<tool_call>\n'
     v1 = v1_parse(raw)
     v2 = v2_parse(raw)
     assert v1["tool_calls"] == [], f"v1 should fail: {v1}"
     assert v2["tool_calls"][0]["name"] == "word_count", f"v2 should recover: {v2}"
     print("PASS test_malformed_no_closing_tag")
+
+
+def test_malformed_nested_args_not_recovered():
+    """v2 pass-2 does NOT recover a malformed call that carries a nested
+    "arguments" object.
+
+    Pass 1 (strict, closed blocks) handles nested arguments correctly; only
+    the pass-2 fallback truncates at the first '}', producing invalid JSON.
+    This is the documented pass-2 limitation, asserted here so the parser's
+    real behavior is pinned by the test suite.
+    """
+    raw = '<tool_call>\n{"name": "web_search", "arguments": {"query": "Paris"}}\n<tool_call>\n'
+    v1 = v1_parse(raw)
+    v2 = v2_parse(raw)
+    assert v1["tool_calls"] == [], f"v1 should fail: {v1}"
+    assert v2["tool_calls"] == [], f"v2 pass-2 should also fail: {v2}"
+    # ... but a well-formed closed block with the same nested args works
+    closed = '<tool_call>\n{"name": "web_search", "arguments": {"query": "Paris"}}\n</tool_call>'
+    assert v2_parse(closed)["tool_calls"][0]["arguments"]["query"] == "Paris"
+    print("PASS test_malformed_nested_args_not_recovered")
 
 
 def test_plain_text_no_tool_call():
@@ -141,6 +162,7 @@ def test_empty_string():
 if __name__ == "__main__":
     test_well_formed_single_call()
     test_malformed_no_closing_tag()
+    test_malformed_nested_args_not_recovered()
     test_plain_text_no_tool_call()
     test_malformed_json_inside_tag()
     test_word_count_tool_call()

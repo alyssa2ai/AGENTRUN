@@ -1,7 +1,7 @@
 # Provenance Directory
 
 This directory holds the canonical, machine-checkable provenance record for the
-published AGENTRUN experiment (Base / v1 / v2 on Qwen2.5-7B-Instruct).
+published AGENTRUN experiment (Base / v1 / E4 / v2 on Qwen2.5-7B-Instruct).
 
 Every file here is intended to be **read by a script**, not just by a human.
 The canonical record is `experiment_provenance.json`; the `.md` files are

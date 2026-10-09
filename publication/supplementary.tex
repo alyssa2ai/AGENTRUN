@@ -1,0 +1,96 @@
+% Supplementary material for AGENTRUN 2.0
+% Compile: pdflatex supplementary.tex
+\documentclass[11pt]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{times}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage[hidelinks]{hyperref}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+
+\title{Supplementary Material: Disentangling Parser and Data Effects in Tool-Using LLM Fine-Tuning}
+\author{Anonymous Author(s)\\ \small Paper under double-blind review}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{S1. Parser source}
+
+\subsection*{S1.1 V1 parser (single-pass)}
+\begin{lstlisting}
+TOOL_CALL_PATTERN = re.compile(
+    r"<tool_call>\s*(\{.*?\})\s*</tool_call>",
+    re.DOTALL,
+)
+# On malformed input: no match; server returns raw text as final answer.
+\end{lstlisting}
+
+\subsection*{S1.2 V2 parser (two-pass, used in E4 and V2)}
+\begin{lstlisting}
+TOOL_CALL_CLOSED = re.compile(
+    r"<tool_call>\s*(\{.*?\})\s*</tool_call>",
+    re.DOTALL,
+)
+TOOL_CALL_OPEN = re.compile(
+    r"<tool_call>\s*(\{.*?\})",
+    re.DOTALL,
+)
+# Pass 1: strict. Pass 2 (fallback): first JSON after any <tool_call>.
+# Known limitation: Pass 2 recovers only the first call in a malformed
+# multi-call output and may truncate nested arguments.
+\end{lstlisting}
+
+\section*{S2. Training trajectory counts}
+\begin{tabular}{lll}
+\toprule
+Condition & Trajectories & Source file \\
+\midrule
+V1 & 35 & \texttt{training\_data.jsonl} \\
+V2 & 46 & \texttt{training\_data\_augmented.jsonl} \\
+\bottomrule
+\end{tabular}
+
+\noindent The 11 additional trajectories address: word\_count$\to$calculator (3), weather$\to$calculator (3), three-tool synthesis (2), division-by-zero handling (2), false-premise rejection (1).
+
+\section*{S3. Environment}
+\begin{tabular}{ll}
+\toprule
+Field & Value \\
+\midrule
+Python & 3.11.9 \\
+torch (local eval) & 2.13.0+cpu \\
+transformers & 5.15.1 \\
+peft & 0.20.0 \\
+accelerate & 1.14.0 \\
+Training GPU & 1$\times$ NVIDIA T4 (15\,GB, Colab) \\
+Inference GPU & 1$\times$ NVIDIA T4 (15\,GB, Colab) \\
+CUDA / driver & not recorded (gap) \\
+Training seed & not set \\
+Eval seed & not set \\
+\bottomrule
+\end{tabular}
+
+\section*{S4. Artifact mapping}
+\begin{tabular}{ll}
+\toprule
+Artifact & File \\
+\midrule
+23-task benchmark & \texttt{eval/tasks.py} \\
+Scoring harness & \texttt{eval/harness.py} \\
+V1 training script & \texttt{training/colab\_train\_7b.py} \\
+V2 training script & \texttt{training/colab\_train\_7b\_v2.py} \\
+V1 serving code & \texttt{serving/colab\_server.py} \\
+E4 serving code & \texttt{serving/colab\_server\_e4.py} \\
+V2 serving code & \texttt{serving/colab\_server\_v2.py} \\
+Base results & \texttt{results/eval\_results\_base.json} \\
+V1 results & \texttt{results/eval\_results\_v1.json} \\
+E4 results & \texttt{results/eval\_results\_e4.json} \\
+V2 results & \texttt{results/eval\_results\_v2.json} \\
+Summary & \texttt{results/experiment\_summary.json} \\
+\bottomrule
+\end{tabular}
+
+\end{document}

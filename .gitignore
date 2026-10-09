@@ -62,6 +62,26 @@ results/*
 !/results/eval_report*.md
 !/results/eval_comparison*.md
 !/results/experiment_summary.json
+!/results/verify_results.py
+!/results/results_verified.csv
+!/results/results_verified.json
+
+# ============================================================
+# PUBLICATION BUILD ARTIFACTS
+# ============================================================
+# LaTeX sources, .bib, PDFs and the markdown statements are tracked;
+# compiler by-products are not.
+publication/*.aux
+publication/*.log
+publication/*.out
+publication/*.blg
+publication/*.bbl
+publication/*.synctex.gz
+publication/*.bak
+publication/_debug*.py
+publication/fix_and_compile.py
+publication/make_publication_files.py
+
 
 # ============================================================
 # MISC

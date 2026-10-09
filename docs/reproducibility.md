@@ -92,7 +92,7 @@ AGENTRUN/
 ### Step 1: Local environment
 
 ```bash
-git clone https://github.com/Alyssa-286/AGENTRUN.git
+git clone https://github.com/alyssa2ai/AGENTRUN.git
 cd AGENTRUN
 python -m venv .venv
 source .venv/bin/activate   # or: .venv\Scripts\activate on Windows
@@ -183,7 +183,7 @@ The `compare_results.py` script is model-agnostic: it reads labels from the JSON
 
 ## 4. LoRA Training Configuration (v1 and v2)
 
-Both v1 and v2 used identical hyperparameters, except the training data file:
+Every LoRA and data hyperparameter is shared between the two runs:
 
 | Hyperparameter | Value |
 |---|---|
@@ -192,11 +192,26 @@ Both v1 and v2 used identical hyperparameters, except the training data file:
 | LoRA rank | 16 |
 | LoRA alpha | 16 |
 | LoRA target modules | q_proj, k_proj, v_proj, o_proj |
-| Optimizer | paged_adamw_8bit |
 | Learning rate | 2e-4 |
 | Batch size | 2 (with grad accumulation 4, effective batch size 8) |
 | Epochs | 3 |
 | Max seq length | 1024 |
+
+Three memory-related settings are **not** shared. The 46-trajectory run had to
+fit the same 15 GB T4 budget, so `training/colab_train_7b_v2.py` adds them and
+`training/colab_train_7b.py` does not:
+
+| Setting | V1 (`colab_train_7b.py`) | V2 (`colab_train_7b_v2.py`) |
+|---|---|---|
+| Optimizer | Trainer default (script sets none) | `bnb.optim.PagedAdamW8bit`, passed via `optimizers=(optim_8bit, None)` |
+| Gradient checkpointing | off | on, `use_reentrant=False` |
+| KV cache (`use_cache`) | on | off |
+
+This difference does not affect E4, which reuses the V1 adapter and varies only
+the parser. It does mean the E4→V2 comparison changes the adapter, the training
+data, and these optimizer settings together, so the +5 difference should not be
+read as an isolated effect of the 11 added trajectories. If you retrain V2
+without these memory settings, say so when reporting the result.
 
 Source: `training/colab_train_7b.py` and `training/colab_train_7b_v2.py`. The stored adapter_config.json confirms:
 ```json
@@ -221,13 +236,28 @@ Source: `training/colab_train_7b.py` and `training/colab_train_7b_v2.py`. The st
 | 23/23 (v2)   | max_steps=3, 4-bit NF4, greedy decoding, corrected parser (V2 adapter) |
 
 Parser aggregate effect (E4 − V1): 0 tasks.  
-Data augmentation effect (V2 − E4): +5 tasks.
+Data augmentation effect (V2 − E4): +5 tasks (adapter + data + optimizer settings change together; see §4).
 
 Changing any of the following invalidates comparison: benchmark tasks, max_steps, generation mode, parser, base model.
 
+### Verify the reported numbers
+
+Every score in this repository can be recomputed from the committed result
+files:
+
+```bash
+python results/verify_results.py
+```
+
+This re-tallies each condition's pass count, checks that the 23 task IDs are
+identical across Base/V1/E4/V2, lists every per-task transition for V1→E4 and
+E4→V2, and rewrites `RESULTS_VERIFIED.md`,
+`results/results_verified.json`, and `results/results_verified.csv`. It reads
+only committed artifacts; it does not re-run the model.
+
 ## 6. Random Seeds & Determinism
 
-No random seeds were set in the training scripts (`colab_train_7b.py`, `colab_train_7b_v2.py`) or evaluation scripts (`run_eval_base.py`, `run_eval_finetuned.py`, `run_eval_v2.py`). As a result:
+No random seeds were set in the training scripts (`colab_train_7b.py`, `colab_train_7b_v2.py`) or evaluation scripts (`run_eval_base.py`, `run_eval_finetuned.py`, `run_eval_v2.py`, `run_eval_e4.py`). As a result:
 
 - **Training seed**: NOT SET / UNKNOWN — the QLoRA trainer's random number generation was not explicitly seeded. Model initialization (base weights), dataset shuffling, and weight initialization all used default behavior.
 - **Eval seed**: NOT SET / UNKNOWN — the evaluation harness uses greedy decoding (`do_sample=False`), which is deterministic given the same model output. However, model generation without an explicit seed may have non-determinism from CUDA operations on GPU.
@@ -262,13 +292,21 @@ After a successful end-to-end reproduction, you should have:
 
 | File | Source |
 |---|---|
-| `agentlab_qwen_lora/` (local backup) | v1 training output |
+| `agentlab_qwen_lora_7b/` (local backup) | v1 training output |
 | `agentlab_qwen_lora_7b_v2/` (local backup) | v2 training output |
 | `results/eval_results_base.json` | `evaluation/run_eval_base.py` |
 | `results/eval_results_v1.json` | `evaluation/run_eval_finetuned.py` |
+| `results/eval_results_e4.json` | `evaluation/run_eval_e4.py` |
 | `results/eval_results_v2.json` | `evaluation/run_eval_v2.py` |
 | `results/eval_report_*.md` | (same scripts) |
 | `results/eval_comparison_report.md` | `evaluation/compare_results.py` |
+| `RESULTS_VERIFIED.md` | `results/verify_results.py` |
+
+The V1 adapter directory produced by `training/colab_train_7b.py` is
+`/content/agentlab_qwen_lora_7b` on Colab; back it up locally, since
+`/content/` is volatile. The legacy `agentlab_qwen_lora/` name refers to an
+earlier 0.5B adapter from Phase 3 and is not produced by either of the two
+training scripts above.
 
 ---
 
