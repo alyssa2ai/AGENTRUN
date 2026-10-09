@@ -1,5 +1,11 @@
 # AGENTRUN 2.0 -- Publication Source Package
 
+> **Current submission package (October 2026):** `antic2026_submission/`
+> contains the ANTIC 2026 / Springer CCIS version. It has a new title and
+> framing, the llncs class, verified references, and an Overleaf ZIP. Start
+> with `antic2026_submission/SUBMISSION_READINESS_REPORT.md`. The files below
+> are the earlier venue-neutral manuscript, kept unchanged for the record.
+
 ## Status (2026-10-09)
 
 - **Published:** Zenodo preprint, 2026-09-05,

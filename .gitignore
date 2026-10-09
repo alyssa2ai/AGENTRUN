@@ -91,3 +91,15 @@ memory_store.json
 Thumbs.db
 
 memory_store.json
+
+# ANTIC 2026 Overleaf project: build by-products (sources, figures, ZIP and
+# the delivered PDF are tracked)
+publication/antic2026_submission/overleaf/*.aux
+publication/antic2026_submission/overleaf/*.log
+publication/antic2026_submission/overleaf/*.out
+publication/antic2026_submission/overleaf/*.blg
+publication/antic2026_submission/overleaf/*.bbl
+publication/antic2026_submission/overleaf/*.fls
+publication/antic2026_submission/overleaf/*.fdb_latexmk
+publication/antic2026_submission/overleaf/*.synctex.gz
+publication/antic2026_submission/overleaf/main.pdf

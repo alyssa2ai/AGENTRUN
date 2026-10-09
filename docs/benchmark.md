@@ -49,7 +49,7 @@ A task passes only if **all** of the following hold:
 - **1 task** (`no_tool_needed_2`) has no positive check. Any answer passes unless a tool errors or the step budget is exhausted.
 - Some content checks are weak. `no_tool_needed_1` passes on any answer containing the substring `au`. `adversarial_chained_search_calc` assumes the year 2026.
 
-As a result, a pass on a tool-only task means the agent *called the right tools*, not that the answer it gave was correct. For example, in V1 `multi_search_weather` passed with a final answer that named the wrong UK Prime Minister, even though the search result it had just received gave the correct name.
+As a result, a pass on a tool-only task means the agent *called the right tools*, not that the answer it gave was correct. Example: in Base, V1, and V2, `multi_search_weather` passed with an answer naming a different person from the title of the top search result that the model had just received. The predicate checks neither name. Lenient substring checks have the same weakness. V2's `adversarial_false_premise` answer passes only because it contains the word "Marvel", without stating that Wakanda is fictional.
 
 ## Train/benchmark separation
 
