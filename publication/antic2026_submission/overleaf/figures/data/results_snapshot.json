@@ -1,21 +1,21 @@
 {
- "source": "Extracted from results/eval_results_{base,v1,e4,v2}.json and eval/tasks.py of github.com/alyssa2ai/AGENTRUN",
+ "source": "Extracted from results/eval_results_{base,v1,e4,v2}.json and eval/tasks.py of github.com/alyssa2ai/AGENTRUN at commit a4a6976; sha256 is of the file content as stored in git (LF line endings)",
  "files": {
   "Base": {
    "path": "results/eval_results_base.json",
-   "sha256": "4aafc5a3308c0996a34c4899311b6f5f1f2bc08c858bb6ae0fc2d34b63b7c178"
+   "sha256": "2da872c87f08b822866256e55dfe0c083b8f60777ea0c2abb0507a4c798fe9b5"
   },
   "V1": {
    "path": "results/eval_results_v1.json",
-   "sha256": "f26ab20aa9f6a63ad05e5b7118244fa68f7c3f50e526aed25a4061379f9af842"
+   "sha256": "ee8f11708746885fd9261f8b007d5d71dc9177268aa724200dc19aead7cdc039"
   },
   "E4": {
    "path": "results/eval_results_e4.json",
-   "sha256": "86bdc0a0f9bdff83d7dbcc5d5c265060e028d8b96e42219dab7d292ced0d16fd"
+   "sha256": "2dc621d2f0178762786a579f6a9675c65e3ebda6d7c5ae92acdd4d2a7572fc45"
   },
   "V2": {
    "path": "results/eval_results_v2.json",
-   "sha256": "aef40a43531aec3712b4548bd5df547eb326cc3bf28909d9b776ee54bf0c1970"
+   "sha256": "b110ee8a180d8ceda15705505bf5b7e342c223f4e868bd960ef2c9e7579d3763"
   }
  },
  "tasks": [
