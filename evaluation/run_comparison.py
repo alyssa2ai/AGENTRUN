@@ -11,8 +11,6 @@ Outputs a comprehensive comparative report to `eval_comparison_report.md`.
 from __future__ import annotations
 
 import asyncio
-import time
-from collections import Counter
 
 from agent import Agent
 from agent_qwen import QwenAgent

@@ -16,8 +16,9 @@ Our code is what actually runs it and feeds the result back in.
 
 from dataclasses import dataclass
 from typing import Callable, Any
+import ast
 import json
-import math
+import operator
 
 from providers.search_provider import SearchProvider
 from providers.weather_provider import WeatherProvider
@@ -45,11 +46,42 @@ class Tool:
 # Local, deterministic tools — no external API, kept from Phase 1.
 # ---------------------------------------------------------------------
 
+_BIN_OPS = {
+    ast.Add: operator.add,
+    ast.Sub: operator.sub,
+    ast.Mult: operator.mul,
+    ast.Div: operator.truediv,
+    ast.FloorDiv: operator.floordiv,
+    ast.Pow: operator.pow,
+}
+_UNARY_OPS = {ast.UAdd: operator.pos, ast.USub: operator.neg}
+_MAX_EXPONENT = 1000  # bounds "9**9**9" style inputs that would hang the server
+
+
+def _eval_arith(node: ast.AST):
+    if isinstance(node, ast.Expression):
+        return _eval_arith(node.body)
+    if isinstance(node, ast.Constant) and type(node.value) in (int, float):
+        return node.value
+    if isinstance(node, ast.UnaryOp) and type(node.op) in _UNARY_OPS:
+        return _UNARY_OPS[type(node.op)](_eval_arith(node.operand))
+    if isinstance(node, ast.BinOp) and type(node.op) in _BIN_OPS:
+        left, right = _eval_arith(node.left), _eval_arith(node.right)
+        if isinstance(node.op, ast.Pow) and abs(right) > _MAX_EXPONENT:
+            raise ValueError(f"exponent too large (limit {_MAX_EXPONENT})")
+        return _BIN_OPS[type(node.op)](left, right)
+    raise ValueError("unsupported expression")
+
+
 def calculator(expression: str) -> str:
+    # Same character whitelist and the same results/exceptions as the
+    # eval()-based version used for the reported runs (e.g. ZeroDivisionError
+    # still surfaces as a tool error), but evaluated by walking the AST so
+    # exponentiation can be bounded.
     allowed = "0123456789+-*/(). "
     if not all(c in allowed for c in expression):
         return "Invalid characters in expression."
-    return str(eval(expression, {"__builtins__": {}}, {"math": math}))
+    return str(_eval_arith(ast.parse(expression.strip(), mode="eval")))
 
 
 def word_count(text: str) -> str:

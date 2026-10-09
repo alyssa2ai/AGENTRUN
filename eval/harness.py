@@ -14,9 +14,15 @@ from __future__ import annotations
 import asyncio
 import re
 from dataclasses import dataclass, field
+from typing import TYPE_CHECKING
 
 from eval.tasks import Task
-from agent import Agent, RunTrace
+
+if TYPE_CHECKING:
+    # Imported for annotations only, so score_task() can be used (and tested)
+    # without the Gemini/MCP client stack that agent.py pulls in. Any object
+    # exposing the RunTrace attributes read below can be scored.
+    from agent import Agent, RunTrace
 
 
 @dataclass

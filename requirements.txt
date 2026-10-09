@@ -1,4 +1,14 @@
+# Local runtime: MCP tool server, evaluation client (ft_agent.py), and the
+# Phase 1 Gemini agent. Versions are those of the environment used for the
+# reported evaluation runs where recorded (mcp); others are lower bounds.
+#
+# Not listed here: GPU training/serving dependencies (torch, transformers,
+# peft, bitsandbytes, trl, fastapi, uvicorn, pyngrok). Those are installed
+# inside Colab by the first cell of training/colab_train_*.py and
+# serving/colab_server_*.py. agent_qwen.py (legacy local Qwen runner) also
+# needs torch/transformers/peft.
 mcp==1.9.4
 google-genai>=1.0.0
+httpx>=0.27
 python-dotenv>=1.0.1
 requests>=2.31.0

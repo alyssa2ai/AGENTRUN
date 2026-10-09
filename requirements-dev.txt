@@ -1,0 +1,3 @@
+# CPU-only test and lint tooling (no model, GPU, network, or API key needed).
+pytest==8.3.5
+ruff==0.11.13

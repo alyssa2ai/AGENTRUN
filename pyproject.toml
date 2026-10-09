@@ -1,0 +1,21 @@
+# Tooling configuration only. AGENTRUN is a research repository, not an
+# installable package; runtime dependencies live in requirements.txt.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+# serving/colab_server*.py and training/colab_train*.py are Colab cell exports
+# containing "!pip" shell lines, so they are not parseable as plain Python.
+extend-exclude = [
+    "notebooks", "phase3files", "publication", ".kilo", ".freebuff",
+    "serving/colab_server*.py", "training/colab_train*.py",
+]
+
+[tool.ruff.lint]
+# Correctness-focused rules only (pyflakes + pycodestyle errors); style is not enforced.
+select = ["E9", "F63", "F7", "F82", "F401", "F811", "F841"]
