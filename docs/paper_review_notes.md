@@ -1,5 +1,8 @@
 # AGENTRUN 2.0 — Paper Review Notes
 
+> Historical review (2026-09-17) of the superseded Markdown draft. The current
+> manuscript is `publication/manuscript.tex`.
+
 **Reviewer:** Claude Code (acting as peer reviewer)
 **Date:** 2026-09-17
 **Paper:** `docs/paper_agentrun_2.0.md`

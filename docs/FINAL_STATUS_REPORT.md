@@ -1,7 +1,14 @@
 # AGENTRUN 2.0 — Final Status Report
 
 **Date:** 2026-09-17  
-**Repository:** https://github.com/Alyssa-286/AGENTRUN  
+> **Historical snapshot (2026-09-17).** Kept for the record and not maintained.
+> For the current status see the README ("Publication status") and
+> `docs/experiment-log.md` Phase 7. Since this snapshot: the V1/V2 optimizer
+> settings were found to differ, E4 was found to have been scored with a
+> different evaluation client (so it is not parser-only), the WI-IAT submission was withdrawn
+> (2026-10-09), and the repository moved to `alyssa2ai/AGENTRUN`.
+
+**Repository:** https://github.com/alyssa2ai/AGENTRUN (originally recorded as `Alyssa-286/AGENTRUN`)  
 **Latest Commit:** c66d18a
 
 ---
@@ -144,7 +151,7 @@ This project investigates whether improvements in tool-using language model perf
 - Complete reproducibility package with training scripts, evaluation harness, and result artifacts
 - Honest empirical record of fine-tuning regression and its resolution
 
-**Publications:** Full paper available at `docs/paper_agentrun_2.0.md`; repository at https://github.com/Alyssa-286/AGENTRUN
+**Publications:** Full paper available at `docs/paper_agentrun_2.0.md`; repository at https://github.com/alyssa2ai/AGENTRUN
 
 ---
 

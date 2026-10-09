@@ -20,70 +20,24 @@ This document describes how to reproduce the AgentLab QLoRA distillation experim
 
 ---
 
-## 2. Repository Layout (for reproduction)
+## 2. What needs what
 
-```
-AGENTRUN/
-├── README.md                              # Project overview
-├── .env.example                           # Template for API keys (DO NOT commit .env)
-├── requirements.txt                       # Python dependencies
-├── main.py                                # Local CLI entrypoint (Phase 1 frontier agent)
-├── agent.py                               # Phase 1 Gemini-based agent
-├── ft_agent.py                            # Local client for the Colab-hosted Qwen server
-├── mcp_server.py                          # MCP server process (tool definitions)
-├── tools.py                               # Tool factory module
-├── memory.py                              # Long-term vector memory
-├── providers/                             # External service adapters
-│   ├── openmeteo_weather.py
-│   ├── search_provider.py
-│   ├── tavily_search.py
-│   └── weather_provider.py
-├── eval/                                  # Evaluation framework
-│   ├── harness.py
-│   ├── tasks.py                           # 23-task held-out benchmark
-│   └── report.py
-├── training/                              # Training data and Colab training scripts
-│   ├── training_data.jsonl                # v1: 35 trajectories
-│   ├── training_data_augmented.jsonl      # v2: 46 trajectories
-│   ├── training_data_prompts.py           # Source prompts for v1
-│   ├── training_data_prompts_augmented.py # Source prompts for v2
-│   ├── generate_dataset.py                # Local data synthesis (optional)
-│   ├── generate_training_data.py          # Local data generation (optional)
-│   ├── augment_training_data.py           # Adds the 11 v2 augmentation trajectories
-│   ├── colab_train_7b.py                  # Colab: train v1 LoRA
-│   ├── colab_train_7b_v2.py               # Colab: train v2 LoRA
-│   └── COLAB_TRAINING_GUIDE.md            # Human-readable Colab walkthrough
-├── serving/                               # Colab inference servers
-│   ├── colab_server.py                    # v1 server
-│   ├── colab_server_base.py               # Base-model server (for the base eval)
-│   ├── colab_server_v2.py                 # v2 server with corrected parser
-│   └── colab_server_e4.py                 # E4 server (V1 adapter + V2 parser, controlled ablation)
-├── evaluation/                            # Local evaluation scripts
-│   ├── run_eval.py                        # Frontier-agent eval
-│   ├── run_eval_base.py                   # Base Qwen 7B eval
-│   ├── run_eval_finetuned.py              # v1 LoRA eval
-│   ├── run_eval_v2.py                     # v2 LoRA eval
-│   ├── run_eval_e4.py                     # E4 controlled ablation eval
-│   ├── compare_results.py                 # Compare any two result JSONs
-│   └── run_comparison.py                  # Legacy Phase 1 comparison
-├── results/                               # Tracked benchmark outputs
-│   ├── eval_results_base.json
-│   ├── eval_results_v1.json
-│   ├── eval_results_v2.json
-│   ├── eval_results_e4.json               # E4: V1 adapter + V2 parser (18/23)
-│   ├── eval_results_finetuned.json        # Historical alias of v1
-│   ├── eval_report_base.md
-│   ├── eval_report_v1.md
-│   ├── eval_report_v2.md
-│   ├── eval_report_e4.md                  # E4 human-readable report
-│   ├── eval_comparison_report.md
-│   ├── eval_comparison_base_vs_v1.md
-│   └── experiment_summary.json
-└── docs/
-    ├── experiment-log.md                  # Phase-by-phase narrative
-    ├── reproducibility.md                 # This file
-    └── project-map.md                     # Code organization reference
-```
+The repository layout is described in [`project-map.md`](project-map.md).
+
+| Activity | Hardware | External services / credentials | Command |
+|---|---|---|---|
+| Unit, scoring and result-consistency tests | CPU | none | `python -m pip install -r requirements-dev.txt && python -m pytest` |
+| Recompute every reported score from committed results | CPU | none | `python results/verify_results.py` |
+| Regenerate both training sets | CPU | none | Step 2 below (verified byte-identical, 2026-10-09) |
+| Train V1 / V2 adapters | Colab T4 (15 GB) | Hugging Face model download | Steps 3–4 |
+| Serve a condition | Colab T4 | ngrok authtoken | Step 5 |
+| Run the 23-task benchmark | CPU (local client) | live server URL, `TAVILY_API_KEY`, internet (Open-Meteo) | Steps 6–7 |
+| Phase 1 Gemini agent (not part of the four conditions) | CPU | `GEMINI_API_KEY`, `TAVILY_API_KEY` | `python main.py` |
+
+Having a command for a step does not mean that step was re-run during the
+repository clean-up. The executed experiments are the four conditions recorded
+in `results/` and `docs/experiment-log.md`. E5, E7 and E8 are proposals and
+have not been run.
 
 ---
 
@@ -107,11 +61,15 @@ The training data JSONLs are already committed (`training/training_data.jsonl`, 
 
 ```bash
 cd training
-python generate_dataset.py            # produces training_data.jsonl
-python augment_training_data.py       # produces training_data_augmented.jsonl
+python generate_dataset.py            # writes training_data.jsonl (35 trajectories)
+python augment_training_data.py       # writes training_data_augmented.jsonl (46) and training_data_prompts_augmented.py
 ```
 
-Both scripts are deterministic given the same prompts.
+Both scripts build trajectories from hard-coded tool calls and answers. They make
+no model or API calls. On 2026-10-09 both outputs were regenerated in a scratch
+directory, and the JSONL files matched the committed files byte for byte. The
+older `generate_training_data.py` is the Gemini-driven generator. It needs
+`GEMINI_API_KEY`, is not deterministic, and is not the source of the committed sets.
 
 ### Step 3: Train v1 LoRA on Colab
 
@@ -133,7 +91,7 @@ Both scripts are deterministic given the same prompts.
 1. With the trained adapter in `/content/agentlab_qwen_lora_7b_v2`, open `serving/colab_server_v2.py`
 2. Replace `NGROK_AUTH_TOKEN = "PASTE_YOUR_NGROK_TOKEN_HERE"` with your free ngrok authtoken from <https://dashboard.ngrok.com/get-started/your-authtoken>
 3. Run the cells in order
-4. Copy the printed public URL (e.g., `https://....ngrok.io`)
+4. Copy the printed public URL (e.g., `https://<random>.ngrok-free.app`)
 
 ### Step 6: Run the 23-task benchmark
 
@@ -153,7 +111,7 @@ Expected output:
 
 ### Step 7: Run E4 (controlled parser ablation)
 
-E4 isolates the parser effect by running the V1 adapter with the V2 two-pass parser.
+E4 runs the V1 adapter behind the V2 two-pass parser. Following the steps below, with `evaluation/run_eval_e4.py`, gives a **client-matched** E4 that changes only the parser. That run has not been performed. The reported E4 (18/23) was produced by a notebook-local loop with a different tool stack; see `docs/e4-experiment-guide.md`.
 
 1. Upload the V1 adapter (`agentlab_qwen_lora_7b/`) to Colab (same as Step 3).
 2. Run `serving/colab_server_e4.py` in Colab (T4 GPU) — this server uses the V2 two-pass parser but loads the V1 adapter.
@@ -207,8 +165,7 @@ fit the same 15 GB T4 budget, so `training/colab_train_7b_v2.py` adds them and
 | Gradient checkpointing | off | on, `use_reentrant=False` |
 | KV cache (`use_cache`) | on | off |
 
-This difference does not affect E4, which reuses the V1 adapter and varies only
-the parser. It does mean the E4→V2 comparison changes the adapter, the training
+This difference does not enter the V1→E4 comparison, because E4 reuses the V1 adapter. It does mean the E4→V2 comparison changes the adapter, the training
 data, and these optimizer settings together, so the +5 difference should not be
 read as an isolated effect of the 11 added trajectories. If you retrain V2
 without these memory settings, say so when reporting the result.

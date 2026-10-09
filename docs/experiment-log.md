@@ -134,7 +134,7 @@ Trajectory-level inspection of v1 failures revealed:
 
 The optimizer/gradient-checkpointing difference is documented in
 `docs/reproducibility.md` §4 and in `provenance/hyperparameters.md`. It does not
-affect E4 (V1 adapter held constant, parser only), but it does mean the E4→V2
+enter the V1→E4 comparison, because E4 reuses the V1 adapter, but it does mean the E4→V2
 difference (+5 tasks) reflects the adapter, the training data, and these
 optimizer settings changing together.
 
@@ -173,7 +173,7 @@ optimizer settings changing together.
 
 **Date:** 2026-09-16
 
-**What was tested:** V1 LoRA adapter (35 trajectories, same weights as V1) evaluated with the V2 two-pass parser (same parser as V2). This isolates the parser effect from the data effect.
+**What was tested:** V1 LoRA adapter (35 trajectories, same weights as V1) evaluated with the V2 two-pass parser (same parser as V2). It was intended to isolate the parser effect from the data effect. *(Correction, 2026-10-09: in practice E4 also changed the evaluation client and tool stack. See the correction note below.)*
 
 **Configuration:**
 - Adapter: `agentlab_qwen_lora_7b` (V1; not re-trained)
@@ -202,10 +202,17 @@ optimizer settings changing together.
 
 | Effect | Recovered | Regressed | Net |
 |---|---|---|---|
-| Parser (V1→E4) | 2 (`false_premise`, `multi_three_tools`) | 2 (`search_weather`, `chained_search_calc`) | **0** |
-| Data (E4→V2) | 5 (all E4 failures) | 0 | **+5** |
+| Parser + client (V1→E4) | 2 (`false_premise`, `multi_three_tools`) | 2 (`search_weather`, `chained_search_calc`) | **0** |
+| Retraining run (E4→V2) | 5 (all E4 failures) | 0 | **+5** |
 
 **Interpretation:** The V2 two-pass parser produced zero net aggregate improvement over the V1 single-pass parser when applied to the same V1 adapter. It recovered 2 tasks where the V1 parser silently dropped tool calls (false-premise rejection, 3-tool parallel calls) but introduced regressions on 2 other tasks where the V1 parser's incorrect behavior happened to produce a correct direct answer. The full +5 improvement from V1 to V2 therefore coincides with the retraining run that added the 11 targeted trajectories — along with that run's optimizer and gradient-checkpointing settings — rather than with a net parser-score gain.
+
+**Correction (2026-10-09).** The interpretation above is the September reading and is kept for the record. Two parts of it do not survive a re-check of the artifacts:
+
+1. *"Applied to the same V1 adapter" did not mean "only the parser changed".* The reported E4 score comes from a notebook-local evaluation loop (`notebooks/colab_e4_session.ipynb`, cell 16), not from `evaluation/run_eval_e4.py` and `ft_agent.py` with MCP. That loop used different tool schemas, a different tool-call/result serialization, its own tool implementations, and ran 15 days later against live data. The full table is in `docs/e4-experiment-guide.md`.
+2. *"Tasks where the V1 parser silently dropped tool calls" is contradicted by the V1 traces.* In V1, `multi_three_tools` called all three tools and failed on `hit_max_steps`, and `adversarial_false_premise` called `web_search` and failed the content check. The two regressed tasks passed in V1 with all their tools called. E4 recorded no traces, so the mechanism behind each flip is unknown.
+
+The defensible reading is narrower. With the V1 adapter fixed, changing the parser **and** the evaluation client left the aggregate at 18/23 while four task outcomes flipped. A client-matched E4 re-run has not been done.
 
 **Files:**
 - `serving/colab_server_e4.py` — Colab server (V1 adapter + V2 parser)
@@ -216,13 +223,30 @@ optimizer settings changing together.
 
 ---
 
+## Phase 7: Repository Audit and Release Preparation (2026-10)
+
+No new model runs were made in this phase. The changes were:
+
+- The V1/V2 training-configuration description was corrected (optimizer, gradient checkpointing, `use_cache`), and the E4→V2 step is now labelled as confounded by these settings. See `provenance/hyperparameters.md`.
+- CPU-only tests were added under `tests/` and run in CI. They recompute every reported score, the V1→E4 and E4→V2 transitions, the 35/46/11 trajectory counts, and prompt-level train/benchmark disjointness, and they pin the strength of each task's scoring predicate.
+- **New disclosure.** Seven tasks check only that tools were called, and `no_tool_needed_2` has no positive check (`docs/benchmark.md`). Scores were not changed.
+- **E4 re-examined.** The reported E4 score was produced by a notebook-local evaluation loop with a different tool stack, not by `evaluation/run_eval_e4.py`. The V1 traces also contradict the earlier parser-drop explanations. E4 is now described as an adapter-fixed comparison in which both the parser and the evaluation client changed. See the Phase 6 correction note and `docs/e4-experiment-guide.md`.
+- Both training sets were regenerated from the committed scripts and matched byte for byte.
+- `tools.py` calculator: `eval` was replaced with an equivalent AST evaluator that bounds exponents. Results are unchanged for all allowed inputs.
+- Live ngrok and Tavily credentials were found in the committed notebook history. They are redacted from the current tree and need to be rotated (`docs/release-checklist.md`).
+- The notebook moved to `notebooks/colab_e4_session.ipynb` and the research audit to `docs/research/`.
+
+**Publication status (as of 2026-10-09).** The Zenodo preprint (doi:10.5281/zenodo.22346935, 2026-09-05) is published and predates E4. The updated manuscript in `publication/` has not been published. The WI-IAT submission was withdrawn on 2026-10-09.
+
+---
+
 ## Key Takeaways
 
 1. **Small training sets can cause regression.** 35 trajectories on a 7B model produced a weaker agent than the base model on multi-step tasks.
 
 2. **Targeted augmentation coincided with the recovery.** The 11 added trajectories target the specific patterns V1 failed, and the run that included them (V2) recovered all five remaining failures. This is an observation on one benchmark, not a demonstration that data quality beats quantity — a size-matched random-augmentation control (E5) was never run.
 
-3. **Evaluation must be held-out and fixed.** Using the same 23 tasks for all four evaluations (base, v1, E4, v2) ensured a controlled comparison. Changing the benchmark between runs would have made the comparison invalid.
+3. **The evaluation set must stay fixed.** Using the same 23 tasks for all four evaluations (base, v1, E4, v2) kept the comparison controlled, and changing the benchmark between runs would have made it invalid. Fixed is not the same as held out, though. V1's failures on these tasks informed the V2 training data, so for V2 the benchmark is a development set as well as a test set (see `docs/benchmark.md`).
 
 4. **The parser is part of the system.** The tool-call parser in the Colab server is a component of the inference system. A single-pass regex was fragile against the fine-tuned model's slightly different output patterns.
 

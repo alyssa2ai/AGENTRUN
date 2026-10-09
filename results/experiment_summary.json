@@ -74,7 +74,7 @@
         "adversarial_division_by_zero"
       ],
       "verified_at": "2026-09-16",
-      "notes": "E4 controlled ablation: V1 adapter (35 trajectories) evaluated with V2 two-pass parser. Isolates parser effect. Tavily = real. Per-task traces not captured; only pass/fail recorded."
+      "notes": "E4 controlled ablation: V1 adapter (35 trajectories) evaluated with V2 two-pass parser. Intended to isolate the parser effect; reported score came from a notebook-local evaluation loop with a different tool stack (see docs/e4-experiment-guide.md, added 2026-10-09). Tavily = real. Per-task traces not captured; only pass/fail recorded."
     }
   },
   "pairwise_comparisons": {
@@ -110,7 +110,7 @@
       ]
     },
     "v1_vs_e4": {
-      "description": "Parser effect: same V1 adapter, different parser",
+      "description": "Same V1 adapter; parser changed, and (as run) evaluation client/tool stack and date also changed",
       "delta_passed": 0,
       "delta_pp": 0.0,
       "e4_recovered_from_v1": ["adversarial_false_premise", "multi_three_tools"],
@@ -128,17 +128,18 @@
     }
   },
   "methodology_notes": {
-    "controlled_comparison": "All three evaluations used the same 23 tasks, same max_steps=3, same MCP tool infrastructure, same base model, and greedy decoding (do_sample=False).",
+    "controlled_comparison": "All four evaluations (Base, V1, E4, V2) used the same 23 tasks, same max_steps=3, same MCP tool infrastructure, same base model, and greedy decoding (do_sample=False).",
     "scoring_immutability": "Benchmark tasks in eval/tasks.py were not modified between the three evaluations. The scoring harness was not modified.",
     "parser_change": "v1 evaluation used a single-pass regex parser in the Colab server. v2 and E4 evaluations used a corrected two-pass parser (serving/colab_server_v2.py / colab_server_e4.py). The parser was identified as a contributing factor in v1 failures where the fine-tuned model emitted malformed tool-call tags.",
     "training_data_change": "v2 added 11 targeted trajectories to address specific failure patterns identified by trace-level analysis of v1 (word_count→calculator, weather→calculator, 3-tool chains, division-by-zero error handling, false-premise rejection).",
-    "confound_resolution": "The parser/data confound identified in v1→v2 is now resolved by E4: V1 adapter + V2 parser = 18/23 (same as V1 with old parser), showing parser effect = 0. V2's full +5 improvement over E4 is attributable to the augmented training data."
+    "confound_resolution": "[Corrected 2026-10-09] E4 (V1 adapter + V2 parser) = 18/23, the same aggregate as V1, with 4 task flips. E4 was scored with a notebook-local evaluation loop and tool stack that differ from the Base/V1/V2 client, so it does not give a parser-only estimate. The +5 from E4 to V2 coincides with a retraining run that changed the data (35 to 46, failure-informed) and the optimizer/memory settings together. Earlier text read: 'resolved by E4 ... parser effect = 0 ... +5 attributable to the augmented training data'."
   },
   "scope_limitations": [
-    "Pass rates are tied to this specific 23-task held-out set.",
+    "Pass rates are tied to this specific 23-task set (fixed, but not held out from V2 development).",
     "Generalization beyond this benchmark is not implied.",
-    "All three evaluations used max_steps=3; larger step budgets might give different results.",
-    "v2 evaluation used the corrected parser; running v1's adapter under v2's parser would not be a fair comparison."
+    "All four evaluations used max_steps=3; larger step budgets might give different results.",
+    "V2's 11 added trajectories were written after inspecting V1 failures on this benchmark; prompts are disjoint from the 23 evaluation prompts but several follow the same task templates (evaluation-adaptation risk).",
+    "[Superseded 2026-09-16] An earlier note here said running V1's adapter under V2's parser would not be a fair comparison; that run is E4, the controlled parser ablation."
   ],
   "provenance": {
     "base_model": {
@@ -157,7 +158,7 @@
         "epochs": 3,
         "max_seq_length": 1024,
         "quantization": "4-bit NF4",
-        "optimizer": "paged_adamw_8bit"
+        "optimizer": "V1: Trainer default (not set in colab_train_7b.py); V2: bnb PagedAdamW8bit with gradient checkpointing and use_cache=False (colab_train_7b_v2.py). Corrected 2026-10; see provenance/hyperparameters.md."
       }
     },
     "results": {
@@ -187,7 +188,7 @@
       "e4_lora_fixed_parser": {
         "score": "18/23 (78.3%)",
         "provenance": "VERIFIED",
-        "notes": "E4 controlled ablation: V1 LoRA adapter (35 trajectories) with V2 two-pass parser. Tavily real API. Isolates parser effect from data effect.",
+        "notes": "E4 controlled ablation: V1 LoRA adapter (35 trajectories) with V2 two-pass parser. Tavily real API. Intended to isolate parser from data effect; evaluation client also differed (see docs/e4-experiment-guide.md).",
         "timestamp": "2026-09-16",
         "adapter": "agentlab_qwen_lora_7b",
         "parser": "v2_two_pass",
@@ -195,11 +196,11 @@
       }
     },
     "confound_note": {
-      "status": "RESOLVED",
-      "statement": "E4 (V1 adapter + V2 parser = 18/23) isolates the parser effect from the data effect. Parser aggregate effect = E4 − V1 = 0 tasks. Data augmentation effect = V2 − E4 = +5 tasks.",
+      "status": "PARTIALLY RESOLVED (corrected 2026-10; previously RESOLVED)",
+      "statement": "E4 (V1 adapter + V2 parser = 18/23) holds the V1 adapter fixed; aggregate change E4 − V1 = 0 tasks, but E4 also changed the evaluation client/tool stack, so this is not a parser-only estimate (correction 2026-10-09). Remaining difference V2 − E4 = +5 tasks, which changes the adapter, the training data (35 → 46) and the V2 run's optimizer/gradient-checkpointing settings together.",
       "parser_change": "serving/colab_server.py (single-pass) → serving/colab_server_v2.py / colab_server_e4.py (two-pass regex)",
       "data_change": "training/training_data.jsonl (35) → training/training_data_augmented.jsonl (35+11=46 trajectories)",
-      "resolution": "E4 completed 2026-09-16 confirms parser had zero net aggregate effect on this benchmark. Full +5 improvement coincides with targeted data augmentation."
+      "resolution": "E4 completed 2026-09-16: aggregate unchanged under parser + evaluation-client change; no parser-only estimate exists. Full +5 improvement coincides with the V2 retraining run (targeted augmentation plus memory-related optimizer settings); it is not an isolated data effect."
     },
     "environment": {
       "python_version": "3.11.9",

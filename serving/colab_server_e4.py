@@ -3,7 +3,9 @@
 # EXPERIMENT E4 — V1 ADAPTER + FIXED PARSER
 #
 # This server loads the V1 LoRA adapter but uses the V2 two-pass parser.
-# It isolates the parser effect from the data effect:
+# It is intended to isolate the parser effect from the data effect (the
+# reported E4 score was collected with a notebook-local client, which adds
+# client differences; see docs/e4-experiment-guide.md):
 #   - Same model weights as V1 (35 trajectories, agentlab_qwen_lora_7b)
 #   - Same parser as V2 (two-pass robust parsing)
 #   - Same benchmark as V1/V2 (23 tasks, max_steps=3)

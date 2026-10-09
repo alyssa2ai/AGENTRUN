@@ -37,7 +37,7 @@
         "use_cache": false,
         "seq_len_argument": "max_length=1024"
       },
-      "note": "The V2 script adds gradient checkpointing, use_cache=False and a paged 8-bit optimizer so the 46-trajectory run fits the same 15GB T4 budget. This does not affect E4 (V1 adapter held constant, parser only), but it means the E4->V2 contrast changes the training run and not only the training data. The v2 script comments note that max_seq_length is ignored in trl>=0.14; the trl version used for the v1 run was not recorded."
+      "note": "The V2 script adds gradient checkpointing, use_cache=False and a paged 8-bit optimizer so the 46-trajectory run fits the same 15GB T4 budget. This does not enter V1->E4 (E4 reuses the V1 adapter), but it means the E4->V2 contrast changes the training run and not only the training data. The v2 script comments note that max_seq_length is ignored in trl>=0.14; the trl version used for the v1 run was not recorded."
     },
     "prior_corrections": "README vs reproducibility.md previously disagreed (alpha=32 vs alpha=16; full attn vs attn-only). Fixed after checking adapter_config.json — both v1 and v2 used alpha=16, attention-only. A second correction (2026-10) removed the claim that v1 and v2 shared an identical optimizer/gradient-checkpointing configuration."
   },
@@ -50,15 +50,18 @@
     "v2_lora": {"score": "23/23 (100.0%)", "timestamp": "2026-09-01 22:32:05", "adapter": "agentlab_qwen_lora_7b_v2", "parser": "v2_two_pass"}
   },
   "confound": {
-    "label": "PARTIALLY RESOLVED by E4",
-    "statement": "E4 (V1 adapter + V2 parser = 18/23) isolates the parser effect from the training-run effect. Parser aggregate effect = E4 - V1 = 0 tasks. The remaining E4->V2 difference is +5 tasks, and that transition changes the adapter, the training data, and the V2 run's optimizer/gradient-checkpointing settings together.",
+    "label": "PARTIALLY RESOLVED by E4; E4 itself confounded by evaluation-client change (found 2026-10-09)",
+    "statement": "E4 (V1 adapter + V2 parser = 18/23) holds the adapter fixed. Aggregate change V1->E4 = 0 tasks, with 4 task flips (2 recovered, 2 regressed). This is NOT a parser-only estimate: the reported E4 score was produced by a notebook-local evaluation loop (notebooks/colab_e4_session.ipynb cell 16) with different tool schemas, tool-call/result serialization, tool implementations and error semantics, no client-side re-parse, and a later run date (2026-09-16 vs 2026-09-01, live search/weather data). evaluation/run_eval_e4.py (client-matched) was not run. The remaining E4->V2 difference is +5 tasks, and that transition changes the adapter, the training data, and the V2 run's optimizer/gradient-checkpointing settings together.",
     "parser_change": "serving/colab_server.py (single-pass) -> serving/colab_server_v2.py / colab_server_e4.py (two-pass regex)",
     "data_change": "training/training_data.jsonl (35) -> training/training_data_augmented.jsonl (35+11=46 trajectories)",
     "residual_confound": "training/colab_train_7b_v2.py additionally enables gradient checkpointing, use_cache=False and a paged 8-bit optimizer; colab_train_7b.py does not. See training_config.per_run_differences.",
+    "session_log": "notebooks/colab_e4_session.ipynb (credentials redacted); raw notebook export results/eval_results_e4_notebook_raw.json",
     "resolution_evidence": "E4 controlled ablation completed 2026-09-16 on Colab T4 with real Tavily API. Same V1 adapter weights, same benchmark, different parser. Score unchanged at 18/23."
   },
   "environment": {
-    "label": "VERIFIED",
+    "label": "PARTIAL — local venv VERIFIED; Colab package versions UNKNOWN",
+    "scope_of_versions_below": "Versions read from the local CPU-only .venv used for the evaluation client (re-checked 2026-10-09). They are NOT the Colab training/serving versions, which were installed unpinned by '!pip install' cells and not recorded.",
+    "eval_client": "ft_agent.py exists in one committed version (93f27d7, 2026-09-01). Whether it changed between the Base, V1 and V2 runs on that date is not recorded. E4 was scored from notebooks/colab_e4_session.ipynb.",
     "python_version": "3.11.9",
     "torch_version": "2.13.0+cpu",
     "transformers_version": "5.15.1",

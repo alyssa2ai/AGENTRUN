@@ -1,5 +1,13 @@
 # E4 Benchmark Report: V1 Adapter + Fixed Parser
 
+> **Correction (2026-10-09).** The pass/fail outcomes below are unchanged. Their
+> interpretation is not. This run was scored by a notebook-local evaluation loop
+> (`notebooks/colab_e4_session.ipynb`, cell 16), not by `ft_agent.py` + MCP, so
+> the tool schemas, the tool-call/result serialization and the tool
+> implementations also differed from V1. E4 therefore does **not** change "only
+> the parser", and the per-task mechanisms suggested in this report are
+> unverified (no traces were recorded). See `docs/e4-experiment-guide.md`.
+
 **Experiment ID:** E4  
 **Date:** 2026-09-16 (Colab session)  
 **Overall: 18/23 passed (78.3%)**
@@ -8,11 +16,12 @@
 
 | Field | Value |
 |---|---|
-| Condition | E4 — controlled ablation |
+| Condition | E4 — adapter-fixed ablation (parser + evaluation client changed) |
+| Evaluation client | notebook-local loop (not `ft_agent.py`/MCP) |
 | Adapter | agentlab_qwen_lora_7b (V1; 35 trajectories) |
 | Parser | v2_two_pass (two-pass robust parser, identical to V2) |
 | Training data | training/training_data.jsonl (unchanged from V1) |
-| Benchmark | eval/tasks.py — 23-task held-out set |
+| Benchmark | eval/tasks.py — 23-task fixed set |
 | max_steps | 3 |
 | Decoding | greedy (do_sample=False) |
 | Tavily | real API key (active) |
