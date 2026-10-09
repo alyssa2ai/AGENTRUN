@@ -1,0 +1,102 @@
+{
+  "condition": "E4",
+  "adapter": "agentlab_qwen_lora_7b (V1)",
+  "parser": "v2_two_pass",
+  "tavily": "real",
+  "passed": 18,
+  "total": 23,
+  "results": [
+    {
+      "task_id": "calc_basic_1",
+      "passed": true
+    },
+    {
+      "task_id": "calc_basic_2",
+      "passed": true
+    },
+    {
+      "task_id": "calc_order_of_ops",
+      "passed": true
+    },
+    {
+      "task_id": "wordcount_basic",
+      "passed": true
+    },
+    {
+      "task_id": "weather_basic_1",
+      "passed": true
+    },
+    {
+      "task_id": "weather_basic_2",
+      "passed": true
+    },
+    {
+      "task_id": "search_basic_1",
+      "passed": true
+    },
+    {
+      "task_id": "search_basic_2",
+      "passed": true
+    },
+    {
+      "task_id": "multi_weather_calc",
+      "passed": true
+    },
+    {
+      "task_id": "multi_wordcount_calc",
+      "passed": false
+    },
+    {
+      "task_id": "multi_search_weather",
+      "passed": false
+    },
+    {
+      "task_id": "multi_three_tools",
+      "passed": true
+    },
+    {
+      "task_id": "chain_weather_then_calc",
+      "passed": false
+    },
+    {
+      "task_id": "time_sensitive_1",
+      "passed": true
+    },
+    {
+      "task_id": "no_tool_needed_1",
+      "passed": true
+    },
+    {
+      "task_id": "no_tool_needed_2",
+      "passed": true
+    },
+    {
+      "task_id": "adversarial_negative_multiply",
+      "passed": true
+    },
+    {
+      "task_id": "adversarial_decimal_division",
+      "passed": true
+    },
+    {
+      "task_id": "adversarial_percentage",
+      "passed": true
+    },
+    {
+      "task_id": "adversarial_false_premise",
+      "passed": true
+    },
+    {
+      "task_id": "adversarial_chained_search_calc",
+      "passed": false
+    },
+    {
+      "task_id": "adversarial_division_by_zero",
+      "passed": false
+    },
+    {
+      "task_id": "adversarial_ambiguous_city",
+      "passed": true
+    }
+  ]
+}
