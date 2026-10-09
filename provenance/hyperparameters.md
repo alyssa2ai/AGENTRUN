@@ -41,8 +41,8 @@ was wrong for v1. Reading the two training scripts:
 | Sequence-length argument | `max_seq_length=1024` | `max_length=1024` | VERIFIED (source: scripts); the v2 script notes `max_seq_length` is ignored in trl>=0.14, and the trl version used for the v1 run was not recorded |
 
 The v2 script's own header comments record these additions. They were made so
-the 46-trajectory run would fit the same 15 GB T4 budget. They do not affect
-E4, which reuses the v1 adapter and varies only the parser, but they do mean
+the 46-trajectory run would fit the same 15 GB T4 budget. They do not enter
+the V1→E4 comparison, because E4 reuses the v1 adapter, but they do mean
 the E4→V2 contrast changes the training run and not only the training data.
 
 ## Full configuration (shared by v1 and v2)

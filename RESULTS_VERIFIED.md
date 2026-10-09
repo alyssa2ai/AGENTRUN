@@ -42,16 +42,20 @@ Benchmark task IDs identical across all four conditions: **YES** (n=23).
 | weather_basic_2 | PASS | PASS | PASS | PASS |
 | wordcount_basic | PASS | PASS | PASS | PASS |
 
-## V1 -> E4 transitions (parser effect, adapter held constant)
+## V1 -> E4 transitions (adapter held constant; parser changed)
+
+E4 was scored with a notebook-local evaluation loop whose tool stack differs from the Base/V1/V2 client, so these transitions are not a parser-only effect (see docs/e4-experiment-guide.md).
 
 - `adversarial_chained_search_calc`: PASS -> fail
 - `adversarial_false_premise`: fail -> PASS
 - `multi_search_weather`: PASS -> fail
 - `multi_three_tools`: fail -> PASS
 
-Net E4 effect: 2 recovered, 2 regressed, net +0.
+Net V1 -> E4 change: 2 recovered, 2 regressed, net +0.
 
-## E4 -> V2 transitions (data effect, parser held constant)
+## E4 -> V2 transitions (parser held constant; adapter retrained; client differs)
+
+V2 changes the training data (35 -> 46, failure-informed) and the optimizer/memory settings together (see provenance/hyperparameters.md), and V2 was scored with ft_agent.py + MCP while E4 used the notebook loop.
 
 - `adversarial_chained_search_calc`: fail -> PASS
 - `adversarial_division_by_zero`: fail -> PASS
@@ -59,7 +63,7 @@ Net E4 effect: 2 recovered, 2 regressed, net +0.
 - `multi_search_weather`: fail -> PASS
 - `multi_wordcount_calc`: fail -> PASS
 
-Net data effect: +5.
+Net E4 -> V2 change: +5.
 
 ## Issues
 

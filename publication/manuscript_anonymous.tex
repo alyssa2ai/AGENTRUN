@@ -19,7 +19,7 @@
 
 \newcommand{\code}[1]{\texttt{#1}}
 
-\title{\bfseries Disentangling Parser and Data Effects in Tool-Using LLM Fine-Tuning:\\ A Controlled Ablation on Qwen2.5-7B}
+\title{\bfseries Disentangling Parser and Data Effects in Tool-Using LLM Fine-Tuning:\\ A Case Study on Qwen2.5-7B}
 
 \author{
   Anonymous Author(s)\\
@@ -34,7 +34,7 @@
 
 \begin{abstract}
 \noindent
-End-to-end benchmark scores for tool-using language-model agents conflate model capability, training data, and serving-layer infrastructure. We report a controlled ablation that isolates one such confound on a fixed 23-task, machine-checkable multi-tool benchmark. Beginning from an untuned Qwen2.5-7B-Instruct baseline of 22/23 (95.7\%), QLoRA fine-tuning on 35 hand-curated trajectories (condition \textbf{V1}) regressed performance to 18/23 (78.3\%). Trace-level inspection identified two distinct contributing causes: a brittle single-pass tool-call parser that silently discarded malformed model output, and thin training coverage of multi-step, chained, and error-handling tool-use patterns. We then constructed a controlled ablation (condition \textbf{E4}) that evaluates the \emph{V1 adapter unchanged} behind the \emph{corrected two-pass parser}. E4 also scores 18/23 (78.3\%). Thus, on this benchmark, the parser correction produced \emph{zero net aggregate improvement} while changing the per-task composition of failures: two tasks were recovered (\code{multi\_three\_tools}, \code{adversarial\_false\_premise}) and two were newly lost (\code{multi\_search\_weather}, \code{adversarial\_chained\_search\_calc}). A subsequent intervention (condition \textbf{V2}) retained the corrected parser and added 11 targeted trajectories for the specific failure modes observed under V1, recovering all five remaining failures to reach 23/23. We interpret the V1$\to$E4 comparison as a clean estimate of the parser effect on this benchmark (0 net tasks) and the E4$\to$V2 comparison as an observation about targeted augmentation rather than as a randomized causal estimate, because the added trajectories were selected using knowledge of V1's failures. We make no generalization claim beyond the evaluated benchmark. We release all training trajectories, serving code, benchmark definitions, and result artifacts.
+End-to-end benchmark scores for tool-using language-model agents mix model capability, training data, and serving-layer and client infrastructure. We report a small case study on a fixed 23-task, machine-checkable multi-tool benchmark. The untuned Qwen2.5-7B-Instruct baseline scored 22/23 (95.7\%). QLoRA fine-tuning on 35 hand-curated trajectories (condition \textbf{V1}) regressed performance to 18/23 (78.3\%). We then re-evaluated the \emph{unchanged V1 adapter} behind a corrected two-pass tool-call parser (condition \textbf{E4}), and E4 also scored 18/23, with four task outcomes flipping: two recovered (\code{multi\_three\_tools}, \code{adversarial\_false\_premise}) and two newly lost (\code{multi\_search\_weather}, \code{adversarial\_chained\_search\_calc}). A post-hoc audit of the artifacts showed that E4 was scored with a different, notebook-local evaluation client. Its tool schemas, tool-call and tool-result serialization, and tool implementations all differed from the other conditions, and it ran two weeks later against live data. The V1$\to$E4 contrast therefore changes the parser \emph{and} the client, and it does not identify a parser-only effect. The V1 traces also show that the two ``recovered'' tasks did not fail because of dropped tool calls. A further intervention (condition \textbf{V2}) added 11 trajectories written after inspecting V1's failures on this benchmark, and retrained with different memory-related optimizer settings. V2 reached 23/23. We report this as an observation about a failure-informed intervention, not as a causal or generalizing result. The main lesson is methodological. Equal aggregate scores concealed per-task changes, and the infrastructure held ``constant'' between conditions has to be verified from artifacts rather than assumed. We release the trajectories, serving code, benchmark definitions, result files, and the notebook used for E4.
 \end{abstract}
 
 \noindent\textbf{Keywords:} tool use, function calling, QLoRA, fine-tuning regression, ablation study, parser reliability, agent evaluation, benchmark adaptation.
@@ -43,14 +43,14 @@ End-to-end benchmark scores for tool-using language-model agents conflate model 
 
 Large language models (LLMs) are increasingly deployed as agents that select tools, emit structured calls, receive tool outputs, and continue reasoning. The end-to-end score reported by any such system is a composite of many stages: prompt construction, model decoding, serialization of the tool call, extraction by a serving-layer parser, execution by the tool, and finally interpretation of the returned observation by the same model. When a benchmark score changes after an intervention---fine-tuning, prompt editing, parser change, or tool change---the aggregate number alone does not reveal which stage was responsible.
 
-This paper documents a concrete instance of that confound in a small, controlled setting. We fine-tuned Qwen2.5-7B-Instruct with QLoRA~\citep{dettmers2023qlora} on 35 hand-curated tool-use trajectories and observed a regression from the untuned baseline of 22/23 to 18/23 on a fixed 23-task benchmark. Trace-level inspection suggested two candidate causes: (i) a single-pass regex parser that could silently drop malformed but semantically correct tool calls, and (ii) insufficient training coverage of chained tool use, multi-tool synthesis, and error handling.
+This paper documents a concrete instance of that confound in a small, controlled setting. We fine-tuned Qwen2.5-7B-Instruct with QLoRA~\citep{dettmers2023qlora} on 35 hand-curated tool-use trajectories and observed a regression from the untuned baseline of 22/23 to 18/23 on a fixed 23-task benchmark. We considered two candidate causes: (i) a single-pass regex parser that could silently drop malformed but semantically correct tool calls, observed in a separate diagnostic run, and (ii) insufficient training coverage of chained tool use, multi-tool synthesis, and error handling.
 
-We then replaced the parser (holding the fine-tuned adapter and training data fixed) and re-evaluated. The resulting condition, \textbf{E4}, scores 18/23: identical to V1 in aggregate but composed of a different set of per-task outcomes. Replacing the parser alone recovered two tasks and broke two others. A subsequent condition, \textbf{V2}, retained the corrected parser and added 11 targeted training trajectories, achieving 23/23.
+We then replaced the parser (holding the fine-tuned adapter and training data fixed) and re-evaluated. The resulting condition, \textbf{E4}, scores 18/23: identical to V1 in aggregate but composed of a different set of per-task outcomes. Two tasks were recovered and two broke. As Section~\ref{sec:e4client} documents, E4 was also scored with a different evaluation client, so these flips cannot be attributed to the parser alone. A subsequent condition, \textbf{V2}, retained the corrected parser and added 11 targeted training trajectories, achieving 23/23.
 
 Our contributions are:
 \begin{enumerate}\itemsep2pt
-\item A controlled parser ablation (E4) that holds the adapter and training data fixed and varies only the serving-layer parser, providing a clean per-task and aggregate estimate of the parser's effect on the evaluated benchmark.
-\item A demonstration that aggregate accuracy can be invariant while failure composition changes: two tasks recovered and two tasks regressed under the parser change.
+\item An adapter-fixed ablation (E4) in which the serving-layer parser and, as run, the evaluation client changed. The aggregate score was unchanged while four task outcomes flipped.
+\item A concrete case in which aggregate accuracy was invariant while failure composition changed, together with an artifact-level audit showing that an intended single-factor ablation silently varied a second factor.
 \item An honest, reproducible record of a fine-tuning regression, its trace-level diagnosis, and a subsequent intervention, with the iterative nature of benchmark development disclosed.
 \item An open artifact package containing the training trajectories, serving code for both parsers, the 23-task benchmark, the scoring harness, and all result files.
 \end{enumerate}
@@ -71,7 +71,7 @@ We are interested in the contrast between two configurations that share an adapt
 \begin{equation}
 \Delta_{\mathrm{parser}}(A) = \mathrm{Acc}(A, P_{V2}) - \mathrm{Acc}(A, P_{V1}).
 \end{equation}
-The design in this paper estimates $\Delta_{\mathrm{parser}}$ for the specific adapter $A_{V1}$ trained on 35 trajectories. This is the E4 comparison. A separate contrast,
+The design \emph{intended} to estimate $\Delta_{\mathrm{parser}}$ for the adapter $A_{V1}$ trained on 35 trajectories; this is the E4 comparison. As run, E4 also changed the evaluation client $E$, so the observed contrast is $\mathrm{Acc}(A_{V1}, P_{V2}, E_{\mathrm{nb}}) - \mathrm{Acc}(A_{V1}, P_{V1}, E_{\mathrm{mcp}})$ rather than $\Delta_{\mathrm{parser}}$ (Section~\ref{sec:e4client}). A separate contrast,
 \begin{equation}
 \Delta_{\mathrm{data}} = \mathrm{Acc}(A_{V2}, P_{V2}) - \mathrm{Acc}(A_{V1}, P_{V2}),
 \end{equation}
@@ -79,7 +79,7 @@ measures the combined effect of changing the adapter and adding 11 targeted traj
 
 \subsection{Research questions}
 
-\noindent\textbf{RQ1.} On a fixed benchmark, what is the net aggregate effect of replacing the V1 parser with the V2 two-pass parser while holding the V1 adapter and training data constant?
+\noindent\textbf{RQ1.} On a fixed benchmark, what is the net aggregate effect of replacing the V1 parser with the V2 two-pass parser while holding the V1 adapter and training data constant? (As run, E4 answers a weaker version of this question; see Section~\ref{sec:e4client}.)
 
 \noindent\textbf{RQ2.} Does that replacement change the composition of per-task failures even when the aggregate does not change?
 
@@ -202,7 +202,7 @@ V2   & V2       & 46 trajectories  & V2 & 23/23 \\
 \end{tabular}
 \end{table}
 
-The E4 condition holds the adapter and training data equal to V1, and changes only the parser to the V2 version.
+The E4 condition was designed to hold the adapter and training data equal to V1 and change only the parser to the V2 version. As run, it also used a different evaluation client (Section~\ref{sec:e4client}).
 
 \section{Experimental Setup}
 \label{sec:setup}
@@ -214,9 +214,8 @@ and data hyperparameter is shared. Three memory-related settings are not: the V2
 script additionally enables gradient checkpointing, disables the KV cache, and
 passes a paged 8-bit AdamW optimizer explicitly, because the 46-trajectory run
 had to fit in the 15\,GB budget of a free-tier T4. The V1 script does not set
-these and therefore uses the \texttt{Trainer} default optimizer. We record the
-difference because it does not affect the E4 ablation, which varies only the
-parser, but it does mean that the E4$\to$V2 contrast changes the adapter, the
+these and therefore uses the \texttt{Trainer} default optimizer. This difference does not enter the V1$\to$E4 contrast, because E4 reuses the V1
+adapter, but it does mean that the E4$\to$V2 contrast changes the adapter, the
 training data, and these optimizer settings simultaneously
 (Section~\ref{sec:data}).
 
@@ -315,31 +314,41 @@ Each task's success predicate is checked against the full execution trace: (i) r
 
 \subsection{Evaluation protocol}
 
-All four conditions were evaluated with the same benchmark, \code{max\_steps = 3}, greedy decoding (\code{do\_sample=False}), and the same tool surface and tool schemas. The Tavily API key was active for all runs; no tool is mocked.
+All four conditions were evaluated with the same benchmark, the same scoring function, \code{max\_steps = 3}, and greedy decoding (\code{do\_sample=False}). The Tavily API key was active for all reported runs, and no tool is mocked. Base, V1, and V2 were run on 2026-09-01 with the local client \code{ft\_agent.py}, which executes tools through an MCP server. E4 was not.
+
+\subsection{How E4 was actually evaluated}
+\label{sec:e4client}
+
+The reported E4 score comes from an evaluation loop written inside the Colab notebook (\code{notebooks/colab\_e4\_session.ipynb}, cell~16), run on 2026-09-16. That loop imports the same tasks and \code{score\_task} and uses \code{max\_steps = 3}, but it differs from \code{ft\_agent.py} in four ways:
+\begin{enumerate}\itemsep1pt
+\item its tool schemas carry minimal descriptions;
+\item tool calls are returned to the model as OpenAI-style \code{tool\_calls} and tool results as \code{\{"result": ...\}} JSON, instead of \code{<tool\_call>} text and provider-formatted strings;
+\item tools are notebook-local functions, and only exceptions count as tool errors;
+\item there is no client-side re-parse of the model text.
+\end{enumerate}
+Every multi-step task therefore saw a different context from step~2 onward. Live search and weather results also differed between the two dates. The notebook additionally contains an E4 run made without a working search key, which scored 13/23. The reported run is the one with the key working. A client-matched E4 (\code{evaluation/run\_eval\_e4.py}) was not run.
 
 \section{Failure Analysis}
 
-We attribute each of the six discriminating tasks to a mechanism based on trace inspection and the parser design.
+V1 and V2 recorded full traces; E4 recorded pass/fail only. We therefore describe V1 behavior from its traces and make no mechanism claim for E4.
 
-\subsection{Parser-recovered tasks}
+\subsection{Tasks that flipped between V1 and E4}
 
-\paragraph{\code{adversarial\_false\_premise}.} The task requires the model to search for a fictional entity's GDP and explicitly reject the false premise. Under V1, the model emitted a malformed \code{<tool\_call>} block; the single-pass parser dropped the call; the server treated the output as a final answer that failed the required-content predicate. Under E4, the two-pass parser recovered the search call, the tool returned no reliable result, and the model produced a final answer containing the required fictional-premise acknowledgment. \emph{Attribution: parser.}
+\paragraph{\code{multi\_three\_tools} (V1 fail $\to$ E4 pass).} In V1 the model called all three required tools (\code{get\_weather}, \code{calculator}, \code{web\_search}) but used all three steps and hit the step budget. No call was dropped by the parser.
 
-\paragraph{\code{multi\_three\_tools}.} The task requires three parallel tool calls and a final synthesis. Under V1, the parser dropped one of the three calls, and the model exhausted its step budget before producing a synthesis. Under E4, the two-pass parser recovered the missing call, and the model completed the task within budget. \emph{Attribution: parser.}
+\paragraph{\code{adversarial\_false\_premise} (V1 fail $\to$ E4 pass).} In V1 the model called \code{web\_search} and then answered without acknowledging that the country is fictional, which failed the content predicate. No call was dropped by the parser.
 
-\subsection{Parser-regressed tasks}
+\paragraph{\code{multi\_search\_weather}, \code{adversarial\_chained\_search\_calc} (V1 pass $\to$ E4 fail).} In V1 both tasks called all required tools and passed.
 
-\paragraph{\code{multi\_search\_weather}.} Under V1, the malformed tool call caused the parser to return no calls; the model answered directly, and the answer happened to satisfy the task's predicates. Under E4, the two-pass parser correctly extracted the \code{web\_search} call; the model then failed to also call \code{get\_weather} in the remaining turns and exhausted the budget. \emph{Attribution: parser-induced change in execution trace.}
+The four flips are what was observed when the parser and the evaluation client changed together. Neither the V1 traces nor the E4 artifacts identify the parser as their cause.
 
-\paragraph{\code{adversarial\_chained\_search\_calc}.} Same mechanism. Under V1, the parser's silent failure produced a direct answer that happened to be numerically correct. Under E4, the parser correctly extracted the search call, and the model's subsequent multi-step path exceeded the step budget. \emph{Attribution: parser-induced change in execution trace.}
+\subsection{Failures shared by V1 and E4}
 
-\subsection{Unchanged failures}
+\paragraph{\code{multi\_wordcount\_calc}.} In V1 the model calls \code{word\_count} but performs the multiplication in prose rather than with the calculator, which fails the required-tool check.
 
-\paragraph{\code{multi\_wordcount\_calc}.} Under both V1 and E4 the model calls \code{word\_count} but performs the multiplication in prose rather than via the calculator. The predicate requires the calculator in the trace. \emph{Attribution: model behavior, not parser.}
+\paragraph{\code{chain\_weather\_then\_calc}.} In V1 the model calls \code{get\_weather} but computes the Celsius-to-Fahrenheit conversion in text.
 
-\paragraph{\code{chain\_weather\_then\_calc}.} Under both conditions the model calls \code{get\_weather} but computes the Celsius-to-Fahrenheit conversion in text. \emph{Attribution: model behavior, not parser.}
-
-\paragraph{\code{adversarial\_division\_by\_zero}.} The task requires the model to invoke the calculator with a division-by-zero expression and acknowledge the resulting error. Under Base, V1, and E4 the model answers in prose without calling the calculator. \emph{Attribution: model behavior; not recovered by parser change.}
+\paragraph{\code{adversarial\_division\_by\_zero}.} The task requires a calculator call that raises an error. In Base and V1 the model answers in prose without calling the calculator.
 
 \section{Results}
 
@@ -360,10 +369,10 @@ V2   & V2 (46) & V2 & 23/23 & 100.0\% \\
 \end{tabular}
 \end{table}
 
-Two decompositions follow directly:
+Two contrasts follow; neither isolates a single factor:
 \begin{itemize}\itemsep2pt
-\item \textbf{Parser effect:} $\Delta_{\mathrm{parser}}(A_{V1}) = 18/23 - 18/23 = 0$ net tasks.
-\item \textbf{Data effect:} $\mathrm{Acc}(A_{V2}, P_{V2}) - \mathrm{Acc}(A_{V1}, P_{V2}) = 23/23 - 18/23 = +5$ tasks.
+\item \textbf{V1$\to$E4 (parser and client changed):} $18/23 - 18/23 = 0$ net tasks, with 2 recovered and 2 regressed.
+\item \textbf{E4$\to$V2 (adapter retrained; client also differs):} $23/23 - 18/23 = +5$ tasks.
 \end{itemize}
 
 \begin{figure}[t]
@@ -431,20 +440,18 @@ Task ID & Category & Base & V1 & E4 & V2 & $\Delta_1$ & $\Delta_2$ \\
 \end{tabular}
 \end{table*}
 
-\section{Controlled Parser Ablation}
+\section{Adapter-Fixed Ablation (E4)}
 \label{sec:parser}
-
-The V1$\to$E4 comparison is the cleanest evidence in this study.
 
 \begin{quote}
 \itshape
-On the 23-task benchmark, replacing the V1 single-pass parser with the V2 two-pass parser, while holding the V1 adapter and training data fixed, produced \textbf{zero net change in aggregate accuracy} (18/23 $\to$ 18/23).
+On the 23-task benchmark, with the V1 adapter and training data fixed, replacing the V1 single-pass parser with the V2 two-pass parser, together with the change of evaluation client described in Section~\ref{sec:e4client}, produced \textbf{zero net change in aggregate accuracy} (18/23 $\to$ 18/23).
 \end{quote}
 
-Two observations complicate but do not weaken this result:
+Two qualifications apply:
 \begin{enumerate}\itemsep2pt
-\item The parser change did affect specific tasks. Two tasks that V1 failed were recovered; two tasks that V1 passed were regressed.
-\item The parser's correct extraction can drive the model down an execution path that happens to exceed the step budget. The \code{multi\_search\_weather} and \code{adversarial\_chained\_search\_calc} regressions are examples.
+\item Specific tasks changed. Two tasks that V1 failed were recovered, and two tasks that V1 passed regressed.
+\item The cause of each flip is not identified. E4 recorded no traces, and the parser, the client, and the live tool data all changed between the two runs.
 \end{enumerate}
 
 \begin{figure}[t]
@@ -459,9 +466,9 @@ Two observations complicate but do not weaken this result:
 \node[below] at (1,-0.1) {\scriptsize $+2$};
 \node[below] at (3,-0.1) {\scriptsize $-2$};
 \node[below] at (5,-0.1) {\scriptsize $=0$};
-\node[above] at (3,1.4) {\textbf{V1 $\to$ E4 (parser only)}};
+\node[above] at (3,1.4) {\textbf{V1 $\to$ E4 (parser + client)}};
 \end{tikzpicture}
-\caption{Per-task transitions under the parser ablation. Recoveries and regressions cancel exactly.}
+\caption{Per-task transitions from V1 to E4 (parser and evaluation client changed). Recoveries and regressions cancel exactly.}
 \label{fig:parser}
 \end{figure}
 
@@ -474,6 +481,7 @@ The E4$\to$V2 transition retains the corrected parser and changes the adapter fr
 \item The adapter change and the training-data change are inseparable here.
 \item The V2 training script also enables gradient checkpointing, disables the KV cache, and uses a paged 8-bit optimizer that the V1 script does not (Table~\ref{tab:train}), so the two runs are not separated along the training axis alone.
 \item No seeds, no repetitions, and no held-out benchmark are available in this study.
+\item E4 and V2 were scored with different evaluation clients (Section~\ref{sec:e4client}).
 \end{enumerate}
 
 \begin{quote}
@@ -503,13 +511,13 @@ The defensible statement is: on the evaluated benchmark, retraining on 46 trajec
 \section{Discussion}
 \label{sec:discussion}
 
-\subsection{Interpreting the parser ablation}
+\subsection{Interpreting E4}
 
-The E4 result is the cleanest evidence in the study. On the 23-task benchmark, replacing the V1 single-pass parser with the V2 two-pass parser, while holding the V1 adapter and training data fixed, produced zero net change in aggregate accuracy. The parser change did affect specific tasks: two were recovered and two were regressed. The parser's correct extraction can drive the model down an execution path that happens to exceed the step budget.
+E4 was designed as the cleanest contrast in the study, but as run it is not. On the 23-task benchmark, with the V1 adapter fixed, changing both the parser and the evaluation client produced zero net change in aggregate accuracy while four tasks flipped. Because the client changed the prompt context of every multi-step task, and the flipped tasks are all multi-step, the client is at least as plausible a cause as the parser. A client-matched re-run is the necessary next experiment.
 
 \subsection{Interpreting the E4$\to$V2 transition}
 
-The E4$\to$V2 transition retains the corrected parser and changes the adapter. It recovers all five E4 failures. We state this as an observation, not as a randomized causal estimate, for the three reasons given in Section~\ref{sec:data}.
+The E4$\to$V2 transition retains the corrected parser and changes the adapter. It recovers all five E4 failures. We state this as an observation, not as a randomized causal estimate, for the reasons given in Section~\ref{sec:data}.
 
 \subsection{Aggregate invariance and failure redistribution}
 
@@ -517,12 +525,12 @@ The V1$\to$E4 result illustrates a general point for agent evaluation: an aggreg
 
 \subsection{Why fine-tuning can regress}
 
-V1's drop from 22/23 to 18/23 is not fully explained by the parser defect. Of V1's five failures, three persist under the corrected parser in E4. The study does not identify whether this is catastrophic forgetting, overfitting, or a coverage gap; it identifies the patterns that regressed and the training data that did not cover them.
+V1's drop from 22/23 to 18/23 is not explained by parser drops in the recorded V1 run. Its five failures are a missing calculator call (two tasks), step-budget exhaustion, missing false-premise wording, and not calling the calculator for division by zero. The study does not identify whether this is catastrophic forgetting, overfitting, or a coverage gap; it identifies the patterns that regressed and the training data that did not cover them.
 
 \section{Threats to Validity}
 \label{sec:threats}
 
-\textbf{Internal validity.} The E4 comparison is a clean controlled contrast: adapter and training data are fixed; only the parser changes. The E4$\to$V2 comparison is not a clean causal contrast: the added data was authored using knowledge of V1 failures, and the V2 training script additionally changes the optimizer and gradient-checkpointing settings (Table~\ref{tab:train}). Environmental variance from live web search is uncontrolled.
+\textbf{Internal validity.} The E4 comparison holds the adapter and training data fixed, but the evaluation client, the tool implementations, and the run date also changed (Section~\ref{sec:e4client}), so it is not a single-factor contrast. The E4$\to$V2 comparison is not a clean causal contrast: the added data was authored using knowledge of V1 failures, and the V2 training script additionally changes the optimizer and gradient-checkpointing settings (Table~\ref{tab:train}). Environmental variance from live web search is uncontrolled.
 
 \textbf{External validity.} Results are on a single model family (Qwen2.5-7B-Instruct) and a single 23-task benchmark with four tools. Generalization to other models, benchmarks, or tool surfaces is not tested.
 
@@ -532,7 +540,7 @@ V1's drop from 22/23 to 18/23 is not fully explained by the parser defect. Of V1
 
 \textbf{Evaluation validity.} The 23-task benchmark was used iteratively during development. The V2 augmentation was designed after observing V1's failures. A fresh held-out benchmark is required for a generalization claim; we do not make one.
 
-\textbf{Reproducibility validity.} Python 3.11.9, torch 2.13.0+cpu, transformers 5.15.1, peft 0.20.0, accelerate 1.14.0 are recorded. Colab CUDA and driver versions were not recorded. Random seeds for training and evaluation were not set.
+\textbf{Reproducibility validity.} The local evaluation environment is recorded (Python 3.11.9, torch 2.13.0+cpu, transformers 5.15.1, peft 0.20.0, accelerate 1.14.0). The Colab training and serving package versions, CUDA version, and driver version were not recorded. Random seeds for training and evaluation were not set.
 
 \section{Limitations}
 
@@ -545,14 +553,15 @@ V1's drop from 22/23 to 18/23 is not fully explained by the parser defect. Of V1
 \item \textbf{Retraining is not isolated.} The V2 run differs from V1 in training data and in three memory-related optimizer settings; no run isolates the data change on its own.
 \item \textbf{Greedy decoding only.}
 \item \textbf{Real external-tool variability.}
-\item \textbf{E4 trace incompleteness.} E4 result artifacts record pass/fail per task but not the full per-task traces.
+\item \textbf{E4 is not client-matched.} E4 used a notebook-local evaluation loop and tools, and it records pass/fail only, with no traces.
+\item \textbf{Uneven predicate strength.} Seven tasks check only that tools were called, and one no-tool task has no positive check.
 \end{itemize}
 
-The 23/23 V2 result means ``23/23 on the evaluated benchmark.'' It does not mean the model generalizes perfectly, that the augmentation caused the improvement in a randomized sense, or that the parser fix mattered in general.
+The 23/23 V2 result means ``23/23 on the evaluated benchmark.'' It does not mean the model generalizes perfectly, that the augmentation caused the improvement in a randomized sense, or that the parser fix mattered (or did not matter) in general.
 
 \section{Reproducibility and Artifact Availability}
 
-All artifacts are available at \url{https://github.com/alyssa2ai/AGENTRUN}:
+All artifacts are available in an anonymized repository (URL withheld for review):
 \begin{itemize}\itemsep2pt
 \item \code{eval/tasks.py} --- 23-task benchmark definitions.
 \item \code{eval/harness.py} --- scoring logic.
@@ -561,19 +570,19 @@ All artifacts are available at \url{https://github.com/alyssa2ai/AGENTRUN}:
 \item \code{serving/colab\_server.py}, \code{serving/colab\_server\_e4.py}, \code{serving/colab\_server\_v2.py} --- serving code.
 \item \code{results/eval\_results\_\{base,v1,e4,v2\}.json} --- raw per-condition results.
 \item \code{results/experiment\_summary.json} --- full matrix and provenance.
-\item \code{results/verify\_results.py} --- recomputes every reported tally and per-task transition from the committed result files.
-\item \code{provenance/experiment\_provenance.json} --- machine-readable provenance record, including which metadata could not be verified.
+\item \code{results/verify\_results.py} --- recomputes every reported tally and transition from the committed result files.
+\item \code{provenance/experiment\_provenance.json} --- provenance record with per-field verification labels.
 \end{itemize}
 
 \textbf{Missing metadata} (flagged rather than guessed): exact Colab CUDA and driver versions; training and evaluation random seeds; exact wall-clock timestamp of the E4 run.
 
 \section{Conclusion}
 
-We presented a controlled ablation of a serving-layer parser in a small tool-using LLM agent. On the evaluated 23-task benchmark, replacing the V1 single-pass parser with a V2 two-pass parser, holding the fine-tuned adapter and training data fixed, produced zero net aggregate improvement while changing the composition of per-task outcomes. A subsequent intervention retained the corrected parser and introduced 11 targeted training trajectories, recovering all five remaining failures. We interpret the first result as a clean estimate of the parser effect on this benchmark and the second as a benchmark-specific observation that does not support a causal or generalizing claim.
+We presented a small case study of fine-tuning a tool-using LLM agent. On the evaluated 23-task benchmark, with the fine-tuned adapter fixed, replacing the V1 single-pass parser with a V2 two-pass parser, together with an unplanned change of evaluation client, produced zero net aggregate change while four per-task outcomes flipped. A subsequent failure-informed intervention, with 11 targeted trajectories and retraining, recovered all five remaining failures. Neither contrast isolates a single factor. Both are benchmark-specific observations that do not support causal or generalizing claims.
 
-Three recommendations follow. First, when multiple changes are made between reported conditions, run a controlled ablation that isolates each change. Second, report per-task outcomes alongside aggregate scores; equal aggregates can hide opposite-sign per-task effects. Third, treat targeted training-data augmentation as a legitimate but not blindly causal intervention; if the augmentation was informed by observed failures on the evaluation set, disclose that.
+Three recommendations follow. First, when multiple changes are made between reported conditions, run a controlled ablation that isolates each change, and verify from the artifacts, not from the plan, that everything else was held fixed. Second, report per-task outcomes alongside aggregate scores; equal aggregates can hide opposite-sign per-task effects. Third, treat targeted training-data augmentation as a legitimate but not blindly causal intervention; if the augmentation was informed by observed failures on the evaluation set, disclose that.
 
-Future work should include multi-seed evaluation, a fresh held-out benchmark with novel task instances, a random-augmentation control, and cross-model replication. None of these are prerequisites for the claim we make; they are prerequisites for a stronger claim we deliberately do not make.
+Future work should include a client-matched E4 re-run, multi-seed evaluation, a fresh held-out benchmark with novel task instances, a random-augmentation control, and cross-model replication. None of these are prerequisites for the claim we make; they are prerequisites for a stronger claim we deliberately do not make.
 
 \bibliographystyle{plainnat}
 \bibliography{references}

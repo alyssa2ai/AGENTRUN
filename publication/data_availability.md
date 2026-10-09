@@ -2,7 +2,7 @@
 
 All training trajectories, benchmark definitions, and result files are
 available in the project repository at
-https://github.com/Alyssa-286/AGENTRUN.
+https://github.com/alyssa2ai/AGENTRUN.
 
 No external dataset was used for training; all trajectories were
 authored for this project. The benchmark was authored for this project.

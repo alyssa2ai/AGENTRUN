@@ -9,6 +9,11 @@
 > Two known corrections are applied here as well: the repository URL, and the
 > fact that the V1 and V2 training runs did **not** use an identical optimizer
 > and gradient-checkpointing configuration (see §4.1).
+>
+> **Not corrected here (2026-10-09):** this draft treats E4 as a parser-only
+> ablation and gives per-task parser mechanisms. Both are unsupported. E4 was
+> scored with a notebook-local evaluation client, and the V1 traces contradict
+> the parser-drop explanations. See `docs/e4-experiment-guide.md`.
 
 **Author:** Alyssa  
 **Date:** 2026-09-17  

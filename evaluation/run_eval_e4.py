@@ -2,7 +2,10 @@
 run_eval_e4.py — Run the benchmark against V1 adapter + fixed parser (Experiment E4).
 
 This evaluates the V1 LoRA adapter (35 trajectories) using the V2 two-pass parser.
-It isolates the parser effect: same model, same benchmark, different parser.
+Run through ft_agent.py + MCP like the Base/V1/V2 runners, it gives a
+client-matched E4 in which only the parser changes. Note: this script was NOT
+used for the reported E4 score (18/23), which came from a notebook-local loop
+with a different tool stack; see docs/e4-experiment-guide.md.
 
 Usage:
     python run_eval_e4.py

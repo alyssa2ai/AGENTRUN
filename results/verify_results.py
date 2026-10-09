@@ -102,22 +102,28 @@ lines += ["", f"Benchmark task IDs identical across all four conditions: **{'YES
  "## Per-task outcomes", "", "| task_id | Base | V1 | E4 | V2 |", "|---|---|---|---|---|"]
 for r in table:
     lines.append(f"| {r['task_id']} | {r['Base']} | {r['V1']} | {r['E4']} | {r['V2']} |")
-lines += ["", "## V1 -> E4 transitions (parser effect, adapter held constant)", ""]
+lines += ["", "## V1 -> E4 transitions (adapter held constant; parser changed)", "",
+          "E4 was scored with a notebook-local evaluation loop whose tool stack differs "
+          "from the Base/V1/V2 client, so these transitions are not a parser-only effect "
+          "(see docs/e4-experiment-guide.md).", ""]
 if v1_to_e4:
     for t, a, b in v1_to_e4:
         lines.append(f"- `{t}`: {'PASS' if a else 'fail'} -> {'PASS' if b else 'fail'}")
 else:
     lines.append("- none")
-lines += ["", f"Net E4 effect: {sum(1 for _,a,b in v1_to_e4 if not a and b)} recovered, "
+lines += ["", f"Net V1 -> E4 change: {sum(1 for _,a,b in v1_to_e4 if not a and b)} recovered, "
           f"{sum(1 for _,a,b in v1_to_e4 if a and not b)} regressed, "
           f"net {data['E4']['passed'] - data['V1']['passed']:+d}.",
-          "", "## E4 -> V2 transitions (data effect, parser held constant)", ""]
+          "", "## E4 -> V2 transitions (parser held constant; adapter retrained; client differs)", "",
+          "V2 changes the training data (35 -> 46, failure-informed) and the optimizer/"
+          "memory settings together (see provenance/hyperparameters.md), and V2 was "
+          "scored with ft_agent.py + MCP while E4 used the notebook loop.", ""]
 if e4_to_v2:
     for t, a, b in e4_to_v2:
         lines.append(f"- `{t}`: {'PASS' if a else 'fail'} -> {'PASS' if b else 'fail'}")
 else:
     lines.append("- none")
-lines += ["", f"Net data effect: {data['V2']['passed'] - data['E4']['passed']:+d}.",
+lines += ["", f"Net E4 -> V2 change: {data['V2']['passed'] - data['E4']['passed']:+d}.",
           "", "## Issues", ""]
 lines += ([f"- {i}" for i in issues] if issues else ["- None. All tallies match reported values."])
 with open(os.path.join(RESULTS, "..", "RESULTS_VERIFIED.md"), "w") as f:

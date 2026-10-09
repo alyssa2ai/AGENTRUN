@@ -2,7 +2,7 @@
 
 Training scripts, serving scripts for the V1, E4, and V2 conditions, and
 the evaluation harness are released at
-https://github.com/Alyssa-286/AGENTRUN.
+https://github.com/alyssa2ai/AGENTRUN.
 
 File map:
 

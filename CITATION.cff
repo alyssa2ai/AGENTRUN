@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: >-
+  If you use this software or its results, please cite the preprint listed
+  under preferred-citation.
+title: "AGENTRUN"
+abstract: >-
+  QLoRA fine-tuning of Qwen2.5-7B-Instruct for MCP-based multi-tool use,
+  evaluated on a fixed 23-task benchmark, with a controlled parser-only
+  ablation (E4) separating serving-layer parser effects from adapter effects.
+type: software
+authors:
+  - family-names: "L"
+    given-names: "Alyssa"
+repository-code: "https://github.com/alyssa2ai/AGENTRUN"
+license: MIT
+keywords:
+  - tool use
+  - function calling
+  - QLoRA
+  - LLM agents
+  - ablation study
+  - Model Context Protocol
+preferred-citation:
+  type: article
+  status: preprint
+  title: "AGENTRUN: Failure-Driven QLoRA Specialization for Multi-Tool Agent Behavior in a 7B Language Model"
+  authors:
+    - family-names: "L"
+      given-names: "Alyssa"
+  year: 2026
+  month: 9
+  publisher:
+    name: "Zenodo"
+  doi: "10.5281/zenodo.22346935"
+  url: "https://doi.org/10.5281/zenodo.22346935"
