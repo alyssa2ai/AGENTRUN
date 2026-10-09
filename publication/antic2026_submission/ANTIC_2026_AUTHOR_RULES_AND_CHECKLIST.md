@@ -72,7 +72,7 @@ The ANTIC brochure link on the website (`/static/files/ANTIC2026brochure.pdf`) r
 | Abstract of 150–250 words; no footnotes in the abstract. | Mandatory | S3 `samplepaper.tex`, S5 §4.7 | ✅ 218 words; no footnotes |
 | Keywords via `\keywords`. | Template | S3 | ✅ 6 keywords |
 | Table captions above tables, figure captions below figures; every figure and table referenced in the text; captions that are not full sentences have no final period. | Mandatory | S5 §4.5 | ✅ |
-| Vector graphics; lettering of at least 6 pt; legible in black and white; line art ≥ 800 dpi if raster. | Mandatory | S5 §4.5 | ✅ all figures vector; smallest lettering 6 pt at final size; greyscale-safe (hatching, grey fill, text labels) |
+| Vector graphics; lettering of at least 6 pt; legible in black and white; line art ≥ 800 dpi if raster. | Mandatory | S5 §4.5 | ✅ all figures vector; smallest lettering 6 pt at final size. Revision 2 uses restrained Okabe–Ito colour, which Springer welcomes in the electronic version (S5 §4.5, Remark 1), and each figure was checked in greyscale. Every distinction also has a non-colour cue: dashed borders, hatching or text labels. |
 | No colour in text, tables or equations. | Mandatory | S5 §4.5 | ✅ (`hyperref` with `hidelinks`) |
 | Tables and equations editable, not images. | Mandatory | S5 §4.5 | ✅ |
 | Equations numbered consecutively, without section counters. | Mandatory | S5 §4.6 | ✅ (one numbered equation) |
@@ -89,7 +89,7 @@ The ANTIC brochure link on the website (`/static/files/ANTIC2026brochure.pdf`) r
 | Rule | Type | Source | Status |
 |---|---|---|---|
 | Author names final at submission; no additions, removals or reordering after delivery to Springer. | Mandatory | S1, S5 §4.1, §5.1 | ⚠️ single author "Alyssa L", taken from the existing manuscript and preprint. Confirm this is the complete author list. |
-| Names written out in full; given name before surname. | Mandatory | S5 §5.2 | ⚠️ "L" looks like an initial. Springer asks for names in full; if you have a single main name, confirm how it should appear in the running head and author index. |
+| Names written out in full; given name before surname. | Mandatory | S5 §5.2 | ⚠️ The source has `\author{Alyssa L}` / `\authorrunning{A. L}`, matching the preprint and Zenodo ("L, Alyssa"). Springer's rules: full names, given name first; running head "initials surname"; author index "surname, given name"; a single main name must appear in full in the running head. Not changed. If "L" is an initial, the full surname is required; if it is the full surname, the current form complies. Needs your confirmation. |
 | Only real, accountable humans may be authors; AI tools cannot be authors. | Mandatory | S5 §5.2, S8 | ✅ |
 | Corresponding author clearly marked in the header; e-mail address mandatory; only one corresponding author. | Mandatory | S5 §4.1 | ✅ e-mail included; sole author. Springer adds the envelope symbol in typesetting (S5 §6.2). |
 | ORCID next to author names. | Recommended | S1, S5 §5.3, S8 | ⚠️ no ORCID in the repository; add `\orcidID{...}` if you have one |
@@ -134,4 +134,4 @@ The ANTIC brochure link on the website (`/static/files/ANTIC2026brochure.pdf`) r
 3. ⛔ **Meteor submission fields and file requirements.** Visible only after logging in.
 4. ⚠️ **Author name in full, ORCID, AI-use disclosure scope, competing-interest and funding statements.** All need your confirmation.
 5. ⚠️ **"MathPhySci" versus `splncs04`.** `splncs04` follows both official templates.
-6. ⚠️ **Page size.** The PDF is US Letter, the TeX default and the same as Springer's own compiled sample. Springer re-typesets, so this is informational.
+6. ✅ **Page size (resolved, revision 2).** The ANTIC-hosted `llncs.cls` sets only the 122 × 193 mm printing area, with no paper size. The official `samplepaper.tex`, compiled unchanged, gives US Letter, as does Springer's own compiled sample. The class documentation advises against layout packages such as `a4wide`. The submission therefore follows the template: US Letter, text block measured at exactly 122.0 × 193.0 mm.
