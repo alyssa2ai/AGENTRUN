@@ -185,7 +185,7 @@ OPEN_PATTERN = r'r"<tool_call>\s*(\{.*?\})"'
 
 
 def _read_serving(name: str) -> str:
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "serving", name)
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "serving", name)
     with open(path, encoding="utf-8") as f:
         return f.read()
 

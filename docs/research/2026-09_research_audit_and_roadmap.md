@@ -1,5 +1,13 @@
 # AGENTRUN 2.0 — Research Audit, Novelty Assessment & Roadmap
 
+> **Historical document (September 2026, written before E4).** This file was
+> moved from the repository root during the 2026-10 clean-up and is kept
+> unchanged below as a record of the planning state at that time. Several items
+> have since been resolved. The hyperparameter mismatch was fixed, the Zenodo
+> DOI resolves (preprint, 2026-09-05), and E4 has been run (18/23). Venue plans
+> in §L–M are superseded: the WI-IAT submission was withdrawn on 2026-10-09.
+> For the current state see the README and `docs/experiment-log.md`.
+
 *Prepared as a research-scientist / reproducibility-auditor pass over `alyssa2ai/AGENTRUN`, the linked Zenodo record, and the public `alyssa2ai` portfolio. Grounded in what was actually inspected (README.md, docs/reproducibility.md, full repo file tree, GitHub profile). Where I could not inspect something directly (individual `.py` files, the Zenodo PDF itself, the other 15 repos in depth), I say so explicitly rather than guessing.*
 
 ---
