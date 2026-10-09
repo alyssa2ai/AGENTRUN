@@ -17,7 +17,6 @@ Inputs/outputs are relative to this file's location (the training/ directory).
 import json
 import os
 import sys
-from pathlib import Path
 
 # Paths are relative to this script's location (training/)
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -234,7 +233,8 @@ NEW_EXAMPLES = [
 
 def load_eval_prompts() -> set[str]:
     """Return set of lowercase eval task prompt substrings for overlap check."""
-    sys.path.insert(0, ".")
+    # Repository root, so this works from training/ (as documented) or the root.
+    sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     from eval.tasks import TASKS  # type: ignore[import]
     prompts = set()
     for t in TASKS:
@@ -294,7 +294,8 @@ def main():
     new_prompts = [ex["messages"][1]["content"] for ex in NEW_EXAMPLES]
     with open("training_data_prompts_augmented.py", "w", encoding="utf-8") as f:
         f.write('"""\ntraining_data_prompts_augmented.py — new prompts added to the training set.\n\n'
-                'These are the 10 additional prompts in training_data_augmented.jsonl.\n"""\n\n')
+                f'These are the {len(new_prompts)} additional prompts in training_data_augmented.jsonl\n'
+                f'({len(existing)} original + {len(new_prompts)} = {len(augmented)} trajectories).\n"""\n\n')
         f.write("NEW_TRAINING_PROMPTS: list[str] = [\n")
         for p in new_prompts:
             f.write(f"    {p!r},\n")

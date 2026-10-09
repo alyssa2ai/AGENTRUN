@@ -1,0 +1,41 @@
+name: tests
+
+# CPU-only checks: parser/scoring/benchmark unit tests, result-artifact
+# consistency, and lint. No GPU, model download, network tool, or API key.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install test tooling
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Lint
+        run: ruff check .
+
+      - name: Unit and consistency tests
+        run: python -m pytest
+
+      - name: Recompute reported results and check committed copies are current
+        run: |
+          python results/verify_results.py > /dev/null
+          git diff --exit-code -- RESULTS_VERIFIED.md results/results_verified.json results/results_verified.csv
+
+      - name: Notebook is valid JSON with no live credentials
+        run: |
+          python -c "import json; json.load(open('notebooks/colab_e4_session.ipynb', encoding='utf-8'))"
+          ! grep -nE 'tvly-dev-[A-Za-z0-9]|[0-9A-Za-z]{20,}_[0-9A-Za-z]{20,}' notebooks/colab_e4_session.ipynb

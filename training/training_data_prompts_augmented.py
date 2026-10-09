@@ -1,7 +1,8 @@
 """
 training_data_prompts_augmented.py — new prompts added to the training set.
 
-These are the 10 additional prompts in training_data_augmented.jsonl.
+These are the 11 additional prompts in training_data_augmented.jsonl
+(35 original + 11 = 46 trajectories).
 """
 
 NEW_TRAINING_PROMPTS: list[str] = [
