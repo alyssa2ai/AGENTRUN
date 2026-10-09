@@ -19,7 +19,7 @@ data = {}
 issues = []
 for cond, fname in CONDITIONS:
     path = os.path.join(RESULTS, fname)
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         d = json.load(f)
     rows = d["results"]
     tally = sum(1 for r in rows if r.get("success") or r.get("passed"))
@@ -71,8 +71,8 @@ e4_to_v2 = [(tid, data["E4"]["tasks"][tid], data["V2"]["tasks"][tid])
 
 # write CSV
 csv_path = os.path.join(RESULTS, "results_verified.csv")
-with open(csv_path, "w", newline="") as f:
-    w = csv.writer(f)
+with open(csv_path, "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f, lineterminator="\n")  # LF on every OS, so CI can diff it
     w.writerow(["task_id", "Base", "V1", "E4", "V2"])
     for r in table:
         w.writerow([r["task_id"], r["Base"], r["V1"], r["E4"], r["V2"]])
@@ -85,7 +85,7 @@ summary = {
     "e4_to_v2_changes": [{"task_id": t, "E4": "PASS" if a else "fail", "V2": "PASS" if b else "fail"} for t, a, b in e4_to_v2],
     "issues": issues,
 }
-with open(os.path.join(RESULTS, "results_verified.json"), "w") as f:
+with open(os.path.join(RESULTS, "results_verified.json"), "w", newline="\n", encoding="utf-8") as f:
     json.dump(summary, f, indent=2)
 
 # markdown report
@@ -126,7 +126,7 @@ else:
 lines += ["", f"Net E4 -> V2 change: {data['V2']['passed'] - data['E4']['passed']:+d}.",
           "", "## Issues", ""]
 lines += ([f"- {i}" for i in issues] if issues else ["- None. All tallies match reported values."])
-with open(os.path.join(RESULTS, "..", "RESULTS_VERIFIED.md"), "w") as f:
+with open(os.path.join(RESULTS, "..", "RESULTS_VERIFIED.md"), "w", newline="\n", encoding="utf-8") as f:
     f.write("\n".join(lines) + "\n")
 
 print(json.dumps({"issues": issues, "invariant": invariant,
