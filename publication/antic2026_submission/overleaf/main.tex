@@ -147,7 +147,7 @@ The model is served from Colab behind an HTTP endpoint and decodes greedily (at 
 Table~\ref{tab:conditions} and Fig.~\ref{fig:stacks} summarise the four conditions. Base, V1 and V2 were run on 1~September~2026 with \texttt{ft\_agent.py} and MCP, and they record full traces. E4 was intended to change only the parser. It was scored on 16~September~2026 by an evaluation loop written inside the Colab notebook. The loop imports the task definitions and the scoring function from copies of the repository files uploaded to the session; whether those copies matched the committed versions was not recorded, although the 23 task identifiers do match. It differs from \texttt{ft\_agent.py} in four ways: its tool schemas carry one-to-three-word descriptions; it returns calls to the model as OpenAI-style \texttt{tool\_calls} and results as \texttt{\{"result": \ldots\}} JSON; it uses its own tool functions, in which only exceptions count as errors; and it has no client-side re-parse. E4 recorded pass/fail only. The same notebook also contains an E4 run made without a working search key, which scored 13/23 because search calls errored. The reported 18/23 is the run with the key working.
 
 \begin{table}[t]
-\caption{Experimental conditions. Shaded differences are summarised in Fig.~\ref{fig:stacks}}
+\caption{Experimental conditions. The evaluation-stack differences are summarised in Fig.~\ref{fig:stacks}}
 \label{tab:conditions}
 \centering
 \begin{tabular}{@{}l@{\hspace{1.2em}}l@{\hspace{1.2em}}l@{\hspace{1.2em}}l@{\hspace{1.2em}}l@{}}
@@ -166,8 +166,8 @@ Traces recorded & full & full & pass/fail & full \\
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig1_eval_stacks.pdf}
-\Description{Two vertical pipelines of six boxes each: model and adapter, server and parser, client loop, tool schemas and message format, tools, and scorer. In the E4 pipeline, the client loop, the schema and message format, and the tools boxes are shaded to show that they differ from the Base, V1 and V2 pipeline.}
-\caption{Evaluation stacks. Shaded boxes are components in which E4 differs from the stack used for Base, V1 and V2. The server parser also differs (single-pass for Base and V1, two-pass for E4 and V2)}
+\Description{Two vertical pipelines of six boxes each: model and adapter, server and parser, client loop, tool schemas and message format, tools, and scorer. In the E4 pipeline, the client loop, the schema and message format, and the tools boxes are drawn in amber with dashed borders to show that they differ from the Base, V1 and V2 pipeline; all other boxes are light blue with solid borders. A key below the pipelines explains the two box styles.}
+\caption{Evaluation stacks. Amber boxes with dashed borders are components in which E4 differs from the stack used for Base, V1 and V2. The server parser also differs (single-pass for Base and V1, two-pass for E4 and V2)}
 \label{fig:stacks}
 \end{figure}
 
@@ -186,7 +186,7 @@ Figure~\ref{fig:scores} and Table~\ref{tab:stats} give the pass counts. Base pas
 \begin{figure}[t]
 \centering
 \includegraphics[width=0.62\textwidth]{figures/fig2_scores.pdf}
-\Description{Horizontal bar chart of tasks passed out of 23: Base 22, V1 18, E4 18, V2 23. The E4 bar is hatched to mark its different evaluation stack.}
+\Description{Horizontal bar chart of tasks passed out of 23: Base 22, V1 18, E4 18, V2 23. Bars are blue (Base), orange (V1) and green (V2); the E4 bar is white with orange hatching to mark that it used the V1 adapter under a different evaluation stack.}
 \caption{Tasks passed per condition, from one run each. $^\dagger$E4 (hatched) was scored with a different evaluation client and tool stack and on a different date, so it is not directly comparable to V1}
 \label{fig:scores}
 \end{figure}
@@ -214,7 +214,7 @@ Only seven tasks change outcome in any condition (Fig.~\ref{fig:matrix}), and th
 \begin{figure}[t]
 \centering
 \includegraphics[width=\textwidth]{figures/fig3_task_matrix.pdf}
-\Description{Grid of seven tasks by four conditions showing pass or FAIL in each cell. V1 failures are annotated with the cause seen in the trace: calculator skipped, step budget, wording, or no tool call. The E4 column is hatched and has no annotations because no traces were recorded.}
+\Description{Grid of seven tasks by four conditions showing pass (light green box) or FAIL (bold, light red box with black border) in each cell. V1 failures are annotated with the cause seen in the trace: calculator skipped, step budget, wording, or no tool call. The E4 column is hatched and has no annotations because no traces were recorded.}
 \caption{Outcomes for the seven tasks whose result differs across conditions. Italic notes give the failure cause seen in the recorded trace. $^\dagger$E4 recorded pass/fail only and used a different evaluation stack}
 \label{fig:matrix}
 \end{figure}

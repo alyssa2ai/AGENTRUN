@@ -33,6 +33,15 @@ plt.rcParams.update({
 TEXTWIDTH_IN = 122 / 25.4  # llncs text block width (122 mm)
 CONDS = ["Base", "V1", "E4", "V2"]
 
+# Restrained colour, chosen from the Okabe-Ito colour-blind-safe palette.
+# Colour is never the only cue: every figure also uses text labels,
+# border style or hatching, so it stays readable in black and white.
+BLUE, BLUE_FILL = "#0072B2", "#E1EEF7"      # shared stack components
+AMBER, AMBER_FILL = "#B86E00", "#F3C470"    # components that differ in E4
+COND_COLOR = {"Base": "#0072B2", "V1": "#E69F00", "E4": "#E69F00", "V2": "#009E73"}
+PASS_FILL, PASS_EDGE = "#E2F0E2", "#3B7D3B"  # muted green
+FAIL_FILL, FAIL_EDGE = "#F6D2CE", "#000000"  # muted red
+
 
 def save(fig, name):
     path = os.path.join(FIG, name)
@@ -43,7 +52,7 @@ def save(fig, name):
 
 # ---------------------------------------------------------------- Figure 1
 def fig_stack():
-    """Two evaluation stacks as vertical pipelines; E4 components that differ are shaded grey."""
+    """Two evaluation stacks as vertical pipelines; E4 components that differ are amber, dashed."""
     stages = [
         ("Qwen2.5-7B (4-bit) + LoRA adapter", "same base model + V1 adapter", False),
         ("Server: generate, parse tool calls", "server with two-pass parser", False),
@@ -52,9 +61,9 @@ def fig_stack():
         ("Tools via MCP (Tavily, Open-Meteo)", "notebook tool functions (live APIs)", True),
         ("Scorer: score_task()", "score_task() (uploaded copy)", False),
     ]
-    fig, ax = plt.subplots(figsize=(TEXTWIDTH_IN, 2.3))
+    fig, ax = plt.subplots(figsize=(TEXTWIDTH_IN, 2.5))
     ax.set_xlim(0, 100)
-    ax.set_ylim(9, 100)
+    ax.set_ylim(1, 100)
     ax.axis("off")
     cols = [(2, "Base, V1, V2\n(run 2026-09-01, full traces)"),
             (52, "E4\n(run 2026-09-16, pass/fail only)")]
@@ -65,13 +74,24 @@ def fig_stack():
             y = top - si * step
             e4diff = ci == 1 and differs
             ax.add_patch(FancyBboxPatch((x, y - bh / 2), bw, bh,
-                                        boxstyle="round,pad=0.0,rounding_size=1.2", linewidth=0.6,
-                                        edgecolor="black", facecolor="0.82" if e4diff else "white"))
+                                        boxstyle="round,pad=0.0,rounding_size=1.2",
+                                        linewidth=1.0 if e4diff else 0.7,
+                                        linestyle=(0, (3, 1.5)) if e4diff else "solid",
+                                        edgecolor=AMBER if e4diff else BLUE,
+                                        facecolor=AMBER_FILL if e4diff else BLUE_FILL))
             label = left if ci == 0 else right
-            t = ax.text(x + bw / 2, y, label, ha="center", va="center", fontsize=6.5)
+            ax.text(x + bw / 2, y, label, ha="center", va="center", fontsize=6.5, color="black")
             if si < len(stages) - 1:
                 ax.annotate("", xy=(x + bw / 2, y - step + bh / 2 + 0.3), xytext=(x + bw / 2, y - bh / 2 - 0.3),
-                            arrowprops=dict(arrowstyle="-|>", lw=0.5, mutation_scale=5))
+                            arrowprops=dict(arrowstyle="-|>", lw=0.5, mutation_scale=5, color="0.25"))
+    # Key (text + border style, so it also works in black and white).
+    for kx, (fill, edge, ls, lw, txt) in zip(
+            (2, 52),
+            ((BLUE_FILL, BLUE, "solid", 0.7, "same as the Base/V1/V2 stack"),
+             (AMBER_FILL, AMBER, (0, (3, 1.5)), 1.0, "differs in E4 (dashed border)"))):
+        ax.add_patch(FancyBboxPatch((kx, 4), 4.5, 4, boxstyle="round,pad=0.0,rounding_size=0.6",
+                                    linewidth=lw, linestyle=ls, edgecolor=edge, facecolor=fill))
+        ax.text(kx + 6, 6, txt, ha="left", va="center", fontsize=6.5)
     save(fig, "fig1_eval_stacks.pdf")
 
 
@@ -83,8 +103,12 @@ def fig_scores():
     ys = list(range(len(CONDS)))[::-1]
     for y, c in zip(ys, CONDS):
         e4 = c == "E4"
-        ax.barh(y, passed[c], height=0.55, color="white" if e4 else "0.75",
-                edgecolor="black", linewidth=0.6, hatch="////" if e4 else None)
+        # E4: white bar hatched in V1's colour (same adapter, different stack).
+        ax.barh(y, passed[c], height=0.55, color="white" if e4 else COND_COLOR[c],
+                edgecolor=COND_COLOR[c] if e4 else "black", linewidth=0.8 if e4 else 0.6,
+                hatch="////" if e4 else None)
+        if e4:  # black outline on top of the coloured hatch, for print legibility
+            ax.barh(y, passed[c], height=0.55, color="none", edgecolor="black", linewidth=0.6)
         ax.text(passed[c] + 0.25, y, f"{passed[c]}/{total}", va="center", fontsize=7)
     ax.set_yticks(ys)
     ax.set_yticklabels(["Base (no adapter)", "V1 (35 traj.)", "E4 (V1 adapter)†", "V2 (46 traj.)"],
@@ -133,8 +157,9 @@ def fig_matrix():
             ok = out[c][tid]
             ax.text(xi, yi - 0.13, "pass" if ok else "FAIL", ha="center", va="center", fontsize=7,
                     fontweight="normal" if ok else "bold",
-                    bbox=dict(facecolor="white", edgecolor="none" if ok else "black",
-                              boxstyle="square,pad=0.2", linewidth=0.5))
+                    bbox=dict(facecolor=PASS_FILL if ok else FAIL_FILL,
+                              edgecolor=PASS_EDGE if ok else FAIL_EDGE,
+                              boxstyle="square,pad=0.25", linewidth=0.4 if ok else 0.7))
             n = note(c, tid)
             if n:
                 ax.text(xi, yi + 0.25, n, ha="center", va="center", fontsize=6, style="italic",
