@@ -1,0 +1,96 @@
+{
+  "conditions": {
+    "Base": {
+      "file": "results/eval_results_base.json",
+      "passed": 22,
+      "total": 23,
+      "tally": 22,
+      "tally_matches": true,
+      "rows_match_total": true,
+      "pct": 95.7,
+      "has_traces": true
+    },
+    "V1": {
+      "file": "results/eval_results_v1.json",
+      "passed": 18,
+      "total": 23,
+      "tally": 18,
+      "tally_matches": true,
+      "rows_match_total": true,
+      "pct": 78.3,
+      "has_traces": true
+    },
+    "E4": {
+      "file": "results/eval_results_e4.json",
+      "passed": 18,
+      "total": 23,
+      "tally": 18,
+      "tally_matches": true,
+      "rows_match_total": true,
+      "pct": 78.3,
+      "has_traces": false
+    },
+    "V2": {
+      "file": "results/eval_results_v2.json",
+      "passed": 23,
+      "total": 23,
+      "tally": 23,
+      "tally_matches": true,
+      "rows_match_total": true,
+      "pct": 100.0,
+      "has_traces": true
+    }
+  },
+  "benchmark_task_ids_invariant_across_conditions": true,
+  "n_tasks": 23,
+  "v1_to_e4_changes": [
+    {
+      "task_id": "adversarial_chained_search_calc",
+      "V1": "PASS",
+      "E4": "fail"
+    },
+    {
+      "task_id": "adversarial_false_premise",
+      "V1": "fail",
+      "E4": "PASS"
+    },
+    {
+      "task_id": "multi_search_weather",
+      "V1": "PASS",
+      "E4": "fail"
+    },
+    {
+      "task_id": "multi_three_tools",
+      "V1": "fail",
+      "E4": "PASS"
+    }
+  ],
+  "e4_to_v2_changes": [
+    {
+      "task_id": "adversarial_chained_search_calc",
+      "E4": "fail",
+      "V2": "PASS"
+    },
+    {
+      "task_id": "adversarial_division_by_zero",
+      "E4": "fail",
+      "V2": "PASS"
+    },
+    {
+      "task_id": "chain_weather_then_calc",
+      "E4": "fail",
+      "V2": "PASS"
+    },
+    {
+      "task_id": "multi_search_weather",
+      "E4": "fail",
+      "V2": "PASS"
+    },
+    {
+      "task_id": "multi_wordcount_calc",
+      "E4": "fail",
+      "V2": "PASS"
+    }
+  ],
+  "issues": []
+}

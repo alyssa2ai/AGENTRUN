@@ -123,12 +123,20 @@ Trajectory-level inspection of v1 failures revealed:
 **What was changed:**
 1. Parser fix in `serving/colab_server_v2.py` (deployed for v2 evaluation)
 2. Augmented training data: `training/training_data_augmented.jsonl` — 46 trajectories (35 original + 11 new)
+3. Training-script memory settings: `colab_train_7b_v2.py` additionally enables gradient checkpointing, sets `use_cache=False`, and passes a paged 8-bit AdamW optimizer explicitly, so the 46-trajectory run fits the same 15 GB T4. `colab_train_7b.py` sets none of these and uses the Trainer default optimizer.
 
 **What was NOT changed:**
 - Base model: Qwen/Qwen2.5-7B-Instruct (identical)
-- QLoRA configuration (identical 4-bit NF4, rank=16, alpha=16)
+- LoRA hyperparameters: identical (4-bit NF4, rank=16, alpha=16, attention-only)
+- Learning rate, batch size, gradient accumulation, epochs, sequence length: identical
 - Benchmark (identical 23 tasks, identical max_steps=3)
 - MCP tool infrastructure (identical tools)
+
+The optimizer/gradient-checkpointing difference is documented in
+`docs/reproducibility.md` §4 and in `provenance/hyperparameters.md`. It does not
+affect E4 (V1 adapter held constant, parser only), but it does mean the E4→V2
+difference (+5 tasks) reflects the adapter, the training data, and these
+optimizer settings changing together.
 
 **Training:** `training/colab_train_7b_v2.py` in Google Colab. Adapter output: `/content/agentlab_qwen_lora_7b_v2`.
 
@@ -156,6 +164,8 @@ Trajectory-level inspection of v1 failures revealed:
 
 **v1 → v2: +21.7 pp** (18/23 → 23/23)
 **Base → v2: +4.3 pp** (22/23 → 23/23)
+
+*(Table above is the Phase 5 state. The E4 condition was added later — see Phase 6 below — bringing the comparison to four conditions.)*
 
 ---
 
@@ -195,7 +205,7 @@ Trajectory-level inspection of v1 failures revealed:
 | Parser (V1→E4) | 2 (`false_premise`, `multi_three_tools`) | 2 (`search_weather`, `chained_search_calc`) | **0** |
 | Data (E4→V2) | 5 (all E4 failures) | 0 | **+5** |
 
-**Interpretation:** The V2 two-pass parser produced zero net aggregate improvement over the V1 single-pass parser when applied to the same V1 adapter. It recovered 2 tasks where the V1 parser silently dropped tool calls (false-premise rejection, 3-tool parallel calls) but introduced regressions on 2 other tasks where the V1 parser's incorrect behavior happened to produce a correct direct answer. The full +5 improvement from V1 to V2 coincides with the targeted augmented training data (11 additional trajectories), not with a net parser-score gain.
+**Interpretation:** The V2 two-pass parser produced zero net aggregate improvement over the V1 single-pass parser when applied to the same V1 adapter. It recovered 2 tasks where the V1 parser silently dropped tool calls (false-premise rejection, 3-tool parallel calls) but introduced regressions on 2 other tasks where the V1 parser's incorrect behavior happened to produce a correct direct answer. The full +5 improvement from V1 to V2 therefore coincides with the retraining run that added the 11 targeted trajectories — along with that run's optimizer and gradient-checkpointing settings — rather than with a net parser-score gain.
 
 **Files:**
 - `serving/colab_server_e4.py` — Colab server (V1 adapter + V2 parser)
@@ -210,9 +220,9 @@ Trajectory-level inspection of v1 failures revealed:
 
 1. **Small training sets can cause regression.** 35 trajectories on a 7B model produced a weaker agent than the base model on multi-step tasks.
 
-2. **Data quality > quantity.** The v2 improvement came from targeted trajectory augmentation addressing specific failure patterns, not from sheer data volume.
+2. **Targeted augmentation coincided with the recovery.** The 11 added trajectories target the specific patterns V1 failed, and the run that included them (V2) recovered all five remaining failures. This is an observation on one benchmark, not a demonstration that data quality beats quantity — a size-matched random-augmentation control (E5) was never run.
 
-3. **Evaluation must be held-out and fixed.** Using the same 23 tasks for all three evaluations (base, v1, v2) ensured a controlled comparison. Changing the benchmark between runs would have made the comparison invalid.
+3. **Evaluation must be held-out and fixed.** Using the same 23 tasks for all four evaluations (base, v1, E4, v2) ensured a controlled comparison. Changing the benchmark between runs would have made the comparison invalid.
 
 4. **The parser is part of the system.** The tool-call parser in the Colab server is a component of the inference system. A single-pass regex was fragile against the fine-tuned model's slightly different output patterns.
 

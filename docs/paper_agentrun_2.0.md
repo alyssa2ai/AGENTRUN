@@ -1,8 +1,18 @@
 # Disentangling Infrastructure and Data Effects in Tool-Using LLM Fine-Tuning: A Controlled Ablation on Qwen2.5-7B
 
+> **Status: superseded working draft (2026-09-17).** The current manuscript is
+> `publication/manuscript.tex` — *"Disentangling Parser and Data Effects in
+> Tool-Using LLM Fine-Tuning: A Controlled Ablation on Qwen2.5-7B"* — with the
+> LaTeX sources, bibliography, and compiled PDF under `publication/`. This file
+> is retained as the Markdown-era draft of the same study and as the record of
+> the pre-review draft; where the two differ, the LaTeX manuscript is current.
+> Two known corrections are applied here as well: the repository URL, and the
+> fact that the V1 and V2 training runs did **not** use an identical optimizer
+> and gradient-checkpointing configuration (see §4.1).
+
 **Author:** Alyssa  
 **Date:** 2026-09-17  
-**Repository:** https://github.com/Alyssa-286/AGENTRUN
+**Repository:** https://github.com/alyssa2ai/AGENTRUN
 
 ---
 
@@ -56,7 +66,7 @@ Our 23-task benchmark was constructed independently of existing training corpora
 
 ### 2.5 Parameter-Efficient Fine-Tuning
 
-**QLoRA** (Dettmers et al., 2023) introduced quantized LoRA adapters that enable fine-tuning of 7B-parameter models on consumer GPUs. By combining 4-bit NF4 quantization with Low-Rank Adaptation, QLoRA achieves performance comparable to full fine-tuning at a fraction of the memory cost. Our work builds directly on this technique, using identical hyperparameters (rank=16, alpha=16, target_modules={q,k,v,o}) for both V1 and V2 training runs.
+**QLoRA** (Dettmers et al., 2023) introduced quantized LoRA adapters that enable fine-tuning of 7B-parameter models on consumer GPUs. By combining 4-bit NF4 quantization with Low-Rank Adaptation, QLoRA achieves performance comparable to full fine-tuning at a fraction of the memory cost. Our work builds directly on this technique, using identical LoRA hyperparameters (rank=16, alpha=16, dropout=0.05, target_modules={q,k,v,o}) for both V1 and V2 training runs; the optimizer and memory settings that differ are recorded in Section 4.1.
 
 ---
 
@@ -74,16 +84,32 @@ This study addresses two interrelated questions:
 
 ### 4.1 Base Model and Training
 
+The LoRA and data hyperparameters below are shared by both runs.
+
 - **Base model:** Qwen/Qwen2.5-7B-Instruct
 - **Quantization:** 4-bit NF4, fp16 compute
 - **LoRA configuration:** rank=16, alpha=16, dropout=0.05, target modules={q_proj, k_proj, v_proj, o_proj}
-- **Optimizer:** paged_adamw_8bit
 - **Learning rate:** 2e-4
 - **Batch size:** 2 per device × 4 gradient accumulation = 8 effective
 - **Epochs:** 3
 - **Max sequence length:** 1024
 - **Training hardware:** Google Colab T4 GPU (15 GB VRAM)
 - **Training seed:** Not set (unknown)
+
+Three memory-related settings differ between the two runs, because the
+46-trajectory run had to fit the same 15 GB budget:
+
+| Setting | V1 (`training/colab_train_7b.py`) | V2 (`training/colab_train_7b_v2.py`) |
+|---|---|---|
+| Optimizer | Trainer default (not set in the script) | `bnb.optim.PagedAdamW8bit` passed explicitly |
+| Gradient checkpointing | off | on (`use_reentrant=False`) |
+| KV cache (`use_cache`) | on | off |
+
+This does not affect the E4 ablation, which holds the V1 adapter fixed and
+varies only the parser. It does mean that the E4→V2 contrast changes the
+adapter, the training data, and these optimizer settings at the same time, so
+the +5 difference cannot be attributed to the training data alone. The V2
+script documents these additions in its own header comments.
 
 ### 4.2 Training Data
 
@@ -259,7 +285,7 @@ This finding has several implications:
 
 ## 7. Reproducibility
 
-All code, training data, and result artifacts are available at https://github.com/Alyssa-286/AGENTRUN.
+All code, training data, and result artifacts are available at https://github.com/alyssa2ai/AGENTRUN.
 
 **To reproduce E4:**
 1. Train V1 adapter: run `training/colab_train_7b.py` on Colab T4 with `training/training_data.jsonl`
