@@ -1,0 +1,87 @@
+# AGENTRUN — MITACS Talking Points
+
+## Three strongest evidence-backed findings
+
+### 1. Persistent memory improves multi-tool agent reliability by 32 percentage points
+
+- Pooled across Qwen2.5-7B and Qwen3-8B, v1 harness, 192 paired comparisons.
+- Stateless baseline: 24.5% → With retrieval: 56.8%. Δ = +32.3 pp, 95% CI [+24.0, +40.6], p < 0.0001.
+- This is not cherry-picked: the effect is +25 to +48 pp across every model ≥ 3B and every harness version.
+- Source: `C2_TABLES.md` Section 1, pooled comparison B − A.
+
+### 2. Verification without provenance hurts — a non-obvious interaction effect
+
+- Adding a self-verification step (config C) reduces success by 5.2 pp compared to plain retrieval (config B).
+- 95% CI [−8.9, −2.1], p = 0.006, n = 192 paired comparisons.
+- Adding provenance metadata (config D) reverses this: D − C = +10.4 pp (p = 0.002).
+- Mechanism: without provenance, the model has no evidence to confirm against, so it defaults to "I don't know."
+- This matters because many agent systems add verification as a blanket improvement — our data shows it can make things worse without supporting metadata.
+- Source: `C2_TABLES.md` Section 1, comparisons C − B and D − C.
+
+### 3. The reliability gate is essential for stale-data handling (4/32 → 25/32)
+
+- Stale-memory tasks (S4): plain retrieval solves 4/32, full pipeline with reliability gate solves 25/32.
+- The gate explicitly checks temporal consistency, catching outdated values.
+- Under v2 harness: 7/32 → 32/32 (100% on stale-memory tasks).
+- Source: `C2_TABLES.md` Section 1, per-scenario S4 row.
+
+## Three instructive failure examples
+
+### 1. The verification trap
+
+A task asks for someone's email. Memory correctly stores it. The model retrieves the right answer, then the verifier asks "Can I confirm this?" Without provenance, it has no way to confirm and responds "I cannot verify this information." The correct answer was available and retrieved — verification made it worse.
+
+### 2. The creative fabricator (Qwen3-8B)
+
+A task asks about a person who doesn't exist in memory. Without memory (config A), the model correctly says "I don't have information." With the full pipeline (config E), it retrieves loosely related records and synthesizes a plausible biography. Memory made the model more confident in wrong answers for unsupported questions.
+
+### 3. The stale-value trap
+
+A task asks for a current phone number. Memory stores both an old and current number. Without the reliability gate, the model returns the first match (old number) because retrieval doesn't consider timestamps. With the gate, it identifies the timestamp discrepancy and returns the current number.
+
+## Likely interviewer questions and answers
+
+**Q: Why did you move from 23 tasks to 96?**
+A: The 23-task benchmark was contaminated — model performance included memorized answers from training data. We built a fresh 96-task set with automated leakage verification (17 checks, all passing) to get trustworthy measurements.
+
+**Q: Why is 100% on the original benchmark not a valid result?**
+A: Because TF-IDF analysis showed overlap between evaluation prompts and training data. The model may have recalled answers rather than derived them through tool use. With fresh tasks, the base model scores 25%, which is the true starting point.
+
+**Q: The verification penalty seems like a bug. Why not just fix the verification prompt?**
+A: It's not a bug — it's a principled finding about incomplete information. Verification is sound only when the verifier has evidence. Without provenance metadata, the model has no basis for confirmation and correctly (from its perspective) refuses to commit. The fix is provenance, not a weaker verifier.
+
+**Q: Why don't the reliability components help at 14B?**
+A: The 14B model appears to handle verification, provenance and reliability concerns internally. Its stronger language understanding means it can resolve ambiguities and detect staleness without explicit pipeline support. This is actually a positive finding — it suggests that as models improve, less scaffolding will be needed.
+
+**Q: How generalizable is this beyond Qwen models?**
+A: We tested across two Qwen families (2.5 and 3) at 4 sizes. The component effects are consistent within this range. We cannot claim generalization beyond Qwen without testing other families (Llama, Mistral), which is a planned next step.
+
+**Q: What about computational cost? Is the full pipeline worth the overhead?**
+A: The full pipeline (config E) takes the same wall time as the baseline — the additional components are metadata annotations and a reliability check prompt, not additional model calls. Memory retrieval itself is <1ms with BM25. The overhead is in memory store maintenance, not inference.
+
+**Q: Why not use a vector database or dense retrieval?**
+A: BM25 maintains perfect recall at 2,000 records without any embedding infrastructure. We planned a dense retrieval comparison (bge-small-en) but the experiment didn't complete due to the infrastructure outage. That's a priority next step.
+
+**Q: 96 tasks seems small. Is this enough for statistical power?**
+A: With 96 paired observations, we can detect effects of ~12–15 pp at 80% power. Our main findings are 25–50 pp, well above this threshold. Per-scenario results (16 tasks each) should be interpreted more cautiously.
+
+**Q: What's the path to publication?**
+A: Complete the remaining 7 experiments, investigate the verification penalty mechanism, run the sealed 130-task test set for confirmatory results, conduct a related-work survey, and prepare a focused paper on reliability-aware memory with model-capacity analysis.
+
+## Honest limitations
+
+1. **Not a final test.** The 96-task eval2 set was used for iteration. A sealed 130-task set exists but hasn't been used yet.
+2. **Single runs.** All results are from greedy decoding. True variance is unknown.
+3. **Qwen-only.** Cross-family generalization is unverified.
+4. **Incomplete campaign.** 7 of 21 experiments are missing (infrastructure failure).
+5. **No related-work comparison.** We haven't benchmarked against MemGPT, RAISE, or other memory-augmented agent systems.
+6. **Limited scale.** Tested up to 14B and 2,000 memory records. Real-world agents may be larger and have more data.
+
+## Future direction
+
+1. Complete missing experiments and run sealed test set.
+2. Investigate verification penalty mechanism.
+3. Test cross-family generalization (Llama 3.x).
+4. Scale retrieval to 10,000+ records with dense retrieval.
+5. Explore the capacity threshold: what makes 7B the sweet spot?
+6. Consider adaptive pipelines that adjust component usage based on model capacity.

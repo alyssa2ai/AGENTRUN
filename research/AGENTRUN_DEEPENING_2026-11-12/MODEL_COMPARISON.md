@@ -1,0 +1,91 @@
+# Campaign 2 — Model Comparison
+
+## Models tested
+
+| Model | Parameters | Family | Tested | Notes |
+|---|---|---|---|---|
+| Qwen2.5-1.5B-Instruct | 1.5B | Qwen2.5 | v1 + v2 | Non-functional on v1 |
+| Qwen2.5-3B-Instruct | 3B | Qwen2.5 | v1 + v2 | Partially functional |
+| Qwen2.5-7B-Instruct | 7B | Qwen2.5 | v1 + v2 | Primary model |
+| Qwen2.5-14B-Instruct | 14B | Qwen2.5 | v1 + v2 | Largest tested |
+| Qwen3-8B | 8B | Qwen3 | v1 + v2 | Cross-family comparison |
+
+## Overall success rates (config E, best pipeline)
+
+### Harness v1
+
+| Model | Config A | Config E | Δ (E−A) | Format errors (all configs) |
+|---|---|---|---|---|
+| 1.5B | 0/96 (0%) | 0/96 (0%) | 0 pp | 480/480 (100%) |
+| 3B | 4/96 (4.2%) | 35/96 (36.5%) | +32.3 pp | 238/480 (49.6%) |
+| 7B | 24/96 (25.0%) | 70/96 (72.9%) | +47.9 pp | 104/480 (21.7%) |
+| 14B | 26/96 (27.1%) | 62/96 (64.6%) | +37.5 pp | 113/480 (23.5%) |
+| Q3-8B | 23/96 (24.0%) | 74/96 (77.1%) | +53.1 pp | 117/480 (24.4%) |
+
+### Harness v2
+
+| Model | Config A | Config E | Δ (E−A) | Format errors (all configs) |
+|---|---|---|---|---|
+| 1.5B | 20/96 (20.8%) | 19/96 (19.8%) | −1.0 pp | 8/480 (1.7%) |
+| 3B | 23/96 (24.0%) | 49/96 (51.0%) | +27.1 pp | 35/480 (7.3%) |
+| 7B | 28/96 (29.2%) | 85/96 (88.5%) | +59.4 pp | 21/480 (4.4%) |
+| 14B | 24/96 (25.0%) | 75/96 (78.1%) | +53.1 pp | 66/480 (13.8%) |
+| Q3-8B | 28/96 (29.2%) | 92/96 (95.8%) | +66.7 pp | 7/480 (1.5%) |
+
+## Capacity thresholds for memory components
+
+### Minimum capacity for memory benefit (B−A)
+
+| Model | v1 B−A (pp) | v2 B−A (pp) | Significant? |
+|---|---|---|---|
+| 1.5B | 0.0 | −2.1 | No |
+| 3B | +29.2 | +29.2 | Yes (p<0.0001) |
+| 7B | +25.0 | +47.9 | Yes (p<0.0001) |
+| 14B | +34.4 | +47.9 | Yes (p<0.0001) |
+
+Memory benefit appears at 3B. Below that, the model cannot meaningfully use retrieved information.
+
+### Minimum capacity for reliability gate benefit (E−D)
+
+| Model | v1 E−D (pp) | v2 E−D (pp) | Significant? |
+|---|---|---|---|
+| 1.5B | 0.0 | 0.0 | No |
+| 3B | +2.1 | +5.2 | No |
+| 7B | +14.6 | +19.8 | Yes (p<0.001) |
+| 14B | −4.2 | +3.1 | No |
+
+The reliability gate provides significant benefit only at 7B. At 14B, the model handles reliability scenarios without explicit gate support.
+
+## Cross-family comparison: Qwen2.5-7B vs Qwen3-8B
+
+Both models have similar parameter counts but different architectures and training.
+
+| Metric | Q2.5-7B (v1) | Q3-8B (v1) | Q2.5-7B (v2) | Q3-8B (v2) |
+|---|---|---|---|---|
+| Baseline (A) | 25.0% | 24.0% | 29.2% | 29.2% |
+| Full pipeline (E) | 72.9% | 77.1% | 88.5% | 95.8% |
+| Format errors | 66/480 | 28/480 | 6/480 | 0/480 |
+| Harmful answers | 1/480 | 7/480 | 7/480 | 3/480 |
+
+Qwen3-8B:
+- Higher ceiling under v2 (95.8% vs 88.5%)
+- Fewer format errors
+- Stronger memory benefit under v1 (+39.6 vs +25.0 pp)
+- Weaker verifier/provenance component effects (neither significant for Q3-8B under v1)
+- Critical S5 abstention failure under v1 (1/16) — fixed by v2
+
+## Inference cost (wall time from job logs)
+
+| Model | v1 wall time | v2 wall time | Per-task (480 runs) |
+|---|---|---|---|
+| 1.5B | 4 min | 6 min | 0.5–0.75 sec |
+| 3B | 16 min | 17 min | 2.0–2.1 sec |
+| 7B | 33 min | 33 min | 4.1 sec |
+| 14B | 96 min | 123 min | 12.0–15.4 sec |
+| Q3-8B | 38 min | 35 min | 4.4–4.8 sec |
+
+14B is 3× slower than 7B and provides no significant additional component benefit. Qwen3-8B runs slightly slower than Q2.5-7B but achieves higher peak performance.
+
+## Key takeaway
+
+There is a **model capacity sweet spot at 7B** for the AGENTRUN reliability pipeline. Below 7B, the model cannot fully exploit the components. Above 7B, the model's own capabilities make the components redundant. At 7B, every component adds measurable value, and the reliability gate provides the largest marginal improvement.

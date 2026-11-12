@@ -1,0 +1,120 @@
+Start: 2026-11-12T06:05:03+00:00 job=4148_4 host=sit-gpu CUDA_VISIBLE_DEVICES=1
+{
+ "scorer": "eval/harness.py (frozen R0)",
+ "n": 23,
+ "r0_pass": 21
+}
+exit 0
+{
+ "scorer": "eval/harness.py (frozen R0)",
+ "n": 23,
+ "r0_pass": 22
+}
+exit 0
+{
+ "scorer_version": "scorer_v2.0",
+ "n": 55,
+ "r2_correct": 0.9272727272727272,
+ "r0_rule": 0.8363636363636363,
+ "called_expected": 0.8727272727272727,
+ "exhausted": 0.01818181818181818,
+ "by_necessity": {
+  "necessary": {
+   "n": 32,
+   "r2_correct": 0.9375,
+   "r0_rule": 0.78125,
+   "any_call": 0.96875
+  },
+  "optional": {
+   "n": 14,
+   "r2_correct": 0.9285714285714286,
+   "r0_rule": 0.9285714285714286,
+   "any_call": 1.0
+  },
+  "unnecessary": {
+   "n": 9,
+   "r2_correct": 0.8888888888888888,
+   "r0_rule": 0.8888888888888888,
+   "any_call": 0.4444444444444444
+  }
+ },
+ "two_by_two": {
+  "correct=True|called_expected=True": 46,
+  "correct=True|called_expected=False": 5,
+  "correct=False|called_expected=True": 2,
+  "correct=False|called_expected=False": 2
+ },
+ "failure_modes": {
+  "none": 51,
+  "budget_exhausted": 1,
+  "validation_error": 0,
+  "skipped_necessary_tool": 1,
+  "wrong_after_tool_use": 2,
+  "wrong_without_tools": 0,
+  "missed_expected_error": 0
+ }
+}
+exit 0
+{
+ "scorer_version": "scorer_v2.0",
+ "n": 55,
+ "r2_correct": 0.9454545454545454,
+ "r0_rule": 0.8545454545454545,
+ "called_expected": 0.8727272727272727,
+ "exhausted": 0.0,
+ "by_necessity": {
+  "necessary": {
+   "n": 32,
+   "r2_correct": 0.9375,
+   "r0_rule": 0.78125,
+   "any_call": 0.96875
+  },
+  "optional": {
+   "n": 14,
+   "r2_correct": 0.9285714285714286,
+   "r0_rule": 0.9285714285714286,
+   "any_call": 1.0
+  },
+  "unnecessary": {
+   "n": 9,
+   "r2_correct": 1.0,
+   "r0_rule": 1.0,
+   "any_call": 0.4444444444444444
+  }
+ },
+ "two_by_two": {
+  "correct=True|called_expected=True": 47,
+  "correct=True|called_expected=False": 5,
+  "correct=False|called_expected=True": 1,
+  "correct=False|called_expected=False": 2
+ },
+ "failure_modes": {
+  "none": 52,
+  "budget_exhausted": 0,
+  "validation_error": 0,
+  "skipped_necessary_tool": 1,
+  "wrong_after_tool_use": 2,
+  "wrong_without_tools": 0,
+  "missed_expected_error": 0
+ }
+}
+exit 0
+{
+ "scorer": "eval/harness.py (frozen R0)",
+ "n": 23,
+ "r0_pass": 21
+}
+exit 0
+{
+ "scorer": "eval/harness.py (frozen R0)",
+ "n": 23,
+ "r0_pass": 22
+}
+exit 0
+{
+ "scorer": "eval/harness.py (frozen R0)",
+ "n": 23,
+ "r0_pass": 22
+}
+exit 0
+End: 2026-11-12T06:12:22+00:00 exit=0

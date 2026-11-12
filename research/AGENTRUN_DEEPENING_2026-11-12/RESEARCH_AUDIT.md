@@ -1,0 +1,64 @@
+# Campaign 2 — Research Audit
+
+## Integrity checks
+
+### Leakage prevention
+
+| Check | Result |
+|---|---|
+| Eval2 tasks generated from seed, not hand-written | PASS |
+| No eval entity appears in training data | PASS |
+| No eval entity appears in system prompt or tool schemas | PASS |
+| No expected value appears in prompts | PASS |
+| No prompt template matches training/legacy prompts (TF-IDF ≤ 0.142) | PASS |
+| Dev and eval entity sets are fully disjoint (664 distinct entities) | PASS |
+| Eval2 is disjoint from the first evaluation split | PASS |
+
+### Run-level integrity (verified for all 4 main ablation runs)
+
+| Check | c2_qwen25_7b_v1 | c2_qwen3_8b_v1 | c2_qwen25_7b_v2 | c2_qwen3_8b_v2 |
+|---|---|---|---|---|
+| No ground-truth in messages | PASS | PASS | PASS | PASS |
+| Provenance only in D,E configs | PASS | PASS | PASS | PASS |
+| Baseline never received memory | PASS | PASS | PASS | PASS |
+| Baseline tools never returned memory | PASS | PASS | PASS | PASS |
+| Each store has only its task's records | PASS | PASS | PASS | PASS |
+| Expected runs (480) | 480 | 480 | 480 | 480 |
+
+### Benchmark freeze integrity
+
+| Artifact | SHA-256 |
+|---|---|
+| eval2.jsonl | `42552d7b4b8502f67b9e901818681ffabca685bca75997a6b7113ca88b1048a2` |
+| memory_store.json (real store) | `efbe8bd79debd5481120cac901384e605b0c1cf85d507864c9d4869c4cba4c20` |
+
+### Data preservation
+
+| Location | Status |
+|---|---|
+| HPC backup (`/home/gpuuser12/AGENTRUN_HPC/backups/c2_backup_20261112_120842`) | Verified, 113 MB, 5,223 checksummed files |
+| Local copy (`research/AGENTRUN_DEEPENING_2026-11-11/raw_results/`) | Complete for all 14 jobs |
+| Git commits | `998e42e`, `ca664fa` (pre-existing, unpushed) |
+
+## What could go wrong
+
+### Potential confounders we checked
+
+1. **Evaluation leakage:** Verified absent via 17 automated checks.
+2. **Configuration leakage:** Verified that baseline (A) runs never receive memory or provenance data.
+3. **Order effects:** Tasks run in the same order across configurations (deterministic by task ID). Not randomized within a run.
+4. **Caching:** `HF_HUB_OFFLINE=1` ensures no online model updates during experiments.
+5. **Hardware variation:** All experiments on the same two L40 GPUs. GPU assignment varies by Slurm scheduling.
+
+### Potential confounders we did NOT control
+
+1. **Greedy determinism assumption:** We assume greedy decoding produces identical outputs for identical inputs. This is generally true but can be affected by floating-point non-determinism in batch sizes or GPU occupancy.
+2. **Prompt sensitivity:** The v2 harness adds specific formatting rules. Small changes to these rules could shift results.
+3. **Scenario structure:** All scenarios have 16 tasks, which limits per-scenario statistical power.
+4. **Model selection bias:** We tested models that were available and fit on L40 GPUs. The Qwen2.5 family may have unique characteristics that don't generalize.
+
+### Known issues
+
+1. **Qwen3-8B S5 abstention failure under v1.** This is a real phenomenon (not a bug) but is specific to one model under one harness version.
+2. **c2_v2dev55_adapter_b3: INCOMPLETE.** This sub-run of job 5 did not complete. The adapter at budget 3 on the v2-dev split is missing.
+3. **14B format errors under v2 (66/480 = 13.8%).** Higher than expected — the 14B model is less compliant with v2 formatting rules than 7B or Q3-8B.

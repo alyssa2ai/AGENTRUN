@@ -6,31 +6,207 @@ Split: eval2 (96 tasks, 16 per scenario). One trial per cell unless stated. SIT 
 
 | Run | Status |
 |---|---|
-| c2_qwen25_7b_v1 | not run |
-| c2_qwen3_8b_v1 | not run |
-| c2_qwen25_7b_v2 | not run |
-| c2_qwen3_8b_v2 | not run |
+| c2_qwen25_7b_v1 | complete (480 runs) |
+| c2_qwen3_8b_v1 | complete (480 runs) |
+| c2_qwen25_7b_v2 | complete (480 runs) |
+| c2_qwen3_8b_v2 | complete (480 runs) |
 | c2_qwen25_7b_v1r | not run |
 | c2_qwen3_8b_v1r | not run |
-| c2_qwen25_14b_v1 | not run |
-| c2_qwen25_3b_v1 | not run |
-| c2_qwen25_1p5b_v1 | not run |
-| c2_qwen25_14b_v2 | not run |
-| c2_qwen25_3b_v2 | not run |
-| c2_qwen25_1p5b_v2 | not run |
+| c2_qwen25_14b_v1 | complete (480 runs) |
+| c2_qwen25_3b_v1 | complete (480 runs) |
+| c2_qwen25_1p5b_v1 | complete (480 runs) |
+| c2_qwen25_14b_v2 | complete (480 runs) |
+| c2_qwen25_3b_v2 | complete (480 runs) |
+| c2_qwen25_1p5b_v2 | complete (480 runs) |
 | c2_qwen25_7b_lora_v1 | not run |
 | c2_qwen25_7b_lora_v2 | not run |
 | c2_qwen25_7b_v2_T07_s1 | not run |
 | c2_qwen25_7b_v2_T07_s2 | not run |
-| c2_qwen25_7b_v2_hash_pad2000 | not run |
-| c2_qwen25_7b_v2_bm25_pad2000 | not run |
+| c2_qwen25_7b_v2_hash_pad2000 | complete (192 runs) |
+| c2_qwen25_7b_v2_bm25_pad2000 | complete (192 runs) |
 | c2_qwen25_7b_v2_dense_pad2000 | not run |
 
 
 ## 1. Replication on fresh tasks (frozen v1 harness)
 
+### Qwen2.5-7B-Instruct
+
+| Config | Task success (95% Wilson CI) | Harmful | Format/step-limit |
+|---|---|---|---|
+| A: stateless baseline | 24/96 = 25.0% (17-35) | 0/96 | 19/96 |
+| B: retrieval | 48/96 = 50.0% (40-60) | 1/96 | 30/96 |
+| C: verified retrieval | 40/96 = 41.7% (32-52) | 0/96 | 30/96 |
+| D: + provenance | 56/96 = 58.3% (48-68) | 0/96 | 17/96 |
+| E: + reliability gate | 70/96 = 72.9% (63-81) | 0/96 | 8/96 |
+
+| Scenario | A | B | C | D | E |
+|---|---|---|---|---|---|
+| S1_context_loss | 0/16 | 11/16 | 8/16 | 13/16 | 15/16 |
+| S2_retrieval | 0/16 | 12/16 | 8/16 | 8/16 | 10/16 |
+| S3_conflict | 0/16 | 3/16 | 3/16 | 7/16 | 9/16 |
+| S4_stale | 0/16 | 0/16 | 0/16 | 4/16 | 10/16 |
+| S5_unsupported | 12/16 | 10/16 | 10/16 | 13/16 | 15/16 |
+| S6_tool_failure | 12/16 | 12/16 | 11/16 | 11/16 | 11/16 |
+
+| Comparison | n pairs | first | second | diff (pp) | 95% bootstrap CI | discordant | McNemar p |
+|---|---|---|---|---|---|---|---|
+| B - A | 96 | 50.0% | 25.0% | +25.0 | [+14.6, +36.5] | 29 / 5 | <0.0001 |
+| C - B | 96 | 41.7% | 50.0% | -8.3 | [-14.6, -3.1] | 0 / 8 | 0.0078 |
+| D - C | 96 | 58.3% | 41.7% | +16.7 | [+8.3, +26.0] | 18 / 2 | 0.0004 |
+| E - D | 96 | 72.9% | 58.3% | +14.6 | [+7.3, +22.9] | 15 / 1 | 0.0005 |
+| E - B | 96 | 72.9% | 50.0% | +22.9 | [+12.5, +33.3] | 27 / 5 | 0.0001 |
+| E - A | 96 | 72.9% | 25.0% | +47.9 | [+37.5, +58.4] | 48 / 2 | <0.0001 |
+
+### Qwen3-8B
+
+| Config | Task success (95% Wilson CI) | Harmful | Format/step-limit |
+|---|---|---|---|
+| A: stateless baseline | 23/96 = 24.0% (17-33) | 0/96 | 32/96 |
+| B: retrieval | 61/96 = 63.5% (54-72) | 4/96 | 22/96 |
+| C: verified retrieval | 59/96 = 61.5% (51-71) | 1/96 | 22/96 |
+| D: + provenance | 63/96 = 65.6% (56-74) | 2/96 | 22/96 |
+| E: + reliability gate | 74/96 = 77.1% (68-84) | 0/96 | 19/96 |
+
+| Scenario | A | B | C | D | E |
+|---|---|---|---|---|---|
+| S1_context_loss | 0/16 | 16/16 | 16/16 | 16/16 | 16/16 |
+| S2_retrieval | 0/16 | 16/16 | 13/16 | 16/16 | 16/16 |
+| S3_conflict | 0/16 | 9/16 | 10/16 | 12/16 | 16/16 |
+| S4_stale | 0/16 | 4/16 | 4/16 | 6/16 | 15/16 |
+| S5_unsupported | 15/16 | 6/16 | 6/16 | 3/16 | 1/16 |
+| S6_tool_failure | 8/16 | 10/16 | 10/16 | 10/16 | 10/16 |
+
+| Comparison | n pairs | first | second | diff (pp) | 95% bootstrap CI | discordant | McNemar p |
+|---|---|---|---|---|---|---|---|
+| B - A | 96 | 63.5% | 24.0% | +39.6 | [+27.1, +52.1] | 47 / 9 | <0.0001 |
+| C - B | 96 | 61.5% | 63.5% | -2.1 | [-6.2, +2.1] | 1 / 3 | 0.6250 |
+| D - C | 96 | 65.6% | 61.5% | +4.2 | [-4.2, +12.5] | 11 / 7 | 0.4807 |
+| E - D | 96 | 77.1% | 65.6% | +11.5 | [+4.2, +18.8] | 13 / 2 | 0.0074 |
+| E - B | 96 | 77.1% | 63.5% | +13.5 | [+4.2, +22.9] | 18 / 5 | 0.0106 |
+| E - A | 96 | 77.1% | 24.0% | +53.1 | [+38.5, +67.7] | 65 / 14 | <0.0001 |
+
+### Pooled (both)
+
+| Config | Task success (95% Wilson CI) | Harmful | Format/step-limit |
+|---|---|---|---|
+| A: stateless baseline | 47/192 = 24.5% (19-31) | 0/192 | 51/192 |
+| B: retrieval | 109/192 = 56.8% (50-64) | 5/192 | 52/192 |
+| C: verified retrieval | 99/192 = 51.6% (45-59) | 1/192 | 52/192 |
+| D: + provenance | 119/192 = 62.0% (55-69) | 2/192 | 39/192 |
+| E: + reliability gate | 144/192 = 75.0% (68-81) | 0/192 | 27/192 |
+
+| Scenario | A | B | C | D | E |
+|---|---|---|---|---|---|
+| S1_context_loss | 0/32 | 27/32 | 24/32 | 29/32 | 31/32 |
+| S2_retrieval | 0/32 | 28/32 | 21/32 | 24/32 | 26/32 |
+| S3_conflict | 0/32 | 12/32 | 13/32 | 19/32 | 25/32 |
+| S4_stale | 0/32 | 4/32 | 4/32 | 10/32 | 25/32 |
+| S5_unsupported | 27/32 | 16/32 | 16/32 | 16/32 | 16/32 |
+| S6_tool_failure | 20/32 | 22/32 | 21/32 | 21/32 | 21/32 |
+
+| Comparison | n pairs | first | second | diff (pp) | 95% bootstrap CI | discordant | McNemar p |
+|---|---|---|---|---|---|---|---|
+| B - A | 192 | 56.8% | 24.5% | +32.3 | [+24.0, +40.6] | 76 / 14 | <0.0001 |
+| C - B | 192 | 51.6% | 56.8% | -5.2 | [-8.9, -2.1] | 1 / 11 | 0.0063 |
+| D - C | 192 | 62.0% | 51.6% | +10.4 | [+4.2, +16.7] | 29 / 9 | 0.0017 |
+| E - D | 192 | 75.0% | 62.0% | +13.0 | [+7.8, +18.8] | 28 / 3 | <0.0001 |
+| E - B | 192 | 75.0% | 56.8% | +18.2 | [+10.9, +25.0] | 45 / 10 | <0.0001 |
+| E - A | 192 | 75.0% | 24.5% | +50.5 | [+41.1, +59.4] | 113 / 16 | <0.0001 |
+
 
 ## 2. Harness variants on the same tasks (v1 control, v1r = repair turn, v2 = repair + two rules)
+
+### Qwen2.5-7B-Instruct
+
+| Harness | success A | success B | success C | success D | success E | format/step-limit (all) | harmful (all) | repair turns used |
+|---|---|---|---|---|---|---|---|---|
+| v1 | 24/96 | 48/96 | 40/96 | 56/96 | 70/96 | 104/480 | 1/480 | 0 |
+| v2 | 28/96 | 74/96 | 61/96 | 66/96 | 85/96 | 21/480 | 7/480 | 14 |
+
+| Comparison | n pairs | first | second | diff (pp) | 95% bootstrap CI | discordant | McNemar p |
+|---|---|---|---|---|---|---|---|
+| v2 - v1, all configs | 480 | 65.4% | 49.6% | +15.8 | [+8.3, +22.9] | 105 / 29 | <0.0001 |
+| v2 - v1, config A | 96 | 29.2% | 25.0% | +4.2 | [+1.0, +8.3] | 4 / 0 | 0.1250 |
+| v2 - v1, config B | 96 | 77.1% | 50.0% | +27.1 | [+16.7, +38.5] | 32 / 6 | <0.0001 |
+| v2 - v1, config C | 96 | 63.5% | 41.7% | +21.9 | [+11.5, +32.3] | 26 / 5 | 0.0002 |
+| v2 - v1, config D | 96 | 68.8% | 58.3% | +10.4 | [-1.0, +21.9] | 21 / 11 | 0.1102 |
+| v2 - v1, config E | 96 | 88.5% | 72.9% | +15.6 | [+5.2, +26.0] | 22 / 7 | 0.0081 |
+
+| Harness | format_error | max_steps | over_abstain | false_conflict | S5 correct A | S5 correct B | S5 correct E | memory consulted (S1-S4, B-E) | memory fallback when tool is down (B-E) |
+|---|---|---|---|---|---|---|---|---|---|
+| v1 | 66 | 38 | 123 | 14 | 12/16 | 10/16 | 15/16 | 208/256 | 1/16 |
+| v2 | 6 | 15 | 104 | 34 | 16/16 | 13/16 | 16/16 | 232/256 | 12/16 |
+
+By scenario, Qwen2.5-7B-Instruct, v2:
+
+| Scenario | A | B | C | D | E |
+|---|---|---|---|---|---|
+| S1_context_loss | 0/16 | 10/16 | 9/16 | 9/16 | 10/16 |
+| S2_retrieval | 0/16 | 16/16 | 6/16 | 11/16 | 14/16 |
+| S3_conflict | 0/16 | 16/16 | 16/16 | 14/16 | 16/16 |
+| S4_stale | 0/16 | 3/16 | 3/16 | 2/16 | 16/16 |
+| S5_unsupported | 16/16 | 13/16 | 13/16 | 16/16 | 16/16 |
+| S6_tool_failure | 12/16 | 16/16 | 14/16 | 14/16 | 13/16 |
+
+### Qwen3-8B
+
+| Harness | success A | success B | success C | success D | success E | format/step-limit (all) | harmful (all) | repair turns used |
+|---|---|---|---|---|---|---|---|---|
+| v1 | 23/96 | 61/96 | 59/96 | 63/96 | 74/96 | 117/480 | 7/480 | 0 |
+| v2 | 28/96 | 83/96 | 74/96 | 79/96 | 92/96 | 7/480 | 3/480 | 0 |
+
+| Comparison | n pairs | first | second | diff (pp) | 95% bootstrap CI | discordant | McNemar p |
+|---|---|---|---|---|---|---|---|
+| v2 - v1, all configs | 480 | 74.2% | 58.3% | +15.8 | [+9.8, +22.3] | 85 / 9 | <0.0001 |
+| v2 - v1, config A | 96 | 29.2% | 24.0% | +5.2 | [+1.0, +10.4] | 5 / 0 | 0.0625 |
+| v2 - v1, config B | 96 | 86.5% | 63.5% | +22.9 | [+14.6, +31.2] | 22 / 0 | <0.0001 |
+| v2 - v1, config C | 96 | 77.1% | 61.5% | +15.6 | [+6.2, +24.0] | 18 / 3 | 0.0015 |
+| v2 - v1, config D | 96 | 82.3% | 65.6% | +16.7 | [+7.3, +26.0] | 20 / 4 | 0.0015 |
+| v2 - v1, config E | 96 | 95.8% | 77.1% | +18.8 | [+10.4, +28.1] | 20 / 2 | 0.0001 |
+
+| Harness | format_error | max_steps | over_abstain | false_conflict | S5 correct A | S5 correct B | S5 correct E | memory consulted (S1-S4, B-E) | memory fallback when tool is down (B-E) |
+|---|---|---|---|---|---|---|---|---|---|
+| v1 | 28 | 89 | 60 | 16 | 15/16 | 6/16 | 1/16 | 256/256 | 0/16 |
+| v2 | 0 | 7 | 84 | 30 | 16/16 | 16/16 | 16/16 | 256/256 | 6/16 |
+
+By scenario, Qwen3-8B, v2:
+
+| Scenario | A | B | C | D | E |
+|---|---|---|---|---|---|
+| S1_context_loss | 0/16 | 16/16 | 16/16 | 16/16 | 16/16 |
+| S2_retrieval | 0/16 | 16/16 | 12/16 | 13/16 | 14/16 |
+| S3_conflict | 0/16 | 15/16 | 15/16 | 15/16 | 16/16 |
+| S4_stale | 0/16 | 4/16 | 3/16 | 7/16 | 16/16 |
+| S5_unsupported | 16/16 | 16/16 | 16/16 | 16/16 | 16/16 |
+| S6_tool_failure | 12/16 | 16/16 | 12/16 | 12/16 | 14/16 |
+
+### Pooled (both models), v2 harness: do the component effects survive the fixes?
+
+| Config | Task success | Harmful | Format/step-limit |
+|---|---|---|---|
+| A: stateless baseline | 56/192 = 29.2% (23-36) | 0 | 8 |
+| B: retrieval | 157/192 = 81.8% (76-87) | 8 | 5 |
+| C: verified retrieval | 135/192 = 70.3% (64-76) | 1 | 5 |
+| D: + provenance | 145/192 = 75.5% (69-81) | 1 | 7 |
+| E: + reliability gate | 177/192 = 92.2% (88-95) | 0 | 3 |
+
+| Comparison | n pairs | first | second | diff (pp) | 95% bootstrap CI | discordant | McNemar p |
+|---|---|---|---|---|---|---|---|
+| B - A | 192 | 81.8% | 29.2% | +52.6 | [+44.8, +59.9] | 104 / 3 | <0.0001 |
+| C - B | 192 | 70.3% | 81.8% | -11.5 | [-16.1, -7.3] | 0 / 22 | <0.0001 |
+| D - C | 192 | 75.5% | 70.3% | +5.2 | [-0.5, +10.9] | 21 / 11 | 0.1102 |
+| E - D | 192 | 92.2% | 75.5% | +16.7 | [+10.9, +22.4] | 34 / 2 | <0.0001 |
+| E - B | 192 | 92.2% | 81.8% | +10.4 | [+4.2, +16.7] | 29 / 9 | 0.0017 |
+| E - A | 192 | 92.2% | 29.2% | +63.0 | [+55.7, +70.3] | 123 / 2 | <0.0001 |
+
+| Scenario | A | B | C | D | E |
+|---|---|---|---|---|---|
+| S1_context_loss | 0/32 | 26/32 | 25/32 | 25/32 | 26/32 |
+| S2_retrieval | 0/32 | 32/32 | 18/32 | 24/32 | 28/32 |
+| S3_conflict | 0/32 | 31/32 | 31/32 | 29/32 | 32/32 |
+| S4_stale | 0/32 | 7/32 | 6/32 | 9/32 | 32/32 |
+| S5_unsupported | 32/32 | 29/32 | 29/32 | 32/32 | 32/32 |
+| S6_tool_failure | 24/32 | 32/32 | 26/32 | 26/32 | 27/32 |
 
 
 ## 3. Model size inside one family (Qwen2.5-Instruct, same backend)
@@ -39,48 +215,61 @@ Split: eval2 (96 tasks, 16 per scenario). One trial per cell unless stated. SIT 
 
 | Size | success A | success B | success C | success D | success E | format/step-limit (all) | harmful (all) |
 |---|---|---|---|---|---|---|---|
-| 1.5B | not run | not run | not run | not run | not run | not run | not run |
-| 3B | not run | not run | not run | not run | not run | not run | not run |
-| 7B | not run | not run | not run | not run | not run | not run | not run |
-| 14B | not run | not run | not run | not run | not run | not run | not run |
+| 1.5B | 0/96 | 0/96 | 0/96 | 0/96 | 0/96 | 480/480 | 0/480 |
+| 3B | 4/96 | 32/96 | 26/96 | 33/96 | 35/96 | 238/480 | 24/480 |
+| 7B | 24/96 | 48/96 | 40/96 | 56/96 | 70/96 | 104/480 | 1/480 |
+| 14B | 26/96 | 59/96 | 63/96 | 66/96 | 62/96 | 113/480 | 10/480 |
 
 Paired effect of each added component, in percentage points:
 
 | Size | B - A (memory) | C - B (verifier) | D - C (provenance) | E - D (gate) | E - B (all three) |
 |---|---|---|---|---|---|
+| 1.5B | +0.0 (p=1.0000) | +0.0 (p=1.0000) | +0.0 (p=1.0000) | +0.0 (p=1.0000) | +0.0 (p=1.0000) |
+| 3B | +29.2 (p=<0.0001) | -6.2 (p=0.0312) | +7.3 (p=0.0654) | +2.1 (p=0.6875) | +3.1 (p=0.6072) |
+| 7B | +25.0 (p=<0.0001) | -8.3 (p=0.0078) | +16.7 (p=0.0004) | +14.6 (p=0.0005) | +22.9 (p=0.0001) |
+| 14B | +34.4 (p=<0.0001) | +4.2 (p=0.1250) | +3.1 (p=0.6291) | -4.2 (p=0.4807) | +3.1 (p=0.7011) |
 
 ### Harness v2
 
 | Size | success A | success B | success C | success D | success E | format/step-limit (all) | harmful (all) |
 |---|---|---|---|---|---|---|---|
-| 1.5B | not run | not run | not run | not run | not run | not run | not run |
-| 3B | not run | not run | not run | not run | not run | not run | not run |
-| 7B | not run | not run | not run | not run | not run | not run | not run |
-| 14B | not run | not run | not run | not run | not run | not run | not run |
+| 1.5B | 20/96 | 18/96 | 18/96 | 19/96 | 19/96 | 8/480 | 24/480 |
+| 3B | 23/96 | 51/96 | 41/96 | 44/96 | 49/96 | 35/480 | 37/480 |
+| 7B | 28/96 | 74/96 | 61/96 | 66/96 | 85/96 | 21/480 | 7/480 |
+| 14B | 24/96 | 70/96 | 69/96 | 72/96 | 75/96 | 66/480 | 3/480 |
 
 Paired effect of each added component, in percentage points:
 
 | Size | B - A (memory) | C - B (verifier) | D - C (provenance) | E - D (gate) | E - B (all three) |
 |---|---|---|---|---|---|
+| 1.5B | -2.1 (p=0.5000) | +0.0 (p=1.0000) | +1.0 (p=1.0000) | +0.0 (p=1.0000) | +1.0 (p=1.0000) |
+| 3B | +29.2 (p=<0.0001) | -10.4 (p=0.0020) | +3.1 (p=0.5811) | +5.2 (p=0.3323) | -2.1 (p=0.8145) |
+| 7B | +47.9 (p=<0.0001) | -13.5 (p=0.0002) | +5.2 (p=0.3833) | +19.8 (p=<0.0001) | +11.5 (p=0.0266) |
+| 14B | +47.9 (p=<0.0001) | -1.0 (p=1.0000) | +3.1 (p=0.5811) | +3.1 (p=0.5078) | +5.2 (p=0.3018) |
 
 
 ## 4. Retriever inside the agent, 2,000 background records per store (Qwen2.5-7B, v2 harness, scenarios S1-S4, configs B, D, E)
 
 | Retriever and store | success B | success D | success E | gold-record recall over the agent's queries | harmful |
 |---|---|---|---|---|---|
-| hash256, no padding (7-12 records) | not run | not run | not run | not run | not run |
-| hash256 + 2,000 | not run | not run | not run | not run | not run |
-| BM25 + 2,000 | not run | not run | not run | not run | not run |
+| hash256, no padding (7-12 records) | 45/64 | 36/64 | 56/64 | 1.00 (n=174) | 7 |
+| hash256 + 2,000 | 27/64 | 22/64 | 31/64 | 0.76 (n=174) | 10 |
+| BM25 + 2,000 | 42/64 | 41/64 | 52/64 | 1.00 (n=174) | 6 |
 | bge-small + 2,000 | not run | not run | not run | not run | not run |
+
+| Comparison | n pairs | first | second | diff (pp) | 95% bootstrap CI | discordant | McNemar p |
+|---|---|---|---|---|---|---|---|
+| hash256+2000 - no padding | 192 | 41.7% | 71.4% | -29.7 | [-39.1, -20.3] | 6 / 63 | <0.0001 |
+| BM25+2000 - hash256+2000 | 192 | 70.3% | 41.7% | +28.6 | [+19.3, +38.5] | 64 / 9 | <0.0001 |
 
 
 ## 5. Repository adapter and run-to-run spread
 
 | Run | success A | success B | success C | success D | success E | format/step-limit (all) |
 |---|---|---|---|---|---|---|
-| Qwen2.5-7B, v1 | not run | not run | not run | not run | not run | not run |
+| Qwen2.5-7B, v1 | 24/96 | 48/96 | 40/96 | 56/96 | 70/96 | 104/480 |
 | Qwen2.5-7B + adapter, v1 | not run | not run | not run | not run | not run | not run |
-| Qwen2.5-7B, v2 (greedy) | not run | not run | not run | not run | not run | not run |
+| Qwen2.5-7B, v2 (greedy) | 28/96 | 74/96 | 61/96 | 66/96 | 85/96 | 21/480 |
 | Qwen2.5-7B + adapter, v2 | not run | not run | not run | not run | not run | not run |
 | Qwen2.5-7B, v2, T=0.7 seed 1 | not run | not run | not run | not run | not run | not run |
 | Qwen2.5-7B, v2, T=0.7 seed 2 | not run | not run | not run | not run | not run | not run |
@@ -92,8 +281,28 @@ Paired effect of each added component, in percentage points:
 
 | Run | Condition | Step budget | R0 pass | Failed tasks |
 |---|---|---|---|---|
+| c2_legacy23_adapter_b3 | adapter | 3 | 23/23 | - |
+| c2_legacy23_adapter_b3_T07_s1 | adapter_T0.7_s1 | 3 | 23/23 | - |
+| c2_legacy23_adapter_b3_T07_s2 | adapter_T0.7_s2 | 3 | 23/23 | - |
+| c2_legacy23_adapter_b3_T07_s3 | adapter_T0.7_s3 | 3 | 23/23 | - |
+| c2_legacy23_adapter_b6 | adapter | 6 | 23/23 | - |
+| c2_legacy23_base_b3 | base | 3 | 21/23 | chain_weather_then_calc, adversarial_division_by_zero |
+| c2_legacy23_base_b3_T07_s1 | base_T0.7_s1 | 3 | 21/23 | chain_weather_then_calc, adversarial_division_by_zero |
+| c2_legacy23_base_b3_T07_s2 | base_T0.7_s2 | 3 | 22/23 | adversarial_division_by_zero |
+| c2_legacy23_base_b3_T07_s3 | base_T0.7_s3 | 3 | 22/23 | adversarial_division_by_zero |
+| c2_legacy23_base_b6 | base | 6 | 22/23 | adversarial_division_by_zero |
+
+Adapter vs base, budget 3: adapter-only passes 2, base-only passes 0, exact McNemar p = 0.5000.
+
+Adapter vs base, budget 6: adapter-only passes 1, base-only passes 0, exact McNemar p = 1.0000.
 
 ### Benchmark v2, dev split (55 tasks), scored by `scorer_v2` (exploratory; the sealed test split was not used)
 
 | Run | Condition | Budget | R2 correct | R0-rule | Exhausted | R2 tool-necessary | R2 tool-optional | R2 tool-unnecessary | Failure modes |
 |---|---|---|---|---|---|---|---|---|---|
+| c2_v2dev55_adapter_b3 | INCOMPLETE | - | - | - | - | - | - | - | - |
+| c2_v2dev55_adapter_b6 | adapter | 6 | 92.7% | 87.3% | 0.0% | 94% (n=32) | 86% (n=14) | 100% (n=9) | none:51; skipped_necessary_tool:1; wrong_after_tool_use:3 |
+| c2_v2dev55_base_b3 | base | 3 | 92.7% | 83.6% | 1.8% | 94% (n=32) | 93% (n=14) | 89% (n=9) | none:51; budget_exhausted:1; skipped_necessary_tool:1; wrong_after_tool_use:2 |
+| c2_v2dev55_base_b6 | base | 6 | 94.5% | 85.5% | 0.0% | 94% (n=32) | 93% (n=14) | 100% (n=9) | none:52; skipped_necessary_tool:1; wrong_after_tool_use:2 |
+
+Adapter vs base on R2, budget 6: adapter-only correct 0, base-only correct 1, exact McNemar p = 1.0000.
