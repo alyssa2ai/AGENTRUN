@@ -27,7 +27,11 @@ MODEL_EXTRA = {"openai/gpt-oss-120b": {"reasoning_effort": "low"}, "openai/gpt-o
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--model", required=True)
-    p.add_argument("--split", choices=["dev", "eval"], required=True)
+    p.add_argument("--split", choices=["dev", "eval", "eval2"], required=True)
+    p.add_argument("--harness", choices=list(memlab.HARNESSES), default="v1")
+    p.add_argument("--retriever", choices=["hash", "bm25", "dense"], default="hash",
+                   help="hash = memory.embed_text (AGENTRUN default); needs --pad > 0 for the others")
+    p.add_argument("--pad", type=int, default=0, help="background records added to every memory store")
     p.add_argument("--run-id", required=True)
     p.add_argument("--configs", default="A,B,C,D,E")
     p.add_argument("--limit", type=int, help="first N tasks only (smoke tests)")
@@ -43,11 +47,16 @@ def main() -> int:
     a = p.parse_args()
 
     bench = HERE / "benchmark" / f"{a.split}.jsonl"
-    freeze = json.loads((HERE / "benchmark" / "FREEZE.json").read_text(encoding="utf-8"))
+    fname = "FREEZE_eval2.json" if a.split == "eval2" else "FREEZE.json"
+    freeze = json.loads((HERE / "benchmark" / fname).read_text(encoding="utf-8"))
     sha = hashlib.sha256(bench.read_bytes()).hexdigest()
     if sha != freeze[a.split]["sha256"]:
         raise SystemExit("benchmark file does not match FREEZE.json")
-    if memlab.prompts_sha256() != freeze["prompts_sha256"] and a.split == "eval":
+    if a.split == "eval2" and memlab.harness_sha256() != freeze["harness_sha256"]:
+        raise SystemExit("harness variants changed since the eval2 freeze")
+    if a.split != "eval" and (a.harness != "v1" or a.pad) and a.split == "eval":
+        raise SystemExit("the 2026-11-11 eval split is reserved for the frozen v1 harness")
+    if memlab.prompts_sha256() != freeze["prompts_sha256"] and a.split in ("eval", "eval2"):
         raise SystemExit("prompts/configs changed since the freeze; rebuild or revert before an eval run")
     tasks = [json.loads(x) for x in bench.read_text(encoding="utf-8").splitlines() if x.strip()]
     if a.scenarios:
@@ -79,7 +88,8 @@ def main() -> int:
     except Exception:
         commit = None
     man = {"run_id": a.run_id, "split": a.split, "benchmark_sha256": sha, "prompts_sha256": memlab.prompts_sha256(),
-           "memlab_version": memlab.MEMLAB_VERSION,
+           "memlab_version": memlab.MEMLAB_VERSION, "harness": a.harness, "retriever": a.retriever,
+           "pad": a.pad, "harness_sha256": memlab.harness_sha256(),
            "memlab_py_sha256": hashlib.sha256((HERE / "scripts" / "memlab.py").read_bytes()).hexdigest(),
            "client": client.describe(), "configs": configs, "n_tasks": len(tasks), "top_k": memlab.TOP_K,
            "min_similarity": memlab.MIN_SIM, "max_steps": memlab.MAX_STEPS, "trials": 1,
@@ -88,6 +98,12 @@ def main() -> int:
     with open(out / "manifest.jsonl", "a", encoding="utf-8") as f:
         f.write(json.dumps(man) + "\n")
 
+    factory = None
+    if a.pad:
+        import stores
+        factory = stores.make_factory(a.retriever, a.pad)
+    elif a.retriever != "hash":
+        raise SystemExit("--retriever other than hash requires --pad")
     t0 = time.monotonic()
     n = 0
     with open(runs, "a", encoding="utf-8") as f:
@@ -95,7 +111,8 @@ def main() -> int:
             for c in configs:
                 if (task["task_id"], c) in done:
                     continue
-                run = memlab.run_task(client, task, c, out / "stores")
+                run = memlab.run_task(client, task, c, out / "stores", harness=a.harness,
+                                      store_factory=factory)
                 run["model"] = a.model
                 f.write(json.dumps(run, ensure_ascii=False) + "\n")
                 f.flush()

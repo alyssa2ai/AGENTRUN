@@ -46,9 +46,14 @@ def contains(value, text) -> bool:
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--runs", nargs="*", default=[])
+    p.add_argument("--split", choices=["eval", "eval2"], default="eval")
     a = p.parse_args()
-    dev, ev = load("dev.jsonl"), load("eval.jsonl")
-    freeze = json.loads((HERE / "benchmark" / "FREEZE.json").read_text(encoding="utf-8"))
+    dev, ev = load("dev.jsonl"), load(a.split + ".jsonl")
+    freeze = json.loads((HERE / "benchmark" / ("FREEZE.json" if a.split == "eval" else "FREEZE_eval2.json"))
+                        .read_text(encoding="utf-8"))
+    freeze["eval"] = freeze[a.split]
+    per = freeze["eval"].get("per_scenario", 8)
+    other = load("eval.jsonl") if a.split == "eval2" else []
     res, hard = {}, []
 
     def gate(name, ok, detail=None):
@@ -57,13 +62,18 @@ def main() -> int:
             hard.append(name)
 
     # 1 freeze integrity
-    sha = hashlib.sha256((HERE / "benchmark" / "eval.jsonl").read_bytes()).hexdigest()
+    sha = hashlib.sha256((HERE / "benchmark" / (a.split + ".jsonl")).read_bytes()).hexdigest()
     gate("eval_file_matches_freeze", sha == freeze["eval"]["sha256"], sha)
     gate("prompts_match_freeze", memlab.prompts_sha256() == freeze["prompts_sha256"])
-    gate("eval_regenerates_from_seed", memlab.build_split("eval", freeze["eval"]["seed"], 8) == ev)
+    gate("eval_regenerates_from_seed", memlab.build_split(a.split, freeze["eval"]["seed"], per) == ev)
 
     # 2 split separation
     gate("dev_eval_entities_disjoint", not entities(dev) & entities(ev), len(entities(ev)))
+    if other:
+        gate("eval2_entities_disjoint_from_first_eval_split", not entities(other) & entities(ev))
+        gate("eval2_prompts_disjoint_from_first_eval_split",
+             not {t["prompt"] for t in other} & {t["prompt"] for t in ev})
+        gate("harness_variants_match_freeze", memlab.harness_sha256() == freeze["harness_sha256"])
     gate("dev_eval_prompts_disjoint", not {t["prompt"] for t in dev} & {t["prompt"] for t in ev})
     gate("eval_prompts_unique", len({t["prompt"] for t in ev}) == len(ev))
     lead_names = ({str(r["value"]) for t in dev for r in t["memory"] if r["attribute"] == "lead"}
@@ -151,7 +161,9 @@ def main() -> int:
                 if any(contains(v, tool_obs) for v in secret_values(t)):
                     a_val.append(r["task_id"])
             sp = rd / "stores" / f"{r['task_id']}__{r['config']}.json"
-            if cfg["memory"]:
+            if cfg["memory"] and not sp.exists():
+                pass  # padded-store runs keep no per-run store file
+            elif cfg["memory"]:
                 stored = json.loads(sp.read_text(encoding="utf-8"))
                 if sorted((e["record_id"], e["entity"]) for e in stored) != \
                         sorted((m["record_id"], m["entity"]) for m in t["memory"]):
@@ -166,7 +178,7 @@ def main() -> int:
         gate(f"{k}:each_store_holds_exactly_its_own_task_records", not store_bad, store_bad)
         res[f"{k}:n_runs"] = len(runs)
 
-    out = HERE / "tables" / "leakage_audit.json"
+    out = HERE / "tables" / ("leakage_audit.json" if a.split == "eval" else "leakage_audit_eval2.json")
     out.parent.mkdir(exist_ok=True)
     out.write_text(json.dumps({"hard_failures": hard, "checks": res}, indent=2, default=str) + "\n",
                    encoding="utf-8")

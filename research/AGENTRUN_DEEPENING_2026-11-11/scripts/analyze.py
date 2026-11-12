@@ -77,7 +77,9 @@ def rate_ci(k, n):
 
 def load(run_dirs):
     tasks = {}
-    for name in ("dev.jsonl", "eval.jsonl"):
+    for name in ("dev.jsonl", "eval.jsonl", "eval2.jsonl"):
+        if not (HERE / "benchmark" / name).exists():
+            continue
         for x in (HERE / "benchmark" / name).read_text(encoding="utf-8").splitlines():
             if x.strip():
                 t = json.loads(x)
@@ -89,7 +91,11 @@ def load(run_dirs):
         cl = manifests[rd.name]["client"]
         model = cl["model"]
         if cl.get("backend") == "hf-local":  # local-GPU runs: label by model, adapter and decoding
-            model += " [L40" + (" +LoRA" if cl.get("adapter") else "") +                      (f" T={cl['temperature']} seed={cl['seed']}" if cl.get("temperature") else " greedy") + "]"
+            man = manifests[rd.name]
+            model += " [L40" + (" +LoRA" if cl.get("adapter") else "") + \
+                (f" T={cl['temperature']} seed={cl['seed']}" if cl.get("temperature") else " greedy") + \
+                ("" if man.get("harness", "v1") == "v1" else f" harness={man['harness']}") + \
+                (f" {man['retriever']}+{man['pad']}" if man.get("pad") else "") + "]"
         by_task = defaultdict(dict)
         for x in (rd / "runs.jsonl").read_text(encoding="utf-8").splitlines():
             if x.strip():
@@ -340,7 +346,7 @@ def main(argv) -> int:
     import time as _t
     lat = []
     for t in tasks.values():
-        if t["split"] == "eval":
+        if t["split"] == "eval" and not TAG.startswith("x"):
             st = memlab.MemoryStore(t["memory"])
             for _ in range(20):
                 t0 = _t.perf_counter()

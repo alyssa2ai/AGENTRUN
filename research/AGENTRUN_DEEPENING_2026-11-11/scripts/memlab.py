@@ -78,10 +78,10 @@ NAME_SEED = 20261111
 N_DEV_NAMES = 150
 
 
-def _name_pool() -> list[str]:
+def _name_pool(size: int = 1600) -> list[str]:
     rng = random.Random(NAME_SEED)
     seen, out = set(), []
-    while len(out) < 1600:
+    while len(out) < size:
         n = "".join(rng.choice(_ON) + rng.choice(_NU) for _ in range(2)) + rng.choice(_CO)
         if n not in seen and len(n) >= 6:
             seen.add(n)
@@ -95,6 +95,8 @@ class _World:
     def __init__(self, split: str, seed: int):
         pool = _name_pool()
         self.names = pool[:N_DEV_NAMES] if split == "dev" else pool[N_DEV_NAMES:]
+        if split == "eval2":  # third, disjoint slice: the generator sequence is prefix-stable
+            self.names = _name_pool(5200)[1600:]
         self.rng = random.Random(seed)
         self.rng.shuffle(self.names)
         self._i = 0
@@ -420,6 +422,27 @@ Verdicts:
 Reply with one JSON object and nothing else: {"verdict": "SUPPORTED" | "UNSUPPORTED" | "CONFLICT", "reason": "<one short sentence>"}"""
 
 
+# Harness variants. "v1" is the frozen 2026-11-11 harness. "v1r" adds one repair turn when the final
+# message is not a parsable answer. "v2" adds two system-prompt rules on top of v1r. Developed on
+# the dev split only (2026-11-12), then frozen in benchmark/FREEZE_eval2.json.
+V2_RULES = """6. If memory_search is available, search memory before deciding that a fact is unavailable and before giving up on a failing tool.
+7. Never repeat a tool call that already returned a valid result (a "not found" or empty result is valid). If neither memory nor the registry provides the requested fact, call submit_answer with status "abstain".
+"""
+SYSTEM_PROMPT_V2 = SYSTEM_PROMPT.replace("\nWhen you are done,", V2_RULES + "\nWhen you are done,")
+assert SYSTEM_PROMPT_V2 != SYSTEM_PROMPT
+REPAIR_NOTICE = ("[harness notice] Your last message was not a submit_answer call. Call submit_answer now "
+                 "with your final status and value.")
+HARNESSES = {"v1": {"system": SYSTEM_PROMPT, "repair": False},
+             "v1r": {"system": SYSTEM_PROMPT, "repair": True},
+             "v2": {"system": SYSTEM_PROMPT_V2, "repair": True}}
+
+
+def harness_sha256() -> str:
+    blob = json.dumps({"harnesses": HARNESSES, "repair_notice": REPAIR_NOTICE, "v1": prompts_sha256()},
+                      sort_keys=True)
+    return hashlib.sha256(blob.encode()).hexdigest()
+
+
 MALFORMED_NOTICE = ("[harness notice] Your last output was rejected because it was not a valid tool call. "
                     "Continue by calling one of the available tools with valid JSON arguments.")
 
@@ -528,16 +551,19 @@ def parse_final(text: str | None) -> dict | None:
     return found
 
 
-def run_task(client, task: dict, config: str, store_dir: Path | None = None) -> dict:
+def run_task(client, task: dict, config: str, store_dir: Path | None = None, harness: str = "v1",
+             store_factory=None) -> dict:
     cfg = CONFIGS[config]
     store = None
     t_ret = 0.0
     if cfg["memory"]:
         path = store_dir / f"{task['task_id']}__{config}.json" if store_dir else None
-        store = MemoryStore(task["memory"], path)
+        store = store_factory(task) if store_factory else MemoryStore(task["memory"], path)
+    hv = HARNESSES[harness]
+    repaired = False
     registry = Registry(task["registry"])
     tools = [CALC_TOOL, REG_TOOL] + ([MEM_TOOL] if cfg["memory"] else []) + [SUBMIT_TOOL]
-    messages = [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": task["prompt"]}]
+    messages = [{"role": "system", "content": hv["system"]}, {"role": "user", "content": task["prompt"]}]
     calls, api, evidence = [], [], []
     draft_text, hit_max = None, False
     t0 = time.monotonic()
@@ -553,6 +579,12 @@ def run_task(client, task: dict, config: str, store_dir: Path | None = None) -> 
         tcs = msg.get("tool_calls") or []
         if not tcs and not (msg.get("content") or "").strip() and step < MAX_STEPS:
             messages.append({"role": "user", "content": MALFORMED_NOTICE})  # empty generation: same policy
+            continue
+        if not tcs and hv["repair"] and not repaired and step < MAX_STEPS \
+                and not (parse_final(msg.get("content")) or {}).get("status"):
+            repaired = True  # one repair turn: ask for the answer in the agreed form
+            messages.append({"role": "assistant", "content": msg.get("content") or ""})
+            messages.append({"role": "user", "content": REPAIR_NOTICE})
             continue
         if not tcs:
             draft_text = msg.get("content") or ""
@@ -621,7 +653,8 @@ def run_task(client, task: dict, config: str, store_dir: Path | None = None) -> 
         elif v == "CONFLICT":
             final = {"status": "conflict", "value": None, "evidence": [], "note": "verifier: conflict"}
     wait = sum(a["wait_s"] for a in api)
-    return {"record_type": "run", "task_id": task["task_id"], "config": config, "messages": messages,
+    return {"record_type": "run", "task_id": task["task_id"], "config": config, "harness": harness,
+            "repair_used": repaired, "messages": messages,
             "tool_calls": calls, "api_calls": api, "draft_text": draft_text, "draft": draft, "verdict": verdict,
             "final": final, "hit_max_steps": hit_max,
             "timing": {"total_s": round(time.monotonic() - t0 - wait, 4), "rate_limit_wait_s": round(wait, 2),

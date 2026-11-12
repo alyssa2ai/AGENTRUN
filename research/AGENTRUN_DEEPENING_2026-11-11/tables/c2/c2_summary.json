@@ -1,0 +1,23 @@
+{
+ "status": {
+  "c2_qwen25_7b_v1": "not run",
+  "c2_qwen3_8b_v1": "not run",
+  "c2_qwen25_7b_v2": "not run",
+  "c2_qwen3_8b_v2": "not run",
+  "c2_qwen25_7b_v1r": "not run",
+  "c2_qwen3_8b_v1r": "not run",
+  "c2_qwen25_14b_v1": "not run",
+  "c2_qwen25_3b_v1": "not run",
+  "c2_qwen25_1p5b_v1": "not run",
+  "c2_qwen25_14b_v2": "not run",
+  "c2_qwen25_3b_v2": "not run",
+  "c2_qwen25_1p5b_v2": "not run",
+  "c2_qwen25_7b_lora_v1": "not run",
+  "c2_qwen25_7b_lora_v2": "not run",
+  "c2_qwen25_7b_v2_T07_s1": "not run",
+  "c2_qwen25_7b_v2_T07_s2": "not run",
+  "c2_qwen25_7b_v2_hash_pad2000": "not run",
+  "c2_qwen25_7b_v2_bm25_pad2000": "not run",
+  "c2_qwen25_7b_v2_dense_pad2000": "not run"
+ }
+}
