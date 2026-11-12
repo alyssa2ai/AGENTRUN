@@ -187,8 +187,7 @@ def main() -> int:
         for h, rows in runs.items():
             if rows:
                 oc = Counter(r["outcome"] for r in rows.values())
-                s5 = [f"{sum(r['success'] for (t, c), r in rows.items() if c == cc and r['scenario'] == 'S5_unsupported')}/16"
-                      for cc in ("A", "B", "E")]
+                s5 = [cell(rows, cc, scen="S5_unsupported") for cc in ("A", "B", "E")]
                 mem = [r for (t, c), r in rows.items() if c in "BCDE" and r["scenario"][:2] in ("S1", "S2", "S3", "S4")]
                 fb = [r for (t, c), r in rows.items() if c in "BCDE" and r["variant"] == "permanent_memory_fallback"]
                 lines.append([h, oc["format_error"], oc["max_steps"], oc["over_abstain"], oc["false_conflict"]]
@@ -368,7 +367,8 @@ def figures(R, sizes):
                     k, n = rate(R[f"{sizes[i][1]}_{h}"], c)
                     ys.append(100 * k / n)
                 ax.plot(xs, ys, color=COL[c], linewidth=2, marker="o", markersize=7, label=memlab.CONFIGS[c]["label"])
-                ax.text(xs[-1] + 0.07, ys[-1], f"{ys[-1]:.0f}", fontsize=8, color=INK, va="center")
+                if c in ("A", "E"):  # label only the two extremes; the middle lines overlap at 14B
+                    ax.text(xs[-1] + 0.07, ys[-1], f"{c} {ys[-1]:.0f}", fontsize=8, color=INK, va="center")
             ax.set_xticks(range(len(sizes)))
             ax.set_xticklabels([s for s, _ in sizes], color=INK)
             ax.set_xlim(-0.25, len(sizes) - 0.55)
@@ -409,7 +409,7 @@ def figures(R, sizes):
         ax.invert_yaxis()
         ax.set_xlim(0, 100)
         ax.set_xlabel("Share of runs, all five configurations (%)", color=MUTED, fontsize=9)
-        ax.set_title("Outcome mix by harness variant (v1 frozen, v1r repair turn, v2 repair + rules)", loc="left",
+        ax.set_title("Outcome mix by harness: v1 frozen vs v2 (repair turn + two rules)", loc="left",
                      color=INK, fontsize=11)
         ax.legend(ncol=4, frameon=False, fontsize=8.5, loc="upper center", bbox_to_anchor=(0.45, -0.22))
         fig.tight_layout()

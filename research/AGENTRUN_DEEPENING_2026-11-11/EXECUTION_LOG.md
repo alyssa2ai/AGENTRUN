@@ -56,3 +56,18 @@ None. All new files are under `research/AGENTRUN_DEEPENING_2026-11-11/`. Nothing
 ## Not done
 
 See OVERNIGHT_STATUS.md, section 11.
+
+## 2026-11-12, campaign 2
+
+| Time (UTC) | Action | Outcome |
+|---|---|---|
+| ~04:20 | Committed the first study on branch `research/memory-ablation-2026-11` (`998e42e`) | |
+| 04:20-04:50 | Audit of the first study; wrote harness variants v1r and v2, padded stores, the v2-runner bridge, the eval2 builder; started downloading Qwen2.5 1.5B, 3B and 14B on the login node | frozen v1 harness and first eval split verified unchanged by hash |
+| 04:45-04:58 | Pilot array 4145 on the dev split (v2 harness on two models, padded stores, legacy runner) | all exit 0; legacy pilot 21/23 |
+| 04:54 | Froze eval2 (96 tasks); static leakage audit | 17/17 pass |
+| 04:58 | Submitted campaign array 4148 (21 jobs, two at a time); committed the design before any result (`ca664fa`) | |
+| 05:31-08:42 | Jobs 0-13 completed | all exit 0 |
+| after 08:42 | Jobs 14-20 never dispatched | Slurm controller unreachable (observed 12:08 UTC by another session) |
+| ~12:10 | Another session (not this one) pulled jobs 0-13, wrote `../AGENTRUN_DEEPENING_2026-11-12/` and committed `65cd860` | its numbers match; several interpretations and all three "examples" did not, see its CORRECTIONS.md |
+| 13:50 | Cluster unreachable from the laptop (both addresses time out) | the remaining 7 jobs cannot be started from here |
+| 13:50-15:30 | Removed byte-identical duplicate result folders and empty folders; re-ran the eval2 audit on all 12 agent runs (77/77); regenerated tables and figures; checked every interpretation against transcripts (`scripts/c2_breakdowns.py`); identified the repository adapter as V2 from its trainer state; wrote RESULTS_CAMPAIGN2, the MITACS brief, talking points and narrative check; marked the other session's folder as superseded | |

@@ -58,3 +58,11 @@ The first audit of the HPC runs reported 3 failures of the provenance-isolation 
 5. **Post hoc analyses.** The lenient re-score and the "runs that called memory" breakdown were designed after seeing results. Both are labelled.
 6. **Existing sealed benchmark.** `E:\agentrun\.sealed\` (the 130-task v2 test split) is still inside the repository. This study did not open or copy it, and it was not transferred to the cluster.
 7. **Earlier secret exposure.** Unrelated to this experiment, but still open: an ngrok token and two Tavily keys remain in public git history from before 2026-10 and should be rotated. No key was written to any file or log by this study; the endpoint's organisation id that appeared in an error message was redacted from the logs.
+
+---
+
+## Second evaluation split (eval2, 12 November)
+
+`py -3.11 scripts/leakage_audit.py --split eval2 --runs <all 12 c2_qwen* runs>`; output in `tables/leakage_audit_eval2.json` and `logs/leakage_audit_eval2.log`. **77 of 77 checks pass**: the 14 static checks above applied to eval2, three further ones (eval2 entities and prompts disjoint from the first eval split; harness variants match their freeze hash), and the five transcript checks on each of the 12 agent runs. The padded-store runs keep no per-run store file, so the store-content check is skipped for those two runs.
+
+eval2 was generated from a new seed with names from a disjoint third slice of the name pool and frozen at 2026-11-12 04:54 UTC, before any eval2 run. The revised harness (v2) was developed on the 12 dev tasks only. The sealed 130-task v2 test split was neither used nor copied to the cluster. The v2 dev split (55 tasks) used for the client-matched re-run is not gated by the research protocol and passes the repository's own leakage checks against the training data.

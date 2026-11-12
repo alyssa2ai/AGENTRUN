@@ -300,7 +300,6 @@ Adapter vs base, budget 6: adapter-only passes 1, base-only passes 0, exact McNe
 
 | Run | Condition | Budget | R2 correct | R0-rule | Exhausted | R2 tool-necessary | R2 tool-optional | R2 tool-unnecessary | Failure modes |
 |---|---|---|---|---|---|---|---|---|---|
-| c2_v2dev55_adapter_b3 | INCOMPLETE | - | - | - | - | - | - | - | - |
 | c2_v2dev55_adapter_b6 | adapter | 6 | 92.7% | 87.3% | 0.0% | 94% (n=32) | 86% (n=14) | 100% (n=9) | none:51; skipped_necessary_tool:1; wrong_after_tool_use:3 |
 | c2_v2dev55_base_b3 | base | 3 | 92.7% | 83.6% | 1.8% | 94% (n=32) | 93% (n=14) | 89% (n=9) | none:51; budget_exhausted:1; skipped_necessary_tool:1; wrong_after_tool_use:2 |
 | c2_v2dev55_base_b6 | base | 6 | 94.5% | 85.5% | 0.0% | 94% (n=32) | 93% (n=14) | 100% (n=9) | none:52; skipped_necessary_tool:1; wrong_after_tool_use:2 |

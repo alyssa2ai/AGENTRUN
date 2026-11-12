@@ -1,81 +1,66 @@
-# MITACS talking points
+# MITACS talking points (12 November 2026)
 
-Numbers are from RESULTS.md. "Local" = Qwen2.5-7B, Qwen3-8B and Qwen2.5-7B + adapter on the SIT HPC L40s (144 task blocks, complete). "Hosted" = three larger models through an API (71 blocks, cut short by quota).
+Numbers are from [RESULTS.md](RESULTS.md) (11 November) and [RESULTS_CAMPAIGN2.md](RESULTS_CAMPAIGN2.md) (12 November). "Fresh tasks" means the 96-task split generated with new names and frozen before any run.
 
 ## 30 seconds
 
-AGENTRUN is my multi-tool agent runtime: an LLM that calls tools over MCP and keeps a persistent memory. I wanted to know whether that memory actually makes the agent more reliable, so I built a controlled ablation: the same 48 tasks run with no memory, with memory, with a verifier, with provenance, and with a rule-based staleness check. Memory roughly doubled or tripled task success. The surprise was that an LLM verifier on its own made small models worse, and that passing the record's date and source through did most of the useful work.
+AGENTRUN is my multi-tool agent runtime: an LLM that calls tools over MCP and keeps a persistent memory. I asked whether that memory actually makes the agent more reliable. On our institute's L40 GPUs I ran controlled ablations: the same tasks with no memory, with memory, with a verifier, with provenance and with a rule-based staleness check, across model sizes from 1.5B to 14B. Memory roughly doubles task success, but a verifier that cannot see where evidence came from makes things worse, and memory can make an agent worse at saying "I don't know". Provenance, a simple staleness rule and two prompt rules fix most of that, and the components only pay off in a middle range of model sizes.
 
 ## 2 minutes
 
-The project started as a QLoRA fine-tuning study of Qwen2.5-7B for tool use. That taught me a hard lesson about evaluation: one result dropped because of a parser defect, and a later 100% turned out to be contaminated by train/evaluation leakage, so I do not report it as generalisation.
+I started with QLoRA fine-tuning of Qwen2.5-7B for tool use, on a 23-task benchmark and a Colab T4. That phase taught me to distrust my own numbers: one drop turned out to be partly a parser and client artefact, and the later 100% came from an adapter trained on examples designed from failures on those same 23 tasks. When I re-ran it on our cluster with a matched client, the adapter again scored 23 of 23, five times out of five, but on 55 fresh tasks it was no better than the base model.
 
-For this study I audited the repository first and found that the memory layer had never been evaluated at all. So I designed one experiment around the question: when does persistent memory make an agent more reliable, and when does it make it wrong?
+The memory layer had never been tested, so I designed an experiment around it. Six scenarios: lost context, retrieval among distractors, conflicting records, stale records, questions with no supporting evidence, and tool failures. Five configurations, each adding one component. Scoring is programmatic and separates "did the task" from "asserted something false". Tasks are frozen before any run and pass a 77-check leakage audit.
 
-I froze 48 tasks in six scenarios before running anything: lost context, retrieval among distractors, conflicting records, stale records, questions with no supporting evidence, and tool failures. Each task runs under five configurations that differ in exactly one component. Scoring is programmatic and keeps "did the task" separate from "asserted something false". An automated leakage audit with 59 checks passes on every run.
+On 96 fresh tasks with Qwen2.5-7B and Qwen3-8B, memory raised success from 25% to 57%. Adding a verifier that only saw text cut it to 52%: it rejected correct answers because the evidence also contained other projects' records. Adding the record's date and source, then a rule that labels superseded and conflicting records, took it to 75%; on stale records, from 4 to 25 of 32.
 
-I ran it on my institute's HPC, on two NVIDIA L40s under Slurm, with Qwen2.5-7B, Qwen3-8B and my own adapter, 1,440 runs in total, and on three larger hosted models.
+The most interesting failure: with memory, Qwen3-8B stopped abstaining on unanswerable questions, 15 of 16 correct without memory, 1 of 16 with the full system. It did not make answers up; it kept searching memory and the registry until it ran out of steps. Two prompt rules, "search memory before giving up" and "never repeat a call that already answered, otherwise abstain", fixed that and lifted success by 16 points on both models, to 92% in the full configuration.
 
-Four results. Memory helps: success goes from about 22% to 46% on the small models and from 28% to 68% on the larger ones. A verifier that only sees text hurts small models, because it rejects correct answers; 14 of its 16 rejections were wrong. Provenance fixes that: with record ids, dates and sources, verifier precision goes from 2 in 16 to 7 in 8. And a ten-line deterministic rule for "which record is current" lifted stale-record tasks from 7 to 18 of 24 on small models, but added nothing on stronger models.
+Finally, model size. Inside one family, the 1.5B model never even calls memory, the 3B model benefits from memory but not from verification or provenance, the 7B model benefits from everything, and the 14B model needs little beyond memory. So reliability machinery is most valuable in the middle of the capacity range, and retrieval quality matters too: at 2,000 records the default hash retriever halves success and BM25 restores it.
 
-The failures were just as informative: agents that never look in their memory, agents that cannot stop searching and say "I don't know", and small models that have the right answer but write it in the wrong format.
+## Three concrete examples (real transcripts)
 
-## Three questions I should expect
+1. **Looping instead of abstaining.** Qwen3-8B, "Who is the lead of Project Caskaen?", full system, original harness. The fact is nowhere. It called the registry ("not found"), then memory (records about the project's other attributes, not its lead), then the registry again, then memory again, six steps in all, and never answered.
+2. **A verifier that punishes correct answers.** Qwen2.5-7B, 11 November, verifier without provenance: it rejected a correct budget-per-member answer (17185.29) because "the evidence ... instead provid[es] data for other projects". Across the three local models that day, the text-only verifier rejected 14 correct drafts and 2 wrong ones; with record ids and dates in the evidence it was right in 7 of its 8 rejections.
+3. **An invented answer, caught.** Qwen2.5-7B, revised harness, retrieval only: on four different context-loss tasks it submitted the same value, 12500.00, without calling a single tool, citing `registry_lookup` and `calculator` as evidence. With the verifier switched on, all four were rejected.
 
-**1. "How do you know this is not leakage again?"**
+## Likely questions
 
-Three layers. The task entities are invented names from a seeded generator, so no model can know the answers, and an automated check confirms none of them occurs in my training data, the old benchmark or the real memory file. Each task gets its own memory store, written to disk and checked afterwards to contain only that task's records. And the scorer's ground truth is never in any message sent to the model; the audit greps every transcript for it. The benchmark and prompts were hashed before the first evaluation run and the runner refuses to start if the hash differs. The remaining threat is honest: I wrote the tasks and the method on the same day, the facts are templated, and two prompt rules were tuned on a development split with the same templates.
+**"How do you know this is not leakage again?"** Entities are invented names from a seeded generator, so no model can know the answers. Each task gets its own memory store, checked after the run to contain only its own records. The ground truth never appears in any message to the model; the audit scans every transcript for it. The splits were hashed before the first run and the runner refuses to start if the hash changes. The revised harness was developed on 12 dev tasks only, then tested on a split nobody had seen, with the original harness re-run on the same tasks as the control. What remains: I wrote the tasks and the method; the facts are templated; a model could learn the task structure within a run.
 
-**2. "Your verifier made things worse. Why, and is that a flaw in your implementation?"**
+**"Why does the verifier hurt? Isn't that just a bad prompt?"** It is a property of using the same model to check itself without external evidence, which matches published findings that LLMs often fail to self-correct without external feedback (Huang et al., 2023, arXiv:2310.01798). Two observations support that reading: the identical verifier became accurate once the evidence carried provenance, and on larger hosted models it had no false rejections. A better prompt might reduce the penalty; I did not tune it, by design.
 
-It is a property of the design, and I think it is the most useful finding. The verifier is the same 7B model, shown the question, the retrieved text and the draft. The retrieved text contains the right record plus distractors, and the model read "there are records about other projects" or "another tool said not found" as "unsupported". Two things support that it is not just a bug: on the larger hosted models the identical verifier had zero false rejections, and on the small models the same verifier became accurate once the evidence carried record ids, dates and sources. There is a second weakness it cannot escape: when generator and verifier are the same model they share blind spots. I have a transcript where both read "most recent deadline" as "the later date" and the check passed.
+**"Why does the 14B model benefit less?"** Partly capacity: it already resolves many stale and conflicting cases itself. Partly an artefact I found in the transcripts: in about 20 runs per harness it kept calling the calculator with `round(...)`, which the tool does not support, until it ran out of steps. So I would not claim "large models do not need reliability components"; I would say the measured marginal benefit is small at 14B on this tool set.
 
-**3. "Is the reliability gate novel? And would it survive real data?"**
+**"Is the reliability rule novel?"** No. Last-write-wins and conflict flags are standard, and 2025-2026 work such as STALE and MemoryAgentBench studies stale and conflicting agent memory. My contribution is the controlled comparison: which component helps, at which model size, measured with paired tests, including the negative result for verification without provenance.
 
-Not novel as an idea. Last-write-wins and conflict flags are standard, and there is 2026 work specifically on stale and conflicting agent memory (the STALE benchmark, Governed Persistent Memory, MemoryAgentBench's conflict split). What I add is a controlled comparison inside a multi-tool agent showing where it matters: it helps models that cannot reason reliably over metadata and is redundant for those that can. Would it survive real data? Not as written. It depends on each record having a clean entity and attribute key, which my fixtures provide and real conversations do not. That is the next experiment.
-
-Other likely questions, short answers:
-
-- *Why are the absolute numbers low for the 7B models?* Between 27% and 42% of their runs, depending on the configuration, end without a valid final answer (wrong format or step limit). With a post hoc lenient parser success rises from 46% to 58% in B and from 63% to 72% in E; the ordering does not change. I report both and label the lenient one as post hoc.
-- *How much does it cost?* On the L40, about 33% more latency and 35% more tokens from the stateless agent to the full system.
-- *What did the HPC add?* Complete data without API quotas, the project's own base model and adapter, deterministic greedy decoding (identical drafts in 144 of 144 repeated blocks), sampled repeats to see run-to-run spread, and the 100,000-record retrieval test.
-- *Did fine-tuning help?* My adapter did worse than its base model on this task (24 vs 33 of 48 in the best configuration), mostly through format failures. It was trained on four other tools, so this measures transfer, not the adapter's intended use.
+**"What did the HPC add over Colab?"** Complete data without API quotas; the project's own base model and adapter; four model sizes in one family; a matched-client re-run of the original benchmark; and the end-to-end retrieval test. About 6,600 agent runs over two days, against 23 tasks per condition before.
 
 ## What the evidence supports
 
-- Memory improves task completion when the context is missing (both model sets, all six models, p < 0.0001).
-- Text-only self-verification reduces success on small models (p = 0.0001) and is neutral on larger ones.
-- Provenance improves on text-only verification on small models (p = 0.0002).
-- A deterministic staleness rule adds to provenance on small models (p = 0.034, the weakest of these) and not on larger ones.
-- No configuration fabricated an answer to an unsupported question in 1,795 scored runs under this prompt.
-- The repository's hashed embedding retriever fails beyond a few thousand records.
+- Memory improves task completion when context is missing (two fresh splits, every model from 3B up, p < 0.0001).
+- A text-only same-model verifier lowers success (p = 0.006 and p < 0.0001 on the two harnesses).
+- Provenance plus a staleness rule raises success on 7-8B models, most of all on stale records.
+- Memory can stop an agent from abstaining, and two prompt rules restore it.
+- The value of the reliability components depends on model size non-monotonically (one family).
+- The default retriever's failure at scale reaches end-task success; BM25 fixes it.
+- The fine-tuned adapter's benchmark advantage does not transfer to fresh tasks.
 
 ## What is unfinished
 
-- Hosted runs stopped at 71 of 144 blocks.
-- One greedy trial per model for the headline; three models that share one base family.
-- Harmful assertions are too rare (0 to 4 per configuration) for any significance claim.
-- Free-text memories, agent-written memories and a single wrong memory were not tested.
-- The legacy 23-task benchmark was not re-run with a matched client; the sealed 130-task benchmark was deliberately not touched.
-- Memory-not-consulted and cannot-stop-searching have no fix yet.
-
-## The next experiment
-
-Multi-session tasks in which the agent writes its own memories, a dense retriever, and three perturbations (stale, conflicting, and one confidently wrong record), comparing provenance with learned key extraction against the current clean-key rule, with at least three seeds per model on the L40.
-
-## Connection to reliable, interpretable, trustworthy AI
-
-- **Reliable:** the study measures the difference between not answering and answering wrongly, and shows memory moves an agent from the first to the second unless provenance comes with it.
-- **Interpretable:** provenance makes each answer traceable to a record id, date and source; the deterministic rule is a decision a person can read, unlike a second LLM's judgement.
-- **Trustworthy:** the negative results are reported (verification hurting, the retriever failing, my own adapter transferring badly), and the evaluation is built to resist the leakage that invalidated my earlier result.
+- 7 of 21 jobs did not run: dense retrieval, the repair-only harness, the adapter on the memory benchmark, sampled repeats of the revised harness.
+- One greedy trial per cell; one model family for the size sweep.
+- Harmful answers are rare at 7-8B (1 to 7 per 480 runs), so differences in them are not significant. They are more common at 1.5B and 3B (up to 37 per 480).
+- Synthetic, templated memories with clean keys; no agent-written memories; no single wrong memory.
 
 ## Do not say
 
-- "AGENTRUN solves memory reliability" or "the full system is always best" (not on larger models).
-- "Verification reduces hallucination" (not shown; unsupported claims were zero everywhere, and the text-only verifier lowered success).
-- "Statistically significant reduction in harmful answers" (it is not).
-- "Novel memory reliability protocol".
-- "Validated on Qwen 3.8-27B" (7 blocks only).
-- Anything quoting the 100% fine-tuning result as generalisation.
-- "The existing AGENTRUN runtime has verification and provenance" (they were written for this study; the shipped agent has text-only memory).
-- "GPU utilisation was X%" (not measured; `nvidia-smi` is broken on the node).
+- "Memory made the model hallucinate" or "fabricate" on unsupported questions. It looped; it did not invent answers (no unsupported claims at 7-8B in either campaign).
+- "The full system is always best" (not at 3B or 14B).
+- "Verification reduces hallucination."
+- "Statistically significant reduction in harmful answers."
+- "Novel memory reliability protocol" or "not previously documented".
+- "21 tasks" for the campaign: it was 21 Slurm jobs on 96 tasks.
+- "The 1.5B model produces no harmful answers": under the revised harness it asserted 24 wrong values.
+- "The base model scores 25% on fresh tasks": 25% is the stateless configuration on the memory benchmark, a different task. On AGENTRUN's own benchmarks the base model scores 92.7-94.5% (fresh dev split) and 21-22 of 23 (original set).
+- Any GPU utilisation figure (`nvidia-smi` is broken on the node; CUDA works).

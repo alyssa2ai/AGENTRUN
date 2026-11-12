@@ -137,3 +137,31 @@ py -3.11 summarize_retrieval.py
 ```
 
 `sacct` is unavailable on this cluster; use `scontrol show job <id>` within a few minutes of completion, or the two manifest files.
+
+---
+
+# Campaign 2 status (12 November 2026)
+
+Slurm array **4148**, 21 jobs, `hpc/campaign2.sbatch` (copy on the cluster: `scripts/campaign2.sbatch`), plus a dev-split pilot array **4145** (4 jobs, all exit 0).
+
+| Index | Run | Status |
+|---|---|---|
+| 0-3 | Qwen2.5-7B and Qwen3-8B, harness v1 and v2, eval2 | complete, exit 0 |
+| 4-5 | legacy 23 and v2 dev 55, base and adapter, budgets 3 and 6, sampled repeats | complete, exit 0 |
+| 6-11 | Qwen2.5 1.5B, 3B, 14B, harness v1 and v2 | complete, exit 0 |
+| 12-13 | hash256 and BM25 with 2,000 background records | complete, exit 0 |
+| 14-20 | dense retriever; v1r; adapter on eval2 (v1, v2); v2 at T=0.7 (seeds 1, 2) | **never dispatched** |
+
+Jobs 0-13 ran 04:58 to 08:42 UTC. An earlier session observed at 12:08 UTC that the login node (which runs the Slurm controller) did not answer and that `squeue` on the compute node failed with "Unable to contact slurm controller"; it also reports a backup at `/home/gpuuser12/AGENTRUN_HPC/backups/c2_backup_20261112_120842`. At 13:50 UTC neither cluster address answered from the laptop, so neither statement could be re-checked. All results of jobs 0-13 are on the laptop except the per-task log of one v2-dev run (adapter, budget 3), whose summary is in `logs/hpc/c2-4148_5.out`.
+
+To finish the campaign once the controller is back (resumable; finished runs are skipped):
+
+```bash
+ssh gpuuser12@192.168.192.11 "squeue -u gpuuser12; cd ~/AGENTRUN_HPC/20261111 && sbatch --array=14-20%2 scripts/campaign2.sbatch"
+```
+
+Then copy the new `c2_*` directories into `raw_results/` and run, from `scripts/`:
+
+```bash
+py -3.11 analyze_c2.py
+```
