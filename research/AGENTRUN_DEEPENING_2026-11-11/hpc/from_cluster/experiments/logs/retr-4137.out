@@ -1,0 +1,15 @@
+Start: 2026-11-11T11:30:01+00:00 job=4137 host=sit-gpu CUDA_VISIBLE_DEVICES=0
+hash256 vectorised top-4 equals pure-Python top-4: True
+seed=1 size=2000 hash256 (memory.embed_text, AGENTRUN default) [nl] recall@4=0.448 only_older@4=0.200 index=0.04s
+seed=1 size=2000 hash256 (memory.embed_text, AGENTRUN default) [kw] recall@4=0.907 only_older@4=0.073 index=0.04s
+seed=1 size=2000 bm25 (rank_bm25 Okapi) [nl] recall@4=1.000 only_older@4=0.000 index=0.01s
+seed=1 size=2000 bm25 (rank_bm25 Okapi) [kw] recall@4=1.000 only_older@4=0.000 index=0.01s
+seed=1 size=2000 dense sentence-transformers/all-MiniLM-L6-v2 (cuda) [nl] recall@4=1.000 only_older@4=0.000 index=0.31s
+seed=1 size=2000 dense sentence-transformers/all-MiniLM-L6-v2 (cuda) [kw] recall@4=1.000 only_older@4=0.000 index=0.31s
+seed=1 size=2000 dense sentence-transformers/all-MiniLM-L6-v2 (cpu) [nl] recall@4=1.000 only_older@4=0.000 index=0.78s
+seed=1 size=2000 dense sentence-transformers/all-MiniLM-L6-v2 (cpu) [kw] recall@4=1.000 only_older@4=0.000 index=0.78s
+seed=1 size=2000 dense BAAI/bge-small-en-v1.5 (cuda) [nl] recall@4=1.000 only_older@4=0.000 index=0.18s
+seed=1 size=2000 dense BAAI/bge-small-en-v1.5 (cuda) [kw] recall@4=0.998 only_older@4=0.007 index=0.18s
+seed=1 size=2000 dense BAAI/bge-small-en-v1.5 (cpu) [nl] recall@4=1.000 only_older@4=0.000 index=1.41s
+seed=1 size=2000 dense BAAI/bge-small-en-v1.5 (cpu) [kw] recall@4=0.998 only_older@4=0.007 index=1.41s
+End: 2026-11-11T11:30:13+00:00 exit=1

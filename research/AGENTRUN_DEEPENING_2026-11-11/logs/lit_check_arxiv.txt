@@ -1,0 +1,80 @@
+## ti:LongMemEval
+- arXiv:2410.10813v2 (2024-10) LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory
+    Recent large language model (LLM)-driven chat assistant systems have integrated memory components to track user-assistant chat histories, enabling more accurate and personalized responses. However, their long-term memory capabilities in sustained interactions remain underexplored. We introduce LongMemEval, a comprehensive benchm
+- arXiv:2605.12493v1 (2026-05) LongMemEval-V2: Evaluating Long-Term Agent Memory Toward Experienced Colleagues
+    Long-term memory is crucial for agents in specialized web environments, where success depends on recalling interface affordances, state dynamics, workflows, and recurring failure modes. However, existing memory benchmarks for agents mostly focus on user histories, short traces, or downstream task success, leaving open how to dir
+
+## ti:MemoryAgentBench OR ti:"Evaluating Memory in LLM Agents"
+- arXiv:2507.05257v4 (2025-07) Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions
+    Recent benchmarks for Large Language Model (LLM) agents primarily focus on evaluating reasoning, planning, and execution capabilities, while another critical component-memory, encompassing how agents memorize, update, and retrieve long-term information-is under-evaluated due to the lack of benchmarks. We term agents with memory 
+- arXiv:2610.09193v1 (2026-10) Bookkeeping, Composition, or Unreachable Gold? Reading MemoryAgentBench's Conflict-Resolution Scores Against a Frozen Last-Write Resolver
+    MemoryAgentBench's Conflict Resolution split is read as measuring "selective forgetting". We execute the benchmark's own rule - the newest statement about a fact wins - as a zero-learning resolver frozen on one of the four fact lists. Under the official metric the rule answers 80.25% of the questions (74.5% on the three held-out
+
+## ti:"Evaluating Very Long-Term Conversational Memory"
+- arXiv:2402.17753v1 (2024-02) Evaluating Very Long-Term Conversational Memory of LLM Agents
+    Existing works on long-term open-domain dialogues focus on evaluating model responses within contexts spanning no more than five chat sessions. Despite advancements in long-context large language models (LLMs) and retrieval augmented generation (RAG) techniques, their efficacy in very long-term dialogues remains unexplored. To a
+
+## ti:FaithEval
+- arXiv:2410.03727v3 (2024-09) FaithEval: Can Your Language Model Stay Faithful to Context, Even If "The Moon is Made of Marshmallows"
+    Ensuring faithfulness to context in large language models (LLMs) and retrieval-augmented generation (RAG) systems is crucial for reliable deployment in real-world applications, as incorrect or unsupported information can erode user trust. Despite advancements on standard benchmarks, faithfulness hallucination-where models genera
+
+## ti:ConflictBank
+- arXiv:2408.12076v1 (2024-08) ConflictBank: A Benchmark for Evaluating the Influence of Knowledge Conflicts in LLM
+    Large language models (LLMs) have achieved impressive advancements across numerous disciplines, yet the critical issue of knowledge conflicts, a major source of hallucinations, has rarely been studied. Only a few research explored the conflicts between the inherent knowledge of LLMs and the retrieved contextual knowledge. Howeve
+
+## ti:Zep AND ti:"Temporal Knowledge Graph"
+- arXiv:2501.13956v1 (2025-01) Zep: A Temporal Knowledge Graph Architecture for Agent Memory
+    We introduce Zep, a novel memory layer service for AI agents that outperforms the current state-of-the-art system, MemGPT, in the Deep Memory Retrieval (DMR) benchmark. Additionally, Zep excels in more comprehensive and challenging evaluations than DMR that better reflect real-world enterprise use cases. While existing retrieval
+
+## ti:Mem0
+- arXiv:2504.19413v1 (2025-04) Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory
+    Large Language Models (LLMs) have demonstrated remarkable prowess in generating contextually coherent responses, yet their fixed context windows pose fundamental challenges for maintaining consistency over prolonged multi-session dialogues. We introduce Mem0, a scalable memory-centric architecture that addresses this issue by dy
+
+## ti:"Self-RAG"
+- arXiv:2310.11511v1 (2023-10) Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection
+    Despite their remarkable capabilities, large language models (LLMs) often produce responses containing factual inaccuracies due to their sole reliance on the parametric knowledge they encapsulate. Retrieval-Augmented Generation (RAG), an ad hoc approach that augments LMs with retrieval of relevant knowledge, decreases such issue
+
+## ti:"Corrective Retrieval Augmented Generation"
+- arXiv:2401.15884v3 (2024-01) Corrective Retrieval Augmented Generation
+    Large language models (LLMs) inevitably exhibit hallucinations since the accuracy of generated texts cannot be secured solely by the parametric knowledge they encapsulate. Although retrieval-augmented generation (RAG) is a practicable complement to LLMs, it relies heavily on the relevance of retrieved documents, raising concerns
+
+## ti:AgentPoison
+- arXiv:2407.12784v1 (2024-07) AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases
+    LLM agents have demonstrated remarkable performance across various applications, primarily due to their advanced capabilities in reasoning, utilizing external knowledge and tools, calling APIs, and executing actions to interact with environments. Current agents typically utilize a memory module or a retrieval-augmented generatio
+
+## ti:MemGPT
+- arXiv:2310.08560v2 (2023-10) MemGPT: Towards LLMs as Operating Systems
+    Large language models (LLMs) have revolutionized AI, but are constrained by limited context windows, hindering their utility in tasks like extended conversations and document analysis. To enable using context beyond limited context windows, we propose virtual context management, a technique drawing inspiration from hierarchical 
+
+## ti:"Generative Agents" AND ti:"Interactive Simulacra"
+- arXiv:2304.03442v2 (2023-04) Generative Agents: Interactive Simulacra of Human Behavior
+    Believable proxies of human behavior can empower interactive applications ranging from immersive environments to rehearsal spaces for interpersonal communication to prototyping tools. In this paper, we introduce generative agents--computational software agents that simulate believable human behavior. Generative agents wake up, c
+
+## abs:"agent memory" AND abs:stale AND abs:conflict
+- arXiv:2605.06527v1 (2026-05) STALE: Can LLM Agents Know When Their Memories Are No Longer Valid?
+    Large Language Model (LLM) agents are increasingly expected to maintain coherent, long-term personalized memory, yet current benchmarks primarily measure static fact retrieval, overlooking the ability to revise stored beliefs when new evidence emerges. We identify a critical and underexplored failure mode, Implicit Conflict: a l
+- arXiv:2606.24535v1 (2026-06) Governed Shared Memory for Multi-Agent LLM Systems
+    Multi-agent LLM environments require robust mechanisms for shared knowledge management. This paper formalizes the fleet-memory problem and identifies four foundational failure modes: unauthorized leakage, stale propagation, contradiction persistence, and provenance collapse. To address these, we define explicit systems-level pri
+- arXiv:2607.26637v1 (2026-07) Filesystem-Based Memory for LLM Agents: Organization, Evolution, and Sustainability
+    Deployed LLM agents increasingly keep their long-term memory as a filesystem: a directory tree of markdown files that the agent itself reads, writes, and reorganizes through generic file tools. Yet research has largely passed over this medium: prior systems design bespoke memory representations and study retrieval over them, lea
+- arXiv:2608.12476v2 (2026-08) Governed Persistent Memory: Source-Bound State Semantics and Fail-Closed Release for Long-Horizon Agents
+    Long-term agent memory is usually treated as select--store--retrieve, but retrieval does not decide whether contradictory, superseded, retracted, deleted, or stale records may support an outgoing claim. We introduce Governed Persistent Memory (GPM), an auditable bitemporal state-transition model with source-bound admission, deri
+
+## abs:memory AND abs:"LLM agents" AND abs:"knowledge update" AND abs:benchmark
+- arXiv:2605.14498v2 (2026-05) GroupMemBench: Benchmarking LLM Agent Memory in Multi-Party Conversations
+    Large Language Model (LLM) agents increasingly serve as personal assistants and workplace collaborators, where their utility depends on memory systems that extract, retrieve, and apply information across long-running conversations. However, both existing memory systems and benchmarks are built around the dyadic, single-user setu
+- arXiv:2604.12948v1 (2026-04) Drawing on Memory: Dual-Trace Encoding Improves Cross-Session Recall in LLM Agents
+    LLM agents with persistent memory store information as flat factual records, providing little context for temporal reasoning, change tracking, or cross-session aggregation. Inspired by the drawing effect [3], we introduce dual-trace memory encoding. In this method, each stored fact is paired with a concrete scene trace, a narrat
+- arXiv:2606.24775v1 (2026-06) Are We Ready For An Agent-Native Memory System?
+    Memory for large language model (LLM) agents has rapidly evolved from simple retrieval-augmented mechanisms into a data management system that supports persistent information storage, retrieval, update, consolidation, and dynamic lifecycle governance throughout agent execution. Despite this evolution, existing evaluations still 
+- arXiv:2508.04474v1 (2025-08) TRAIL: Joint Inference and Refinement of Knowledge Graphs with Large Language Models
+    Recent advances in large language models (LLMs) have unlocked powerful reasoning and decision-making capabilities. However, their inherent dependence on static parametric memory fundamentally limits their adaptability, factual accuracy, and interpretability in knowledge-intensive scenarios. Knowledge graphs (KGs), as structured 
+
+## abs:"long-term memory" AND abs:agents AND abs:provenance AND abs:verification
+- arXiv:2610.29995v1 (2026-10) Remembering Through Change: Provenance-Preserving Hypergraph Memory for Multimodal Agents
+    Long-term memory for multimodal agents remains challenging, as it must preserve fine-grained visual evidence while tracking entity evolution across sessions. Existing abstraction-based memories compress images into text, often discarding visually discriminative details, whereas pixel-preserving memories retain raw observations b
+
+## abs:"memory" AND abs:"agents" AND abs:"contradictory" AND abs:"outdated" AND abs:retrieval
+
+## ti:"knowledge conflicts" AND abs:"retrieval-augmented" AND abs:survey
+

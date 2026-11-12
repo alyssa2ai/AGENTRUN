@@ -1,0 +1,12 @@
+Metric,A,B,C,D,E
+Conflict detection (S3 flagged as conflict),0/6,2/6,3/6,2/6,2/6
+Arbitrary pick on conflict (S3 harmful),0/6,1/6,0/6,0/6,0/6
+"Stale handling: newest value (S4, date in text)",0/3,1/3,1/3,1/3,0/3
+"Stale handling: newest value (S4, date in metadata only)",0/3,0/3,0/3,1/3,0/3
+Stale value asserted (S4),0/6,0/6,0/6,0/6,0/6
+Unsupported claim (S5 answered),0/6,0/6,0/6,0/6,0/6
+Recovery after transient/malformed tool failure (S6),3/3,3/3,3/3,3/3,3/3
+"Retried after injected failure (S6, any variant)",5/5,5/5,5/5,5/5,5/5
+"Honest abstention on permanent failure (S6, no memory)",1/1,1/1,1/1,1/1,1/1
+Memory fallback on permanent failure (S6),0/1,0/1,0/1,0/1,0/1
+Needed tools all called (tool selection),4/35,17/35,19/35,19/35,18/35

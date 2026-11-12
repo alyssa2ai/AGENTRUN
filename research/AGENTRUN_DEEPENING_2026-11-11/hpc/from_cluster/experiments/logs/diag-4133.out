@@ -1,0 +1,28 @@
+Start: 2026-11-11T11:15:32+00:00
+sit-gpu
+CUDA_VISIBLE_DEVICES=0
+Failed to initialize NVML: Driver/library version mismatch
+NVML library version: 580.178
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi       7.2Gi       1.9Gi       5.8Mi       497Gi       496Gi
+Swap:          143Gi        97Mi       143Gi
+CPU(s):                                  96
+Model name:                              INTEL(R) XEON(R) GOLD 6542Y
+Socket(s):                               2
+CPU(s) scaling MHz:                      20%
+/usr/bin/python3
+Python 3.12.3
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       3.5T  2.9T  471G  86% /home
+/dev/sdb2       590G   27G  533G   5% /
+blobs
+CACHEDIR.TAG
+models--deepseek-ai--DeepSeek-Coder-V2-Lite-Instruct
+models--meta-llama--Llama-3.1-8B-Instruct
+models--meta-llama--Llama-3.2-3B-Instruct
+models--Qwen--Qwen2.5-7B-Instruct
+models--Qwen--Qwen2.5-Coder-7B-Instruct
+models--Qwen--Qwen3-8B
+https://huggingface.co -> 200
+https://pypi.org -> 200
+End: 2026-11-11T11:15:32+00:00 exit=0

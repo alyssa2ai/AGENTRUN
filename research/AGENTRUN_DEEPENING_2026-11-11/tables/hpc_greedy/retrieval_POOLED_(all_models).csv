@@ -1,0 +1,21 @@
+Config,Scenario,runs with a memory call,recall@4 (first query),precision@4 (first query),recall (all queries),precision (all queries),memory calls/run
+B,S1_context_loss,18,1.00,0.50,1.00,0.50,1.00
+B,S2_retrieval,23,1.00,0.25,1.00,0.25,1.00
+B,S3_conflict,22,1.00,0.50,1.00,0.73,1.55
+B,S4_stale,22,1.00,0.50,1.00,0.86,1.59
+B,S6_tool_failure,1,1.00,0.25,1.00,0.50,1.00
+C,S1_context_loss,18,1.00,0.50,1.00,0.50,1.00
+C,S2_retrieval,23,1.00,0.25,1.00,0.25,1.00
+C,S3_conflict,22,1.00,0.50,1.00,0.73,1.55
+C,S4_stale,22,1.00,0.50,1.00,0.86,1.59
+C,S6_tool_failure,1,1.00,0.25,1.00,0.50,1.00
+D,S1_context_loss,18,1.00,0.50,1.00,0.50,1.00
+D,S2_retrieval,23,1.00,0.25,1.00,0.25,1.30
+D,S3_conflict,22,1.00,0.50,1.00,0.73,1.91
+D,S4_stale,22,1.00,0.50,1.00,0.85,1.64
+D,S6_tool_failure,1,1.00,0.25,1.00,0.50,1.00
+E,S1_context_loss,18,1.00,0.50,1.00,0.50,1.00
+E,S2_retrieval,23,1.00,0.25,1.00,0.25,1.26
+E,S3_conflict,22,1.00,0.50,1.00,0.73,1.23
+E,S4_stale,22,1.00,0.50,1.00,0.86,1.41
+E,S6_tool_failure,1,1.00,0.25,1.00,0.50,2.00

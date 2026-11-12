@@ -1,0 +1,25 @@
+{
+ "env": {
+  "python": "3.12.3",
+  "numpy": "2.5.4",
+  "host": "sit-gpu",
+  "torch": "2.15.0+cu132",
+  "gpu": "NVIDIA L40",
+  "sentence_transformers": "6.2.0"
+ },
+ "args": {
+  "out": "../raw_results/hpc_retrieval_bench",
+  "sizes": "2000,10000,100000",
+  "seeds": "1,2,3",
+  "dense": "sentence-transformers/all-MiniLM-L6-v2,BAAI/bge-small-en-v1.5",
+  "no_gpu": "False"
+ },
+ "n_fact_queries": 150,
+ "n_pair_queries": 150,
+ "ks": [
+  1,
+  4,
+  10
+ ],
+ "started_utc": "2026-11-11T11:30:08Z"
+}

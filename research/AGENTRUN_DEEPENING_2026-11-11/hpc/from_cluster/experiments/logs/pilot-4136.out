@@ -1,0 +1,66 @@
+Start: 2026-11-11T11:22:23+00:00 job=4136 host=sit-gpu CUDA_VISIBLE_DEVICES=0
+               total        used        free      shared  buff/cache   available
+Mem:           503Gi       7.2Gi       1.6Gi       5.8Mi       498Gi       496Gi
+2.14.1+cu130 5.18.0 True NVIDIA L40
+[      3s req=   2] dev-S1_context_loss-00 A -> over_abstain
+[     10s req=   6] dev-S1_context_loss-00 B -> correct
+[     17s req=  11] dev-S1_context_loss-00 C -> correct
+[     23s req=  16] dev-S1_context_loss-00 D -> correct
+[     30s req=  22] dev-S1_context_loss-00 E -> correct
+[     33s req=  26] dev-S2_retrieval-00 A -> over_abstain
+[     36s req=  29] dev-S2_retrieval-00 B -> correct
+[     40s req=  33] dev-S2_retrieval-00 C -> over_abstain
+[     47s req=  37] dev-S2_retrieval-00 D -> correct
+[     51s req=  41] dev-S2_retrieval-00 E -> correct
+[     54s req=  45] dev-S3_conflict-00 A -> over_abstain
+[     58s req=  48] dev-S3_conflict-00 B -> correct
+[     62s req=  51] dev-S3_conflict-00 C -> correct
+[     66s req=  56] dev-S3_conflict-00 D -> correct
+[     70s req=  59] dev-S3_conflict-00 E -> correct
+[     73s req=  63] dev-S4_stale-00 A -> over_abstain
+[     76s req=  67] dev-S4_stale-00 B -> over_abstain
+[     79s req=  71] dev-S4_stale-00 C -> over_abstain
+[     82s req=  75] dev-S4_stale-00 D -> over_abstain
+[     85s req=  79] dev-S4_stale-00 E -> over_abstain
+[     88s req=  83] dev-S5_unsupported-00 A -> correct
+[     91s req=  88] dev-S5_unsupported-00 B -> format_error
+[     95s req=  93] dev-S5_unsupported-00 C -> format_error
+[     98s req=  98] dev-S5_unsupported-00 D -> format_error
+[    101s req= 103] dev-S5_unsupported-00 E -> format_error
+[    104s req= 107] dev-S6_tool_failure-00 A -> correct
+[    108s req= 111] dev-S6_tool_failure-00 B -> correct
+[    112s req= 116] dev-S6_tool_failure-00 C -> correct
+[    116s req= 121] dev-S6_tool_failure-00 D -> correct
+[    121s req= 126] dev-S6_tool_failure-00 E -> correct
+[    122s req= 128] dev-S1_context_loss-01 A -> format_error
+[    128s req= 131] dev-S1_context_loss-01 B -> correct
+[    136s req= 135] dev-S1_context_loss-01 C -> over_abstain
+[    143s req= 139] dev-S1_context_loss-01 D -> over_abstain
+[    150s req= 143] dev-S1_context_loss-01 E -> correct
+[    153s req= 147] dev-S2_retrieval-01 A -> over_abstain
+[    156s req= 150] dev-S2_retrieval-01 B -> correct
+[    160s req= 154] dev-S2_retrieval-01 C -> correct
+[    166s req= 158] dev-S2_retrieval-01 D -> correct
+[    173s req= 162] dev-S2_retrieval-01 E -> correct
+[    176s req= 166] dev-S3_conflict-01 A -> over_abstain
+[    180s req= 170] dev-S3_conflict-01 B -> over_abstain
+[    183s req= 174] dev-S3_conflict-01 C -> over_abstain
+[    186s req= 178] dev-S3_conflict-01 D -> over_abstain
+[    190s req= 182] dev-S3_conflict-01 E -> over_abstain
+[    193s req= 186] dev-S4_stale-01 A -> over_abstain
+[    197s req= 189] dev-S4_stale-01 B -> false_conflict
+[    201s req= 192] dev-S4_stale-01 C -> false_conflict
+[    206s req= 196] dev-S4_stale-01 D -> correct
+[    210s req= 200] dev-S4_stale-01 E -> correct
+[    215s req= 206] dev-S5_unsupported-01 A -> max_steps
+[    218s req= 212] dev-S5_unsupported-01 B -> format_error
+[    222s req= 218] dev-S5_unsupported-01 C -> format_error
+[    227s req= 224] dev-S5_unsupported-01 D -> max_steps
+[    230s req= 226] dev-S5_unsupported-01 E -> correct
+[    233s req= 229] dev-S6_tool_failure-01 A -> correct
+[    236s req= 232] dev-S6_tool_failure-01 B -> correct
+[    239s req= 236] dev-S6_tool_failure-01 C -> correct
+[    243s req= 240] dev-S6_tool_failure-01 D -> correct
+[    246s req= 244] dev-S6_tool_failure-01 E -> correct
+done: 60 new runs, 244 API requests, exit 0
+End: 2026-11-11T11:26:52+00:00 exit=0

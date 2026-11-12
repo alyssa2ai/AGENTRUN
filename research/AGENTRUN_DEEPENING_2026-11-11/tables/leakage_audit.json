@@ -1,0 +1,265 @@
+{
+  "hard_failures": [],
+  "checks": {
+    "eval_file_matches_freeze": {
+      "pass": true,
+      "detail": "7fcc6b92e8f279d67f3b87f4f54d8f32e5b04f3a430439d4ddbe1843797a2f46"
+    },
+    "prompts_match_freeze": {
+      "pass": true,
+      "detail": null
+    },
+    "eval_regenerates_from_seed": {
+      "pass": true,
+      "detail": null
+    },
+    "dev_eval_entities_disjoint": {
+      "pass": true,
+      "detail": 332
+    },
+    "dev_eval_prompts_disjoint": {
+      "pass": true,
+      "detail": null
+    },
+    "eval_prompts_unique": {
+      "pass": true,
+      "detail": null
+    },
+    "dev_eval_person_names_disjoint": {
+      "pass": true,
+      "detail": []
+    },
+    "expected_values_absent_from_prompts": {
+      "pass": true,
+      "detail": []
+    },
+    "expected_values_absent_from_system_prompt_and_schemas": {
+      "pass": true,
+      "detail": []
+    },
+    "no_eval_entity_in_system_prompt_or_schemas": {
+      "pass": true,
+      "detail": null
+    },
+    "scenario_fixtures_consistent": {
+      "pass": true,
+      "detail": []
+    },
+    "no_entity_shared_between_eval_tasks": {
+      "pass": true,
+      "detail": []
+    },
+    "no_eval_entity_name_in_training_or_existing_benchmarks": {
+      "pass": true,
+      "detail": {
+        "files_checked": [
+          "training/training_data.jsonl",
+          "training/training_data_augmented.jsonl",
+          "eval/tasks.py",
+          "benchmark_v2/dev.jsonl",
+          "agentrun_v2/env/env_data/corpus.jsonl",
+          "memory_store.json"
+        ],
+        "hits": {}
+      }
+    },
+    "no_exact_or_template_match_with_training_and_legacy_prompts": {
+      "pass": true,
+      "detail": {
+        "tfidf_max_overall": 0.1534,
+        "tfidf_flagged_ge_0.80": [],
+        "n_reference_prompts": 69
+      }
+    },
+    "real_memory_store_sha256": "efbe8bd79debd5481120cac901384e605b0c1cf85d507864c9d4869c4cba4c20",
+    "eval_qwen38_27b_t1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_qwen38_27b_t1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_qwen38_27b_t1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_qwen38_27b_t1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_qwen38_27b_t1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_qwen38_27b_t1:n_runs": 35,
+    "eval_gptoss120b_t1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_gptoss120b_t1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_gptoss120b_t1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_gptoss120b_t1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_gptoss120b_t1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_gptoss120b_t1:n_runs": 176,
+    "eval_gptoss20b_t1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_gptoss20b_t1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_gptoss20b_t1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_gptoss20b_t1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_gptoss20b_t1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "eval_gptoss20b_t1:n_runs": 147,
+    "hpc_qwen25_7b_greedy_t1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_greedy_t1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_greedy_t1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_greedy_t1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_greedy_t1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_greedy_t1:n_runs": 240,
+    "hpc_qwen3_8b_greedy_t1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen3_8b_greedy_t1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen3_8b_greedy_t1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen3_8b_greedy_t1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen3_8b_greedy_t1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen3_8b_greedy_t1:n_runs": 240,
+    "hpc_qwen25_7b_lora_greedy_t1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_lora_greedy_t1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_lora_greedy_t1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_lora_greedy_t1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_lora_greedy_t1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_lora_greedy_t1:n_runs": 240,
+    "hpc_qwen25_7b_temp07_seed1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_temp07_seed1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_temp07_seed1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_temp07_seed1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_temp07_seed1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_temp07_seed1:n_runs": 240,
+    "hpc_qwen25_7b_temp07_seed2:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_temp07_seed2:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_temp07_seed2:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_temp07_seed2:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_temp07_seed2:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen25_7b_temp07_seed2:n_runs": 240,
+    "hpc_qwen3_8b_temp07_seed1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen3_8b_temp07_seed1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen3_8b_temp07_seed1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen3_8b_temp07_seed1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen3_8b_temp07_seed1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "hpc_qwen3_8b_temp07_seed1:n_runs": 240
+  }
+}

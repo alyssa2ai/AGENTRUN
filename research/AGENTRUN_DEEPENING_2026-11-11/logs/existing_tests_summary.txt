@@ -1,0 +1,4 @@
+tests\test_v2_env_and_parser.py:24: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_v2_env_and_parser.py::test_env_data_regenerates_byte_for_byte
+======================= 1 failed, 185 passed in 23.23s ========================
