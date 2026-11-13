@@ -1,0 +1,69 @@
+{
+ "2606.06240v1": {
+  "title": "TOKI: A Bitemporal Operator Algebra for Contradiction Resolution in LLM-Agent Persistent Memory",
+  "authors": [
+   "Ziming Wang"
+  ],
+  "published": "2026-06-04",
+  "abstract": "Persistent memory for an LLM agent is a write-heavy substrate: every belief update is a versioned write, and a new claim may contradict a stored one. Production systems use four resolution heuristics (last-writer-wins, evidence-weighted merge, await-confirmation, per-rule policy), yet none declares the isolation level it assumes or the write-time anomalies it admits. We show that contradiction resolution is write-time concurrency control and make the missing contract explicit. TOKI types the four heuristics as one family of bitemporal operators over a dual-row schema, each with an isolation precondition and a provenance annotation that preserves the losing fact in an audit row. Four soundness theorems close the contract across isolation, schema, and provenance, lift the guarantees to operator pipelines, and extend the fold operators to n-ary conflict sets. A tightness companion proves that, within the relational schedule model, keyed logging of the adjudicating judge is necessary for replay consistency, which every audited baseline omits. A verdict matrix over eight systems localizes the gap: every baseline that keeps a language-model judge on the write path admits at least one of three write-time anomalies (replay inconsistency, belief-drift skew, audit erasure); a content-addressed engine-layer comparator avoids them only by removing the judge, and TOKI alone excludes all three while keeping it. On its one natural-workload slice the audit-row defence moves LoCoMo by 0.86, and ablating the typed memory layer removes 0.49 accuracy on 1,444 answerable LoCoMo questions; the cross-system comparison stays underpowered and claims no superiority. The contribution is the contract: a write-time correctness specification, proved sound across isolation, schema, and provenance, pinning the guarantee every production heuristic assumes but no deployed system makes explicit.",
+  "query": "TOKI: A Bitemporal Operator Algebra for Contradiction Resolution in LLM-Agent Persistent Memory"
+ },
+ "2610.05241v1": {
+  "title": "StateWise: Diagnosing and Repairing Persistent Operational State Before Agent Actions",
+  "authors": [
+   "Yongyuan Peng",
+   "Zhou Feng",
+   "Tongying Wu",
+   "Jiahao Chen",
+   "Yuan Su",
+   "Chunyi Zhou",
+   "Tianyu Du",
+   "Shouling Ji"
+  ],
+  "published": "2026-10-04",
+  "abstract": "LLM agents combine reasoning, tool use, and persistent memory to support work across tasks by reusing stored operational records as premises for later actions. However, environmental or requirement changes can invalidate these records, while existing action review, provenance tracking, and clarification mechanisms may leave the underlying persistent state uncorrected. Our audit of coding-agent trajectories identifies candidate failure chains in which invalid records are reused, leading to task failures and unsafe modifications. We propose StateWise, a framework for diagnosing and repairing persistent operational state before action execution. StateWise uses record-level counterfactual replanning to identify decision-critical records, then establishes their current validity through reliability checks, read-only verification of machine-observable facts, and targeted clarification of developer-owned intent. Typed evidence grounding binds evidence to specific records and scopes, enabling persistent corrections with repair lineage. The agent then replans from the repaired state, followed by an independent state-action check before execution. We evaluate StateWise on 150 executable coding-agent cases across diverse runtime environments, workspace configurations, and repository settings, complemented by cross-model evaluations. Under corrupted persistent state, StateWise achieves 93.3% overall correctness, compared with 38.7% for the baseline agent, with no unsafe actions. Component ablations, multi-task experiments, and transfer evaluations further demonstrate effective recovery, persistent corrections, and transferability across repositories and tool interfaces.",
+  "query": "StateWise: Diagnosing and Repairing Persistent Operational State Before Agent Actions"
+ },
+ "2607.29167v1": {
+  "title": "Memory Provenance Laundering in LLM Agents: A Non-Amplification Firewall for Persistent Memory",
+  "authors": [
+   "Jinghan Xu",
+   "Yiyong Xiao",
+   "Wanru Shao",
+   "Hankai Liu",
+   "Xinjin Li"
+  ],
+  "published": "2026-07-31",
+  "abstract": "Long-term memory lets large language model(LLM) agents reuse prior preferences and work flows, but it also turns untrusted observations into persistent action context. We identify memory provenance laundering: during LLM-based memory consolidation, an external observation may be rewritten as apparent user history or workflow support, preserving an action trigger while erasing the low-trust source that should limit its authority. Existing prompt filters, content sanitizers, and tool guards do not enforce source-authority non-amplification after lossy memory consolidation. We formalize this boundary and instantiate it as Provenance-Preserving Memory Fire wall (PPMF), a lightweight memory middleware that preserves platform-maintained provenance and authorizes tool calls by matching action risk to the authority of action-relevant memories. In our schema-grounded evaluation with fixed risk policies, vulnerable consolidated memories reach up to 1.000 attack success rate(ASR); with intact platform-maintained provenance, confirmation, and risk labels, no evaluated unauthorized high-risk action passes the PPMF gate while confirmed benign actions and targeted low-risk memory use remain executable.",
+  "query": "Memory Provenance Laundering in LLM Agents"
+ },
+ "2605.14421v1": {
+  "title": "MemLineage: Lineage-Guided Enforcement for LLM Agent Memory",
+  "authors": [
+   "Ciyan Ouyang",
+   "Rui Hou"
+  ],
+  "published": "2026-05-14",
+  "abstract": "We introduce MemLineage, a defense for LLM agent memory that attaches both cryptographic provenance and LLM-mediated derivation lineage to every entry. Recent and concurrent work shows that untrusted content can be written into persistent agent state and re-enter later sessions as an instruction; the remaining systems question is how to preserve useful memory recall while preventing such state from justifying sensitive actions. MemLineage treats this as a chain-of-custody problem rather than a filtering problem. It is a six-module design around an RFC-6962 Merkle log over per-principal Ed25519-signed entries: a weighted derivation DAG records which retrieved entries influenced each new memory, and a max-of-strong-edges propagation rule makes Untrusted-Path Persistence hold for any chain whose attribution edges remain above threshold. The sensitive-action gate then refuses dispatches whose active justification descends from an external ancestor, while still allowing benign recall. We evaluate three defense cells against three memory-poisoning workloads on a deterministic mechanism-isolation harness; MemLineage is the only configuration in that harness that drives all three columns to zero ASR, while sub-millisecond per-operation overhead keeps it well below the noise floor of any LLM call. A Codex-backed AgentDojo bridge further separates strong-model behavior from defense-layer behavior: under an intentionally vulnerable tool-output profile, no-defense and signature-only baselines fail on all six banking pairs, while all MemLineage rows reduce strict AgentDojo ASR to zero. The core deterministic artifacts are byte-equal CI-verified; hosted-model AgentDojo and live-model sweeps are recorded as auditable logs rather than byte-pinned artifacts.",
+  "query": "MemLineage: Lineage-Guided Enforcement for LLM Agent Memory"
+ },
+ "2610.24090v1": {
+  "title": "Persistent Memory and Iterative Improvement in an LLM Agent for Chinese-Character Drawing",
+  "authors": [
+   "Peilin Wu",
+   "Yi-Zhuang You"
+  ],
+  "published": "2026-10-16",
+  "abstract": "Does persistent memory accumulated from previous attempts help an LLM agent solve new problems, and does memory design affect that benefit? We study programmatic Chinese-character drawing across five agent conditions attempting the same 668 items. Accumulated memory produces modest aggregate gains despite substantial growth in the memory stores: free-form notes improve first-attempt success by 4.6 percentage points, while a design combining free-form memory with reusable code improves it by 2.8 points. The two designs do not differ significantly overall, but the code bank shows a suggestive advantage on later, harder items. A separate post-hoc comparison finds a much larger improvement when the code-bank agent receives privileged, target-specific structural supervision. The agent can therefore exploit highly informative structural guidance, although the privileged per-item information does not establish what could have been learned from experience alone. These results suggest that memory design may affect where accumulated experience becomes useful, even when its average benefit is modest.",
+  "query": "Persistent Memory and Iterative Improvement in an LLM Agent for Chinese-Character Drawing"
+ },
+ "2609.05510v1": {
+  "title": "Memory as Infrastructure: Reliability Engineering for Persistent Agent Memory in Months-Long LLM-Assisted Development",
+  "authors": [
+   "Mike Helwig"
+  ],
+  "published": "2026-08-31",
+  "abstract": "LLM coding agents are crossing from task-scale to project-scale: single assisted efforts that run for months, across repeated context compactions, on codebases far larger than any context window. We report operational experience from one such effort (a research project under a single continuous Claude Code session line since January 2026, driving a 633,000-line codebase, with its memory subsystem continuously instrumented since July 2026) and describe SIx Harness, the open-source memory and continuity infrastructure that emerged from keeping it coherent. The harness combines per-project long-term memory (hybrid lexical-vector retrieval over SQLite, fully local), precision-gated context injection, anti-recurrence stores for decisions and dead-ends, conventions engineered to survive compaction, and, the part we argue is missing from operational practice, reliability engineering for the memory subsystem itself: a session-start health gate with discriminated failure modes, heartbeat telemetry designed so that no enumerated failure mode can pass unrecorded, and alert-fatigue budgeting borrowed from SRE practice. We present what we believe is the first months-scale instrumented operational record of a persistent agent-memory subsystem in production development use: 78,933 hook invocations; 85 recorded failures, none silent: 84 in the subsystem's first three weeks, one since, none in the final 20 days; an injection layer whose ten-day precision instrument shows zero false fires against an intact denominator; and three production incidents traced from instrument reading to structural fix. From the record we distill seven design principles, state our limitations plainly (N=1, no control arm, self-reported), and publish a tagged pre-registered ablation protocol that any team can run with the released MIT-licensed kit.",
+  "query": "Memory as Infrastructure: Reliability Engineering for Persistent Agent Memory"
+ }
+}
