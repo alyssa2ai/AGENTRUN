@@ -1,0 +1,189 @@
+{
+ "tea_version": "tea-0.1",
+ "splits": {
+  "p1dev": {
+   "by_scenario": {
+    "S3_conflict": {
+     "legacy_n": 8,
+     "legacy_ok": 8,
+     "tea_n": 8,
+     "tea_ok": 8
+    },
+    "S4_stale": {
+     "legacy_n": 8,
+     "legacy_ok": 8,
+     "tea_n": 8,
+     "tea_ok": 8
+    },
+    "S7_same_day_correction": {
+     "legacy_n": 8,
+     "legacy_ok": 0,
+     "tea_n": 8,
+     "tea_ok": 8
+    },
+    "S8_date_in_text_only": {
+     "legacy_n": 8,
+     "legacy_ok": 0,
+     "tea_n": 8,
+     "tea_ok": 8
+    }
+   },
+   "failures": {
+    "legacy": [
+     "p1dev-S7_same_day_correction-00 ['conflicting', 'conflicting']",
+     "p1dev-S7_same_day_correction-01 ['conflicting', 'conflicting']",
+     "p1dev-S7_same_day_correction-02 ['conflicting', 'conflicting']",
+     "p1dev-S7_same_day_correction-03 ['conflicting', 'conflicting']",
+     "p1dev-S7_same_day_correction-04 ['conflicting', 'conflicting']",
+     "p1dev-S7_same_day_correction-05 ['conflicting', 'conflicting']",
+     "p1dev-S7_same_day_correction-06 ['conflicting', 'conflicting']",
+     "p1dev-S7_same_day_correction-07 ['conflicting', 'conflicting']",
+     "p1dev-S8_date_in_text_only-00 ['conflicting', 'conflicting']",
+     "p1dev-S8_date_in_text_only-01 ['conflicting', 'conflicting']",
+     "p1dev-S8_date_in_text_only-02 ['conflicting', 'conflicting']",
+     "p1dev-S8_date_in_text_only-03 ['conflicting', 'conflicting']",
+     "p1dev-S8_date_in_text_only-04 ['conflicting', 'conflicting']",
+     "p1dev-S8_date_in_text_only-05 ['conflicting', 'conflicting']",
+     "p1dev-S8_date_in_text_only-06 ['conflicting', 'conflicting']",
+     "p1dev-S8_date_in_text_only-07 ['conflicting', 'conflicting']"
+    ]
+   },
+   "regressions": [],
+   "tea_basis_counts": {
+    "none": 426,
+    "no_ordering_evidence": 16,
+    "text_valid_date": 24,
+    "recorded_on": 8,
+    "explicit_correction": 16
+   }
+  },
+  "p1hold": {
+   "by_scenario": {
+    "C4_metadata_update": {
+     "legacy_n": 6,
+     "legacy_ok": 6,
+     "tea_n": 6,
+     "tea_ok": 6
+    },
+    "H7a_correction_named": {
+     "legacy_n": 6,
+     "legacy_ok": 0,
+     "tea_n": 6,
+     "tea_ok": 5
+    },
+    "H7b_correction_unnamed": {
+     "legacy_n": 6,
+     "legacy_ok": 0,
+     "tea_n": 6,
+     "tea_ok": 0
+    },
+    "H8a_valid_time_text": {
+     "legacy_n": 6,
+     "legacy_ok": 0,
+     "tea_n": 6,
+     "tea_ok": 5
+    },
+    "H9_backfilled_entry": {
+     "legacy_n": 6,
+     "legacy_ok": 0,
+     "tea_n": 6,
+     "tea_ok": 6
+    },
+    "N1_conflict_same_text_date": {
+     "legacy_n": 6,
+     "legacy_ok": 6,
+     "tea_n": 6,
+     "tea_ok": 6
+    },
+    "N2_conflict_rival_mentioned": {
+     "legacy_n": 6,
+     "legacy_ok": 6,
+     "tea_n": 6,
+     "tea_ok": 6
+    },
+    "N3_conflict_negated_replacement": {
+     "legacy_n": 6,
+     "legacy_ok": 6,
+     "tea_n": 6,
+     "tea_ok": 0
+    }
+   },
+   "failures": {
+    "legacy": [
+     "p1hold-H7a_correction_named-00 ['conflicting', 'conflicting']",
+     "p1hold-H7a_correction_named-01 ['conflicting', 'conflicting']",
+     "p1hold-H7a_correction_named-02 ['conflicting', 'conflicting']",
+     "p1hold-H7a_correction_named-03 ['conflicting', 'conflicting']",
+     "p1hold-H7a_correction_named-04 ['conflicting', 'conflicting']",
+     "p1hold-H7a_correction_named-05 ['conflicting', 'conflicting']",
+     "p1hold-H7b_correction_unnamed-00 ['conflicting', 'conflicting']",
+     "p1hold-H7b_correction_unnamed-01 ['conflicting', 'conflicting']",
+     "p1hold-H7b_correction_unnamed-02 ['conflicting', 'conflicting']",
+     "p1hold-H7b_correction_unnamed-03 ['conflicting', 'conflicting']",
+     "p1hold-H7b_correction_unnamed-04 ['conflicting', 'conflicting']",
+     "p1hold-H7b_correction_unnamed-05 ['conflicting', 'conflicting']",
+     "p1hold-H8a_valid_time_text-00 ['conflicting', 'conflicting']",
+     "p1hold-H8a_valid_time_text-01 ['conflicting', 'conflicting']",
+     "p1hold-H8a_valid_time_text-02 ['conflicting', 'conflicting']",
+     "p1hold-H8a_valid_time_text-03 ['conflicting', 'conflicting']",
+     "p1hold-H8a_valid_time_text-04 ['conflicting', 'conflicting']",
+     "p1hold-H8a_valid_time_text-05 ['conflicting', 'conflicting']",
+     "p1hold-H9_backfilled_entry-00 ['superseded', 'current']",
+     "p1hold-H9_backfilled_entry-01 ['current', 'superseded']",
+     "p1hold-H9_backfilled_entry-02 ['superseded', 'current']",
+     "p1hold-H9_backfilled_entry-03 ['current', 'superseded']",
+     "p1hold-H9_backfilled_entry-04 ['current', 'superseded']",
+     "p1hold-H9_backfilled_entry-05 ['current', 'superseded']"
+    ],
+    "tea": [
+     "p1hold-H7a_correction_named-03 ['conflicting', 'conflicting']",
+     "p1hold-H7b_correction_unnamed-00 ['conflicting', 'conflicting']",
+     "p1hold-H7b_correction_unnamed-01 ['conflicting', 'conflicting']",
+     "p1hold-H7b_correction_unnamed-02 ['conflicting', 'conflicting']",
+     "p1hold-H7b_correction_unnamed-03 ['conflicting', 'conflicting']",
+     "p1hold-H7b_correction_unnamed-04 ['conflicting', 'conflicting']",
+     "p1hold-H7b_correction_unnamed-05 ['conflicting', 'conflicting']",
+     "p1hold-H8a_valid_time_text-03 ['conflicting', 'conflicting']",
+     "p1hold-N3_conflict_negated_replacement-00 ['superseded', 'current']",
+     "p1hold-N3_conflict_negated_replacement-01 ['superseded', 'current']",
+     "p1hold-N3_conflict_negated_replacement-02 ['superseded', 'current']",
+     "p1hold-N3_conflict_negated_replacement-03 ['superseded', 'current']",
+     "p1hold-N3_conflict_negated_replacement-04 ['current', 'superseded']",
+     "p1hold-N3_conflict_negated_replacement-05 ['superseded', 'current']"
+    ]
+   },
+   "regressions": [],
+   "tea_basis_counts": {
+    "none": 240,
+    "explicit_correction": 22,
+    "no_ordering_evidence": 40,
+    "text_valid_date": 22,
+    "recorded_on": 12
+   }
+  },
+  "eval2": {
+   "by_scenario": {
+    "S3_conflict": {
+     "legacy_n": 16,
+     "legacy_ok": 16,
+     "tea_n": 16,
+     "tea_ok": 16
+    },
+    "S4_stale": {
+     "legacy_n": 16,
+     "legacy_ok": 16,
+     "tea_n": 16,
+     "tea_ok": 16
+    }
+   },
+   "failures": {},
+   "regressions": [],
+   "tea_basis_counts": {
+    "none": 692,
+    "no_ordering_evidence": 32,
+    "text_valid_date": 16,
+    "recorded_on": 16
+   }
+  }
+ }
+}

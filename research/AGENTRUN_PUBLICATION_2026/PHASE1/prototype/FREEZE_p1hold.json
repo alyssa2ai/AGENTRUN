@@ -1,0 +1,9 @@
+{
+ "split": "p1hold",
+ "seed": 20261115,
+ "n_tasks": 48,
+ "split_sha256": "f747fbfa4f2537f7da464bee55ba570709daa940f57bcf38a8a635a419c9524c",
+ "p1hold_py_sha256": "2a89d21dae44a8ab8d7ca43c089274b6493198a4def15bb115d711098df912e6",
+ "frozen_utc": "2026-11-14",
+ "note": "frozen before tea.py existed"
+}
