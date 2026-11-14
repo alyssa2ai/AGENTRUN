@@ -123,9 +123,15 @@ Hash manifest:
 py -3.11 PHASE1/scripts/make_manifest.py
 ```
 
-**Line endings.** `HASH_MANIFEST.txt` hashes files with LF line endings, as stored in git.
-- Raw `*.jsonl` files are `-text` (`.gitattributes`), so they are byte-exact on every checkout.
-- On Windows with `core.autocrlf=true`, the `.md`, `.py` and `.log` files are checked out with CRLF. Verify those against `git show HEAD:<path>`, or from an LF checkout.
+**Line endings.** `HASH_MANIFEST.txt` is checkout-independent and equals the sha256 of the committed git blobs:
+- raw `*.jsonl` files are hashed byte for byte; they are `-text` in `.gitattributes`, so they are never converted;
+- all other files are hashed with CRLF normalised to LF.
+
+Verify any checkout with:
+
+```bash
+py -3.11 PHASE1/scripts/make_manifest.py --check
+```
 
 On the cluster, through Slurm, one GPU (resumable; check `HPC_RESOURCE_SHARING.md` §7 first). From `PHASE1/`:
 
