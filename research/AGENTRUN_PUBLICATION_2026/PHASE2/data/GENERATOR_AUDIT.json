@@ -1,0 +1,141 @@
+{
+ "name_pool_size": 23600,
+ "name_pool_unique": true,
+ "splits": {
+  "p2val": {
+   "n_items": 88,
+   "deterministic": true,
+   "skeleton_sha256": "3410b0285ea738e5b64bbaa6fbc14ec98ff34a3299eccd75f7fff808b413666e",
+   "entities_in_own_slice": [
+    88,
+    88
+   ],
+   "dup_entities": 0,
+   "lead_values": 31,
+   "lead_surnames_in_own_slice": 31,
+   "writer_input_leak_fields": 0,
+   "writer_input_label_words": 0,
+   "n_categories": 22,
+   "by_gold_kind": {
+    "answer": 52,
+    "conflict": 32,
+    "abstain": 4
+   },
+   "by_attribute": {
+    "budget_usd": 14,
+    "deadline": 14,
+    "lead": 16,
+    "port": 15,
+    "region": 15,
+    "team_size": 14
+   },
+   "n_families": 88,
+   "items_per_family": {
+    "1": 88
+   },
+   "distinct_brief_templates": 15,
+   "matches_skeleton_on_disk": true
+  },
+  "p2val2": {
+   "n_items": 92,
+   "deterministic": true,
+   "skeleton_sha256": "7494eb22bf6e5b84bb9d9575f37cea22785b989c5f703182cd783a0a125d8980",
+   "entities_in_own_slice": [
+    92,
+    92
+   ],
+   "dup_entities": 0,
+   "lead_values": 34,
+   "lead_surnames_in_own_slice": 34,
+   "writer_input_leak_fields": 0,
+   "writer_input_label_words": 0,
+   "n_categories": 23,
+   "by_gold_kind": {
+    "answer": 60,
+    "conflict": 28,
+    "abstain": 4
+   },
+   "by_attribute": {
+    "budget_usd": 15,
+    "deadline": 15,
+    "lead": 16,
+    "port": 15,
+    "region": 16,
+    "team_size": 15
+   },
+   "n_families": 92,
+   "items_per_family": {
+    "1": 92
+   },
+   "distinct_brief_templates": 16,
+   "matches_skeleton_on_disk": true
+  },
+  "eval3": {
+   "n_items": 276,
+   "deterministic": true,
+   "skeleton_sha256": "(not reported before sealing)",
+   "entities_in_own_slice": [
+    276,
+    276
+   ],
+   "dup_entities": 0,
+   "lead_values": 92,
+   "lead_surnames_in_own_slice": 92,
+   "writer_input_leak_fields": 0,
+   "writer_input_label_words": 0,
+   "n_categories": 23,
+   "by_attribute": {
+    "budget_usd": 46,
+    "deadline": 46,
+    "lead": 46,
+    "port": 46,
+    "region": 46,
+    "team_size": 46
+   },
+   "n_families": 138,
+   "items_per_family": {
+    "2": 138
+   },
+   "distinct_brief_templates": 19
+  }
+ },
+ "pairs": {
+  "p2val&p2val2": 0,
+  "p2val&eval3": 0,
+  "p2val&dev": 0,
+  "p2val&regression": 0,
+  "p2val&p2dev": 0,
+  "p2val2&eval3": 0,
+  "p2val2&dev": 0,
+  "p2val2&regression": 0,
+  "p2val2&p2dev": 0,
+  "eval3&dev": 0,
+  "eval3&regression": 0,
+  "eval3&p2dev": 0,
+  "dev&regression": 0,
+  "dev&p2dev": 0,
+  "regression&p2dev": 0
+ },
+ "distractor_slices": {
+  "eval3": {
+   "size": 2400,
+   "within_pool": true,
+   "overlap_any_entity_slice": 0,
+   "overlap_other_distractor_slices": 0
+  },
+  "p2val": {
+   "size": 1200,
+   "within_pool": true,
+   "overlap_any_entity_slice": 0,
+   "overlap_other_distractor_slices": 0
+  },
+  "p2val2": {
+   "size": 1200,
+   "within_pool": true,
+   "overlap_any_entity_slice": 0,
+   "overlap_other_distractor_slices": 0
+  }
+ },
+ "brief_templates_shared_p2val2_eval3": 16,
+ "hard_checks_pass": true
+}

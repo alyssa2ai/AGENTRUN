@@ -1,0 +1,36 @@
+{
+ "seed": 20261116,
+ "name_slice": [
+  10400,
+  12800
+ ],
+ "status": "DEVELOPMENT - tuned against",
+ "n_groups": 114,
+ "n_tasks": 80,
+ "n_regression": 46,
+ "categories": [
+  "temporal_update",
+  "backfilled",
+  "valid_time_same_import",
+  "same_day_correction_named",
+  "same_day_correction_unnamed",
+  "conflict_plain",
+  "conflict_same_text_date",
+  "conflict_rival_mentioned",
+  "negated_correction",
+  "retention",
+  "unconfirmed_update",
+  "quoted_correction",
+  "hypothetical_change",
+  "missing_timestamp",
+  "missing_timestamp_text_dated",
+  "authority_one",
+  "authority_both",
+  "historical_question",
+  "incidental_update_word",
+  "unsupported (tasks only)"
+ ],
+ "dev_groups.jsonl": "b1c6916d856dfc422b4eedfc3610de6cb22c2bb97c79160f8997722d39d849f2",
+ "p2dev_tasks.jsonl": "ea47cffc889167d9d0931f9b36b5a15fafee33bfd77c2fcaffef4c4af3a80652",
+ "regression_groups.jsonl": "5083dc93947639f72830e2dee8f37f837668c3a04c0a4c263550fa62e9160513"
+}

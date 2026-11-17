@@ -1,0 +1,33 @@
+{
+ "split": "p2val",
+ "checks": {
+  "name_pool_unique": true,
+  "n_skeleton_items": 88,
+  "n_tasks": 77,
+  "entities_in_own_slice": [
+   88,
+   88
+  ],
+  "distractors_in_own_slice": [
+   322,
+   322
+  ],
+  "entities_in_any_other_slice": 0,
+  "dup_entities_within": 0,
+  "entity_overlap_dev_groups": 0,
+  "entity_overlap_regression_groups": 0,
+  "entity_overlap_p2dev_tasks": 0,
+  "writer_input_leak": 0,
+  "annotator_input_leak": 0,
+  "n_gold_texts": 176,
+  "template_overlap_8gram": 11,
+  "exact_masked_duplicates": 10,
+  "duplicate_texts_within": 45
+ },
+ "hard_checks_pass": true,
+ "reference_files": [
+  "dev_groups",
+  "p2dev_tasks",
+  "regression_groups"
+ ]
+}

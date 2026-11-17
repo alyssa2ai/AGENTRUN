@@ -1,0 +1,383 @@
+{
+ "n_fixtures": 70,
+ "mechanisms": {
+  "legacy": {
+   "accuracy": [
+    35,
+    70
+   ],
+   "errors": {
+    "incorrect_conflict": 15,
+    "incorrect_supersession": 16,
+    "false_resolution": 4,
+    "overconfident": 4
+   },
+   "enforceable_errors": 35,
+   "basis_accuracy": null,
+   "by_category": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     3
+    ],
+    "conflict_plain": [
+     3,
+     3
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     3,
+     3
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     3,
+     3
+    ],
+    "missing_timestamp": [
+     0,
+     4
+    ],
+    "negated_replacement": [
+     4,
+     4
+    ],
+    "quoted_claim": [
+     3,
+     3
+    ],
+    "retention": [
+     0,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "supersession_later_ref": [
+     3,
+     3
+    ],
+    "three_value_chain": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     2
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "failures": [
+    "p2val-0002: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0003: {'kind': 'resolved', 'value': 9532, 'strength': 'strong'}",
+    "p2val-0004: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0005: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0009: {'kind': 'resolved', 'value': 8084, 'strength': 'strong'}",
+    "p2val-0010: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0011: {'kind': 'resolved', 'value': 'west-ridge-1', 'strength': 'strong'}",
+    "p2val-0013: {'kind': 'resolved', 'value': 525200, 'strength': 'strong'}",
+    "p2val-0020: {'kind': 'resolved', 'value': 8, 'strength': 'strong'}",
+    "p2val-0024: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0025: {'kind': 'resolved', 'value': 'Lior Piskund', 'strength': 'strong'}",
+    "p2val-0026: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0031: {'kind': 'resolved', 'value': 'Pavel Trokind', 'strength': 'strong'}",
+    "p2val-0032: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0033: {'kind': 'resolved', 'value': '2027-09-26', 'strength': 'strong'}",
+    "p2val-0034: {'kind': 'resolved', 'value': 665600, 'strength': 'strong'}",
+    "p2val-0035: {'kind': 'resolved', 'value': 7, 'strength': 'strong'}",
+    "p2val-0042: {'kind': 'resolved', 'value': 8992, 'strength': 'strong'}",
+    "p2val-0046: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0047: {'kind': 'resolved', 'value': 'far-cape-5', 'strength': 'strong'}",
+    "p2val-0048: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0049: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0053: {'kind': 'resolved', 'value': 'upper-vale-2', 'strength': 'strong'}",
+    "p2val-0054: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0055: {'kind': 'resolved', 'value': 815500, 'strength': 'strong'}",
+    "p2val-0057: {'kind': 'resolved', 'value': 9005, 'strength': 'strong'}",
+    "p2val-0064: {'kind': 'resolved', 'value': 'Dmitri Drabrash', 'strength': 'strong'}",
+    "p2val-0068: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0070: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0071: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0076: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0077: {'kind': 'resolved', 'value': 21, 'strength': 'strong'}",
+    "p2val-0078: {'kind': 'resolved', 'value': 6814, 'strength': 'strong'}",
+    "p2val-0079: {'kind': 'resolved', 'value': 'Wim Kudaend', 'strength': 'strong'}",
+    "p2val-0086: {'kind': 'resolved', 'value': 'far-cape-5', 'strength': 'strong'}"
+   ]
+  },
+  "TEA": {
+   "accuracy": [
+    34,
+    70
+   ],
+   "errors": {
+    "incorrect_conflict": 12,
+    "incorrect_supersession": 17,
+    "false_resolution": 7,
+    "overconfident": 7
+   },
+   "enforceable_errors": 36,
+   "basis_accuracy": null,
+   "by_category": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     3
+    ],
+    "conflict_plain": [
+     3,
+     3
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     3,
+     3
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     3,
+     3
+    ],
+    "missing_timestamp": [
+     4,
+     4
+    ],
+    "negated_replacement": [
+     0,
+     4
+    ],
+    "quoted_claim": [
+     0,
+     3
+    ],
+    "retention": [
+     0,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     2,
+     4
+    ],
+    "supersession_later_ref": [
+     3,
+     3
+    ],
+    "three_value_chain": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     2
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "failures": [
+    "p2val-0002: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0003: {'kind': 'resolved', 'value': 9532, 'strength': 'strong'}",
+    "p2val-0004: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0005: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0009: {'kind': 'resolved', 'value': 8084, 'strength': 'strong'}",
+    "p2val-0010: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0011: {'kind': 'resolved', 'value': 'west-ridge-1', 'strength': 'strong'}",
+    "p2val-0013: {'kind': 'resolved', 'value': 525200, 'strength': 'strong'}",
+    "p2val-0014: {'kind': 'resolved', 'value': 7, 'strength': 'strong'}",
+    "p2val-0015: {'kind': 'resolved', 'value': 9443, 'strength': 'strong'}",
+    "p2val-0024: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0025: {'kind': 'resolved', 'value': 'Lior Piskund', 'strength': 'strong'}",
+    "p2val-0031: {'kind': 'resolved', 'value': 'Pavel Trokind', 'strength': 'strong'}",
+    "p2val-0032: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0033: {'kind': 'resolved', 'value': '2027-09-26', 'strength': 'strong'}",
+    "p2val-0034: {'kind': 'resolved', 'value': 665600, 'strength': 'strong'}",
+    "p2val-0035: {'kind': 'resolved', 'value': 7, 'strength': 'strong'}",
+    "p2val-0036: {'kind': 'resolved', 'value': 6637, 'strength': 'strong'}",
+    "p2val-0037: {'kind': 'resolved', 'value': 'Kavya Cesost', 'strength': 'strong'}",
+    "p2val-0046: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0047: {'kind': 'resolved', 'value': 'far-cape-5', 'strength': 'strong'}",
+    "p2val-0049: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0053: {'kind': 'resolved', 'value': 'upper-vale-2', 'strength': 'strong'}",
+    "p2val-0054: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0055: {'kind': 'resolved', 'value': 815500, 'strength': 'strong'}",
+    "p2val-0057: {'kind': 'resolved', 'value': 9005, 'strength': 'strong'}",
+    "p2val-0058: {'kind': 'resolved', 'value': 'Chiara Dremem', 'strength': 'strong'}",
+    "p2val-0059: {'kind': 'resolved', 'value': 'east-mesa-1', 'strength': 'strong'}",
+    "p2val-0068: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0070: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0071: {'kind': 'contradiction', 'strength': 'strong'}",
+    "p2val-0076: {'kind': 'resolved', 'value': 517200, 'strength': 'strong'}",
+    "p2val-0077: {'kind': 'resolved', 'value': 21, 'strength': 'strong'}",
+    "p2val-0078: {'kind': 'resolved', 'value': 6814, 'strength': 'strong'}",
+    "p2val-0079: {'kind': 'resolved', 'value': 'Wim Kudaend', 'strength': 'strong'}",
+    "p2val-0080: {'kind': 'resolved', 'value': 'north-fjord-2', 'strength': 'strong'}"
+   ]
+  },
+  "evarb": {
+   "accuracy": [
+    55,
+    70
+   ],
+   "errors": {
+    "incorrect_conflict": 5,
+    "incorrect_supersession": 10
+   },
+   "enforceable_errors": 15,
+   "basis_accuracy": null,
+   "by_category": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     1,
+     3
+    ],
+    "conflict_plain": [
+     3,
+     3
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     3,
+     3
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "hypothetical_change": [
+     4,
+     4
+    ],
+    "incidental_change_word": [
+     3,
+     3
+    ],
+    "missing_timestamp": [
+     4,
+     4
+    ],
+    "negated_replacement": [
+     4,
+     4
+    ],
+    "quoted_claim": [
+     3,
+     3
+    ],
+    "retention": [
+     0,
+     4
+    ],
+    "same_day_correction_noref": [
+     3,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     3,
+     3
+    ],
+    "three_value_chain": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     2,
+     2
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     2,
+     4
+    ]
+   },
+   "failures": [
+    "p2val-0002: {'kind': 'contradiction', 'strength': 'strong', 'basis': 'genuine_contradiction'}",
+    "p2val-0003: {'kind': 'resolved', 'value': 9532, 'strength': 'strong', 'basis': 'record_time'}",
+    "p2val-0009: {'kind': 'resolved', 'value': 8084, 'strength': 'strong', 'basis': 'record_time'}",
+    "p2val-0010: {'kind': 'contradiction', 'strength': 'strong', 'basis': 'genuine_contradiction'}",
+    "p2val-0011: {'kind': 'resolved', 'value': 'west-ridge-1', 'strength': 'strong', 'basis': 'record_time'}",
+    "p2val-0025: {'kind': 'resolved', 'value': 'Lior Piskund', 'strength': 'strong', 'basis': 'record_time'}",
+    "p2val-0031: {'kind': 'resolved', 'value': 'Pavel Trokind', 'strength': 'strong', 'basis': 'record_time'}",
+    "p2val-0032: {'kind': 'contradiction', 'strength': 'strong', 'basis': 'genuine_contradiction'}",
+    "p2val-0033: {'kind': 'resolved', 'value': '2027-09-26', 'strength': 'strong', 'basis': 'record_time'}",
+    "p2val-0053: {'kind': 'resolved', 'value': 'upper-vale-2', 'strength': 'strong', 'basis': 'record_time'}",
+    "p2val-0054: {'kind': 'contradiction', 'strength': 'strong', 'basis': 'genuine_contradiction'}",
+    "p2val-0055: {'kind': 'resolved', 'value': 815500, 'strength': 'strong', 'basis': 'record_time'}",
+    "p2val-0068: {'kind': 'contradiction', 'strength': 'strong', 'basis': 'genuine_contradiction'}",
+    "p2val-0076: {'kind': 'resolved', 'value': 517200, 'strength': 'strong', 'basis': 'valid_time'}",
+    "p2val-0077: {'kind': 'resolved', 'value': 21, 'strength': 'strong', 'basis': 'record_time'}"
+   ]
+  }
+ }
+}

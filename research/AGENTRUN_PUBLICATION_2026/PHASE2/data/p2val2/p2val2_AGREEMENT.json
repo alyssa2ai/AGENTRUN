@@ -1,0 +1,178 @@
+{
+ "split": "p2val2",
+ "annotators": {
+  "llama8b": {
+   "n": 90,
+   "kappa_class": 0.4894,
+   "exact_agreement": [
+    58,
+    90
+   ],
+   "low_confidence": 0,
+   "unparsed": 0
+  },
+  "qwen14b": {
+   "n": 90,
+   "kappa_class": 0.6266,
+   "exact_agreement": [
+    71,
+    90
+   ],
+   "low_confidence": 1,
+   "unparsed": 0
+  }
+ },
+ "n_valid": 90,
+ "n_primary": 51,
+ "n_flagged": 39,
+ "primary_by_category": {
+  "authority_both": 4,
+  "backfilled_entry": 2,
+  "conflict_plain": 4,
+  "conflict_rival_neutral": 4,
+  "conflict_same_validity": 1,
+  "historical_question": 3,
+  "incidental_change_word": 4,
+  "negated_both_stand": 2,
+  "negated_replacement": 3,
+  "retention": 4,
+  "same_day_correction_noref": 3,
+  "same_day_correction_ref": 4,
+  "single_record_control": 4,
+  "supersession_later_ref": 4,
+  "unconfirmed_change": 1,
+  "unsupported": 4
+ },
+ "flags": {
+  "p2val2-0001": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0002": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val2-0005": [
+   "qwen14b:disagree"
+  ],
+  "p2val2-0007": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0010": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val2-0013": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0015": [
+   "qwen14b:disagree"
+  ],
+  "p2val2-0016": [
+   "llama8b:disagree",
+   "qwen14b:low_confidence"
+  ],
+  "p2val2-0021": [
+   "qwen14b:disagree"
+  ],
+  "p2val2-0024": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val2-0025": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0030": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val2-0032": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0033": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val2-0035": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0036": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0039": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val2-0041": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0044": [
+   "qwen14b:disagree"
+  ],
+  "p2val2-0047": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0048": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0049": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0053": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0056": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val2-0058": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0059": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0062": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val2-0067": [
+   "qwen14b:disagree"
+  ],
+  "p2val2-0070": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val2-0071": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val2-0076": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val2-0079": [
+   "qwen14b:disagree"
+  ],
+  "p2val2-0081": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0082": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0083": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0084": [
+   "qwen14b:disagree"
+  ],
+  "p2val2-0085": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val2-0087": [
+   "llama8b:disagree"
+  ],
+  "p2val2-0090": [
+   "llama8b:disagree"
+  ]
+ }
+}

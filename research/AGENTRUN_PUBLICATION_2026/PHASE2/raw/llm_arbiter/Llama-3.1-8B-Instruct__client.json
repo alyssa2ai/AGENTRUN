@@ -1,0 +1,21 @@
+{
+ "backend": "hf-local",
+ "model": "meta-llama/Llama-3.1-8B-Instruct",
+ "model_path": "/home/gpuuser12/.cache/huggingface/hub/models--meta-llama--Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659",
+ "adapter": null,
+ "adapter_sha256": null,
+ "temperature": 0.0,
+ "seed": 20261111,
+ "max_new_tokens": 400,
+ "dtype": "bfloat16",
+ "parser_version": "two-pass-v2+client-fallback",
+ "decoding": "greedy",
+ "thinking": "disabled via chat template where supported",
+ "torch": "2.15.0+cu132",
+ "transformers": "5.22.2",
+ "cuda": "13.2",
+ "gpu": "NVIDIA L40",
+ "gpu_mem_gib": 44.6,
+ "family": "llama",
+ "family_adapter": "evarb.clients.FamilyClient/1"
+}
