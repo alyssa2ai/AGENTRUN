@@ -1,0 +1,67 @@
+{
+ "tasks": 90,
+ "task_sha256": "608e65363def3e7e03309865b175bbfc4c4748b8eb0f7c0912c38d403743b2d0",
+ "cells": [
+  {
+   "cell": "p2val2_qwen25_3b_greedy",
+   "present": true,
+   "done": true,
+   "starts": 1,
+   "rows": 1080,
+   "expected": 1080,
+   "missing": 0,
+   "duplicates": 0,
+   "error_rows": 0,
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "temperature": 0.0,
+   "seed": 20261111,
+   "problems": []
+  },
+  {
+   "cell": "p2val2_qwen25_7b_greedy",
+   "present": true,
+   "done": true,
+   "starts": 1,
+   "rows": 1080,
+   "expected": 1080,
+   "missing": 0,
+   "duplicates": 0,
+   "error_rows": 0,
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "temperature": 0.0,
+   "seed": 20261111,
+   "problems": []
+  },
+  {
+   "cell": "p2val2_llama31_8b_greedy",
+   "present": true,
+   "done": true,
+   "starts": 1,
+   "rows": 1080,
+   "expected": 1080,
+   "missing": 0,
+   "duplicates": 0,
+   "error_rows": 0,
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "temperature": 0.0,
+   "seed": 20261111,
+   "problems": []
+  },
+  {
+   "cell": "p2val2_qwen3_8b_greedy",
+   "present": true,
+   "done": true,
+   "starts": 1,
+   "rows": 1080,
+   "expected": 1080,
+   "missing": 0,
+   "duplicates": 0,
+   "error_rows": 0,
+   "model": "Qwen/Qwen3-8B",
+   "temperature": 0.0,
+   "seed": 20261111,
+   "problems": []
+  }
+ ],
+ "problems": []
+}

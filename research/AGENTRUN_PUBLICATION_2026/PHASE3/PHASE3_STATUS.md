@@ -8,3 +8,9 @@
 - Other projects: queue was empty and the node idle at submission; a note was appended to the cluster `COORDINATION.md`.
 - Resume rule: `sbatch --array=<idx> hpc/phase3_eval3.sbatch` re-runs only missing pairs. Raw output: `~/AGENTRUN_HPC/phase3_raw/` on the cluster.
 - Remaining deliverables (execution log, model comparison, ablations, statistics, failure analysis, latency, limitations, final report) are not written; they need the completed cells.
+
+## Update 17 Nov 2026 (afternoon, IST)
+- Retry controller **4243** (`PHASE2/hpc/phase3_retry_controller.sbatch`, no GPU, 1 GB) starts after array 4233 ends and resubmits only incomplete cells, up to 5 rounds (the 14B cell needs two because of the 12 h task limit).
+- Analysis pipeline ready and tested on p2val2 development data (`DRY=1`): `scripts/run_phase3_analysis.sh status|fetch|verify|analyze|all`, `scripts/verify_phase3.py`, `scripts/build_reports.py`. Sealed task file and raw eval3 runs are gitignored (`PHASE3/.gitignore`).
+- `LIMITATIONS.md` written. Remaining deliverables need real results: FAILURE_ANALYSIS, PHASE3_FINAL_REPORT.
+- Cluster is only reachable from campus; next on-campus step: `bash scripts/run_phase3_analysis.sh status`.

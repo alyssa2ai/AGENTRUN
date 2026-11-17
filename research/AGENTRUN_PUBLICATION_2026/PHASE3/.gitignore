@@ -1,0 +1,3 @@
+# sealed eval3 content (task text, gold, per-run transcripts) must not enter tracked files
+SEALED_LOCAL/
+RAW_RESULTS/eval3_*/
