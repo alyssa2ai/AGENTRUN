@@ -22,3 +22,8 @@
 - T=0.7 repetitions measure decoding noise, not independent samples of tasks; family is the unit of inference.
 - Latency is wall time under single-occupancy Slurm jobs on one L40 while other projects' CPU jobs may share the node; T=0.7 and 14B budget numbers were partly estimated.
 - Qwen3-8B is run with thinking disabled.
+
+## Execution (added 18 November 2026, before any eval3 outcome was analysed)
+- From 18 Nov 08:58 UTC, cells 9-17 ran up to two at a time, one per L40 (Slurm gres, `CUDA_VISIBLE_DEVICES` 0 and 1), under controller v2 (`PHASE2/hpc/phase3_controller_v2.sbatch`, job 4257), which replaced retry controller 4243. Cells 0-7 ran alone on the node's GPUs. Model, decoding, configurations, data and code are unchanged (in-job freeze, seal and pre-registration checks passed for every cell). Wall-time latency (PREREGISTRATION.md section 11, reported, not tested) for cells that overlapped another AGENTRUN cell was measured with a second GPU process on the node, so it is not strictly single-occupancy. The measured throughput of the running Llama-3.1-8B cell did not change when the second cell started (13.9 vs 14.2 runs/min).
+- The Qwen2.5-14B cell was given a 36 h wall-time limit on the command line (the sbatch file is unchanged), so that it is not split by the 12 h default.
+- While checking cell 8's progress on 18 Nov, the last five progress lines of its Slurm log (task id, configuration, scored outcome for three eval3 runs) were displayed in the operator's terminal. No task text, gold label or aggregate was seen, nothing was changed as a result, and progress has since been read from row counts only.

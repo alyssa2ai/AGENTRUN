@@ -1,3 +1,5 @@
 # sealed eval3 content (task text, gold, per-run transcripts) must not enter tracked files
 SEALED_LOCAL/
 RAW_RESULTS/eval3_*/
+# Slurm logs contain per-run outcome lines keyed by eval3 task id; only start/exit lines enter tracked reports
+logs/

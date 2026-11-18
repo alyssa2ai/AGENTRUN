@@ -1,0 +1,572 @@
+{
+ "n_tasks": 90,
+ "counts": [
+  {
+   "model": "ALL",
+   "config": "B",
+   "n": 360,
+   "success": 151,
+   "harmful": 24,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "EB",
+   "n": 360,
+   "success": 198,
+   "harmful": 11,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "EBG",
+   "n": 360,
+   "success": 218,
+   "harmful": 14,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "EBG-all",
+   "n": 360,
+   "success": 243,
+   "harmful": 29,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "EBG-noR3",
+   "n": 360,
+   "success": 217,
+   "harmful": 14,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "EBG-unsafe",
+   "n": 360,
+   "success": 217,
+   "harmful": 14,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "G",
+   "n": 360,
+   "success": 147,
+   "harmful": 35,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "LA",
+   "n": 360,
+   "success": 175,
+   "harmful": 39,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "LG",
+   "n": 360,
+   "success": 171,
+   "harmful": 72,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "R",
+   "n": 360,
+   "success": 159,
+   "harmful": 61,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "RT",
+   "n": 360,
+   "success": 161,
+   "harmful": 81,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "T",
+   "n": 360,
+   "success": 173,
+   "harmful": 25,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "B",
+   "n": 90,
+   "success": 36,
+   "harmful": 10,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "EB",
+   "n": 90,
+   "success": 39,
+   "harmful": 0,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "EBG",
+   "n": 90,
+   "success": 56,
+   "harmful": 4,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "EBG-all",
+   "n": 90,
+   "success": 69,
+   "harmful": 9,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "EBG-noR3",
+   "n": 90,
+   "success": 56,
+   "harmful": 4,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "EBG-unsafe",
+   "n": 90,
+   "success": 56,
+   "harmful": 4,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "G",
+   "n": 90,
+   "success": 32,
+   "harmful": 9,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "LA",
+   "n": 90,
+   "success": 40,
+   "harmful": 0,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "LG",
+   "n": 90,
+   "success": 53,
+   "harmful": 8,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "R",
+   "n": 90,
+   "success": 44,
+   "harmful": 24,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "RT",
+   "n": 90,
+   "success": 47,
+   "harmful": 24,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "T",
+   "n": 90,
+   "success": 40,
+   "harmful": 1,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "B",
+   "n": 90,
+   "success": 48,
+   "harmful": 6,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "EB",
+   "n": 90,
+   "success": 65,
+   "harmful": 6,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "EBG",
+   "n": 90,
+   "success": 66,
+   "harmful": 5,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "EBG-all",
+   "n": 90,
+   "success": 73,
+   "harmful": 9,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "EBG-noR3",
+   "n": 90,
+   "success": 66,
+   "harmful": 5,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "EBG-unsafe",
+   "n": 90,
+   "success": 66,
+   "harmful": 5,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "G",
+   "n": 90,
+   "success": 46,
+   "harmful": 13,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "LA",
+   "n": 90,
+   "success": 52,
+   "harmful": 27,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "LG",
+   "n": 90,
+   "success": 45,
+   "harmful": 36,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "R",
+   "n": 90,
+   "success": 44,
+   "harmful": 20,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "RT",
+   "n": 90,
+   "success": 44,
+   "harmful": 31,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "T",
+   "n": 90,
+   "success": 56,
+   "harmful": 14,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "B",
+   "n": 90,
+   "success": 53,
+   "harmful": 7,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "EB",
+   "n": 90,
+   "success": 71,
+   "harmful": 5,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "EBG",
+   "n": 90,
+   "success": 71,
+   "harmful": 5,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "EBG-all",
+   "n": 90,
+   "success": 77,
+   "harmful": 9,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "EBG-noR3",
+   "n": 90,
+   "success": 71,
+   "harmful": 5,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "EBG-unsafe",
+   "n": 90,
+   "success": 71,
+   "harmful": 5,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "G",
+   "n": 90,
+   "success": 50,
+   "harmful": 13,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "LA",
+   "n": 90,
+   "success": 67,
+   "harmful": 12,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "LG",
+   "n": 90,
+   "success": 61,
+   "harmful": 21,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "R",
+   "n": 90,
+   "success": 48,
+   "harmful": 17,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "RT",
+   "n": 90,
+   "success": 46,
+   "harmful": 26,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "T",
+   "n": 90,
+   "success": 56,
+   "harmful": 10,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "B",
+   "n": 90,
+   "success": 14,
+   "harmful": 1,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "EB",
+   "n": 90,
+   "success": 23,
+   "harmful": 0,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "EBG",
+   "n": 90,
+   "success": 25,
+   "harmful": 0,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "EBG-all",
+   "n": 90,
+   "success": 24,
+   "harmful": 2,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "EBG-noR3",
+   "n": 90,
+   "success": 24,
+   "harmful": 0,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "EBG-unsafe",
+   "n": 90,
+   "success": 24,
+   "harmful": 0,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "G",
+   "n": 90,
+   "success": 19,
+   "harmful": 0,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "LA",
+   "n": 90,
+   "success": 16,
+   "harmful": 0,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "LG",
+   "n": 90,
+   "success": 12,
+   "harmful": 7,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "R",
+   "n": 90,
+   "success": 23,
+   "harmful": 0,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "RT",
+   "n": 90,
+   "success": 24,
+   "harmful": 0,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "T",
+   "n": 90,
+   "success": 21,
+   "harmful": 0,
+   "missing": 0,
+   "matches_analysis": true
+  }
+ ],
+ "primary_diffs": {
+  "EBG-RT": {
+   "crosscheck_pp": 15.8,
+   "analysis_pp": 15.8,
+   "task_pairs": 360,
+   "analysis_task_pairs": 360
+  },
+  "EBG-T": {
+   "crosscheck_pp": 12.5,
+   "analysis_pp": 12.5,
+   "task_pairs": 360,
+   "analysis_task_pairs": 360
+  },
+  "EBG-LG": {
+   "crosscheck_pp": 13.1,
+   "analysis_pp": 13.1,
+   "task_pairs": 360,
+   "analysis_task_pairs": 360
+  },
+  "EBG-B": {
+   "crosscheck_pp": 18.6,
+   "analysis_pp": 18.6,
+   "task_pairs": 360,
+   "analysis_task_pairs": 360
+  }
+ },
+ "problems": []
+}

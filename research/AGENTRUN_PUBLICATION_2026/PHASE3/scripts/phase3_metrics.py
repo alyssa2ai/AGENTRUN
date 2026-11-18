@@ -130,6 +130,10 @@ def main():
     for m in models + ["POOLED"]:
         R = [r for r in rows if (r["model"] in pool if m == "POOLED" else r["model"] == m)]
         res["cells"][m] = {c: cell([r for r in R if r["config"] == c]) for c in configs}
+    # condition-wise view: successes / runs per model x decoding x configuration (descriptive)
+    res["by_decoding"] = {m: {d: {c: rate([r for r in rows if r["model"] == m and r["decoding"] == d and r["config"] == c],
+                                         lambda r: r["success"]) for c in configs}
+                              for d in sorted({r["decoding"] for r in rows if r["model"] == m})} for m in models}
     Path(a.out + ".json").write_text(json.dumps(res, indent=1) + "\n", encoding="utf-8")
     f = lambda x: f"{x[0]}/{x[1]} ({100 * x[0] / x[1]:.1f}%)" if x and x[1] else "-"  # noqa: E731
     md = [f"# Descriptive measures: {Path(a.tasks).name} ({len(tasks)} tasks)\n",
