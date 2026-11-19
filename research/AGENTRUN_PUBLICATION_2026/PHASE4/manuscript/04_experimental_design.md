@@ -39,10 +39,10 @@ The harmful outcomes are `wrong_value`, `stale_value`, `unsupported_claim` and `
 
 | Role | Model | Decodings | Notes |
 |---|---|---|---|
-| primary | Qwen2.5-3B-Instruct | greedy; T = 0.7 with seeds 1, 2, 3 | |
+| primary | Qwen2.5-3B-Instruct [@qwen2024qwen25] | greedy; T = 0.7 with seeds 1, 2, 3 | |
 | primary | Qwen2.5-7B-Instruct | greedy + 3 seeds | |
-| primary | Qwen3-8B | greedy + 3 seeds | thinking disabled; added 16 Nov 2026, before any eval3 run |
-| primary (second family) | Llama-3.1-8B-Instruct (snapshot `0e9e39f2…`) | greedy + 3 seeds | run through the `evarb.clients.FamilyClient` adapter |
+| primary | Qwen3-8B [@yang2025qwen3] | greedy + 3 seeds | thinking disabled; added 16 Nov 2026, before any eval3 run |
+| primary (second family) | Llama-3.1-8B-Instruct [@grattafiori2024llama3] (snapshot `0e9e39f2…`) | greedy + 3 seeds | run through the `evarb.clients.FamilyClient` adapter |
 | secondary | Qwen2.5-14B-Instruct (snapshot `cf98f3b3…`) | greedy only | reported separately; also the eval3 writer and one annotator |
 | format-limited | Llama-3.2-3B-Instruct | greedy only | reported separately, never pooled; failed the 95% format-readiness criterion (`MODEL_FAMILY_READINESS.md`) |
 
@@ -64,7 +64,7 @@ Primary cells are scheduled before the secondary ones, so that a confirmatory an
 
 - **Test:** two-sided sign-flip permutation test of family-level summed differences. Families are pooled across models, and a family's sign is flipped for all models together. 100,000 seeded Monte Carlo permutations.
 - **Confidence interval:** 95% percentile bootstrap over families of the mean task-level difference, 10,000 seeded resamples.
-- **Multiplicity:** Holm correction over the four confirmatory contrasts {EBG − RT, EBG − T, EBG − LG, EBG − B}, pooled over the primary models, at α = 0.05. All other contrasts are exploratory and controlled with Benjamini–Hochberg [CITATION NEEDED: Holm (1979) step-down procedure; Benjamini & Hochberg (1995) false discovery rate; a reference for the cluster/sign-flip permutation test and the cluster bootstrap].
+- **Multiplicity:** Holm correction over the four confirmatory contrasts {EBG − RT, EBG − T, EBG − LG, EBG − B}, pooled over the primary models, at α = 0.05. All other contrasts are exploratory and controlled with Benjamini–Hochberg [@holm1979simple; @benjamini1995fdr]. The sign-flip permutation test follows the standard randomisation argument for paired differences [@good2005permutation], applied at the family level; the percentile bootstrap [@efron1979bootstrap] resamples whole families, as in cluster bootstrapping [@field2007clustered].
 - **Reported without tests counted toward the claims:** per-model and per-category results, harmful-answer rates, and the secondary and format-limited models, for every contrast.
 
 The analysis was verified before any real agent run with a dry run of three simulated agents on p2val (77 tasks × 12 configurations × 3), which checked that all 12 configurations run, that deleted rows are scored as missing failures with complete denominators, that pairing and family pooling behave as specified, and that only the four Holm-family pooled rows are marked confirmatory (`PREREGISTRATION.md` §14). The dry-run numbers are meaningless and are not reported.

@@ -1,0 +1,33 @@
+{
+ "version": "evarb-0.2",
+ "frozen_utc": "2026-11-14T08:14:16Z",
+ "rule": "No change to these files before Phase 3 scoring. p2val2 and eval3 are built after this timestamp.",
+ "hash_note": "sha256 of file content with CRLF normalised to LF (= git blob content)",
+ "files": {
+  "evarb/__init__.py": "99477804dbaf15e13939b2333ec9fe88583168bcd84f82732ff3345b7758be78",
+  "evarb/arbiter.py": "cd81e3fec7b60b4e4aea4834a104fc0654b3015c2d244f37ad382f0b89d847c2",
+  "evarb/clients.py": "1910c180e93b9b8215e37c698182752b981ac87b96123b0bc295c8b24146cb8f",
+  "evarb/cues.py": "805b0251d713e72cdaaa05207d8902ce062c56ca23940fe00ed09b955b14a769",
+  "evarb/llm_arbiter.py": "6263bbb44d2cf31d23eb41cfaa9a0ca49ddb86bf4d95d10d5c4c984c0963bb77",
+  "evarb/loop.py": "ec6f4154f400a752333ed881d8ee1897e2cf4df0a0c41508d67a911bae4c8b26",
+  "evarb/paths.py": "8a5a3a021da1708fb4d90f0de20449f3d6220d4c613bc3bcb3adef11da03f0ec",
+  "evarb/policy.py": "f2dc498f10178b71b83b6c400f55e70d7ff44c748e6d156a1a56b39c16b089bf",
+  "evarb/render.py": "ac07292b57ba794cd5525f9da6b543a3f496e34fa9380b7f2f141ed65fbb8624",
+  "scripts/run_p2.py": "6be2011c4753211bfa920bc728edc13b2717418f83c74c130fb6b7631db7d627",
+  "scripts/analyze_p2.py": "76fc67cc485f0a3f2948517ac3389dd70384e68f25229cccdd8ddfbe617117fa",
+  "scripts/component_eval.py": "181380b63af151ea19f958f5da7f3f8fa735d23a3a3189311a94d319d7160fae"
+ },
+ "frozen_dependencies": {
+  "memlab.py": "dc28584c518d18b6b2b6f684be77269f9ca00d502939ecf845985635d93b62df",
+  "rcs.py": "9f0a838b109322e3f4af0536d9c183384ccb3627a16e0178ed98330c0ea65d0c",
+  "tea.py": "37bed1fe349240f3aaf56dfed399f15a4e64a3ac13eb82cfe599c0b9246e9173"
+ },
+ "tests_passed": 82,
+ "history": [
+  "evarb-0.1: built and tuned on development fixtures (160/160)",
+  "evarb-0.1 one-look on p2val (independent writer): 55/70 vs skeleton gold; gaps: retention phrasing, validity cues",
+  "p2val blind annotation (Opus) showed the v1 benchmark semantics for negated/quoted claims were inconsistent; semantics revised (v2)",
+  "evarb-0.2: v2 semantics (unestablished change -> established value stands), retention/validity/ordinal-date gaps, doubt-word guard; p2val is development data from here",
+  "evarb-0.2 vs blind annotator on p2val: 59/63, 0 false resolutions, 1 enforceable error (ordinal dates, then fixed in 0.2)"
+ ]
+}

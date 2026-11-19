@@ -46,7 +46,7 @@ Two annotators labelled every valid item from the text alone, following `benchma
 | Llama-3.1-8B-Instruct | 174 / 268 | 0.471 | 1 | 0 |
 | Qwen2.5-14B-Instruct | 232 / 268 | 0.767 | 6 | 0 |
 
-[CITATION NEEDED: Cohen (1960) for κ]
+κ is Cohen's kappa [@cohen1960kappa] over the three gold classes.
 
 Items on which both annotators agree with gold at non-low confidence form the double-agreement set (161 items); the remaining 107 are flagged. Under the frozen design these counts define a **secondary sensitivity set**, not the primary set (Section 4.8). Because the annotators are small models that, on the development split p2val2, failed several temporal-reasoning categories wholesale (`data/p2val2/PRIMARY_RULE_DECISION.md`), annotator disagreement is not evidence that an item's gold is wrong, and annotator agreement is not ground truth.
 
