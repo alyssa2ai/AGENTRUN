@@ -38,7 +38,7 @@ We phrase the contributions as tests and artefacts. Whether any hypothesis is su
 4. **A sealed evaluation set whose gold is fixed before any text exists** (eval3; Section 5), written by a model that never saw the mechanism or the gold, with blind model annotation and no human validation. We do not present it as a benchmark of record.
 5. **A pre-stated account of the mechanism's known failures** (Section 13), written before any confirmatory outcome.
 
-Results: [RESULTS PENDING — filled from PHASE3 verified outputs]
+**Results.** All four preregistered contrasts are supported: EBG raised task success over RT by 17.1 pp (95% CI [12.2, 22.1], Holm-adjusted p = 4 × 10⁻⁵), over T by 14.5 pp, over LG by 15.9 pp and over B by 15.3 pp, in the same direction for every model. S4 is not falsified: the harmful-answer rate was 3.1% under EBG against 22.6% under RT, and arbitrary picks fell from 252 runs to 13. The exploratory ablations place most of that benefit in the evidence-basis labels themselves rather than in enforcement, and one of them cuts against the design: enforcing every arbitration instead of only strong ones scored 9.7 pp higher while more than doubling harm. Sections 7 to 9 give the numbers, Section 12 the reading we take from them.
 
 ## 1.6 Scope
 

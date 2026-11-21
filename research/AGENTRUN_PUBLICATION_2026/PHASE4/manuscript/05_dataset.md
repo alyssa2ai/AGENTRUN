@@ -90,4 +90,4 @@ None of the following is used in the confirmatory analysis (`PREREGISTRATION.md`
 
 p2val2 was built after the mechanism freeze and never used for tuning, but its results were known before the preregistration was frozen and informed the power analysis and the primary-set decision (Section 4). It is development evidence in the sense used throughout this paper.
 
-Results: [RESULTS PENDING — filled from PHASE3 verified outputs]
+**Results.** eval3 behaved as a confirmatory set should: every one of the 268 items produced a complete row for all 12 configurations in all 18 cells, and the three item-set definitions — all 268 valid items, the 161 double-agreement items and the 107-item flagged complement — give the same four verdicts (Section 8.2). The effects are somewhat larger on the flagged complement (+21.3 pp on H-primary) than on the double-agreement subset (+14.3 pp), which is the opposite of what annotator noise inflating the effect would predict.

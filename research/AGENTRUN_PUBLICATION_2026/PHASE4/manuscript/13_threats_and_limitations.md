@@ -1,6 +1,6 @@
 # 13. Threats to validity and limitations
 
-> Draft, 18 November 2026. Sources: `PHASE3/LIMITATIONS.md` (written 17 November 2026 before any eval3 outcome, with execution notes added 18 November before any eval3 outcome was analysed; "to be extended, never softened, after results"), `PHASE2/PREREGISTRATION.md` §12, §15–16, `PHASE2/BENCHMARK_EVAL3_SPEC.md` §2, `PHASE2/BASELINE_COMPARISON.md` §4. Everything in this section was fixed before the confirmatory results were known. A paragraph on limitations revealed by the results will be added: [RESULTS PENDING — filled from PHASE3 verified outputs].
+> Draft, 18 November 2026. Sources: `PHASE3/LIMITATIONS.md` (written 17 November 2026 before any eval3 outcome, with execution notes added 18 November before any eval3 outcome was analysed; "to be extended, never softened, after results"), `PHASE2/PREREGISTRATION.md` §12, §15–16, `PHASE2/BENCHMARK_EVAL3_SPEC.md` §2, `PHASE2/BASELINE_COMPARISON.md` §4. Everything in this section was fixed before the confirmatory results were known. Limitations revealed by the results are added in Section 13.8, which extends this section and does not soften it.
 
 ## 13.1 Construct validity: the data
 
@@ -57,3 +57,36 @@ The following deviations from the planned execution were recorded in `PHASE3/LIM
 ## 13.7 Separation from other work
 
 This study is separate from the authors' earlier work on fine-tuning tool-using models, which used a different benchmark and asked a different question; no result from that work is used here.
+
+## 13.8 Limitations revealed by the results
+
+This subsection was written after the confirmatory results and extends Sections 13.1 to 13.7; nothing above it was
+changed.
+
+1. **Gating is a trade, not an improvement.** Ungated enforcement of the same evidence-basis labels scored 9.7 pp
+   higher than the gated mechanism while more than doubling the harmful rate and raising false resolution from 1.9%
+   to 12.9% (Section 9.5). Our design prefers the safer side of that trade, but this benchmark assigns no relative
+   cost to a wrong confident answer versus a missed correct one, so it cannot establish that the preference is
+   right. The gap is also item-set sensitive: −4.8 pp and not significant on the double-agreement subset, −17.1 pp
+   on the flagged complement.
+2. **The harm-reduction claim rests on models that produce harm.** For the three Qwen models EBG − RT reduces the
+   harmful rate by 24.5 to 27.7 pp. For Llama-3.1-8B it reduces it by 0.3 pp, because that model abstains (44.0% of
+   EBG runs) or fails to format an answer (11.1%) instead of committing to a wrong value. The success gain there
+   comes from converting abstentions into answers, which is a different mechanism from the one the hypotheses
+   describe (Section 10.3).
+3. **Residual failure is over-conservatism.** Under EBG, 20.2% of runs report a conflict where the evidence
+   resolves and 11.5% abstain unnecessarily, against 3.1% harmful. Whether that distribution of errors is
+   preferable is a deployment judgement the study does not make.
+4. **Absolute performance is low.** The best configuration answers 61.3% of tasks correctly and 46.0% of the tasks
+   that have a definite answer. Conclusions are about relative mechanism design, not about competence.
+5. **One component is unsupported on success.** Safe submission changes success by −0.2 pp (p = 0.78). It is
+   retained for format robustness (3.3% versus 6.4% format errors), not because the success data support it.
+6. **The platform transition cannot be shown to be inert.** 1.69% of rows were produced after a mid-campaign kernel
+   and GPU-driver change. Removing the affected cell moves the pooled estimates by at most 0.1 pp, but no task and
+   configuration was executed on both platforms, so whether the change altered generation is unknown and not
+   knowable from this campaign (Section 11, `PHASE3/PHASE3_DEVIATIONS.md` D1).
+7. **Two cells are not byte-reproducible.** Those two cells straddle the platform change, and one of them restarted
+   its sampling stream when it resumed (D3). The analysis remains byte-reproducible from the archived raw outputs.
+8. **The failure analysis is category-level only.** eval3 transcripts stay sealed until publication, so we did not
+   inspect individual failures qualitatively and cannot confirm that the Phase 1 failure mechanisms are what
+   produced the eval3 residue (Section 10.5).
