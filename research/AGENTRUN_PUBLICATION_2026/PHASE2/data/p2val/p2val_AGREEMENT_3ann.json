@@ -1,0 +1,195 @@
+{
+ "split": "p2val",
+ "annotators": {
+  "llama8b": {
+   "n": 77,
+   "kappa_class": 0.4917,
+   "exact_agreement": [
+    52,
+    77
+   ],
+   "low_confidence": 0,
+   "unparsed": 0
+  },
+  "qwen14b": {
+   "n": 77,
+   "kappa_class": 0.5225,
+   "exact_agreement": [
+    55,
+    77
+   ],
+   "low_confidence": 2,
+   "unparsed": 0
+  },
+  "opus": {
+   "n": 77,
+   "kappa_class": 0.7289,
+   "exact_agreement": [
+    67,
+    77
+   ],
+   "low_confidence": 5,
+   "unparsed": 0
+  }
+ },
+ "n_valid": 77,
+ "n_primary": 39,
+ "n_flagged": 38,
+ "primary_by_category": {
+  "authority_both": 4,
+  "backfilled_entry": 2,
+  "conflict_plain": 3,
+  "conflict_rival_neutral": 4,
+  "conflict_same_validity": 2,
+  "historical_question": 3,
+  "missing_timestamp": 3,
+  "retention": 4,
+  "same_day_correction_noref": 2,
+  "same_day_correction_ref": 3,
+  "single_record_control": 3,
+  "supersession_later_ref": 3,
+  "unsupported": 3
+ },
+ "flags": {
+  "p2val-0001": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0002": [
+   "llama8b:disagree"
+  ],
+  "p2val-0004": [
+   "qwen14b:disagree"
+  ],
+  "p2val-0007": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0010": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0013": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0014": [
+   "qwen14b:disagree",
+   "opus:disagree"
+  ],
+  "p2val-0015": [
+   "opus:disagree",
+   "opus:low_confidence"
+  ],
+  "p2val-0017": [
+   "opus:low_confidence"
+  ],
+  "p2val-0021": [
+   "opus:disagree",
+   "opus:low_confidence"
+  ],
+  "p2val-0023": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0024": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0025": [
+   "llama8b:disagree"
+  ],
+  "p2val-0029": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0032": [
+   "llama8b:disagree"
+  ],
+  "p2val-0034": [
+   "llama8b:disagree"
+  ],
+  "p2val-0035": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0036": [
+   "llama8b:disagree",
+   "qwen14b:disagree",
+   "opus:disagree"
+  ],
+  "p2val-0037": [
+   "opus:disagree"
+  ],
+  "p2val-0043": [
+   "llama8b:disagree",
+   "opus:disagree",
+   "opus:low_confidence"
+  ],
+  "p2val-0045": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0046": [
+   "llama8b:disagree"
+  ],
+  "p2val-0051": [
+   "llama8b:disagree"
+  ],
+  "p2val-0052": [
+   "qwen14b:disagree",
+   "qwen14b:low_confidence"
+  ],
+  "p2val-0054": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0057": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0058": [
+   "llama8b:disagree",
+   "qwen14b:disagree",
+   "opus:disagree"
+  ],
+  "p2val-0059": [
+   "opus:disagree"
+  ],
+  "p2val-0065": [
+   "opus:disagree",
+   "opus:low_confidence"
+  ],
+  "p2val-0067": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0068": [
+   "llama8b:disagree"
+  ],
+  "p2val-0071": [
+   "qwen14b:disagree"
+  ],
+  "p2val-0073": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0076": [
+   "qwen14b:low_confidence"
+  ],
+  "p2val-0078": [
+   "llama8b:disagree",
+   "qwen14b:disagree"
+  ],
+  "p2val-0079": [
+   "llama8b:disagree"
+  ],
+  "p2val-0080": [
+   "qwen14b:disagree",
+   "opus:disagree"
+  ],
+  "p2val-0086": [
+   "qwen14b:disagree"
+  ]
+ }
+}

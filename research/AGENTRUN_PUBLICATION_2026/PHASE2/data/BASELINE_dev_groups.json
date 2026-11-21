@@ -1,0 +1,1507 @@
+{
+ "split": "dev_groups",
+ "groups_file": "dev_groups.jsonl",
+ "n_scored": 114,
+ "llm_cost": {
+  "LLM:Llama-3.1-8B-Instruct": {
+   "n": 114,
+   "mean_latency_s": 1.305,
+   "mean_total_tokens": 468.0
+  },
+  "LLM:Qwen2.5-14B-Instruct": {
+   "n": 114,
+   "mean_latency_s": 2.74,
+   "mean_total_tokens": 486.0
+  },
+  "LLM:Qwen2.5-3B-Instruct": {
+   "n": 114,
+   "mean_latency_s": 0.692,
+   "mean_total_tokens": 472.7
+  },
+  "LLM:Qwen2.5-7B-Instruct": {
+   "n": 114,
+   "mean_latency_s": 1.167,
+   "mean_total_tokens": 474.1
+  }
+ },
+ "subsets": {
+  "all_valid": {
+   "n_items": 114,
+   "n_families": 57,
+   "methods": {
+    "legacy": {
+     "accuracy": [
+      50,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.351,
+      0.5302
+     ],
+     "false_resolution": 6,
+     "incorrect_supersession": 24,
+     "incorrect_conflict": 34,
+     "unnecessary_unresolved": 0,
+     "overconfident": 6,
+     "format_failure": 0,
+     "enforceable_errors": 64,
+     "by_category": {
+      "authority_both": [
+       6,
+       6
+      ],
+      "authority_one": [
+       0,
+       6
+      ],
+      "backfilled": [
+       0,
+       6
+      ],
+      "conflict_plain": [
+       6,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       6,
+       6
+      ],
+      "conflict_same_text_date": [
+       6,
+       6
+      ],
+      "historical_question": [
+       6,
+       6
+      ],
+      "hypothetical_change": [
+       0,
+       6
+      ],
+      "incidental_update_word": [
+       6,
+       6
+      ],
+      "missing_timestamp": [
+       0,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       0,
+       6
+      ],
+      "negated_correction": [
+       2,
+       6
+      ],
+      "quoted_correction": [
+       6,
+       6
+      ],
+      "retention": [
+       0,
+       6
+      ],
+      "same_day_correction_named": [
+       0,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       0,
+       6
+      ],
+      "temporal_update": [
+       6,
+       6
+      ],
+      "unconfirmed_update": [
+       0,
+       6
+      ],
+      "valid_time_same_import": [
+       0,
+       6
+      ]
+     }
+    },
+    "TEA": {
+     "accuracy": [
+      71,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.5312,
+      0.7064
+     ],
+     "false_resolution": 7,
+     "incorrect_supersession": 20,
+     "incorrect_conflict": 16,
+     "unnecessary_unresolved": 0,
+     "overconfident": 7,
+     "format_failure": 0,
+     "enforceable_errors": 43,
+     "by_category": {
+      "authority_both": [
+       6,
+       6
+      ],
+      "authority_one": [
+       0,
+       6
+      ],
+      "backfilled": [
+       6,
+       6
+      ],
+      "conflict_plain": [
+       6,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       6,
+       6
+      ],
+      "conflict_same_text_date": [
+       6,
+       6
+      ],
+      "historical_question": [
+       6,
+       6
+      ],
+      "hypothetical_change": [
+       0,
+       6
+      ],
+      "incidental_update_word": [
+       6,
+       6
+      ],
+      "missing_timestamp": [
+       6,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       6,
+       6
+      ],
+      "negated_correction": [
+       1,
+       6
+      ],
+      "quoted_correction": [
+       0,
+       6
+      ],
+      "retention": [
+       0,
+       6
+      ],
+      "same_day_correction_named": [
+       4,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       0,
+       6
+      ],
+      "temporal_update": [
+       6,
+       6
+      ],
+      "unconfirmed_update": [
+       0,
+       6
+      ],
+      "valid_time_same_import": [
+       6,
+       6
+      ]
+     }
+    },
+    "evarb": {
+     "accuracy": [
+      114,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.9674,
+      1.0
+     ],
+     "false_resolution": 0,
+     "incorrect_supersession": 0,
+     "incorrect_conflict": 0,
+     "unnecessary_unresolved": 0,
+     "overconfident": 0,
+     "format_failure": 0,
+     "enforceable_errors": 0,
+     "by_category": {
+      "authority_both": [
+       6,
+       6
+      ],
+      "authority_one": [
+       6,
+       6
+      ],
+      "backfilled": [
+       6,
+       6
+      ],
+      "conflict_plain": [
+       6,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       6,
+       6
+      ],
+      "conflict_same_text_date": [
+       6,
+       6
+      ],
+      "historical_question": [
+       6,
+       6
+      ],
+      "hypothetical_change": [
+       6,
+       6
+      ],
+      "incidental_update_word": [
+       6,
+       6
+      ],
+      "missing_timestamp": [
+       6,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       6,
+       6
+      ],
+      "negated_correction": [
+       6,
+       6
+      ],
+      "quoted_correction": [
+       6,
+       6
+      ],
+      "retention": [
+       6,
+       6
+      ],
+      "same_day_correction_named": [
+       6,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       6,
+       6
+      ],
+      "temporal_update": [
+       6,
+       6
+      ],
+      "unconfirmed_update": [
+       6,
+       6
+      ],
+      "valid_time_same_import": [
+       6,
+       6
+      ]
+     }
+    },
+    "LLM:Llama-3.1-8B-Instruct": {
+     "accuracy": [
+      44,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.3017,
+      0.4777
+     ],
+     "false_resolution": 44,
+     "incorrect_supersession": 26,
+     "incorrect_conflict": 0,
+     "unnecessary_unresolved": 0,
+     "overconfident": 58,
+     "format_failure": 0,
+     "enforceable_errors": 62,
+     "by_category": {
+      "authority_both": [
+       0,
+       6
+      ],
+      "authority_one": [
+       6,
+       6
+      ],
+      "backfilled": [
+       0,
+       6
+      ],
+      "conflict_plain": [
+       0,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       0,
+       6
+      ],
+      "conflict_same_text_date": [
+       0,
+       6
+      ],
+      "historical_question": [
+       6,
+       6
+      ],
+      "hypothetical_change": [
+       2,
+       6
+      ],
+      "incidental_update_word": [
+       0,
+       6
+      ],
+      "missing_timestamp": [
+       0,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       6,
+       6
+      ],
+      "negated_correction": [
+       0,
+       6
+      ],
+      "quoted_correction": [
+       0,
+       6
+      ],
+      "retention": [
+       0,
+       6
+      ],
+      "same_day_correction_named": [
+       6,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       6,
+       6
+      ],
+      "temporal_update": [
+       6,
+       6
+      ],
+      "unconfirmed_update": [
+       0,
+       6
+      ],
+      "valid_time_same_import": [
+       6,
+       6
+      ]
+     }
+    },
+    "LLM:Qwen2.5-14B-Instruct": {
+     "accuracy": [
+      74,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.558,
+      0.7306
+     ],
+     "false_resolution": 16,
+     "incorrect_supersession": 16,
+     "incorrect_conflict": 8,
+     "unnecessary_unresolved": 0,
+     "overconfident": 22,
+     "format_failure": 0,
+     "enforceable_errors": 33,
+     "by_category": {
+      "authority_both": [
+       6,
+       6
+      ],
+      "authority_one": [
+       0,
+       6
+      ],
+      "backfilled": [
+       4,
+       6
+      ],
+      "conflict_plain": [
+       6,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       5,
+       6
+      ],
+      "conflict_same_text_date": [
+       6,
+       6
+      ],
+      "historical_question": [
+       6,
+       6
+      ],
+      "hypothetical_change": [
+       4,
+       6
+      ],
+      "incidental_update_word": [
+       4,
+       6
+      ],
+      "missing_timestamp": [
+       0,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       6,
+       6
+      ],
+      "negated_correction": [
+       3,
+       6
+      ],
+      "quoted_correction": [
+       0,
+       6
+      ],
+      "retention": [
+       0,
+       6
+      ],
+      "same_day_correction_named": [
+       6,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       5,
+       6
+      ],
+      "temporal_update": [
+       6,
+       6
+      ],
+      "unconfirmed_update": [
+       4,
+       6
+      ],
+      "valid_time_same_import": [
+       3,
+       6
+      ]
+     }
+    },
+    "LLM:Qwen2.5-3B-Instruct": {
+     "accuracy": [
+      54,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.3844,
+      0.5647
+     ],
+     "false_resolution": 6,
+     "incorrect_supersession": 5,
+     "incorrect_conflict": 0,
+     "unnecessary_unresolved": 49,
+     "overconfident": 11,
+     "format_failure": 0,
+     "enforceable_errors": 11,
+     "by_category": {
+      "authority_both": [
+       6,
+       6
+      ],
+      "authority_one": [
+       0,
+       6
+      ],
+      "backfilled": [
+       0,
+       6
+      ],
+      "conflict_plain": [
+       6,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       6,
+       6
+      ],
+      "conflict_same_text_date": [
+       0,
+       6
+      ],
+      "historical_question": [
+       0,
+       6
+      ],
+      "hypothetical_change": [
+       3,
+       6
+      ],
+      "incidental_update_word": [
+       6,
+       6
+      ],
+      "missing_timestamp": [
+       6,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       6,
+       6
+      ],
+      "negated_correction": [
+       2,
+       6
+      ],
+      "quoted_correction": [
+       6,
+       6
+      ],
+      "retention": [
+       2,
+       6
+      ],
+      "same_day_correction_named": [
+       1,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       0,
+       6
+      ],
+      "temporal_update": [
+       0,
+       6
+      ],
+      "unconfirmed_update": [
+       0,
+       6
+      ],
+      "valid_time_same_import": [
+       4,
+       6
+      ]
+     }
+    },
+    "LLM:Qwen2.5-7B-Instruct": {
+     "accuracy": [
+      66,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.4872,
+      0.6656
+     ],
+     "false_resolution": 21,
+     "incorrect_supersession": 21,
+     "incorrect_conflict": 6,
+     "unnecessary_unresolved": 0,
+     "overconfident": 30,
+     "format_failure": 0,
+     "enforceable_errors": 42,
+     "by_category": {
+      "authority_both": [
+       6,
+       6
+      ],
+      "authority_one": [
+       0,
+       6
+      ],
+      "backfilled": [
+       2,
+       6
+      ],
+      "conflict_plain": [
+       6,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       3,
+       6
+      ],
+      "conflict_same_text_date": [
+       5,
+       6
+      ],
+      "historical_question": [
+       6,
+       6
+      ],
+      "hypothetical_change": [
+       2,
+       6
+      ],
+      "incidental_update_word": [
+       2,
+       6
+      ],
+      "missing_timestamp": [
+       0,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       6,
+       6
+      ],
+      "negated_correction": [
+       1,
+       6
+      ],
+      "quoted_correction": [
+       0,
+       6
+      ],
+      "retention": [
+       1,
+       6
+      ],
+      "same_day_correction_named": [
+       6,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       6,
+       6
+      ],
+      "temporal_update": [
+       6,
+       6
+      ],
+      "unconfirmed_update": [
+       2,
+       6
+      ],
+      "valid_time_same_import": [
+       6,
+       6
+      ]
+     }
+    }
+   },
+   "paired_vs_evarb": {
+    "evarb-legacy": {
+     "n_items": 114,
+     "n_families": 57,
+     "diff": 0.5614,
+     "ci95": [
+      0.4386,
+      0.6842
+     ],
+     "p_signflip": 1e-05,
+     "p_holm": 6e-05
+    },
+    "evarb-TEA": {
+     "n_items": 114,
+     "n_families": 57,
+     "diff": 0.3772,
+     "ci95": [
+      0.2544,
+      0.5
+     ],
+     "p_signflip": 1e-05,
+     "p_holm": 6e-05
+    },
+    "evarb-LLM:Llama-3.1-8B-Instruct": {
+     "n_items": 114,
+     "n_families": 57,
+     "diff": 0.614,
+     "ci95": [
+      0.4912,
+      0.7368
+     ],
+     "p_signflip": 1e-05,
+     "p_holm": 6e-05
+    },
+    "evarb-LLM:Qwen2.5-14B-Instruct": {
+     "n_items": 114,
+     "n_families": 57,
+     "diff": 0.3509,
+     "ci95": [
+      0.2368,
+      0.4649
+     ],
+     "p_signflip": 1e-05,
+     "p_holm": 6e-05
+    },
+    "evarb-LLM:Qwen2.5-3B-Instruct": {
+     "n_items": 114,
+     "n_families": 57,
+     "diff": 0.5263,
+     "ci95": [
+      0.4035,
+      0.6491
+     ],
+     "p_signflip": 1e-05,
+     "p_holm": 6e-05
+    },
+    "evarb-LLM:Qwen2.5-7B-Instruct": {
+     "n_items": 114,
+     "n_families": 57,
+     "diff": 0.4211,
+     "ci95": [
+      0.2982,
+      0.5439
+     ],
+     "p_signflip": 1e-05,
+     "p_holm": 6e-05
+    }
+   }
+  },
+  "current_intent": {
+   "n_items": 114,
+   "n_families": 57,
+   "methods": {
+    "legacy": {
+     "accuracy": [
+      50,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.351,
+      0.5302
+     ],
+     "false_resolution": 6,
+     "incorrect_supersession": 24,
+     "incorrect_conflict": 34,
+     "unnecessary_unresolved": 0,
+     "overconfident": 6,
+     "format_failure": 0,
+     "enforceable_errors": 64,
+     "by_category": {
+      "authority_both": [
+       6,
+       6
+      ],
+      "authority_one": [
+       0,
+       6
+      ],
+      "backfilled": [
+       0,
+       6
+      ],
+      "conflict_plain": [
+       6,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       6,
+       6
+      ],
+      "conflict_same_text_date": [
+       6,
+       6
+      ],
+      "historical_question": [
+       6,
+       6
+      ],
+      "hypothetical_change": [
+       0,
+       6
+      ],
+      "incidental_update_word": [
+       6,
+       6
+      ],
+      "missing_timestamp": [
+       0,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       0,
+       6
+      ],
+      "negated_correction": [
+       2,
+       6
+      ],
+      "quoted_correction": [
+       6,
+       6
+      ],
+      "retention": [
+       0,
+       6
+      ],
+      "same_day_correction_named": [
+       0,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       0,
+       6
+      ],
+      "temporal_update": [
+       6,
+       6
+      ],
+      "unconfirmed_update": [
+       0,
+       6
+      ],
+      "valid_time_same_import": [
+       0,
+       6
+      ]
+     }
+    },
+    "TEA": {
+     "accuracy": [
+      71,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.5312,
+      0.7064
+     ],
+     "false_resolution": 7,
+     "incorrect_supersession": 20,
+     "incorrect_conflict": 16,
+     "unnecessary_unresolved": 0,
+     "overconfident": 7,
+     "format_failure": 0,
+     "enforceable_errors": 43,
+     "by_category": {
+      "authority_both": [
+       6,
+       6
+      ],
+      "authority_one": [
+       0,
+       6
+      ],
+      "backfilled": [
+       6,
+       6
+      ],
+      "conflict_plain": [
+       6,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       6,
+       6
+      ],
+      "conflict_same_text_date": [
+       6,
+       6
+      ],
+      "historical_question": [
+       6,
+       6
+      ],
+      "hypothetical_change": [
+       0,
+       6
+      ],
+      "incidental_update_word": [
+       6,
+       6
+      ],
+      "missing_timestamp": [
+       6,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       6,
+       6
+      ],
+      "negated_correction": [
+       1,
+       6
+      ],
+      "quoted_correction": [
+       0,
+       6
+      ],
+      "retention": [
+       0,
+       6
+      ],
+      "same_day_correction_named": [
+       4,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       0,
+       6
+      ],
+      "temporal_update": [
+       6,
+       6
+      ],
+      "unconfirmed_update": [
+       0,
+       6
+      ],
+      "valid_time_same_import": [
+       6,
+       6
+      ]
+     }
+    },
+    "evarb": {
+     "accuracy": [
+      114,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.9674,
+      1.0
+     ],
+     "false_resolution": 0,
+     "incorrect_supersession": 0,
+     "incorrect_conflict": 0,
+     "unnecessary_unresolved": 0,
+     "overconfident": 0,
+     "format_failure": 0,
+     "enforceable_errors": 0,
+     "by_category": {
+      "authority_both": [
+       6,
+       6
+      ],
+      "authority_one": [
+       6,
+       6
+      ],
+      "backfilled": [
+       6,
+       6
+      ],
+      "conflict_plain": [
+       6,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       6,
+       6
+      ],
+      "conflict_same_text_date": [
+       6,
+       6
+      ],
+      "historical_question": [
+       6,
+       6
+      ],
+      "hypothetical_change": [
+       6,
+       6
+      ],
+      "incidental_update_word": [
+       6,
+       6
+      ],
+      "missing_timestamp": [
+       6,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       6,
+       6
+      ],
+      "negated_correction": [
+       6,
+       6
+      ],
+      "quoted_correction": [
+       6,
+       6
+      ],
+      "retention": [
+       6,
+       6
+      ],
+      "same_day_correction_named": [
+       6,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       6,
+       6
+      ],
+      "temporal_update": [
+       6,
+       6
+      ],
+      "unconfirmed_update": [
+       6,
+       6
+      ],
+      "valid_time_same_import": [
+       6,
+       6
+      ]
+     }
+    },
+    "LLM:Llama-3.1-8B-Instruct": {
+     "accuracy": [
+      44,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.3017,
+      0.4777
+     ],
+     "false_resolution": 44,
+     "incorrect_supersession": 26,
+     "incorrect_conflict": 0,
+     "unnecessary_unresolved": 0,
+     "overconfident": 58,
+     "format_failure": 0,
+     "enforceable_errors": 62,
+     "by_category": {
+      "authority_both": [
+       0,
+       6
+      ],
+      "authority_one": [
+       6,
+       6
+      ],
+      "backfilled": [
+       0,
+       6
+      ],
+      "conflict_plain": [
+       0,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       0,
+       6
+      ],
+      "conflict_same_text_date": [
+       0,
+       6
+      ],
+      "historical_question": [
+       6,
+       6
+      ],
+      "hypothetical_change": [
+       2,
+       6
+      ],
+      "incidental_update_word": [
+       0,
+       6
+      ],
+      "missing_timestamp": [
+       0,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       6,
+       6
+      ],
+      "negated_correction": [
+       0,
+       6
+      ],
+      "quoted_correction": [
+       0,
+       6
+      ],
+      "retention": [
+       0,
+       6
+      ],
+      "same_day_correction_named": [
+       6,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       6,
+       6
+      ],
+      "temporal_update": [
+       6,
+       6
+      ],
+      "unconfirmed_update": [
+       0,
+       6
+      ],
+      "valid_time_same_import": [
+       6,
+       6
+      ]
+     }
+    },
+    "LLM:Qwen2.5-14B-Instruct": {
+     "accuracy": [
+      74,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.558,
+      0.7306
+     ],
+     "false_resolution": 16,
+     "incorrect_supersession": 16,
+     "incorrect_conflict": 8,
+     "unnecessary_unresolved": 0,
+     "overconfident": 22,
+     "format_failure": 0,
+     "enforceable_errors": 33,
+     "by_category": {
+      "authority_both": [
+       6,
+       6
+      ],
+      "authority_one": [
+       0,
+       6
+      ],
+      "backfilled": [
+       4,
+       6
+      ],
+      "conflict_plain": [
+       6,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       5,
+       6
+      ],
+      "conflict_same_text_date": [
+       6,
+       6
+      ],
+      "historical_question": [
+       6,
+       6
+      ],
+      "hypothetical_change": [
+       4,
+       6
+      ],
+      "incidental_update_word": [
+       4,
+       6
+      ],
+      "missing_timestamp": [
+       0,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       6,
+       6
+      ],
+      "negated_correction": [
+       3,
+       6
+      ],
+      "quoted_correction": [
+       0,
+       6
+      ],
+      "retention": [
+       0,
+       6
+      ],
+      "same_day_correction_named": [
+       6,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       5,
+       6
+      ],
+      "temporal_update": [
+       6,
+       6
+      ],
+      "unconfirmed_update": [
+       4,
+       6
+      ],
+      "valid_time_same_import": [
+       3,
+       6
+      ]
+     }
+    },
+    "LLM:Qwen2.5-3B-Instruct": {
+     "accuracy": [
+      54,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.3844,
+      0.5647
+     ],
+     "false_resolution": 6,
+     "incorrect_supersession": 5,
+     "incorrect_conflict": 0,
+     "unnecessary_unresolved": 49,
+     "overconfident": 11,
+     "format_failure": 0,
+     "enforceable_errors": 11,
+     "by_category": {
+      "authority_both": [
+       6,
+       6
+      ],
+      "authority_one": [
+       0,
+       6
+      ],
+      "backfilled": [
+       0,
+       6
+      ],
+      "conflict_plain": [
+       6,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       6,
+       6
+      ],
+      "conflict_same_text_date": [
+       0,
+       6
+      ],
+      "historical_question": [
+       0,
+       6
+      ],
+      "hypothetical_change": [
+       3,
+       6
+      ],
+      "incidental_update_word": [
+       6,
+       6
+      ],
+      "missing_timestamp": [
+       6,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       6,
+       6
+      ],
+      "negated_correction": [
+       2,
+       6
+      ],
+      "quoted_correction": [
+       6,
+       6
+      ],
+      "retention": [
+       2,
+       6
+      ],
+      "same_day_correction_named": [
+       1,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       0,
+       6
+      ],
+      "temporal_update": [
+       0,
+       6
+      ],
+      "unconfirmed_update": [
+       0,
+       6
+      ],
+      "valid_time_same_import": [
+       4,
+       6
+      ]
+     }
+    },
+    "LLM:Qwen2.5-7B-Instruct": {
+     "accuracy": [
+      66,
+      114
+     ],
+     "accuracy_wilson95": [
+      0.4872,
+      0.6656
+     ],
+     "false_resolution": 21,
+     "incorrect_supersession": 21,
+     "incorrect_conflict": 6,
+     "unnecessary_unresolved": 0,
+     "overconfident": 30,
+     "format_failure": 0,
+     "enforceable_errors": 42,
+     "by_category": {
+      "authority_both": [
+       6,
+       6
+      ],
+      "authority_one": [
+       0,
+       6
+      ],
+      "backfilled": [
+       2,
+       6
+      ],
+      "conflict_plain": [
+       6,
+       6
+      ],
+      "conflict_rival_mentioned": [
+       3,
+       6
+      ],
+      "conflict_same_text_date": [
+       5,
+       6
+      ],
+      "historical_question": [
+       6,
+       6
+      ],
+      "hypothetical_change": [
+       2,
+       6
+      ],
+      "incidental_update_word": [
+       2,
+       6
+      ],
+      "missing_timestamp": [
+       0,
+       6
+      ],
+      "missing_timestamp_text_dated": [
+       6,
+       6
+      ],
+      "negated_correction": [
+       1,
+       6
+      ],
+      "quoted_correction": [
+       0,
+       6
+      ],
+      "retention": [
+       1,
+       6
+      ],
+      "same_day_correction_named": [
+       6,
+       6
+      ],
+      "same_day_correction_unnamed": [
+       6,
+       6
+      ],
+      "temporal_update": [
+       6,
+       6
+      ],
+      "unconfirmed_update": [
+       2,
+       6
+      ],
+      "valid_time_same_import": [
+       6,
+       6
+      ]
+     }
+    }
+   },
+   "paired_vs_evarb": {
+    "evarb-legacy": {
+     "n_items": 114,
+     "n_families": 57,
+     "diff": 0.5614,
+     "ci95": [
+      0.4386,
+      0.6842
+     ],
+     "p_signflip": 1e-05,
+     "p_holm": 6e-05
+    },
+    "evarb-TEA": {
+     "n_items": 114,
+     "n_families": 57,
+     "diff": 0.3772,
+     "ci95": [
+      0.2544,
+      0.5
+     ],
+     "p_signflip": 1e-05,
+     "p_holm": 6e-05
+    },
+    "evarb-LLM:Llama-3.1-8B-Instruct": {
+     "n_items": 114,
+     "n_families": 57,
+     "diff": 0.614,
+     "ci95": [
+      0.4912,
+      0.7368
+     ],
+     "p_signflip": 1e-05,
+     "p_holm": 6e-05
+    },
+    "evarb-LLM:Qwen2.5-14B-Instruct": {
+     "n_items": 114,
+     "n_families": 57,
+     "diff": 0.3509,
+     "ci95": [
+      0.2368,
+      0.4649
+     ],
+     "p_signflip": 1e-05,
+     "p_holm": 6e-05
+    },
+    "evarb-LLM:Qwen2.5-3B-Instruct": {
+     "n_items": 114,
+     "n_families": 57,
+     "diff": 0.5263,
+     "ci95": [
+      0.4035,
+      0.6491
+     ],
+     "p_signflip": 1e-05,
+     "p_holm": 6e-05
+    },
+    "evarb-LLM:Qwen2.5-7B-Instruct": {
+     "n_items": 114,
+     "n_families": 57,
+     "diff": 0.4211,
+     "ci95": [
+      0.2982,
+      0.5439
+     ],
+     "p_signflip": 1e-05,
+     "p_holm": 6e-05
+    }
+   }
+  }
+ }
+}

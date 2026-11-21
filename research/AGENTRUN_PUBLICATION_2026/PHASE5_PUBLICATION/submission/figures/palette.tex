@@ -1,0 +1,61 @@
+% Shared visual language for every figure in the paper.
+% Colours are from the Okabe--Ito colour-blind-safe set, chosen so that they also separate by lightness when the
+% paper is printed in greyscale. Each experimental condition keeps the same colour in every figure.
+
+% --- condition families -------------------------------------------------------------------------------------
+\definecolor{cNone}{HTML}{6E6E6E}   % B      : memory, no labels                       (grey,        L* ~ 47)
+\definecolor{cAdv}{HTML}{56B4E9}    % G, T   : advisory labels                         (sky blue,    L* ~ 72)
+\definecolor{cEnf}{HTML}{D55E00}    % R, RT  : enforced record/temporal labels         (vermillion,  L* ~ 51)
+\definecolor{cLLM}{HTML}{CC79A7}    % LA, LG : LLM arbiter                             (purple,      L* ~ 61)
+\definecolor{cEvarb}{HTML}{009E73}  % EB and EBG variants: evidence-basis              (green,       L* ~ 57)
+\definecolor{cEBG}{HTML}{00634A}    % EBG    : the full proposed mechanism             (dark green,  L* ~ 36)
+\definecolor{cAll}{HTML}{E69F00}    % EBG-all: ungated enforcement, the counter-result (amber,       L* ~ 71)
+
+% --- measurement roles --------------------------------------------------------------------------------------
+\definecolor{cAcc}{HTML}{0072B2}    % accuracy / task success
+\definecolor{cHarm}{HTML}{D55E00}   % harmful answers
+\definecolor{cAbst}{HTML}{56B4E9}   % abstention
+\definecolor{cFmt}{HTML}{CC79A7}    % format failures
+\definecolor{cNeutral}{HTML}{BFBFBF}
+
+% --- diagram furniture --------------------------------------------------------------------------------------
+\definecolor{cBoxFill}{HTML}{F4F6F8}
+\definecolor{cBoxEdge}{HTML}{394A59}
+\definecolor{cAccentFill}{HTML}{E4F2EC}
+\definecolor{cWarnFill}{HTML}{FBEFE4}
+\definecolor{cInk}{HTML}{1A2129}
+
+\tikzset{
+  node distance=5mm and 7mm,
+  blk/.style   = {draw=cBoxEdge, fill=cBoxFill, rounded corners=1.6pt, line width=0.5pt,
+                  align=center, inner sep=3.4pt, font=\footnotesize, text=cInk, minimum height=7.2mm},
+  blkacc/.style= {blk, fill=cAccentFill, draw=cEBG},
+  blkwarn/.style={blk, fill=cWarnFill, draw=cEnf},
+  blkplain/.style={blk, fill=white},
+  dec/.style   = {draw=cBoxEdge, fill=white, line width=0.5pt, align=center, inner sep=3pt,
+                  font=\scriptsize, text=cInk, shape=diamond, aspect=2.6, inner xsep=1pt},
+  store/.style = {draw=cBoxEdge, fill=white, line width=0.5pt, align=center, font=\footnotesize,
+                  text=cInk, cylinder, shape border rotate=90, aspect=0.22, inner sep=3pt},
+  lbl/.style   = {font=\scriptsize, text=cInk, inner sep=1.5pt},
+  flow/.style  = {->, >=latex, draw=cBoxEdge, line width=0.5pt},
+  flowacc/.style={flow, draw=cEBG, line width=0.7pt},
+  flowwarn/.style={flow, draw=cEnf, dash pattern=on 2.4pt off 1.6pt},
+  flowback/.style={flow, draw=cNone, dash pattern=on 1.2pt off 1.4pt},
+  grp/.style   = {draw=cNeutral, rounded corners=2pt, line width=0.5pt, inner sep=4pt},
+}
+
+% Consistent pgfplots look
+\pgfplotsset{
+  compat=1.18,
+  paperaxis/.style={
+    tick align=outside, tick pos=left,
+    axis line style={draw=cInk, line width=0.4pt},
+    every axis label/.append style={font=\footnotesize, text=cInk},
+    tick label style={font=\scriptsize, text=cInk},
+    legend style={font=\scriptsize, draw=cNeutral, fill=white, fill opacity=0.92, text opacity=1,
+                  rounded corners=1pt, inner sep=2pt},
+    grid style={draw=cNeutral, line width=0.3pt},
+    label style={font=\footnotesize},
+    title style={font=\small\bfseries, text=cInk},
+  },
+}

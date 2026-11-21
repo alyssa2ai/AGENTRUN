@@ -1,0 +1,5 @@
+cell,model,decoding,role,status,rows,expected,missing_pairs,duplicates,error_rows,starts,slurm_jobs,gpu_index,gpu,first_start_utc,finished_utc,wall_h_first_start_to_done,gpu_h_from_logs,exit_codes,evarb,torch,transformers
+p2val2_qwen25_3b_greedy,Qwen2.5-3B-Instruct,greedy,development (dry run),DONE,1080,1080,0,0,0,1,4223,,NVIDIA L40,2026-11-16T10:46:49Z,2026-11-16T11:19:36Z,0.55,,,evarb-0.2,2.15.0+cu132,5.22.2
+p2val2_qwen25_7b_greedy,Qwen2.5-7B-Instruct,greedy,development (dry run),DONE,1080,1080,0,0,0,1,4224,,NVIDIA L40,2026-11-16T11:49:24Z,2026-11-16T13:05:54Z,1.27,,,evarb-0.2,2.15.0+cu132,5.22.2
+p2val2_llama31_8b_greedy,Llama-3.1-8B-Instruct,greedy,development (dry run),DONE,1080,1080,0,0,0,1,4213,,NVIDIA L40,2026-11-16T14:10:04Z,2026-11-16T15:26:52Z,1.28,,,evarb-0.2,2.15.0+cu132,5.22.2
+p2val2_qwen3_8b_greedy,Qwen3-8B,greedy,development (dry run),DONE,1080,1080,0,0,0,1,4222,,NVIDIA L40,2026-11-16T16:33:28Z,2026-11-16T17:47:04Z,1.23,,,evarb-0.2,2.15.0+cu132,5.22.2

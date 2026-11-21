@@ -1,0 +1,31 @@
+\begin{table}[t]
+\centering
+\caption{Component ablations, all pre-registered as \emph{exploratory} and reported with Benjamini--Hochberg
+adjustment. A positive success difference favours the first-named condition; a negative harm difference favours
+it. The two bold rows are the results that cut against the proposed design.}
+\label{tab:ablations}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lp{0.29\linewidth}rcrr@{}}
+\toprule
+\textbf{Contrast} & \textbf{What it isolates} & \textbf{Success} & \textbf{95\% CI} & $\boldsymbol{p_{\text{BH}}}$ & \textbf{Harm} \\
+ & & \textbf{(pp)} & & & \textbf{(pp)} \\
+\midrule
+\cond{EB} $-$ \cond{G}   & evidence-basis vs metadata labels, no enforcement & $+11.8$ & \ci{8.3}{15.2} & $2.2\!\times\!10^{-5}$ & $-5.2$ \\
+\cond{EB} $-$ \cond{T}   & evidence-basis vs temporal labels, no enforcement & $+8.5$ & \ci{5.4}{11.6} & $2.2\!\times\!10^{-5}$ & $-4.7$ \\
+\cond{EBG} $-$ \cond{EB} & adding gated enforcement to the labels & $+6.0$ & \ci{3.9}{8.2} & $2.2\!\times\!10^{-5}$ & $+0.5$ \\
+\cond{EBG} $-$ \cond{R}  & whole mechanism vs prior record-based enforcement & $+16.3$ & \ci{11.7}{21.0} & $2.2\!\times\!10^{-5}$ & $-12.9$ \\
+\cond{EBG} $-$ \cond{EBG-noR3} & search-before-submit\footnotemark[1] & $+1.3$ & --- & --- & $-0.3$ \\
+\cond{EBG} $-$ \cond{EBG-unsafe} & safe submission & $-0.2$ & \ci{-1.0}{0.7} & $0.776$ & $-0.2$ \\
+\midrule
+\textbf{\cond{EBG} $-$ \cond{EBG-all}} & \textbf{the gate itself} & $\boldsymbol{-9.7}$ & \textbf{\ci{-15.2}{-4.3}} & $\boldsymbol{0.0013}$ & $\boldsymbol{-3.7}$ \\
+\textbf{\cond{LG} $-$ \cond{LA}} & \textbf{gating an LLM arbiter} & $\boldsymbol{-2.4}$ & \textbf{\ci{-5.6}{0.6}} & $\boldsymbol{0.167}$ & $\boldsymbol{+8.1}$ \\
+\bottomrule
+\end{tabular}
+\footnotetext[1]{A descriptive difference of pooled rates (61.3\% against 60.0\%) rather than one of the
+pre-registered contrast set, so no interval or adjusted $p$ is computed for it.}
+
+\vspace{2pt}
+{\footnotesize Source: \srcfile{PHASE3/ANALYSIS/CONFIRMATORY_primary_cells.json}; uncorrected $p$ for
+\cond{EBG} $-$ \cond{EBG-all} is $6.9\times10^{-4}$ and for \cond{LG} $-$ \cond{LA} is $0.124$.}
+\end{table}

@@ -1,0 +1,124 @@
+\section{Method: Evarb-0.2}
+\label{sec:method}
+
+\input{figures/fig1_architecture}
+
+\subsection{System architecture}
+
+\Cref{fig:architecture} shows the harness. The agent is a local causal LM with a Hermes-style tool template. It
+has three tools: \cond{memory\_search}, a hashed bag-of-words retrieval returning the top four records; a registry
+lookup that may fail by design; and \cond{submit\_answer}, the terminal action, which takes a value, the literal
+\cond{conflict}, or an abstention.
+
+Between retrieval and the agent sits the \textbf{arbiter}, and between the agent's submission and the recorded
+answer sits the \textbf{policy}. Everything we vary lives in those two places: the arbiter decides \emph{what the
+agent is told} about the records, and the policy decides \emph{what happens} when the agent's submission disagrees
+with that. The store, the retrieval function, the tool schemas, the prompts and the scorer are identical in all
+twelve conditions.
+
+\subsection{Arbitration}
+
+The arbiter receives the records of one (entity, attribute) group. Each record has an identifier, a value, a text,
+a source and a possibly-missing \cond{recorded\_on} date. It returns a resolution kind (\cond{unchallenged},
+\cond{resolved}, \cond{contradiction}, \cond{unresolved}), an \emph{evidence basis}, a \emph{strength}
+(\cond{strong}, \cond{moderate}, \cond{none}), the current value if any, and a per-record status.
+
+\paragraph{Clause-level cues.} Each record text is split into clauses at sentence ends, semicolons and dashes.
+Within a clause the arbiter looks for cues of seven kinds --- correction, supersession, dismissal, retention,
+unconfirmed, contradiction, and a hypothetical value --- and qualifies each by its scope: \emph{negated} if a
+negator occurs among the four tokens before the cue; \emph{quoted} if the cue is in quotation marks or the clause
+contains a reporting verb; \emph{hypothetical} if the clause contains a conditional or modal marker. A clause
+\emph{refers to a rival record} if it mentions the rival's value (token-bounded, numbers compared numerically) or
+uses an anaphor for an earlier value when exactly one rival value exists. Validity dates are read after ``as of'',
+``effective'', ``valid from'', ``since'' and similar phrases; a date equal to the record's own value is never
+treated as a validity date.
+
+\paragraph{Evidence bases.} Every resolution carries one of ten evidence bases, and strength is a function of the
+basis and its conditions (\Cref{fig:bases}). The scope qualifiers are what separate this from a lexical rule
+list: a correction cue inside a negated, quoted or hypothetical clause does not license the ordering that the same
+cue would license when asserted.
+
+\input{figures/fig2_workflow}
+
+\paragraph{Precedence.} Arbitration proceeds in a fixed order (\Cref{fig:workflow}). One distinct value is
+\cond{unchallenged}. Otherwise the arbiter first \emph{sets aside records that do not establish their own value} ---
+unconfirmed or proposed values, hypothetical changes, records stating that the rival remains valid, records saying
+they do not replace the rival, and records whose own value appears only in reported, conditional or negated clauses
+--- and if the remainder share one value, that value is current at moderate strength. Then: negated pairs or an
+asserted ``both stand'' marker give a contradiction; asserted referenced textual edges give a winner if they are
+consistent and \cond{unresolved} if not; validity dates present on every established record order them; otherwise
+\cond{recorded\_on} orders them, with a guard that lowers strength when the winner's own text signals doubt. Ties
+are broken, in order, by an unreferenced correction claimed by exactly one value, a reported or hypothetical cue
+(\cond{unresolved}), a unique authoritative source, and otherwise a contradiction. Missing dates with no text dates
+give \cond{unresolved}. The words ``update'' and ``revised'' never break a tie alone, because they are often
+incidental.
+
+The set-aside step encodes the benchmark's v2 semantics: \textbf{a record that does not establish its own value
+leaves the established value standing.} These semantics were adopted after a blind annotation of the first
+validation split showed the earlier gold for negated and reported claims to be inconsistent; that change was made
+and frozen before the confirmatory data existed.
+
+\input{figures/fig3_bases}
+
+\paragraph{What the agent sees.} Labels are attached to each retrieved record in the \cond{memory\_search} result:
+a status, the evidence basis in words, a certainty (\cond{established}, \cond{likely}, \cond{not established},
+mapped from strength) and, where relevant, \cond{superseded\_by}, \cond{conflicts\_with}, \cond{valid\_from} and a
+note. A superseded record is shown as \cond{historical} when the question asks about an earlier time, because
+whether a record is historical depends on the question rather than on the records. An order the evidence cannot
+establish is shown as \cond{unresolved}, with the instruction to read the record texts --- never as
+``conflicting'', because in the pilot small models followed wrong cautionary labels.
+
+\subsection{The basis-gated policy}
+
+The policy is evaluated when the agent submits, and applies only to \emph{anchored} groups: groups the agent
+retrieved whose entity is named in the question. It never sees the gold answer, and model identity is not an input.
+The first matching rule wins:
+
+\begin{description}[leftmargin=2.2em,itemsep=1pt,topsep=2pt,font=\normalfont\sffamily]
+\item[P3] no \cond{memory\_search} and no successful registry result $\rightarrow$ request evidence (search memory;
+if nothing relevant, the previous submission stands);
+\item[P1] current question, and the answer equals a superseded value and not the current one $\rightarrow$ enforce
+if enforceable, else advise;
+\item[P2] current question, status \cond{conflict}, and every anchored multi-value group is resolved $\rightarrow$
+enforce if all are enforceable, else advise;
+\item[P4] the answer equals a value of a contradictory group and there is no registry result $\rightarrow$ enforce
+toward \cond{conflict} if enforceable, else advise;
+\item[--] anything else, including every unresolved group $\rightarrow$ no action.
+\end{description}
+
+\paragraph{Gating} is the single switch this paper is about. A resolution is \emph{enforceable} in mode
+\cond{gated} if its strength is strong; in mode \cond{all} if it is strong \emph{or} moderate; in mode \cond{none},
+never. \cond{EBG} uses \cond{gated}; \cond{EBG-all} uses \cond{all}; the advisory conditions use \cond{none}.
+
+\paragraph{Notices.} A run receives at most one notice. It names the records involved and states the evidence basis
+truthfully --- a same-date correction is described as a correction, not as an ordering by date. The agent may
+resubmit; the policy never changes an answer itself.
+
+\paragraph{Safe submission.} If the submission after a notice is unparsable or missing, or the step budget runs
+out, the final answer reverts to the pre-notice submission. This bounds the cost of a notice: it can turn one
+parsable answer into another, but it cannot turn a parsable answer into a format or step-limit failure.
+
+\subsection{Conditions}
+\label{sec:conditions}
+
+\input{tables/tab_conditions}
+
+All twelve conditions run in every cell. They are constructed so that each comparison of interest differs in one
+design element where possible: \cond{EBG} vs \cond{EB} isolates enforcement, \cond{EBG} vs \cond{EBG-all} isolates
+gating, \cond{EBG} vs \cond{EBG-unsafe} isolates safe submission, \cond{EBG} vs \cond{EBG-noR3} isolates
+search-before-submit, and \cond{EBG} vs \cond{LG} isolates \emph{who} arbitrates while holding the policy fixed.
+
+The pre-registered primary contrast, \cond{EBG} $-$ \cond{RT}, is deliberately not of that kind: it compares the
+proposed condition with the strongest prior enforcing condition and therefore changes the arbiter, the gating, the
+notice wording and safe submission together. It cannot attribute an effect to any one of them. The ablations in
+\Cref{sec:ablations} do the attribution, and they are exploratory.
+
+\paragraph{Baselines.} \cond{G} and \cond{R} use metadata-only labels that order records by \cond{recorded\_on}
+alone and label same-date disagreements as conflicting. \cond{T} and \cond{RT} use the earlier temporal arbiter:
+it orders by text validity dates where every competing record has one, else by a unique latest \cond{recorded\_on},
+breaking ties by a correction cue naming the rival's value, and otherwise reports no ordering evidence. It has no
+negation, quotation or modality scope, and its labels carry no strength --- which is exactly what gating needs and
+cannot get from it. \cond{R} and \cond{RT} enforce every label they produce and have no safe submission.
+\cond{LA} and \cond{LG} use the agent's own model as arbiter, filling the same output schema from a prompt that
+states the same evidence rules in plain language; unparsable or inconsistent output becomes \cond{unresolved} and
+is counted as a format failure.

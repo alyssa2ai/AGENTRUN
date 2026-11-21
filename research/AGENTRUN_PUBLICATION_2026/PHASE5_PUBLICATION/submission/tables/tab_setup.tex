@@ -1,0 +1,30 @@
+\begin{table}[t]
+\centering
+\caption{Models, decodings and the resulting run matrix. All six models ran all twelve conditions on all 268
+tasks. Snapshot hashes, framework versions and the hashes of all 14 mechanism files are recorded in every run
+manifest and released with the artifact package.}
+\label{tab:setup}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llccr@{}}
+\toprule
+\textbf{Model} & \textbf{Role} & \textbf{Decodings} & \textbf{Cells} & \textbf{Runs} \\
+\midrule
+Qwen2.5-3B \citep{qwen2024qwen25}      & primary & greedy $+$ 3 seeds & 4 & 12\,864 \\
+Qwen2.5-7B \citep{qwen2024qwen25}      & primary & greedy $+$ 3 seeds & 4 & 12\,864 \\
+Qwen3-8B \citep{yang2025qwen3}                  & primary & greedy $+$ 3 seeds & 4 & 12\,864 \\
+Llama-3.1-8B \citep{grattafiori2024llama3} & primary & greedy $+$ 3 seeds & 4 & 12\,864 \\
+\midrule
+Qwen2.5-14B \citep{qwen2024qwen25}     & secondary & greedy & 1 & 3\,216 \\
+Llama-3.2-3B \citep{grattafiori2024llama3} & format-limited & greedy & 1 & 3\,216 \\
+\midrule
+\multicolumn{3}{@{}l}{\textbf{Total}} & \textbf{18} & \textbf{57\,888} \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+{\footnotesize bfloat16 on one 48\,GB GPU; at most 700 new tokens per call; greedy decoding uses base seed
+20261111, sampled decoding uses $T=0.7$, top-$p=0.9$. Llama-3.2-3B failed the pre-registered readiness criterion
+before the campaign and is reported separately throughout. Source:
+\srcfile{PHASE3/results/execution.csv}.}
+\end{table}

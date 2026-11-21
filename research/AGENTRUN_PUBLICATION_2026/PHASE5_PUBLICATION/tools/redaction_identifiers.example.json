@@ -1,0 +1,19 @@
+{
+ "_comment": "Identifiers replaced before anything leaves the institution. Copy this file to redaction_identifiers.json, fill in the real values, and keep that copy out of version control (.gitignore already excludes it). Both PHASE5_PUBLICATION/tools/scrub_identifiers.py and PHASE4/scripts/build_repro_manifest.py read it, so no tracked file has to contain a real host name, address or account.",
+ "_order": "Applied in order, as Python regular expressions. Put the most specific patterns first.",
+ "replacements": [
+  ["ACCOUNT@LOGIN_IP", "<user>@<cluster-login>"],
+  ["ACCOUNT@COMPUTE_IP", "<user>@<compute-node>"],
+  ["ACCOUNT@LOGIN_HOST", "<user>@<cluster-login>"],
+  ["ACCOUNT@COMPUTE_HOST", "<user>@<compute-node>"],
+  ["LOGIN_IP", "<cluster-login>"],
+  ["COMPUTE_IP", "<compute-node>"],
+  ["\\bLOGIN_HOST\\b", "<cluster-login>"],
+  ["\\bCOMPUTE_HOST\\b", "<compute-node>"],
+  ["/home/ACCOUNT", "/home/<user>"],
+  ["\\bACCOUNT\\b", "<user>"],
+  ["\\bOTHER_ACCOUNT\\b", "<other-user>"],
+  ["\\bPARTITION\\b", "<partition>"]
+ ],
+ "detect": "LOGIN_IP|COMPUTE_IP|ACCOUNT|LOGIN_HOST|COMPUTE_HOST"
+}

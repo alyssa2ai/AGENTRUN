@@ -1,0 +1,19 @@
+cell,model,decoding,role,status,rows,expected,missing_pairs,duplicates,error_rows,starts,slurm_jobs,gpu_index,gpu,first_start_utc,finished_utc,wall_h_first_start_to_done,gpu_h_from_logs,exit_codes,evarb,torch,transformers
+eval3_qwen25_3b_greedy,Qwen2.5-3B-Instruct,greedy,primary,DONE,3216,3216,0,0,0,1,4233_0,0,NVIDIA L40,2026-11-17T08:58:40Z,2026-11-17T10:40:42Z,1.7,1.7,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_qwen25_3b_T07_s1,Qwen2.5-3B-Instruct,T07_s1,primary,DONE,3216,3216,0,0,0,1,4233_1,0,NVIDIA L40,2026-11-17T10:40:51Z,2026-11-17T12:24:51Z,1.73,1.74,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_qwen25_3b_T07_s2,Qwen2.5-3B-Instruct,T07_s2,primary,DONE,3216,3216,0,0,0,1,4233_2,0,NVIDIA L40,2026-11-17T12:24:59Z,2026-11-17T14:10:40Z,1.76,1.76,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_qwen25_3b_T07_s3,Qwen2.5-3B-Instruct,T07_s3,primary,DONE,3216,3216,0,0,0,1,4233_3,0,NVIDIA L40,2026-11-17T14:10:48Z,2026-11-17T15:55:13Z,1.74,1.74,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_qwen25_7b_greedy,Qwen2.5-7B-Instruct,greedy,primary,DONE,3216,3216,0,0,0,1,4233_4,0,NVIDIA L40,2026-11-17T15:55:23Z,2026-11-17T19:37:50Z,3.71,3.71,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_qwen25_7b_T07_s1,Qwen2.5-7B-Instruct,T07_s1,primary,DONE,3216,3216,0,0,0,1,4233_5,0,NVIDIA L40,2026-11-17T19:37:59Z,2026-11-17T23:29:34Z,3.86,3.86,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_qwen25_7b_T07_s2,Qwen2.5-7B-Instruct,T07_s2,primary,DONE,3216,3216,0,0,0,1,4233_6,0,NVIDIA L40,2026-11-17T23:30:05Z,2026-11-18T03:20:30Z,3.84,3.84,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_qwen25_7b_T07_s3,Qwen2.5-7B-Instruct,T07_s3,primary,DONE,3216,3216,0,0,0,1,4233_7,0,NVIDIA L40,2026-11-18T03:20:40Z,2026-11-18T07:11:01Z,3.84,3.84,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_llama31_8b_greedy,Llama-3.1-8B-Instruct,greedy,primary,DONE,3216,3216,0,0,0,1,4233_8,0,NVIDIA L40,2026-11-18T07:11:11Z,2026-11-18T11:00:15Z,3.82,3.82,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_llama31_8b_T07_s1,Llama-3.1-8B-Instruct,T07_s1,primary,DONE,3216,3216,0,0,0,1,4289_9,0,NVIDIA L40,2026-11-18T11:03:13Z,2026-11-18T14:54:14Z,3.85,3.85,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_llama31_8b_T07_s2,Llama-3.1-8B-Instruct,T07_s2,primary,DONE,3216,3216,0,0,0,1,4290_10,0,NVIDIA L40,2026-11-18T14:58:33Z,2026-11-18T18:50:43Z,3.87,3.87,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_llama31_8b_T07_s3,Llama-3.1-8B-Instruct,T07_s3,primary,DONE,3216,3216,0,0,0,1,4291_11,0,NVIDIA L40,2026-11-18T18:53:33Z,2026-11-18T22:44:32Z,3.85,3.85,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_qwen3_8b_greedy,Qwen3-8B,greedy,primary,DONE,3216,3216,0,0,0,1,4292_12,0,NVIDIA L40,2026-11-18T22:48:35Z,2026-11-19T02:32:38Z,3.73,3.74,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_qwen3_8b_T07_s1,Qwen3-8B,T07_s1,primary,DONE,3216,3216,0,0,0,1,4293_13,1,NVIDIA L40,2026-11-19T01:58:44Z,2026-11-19T05:46:55Z,3.8,3.81,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_qwen3_8b_T07_s2,Qwen3-8B,T07_s2,primary,DONE,3216,3216,0,0,0,1,4294_14,0,NVIDIA L40,2026-11-19T02:33:45Z,2026-11-19T06:20:17Z,3.78,3.78,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_qwen3_8b_T07_s3,Qwen3-8B,T07_s3,primary,DONE,3216,3216,0,0,0,2,4315_15 4326_15,0 0,NVIDIA L40,2026-11-19T05:48:56Z,2026-11-20T11:18:26Z,29.49,1.02,1 0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_qwen25_14b_greedy,Qwen2.5-14B-Instruct,greedy,secondary,DONE,3216,3216,0,0,0,1,4259_16,1,NVIDIA L40,2026-11-18T08:58:32Z,2026-11-19T01:55:35Z,16.95,16.95,0,evarb-0.2,2.15.0+cu132,5.22.2
+eval3_llama32_3b_greedy,Llama-3.2-3B-Instruct,greedy,format-limited,DONE,3216,3216,0,0,0,2,4324_17 4327_17,1 1,NVIDIA L40,2026-11-19T06:24:05Z,2026-11-20T10:22:38Z,27.98,0.08,1 0,evarb-0.2,2.15.0+cu132,5.22.2

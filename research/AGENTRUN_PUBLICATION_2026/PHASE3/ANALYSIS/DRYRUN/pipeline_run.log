@@ -1,0 +1,98 @@
+# Completeness (DRY RUN on development data)
+
+Tasks 90; task file sha256 `608e65363def3e7e…`.
+
+| Cell | present | DONE | rows / expected | missing | duplicates | error rows | starts |
+|---|---|---|---|---|---|---|---|
+| p2val2_qwen25_3b_greedy | True | True | 1080 / 1080 | 0 | 0 | 0 | 1 |
+| p2val2_qwen25_7b_greedy | True | True | 1080 / 1080 | 0 | 0 | 0 | 1 |
+| p2val2_llama31_8b_greedy | True | True | 1080 / 1080 | 0 | 0 | 0 | 1 |
+| p2val2_qwen3_8b_greedy | True | True | 1080 / 1080 | 0 | 0 | 0 | 1 |
+
+Integrity problems: none
+# Analysis: p2val2_tasks.jsonl (90 tasks, 90 families)
+
+Runs: p2val2_qwen25_3b_greedy, p2val2_qwen25_7b_greedy, p2val2_llama31_8b_greedy, p2val2_qwen3_8b_greedy
+
+## Per model and configuration
+
+| Model | Config | success | harmful | over-abstain | false conflict | arbitrary pick | stale | unsupported | format err | step limit | missing | notices | reverted | model calls | arbiter calls | latency s |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Qwen2.5-3B-Instruct | B | 36/90 | 10 | 2 | 42 | 6 | 3 | 1 | 0 | 0 | 0 | 0 | 0 | 3.06 | 0.0 | 1.76 |
+| Qwen2.5-3B-Instruct | EB | 39/90 | 0 | 0 | 47 | 0 | 0 | 0 | 1 | 3 | 0 | 0 | 0 | 3.14 | 0.0 | 1.57 |
+| Qwen2.5-3B-Instruct | EBG | 56/90 | 4 | 3 | 25 | 0 | 4 | 0 | 0 | 2 | 0 | 22 | 0 | 3.43 | 0.0 | 1.79 |
+| Qwen2.5-3B-Instruct | EBG-all | 69/90 | 9 | 3 | 7 | 4 | 5 | 0 | 0 | 2 | 0 | 45 | 0 | 3.69 | 0.0 | 1.99 |
+| Qwen2.5-3B-Instruct | EBG-noR3 | 56/90 | 4 | 3 | 25 | 0 | 4 | 0 | 0 | 2 | 0 | 22 | 0 | 3.43 | 0.0 | 1.79 |
+| Qwen2.5-3B-Instruct | EBG-unsafe | 56/90 | 4 | 3 | 25 | 0 | 4 | 0 | 0 | 2 | 0 | 22 | 0 | 3.43 | 0.0 | 1.79 |
+| Qwen2.5-3B-Instruct | G | 32/90 | 9 | 0 | 48 | 5 | 4 | 0 | 0 | 1 | 0 | 0 | 0 | 3.11 | 0.0 | 1.55 |
+| Qwen2.5-3B-Instruct | LA | 40/90 | 0 | 1 | 48 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 3.07 | 0.91 | 2.12 |
+| Qwen2.5-3B-Instruct | LG | 53/90 | 8 | 1 | 28 | 2 | 6 | 0 | 0 | 0 | 0 | 22 | 0 | 3.32 | 0.91 | 2.32 |
+| Qwen2.5-3B-Instruct | R | 44/90 | 24 | 0 | 22 | 6 | 18 | 0 | 0 | 0 | 0 | 28 | 0 | 3.43 | 0.0 | 1.78 |
+| Qwen2.5-3B-Instruct | RT | 47/90 | 24 | 5 | 14 | 4 | 20 | 0 | 0 | 0 | 0 | 46 | 0 | 3.52 | 0.0 | 1.88 |
+| Qwen2.5-3B-Instruct | T | 40/90 | 1 | 0 | 49 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 3.01 | 0.0 | 1.5 |
+| Qwen2.5-7B-Instruct | B | 48/90 | 6 | 3 | 27 | 2 | 4 | 0 | 0 | 6 | 0 | 0 | 0 | 3.88 | 0.0 | 4.09 |
+| Qwen2.5-7B-Instruct | EB | 65/90 | 6 | 0 | 15 | 1 | 5 | 0 | 0 | 4 | 0 | 0 | 0 | 3.79 | 0.0 | 3.86 |
+| Qwen2.5-7B-Instruct | EBG | 66/90 | 5 | 0 | 17 | 1 | 4 | 0 | 0 | 2 | 0 | 6 | 0 | 3.9 | 0.0 | 4.04 |
+| Qwen2.5-7B-Instruct | EBG-all | 73/90 | 9 | 0 | 6 | 5 | 4 | 0 | 0 | 2 | 0 | 21 | 0 | 4.07 | 0.0 | 4.3 |
+| Qwen2.5-7B-Instruct | EBG-noR3 | 66/90 | 5 | 0 | 17 | 1 | 4 | 0 | 0 | 2 | 0 | 6 | 0 | 3.9 | 0.0 | 4.04 |
+| Qwen2.5-7B-Instruct | EBG-unsafe | 66/90 | 5 | 0 | 17 | 1 | 4 | 0 | 0 | 2 | 0 | 6 | 0 | 3.9 | 0.0 | 4.04 |
+| Qwen2.5-7B-Instruct | G | 46/90 | 13 | 0 | 28 | 4 | 9 | 0 | 0 | 3 | 0 | 0 | 0 | 3.83 | 0.0 | 4.05 |
+| Qwen2.5-7B-Instruct | LA | 52/90 | 27 | 0 | 8 | 18 | 8 | 0 | 0 | 3 | 0 | 0 | 0 | 3.69 | 0.91 | 4.91 |
+| Qwen2.5-7B-Instruct | LG | 45/90 | 36 | 0 | 6 | 23 | 12 | 0 | 0 | 3 | 0 | 16 | 0 | 3.9 | 0.91 | 5.23 |
+| Qwen2.5-7B-Instruct | R | 44/90 | 20 | 1 | 24 | 4 | 16 | 0 | 0 | 1 | 0 | 11 | 0 | 4.0 | 0.0 | 4.31 |
+| Qwen2.5-7B-Instruct | RT | 44/90 | 31 | 0 | 13 | 7 | 24 | 0 | 0 | 2 | 0 | 21 | 0 | 3.98 | 0.0 | 4.26 |
+| Qwen2.5-7B-Instruct | T | 56/90 | 14 | 0 | 18 | 0 | 14 | 0 | 0 | 2 | 0 | 0 | 0 | 3.72 | 0.0 | 3.86 |
+| Qwen3-8B | B | 53/90 | 7 | 0 | 27 | 4 | 2 | 0 | 0 | 3 | 0 | 0 | 0 | 3.39 | 0.0 | 3.68 |
+| Qwen3-8B | EB | 71/90 | 5 | 1 | 12 | 0 | 5 | 0 | 0 | 1 | 0 | 0 | 0 | 3.16 | 0.0 | 3.62 |
+| Qwen3-8B | EBG | 71/90 | 5 | 1 | 13 | 0 | 5 | 0 | 0 | 0 | 0 | 3 | 0 | 3.2 | 0.0 | 3.71 |
+| Qwen3-8B | EBG-all | 77/90 | 9 | 1 | 3 | 4 | 5 | 0 | 0 | 0 | 0 | 17 | 0 | 3.36 | 0.0 | 4.02 |
+| Qwen3-8B | EBG-noR3 | 71/90 | 5 | 1 | 13 | 0 | 5 | 0 | 0 | 0 | 0 | 3 | 0 | 3.2 | 0.0 | 3.71 |
+| Qwen3-8B | EBG-unsafe | 71/90 | 5 | 1 | 13 | 0 | 5 | 0 | 0 | 0 | 0 | 3 | 0 | 3.2 | 0.0 | 3.71 |
+| Qwen3-8B | G | 50/90 | 13 | 0 | 26 | 4 | 9 | 0 | 0 | 1 | 0 | 0 | 0 | 3.46 | 0.0 | 3.83 |
+| Qwen3-8B | LA | 67/90 | 12 | 0 | 11 | 7 | 5 | 0 | 0 | 0 | 0 | 0 | 0 | 3.17 | 0.91 | 5.02 |
+| Qwen3-8B | LG | 61/90 | 21 | 0 | 8 | 11 | 10 | 0 | 0 | 0 | 0 | 14 | 0 | 3.32 | 0.91 | 5.32 |
+| Qwen3-8B | R | 48/90 | 17 | 0 | 24 | 4 | 13 | 0 | 0 | 1 | 0 | 10 | 0 | 3.58 | 0.0 | 4.08 |
+| Qwen3-8B | RT | 46/90 | 26 | 0 | 16 | 7 | 19 | 0 | 0 | 2 | 0 | 23 | 0 | 3.77 | 0.0 | 4.45 |
+| Qwen3-8B | T | 56/90 | 10 | 0 | 22 | 0 | 10 | 0 | 0 | 2 | 0 | 0 | 0 | 3.49 | 0.0 | 3.91 |
+| Llama-3.1-8B-Instruct | B | 14/90 | 1 | 55 | 10 | 1 | 0 | 0 | 9 | 1 | 0 | 0 | 0 | 4.46 | 0.0 | 3.84 |
+| Llama-3.1-8B-Instruct | EB | 23/90 | 0 | 44 | 12 | 0 | 0 | 0 | 9 | 2 | 0 | 0 | 0 | 4.32 | 0.0 | 3.78 |
+| Llama-3.1-8B-Instruct | EBG | 25/90 | 0 | 45 | 10 | 0 | 0 | 0 | 9 | 1 | 0 | 22 | 12 | 4.94 | 0.0 | 4.32 |
+| Llama-3.1-8B-Instruct | EBG-all | 24/90 | 2 | 50 | 4 | 2 | 0 | 0 | 9 | 1 | 0 | 31 | 12 | 5.06 | 0.0 | 4.48 |
+| Llama-3.1-8B-Instruct | EBG-noR3 | 24/90 | 0 | 48 | 8 | 0 | 0 | 0 | 9 | 1 | 0 | 5 | 0 | 4.41 | 0.0 | 3.91 |
+| Llama-3.1-8B-Instruct | EBG-unsafe | 24/90 | 0 | 34 | 10 | 0 | 0 | 0 | 21 | 1 | 0 | 22 | 0 | 4.94 | 0.0 | 4.32 |
+| Llama-3.1-8B-Instruct | G | 19/90 | 0 | 46 | 15 | 0 | 0 | 0 | 9 | 1 | 0 | 0 | 0 | 4.4 | 0.0 | 3.78 |
+| Llama-3.1-8B-Instruct | LA | 16/90 | 0 | 52 | 12 | 0 | 0 | 0 | 9 | 1 | 0 | 0 | 0 | 4.38 | 0.64 | 4.68 |
+| Llama-3.1-8B-Instruct | LG | 12/90 | 7 | 62 | 0 | 5 | 1 | 0 | 9 | 0 | 0 | 37 | 15 | 5.19 | 0.81 | 5.69 |
+| Llama-3.1-8B-Instruct | R | 23/90 | 0 | 35 | 14 | 0 | 0 | 0 | 18 | 0 | 0 | 23 | 0 | 4.98 | 0.0 | 4.3 |
+| Llama-3.1-8B-Instruct | RT | 24/90 | 0 | 38 | 8 | 0 | 0 | 0 | 18 | 2 | 0 | 24 | 0 | 5.0 | 0.0 | 4.33 |
+| Llama-3.1-8B-Instruct | T | 21/90 | 0 | 50 | 8 | 0 | 0 | 0 | 9 | 2 | 0 | 0 | 0 | 4.38 | 0.0 | 3.77 |
+| ALL | B | 151/360 | 24 | 60 | 106 | 13 | 9 | 1 | 9 | 10 | 0 | 0 | 0 | 3.69 | 0.0 | 3.34 |
+| ALL | EB | 198/360 | 11 | 45 | 86 | 1 | 10 | 0 | 10 | 10 | 0 | 0 | 0 | 3.6 | 0.0 | 3.21 |
+| ALL | EBG | 218/360 | 14 | 49 | 65 | 1 | 13 | 0 | 9 | 5 | 0 | 53 | 12 | 3.87 | 0.0 | 3.46 |
+| ALL | EBG-all | 243/360 | 29 | 54 | 20 | 15 | 14 | 0 | 9 | 5 | 0 | 114 | 12 | 4.04 | 0.0 | 3.7 |
+| ALL | EBG-noR3 | 217/360 | 14 | 52 | 63 | 1 | 13 | 0 | 9 | 5 | 0 | 36 | 0 | 3.74 | 0.0 | 3.36 |
+| ALL | EBG-unsafe | 217/360 | 14 | 38 | 65 | 1 | 13 | 0 | 21 | 5 | 0 | 53 | 0 | 3.87 | 0.0 | 3.46 |
+| ALL | G | 147/360 | 35 | 46 | 117 | 13 | 22 | 0 | 9 | 6 | 0 | 0 | 0 | 3.7 | 0.0 | 3.3 |
+# Descriptive measures: p2val2_tasks.jsonl (90 tasks)
+
+Generated by `PHASE3/scripts/phase3_metrics.py`. Missing runs count as failures. POOLED = Qwen2.5-3B-Instruct, Qwen2.5-7B-Instruct, Qwen3-8B, Llama-3.1-8B-Instruct.
+
+| Model | Config | accuracy | 95% CI | answer acc. | conflict preserved | false resolution | stale | unnecessary abstention | unsupported | format fail | step limit | missing | tool calls | model calls | tokens in/out | latency s |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Qwen2.5-3B-Instruct | B | 36/90 (40.0%) | 0.300-0.500 | 12/59 (20.3%) | 21/27 (77.8%) | 6/27 (22.2%) | 3/59 (5.1%) | 2/86 (2.3%) | 1/4 (25.0%) | 0/90 (0.0%) | 0/90 (0.0%) | 0/90 (0.0%) | 2.03 | 3.06 | 2781.47/120.84 | 1.76 |
+| Qwen2.5-3B-Instruct | EB | 39/90 (43.3%) | 0.333-0.533 | 9/59 (15.3%) | 26/27 (96.3%) | 0/27 (0.0%) | 0/59 (0.0%) | 0/86 (0.0%) | 0/4 (0.0%) | 1/90 (1.1%) | 3/90 (3.3%) | 0/90 (0.0%) | 2.18 | 3.14 | 3200.63/105.17 | 1.57 |
+# Independent cross-check of the analysis output
+
+60 model x configuration counts and 4 pooled primary differences recomputed from raw runs.
+
+| Contrast | cross-check pp | analysis pp | task pairs (cross-check / analysis) |
+|---|---|---|---|
+| EBG-RT | 15.8 | 15.8 | 360 / 360 |
+| EBG-T | 12.5 | 12.5 | 360 / 360 |
+| EBG-LG | 13.1 | 13.1 | 360 / 360 |
+| EBG-B | 18.6 | 18.6 | 360 / 360 |
+
+Count rows matching the analysis: 60 / 60
+
+Result: **all values agree**
+wrote PHASE3_ABLATION_RESULTS.md, PHASE3_COMPARISON_TABLES.md, PHASE3_DECISIONS.json, PHASE3_EXECUTION_LOG.md, PHASE3_FAILURE_TABLES.md, PHASE3_STATISTICAL_ANALYSIS.md and 6 CSV files to ANALYSIS\DRYRUN\reports

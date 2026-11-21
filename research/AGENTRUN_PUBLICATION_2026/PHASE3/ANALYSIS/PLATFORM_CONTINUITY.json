@@ -1,0 +1,821 @@
+{
+ "g5_version": "g5-v1 (2026-11-21)",
+ "reporting_only": true,
+ "node_boot_utc": "2026-11-20T10:11:58",
+ "cells_total": 18,
+ "cells_straddling_boot": 2,
+ "rows_total": 57888,
+ "rows_after_boot": 980,
+ "rows_after_boot_pct": 1.693,
+ "affected_cells": [
+  "llama32_3b_greedy",
+  "qwen3_8b_T07_s3"
+ ],
+ "cells": [
+  {
+   "cell": "llama31_8b_T07_s1",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4289",
+     "started_utc": "2026-11-18T11:03:13Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "llama31_8b_T07_s2",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4290",
+     "started_utc": "2026-11-18T14:58:33Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "llama31_8b_T07_s3",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4291",
+     "started_utc": "2026-11-18T18:53:33Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "llama31_8b_greedy",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4251",
+     "started_utc": "2026-11-18T07:11:11Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "llama32_3b_greedy",
+   "starts": 2,
+   "rows": 3216,
+   "straddles_node_boot": true,
+   "rows_after_boot": 109,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4324",
+     "started_utc": "2026-11-19T06:24:05Z",
+     "resumed_with_done": 0,
+     "rows": 3107,
+     "tasks": 259,
+     "config_counts": {
+      "B": 259,
+      "EB": 259,
+      "EBG": 259,
+      "EBG-all": 259,
+      "EBG-noR3": 258,
+      "EBG-unsafe": 259,
+      "G": 259,
+      "LA": 259,
+      "LG": 259,
+      "R": 259,
+      "RT": 259,
+      "T": 259
+     },
+     "gpu_mem_gib": 44.6
+    },
+    {
+     "start": 1,
+     "slurm_job_id": "4327",
+     "started_utc": "2026-11-20T10:18:08Z",
+     "resumed_with_done": 3107,
+     "rows": 109,
+     "tasks": 10,
+     "config_counts": {
+      "B": 9,
+      "EB": 9,
+      "EBG": 9,
+      "EBG-all": 9,
+      "EBG-noR3": 10,
+      "EBG-unsafe": 9,
+      "G": 9,
+      "LA": 9,
+      "LG": 9,
+      "R": 9,
+      "RT": 9,
+      "T": 9
+     },
+     "gpu_mem_gib": 44.4
+    }
+   ],
+   "tasks_split_across_starts": [
+    {
+     "task_id": "eval3-0267",
+     "rows_per_start": [
+      11,
+      1
+     ]
+    }
+   ],
+   "quarantined_fragments": [
+    "runs.jsonl.partial_20261120T101727Z"
+   ]
+  },
+  {
+   "cell": "qwen25_14b_greedy",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4259",
+     "started_utc": "2026-11-18T08:58:32Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "qwen25_3b_T07_s1",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4244",
+     "started_utc": "2026-11-17T10:40:51Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "qwen25_3b_T07_s2",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4245",
+     "started_utc": "2026-11-17T12:24:59Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "qwen25_3b_T07_s3",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4246",
+     "started_utc": "2026-11-17T14:10:48Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "qwen25_3b_greedy",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4234",
+     "started_utc": "2026-11-17T08:58:40Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "qwen25_7b_T07_s1",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4248",
+     "started_utc": "2026-11-17T19:37:59Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "qwen25_7b_T07_s2",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4249",
+     "started_utc": "2026-11-17T23:30:05Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "qwen25_7b_T07_s3",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4250",
+     "started_utc": "2026-11-18T03:20:40Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "qwen25_7b_greedy",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4247",
+     "started_utc": "2026-11-17T15:55:23Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "qwen3_8b_T07_s1",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4293",
+     "started_utc": "2026-11-19T01:58:44Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "qwen3_8b_T07_s2",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4294",
+     "started_utc": "2026-11-19T02:33:45Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  },
+  {
+   "cell": "qwen3_8b_T07_s3",
+   "starts": 2,
+   "rows": 3216,
+   "straddles_node_boot": true,
+   "rows_after_boot": 871,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4315",
+     "started_utc": "2026-11-19T05:48:56Z",
+     "resumed_with_done": 0,
+     "rows": 2345,
+     "tasks": 196,
+     "config_counts": {
+      "B": 196,
+      "EB": 195,
+      "EBG": 195,
+      "EBG-all": 195,
+      "EBG-noR3": 195,
+      "EBG-unsafe": 195,
+      "G": 196,
+      "LA": 195,
+      "LG": 195,
+      "R": 196,
+      "RT": 196,
+      "T": 196
+     },
+     "gpu_mem_gib": 44.6
+    },
+    {
+     "start": 1,
+     "slurm_job_id": "4326",
+     "started_utc": "2026-11-20T10:17:51Z",
+     "resumed_with_done": 2345,
+     "rows": 871,
+     "tasks": 73,
+     "config_counts": {
+      "B": 72,
+      "EB": 73,
+      "EBG": 73,
+      "EBG-all": 73,
+      "EBG-noR3": 73,
+      "EBG-unsafe": 73,
+      "G": 72,
+      "LA": 73,
+      "LG": 73,
+      "R": 72,
+      "RT": 72,
+      "T": 72
+     },
+     "gpu_mem_gib": 44.4
+    }
+   ],
+   "tasks_split_across_starts": [
+    {
+     "task_id": "eval3-0202",
+     "rows_per_start": [
+      5,
+      7
+     ]
+    }
+   ],
+   "quarantined_fragments": [
+    "runs.jsonl.partial_20261120T101726Z"
+   ]
+  },
+  {
+   "cell": "qwen3_8b_greedy",
+   "starts": 1,
+   "rows": 3216,
+   "straddles_node_boot": false,
+   "rows_after_boot": 0,
+   "segments": [
+    {
+     "start": 0,
+     "slurm_job_id": "4292",
+     "started_utc": "2026-11-18T22:48:35Z",
+     "resumed_with_done": 0,
+     "rows": 3216,
+     "tasks": 268,
+     "config_counts": {
+      "B": 268,
+      "EB": 268,
+      "EBG": 268,
+      "EBG-all": 268,
+      "EBG-noR3": 268,
+      "EBG-unsafe": 268,
+      "G": 268,
+      "LA": 268,
+      "LG": 268,
+      "R": 268,
+      "RT": 268,
+      "T": 268
+     },
+     "gpu_mem_gib": 44.6
+    }
+   ],
+   "tasks_split_across_starts": [],
+   "quarantined_fragments": []
+  }
+ ],
+ "facts_by_status": {
+  "verified": [
+   "boot_event",
+   "gpu_devices",
+   "kernel_after",
+   "logs_lost",
+   "nvidia_module_after",
+   "previous_boot",
+   "rng_reseed",
+   "telemetry_change"
+  ],
+  "inferred": [
+   "kernel_before",
+   "nvidia_module_before"
+  ],
+  "unknown": [
+   "driver_effect_on_generation",
+   "gpu_state_before_reboot"
+  ]
+ },
+ "facts": [
+  {
+   "fact": "boot_event",
+   "status": "verified",
+   "node_boot_utc": "2026-11-20T10:11:58",
+   "slurmd_start_utc": "2026-11-20T10:12:11",
+   "source": "scontrol show node <compute-node> (BootTime, SlurmdStartTime)"
+  },
+  {
+   "fact": "gpu_devices",
+   "status": "verified",
+   "count": 2,
+   "model": "NVIDIA L40",
+   "memory_total_mib_each": 46068,
+   "ecc_mode_current": "Enabled",
+   "persistence_mode": "Disabled",
+   "source": "nvidia-smi --query-gpu=index,name,memory.total,ecc.mode.current,driver_version,persistence_mode --format=csv, run 2026-11-21 (after the reboot)",
+   "caveat": "both devices report identical totals, which excludes device identity as the cause of the gpu_mem_gib change; the two affected cells ran on CUDA_VISIBLE_DEVICES=0 and =1 respectively in BOTH of their starts"
+  },
+  {
+   "fact": "kernel_after",
+   "status": "verified",
+   "release": "6.8.0-149-generic",
+   "source": "scontrol show node <compute-node> (OS line); uname -r on <compute-node>",
+   "package_installed_utc": "2026-11-13 06:13:43",
+   "package_source": "/var/log/dpkg.log (linux-image-6.8.0-149-generic 6.8.0-149.149)"
+  },
+  {
+   "fact": "logs_lost",
+   "status": "verified",
+   "what": "the Slurm console logs of the first starts of both affected cells",
+   "files": [
+    "phase3_4315_15.out",
+    "phase3_4324_17.out"
+   ],
+   "reasoning": "Slurm requeued jobs 4315 and 4324 after the reboot and truncated their output files; mtime 2026-11-20 10:12:26",
+   "mitigation": "the corresponding manifest lines survive intact and carry the code hashes, freeze state and start timestamps"
+  },
+  {
+   "fact": "nvidia_module_after",
+   "status": "verified",
+   "version": "580.178.04",
+   "source": "/proc/driver/nvidia/version (NVRM banner); modinfo nvidia; nvidia-smi --query-gpu=driver_version",
+   "module_file": "/lib/modules/6.8.0-149-generic/updates/dkms/nvidia.ko.zst",
+   "module_build_utc": "2026-11-13 06:14:15",
+   "module_loaded_utc": "2026-11-20 10:12:02",
+   "loaded_source": "creation time of /sys/module/nvidia"
+  },
+  {
+   "fact": "previous_boot",
+   "status": "verified",
+   "first_entry_utc": "2026-10-03T06:51:20",
+   "last_readable_entry_utc": "2026-11-19T07:29:06",
+   "source": "journalctl --list-boots (boot -1); the user account cannot read system-scope journal entries, so the last readable entry is a lower bound on the node's uptime, not the shutdown time"
+  },
+  {
+   "fact": "rng_reseed",
+   "status": "verified",
+   "what": "a resumed sampled cell restarts its random stream instead of continuing it",
+   "mechanism": "HFClient.__init__ calls torch.manual_seed(seed) once per process (hf_client.py:54); a resume is a fresh process, so the post-resume segment re-seeds from the same base seed rather than continuing the stream an uninterrupted run would have had",
+   "affected_cells": [
+    "qwen3_8b_T07_s3"
+   ],
+   "unaffected": "llama32_3b_greedy is greedy (do_sample=False), so it has no sampling stream; no other cell was resumed",
+   "effect": "no bias: the pre-registered design fixes T=0.7 with seeds 1, 2, 3 and makes no claim about the stream's continuity. The limitation is on exact byte-reproduction of that one cell, which would now require reproducing the interruption at the same row."
+  },
+  {
+   "fact": "telemetry_change",
+   "status": "verified",
+   "field": "client.gpu_mem_gib",
+   "before": 44.6,
+   "after": 44.4,
+   "definition": "round(torch.cuda.get_device_properties(0).total_memory / 2**30, 1), hf_client.py:58",
+   "causal_role": "none: stored in HFClient._versions, consumed only by HFClient.describe() to build the manifest; the model is loaded with device_map={\"\": 0} and no max_memory (hf_client.py:45)",
+   "source": "the 20 manifest lines of the 18 cells"
+  },
+  {
+   "fact": "kernel_before",
+   "status": "inferred",
+   "release": "6.8.0-139-generic",
+   "reasoning": "boot -1 began 2026-10-03, before linux-image-6.8.0-149-generic was installed on 2026-11-13; 6.8.0-139-generic was installed 2026-09-05 and is the only other kernel with a DKMS build present on the node",
+   "source": "/var/log/dpkg.log install records; dkms status",
+   "would_settle": "journalctl -b -1 -k | head -1 (requires membership of 'adm' or 'systemd-journal')"
+  },
+  {
+   "fact": "nvidia_module_before",
+   "status": "inferred",
+   "version": "580.173.02",
+   "reasoning": "the node booted 2026-10-03 and therefore loaded the module version installed at that date; nvidia-dkms-580-server was upgraded 580.173.02 -> 580.178.04 on 2026-10-11 06:53:41 while the node stayed up, which leaves the running kernel module at 580.173.02 against 580.178.04 userspace. That is corroborated by the independently recorded failure of nvidia-smi on this node on 2026-11-11 with a driver/library version mismatch, and by nvidia-smi working again after the 2026-11-20 reboot.",
+   "source": "/var/log/dpkg.log (nvidia-dkms-580-server upgrades: 580.159.03 -> 580.173.02 on 2026-07-24; 580.173.02 -> 580.178.04 on 2026-10-11)",
+   "would_settle": "journalctl -b -1 -k | grep NVRM (requires membership of 'adm' or 'systemd-journal')"
+  },
+  {
+   "fact": "driver_effect_on_generation",
+   "status": "unknown",
+   "what": "whether NVIDIA 580.173.02 and 580.178.04 select different kernels or produce different outputs for these models",
+   "reasoning": "no (task, config) pair exists on both platforms: the two quarantined fragments contain zero complete rows, so there is no re-executed pair to compare. Establishing it would require re-running completed cells, which the preregistration does not permit and which would be a post-hoc choice taken with knowledge of which cells were affected.",
+   "would_settle": "a dedicated non-eval3 determinism experiment on both driver versions, which is out of scope for this campaign"
+  },
+  {
+   "fact": "gpu_state_before_reboot",
+   "status": "unknown",
+   "what": "ECC mode, persistence mode, clocks and firmware state of the two L40s before 2026-11-20",
+   "reasoning": "nvidia-smi was non-functional on this node before the reboot (driver/library mismatch), so no pre-reboot reading exists",
+   "would_settle": "nothing available retrospectively from an unprivileged account"
+  }
+ ]
+}

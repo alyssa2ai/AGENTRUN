@@ -1,12 +1,17 @@
 cff-version: 1.2.0
 message: >-
-  If you use this software or its results, please cite the preprint listed
-  under preferred-citation.
+  This repository holds two separate studies. For the QLoRA specialization study (2026-09), cite the preprint
+  listed under preferred-citation. The persistent-memory reliability study (2026-11) has no citable publication:
+  it is unsubmitted and not peer reviewed, so cite the repository and the commit you used, and do not describe it
+  as published, submitted or under review. See PUBLICATION_STATUS.md.
 title: "AGENTRUN"
 abstract: >-
-  QLoRA fine-tuning of Qwen2.5-7B-Instruct for MCP-based multi-tool use,
-  evaluated on a fixed 23-task benchmark, with a controlled parser-only
-  ablation (E4) separating serving-layer parser effects from adapter effects.
+  Two studies on tool-using language-model agents. Study 1 (2026-09): QLoRA fine-tuning of
+  Qwen2.5-7B-Instruct for MCP-based multi-tool use, evaluated on a fixed 23-task benchmark, with an
+  adapter-fixed ablation (E4) in which both the serving-layer parser and the evaluation client changed, so
+  parser effects and client effects are not separated. Study 2 (2026-11): a pre-registered evaluation of
+  evidence-basis arbitration with gated enforcement for agents whose persistent memory holds conflicting
+  records, over 18 model x decoding cells, 12 conditions and 268 sealed tasks (57,888 runs).
 type: software
 authors:
   - family-names: "L"
@@ -20,6 +25,10 @@ keywords:
   - LLM agents
   - ablation study
   - Model Context Protocol
+  - persistent memory
+  - memory conflict resolution
+  - evidence-basis arbitration
+  - pre-registered evaluation
 preferred-citation:
   type: article
   status: preprint
@@ -33,3 +42,6 @@ preferred-citation:
     name: "Zenodo"
   doi: "10.5281/zenodo.22346935"
   url: "https://doi.org/10.5281/zenodo.22346935"
+  notes: >-
+    Not peer reviewed. Predates the E4 ablation of 16 September 2026 and reports the Base, V1 and V2
+    conditions only. Covers Study 1 only; it does not cover the persistent-memory study added in November 2026.

@@ -1,0 +1,69 @@
+% Figure 4 -- experimental design: the sealed benchmark, the 18-cell run matrix, and the analysis arms.
+% Counts from PHASE3/PHASE3_DECISIONS.json, PHASE3/ANALYSIS/COMPLETENESS.json and PHASE2/FREEZE_eval3.json.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\footnotesize, x=1mm, y=1mm,
+  gcellp/.style={draw=cEBG, fill=cAccentFill, line width=0.4pt, minimum width=7.2mm, minimum height=4.6mm,
+                inner sep=0pt, font=\tiny, text=cInk},
+  gcells/.style={gcellp, draw=cAll, fill=cWarnFill},
+  gcellx/.style={draw=cNeutral, fill=white, line width=0.3pt, minimum width=7.2mm, minimum height=4.6mm,
+                inner sep=0pt, font=\tiny, text=cNone}]
+
+% ---------------- benchmark
+\node[blkacc, minimum width=36mm, minimum height=17mm, align=center] (bench) at (20,48)
+  {\textbf{eval3}\\[1pt]\scriptsize 268 valid tasks\\[-1pt]\scriptsize 135 families\\[-1pt]\scriptsize sealed before any run};
+\node[lbl, text=cNone, align=center, anchor=north] at (20,37)
+  {\scriptsize written by Qwen2.5-14B\\[-1pt]\scriptsize from briefs only;\\[-1pt]\scriptsize gold fixed before any text};
+
+% ---------------- the 18-cell matrix
+\node[lbl, anchor=south, font=\scriptsize\bfseries] at (84,60) {18 cells $\times$ 12 conditions};
+\foreach \d [count=\i from 0] in {greedy, {T=0.7 s1}, {T=0.7 s2}, {T=0.7 s3}}
+  \node[lbl, rotate=36, anchor=west, font=\tiny] at (66+\i*8,56) {\d};
+\foreach \m [count=\j from 0] in {{Qwen2.5-3B}, {Qwen2.5-7B}, {Qwen3-8B}, {Llama-3.1-8B}, {Qwen2.5-14B}, {Llama-3.2-3B}}
+  \node[lbl, anchor=east, font=\tiny] at (62,50-\j*5.4) {\m};
+\foreach \j in {0,1,2,3}
+  \foreach \i in {0,1,2,3}
+    \node[gcellp] at (66.5+\i*8,50-\j*5.4) {};
+\node[gcells] at (66.5,50-4*5.4) {};
+\node[gcells] at (66.5,50-5*5.4) {};
+\foreach \j in {4,5}
+  \foreach \i in {1,2,3}
+    \node[gcellx] at (66.5+\i*8,50-\j*5.4) {--};
+\node[lbl, text=cEBG, anchor=west, font=\tiny] at (99,45) {16 primary cells};
+\node[lbl, text=cAll, anchor=west, font=\tiny] at (99,21) {2 secondary cells};
+\node[lbl, anchor=north, align=center, font=\tiny, text=cNone] at (84,13)
+  {3216 rows per cell $=$ 268 tasks $\times$ 12 conditions\\[-1pt]\textbf{57{,}888 runs}; 0 missing, 0 duplicate, 0 harness error};
+
+% ---------------- analysis arms
+\node[blkacc, minimum width=42mm, minimum height=11mm, align=left] (prim) at (138,52)
+  {\scriptsize\textbf{Confirmatory} (pre-registered)\\[-1pt]\scriptsize 16 primary cells pooled; 51{,}456 runs\\[-1pt]\scriptsize 4 contrasts, Holm, $\alpha=0.05$};
+\node[blkplain, minimum width=42mm, minimum height=10mm, align=left] (sens) at (138,38)
+  {\scriptsize\textbf{Sensitivity} (pre-registered)\\[-1pt]\scriptsize 3 alternative item sets:\\[-1pt]\scriptsize 161 / 107 / 232 tasks};
+\node[blkplain, minimum width=42mm, minimum height=9mm, align=left] (sec) at (138,26)
+  {\scriptsize\textbf{Secondary}, never pooled\\[-1pt]\scriptsize 2 greedy-only cells};
+\node[blkwarn, minimum width=42mm, minimum height=10mm, align=left] (expl) at (138,14)
+  {\scriptsize\textbf{Exploratory}, post-hoc\\[-1pt]\scriptsize 7 ablation contrasts (BH)\\[-1pt]\scriptsize $+$ 2 platform checks};
+
+\draw[flowacc] (bench.east) -- (57,48);
+\draw[flowacc] (110,40) -- (prim.west);
+\draw[flow] (110,37) -- (sens.west);
+\draw[flow] (110,30) -- (sec.west);
+\draw[flowback] (110,24) -- (expl.west);
+\end{tikzpicture}
+
+\vspace{1mm}
+\caption[Experimental design]{%
+\textbf{Experimental design.} A sealed benchmark, a fully crossed run matrix, and four analysis arms that are kept
+separate throughout the paper. Every one of the six models ran all twelve conditions on all 268 tasks; the four
+primary models ran greedy decoding and three $T=0.7$ seeds, and the two secondary models ran greedy only and are
+never pooled with the primary ones. The matrix completed with no missing pair, no duplicate and no harness error,
+so the pre-registered missing-run rule never had to be applied. Only the first arm supports a confirmatory claim:
+the sensitivity analyses were pre-registered but are reported as sensitivity, and everything in the fourth arm is
+exploratory, with the two platform checks additionally post-hoc (\Cref{sec:statistics}).\\
+\emph{Accessible description:} three panels left to right --- the sealed benchmark, a six-by-four grid of cells in
+which the top four rows are full and the bottom two have only their first column filled, and a stack of four
+analysis arms.\\
+\emph{Source:} \srcfile{PHASE3/ANALYSIS/COMPLETENESS.json}; \srcfile{PHASE2/FREEZE_eval3.json};
+\srcfile{PHASE3/PHASE3_DECISIONS.json}.}
+\label{fig:design}
+\end{figure}

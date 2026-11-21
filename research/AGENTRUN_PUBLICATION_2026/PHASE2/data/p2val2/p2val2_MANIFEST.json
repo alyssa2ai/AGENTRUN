@@ -1,0 +1,21 @@
+{
+ "split": "p2val2",
+ "n_skeleton": 92,
+ "n_valid": 90,
+ "excluded_ids": {
+  "p2val2-0018": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val2-0072": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ]
+ },
+ "skeleton.jsonl": "7494eb22bf6e5b84bb9d9575f37cea22785b989c5f703182cd783a0a125d8980",
+ "texts.jsonl": "dc27f591ad746bad7bbeccf648d51f7ab062860d72aac538f0527fd0e95aa0c7",
+ "groups.jsonl": "b05c27f3ce29781c58735d0d3b5db5f8ad680e78906fdc313124690525bc4569",
+ "tasks.jsonl": "608e65363def3e7e03309865b175bbfc4c4748b8eb0f7c0912c38d403743b2d0",
+ "annotator_input.jsonl": "b9c5e7bfdf2ab8d1a1116aa0cd782cbcc7f7fe7fbb2e825f2a64bfe6ed757c5d",
+ "family_definition": "category x attribute"
+}

@@ -1,0 +1,14 @@
+# Hash-verified research artifacts must be byte-identical on every platform, or the SHA-256 manifests and the
+# frozen-code checks fail on a Windows checkout. Keep LF for text under the research tree.
+research/** text eol=lf
+
+# Binaries must never be line-ending converted.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.zip   binary
+
+# Hashed data artifacts: store and check out exactly as written.
+*.jsonl -text

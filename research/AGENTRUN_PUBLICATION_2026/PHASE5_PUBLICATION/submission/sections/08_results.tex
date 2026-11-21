@@ -1,0 +1,81 @@
+\section{Results}
+\label{sec:results}
+
+Every number in this section comes from the frozen analysis run over the 18 completed cells. All 18 hold exactly
+$268\times12=3216$ rows --- 57{,}888 in total --- with no missing pair, no duplicate, no unparsable line and no
+harness error. The confirmatory analysis pools the four primary models over four decodings: 268 tasks, 135
+families, 51{,}456 scored runs. An independent re-implementation recomputed the 60 model $\times$ condition success
+counts and the four primary effect sizes by a different route and agrees with the frozen analysis exactly.
+
+\input{tables/tab_primary}
+\input{figures/fig5_forest}
+
+\subsection{The four pre-registered contrasts}
+
+All four are supported (\Cref{tab:primary}, \Cref{fig:forest}). Gated evidence-basis arbitration raised task
+success over enforced record-and-temporal labels by $17.1$\pp{} \ci{12.2}{22.1}, over advisory temporal labels by
+$14.5$\pp{} \ci{10.5}{18.6}, over an LLM arbiter under the same gated policy by $15.9$\pp{} \ci{10.4}{21.2}, and
+over unlabelled memory by $15.3$\pp{} \ci{10.3}{20.5}. All four reach the Monte-Carlo floor before correction, so
+Holm leaves them at $4\times10^{-5}$. Family support is lopsided rather than marginal: for \cond{EBG} $-$
+\cond{RT}, between 41 and 66 families per model favour \cond{EBG} against between 3 and 25 against.
+
+\subsection{Harm}
+
+S4 asked whether \cond{EBG}'s harmful-answer rate is no higher than \cond{RT}'s. It is substantially lower:
+\textbf{3.1\%} of \cond{EBG} runs were harmful (135 of 4288) against \textbf{22.6\%} for \cond{RT} (968 of 4288),
+a paired difference of $-19.4$\pp{} \ci{-24.6}{-14.6}. Arbitrary picks --- the specific harm that motivated the
+mechanism --- fall from 252 runs to 13. The pre-registered verdict is \textbf{not falsified}: the interval for the
+harm difference does not lie above zero and \cond{EBG}'s arbitrary picks do not exceed \cond{RT}'s. None of the
+three pre-registered falsification criteria was met.
+
+\input{figures/fig6_tradeoff}
+
+\subsection{Success and harm by condition}
+
+\Cref{fig:tradeoff} places all twelve conditions. Two features of it matter as much as the contrasts above, and
+neither favours a simple reading.
+
+\paragraph{The development finding replicates on sealed data.} Metadata-derived labels made agents \emph{worse}
+than no labels at all --- \cond{G} 43.5\% against \cond{B} 46.0\%, with more harm (7.9\% against 7.0\%) and more
+false conflicts. Enforcing record-derived labels was worse still and far more harmful: \cond{RT} reached 44.2\%
+success at 22.6\% harm, roughly tripling the harm rate relative to plain memory while not improving success.
+Enforcement is not neutral; applied to labels the evidence does not support, it amplifies them.
+
+\paragraph{Ungated enforcement of the \emph{same} labels scored higher than \cond{EBG}.} \cond{EBG-all} reached
+71.1\% success against \cond{EBG}'s 61.3\% --- while more than doubling the harmful rate (6.9\% against 3.1\%),
+restoring arbitrary picks from 13 to 166, and raising false resolution from 1.9\% to 12.9\%.
+\Cref{sec:ablations} takes this apart. It is the central tension in our results and we do not resolve it in the
+mechanism's favour.
+
+\input{figures/fig7_per_model}
+
+\subsection{Per-model effects}
+
+Per-model differences are descriptive; the confirmatory claims rest on the pooled tests. The direction is positive
+for every model on every contrast and every per-model interval excludes zero, but the magnitude is not uniform
+(\Cref{fig:permodel}): on H-primary the two mid-sized Qwen models gain $26.6$ and $25.0$\pp{} against $10.0$\pp{}
+for Qwen2.5-3B and $6.8$\pp{} for Llama-3.1-8B.
+
+The Llama-3.1-8B result deserves emphasis because it was pre-stated as a risk. On the development split this model
+showed essentially no benefit ($+1.1$\pp), and the pre-registration said a repeat on eval3 would be a failure to
+generalise across families and would be reported as such. On eval3 the benefit is small but positive with an
+interval excluding zero. The \emph{harm} reduction, however, does not transfer at all ($-0.3$\pp{}
+\ci{-1.0}{0.4}): this model abstains rather than committing --- 44.0\% unnecessary abstention under \cond{EBG},
+60.7\% under \cond{B} --- and formats no parsable answer on 11.1\% of runs, so it was producing almost no harmful
+answers for the mechanism to remove. Its gain comes from converting abstentions into answers, a different causal
+route from the one the hypotheses describe.
+
+\subsection{Secondary cells}
+
+The two greedy-only secondary models are never pooled with the primary ones. Qwen2.5-14B shows the largest
+\cond{EBG} $-$ \cond{RT} effect in the study, $+29.9$\pp{} \ci{23.0}{36.9}. Llama-3.2-3B, which failed the
+readiness criterion before the campaign, shows $+12.3$\pp{} \ci{6.3}{18.3} from a very low base --- 41.8\% success
+under \cond{EBG} against 7.1\% under \cond{B}, with 88.7\% unnecessary abstention under \cond{B} --- so its
+differences measure recovery from near-total failure rather than the effect the hypotheses concern.
+
+\subsection{Absolute performance}
+
+No condition is good in absolute terms. The best, \cond{EBG}, answers 61.3\% of pooled primary runs correctly, and
+46.0\% of the runs whose tasks have a definite answer rather than a genuine conflict. Qwen2.5-7B and Qwen3-8B reach
+75.0\% and 77.8\% under \cond{EBG}; Llama-3.1-8B reaches 33.0\%. The contribution is a relative one about
+mechanism design, not a claim that small agents handle conflicting persistent memory well.

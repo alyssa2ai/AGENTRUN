@@ -1,0 +1,29 @@
+\begin{table}[t]
+\centering
+\caption{The pre-registered confirmatory results. Differences are in percentage points of task success, paired
+within model and decoding, pooled over the four primary models (268 tasks, 135 families, 51{,}456 runs).
+Intervals are 95\% percentile bootstraps over families (10{,}000 seeded resamples); $p$ is a two-sided sign-flip
+permutation test on family-level summed differences (100{,}000 seeded draws, Monte-Carlo floor
+$1\times10^{-5}$); Holm correction is over these four contrasts at $\alpha=0.05$. S4 is a harm test and is
+reported as \emph{not falsified}, not as a fifth supported hypothesis.}
+\label{tab:primary}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llrcrrl@{}}
+\toprule
+& \textbf{Contrast} & \textbf{Diff.\ (pp)} & \textbf{95\% CI} & $\boldsymbol p$ & $\boldsymbol{p_{\text{Holm}}}$ & \textbf{Verdict} \\
+\midrule
+\textbf{H-primary} & \cond{EBG} $-$ \cond{RT} & $+17.1$ & \ci{12.2}{22.1} & $1\!\times\!10^{-5}$ & $4\!\times\!10^{-5}$ & \textbf{supported} \\
+S1 & \cond{EBG} $-$ \cond{T}  & $+14.5$ & \ci{10.5}{18.6} & $1\!\times\!10^{-5}$ & $4\!\times\!10^{-5}$ & supported \\
+S2 & \cond{EBG} $-$ \cond{LG} & $+15.9$ & \ci{10.4}{21.2} & $1\!\times\!10^{-5}$ & $4\!\times\!10^{-5}$ & supported \\
+S3 & \cond{EBG} $-$ \cond{B}  & $+15.3$ & \ci{10.3}{20.5} & $1\!\times\!10^{-5}$ & $4\!\times\!10^{-5}$ & supported \\
+\midrule
+S4 & \cond{EBG} $-$ \cond{RT}, harmful & $-19.4$ & \ci{-24.6}{-14.6} & $1\!\times\!10^{-5}$ & --- & not falsified \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+{\footnotesize Harmful answers: \cond{EBG} 135/4288 (3.1\%) against \cond{RT} 968/4288 (22.6\%). Arbitrary picks:
+13 against 252. All four success contrasts reach the Monte-Carlo floor before correction, so the Holm-adjusted
+values are $4\times10^{-5}$ for all four. Source: \srcfile{PHASE3/PHASE3_DECISIONS.json}.}
+\end{table}

@@ -1,0 +1,71 @@
+\section{Ablation studies}
+\label{sec:ablations}
+
+\cond{EBG} combines four things: evidence-basis labels shown to the agent, a reversible notice at the terminal
+action, \emph{gating} that enforces only strong-strength resolutions, \emph{safe submission}, and
+search-before-submit. The pre-registered exploratory contrasts separate them (\Cref{tab:ablations}). Two
+components carry essentially the whole effect; one is inert on success but changes the failure profile; and the
+gate --- the component the paper is named for --- turns out to be a deliberate trade rather than an improvement.
+
+\input{tables/tab_ablations}
+
+\subsection{The labels do most of the work}
+
+Replacing metadata labels with evidence-basis labels, with \emph{no enforcement at all}, raises success by
+$11.8$\pp{} over \cond{G} and $8.5$\pp{} over the temporal arbiter \cond{T}, and cuts the harmful rate from 7.9\%
+and 7.4\% to 2.7\%. False resolution falls from 9.2\% (\cond{G}) and 3.6\% (\cond{T}) to 2.0\%. Most of the
+mechanism's benefit is in \emph{what the agent is told}, before anything is enforced. This is the part of the
+result we consider best supported, and it is the part with the least novel machinery behind it.
+
+\subsection{Gating adds a real but smaller increment}
+
+Adding the gated notice to the labels adds $6.0$\pp{} \ci{3.9}{8.2} of success with no detectable change in harm
+($+0.5$\pp{} \ci{-0.1}{1.2}), lifts conflict preservation from 81.6\% to 88.5\%, and halves step-limit failures.
+The notice mostly recovers runs in which the agent had the right labels and still submitted the superseded value.
+
+\subsection{Safe submission buys format robustness, not success}
+
+Success is statistically indistinguishable with and without safe submission ($-0.2$\pp{} \ci{-1.0}{0.7},
+$p_{\text{BH}}=0.78$), and so is harm. What changes is the failure profile: format errors nearly double without it,
+from 3.3\% to 6.4\% pooled, while unnecessary abstention falls from 12.8\% to 9.9\%. Without the fallback a
+mangled reply to a notice becomes a format failure; with it, the pre-notice answer stands, which sometimes means
+an abstention. We would keep the component for robustness, but no success claim rests on it.
+Search-before-submit is worth about $1.3$\pp{} and reduces unnecessary abstention from 17.6\% to 12.8\%.
+
+\subsection{The gate: the central trade}
+
+Enforcing \emph{every} arbitration rather than only strong-strength ones scores \textbf{$9.7$\pp{} higher} than
+\cond{EBG} (71.1\% against 61.3\%; CI \ci{-15.2}{-4.3} in \cond{EBG}'s disfavour, $p_{\text{BH}}=0.0013$). It also
+
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt,topsep=2pt]
+\item more than doubles the harmful rate, 3.1\% $\rightarrow$ 6.9\% ($-3.7$\pp{} \ci{-6.6}{-1.3} in
+\cond{EBG}'s favour);
+\item restores arbitrary picks from 13 runs to 166;
+\item raises false resolution from 1.9\% to 12.9\% and drops conflict preservation from 88.5\% to 77.3\%.
+\end{itemize}
+
+This is the clearest answer in the study to the second half of our research question, and it goes against the
+mechanism we proposed. \textbf{Indiscriminate enforcement does increase harmful answers} --- and on this benchmark
+it also produces more correct answers than gated enforcement does. Gating is a trade, not a dominance.
+
+Which side of that trade one should take depends on the relative cost of a wrong confident answer and a missed
+correct one, which this benchmark does not price. We state the trade rather than resolve it, with two
+qualifications. It is sensitive to the item set: $-4.8$\pp{} \ci{-9.7}{0.3} and not significant on the
+double-agreement subset, $-17.1$\pp{} on the flagged complement, which suggests part of it lives in items where
+the annotators themselves disagreed. And success and harm are not commensurable: $9.7$\pp{} of success against
+$3.8$\pp{} of additional harm and a thirteen-fold increase in arbitrary picks is a judgement, not an arithmetic
+comparison.
+
+\subsection{Gating helps only when the arbiter is reliable}
+
+The same gating machinery driven by an LLM arbiter instead of the deterministic one does not help: success is
+statistically unchanged ($-2.4$\pp{} \ci{-5.6}{0.6}, $p_{\text{BH}}=0.17$) and harm rises by $8.1$\pp{}
+\ci{6.1}{10.2}. Under \cond{LG}, false resolution reaches 37.0\% and conflict preservation falls to 42.4\% --- the
+worst of any condition, worse than no mechanism at all. For Qwen2.5-7B specifically, \cond{LG} falsely resolves
+75.9\% of genuine conflicts.
+
+The useful generalisation is therefore neither ``enforcement helps'' nor ``gating helps'', but that
+\textbf{enforcement inherits the reliability of whatever supplies its labels}. Enforcing a deterministic,
+evidence-grounded arbiter's strong resolutions helps; enforcing a record-metadata scanner's (\cond{RT}) or a
+language model's (\cond{LG}) is actively harmful. The value of the evidence-basis idea is that it gives
+enforcement something defensible to enforce, and a principled place to stop.

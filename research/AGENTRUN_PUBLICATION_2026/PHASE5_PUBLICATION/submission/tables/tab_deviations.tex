@@ -1,0 +1,34 @@
+\begin{table}[t]
+\centering
+\caption{Deviations from the planned execution, and what each does and does not affect. None changes the
+pre-registered analysis; all are disclosed in the artifact package with their evidence.}
+\label{tab:deviations}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.025\linewidth}p{0.30\linewidth}p{0.27\linewidth}p{0.30\linewidth}@{}}
+\toprule
+& \textbf{Deviation} & \textbf{Scope} & \textbf{Effect on the conclusions} \\
+\midrule
+D1 & Unplanned compute-node reboot mid-campaign; host kernel and GPU driver changed
+   & 980 of 57{,}888 rows (1.69\%), in 2 of 18 cells
+   & Removing the affected cell moves the pooled estimates by $\le 0.1$\pp. Whether the driver change altered
+     generation is \textbf{unknown} and not knowable from this campaign. \\[2pt]
+D2 & The reboot truncated the row being written in each of those cells; the damaged tail was quarantined and both
+     cells resumed
+   & 1153 and 3617 bytes quarantined, \textbf{0 complete rows} in either; both cells finished at 3216 rows with no
+     duplicates
+   & None on the analysis. The console logs of the two interrupted starts were overwritten and are permanently
+     lost; the run manifests survive. \\[2pt]
+D3 & A resumed sampled cell re-seeds its sampler instead of continuing the stream
+   & 1 cell, at row 2345 of 3216
+   & No bias: the design fixes the seeds and makes no claim about stream continuity. That cell is not
+     byte-reproducible without reproducing the interruption. \\[2pt]
+D4 & The integrity gate was corrected after it rejected the campaign on a telemetry field
+   & Gate code only; no manifest, raw output, pre-registration or mechanism file was changed
+   & None. The corrected gate is strictly stronger: it fails closed on any unclassified run-identity field. \\[2pt]
+D5 & Two exploratory sensitivity analyses added after the platform transition came to light
+   & Reported separately, never as confirmatory
+   & None on the pre-registered verdicts. \\
+\bottomrule
+\end{tabular}
+\end{table}

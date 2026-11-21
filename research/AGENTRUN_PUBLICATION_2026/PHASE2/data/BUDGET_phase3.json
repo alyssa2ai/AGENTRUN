@@ -1,0 +1,139 @@
+{
+ "n_tasks": 268,
+ "configs": 12,
+ "cells": [
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "decoding": "greedy",
+   "runs": 3216,
+   "gpu_h": 1.63,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "decoding": "T07_s1",
+   "runs": 3216,
+   "gpu_h": 2.48,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "decoding": "T07_s2",
+   "runs": 3216,
+   "gpu_h": 2.48,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "decoding": "T07_s3",
+   "runs": 3216,
+   "gpu_h": 2.48,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "decoding": "greedy",
+   "runs": 3216,
+   "gpu_h": 3.8,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "decoding": "T07_s1",
+   "runs": 3216,
+   "gpu_h": 7.78,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "decoding": "T07_s2",
+   "runs": 3216,
+   "gpu_h": 7.78,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "decoding": "T07_s3",
+   "runs": 3216,
+   "gpu_h": 7.78,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "decoding": "greedy",
+   "runs": 3216,
+   "gpu_h": 3.81,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "decoding": "T07_s1",
+   "runs": 3216,
+   "gpu_h": 7.78,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "decoding": "T07_s2",
+   "runs": 3216,
+   "gpu_h": 7.78,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "decoding": "T07_s3",
+   "runs": 3216,
+   "gpu_h": 7.78,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "decoding": "greedy",
+   "runs": 3216,
+   "gpu_h": 3.65,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "decoding": "T07_s1",
+   "runs": 3216,
+   "gpu_h": 7.5,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "decoding": "T07_s2",
+   "runs": 3216,
+   "gpu_h": 7.5,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "decoding": "T07_s3",
+   "runs": 3216,
+   "gpu_h": 7.5,
+   "source": "p2val2 runs"
+  },
+  {
+   "model": "Qwen/Qwen2.5-14B-Instruct",
+   "decoding": "greedy",
+   "runs": 3216,
+   "gpu_h": 24.83,
+   "source": "Phase 1 pilot greedy, one run set (outside Slurm, 6.8 s/call; scaled from job 4189 arbiter latency it would be ~9 s)"
+  },
+  {
+   "model": "meta-llama/Llama-3.2-3B-Instruct",
+   "decoding": "greedy",
+   "runs": 3216,
+   "gpu_h": 2.12,
+   "source": "Slurm job 4183: (55 s - 11.2 s load) / 20 runs"
+  }
+ ],
+ "subtotal_gpu_h": 116.5,
+ "primary_cells_gpu_h": 89.5,
+ "contingency": 0.1,
+ "total_gpu_h": 128.1,
+ "concurrent_gpus": 1,
+ "wall_days_single_gpu": 5.3,
+ "arbiter_calls_per_run_assumed": null
+}

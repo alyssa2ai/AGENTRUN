@@ -1,0 +1,96 @@
+\section{Related work}
+\label{sec:related}
+
+Our literature search covered arXiv and closed on 14 November 2026; most entries were read at abstract level, and
+six were read in full. Statements of the form ``we found none'' should therefore be read as ``in the work we
+examined''. Extending the search to non-arXiv venues and to later work is an open item
+(\Cref{sec:limitations}).
+
+\subsection{Memory architectures}
+
+Persistent memory for language-model agents is normally a store outside the context window that the agent reads
+through retrieval or tool calls. MemGPT manages memory tiers by analogy with an operating system
+\citep{packer2023memgpt}; Mem0 extracts, consolidates and retrieves salient facts across sessions
+\citep{chhikara2025mem0}; Zep organises memory as a temporal knowledge graph \citep{rasmussen2025zep}; MEMOIR adds
+a training-free lifecycle with judge-gated consolidation \citep{anand2026memoir}. These are background: our harness
+uses a deliberately simple store (hashed bag-of-words retrieval, top four) so that the object of study is what
+happens \emph{after} retrieval.
+
+\subsection{Staleness, conflict and resolution}
+
+\paragraph{Resolution rather than retrieval.} DISCERN preserves an immutable event log at write time, derives a
+bitemporal fact store, and at read time lets the agent navigate with deterministic, LLM-free tools; the committed
+action is a decidable function of the graph, guarded by gates including an earned-abstain gate that rejects
+abstaining without searching \citep{ahuja2026discern}. It reports recall and currency as near-saturated and
+resolution as the unsolved part. Its backbones are large hosted models, its facts and validity intervals are
+LLM-extracted, and its ablations do not perturb extraction or timestamps.
+
+\paragraph{Provenance and invalidation.} PACMI propagates invalidation through a provenance graph with a four-state
+validity lattice and corrects outdated premises advisorily, by adding old and current facts to the answer prompt
+\citep{wang2026pacmi}. AMV-Guard treats re-verification of a memory premise before a state-changing action as a
+value-of-information stopping problem \citep{wang2026amvguard}. Governed Persistent Memory uses a bitemporal
+state-transition model with deterministic, fail-closed release \citep{xu2026gpm}. TOKI formalises contradiction
+resolution as write-time concurrency control over bitemporal operators \citep{wang2026toki}; StateWise repairs
+invalid stored state before agent actions \citep{peng2026statewise}; PPMF and MemLineage bind tool authority or
+lineage to the source of a memory \citep{xu2026ppmf,ouyang2026memlineage}. \citet{zhao2026accept} observe that
+outdated memory and poisoning call for opposite write decisions and propose an evidence-conditioned accuracy
+metric; \citet{zhou2026manysteps} give a theory of when memory reuse is safe.
+
+\paragraph{Benchmarks.} STALE provides 400 scenarios and 1{,}200 queries over three dimensions including state
+resolution and premise resistance \citep{chao2026stale}; its construction deliberately excludes explicit
+invalidation, so it contains none of the lexically signalled cases Evarb targets and is the natural external test
+of what a lexical arbiter cannot do. MemoryAgentBench includes a conflict-resolution competency
+\citep{hu2025memoryagentbench}, and \citet{pakhomov2026bookkeeping} show that a frozen last-write rule already
+answers a large share of its conflict split. LongMemEval and LoCoMo evaluate long-term conversational memory
+including knowledge updates and abstention \citep{wu2024longmemeval,maharana2024locomo}.
+
+\paragraph{Why models fail on updates.} CICM studies in-context updates mechanistically: probes still recover the
+updated value when the model answers with the old one, and compliance with an advisory reminder depends on the
+model family \citep{guo2026cicm}. That is the closest prior evidence on whether small models follow advisory signals
+about which value is current, although its setting is single-answer dialogue rather than an agent with a three-way
+terminal action. \citet{xu2026delivered} find that delivered memory often does not change agent behaviour;
+\citet{pathirage2026confident} study when models search beyond parametric memory; \citet{zhang2026horn} issue
+deterministic answer/search/abstain decisions from sufficiency certificates.
+
+\subsection{Verification and self-correction}
+
+Same-model self-correction without external feedback often fails to improve reasoning and can degrade it
+\citep{huang2023selfcorrect,kamoi2024survey}; retrieval-side critique and correction are studied in Self-RAG and
+Corrective RAG \citep{asai2023selfrag,yan2024crag}. Our LLM-arbiter conditions (\cond{LA}, \cond{LG}) use the
+agent's own model to arbitrate records. They are not self-correction of the answer, but their errors are of the same
+kind: an unaided small model judging evidence.
+
+\subsection{What is new, and what is not}
+\label{sec:novelty}
+
+We state the negative half first, because the positive claim is narrow.
+
+\textbf{Not new, and not claimed.} That memory improves memory-dependent tasks. That provenance, bitemporal
+ordering or deterministic gating improve staleness and conflict handling
+\citep{ahuja2026discern,wang2026pacmi,xu2026gpm,wang2026toki} --- indeed a deterministic last-write rule already
+does well on an existing conflict benchmark \citep{pakhomov2026bookkeeping}. Ordering by a stated validity date
+before the record date, which is standard bitemporal practice \citep{jensen1999temporal}. Forcing a search before
+abstaining, which is essentially DISCERN's earned-abstain gate. That same-model verification without an external
+signal can hurt \citep{huang2023selfcorrect,kamoi2024survey}. That agents often fail to use delivered memory and can
+bind a stale value while still encoding the update \citep{xu2026delivered,guo2026cicm}. And combining known
+components into one system is not in itself a contribution.
+
+\textbf{What may be defensible.} Among the work we examined we found none that
+
+\begin{enumerate}[leftmargin=1.6em,itemsep=1pt,topsep=2pt]
+\item \textbf{exposes the evidence basis and strength of each resolution to the agent and gates enforcement on that
+strength}, so that an ordering inferred from record dates, or an unreferenced correction, is advised while an
+explicit referenced correction is enforced --- the enforcing systems we read apply their gates uniformly over a
+structure built at write time;
+\item \textbf{measures, on the same small open-weight models, what happens to the answer when the reliability
+structure is wrong} --- both the harm of following wrong labels and the harm of enforcing them;
+\item \textbf{compares a deterministic arbiter and an LLM arbiter under an identical downstream policy} on agents of
+3B--14B, so that arbitration quality and policy are separated.
+\end{enumerate}
+
+What we contribute is therefore not a temporal rule but a measurement: of label-induced and enforcement-induced
+harm on small agents, and a pre-registered test of whether basis-gated enforcement reduces that harm without losing
+the benefit of enforcement. \Cref{tab:related} places the six full-text papers against the design dimensions this
+study varies.
+
+\input{tables/tab_related}

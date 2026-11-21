@@ -1,0 +1,5318 @@
+{
+ "n_tasks": 268,
+ "n_rows": 57888,
+ "models": [
+  "Qwen/Qwen2.5-14B-Instruct",
+  "Qwen/Qwen2.5-3B-Instruct",
+  "Qwen/Qwen2.5-7B-Instruct",
+  "Qwen/Qwen3-8B",
+  "meta-llama/Llama-3.1-8B-Instruct",
+  "meta-llama/Llama-3.2-3B-Instruct"
+ ],
+ "pooled_models": [
+  "Qwen/Qwen2.5-14B-Instruct",
+  "Qwen/Qwen2.5-3B-Instruct",
+  "Qwen/Qwen2.5-7B-Instruct",
+  "Qwen/Qwen3-8B",
+  "meta-llama/Llama-3.1-8B-Instruct",
+  "meta-llama/Llama-3.2-3B-Instruct"
+ ],
+ "cells": {
+  "Qwen/Qwen2.5-14B-Instruct": {
+   "B": {
+    "runs": 268,
+    "accuracy": [
+     151,
+     268
+    ],
+    "accuracy_ci95": [
+     0.4869,
+     0.6381
+    ],
+    "answer_accuracy": [
+     74,
+     175
+    ],
+    "conflict_preservation": [
+     66,
+     81
+    ],
+    "false_resolution_rate": [
+     5,
+     81
+    ],
+    "stale_error_rate": [
+     7,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     15,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     37,
+     268
+    ],
+    "step_limit_rate": [
+     0,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 1.98,
+    "model_calls": 3.06,
+    "prompt_tokens": 2901.15,
+    "completion_tokens": 397.61,
+    "latency_s": 18.11
+   },
+   "EB": {
+    "runs": 268,
+    "accuracy": [
+     203,
+     268
+    ],
+    "accuracy_ci95": [
+     0.7,
+     0.8165
+    ],
+    "answer_accuracy": [
+     129,
+     175
+    ],
+    "conflict_preservation": [
+     63,
+     81
+    ],
+    "false_resolution_rate": [
+     6,
+     81
+    ],
+    "stale_error_rate": [
+     5,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     5,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     37,
+     268
+    ],
+    "step_limit_rate": [
+     2,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 2.43,
+    "model_calls": 3.49,
+    "prompt_tokens": 3764.56,
+    "completion_tokens": 392.15,
+    "latency_s": 18.13
+   },
+   "EBG": {
+    "runs": 268,
+    "accuracy": [
+     197,
+     268
+    ],
+    "accuracy_ci95": [
+     0.6729,
+     0.7955
+    ],
+    "answer_accuracy": [
+     123,
+     175
+    ],
+    "conflict_preservation": [
+     63,
+     81
+    ],
+    "false_resolution_rate": [
+     6,
+     81
+    ],
+    "stale_error_rate": [
+     13,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     3,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     37,
+     268
+    ],
+    "step_limit_rate": [
+     2,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 2.46,
+    "model_calls": 3.54,
+    "prompt_tokens": 3836.7,
+    "completion_tokens": 395.15,
+    "latency_s": 18.29
+   },
+   "EBG-all": {
+    "runs": 268,
+    "accuracy": [
+     197,
+     268
+    ],
+    "accuracy_ci95": [
+     0.6716,
+     0.7993
+    ],
+    "answer_accuracy": [
+     131,
+     175
+    ],
+    "conflict_preservation": [
+     55,
+     81
+    ],
+    "false_resolution_rate": [
+     14,
+     81
+    ],
+    "stale_error_rate": [
+     14,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     3,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     37,
+     268
+    ],
+    "step_limit_rate": [
+     2,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 2.46,
+    "model_calls": 3.62,
+    "prompt_tokens": 3955.53,
+    "completion_tokens": 400.21,
+    "latency_s": 18.55
+   },
+   "EBG-noR3": {
+    "runs": 268,
+    "accuracy": [
+     197,
+     268
+    ],
+    "accuracy_ci95": [
+     0.6729,
+     0.7955
+    ],
+    "answer_accuracy": [
+     123,
+     175
+    ],
+    "conflict_preservation": [
+     63,
+     81
+    ],
+    "false_resolution_rate": [
+     6,
+     81
+    ],
+    "stale_error_rate": [
+     11,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     5,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     37,
+     268
+    ],
+    "step_limit_rate": [
+     2,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 2.44,
+    "model_calls": 3.52,
+    "prompt_tokens": 3810.94,
+    "completion_tokens": 393.99,
+    "latency_s": 18.24
+   },
+   "EBG-unsafe": {
+    "runs": 268,
+    "accuracy": [
+     197,
+     268
+    ],
+    "accuracy_ci95": [
+     0.6729,
+     0.7955
+    ],
+    "answer_accuracy": [
+     123,
+     175
+    ],
+    "conflict_preservation": [
+     63,
+     81
+    ],
+    "false_resolution_rate": [
+     6,
+     81
+    ],
+    "stale_error_rate": [
+     13,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     3,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     37,
+     268
+    ],
+    "step_limit_rate": [
+     2,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 2.46,
+    "model_calls": 3.54,
+    "prompt_tokens": 3836.7,
+    "completion_tokens": 395.15,
+    "latency_s": 18.3
+   },
+   "G": {
+    "runs": 268,
+    "accuracy": [
+     143,
+     268
+    ],
+    "accuracy_ci95": [
+     0.4607,
+     0.6067
+    ],
+    "answer_accuracy": [
+     83,
+     175
+    ],
+    "conflict_preservation": [
+     49,
+     81
+    ],
+    "false_resolution_rate": [
+     15,
+     81
+    ],
+    "stale_error_rate": [
+     23,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     17,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     37,
+     268
+    ],
+    "step_limit_rate": [
+     0,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 2.69,
+    "model_calls": 3.78,
+    "prompt_tokens": 4033.41,
+    "completion_tokens": 422.63,
+    "latency_s": 19.57
+   },
+   "LA": {
+    "runs": 268,
+    "accuracy": [
+     170,
+     268
+    ],
+    "accuracy_ci95": [
+     0.5655,
+     0.7008
+    ],
+    "answer_accuracy": [
+     108,
+     175
+    ],
+    "conflict_preservation": [
+     51,
+     81
+    ],
+    "false_resolution_rate": [
+     16,
+     81
+    ],
+    "stale_error_rate": [
+     15,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     17,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     37,
+     268
+    ],
+    "step_limit_rate": [
+     1,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 2.44,
+    "model_calls": 3.5,
+    "prompt_tokens": 3733.78,
+    "completion_tokens": 396.24,
+    "latency_s": 20.46
+   },
+   "LG": {
+    "runs": 268,
+    "accuracy": [
+     160,
+     268
+    ],
+    "accuracy_ci95": [
+     0.5263,
+     0.6642
+    ],
+    "answer_accuracy": [
+     100,
+     175
+    ],
+    "conflict_preservation": [
+     49,
+     81
+    ],
+    "false_resolution_rate": [
+     18,
+     81
+    ],
+    "stale_error_rate": [
+     26,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     15,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     37,
+     268
+    ],
+    "step_limit_rate": [
+     0,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 2.46,
+    "model_calls": 3.62,
+    "prompt_tokens": 3886.1,
+    "completion_tokens": 402.91,
+    "latency_s": 20.83
+   },
+   "R": {
+    "runs": 268,
+    "accuracy": [
+     133,
+     268
+    ],
+    "accuracy_ci95": [
+     0.4222,
+     0.5704
+    ],
+    "answer_accuracy": [
+     73,
+     175
+    ],
+    "conflict_preservation": [
+     49,
+     81
+    ],
+    "false_resolution_rate": [
+     15,
+     81
+    ],
+    "stale_error_rate": [
+     33,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     15,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     37,
+     268
+    ],
+    "step_limit_rate": [
+     0,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 2.71,
+    "model_calls": 3.89,
+    "prompt_tokens": 4184.08,
+    "completion_tokens": 429.24,
+    "latency_s": 19.89
+   },
+   "RT": {
+    "runs": 268,
+    "accuracy": [
+     117,
+     268
+    ],
+    "accuracy_ci95": [
+     0.3633,
+     0.5113
+    ],
+    "answer_accuracy": [
+     57,
+     175
+    ],
+    "conflict_preservation": [
+     49,
+     81
+    ],
+    "false_resolution_rate": [
+     14,
+     81
+    ],
+    "stale_error_rate": [
+     48,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     19,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     38,
+     268
+    ],
+    "step_limit_rate": [
+     0,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 2.45,
+    "model_calls": 3.68,
+    "prompt_tokens": 3983.84,
+    "completion_tokens": 409.15,
+    "latency_s": 18.94
+   },
+   "T": {
+    "runs": 268,
+    "accuracy": [
+     136,
+     268
+    ],
+    "accuracy_ci95": [
+     0.4328,
+     0.5815
+    ],
+    "answer_accuracy": [
+     68,
+     175
+    ],
+    "conflict_preservation": [
+     57,
+     81
+    ],
+    "false_resolution_rate": [
+     8,
+     81
+    ],
+    "stale_error_rate": [
+     33,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     19,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     37,
+     268
+    ],
+    "step_limit_rate": [
+     0,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 2.43,
+    "model_calls": 3.51,
+    "prompt_tokens": 3739.51,
+    "completion_tokens": 397.81,
+    "latency_s": 18.38
+   }
+  },
+  "Qwen/Qwen2.5-3B-Instruct": {
+   "B": {
+    "runs": 1072,
+    "accuracy": [
+     522,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.417,
+     0.5578
+    ],
+    "answer_accuracy": [
+     201,
+     700
+    ],
+    "conflict_preservation": [
+     277,
+     324
+    ],
+    "false_resolution_rate": [
+     45,
+     324
+    ],
+    "stale_error_rate": [
+     21,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     17,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     2,
+     48
+    ],
+    "format_failure_rate": [
+     1,
+     1072
+    ],
+    "step_limit_rate": [
+     2,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.03,
+    "model_calls": 3.06,
+    "prompt_tokens": 2786.39,
+    "completion_tokens": 117.82,
+    "latency_s": 1.8
+   },
+   "EB": {
+    "runs": 1072,
+    "accuracy": [
+     468,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.3606,
+     0.513
+    ],
+    "answer_accuracy": [
+     110,
+     700
+    ],
+    "conflict_preservation": [
+     310,
+     324
+    ],
+    "false_resolution_rate": [
+     3,
+     324
+    ],
+    "stale_error_rate": [
+     8,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     26,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     5,
+     1072
+    ],
+    "step_limit_rate": [
+     20,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.19,
+    "model_calls": 3.19,
+    "prompt_tokens": 3244.64,
+    "completion_tokens": 107.74,
+    "latency_s": 1.68
+   },
+   "EBG": {
+    "runs": 1072,
+    "accuracy": [
+     638,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.5195,
+     0.6685
+    ],
+    "answer_accuracy": [
+     274,
+     700
+    ],
+    "conflict_preservation": [
+     316,
+     324
+    ],
+    "false_resolution_rate": [
+     3,
+     324
+    ],
+    "stale_error_rate": [
+     25,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     37,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     9,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.19,
+    "model_calls": 3.39,
+    "prompt_tokens": 3537.36,
+    "completion_tokens": 117.64,
+    "latency_s": 1.84
+   },
+   "EBG-all": {
+    "runs": 1072,
+    "accuracy": [
+     847,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.7293,
+     0.8475
+    ],
+    "answer_accuracy": [
+     531,
+     700
+    ],
+    "conflict_preservation": [
+     268,
+     324
+    ],
+    "false_resolution_rate": [
+     53,
+     324
+    ],
+    "stale_error_rate": [
+     36,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     30,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     8,
+     1072
+    ],
+    "step_limit_rate": [
+     8,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.21,
+    "model_calls": 3.71,
+    "prompt_tokens": 3966.68,
+    "completion_tokens": 133.26,
+    "latency_s": 2.08
+   },
+   "EBG-noR3": {
+    "runs": 1072,
+    "accuracy": [
+     626,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.5074,
+     0.657
+    ],
+    "answer_accuracy": [
+     269,
+     700
+    ],
+    "conflict_preservation": [
+     309,
+     324
+    ],
+    "false_resolution_rate": [
+     5,
+     324
+    ],
+    "stale_error_rate": [
+     28,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     47,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     3,
+     1072
+    ],
+    "step_limit_rate": [
+     9,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.19,
+    "model_calls": 3.39,
+    "prompt_tokens": 3551.81,
+    "completion_tokens": 117.04,
+    "latency_s": 1.83
+   },
+   "EBG-unsafe": {
+    "runs": 1072,
+    "accuracy": [
+     640,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.5205,
+     0.6707
+    ],
+    "answer_accuracy": [
+     276,
+     700
+    ],
+    "conflict_preservation": [
+     316,
+     324
+    ],
+    "false_resolution_rate": [
+     2,
+     324
+    ],
+    "stale_error_rate": [
+     28,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     31,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     5,
+     1072
+    ],
+    "step_limit_rate": [
+     12,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.24,
+    "model_calls": 3.43,
+    "prompt_tokens": 3620.42,
+    "completion_tokens": 119.25,
+    "latency_s": 1.86
+   },
+   "G": {
+    "runs": 1072,
+    "accuracy": [
+     435,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.329,
+     0.4831
+    ],
+    "answer_accuracy": [
+     88,
+     700
+    ],
+    "conflict_preservation": [
+     300,
+     324
+    ],
+    "false_resolution_rate": [
+     12,
+     324
+    ],
+    "stale_error_rate": [
+     21,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     23,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     16,
+     1072
+    ],
+    "step_limit_rate": [
+     24,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.23,
+    "model_calls": 3.21,
+    "prompt_tokens": 3198.32,
+    "completion_tokens": 107.93,
+    "latency_s": 1.68
+   },
+   "LA": {
+    "runs": 1072,
+    "accuracy": [
+     490,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.3861,
+     0.5301
+    ],
+    "answer_accuracy": [
+     140,
+     700
+    ],
+    "conflict_preservation": [
+     302,
+     324
+    ],
+    "false_resolution_rate": [
+     6,
+     324
+    ],
+    "stale_error_rate": [
+     10,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     25,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     11,
+     1072
+    ],
+    "step_limit_rate": [
+     46,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.28,
+    "model_calls": 3.26,
+    "prompt_tokens": 3319.53,
+    "completion_tokens": 105.66,
+    "latency_s": 2.31
+   },
+   "LG": {
+    "runs": 1072,
+    "accuracy": [
+     507,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.4093,
+     0.5387
+    ],
+    "answer_accuracy": [
+     236,
+     700
+    ],
+    "conflict_preservation": [
+     224,
+     324
+    ],
+    "false_resolution_rate": [
+     86,
+     324
+    ],
+    "stale_error_rate": [
+     62,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     31,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     9,
+     1072
+    ],
+    "step_limit_rate": [
+     26,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.3,
+    "model_calls": 3.58,
+    "prompt_tokens": 3752.93,
+    "completion_tokens": 120.85,
+    "latency_s": 2.56
+   },
+   "R": {
+    "runs": 1072,
+    "accuracy": [
+     527,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.4145,
+     0.5716
+    ],
+    "answer_accuracy": [
+     213,
+     700
+    ],
+    "conflict_preservation": [
+     266,
+     324
+    ],
+    "false_resolution_rate": [
+     51,
+     324
+    ],
+    "stale_error_rate": [
+     182,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     23,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     7,
+     1072
+    ],
+    "step_limit_rate": [
+     13,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.27,
+    "model_calls": 3.59,
+    "prompt_tokens": 3712.69,
+    "completion_tokens": 127.67,
+    "latency_s": 1.99
+   },
+   "RT": {
+    "runs": 1072,
+    "accuracy": [
+     531,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.4204,
+     0.5737
+    ],
+    "answer_accuracy": [
+     258,
+     700
+    ],
+    "conflict_preservation": [
+     227,
+     324
+    ],
+    "false_resolution_rate": [
+     72,
+     324
+    ],
+    "stale_error_rate": [
+     224,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     48,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     1,
+     48
+    ],
+    "format_failure_rate": [
+     3,
+     1072
+    ],
+    "step_limit_rate": [
+     5,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.12,
+    "model_calls": 3.61,
+    "prompt_tokens": 3729.4,
+    "completion_tokens": 130.55,
+    "latency_s": 2.03
+   },
+   "T": {
+    "runs": 1072,
+    "accuracy": [
+     456,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.3461,
+     0.5028
+    ],
+    "answer_accuracy": [
+     97,
+     700
+    ],
+    "conflict_preservation": [
+     312,
+     324
+    ],
+    "false_resolution_rate": [
+     8,
+     324
+    ],
+    "stale_error_rate": [
+     15,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     21,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     2,
+     1072
+    ],
+    "step_limit_rate": [
+     14,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.11,
+    "model_calls": 3.12,
+    "prompt_tokens": 3087.73,
+    "completion_tokens": 105.97,
+    "latency_s": 1.65
+   }
+  },
+  "Qwen/Qwen2.5-7B-Instruct": {
+   "B": {
+    "runs": 1072,
+    "accuracy": [
+     609,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.5056,
+     0.6296
+    ],
+    "answer_accuracy": [
+     317,
+     700
+    ],
+    "conflict_preservation": [
+     256,
+     324
+    ],
+    "false_resolution_rate": [
+     52,
+     324
+    ],
+    "stale_error_rate": [
+     56,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     18,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     1,
+     1072
+    ],
+    "step_limit_rate": [
+     64,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.77,
+    "model_calls": 3.74,
+    "prompt_tokens": 3568.61,
+    "completion_tokens": 167.0,
+    "latency_s": 4.23
+   },
+   "EB": {
+    "runs": 1072,
+    "accuracy": [
+     793,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.681,
+     0.7965
+    ],
+    "answer_accuracy": [
+     461,
+     700
+    ],
+    "conflict_preservation": [
+     302,
+     324
+    ],
+    "false_resolution_rate": [
+     6,
+     324
+    ],
+    "stale_error_rate": [
+     40,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     7,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     50,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.72,
+    "model_calls": 3.67,
+    "prompt_tokens": 3860.01,
+    "completion_tokens": 145.75,
+    "latency_s": 3.8
+   },
+   "EBG": {
+    "runs": 1072,
+    "accuracy": [
+     804,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.687,
+     0.8102
+    ],
+    "answer_accuracy": [
+     452,
+     700
+    ],
+    "conflict_preservation": [
+     314,
+     324
+    ],
+    "false_resolution_rate": [
+     5,
+     324
+    ],
+    "stale_error_rate": [
+     41,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     6,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     1,
+     1072
+    ],
+    "step_limit_rate": [
+     22,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.73,
+    "model_calls": 3.75,
+    "prompt_tokens": 3976.2,
+    "completion_tokens": 151.4,
+    "latency_s": 3.94
+   },
+   "EBG-all": {
+    "runs": 1072,
+    "accuracy": [
+     903,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.7852,
+     0.8934
+    ],
+    "answer_accuracy": [
+     597,
+     700
+    ],
+    "conflict_preservation": [
+     267,
+     324
+    ],
+    "false_resolution_rate": [
+     50,
+     324
+    ],
+    "stale_error_rate": [
+     37,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     3,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     1,
+     1072
+    ],
+    "step_limit_rate": [
+     27,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.75,
+    "model_calls": 3.95,
+    "prompt_tokens": 4260.28,
+    "completion_tokens": 162.76,
+    "latency_s": 4.24
+   },
+   "EBG-noR3": {
+    "runs": 1072,
+    "accuracy": [
+     808,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.6912,
+     0.8132
+    ],
+    "answer_accuracy": [
+     456,
+     700
+    ],
+    "conflict_preservation": [
+     315,
+     324
+    ],
+    "false_resolution_rate": [
+     5,
+     324
+    ],
+    "stale_error_rate": [
+     44,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     5,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     24,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.76,
+    "model_calls": 3.76,
+    "prompt_tokens": 3988.31,
+    "completion_tokens": 150.07,
+    "latency_s": 3.91
+   },
+   "EBG-unsafe": {
+    "runs": 1072,
+    "accuracy": [
+     813,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.6966,
+     0.8184
+    ],
+    "answer_accuracy": [
+     459,
+     700
+    ],
+    "conflict_preservation": [
+     314,
+     324
+    ],
+    "false_resolution_rate": [
+     6,
+     324
+    ],
+    "stale_error_rate": [
+     40,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     4,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     23,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.76,
+    "model_calls": 3.77,
+    "prompt_tokens": 4010.17,
+    "completion_tokens": 150.7,
+    "latency_s": 3.93
+   },
+   "G": {
+    "runs": 1072,
+    "accuracy": [
+     585,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.473,
+     0.6171
+    ],
+    "answer_accuracy": [
+     292,
+     700
+    ],
+    "conflict_preservation": [
+     265,
+     324
+    ],
+    "false_resolution_rate": [
+     47,
+     324
+    ],
+    "stale_error_rate": [
+     129,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     6,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     54,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.78,
+    "model_calls": 3.73,
+    "prompt_tokens": 3837.4,
+    "completion_tokens": 154.81,
+    "latency_s": 4.0
+   },
+   "LA": {
+    "runs": 1072,
+    "accuracy": [
+     598,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.4991,
+     0.617
+    ],
+    "answer_accuracy": [
+     440,
+     700
+    ],
+    "conflict_preservation": [
+     124,
+     324
+    ],
+    "false_resolution_rate": [
+     196,
+     324
+    ],
+    "stale_error_rate": [
+     143,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     3,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     27,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.72,
+    "model_calls": 3.7,
+    "prompt_tokens": 3840.93,
+    "completion_tokens": 153.3,
+    "latency_s": 5.07
+   },
+   "LG": {
+    "runs": 1072,
+    "accuracy": [
+     555,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.4546,
+     0.5827
+    ],
+    "answer_accuracy": [
+     450,
+     700
+    ],
+    "conflict_preservation": [
+     64,
+     324
+    ],
+    "false_resolution_rate": [
+     246,
+     324
+    ],
+    "stale_error_rate": [
+     162,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     6,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     3,
+     1072
+    ],
+    "step_limit_rate": [
+     29,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.79,
+    "model_calls": 3.94,
+    "prompt_tokens": 4186.46,
+    "completion_tokens": 165.36,
+    "latency_s": 5.39
+   },
+   "R": {
+    "runs": 1072,
+    "accuracy": [
+     560,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.4448,
+     0.6004
+    ],
+    "answer_accuracy": [
+     256,
+     700
+    ],
+    "conflict_preservation": [
+     267,
+     324
+    ],
+    "false_resolution_rate": [
+     52,
+     324
+    ],
+    "stale_error_rate": [
+     179,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     6,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     31,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.81,
+    "model_calls": 3.88,
+    "prompt_tokens": 4063.96,
+    "completion_tokens": 165.36,
+    "latency_s": 4.27
+   },
+   "RT": {
+    "runs": 1072,
+    "accuracy": [
+     519,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.4093,
+     0.5623
+    ],
+    "answer_accuracy": [
+     249,
+     700
+    ],
+    "conflict_preservation": [
+     236,
+     324
+    ],
+    "false_resolution_rate": [
+     82,
+     324
+    ],
+    "stale_error_rate": [
+     260,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     5,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     1,
+     48
+    ],
+    "format_failure_rate": [
+     3,
+     1072
+    ],
+    "step_limit_rate": [
+     28,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.86,
+    "model_calls": 4.06,
+    "prompt_tokens": 4365.65,
+    "completion_tokens": 171.4,
+    "latency_s": 4.45
+   },
+   "T": {
+    "runs": 1072,
+    "accuracy": [
+     636,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.5207,
+     0.6636
+    ],
+    "answer_accuracy": [
+     301,
+     700
+    ],
+    "conflict_preservation": [
+     301,
+     324
+    ],
+    "false_resolution_rate": [
+     11,
+     324
+    ],
+    "stale_error_rate": [
+     157,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     6,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     44,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.83,
+    "model_calls": 3.79,
+    "prompt_tokens": 3966.25,
+    "completion_tokens": 153.2,
+    "latency_s": 3.98
+   }
+  },
+  "Qwen/Qwen3-8B": {
+   "B": {
+    "runs": 1072,
+    "accuracy": [
+     645,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.525,
+     0.6754
+    ],
+    "answer_accuracy": [
+     337,
+     700
+    ],
+    "conflict_preservation": [
+     260,
+     324
+    ],
+    "false_resolution_rate": [
+     64,
+     324
+    ],
+    "stale_error_rate": [
+     35,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     1,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     22,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.4,
+    "model_calls": 3.38,
+    "prompt_tokens": 3148.91,
+    "completion_tokens": 122.07,
+    "latency_s": 3.64
+   },
+   "EB": {
+    "runs": 1072,
+    "accuracy": [
+     841,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.7194,
+     0.8448
+    ],
+    "answer_accuracy": [
+     476,
+     700
+    ],
+    "conflict_preservation": [
+     320,
+     324
+    ],
+    "false_resolution_rate": [
+     4,
+     324
+    ],
+    "stale_error_rate": [
+     44,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     0,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     13,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.29,
+    "model_calls": 3.28,
+    "prompt_tokens": 3336.38,
+    "completion_tokens": 126.93,
+    "latency_s": 3.81
+   },
+   "EBG": {
+    "runs": 1072,
+    "accuracy": [
+     834,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.7108,
+     0.8414
+    ],
+    "answer_accuracy": [
+     466,
+     700
+    ],
+    "conflict_preservation": [
+     320,
+     324
+    ],
+    "false_resolution_rate": [
+     4,
+     324
+    ],
+    "stale_error_rate": [
+     46,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     0,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     8,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.28,
+    "model_calls": 3.3,
+    "prompt_tokens": 3358.45,
+    "completion_tokens": 129.18,
+    "latency_s": 3.87
+   },
+   "EBG-all": {
+    "runs": 1072,
+    "accuracy": [
+     936,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.8148,
+     0.9254
+    ],
+    "answer_accuracy": [
+     616,
+     700
+    ],
+    "conflict_preservation": [
+     272,
+     324
+    ],
+    "false_resolution_rate": [
+     52,
+     324
+    ],
+    "stale_error_rate": [
+     44,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     0,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     8,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.28,
+    "model_calls": 3.5,
+    "prompt_tokens": 3641.44,
+    "completion_tokens": 142.91,
+    "latency_s": 4.28
+   },
+   "EBG-noR3": {
+    "runs": 1072,
+    "accuracy": [
+     831,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.7072,
+     0.8392
+    ],
+    "answer_accuracy": [
+     463,
+     700
+    ],
+    "conflict_preservation": [
+     320,
+     324
+    ],
+    "false_resolution_rate": [
+     4,
+     324
+    ],
+    "stale_error_rate": [
+     48,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     0,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     1,
+     1072
+    ],
+    "step_limit_rate": [
+     7,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.28,
+    "model_calls": 3.3,
+    "prompt_tokens": 3369.08,
+    "completion_tokens": 129.19,
+    "latency_s": 3.87
+   },
+   "EBG-unsafe": {
+    "runs": 1072,
+    "accuracy": [
+     832,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.7083,
+     0.8392
+    ],
+    "answer_accuracy": [
+     464,
+     700
+    ],
+    "conflict_preservation": [
+     320,
+     324
+    ],
+    "false_resolution_rate": [
+     4,
+     324
+    ],
+    "stale_error_rate": [
+     47,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     0,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     9,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.29,
+    "model_calls": 3.31,
+    "prompt_tokens": 3384.38,
+    "completion_tokens": 129.65,
+    "latency_s": 3.89
+   },
+   "G": {
+    "runs": 1072,
+    "accuracy": [
+     593,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.4721,
+     0.6333
+    ],
+    "answer_accuracy": [
+     274,
+     700
+    ],
+    "conflict_preservation": [
+     274,
+     324
+    ],
+    "false_resolution_rate": [
+     48,
+     324
+    ],
+    "stale_error_rate": [
+     72,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     0,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     10,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.56,
+    "model_calls": 3.55,
+    "prompt_tokens": 3599.98,
+    "completion_tokens": 132.06,
+    "latency_s": 3.98
+   },
+   "LA": {
+    "runs": 1072,
+    "accuracy": [
+     763,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.6474,
+     0.7743
+    ],
+    "answer_accuracy": [
+     478,
+     700
+    ],
+    "conflict_preservation": [
+     238,
+     324
+    ],
+    "false_resolution_rate": [
+     86,
+     324
+    ],
+    "stale_error_rate": [
+     110,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     0,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     2,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.34,
+    "model_calls": 3.34,
+    "prompt_tokens": 3376.49,
+    "completion_tokens": 127.6,
+    "latency_s": 5.23
+   },
+   "LG": {
+    "runs": 1072,
+    "accuracy": [
+     707,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.5917,
+     0.7274
+    ],
+    "answer_accuracy": [
+     461,
+     700
+    ],
+    "conflict_preservation": [
+     198,
+     324
+    ],
+    "false_resolution_rate": [
+     126,
+     324
+    ],
+    "stale_error_rate": [
+     151,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     0,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     0,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.35,
+    "model_calls": 3.5,
+    "prompt_tokens": 3596.96,
+    "completion_tokens": 138.06,
+    "latency_s": 5.53
+   },
+   "R": {
+    "runs": 1072,
+    "accuracy": [
+     565,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.4444,
+     0.61
+    ],
+    "answer_accuracy": [
+     244,
+     700
+    ],
+    "conflict_preservation": [
+     273,
+     324
+    ],
+    "false_resolution_rate": [
+     48,
+     324
+    ],
+    "stale_error_rate": [
+     163,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     0,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     7,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.54,
+    "model_calls": 3.69,
+    "prompt_tokens": 3810.59,
+    "completion_tokens": 142.35,
+    "latency_s": 4.28
+   },
+   "RT": {
+    "runs": 1072,
+    "accuracy": [
+     566,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.4498,
+     0.6069
+    ],
+    "answer_accuracy": [
+     290,
+     700
+    ],
+    "conflict_preservation": [
+     228,
+     324
+    ],
+    "false_resolution_rate": [
+     95,
+     324
+    ],
+    "stale_error_rate": [
+     216,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     1,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     2,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.5,
+    "model_calls": 3.75,
+    "prompt_tokens": 3967.45,
+    "completion_tokens": 148.75,
+    "latency_s": 4.48
+   },
+   "T": {
+    "runs": 1072,
+    "accuracy": [
+     663,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.54,
+     0.6934
+    ],
+    "answer_accuracy": [
+     311,
+     700
+    ],
+    "conflict_preservation": [
+     307,
+     324
+    ],
+    "false_resolution_rate": [
+     16,
+     324
+    ],
+    "stale_error_rate": [
+     104,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     0,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     0,
+     1072
+    ],
+    "step_limit_rate": [
+     11,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.49,
+    "model_calls": 3.48,
+    "prompt_tokens": 3564.59,
+    "completion_tokens": 130.77,
+    "latency_s": 3.94
+   }
+  },
+  "meta-llama/Llama-3.1-8B-Instruct": {
+   "B": {
+    "runs": 1072,
+    "accuracy": [
+     196,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.1381,
+     0.2324
+    ],
+    "answer_accuracy": [
+     64,
+     700
+    ],
+    "conflict_preservation": [
+     91,
+     324
+    ],
+    "false_resolution_rate": [
+     11,
+     324
+    ],
+    "stale_error_rate": [
+     1,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     622,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     116,
+     1072
+    ],
+    "step_limit_rate": [
+     16,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 3.07,
+    "model_calls": 4.4,
+    "prompt_tokens": 4773.17,
+    "completion_tokens": 129.71,
+    "latency_s": 3.83
+   },
+   "EB": {
+    "runs": 1072,
+    "accuracy": [
+     270,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.197,
+     0.3076
+    ],
+    "answer_accuracy": [
+     43,
+     700
+    ],
+    "conflict_preservation": [
+     186,
+     324
+    ],
+    "false_resolution_rate": [
+     0,
+     324
+    ],
+    "stale_error_rate": [
+     5,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     533,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     104,
+     1072
+    ],
+    "step_limit_rate": [
+     3,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.96,
+    "model_calls": 4.28,
+    "prompt_tokens": 4861.55,
+    "completion_tokens": 127.56,
+    "latency_s": 3.8
+   },
+   "EBG": {
+    "runs": 1072,
+    "accuracy": [
+     354,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.2685,
+     0.3913
+    ],
+    "answer_accuracy": [
+     80,
+     700
+    ],
+    "conflict_preservation": [
+     231,
+     324
+    ],
+    "false_resolution_rate": [
+     1,
+     324
+    ],
+    "stale_error_rate": [
+     7,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     451,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     119,
+     1072
+    ],
+    "step_limit_rate": [
+     3,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 3.29,
+    "model_calls": 4.86,
+    "prompt_tokens": 5683.53,
+    "completion_tokens": 143.64,
+    "latency_s": 4.31
+   },
+   "EBG-all": {
+    "runs": 1072,
+    "accuracy": [
+     361,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.277,
+     0.3974
+    ],
+    "answer_accuracy": [
+     98,
+     700
+    ],
+    "conflict_preservation": [
+     219,
+     324
+    ],
+    "false_resolution_rate": [
+     11,
+     324
+    ],
+    "stale_error_rate": [
+     8,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     512,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     112,
+     1072
+    ],
+    "step_limit_rate": [
+     1,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 3.3,
+    "model_calls": 4.99,
+    "prompt_tokens": 5877.7,
+    "completion_tokens": 150.69,
+    "latency_s": 4.51
+   },
+   "EBG-noR3": {
+    "runs": 1072,
+    "accuracy": [
+     308,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.2313,
+     0.3461
+    ],
+    "answer_accuracy": [
+     68,
+     700
+    ],
+    "conflict_preservation": [
+     197,
+     324
+    ],
+    "false_resolution_rate": [
+     0,
+     324
+    ],
+    "stale_error_rate": [
+     8,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     552,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     100,
+     1072
+    ],
+    "step_limit_rate": [
+     2,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.97,
+    "model_calls": 4.33,
+    "prompt_tokens": 4944.59,
+    "completion_tokens": 130.62,
+    "latency_s": 3.89
+   },
+   "EBG-unsafe": {
+    "runs": 1072,
+    "accuracy": [
+     353,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.2696,
+     0.3885
+    ],
+    "answer_accuracy": [
+     80,
+     700
+    ],
+    "conflict_preservation": [
+     238,
+     324
+    ],
+    "false_resolution_rate": [
+     0,
+     324
+    ],
+    "stale_error_rate": [
+     11,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     339,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     242,
+     1072
+    ],
+    "step_limit_rate": [
+     5,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 3.27,
+    "model_calls": 4.86,
+    "prompt_tokens": 5663.84,
+    "completion_tokens": 143.82,
+    "latency_s": 4.31
+   },
+   "G": {
+    "runs": 1072,
+    "accuracy": [
+     254,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.181,
+     0.2948
+    ],
+    "answer_accuracy": [
+     41,
+     700
+    ],
+    "conflict_preservation": [
+     169,
+     324
+    ],
+    "false_resolution_rate": [
+     2,
+     324
+    ],
+    "stale_error_rate": [
+     1,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     481,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     119,
+     1072
+    ],
+    "step_limit_rate": [
+     3,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 3.01,
+    "model_calls": 4.34,
+    "prompt_tokens": 4871.04,
+    "completion_tokens": 127.14,
+    "latency_s": 3.78
+   },
+   "LA": {
+    "runs": 1072,
+    "accuracy": [
+     202,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.1441,
+     0.2341
+    ],
+    "answer_accuracy": [
+     46,
+     700
+    ],
+    "conflict_preservation": [
+     117,
+     324
+    ],
+    "false_resolution_rate": [
+     7,
+     324
+    ],
+    "stale_error_rate": [
+     6,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     605,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     117,
+     1072
+    ],
+    "step_limit_rate": [
+     4,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.99,
+    "model_calls": 4.32,
+    "prompt_tokens": 4892.89,
+    "completion_tokens": 128.55,
+    "latency_s": 4.63
+   },
+   "LG": {
+    "runs": 1072,
+    "accuracy": [
+     179,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.1292,
+     0.2074
+    ],
+    "answer_accuracy": [
+     94,
+     700
+    ],
+    "conflict_preservation": [
+     43,
+     324
+    ],
+    "false_resolution_rate": [
+     52,
+     324
+    ],
+    "stale_error_rate": [
+     22,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     639,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     110,
+     1072
+    ],
+    "step_limit_rate": [
+     0,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 3.43,
+    "model_calls": 5.17,
+    "prompt_tokens": 6105.61,
+    "completion_tokens": 156.58,
+    "latency_s": 5.78
+   },
+   "R": {
+    "runs": 1072,
+    "accuracy": [
+     279,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.2035,
+     0.3188
+    ],
+    "answer_accuracy": [
+     52,
+     700
+    ],
+    "conflict_preservation": [
+     194,
+     324
+    ],
+    "false_resolution_rate": [
+     2,
+     324
+    ],
+    "stale_error_rate": [
+     5,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     301,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     220,
+     1072
+    ],
+    "step_limit_rate": [
+     28,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 3.44,
+    "model_calls": 5.03,
+    "prompt_tokens": 5831.87,
+    "completion_tokens": 147.84,
+    "latency_s": 4.43
+   },
+   "RT": {
+    "runs": 1072,
+    "accuracy": [
+     281,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.2065,
+     0.319
+    ],
+    "answer_accuracy": [
+     62,
+     700
+    ],
+    "conflict_preservation": [
+     189,
+     324
+    ],
+    "false_resolution_rate": [
+     3,
+     324
+    ],
+    "stale_error_rate": [
+     6,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     361,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     228,
+     1072
+    ],
+    "step_limit_rate": [
+     42,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 3.53,
+    "model_calls": 5.17,
+    "prompt_tokens": 6104.31,
+    "completion_tokens": 152.69,
+    "latency_s": 4.59
+   },
+   "T": {
+    "runs": 1072,
+    "accuracy": [
+     254,
+     1072
+    ],
+    "accuracy_ci95": [
+     0.1833,
+     0.2937
+    ],
+    "answer_accuracy": [
+     40,
+     700
+    ],
+    "conflict_preservation": [
+     174,
+     324
+    ],
+    "false_resolution_rate": [
+     0,
+     324
+    ],
+    "stale_error_rate": [
+     3,
+     700
+    ],
+    "unnecessary_abstention_rate": [
+     530,
+     1024
+    ],
+    "unsupported_answer_rate": [
+     0,
+     48
+    ],
+    "format_failure_rate": [
+     108,
+     1072
+    ],
+    "step_limit_rate": [
+     3,
+     1072
+    ],
+    "missing_rate": [
+     0,
+     1072
+    ],
+    "tool_calls": 2.98,
+    "model_calls": 4.31,
+    "prompt_tokens": 4871.71,
+    "completion_tokens": 127.5,
+    "latency_s": 3.8
+   }
+  },
+  "meta-llama/Llama-3.2-3B-Instruct": {
+   "B": {
+    "runs": 268,
+    "accuracy": [
+     19,
+     268
+    ],
+    "accuracy_ci95": [
+     0.0337,
+     0.1152
+    ],
+    "answer_accuracy": [
+     7,
+     175
+    ],
+    "conflict_preservation": [
+     0,
+     81
+    ],
+    "false_resolution_rate": [
+     9,
+     81
+    ],
+    "stale_error_rate": [
+     9,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     227,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     0,
+     268
+    ],
+    "step_limit_rate": [
+     1,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 3.5,
+    "model_calls": 5.23,
+    "prompt_tokens": 5751.51,
+    "completion_tokens": 146.37,
+    "latency_s": 2.13
+   },
+   "EB": {
+    "runs": 268,
+    "accuracy": [
+     34,
+     268
+    ],
+    "accuracy_ci95": [
+     0.0815,
+     0.1791
+    ],
+    "answer_accuracy": [
+     14,
+     175
+    ],
+    "conflict_preservation": [
+     9,
+     81
+    ],
+    "false_resolution_rate": [
+     10,
+     81
+    ],
+    "stale_error_rate": [
+     4,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     199,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     3,
+     268
+    ],
+    "step_limit_rate": [
+     7,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 3.52,
+    "model_calls": 5.19,
+    "prompt_tokens": 5947.78,
+    "completion_tokens": 152.2,
+    "latency_s": 2.22
+   },
+   "EBG": {
+    "runs": 268,
+    "accuracy": [
+     112,
+     268
+    ],
+    "accuracy_ci95": [
+     0.347,
+     0.487
+    ],
+    "answer_accuracy": [
+     54,
+     175
+    ],
+    "conflict_preservation": [
+     46,
+     81
+    ],
+    "false_resolution_rate": [
+     8,
+     81
+    ],
+    "stale_error_rate": [
+     7,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     92,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     0,
+     268
+    ],
+    "step_limit_rate": [
+     1,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 4.03,
+    "model_calls": 6.26,
+    "prompt_tokens": 7492.2,
+    "completion_tokens": 190.79,
+    "latency_s": 2.79
+   },
+   "EBG-all": {
+    "runs": 268,
+    "accuracy": [
+     112,
+     268
+    ],
+    "accuracy_ci95": [
+     0.347,
+     0.487
+    ],
+    "answer_accuracy": [
+     54,
+     175
+    ],
+    "conflict_preservation": [
+     46,
+     81
+    ],
+    "false_resolution_rate": [
+     8,
+     81
+    ],
+    "stale_error_rate": [
+     7,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     93,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     0,
+     268
+    ],
+    "step_limit_rate": [
+     1,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 4.06,
+    "model_calls": 6.31,
+    "prompt_tokens": 7562.54,
+    "completion_tokens": 191.94,
+    "latency_s": 2.81
+   },
+   "EBG-noR3": {
+    "runs": 268,
+    "accuracy": [
+     40,
+     268
+    ],
+    "accuracy_ci95": [
+     0.1004,
+     0.2045
+    ],
+    "answer_accuracy": [
+     17,
+     175
+    ],
+    "conflict_preservation": [
+     11,
+     81
+    ],
+    "false_resolution_rate": [
+     8,
+     81
+    ],
+    "stale_error_rate": [
+     6,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     203,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     0,
+     268
+    ],
+    "step_limit_rate": [
+     1,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 3.54,
+    "model_calls": 5.29,
+    "prompt_tokens": 6100.88,
+    "completion_tokens": 156.22,
+    "latency_s": 2.28
+   },
+   "EBG-unsafe": {
+    "runs": 268,
+    "accuracy": [
+     107,
+     268
+    ],
+    "accuracy_ci95": [
+     0.3284,
+     0.4684
+    ],
+    "answer_accuracy": [
+     54,
+     175
+    ],
+    "conflict_preservation": [
+     46,
+     81
+    ],
+    "false_resolution_rate": [
+     5,
+     81
+    ],
+    "stale_error_rate": [
+     7,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     77,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     23,
+     268
+    ],
+    "step_limit_rate": [
+     2,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 4.03,
+    "model_calls": 6.26,
+    "prompt_tokens": 7492.2,
+    "completion_tokens": 190.79,
+    "latency_s": 2.79
+   },
+   "G": {
+    "runs": 268,
+    "accuracy": [
+     30,
+     268
+    ],
+    "accuracy_ci95": [
+     0.0704,
+     0.1599
+    ],
+    "answer_accuracy": [
+     14,
+     175
+    ],
+    "conflict_preservation": [
+     5,
+     81
+    ],
+    "false_resolution_rate": [
+     10,
+     81
+    ],
+    "stale_error_rate": [
+     7,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     210,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     6,
+     268
+    ],
+    "step_limit_rate": [
+     2,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 3.54,
+    "model_calls": 5.25,
+    "prompt_tokens": 5946.21,
+    "completion_tokens": 151.16,
+    "latency_s": 2.2
+   },
+   "LA": {
+    "runs": 268,
+    "accuracy": [
+     35,
+     268
+    ],
+    "accuracy_ci95": [
+     0.0852,
+     0.1798
+    ],
+    "answer_accuracy": [
+     14,
+     175
+    ],
+    "conflict_preservation": [
+     10,
+     81
+    ],
+    "false_resolution_rate": [
+     9,
+     81
+    ],
+    "stale_error_rate": [
+     6,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     199,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     2,
+     268
+    ],
+    "step_limit_rate": [
+     2,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 3.5,
+    "model_calls": 5.21,
+    "prompt_tokens": 5936.94,
+    "completion_tokens": 153.06,
+    "latency_s": 2.5
+   },
+   "LG": {
+    "runs": 268,
+    "accuracy": [
+     93,
+     268
+    ],
+    "accuracy_ci95": [
+     0.2815,
+     0.4148
+    ],
+    "answer_accuracy": [
+     41,
+     175
+    ],
+    "conflict_preservation": [
+     40,
+     81
+    ],
+    "false_resolution_rate": [
+     12,
+     81
+    ],
+    "stale_error_rate": [
+     4,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     97,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     1,
+     268
+    ],
+    "step_limit_rate": [
+     0,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 4.04,
+    "model_calls": 6.28,
+    "prompt_tokens": 7453.71,
+    "completion_tokens": 191.57,
+    "latency_s": 3.33
+   },
+   "R": {
+    "runs": 268,
+    "accuracy": [
+     67,
+     268
+    ],
+    "accuracy_ci95": [
+     0.1873,
+     0.3123
+    ],
+    "answer_accuracy": [
+     26,
+     175
+    ],
+    "conflict_preservation": [
+     33,
+     81
+    ],
+    "false_resolution_rate": [
+     11,
+     81
+    ],
+    "stale_error_rate": [
+     8,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     86,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     31,
+     268
+    ],
+    "step_limit_rate": [
+     12,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 4.08,
+    "model_calls": 6.28,
+    "prompt_tokens": 7378.55,
+    "completion_tokens": 185.63,
+    "latency_s": 2.72
+   },
+   "RT": {
+    "runs": 268,
+    "accuracy": [
+     79,
+     268
+    ],
+    "accuracy_ci95": [
+     0.2285,
+     0.3609
+    ],
+    "answer_accuracy": [
+     26,
+     175
+    ],
+    "conflict_preservation": [
+     45,
+     81
+    ],
+    "false_resolution_rate": [
+     11,
+     81
+    ],
+    "stale_error_rate": [
+     12,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     79,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     29,
+     268
+    ],
+    "step_limit_rate": [
+     13,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 4.05,
+    "model_calls": 6.25,
+    "prompt_tokens": 7396.92,
+    "completion_tokens": 187.23,
+    "latency_s": 2.74
+   },
+   "T": {
+    "runs": 268,
+    "accuracy": [
+     33,
+     268
+    ],
+    "accuracy_ci95": [
+     0.0815,
+     0.171
+    ],
+    "answer_accuracy": [
+     13,
+     175
+    ],
+    "conflict_preservation": [
+     9,
+     81
+    ],
+    "false_resolution_rate": [
+     10,
+     81
+    ],
+    "stale_error_rate": [
+     12,
+     175
+    ],
+    "unnecessary_abstention_rate": [
+     203,
+     256
+    ],
+    "unsupported_answer_rate": [
+     0,
+     12
+    ],
+    "format_failure_rate": [
+     2,
+     268
+    ],
+    "step_limit_rate": [
+     1,
+     268
+    ],
+    "missing_rate": [
+     0,
+     268
+    ],
+    "tool_calls": 3.49,
+    "model_calls": 5.2,
+    "prompt_tokens": 5923.19,
+    "completion_tokens": 151.59,
+    "latency_s": 2.21
+   }
+  },
+  "POOLED": {
+   "B": {
+    "runs": 4824,
+    "accuracy": [
+     2142,
+     4824
+    ],
+    "accuracy_ci95": [
+     0.3953,
+     0.4927
+    ],
+    "answer_accuracy": [
+     1000,
+     3150
+    ],
+    "conflict_preservation": [
+     950,
+     1458
+    ],
+    "false_resolution_rate": [
+     186,
+     1458
+    ],
+    "stale_error_rate": [
+     129,
+     3150
+    ],
+    "unnecessary_abstention_rate": [
+     900,
+     4608
+    ],
+    "unsupported_answer_rate": [
+     2,
+     216
+    ],
+    "format_failure_rate": [
+     155,
+     4824
+    ],
+    "step_limit_rate": [
+     105,
+     4824
+    ],
+    "missing_rate": [
+     0,
+     4824
+    ],
+    "tool_calls": 2.59,
+    "model_calls": 3.7,
+    "prompt_tokens": 3653.39,
+    "completion_tokens": 149.46,
+    "latency_s": 4.12
+   },
+   "EB": {
+    "runs": 4824,
+    "accuracy": [
+     2609,
+     4824
+    ],
+    "accuracy_ci95": [
+     0.4925,
+     0.5876
+    ],
+    "answer_accuracy": [
+     1233,
+     3150
+    ],
+    "conflict_preservation": [
+     1190,
+     1458
+    ],
+    "false_resolution_rate": [
+     29,
+     1458
+    ],
+    "stale_error_rate": [
+     106,
+     3150
+    ],
+    "unnecessary_abstention_rate": [
+     770,
+     4608
+    ],
+    "unsupported_answer_rate": [
+     0,
+     216
+    ],
+    "format_failure_rate": [
+     149,
+     4824
+    ],
+    "step_limit_rate": [
+     95,
+     4824
+    ],
+    "missing_rate": [
+     0,
+     4824
+    ],
+    "tool_calls": 2.59,
+    "model_calls": 3.69,
+    "prompt_tokens": 3940.15,
+    "completion_tokens": 143.12,
+    "latency_s": 4.04
+   },
+   "EBG": {
+    "runs": 4824,
+    "accuracy": [
+     2939,
+     4824
+    ],
+    "accuracy_ci95": [
+     0.5547,
+     0.6617
+    ],
+    "answer_accuracy": [
+     1449,
+     3150
+    ],
+    "conflict_preservation": [
+     1290,
+     1458
+    ],
+    "false_resolution_rate": [
+     27,
+     1458
+    ],
+    "stale_error_rate": [
+     139,
+     3150
+    ],
+    "unnecessary_abstention_rate": [
+     589,
+     4608
+    ],
+    "unsupported_answer_rate": [
+     0,
+     216
+    ],
+    "format_failure_rate": [
+     157,
+     4824
+    ],
+    "step_limit_rate": [
+     45,
+     4824
+    ],
+    "missing_rate": [
+     0,
+     4824
+    ],
+    "tool_calls": 2.69,
+    "model_calls": 3.95,
+    "prompt_tokens": 4308.39,
+    "completion_tokens": 152.97,
+    "latency_s": 4.27
+   },
+   "EBG-all": {
+    "runs": 4824,
+    "accuracy": [
+     3356,
+     4824
+    ],
+    "accuracy_ci95": [
+     0.6493,
+     0.7376
+    ],
+    "answer_accuracy": [
+     2027,
+     3150
+    ],
+    "conflict_preservation": [
+     1127,
+     1458
+    ],
+    "false_resolution_rate": [
+     188,
+     1458
+    ],
+    "stale_error_rate": [
+     146,
+     3150
+    ],
+    "unnecessary_abstention_rate": [
+     641,
+     4608
+    ],
+    "unsupported_answer_rate": [
+     0,
+     216
+    ],
+    "format_failure_rate": [
+     158,
+     4824
+    ],
+    "step_limit_rate": [
+     47,
+     4824
+    ],
+    "missing_rate": [
+     0,
+     4824
+    ],
+    "tool_calls": 2.7,
+    "model_calls": 4.14,
+    "prompt_tokens": 4583.47,
+    "completion_tokens": 163.92,
+    "latency_s": 4.54
+   },
+   "EBG-noR3": {
+    "runs": 4824,
+    "accuracy": [
+     2810,
+     4824
+    ],
+    "accuracy_ci95": [
+     0.5305,
+     0.6323
+    ],
+    "answer_accuracy": [
+     1396,
+     3150
+    ],
+    "conflict_preservation": [
+     1215,
+     1458
+    ],
+    "false_resolution_rate": [
+     28,
+     1458
+    ],
+    "stale_error_rate": [
+     145,
+     3150
+    ],
+    "unnecessary_abstention_rate": [
+     812,
+     4608
+    ],
+    "unsupported_answer_rate": [
+     0,
+     216
+    ],
+    "format_failure_rate": [
+     141,
+     4824
+    ],
+    "step_limit_rate": [
+     45,
+     4824
+    ],
+    "missing_rate": [
+     0,
+     4824
+    ],
+    "tool_calls": 2.6,
+    "model_calls": 3.77,
+    "prompt_tokens": 4073.72,
+    "completion_tokens": 147.66,
+    "latency_s": 4.14
+   },
+   "EBG-unsafe": {
+    "runs": 4824,
+    "accuracy": [
+     2942,
+     4824
+    ],
+    "accuracy_ci95": [
+     0.5564,
+     0.6619
+    ],
+    "answer_accuracy": [
+     1456,
+     3150
+    ],
+    "conflict_preservation": [
+     1297,
+     1458
+    ],
+    "false_resolution_rate": [
+     23,
+     1458
+    ],
+    "stale_error_rate": [
+     146,
+     3150
+    ],
+    "unnecessary_abstention_rate": [
+     454,
+     4608
+    ],
+    "unsupported_answer_rate": [
+     0,
+     216
+    ],
+    "format_failure_rate": [
+     307,
+     4824
+    ],
+    "step_limit_rate": [
+     53,
+     4824
+    ],
+    "missing_rate": [
+     0,
+     4824
+    ],
+    "tool_calls": 2.71,
+    "model_calls": 3.96,
+    "prompt_tokens": 4335.78,
+    "completion_tokens": 153.31,
+    "latency_s": 4.28
+   },
+   "G": {
+    "runs": 4824,
+    "accuracy": [
+     2040,
+     4824
+    ],
+    "accuracy_ci95": [
+     0.3644,
+     0.4822
+    ],
+    "answer_accuracy": [
+     792,
+     3150
+    ],
+    "conflict_preservation": [
+     1062,
+     1458
+    ],
+    "false_resolution_rate": [
+     134,
+     1458
+    ],
+    "stale_error_rate": [
+     253,
+     3150
+    ],
+    "unnecessary_abstention_rate": [
+     737,
+     4608
+    ],
+    "unsupported_answer_rate": [
+     0,
+     216
+    ],
+    "format_failure_rate": [
+     178,
+     4824
+    ],
+    "step_limit_rate": [
+     93,
+     4824
+    ],
+    "missing_rate": [
+     0,
+     4824
+    ],
+    "tool_calls": 2.7,
+    "model_calls": 3.8,
+    "prompt_tokens": 4000.37,
+    "completion_tokens": 147.87,
+    "latency_s": 4.2
+   },
+   "LA": {
+    "runs": 4824,
+    "accuracy": [
+     2258,
+     4824
+    ],
+    "accuracy_ci95": [
+     0.4301,
+     0.5067
+    ],
+    "answer_accuracy": [
+     1226,
+     3150
+    ],
+    "conflict_preservation": [
+     842,
+     1458
+    ],
+    "false_resolution_rate": [
+     320,
+     1458
+    ],
+    "stale_error_rate": [
+     290,
+     3150
+    ],
+    "unnecessary_abstention_rate": [
+     849,
+     4608
+    ],
+    "unsupported_answer_rate": [
+     0,
+     216
+    ],
+    "format_failure_rate": [
+     167,
+     4824
+    ],
+    "step_limit_rate": [
+     82,
+     4824
+    ],
+    "missing_rate": [
+     0,
+     4824
+    ],
+    "tool_calls": 2.63,
+    "model_calls": 3.73,
+    "prompt_tokens": 3966.11,
+    "completion_tokens": 144.98,
+    "latency_s": 5.1
+   },
+   "LG": {
+    "runs": 4824,
+    "accuracy": [
+     2201,
+     4824
+    ],
+    "accuracy_ci95": [
+     0.4192,
+     0.4948
+    ],
+    "answer_accuracy": [
+     1382,
+     3150
+    ],
+    "conflict_preservation": [
+     618,
+     1458
+    ],
+    "false_resolution_rate": [
+     540,
+     1458
+    ],
+    "stale_error_rate": [
+     427,
+     3150
+    ],
+    "unnecessary_abstention_rate": [
+     788,
+     4608
+    ],
+    "unsupported_answer_rate": [
+     0,
+     216
+    ],
+    "format_failure_rate": [
+     160,
+     4824
+    ],
+    "step_limit_rate": [
+     55,
+     4824
+    ],
+    "missing_rate": [
+     0,
+     4824
+    ],
+    "tool_calls": 2.78,
+    "model_calls": 4.15,
+    "prompt_tokens": 4550.42,
+    "completion_tokens": 162.11,
+    "latency_s": 5.62
+   },
+   "R": {
+    "runs": 4824,
+    "accuracy": [
+     2131,
+     4824
+    ],
+    "accuracy_ci95": [
+     0.3768,
+     0.5075
+    ],
+    "answer_accuracy": [
+     864,
+     3150
+    ],
+    "conflict_preservation": [
+     1082,
+     1458
+    ],
+    "false_resolution_rate": [
+     179,
+     1458
+    ],
+    "stale_error_rate": [
+     570,
+     3150
+    ],
+    "unnecessary_abstention_rate": [
+     431,
+     4608
+    ],
+    "unsupported_answer_rate": [
+     0,
+     216
+    ],
+    "format_failure_rate": [
+     295,
+     4824
+    ],
+    "step_limit_rate": [
+     91,
+     4824
+    ],
+    "missing_rate": [
+     0,
+     4824
+    ],
+    "tool_calls": 2.83,
+    "model_calls": 4.16,
+    "prompt_tokens": 4513.28,
+    "completion_tokens": 163.77,
+    "latency_s": 4.58
+   },
+   "RT": {
+    "runs": 4824,
+    "accuracy": [
+     2093,
+     4824
+    ],
+    "accuracy_ci95": [
+     0.3701,
+     0.4994
+    ],
+    "answer_accuracy": [
+     942,
+     3150
+    ],
+    "conflict_preservation": [
+     974,
+     1458
+    ],
+    "false_resolution_rate": [
+     277,
+     1458
+    ],
+    "stale_error_rate": [
+     766,
+     3150
+    ],
+    "unnecessary_abstention_rate": [
+     513,
+     4608
+    ],
+    "unsupported_answer_rate": [
+     2,
+     216
+    ],
+    "format_failure_rate": [
+     301,
+     4824
+    ],
+    "step_limit_rate": [
+     90,
+     4824
+    ],
+    "missing_rate": [
+     0,
+     4824
+    ],
+    "tool_calls": 2.81,
+    "model_calls": 4.24,
+    "prompt_tokens": 4669.33,
+    "completion_tokens": 167.22,
+    "latency_s": 4.66
+   },
+   "T": {
+    "runs": 4824,
+    "accuracy": [
+     2178,
+     4824
+    ],
+    "accuracy_ci95": [
+     0.3922,
+     0.5093
+    ],
+    "answer_accuracy": [
+     830,
+     3150
+    ],
+    "conflict_preservation": [
+     1160,
+     1458
+    ],
+    "false_resolution_rate": [
+     53,
+     1458
+    ],
+    "stale_error_rate": [
+     324,
+     3150
+    ],
+    "unnecessary_abstention_rate": [
+     779,
+     4608
+    ],
+    "unsupported_answer_rate": [
+     0,
+     216
+    ],
+    "format_failure_rate": [
+     149,
+     4824
+    ],
+    "step_limit_rate": [
+     73,
+     4824
+    ],
+    "missing_rate": [
+     0,
+     4824
+    ],
+    "tool_calls": 2.64,
+    "model_calls": 3.75,
+    "prompt_tokens": 3979.1,
+    "completion_tokens": 145.51,
+    "latency_s": 4.11
+   }
+  }
+ },
+ "by_decoding": {
+  "Qwen/Qwen2.5-14B-Instruct": {
+   "greedy": {
+    "B": [
+     151,
+     268
+    ],
+    "EB": [
+     203,
+     268
+    ],
+    "EBG": [
+     197,
+     268
+    ],
+    "EBG-all": [
+     197,
+     268
+    ],
+    "EBG-noR3": [
+     197,
+     268
+    ],
+    "EBG-unsafe": [
+     197,
+     268
+    ],
+    "G": [
+     143,
+     268
+    ],
+    "LA": [
+     170,
+     268
+    ],
+    "LG": [
+     160,
+     268
+    ],
+    "R": [
+     133,
+     268
+    ],
+    "RT": [
+     117,
+     268
+    ],
+    "T": [
+     136,
+     268
+    ]
+   }
+  },
+  "Qwen/Qwen2.5-3B-Instruct": {
+   "T0.7_s1": {
+    "B": [
+     131,
+     268
+    ],
+    "EB": [
+     117,
+     268
+    ],
+    "EBG": [
+     163,
+     268
+    ],
+    "EBG-all": [
+     211,
+     268
+    ],
+    "EBG-noR3": [
+     153,
+     268
+    ],
+    "EBG-unsafe": [
+     159,
+     268
+    ],
+    "G": [
+     112,
+     268
+    ],
+    "LA": [
+     122,
+     268
+    ],
+    "LG": [
+     123,
+     268
+    ],
+    "R": [
+     133,
+     268
+    ],
+    "RT": [
+     133,
+     268
+    ],
+    "T": [
+     114,
+     268
+    ]
+   },
+   "T0.7_s2": {
+    "B": [
+     130,
+     268
+    ],
+    "EB": [
+     119,
+     268
+    ],
+    "EBG": [
+     164,
+     268
+    ],
+    "EBG-all": [
+     205,
+     268
+    ],
+    "EBG-noR3": [
+     154,
+     268
+    ],
+    "EBG-unsafe": [
+     157,
+     268
+    ],
+    "G": [
+     104,
+     268
+    ],
+    "LA": [
+     118,
+     268
+    ],
+    "LG": [
+     125,
+     268
+    ],
+    "R": [
+     130,
+     268
+    ],
+    "RT": [
+     130,
+     268
+    ],
+    "T": [
+     114,
+     268
+    ]
+   },
+   "T0.7_s3": {
+    "B": [
+     130,
+     268
+    ],
+    "EB": [
+     114,
+     268
+    ],
+    "EBG": [
+     149,
+     268
+    ],
+    "EBG-all": [
+     215,
+     268
+    ],
+    "EBG-noR3": [
+     157,
+     268
+    ],
+    "EBG-unsafe": [
+     162,
+     268
+    ],
+    "G": [
+     109,
+     268
+    ],
+    "LA": [
+     123,
+     268
+    ],
+    "LG": [
+     125,
+     268
+    ],
+    "R": [
+     134,
+     268
+    ],
+    "RT": [
+     134,
+     268
+    ],
+    "T": [
+     114,
+     268
+    ]
+   },
+   "greedy": {
+    "B": [
+     131,
+     268
+    ],
+    "EB": [
+     118,
+     268
+    ],
+    "EBG": [
+     162,
+     268
+    ],
+    "EBG-all": [
+     216,
+     268
+    ],
+    "EBG-noR3": [
+     162,
+     268
+    ],
+    "EBG-unsafe": [
+     162,
+     268
+    ],
+    "G": [
+     110,
+     268
+    ],
+    "LA": [
+     127,
+     268
+    ],
+    "LG": [
+     134,
+     268
+    ],
+    "R": [
+     130,
+     268
+    ],
+    "RT": [
+     134,
+     268
+    ],
+    "T": [
+     114,
+     268
+    ]
+   }
+  },
+  "Qwen/Qwen2.5-7B-Instruct": {
+   "T0.7_s1": {
+    "B": [
+     157,
+     268
+    ],
+    "EB": [
+     199,
+     268
+    ],
+    "EBG": [
+     200,
+     268
+    ],
+    "EBG-all": [
+     226,
+     268
+    ],
+    "EBG-noR3": [
+     198,
+     268
+    ],
+    "EBG-unsafe": [
+     198,
+     268
+    ],
+    "G": [
+     145,
+     268
+    ],
+    "LA": [
+     152,
+     268
+    ],
+    "LG": [
+     141,
+     268
+    ],
+    "R": [
+     140,
+     268
+    ],
+    "RT": [
+     130,
+     268
+    ],
+    "T": [
+     162,
+     268
+    ]
+   },
+   "T0.7_s2": {
+    "B": [
+     155,
+     268
+    ],
+    "EB": [
+     199,
+     268
+    ],
+    "EBG": [
+     201,
+     268
+    ],
+    "EBG-all": [
+     227,
+     268
+    ],
+    "EBG-noR3": [
+     203,
+     268
+    ],
+    "EBG-unsafe": [
+     207,
+     268
+    ],
+    "G": [
+     147,
+     268
+    ],
+    "LA": [
+     144,
+     268
+    ],
+    "LG": [
+     141,
+     268
+    ],
+    "R": [
+     140,
+     268
+    ],
+    "RT": [
+     124,
+     268
+    ],
+    "T": [
+     158,
+     268
+    ]
+   },
+   "T0.7_s3": {
+    "B": [
+     144,
+     268
+    ],
+    "EB": [
+     195,
+     268
+    ],
+    "EBG": [
+     201,
+     268
+    ],
+    "EBG-all": [
+     225,
+     268
+    ],
+    "EBG-noR3": [
+     205,
+     268
+    ],
+    "EBG-unsafe": [
+     206,
+     268
+    ],
+    "G": [
+     147,
+     268
+    ],
+    "LA": [
+     153,
+     268
+    ],
+    "LG": [
+     133,
+     268
+    ],
+    "R": [
+     141,
+     268
+    ],
+    "RT": [
+     135,
+     268
+    ],
+    "T": [
+     158,
+     268
+    ]
+   },
+   "greedy": {
+    "B": [
+     153,
+     268
+    ],
+    "EB": [
+     200,
+     268
+    ],
+    "EBG": [
+     202,
+     268
+    ],
+    "EBG-all": [
+     225,
+     268
+    ],
+    "EBG-noR3": [
+     202,
+     268
+    ],
+    "EBG-unsafe": [
+     202,
+     268
+    ],
+    "G": [
+     146,
+     268
+    ],
+    "LA": [
+     149,
+     268
+    ],
+    "LG": [
+     140,
+     268
+    ],
+    "R": [
+     139,
+     268
+    ],
+    "RT": [
+     130,
+     268
+    ],
+    "T": [
+     158,
+     268
+    ]
+   }
+  },
+  "Qwen/Qwen3-8B": {
+   "T0.7_s1": {
+    "B": [
+     160,
+     268
+    ],
+    "EB": [
+     211,
+     268
+    ],
+    "EBG": [
+     209,
+     268
+    ],
+    "EBG-all": [
+     234,
+     268
+    ],
+    "EBG-noR3": [
+     208,
+     268
+    ],
+    "EBG-unsafe": [
+     209,
+     268
+    ],
+    "G": [
+     148,
+     268
+    ],
+    "LA": [
+     188,
+     268
+    ],
+    "LG": [
+     177,
+     268
+    ],
+    "R": [
+     140,
+     268
+    ],
+    "RT": [
+     141,
+     268
+    ],
+    "T": [
+     167,
+     268
+    ]
+   },
+   "T0.7_s2": {
+    "B": [
+     163,
+     268
+    ],
+    "EB": [
+     210,
+     268
+    ],
+    "EBG": [
+     208,
+     268
+    ],
+    "EBG-all": [
+     234,
+     268
+    ],
+    "EBG-noR3": [
+     208,
+     268
+    ],
+    "EBG-unsafe": [
+     208,
+     268
+    ],
+    "G": [
+     147,
+     268
+    ],
+    "LA": [
+     192,
+     268
+    ],
+    "LG": [
+     177,
+     268
+    ],
+    "R": [
+     141,
+     268
+    ],
+    "RT": [
+     143,
+     268
+    ],
+    "T": [
+     165,
+     268
+    ]
+   },
+   "T0.7_s3": {
+    "B": [
+     160,
+     268
+    ],
+    "EB": [
+     209,
+     268
+    ],
+    "EBG": [
+     209,
+     268
+    ],
+    "EBG-all": [
+     234,
+     268
+    ],
+    "EBG-noR3": [
+     207,
+     268
+    ],
+    "EBG-unsafe": [
+     207,
+     268
+    ],
+    "G": [
+     149,
+     268
+    ],
+    "LA": [
+     190,
+     268
+    ],
+    "LG": [
+     178,
+     268
+    ],
+    "R": [
+     143,
+     268
+    ],
+    "RT": [
+     140,
+     268
+    ],
+    "T": [
+     164,
+     268
+    ]
+   },
+   "greedy": {
+    "B": [
+     162,
+     268
+    ],
+    "EB": [
+     211,
+     268
+    ],
+    "EBG": [
+     208,
+     268
+    ],
+    "EBG-all": [
+     234,
+     268
+    ],
+    "EBG-noR3": [
+     208,
+     268
+    ],
+    "EBG-unsafe": [
+     208,
+     268
+    ],
+    "G": [
+     149,
+     268
+    ],
+    "LA": [
+     193,
+     268
+    ],
+    "LG": [
+     175,
+     268
+    ],
+    "R": [
+     141,
+     268
+    ],
+    "RT": [
+     142,
+     268
+    ],
+    "T": [
+     167,
+     268
+    ]
+   }
+  },
+  "meta-llama/Llama-3.1-8B-Instruct": {
+   "T0.7_s1": {
+    "B": [
+     51,
+     268
+    ],
+    "EB": [
+     57,
+     268
+    ],
+    "EBG": [
+     88,
+     268
+    ],
+    "EBG-all": [
+     86,
+     268
+    ],
+    "EBG-noR3": [
+     74,
+     268
+    ],
+    "EBG-unsafe": [
+     92,
+     268
+    ],
+    "G": [
+     61,
+     268
+    ],
+    "LA": [
+     46,
+     268
+    ],
+    "LG": [
+     46,
+     268
+    ],
+    "R": [
+     63,
+     268
+    ],
+    "RT": [
+     68,
+     268
+    ],
+    "T": [
+     69,
+     268
+    ]
+   },
+   "T0.7_s2": {
+    "B": [
+     47,
+     268
+    ],
+    "EB": [
+     66,
+     268
+    ],
+    "EBG": [
+     93,
+     268
+    ],
+    "EBG-all": [
+     91,
+     268
+    ],
+    "EBG-noR3": [
+     80,
+     268
+    ],
+    "EBG-unsafe": [
+     81,
+     268
+    ],
+    "G": [
+     63,
+     268
+    ],
+    "LA": [
+     50,
+     268
+    ],
+    "LG": [
+     45,
+     268
+    ],
+    "R": [
+     75,
+     268
+    ],
+    "RT": [
+     73,
+     268
+    ],
+    "T": [
+     68,
+     268
+    ]
+   },
+   "T0.7_s3": {
+    "B": [
+     51,
+     268
+    ],
+    "EB": [
+     68,
+     268
+    ],
+    "EBG": [
+     80,
+     268
+    ],
+    "EBG-all": [
+     98,
+     268
+    ],
+    "EBG-noR3": [
+     72,
+     268
+    ],
+    "EBG-unsafe": [
+     88,
+     268
+    ],
+    "G": [
+     66,
+     268
+    ],
+    "LA": [
+     55,
+     268
+    ],
+    "LG": [
+     48,
+     268
+    ],
+    "R": [
+     71,
+     268
+    ],
+    "RT": [
+     76,
+     268
+    ],
+    "T": [
+     52,
+     268
+    ]
+   },
+   "greedy": {
+    "B": [
+     47,
+     268
+    ],
+    "EB": [
+     79,
+     268
+    ],
+    "EBG": [
+     93,
+     268
+    ],
+    "EBG-all": [
+     86,
+     268
+    ],
+    "EBG-noR3": [
+     82,
+     268
+    ],
+    "EBG-unsafe": [
+     92,
+     268
+    ],
+    "G": [
+     64,
+     268
+    ],
+    "LA": [
+     51,
+     268
+    ],
+    "LG": [
+     40,
+     268
+    ],
+    "R": [
+     70,
+     268
+    ],
+    "RT": [
+     64,
+     268
+    ],
+    "T": [
+     65,
+     268
+    ]
+   }
+  },
+  "meta-llama/Llama-3.2-3B-Instruct": {
+   "greedy": {
+    "B": [
+     19,
+     268
+    ],
+    "EB": [
+     34,
+     268
+    ],
+    "EBG": [
+     112,
+     268
+    ],
+    "EBG-all": [
+     112,
+     268
+    ],
+    "EBG-noR3": [
+     40,
+     268
+    ],
+    "EBG-unsafe": [
+     107,
+     268
+    ],
+    "G": [
+     30,
+     268
+    ],
+    "LA": [
+     35,
+     268
+    ],
+    "LG": [
+     93,
+     268
+    ],
+    "R": [
+     67,
+     268
+    ],
+    "RT": [
+     79,
+     268
+    ],
+    "T": [
+     33,
+     268
+    ]
+   }
+  }
+ }
+}

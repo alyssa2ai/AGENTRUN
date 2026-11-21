@@ -1,0 +1,56 @@
+{
+ "split": "p2val",
+ "n_skeleton": 88,
+ "n_valid": 77,
+ "excluded_ids": {
+  "p2val-0006": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0012": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0027": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0039": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0044": [
+   "slot 1 lacks own value"
+  ],
+  "p2val-0056": [
+   "slot 2 lacks entity"
+  ],
+  "p2val-0060": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0069": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0075": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0081": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0087": [
+   "slot 1 lacks own value",
+   "slot 2 lacks entity",
+   "slot 2 lacks own value"
+  ]
+ },
+ "skeleton.jsonl": "3410b0285ea738e5b64bbaa6fbc14ec98ff34a3299eccd75f7fff808b413666e",
+ "texts.jsonl": "0497e796240e1a2a55f376f60e1d7afb43fd8195e0c53f239f0feb7d23693fbf",
+ "groups.jsonl": "afcccc676973a125e5a9642979784b4950f875a5ef84292eeae19b1069df5ccf",
+ "tasks.jsonl": "82fab1f265861a59a46f0f4a4c22845cc237ca85e640ed38c35e967830c75bf6",
+ "annotator_input.jsonl": "913b81af2cbe499afad3af4e1102f5182e75b691b76ee5c9778c2057372cdd6c",
+ "family_definition": "category x attribute"
+}

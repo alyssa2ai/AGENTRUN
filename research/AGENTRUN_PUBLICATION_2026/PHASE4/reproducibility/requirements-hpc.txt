@@ -1,0 +1,12 @@
+# Python 3.12.3 on Ubuntu 24.04.3 LTS (Linux 6.8), CUDA 13.2, 1 x NVIDIA L40 (44.6 GiB visible) per cell.
+# Versions recorded in every run manifest (torch, transformers) and by `pip freeze` in the cluster venv (19 Nov 2026).
+torch==2.15.0          # built for CUDA 13.2 (manifest: 2.15.0+cu132)
+transformers==5.22.2
+accelerate==1.15.0
+tokenizers==0.23.3
+safetensors==0.8.0
+huggingface_hub==2.4.0
+numpy==2.5.4
+Jinja2==3.1.6
+# Analysis and tests are pure Python (standard library + the repository's memlab/evarb modules); pytest for tests.
+pytest

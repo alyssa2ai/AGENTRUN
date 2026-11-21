@@ -1,0 +1,6708 @@
+{
+ "n_tasks": 51,
+ "models": [
+  "Qwen/Qwen2.5-3B-Instruct",
+  "Qwen/Qwen2.5-7B-Instruct",
+  "Qwen/Qwen3-8B",
+  "meta-llama/Llama-3.1-8B-Instruct"
+ ],
+ "configs": [
+  "B",
+  "EB",
+  "EBG",
+  "EBG-all",
+  "EBG-noR3",
+  "EBG-unsafe",
+  "G",
+  "LA",
+  "LG",
+  "R",
+  "RT",
+  "T"
+ ],
+ "n_rows": 2448,
+ "n_families": 51,
+ "per_model": {
+  "Qwen/Qwen2.5-3B-Instruct": {
+   "B": {
+    "n": 51,
+    "success": 29,
+    "harmful": 6,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 1,
+    "false_conflict": 15,
+    "arbitrary_pick": 5,
+    "stale_value": 0,
+    "unsupported": 1,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.06,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.73
+   },
+   "EB": {
+    "n": 51,
+    "success": 31,
+    "harmful": 0,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 20,
+    "arbitrary_pick": 0,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.0,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.49
+   },
+   "EBG": {
+    "n": 51,
+    "success": 40,
+    "harmful": 3,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 8,
+    "arbitrary_pick": 0,
+    "stale_value": 3,
+    "unsupported": 0,
+    "notices": 12,
+    "reverted": 0,
+    "model_calls_mean": 3.24,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.67
+   },
+   "EBG-all": {
+    "n": 51,
+    "success": 45,
+    "harmful": 5,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 1,
+    "arbitrary_pick": 2,
+    "stale_value": 3,
+    "unsupported": 0,
+    "notices": 21,
+    "reverted": 0,
+    "model_calls_mean": 3.41,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.8
+   },
+   "EBG-noR3": {
+    "n": 51,
+    "success": 40,
+    "harmful": 3,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 8,
+    "arbitrary_pick": 0,
+    "stale_value": 3,
+    "unsupported": 0,
+    "notices": 12,
+    "reverted": 0,
+    "model_calls_mean": 3.24,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.66
+   },
+   "EBG-unsafe": {
+    "n": 51,
+    "success": 40,
+    "harmful": 3,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 8,
+    "arbitrary_pick": 0,
+    "stale_value": 3,
+    "unsupported": 0,
+    "notices": 12,
+    "reverted": 0,
+    "model_calls_mean": 3.24,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.66
+   },
+   "G": {
+    "n": 51,
+    "success": 27,
+    "harmful": 4,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 1,
+    "over_abstain": 0,
+    "false_conflict": 19,
+    "arbitrary_pick": 2,
+    "stale_value": 2,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.2,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.56
+   },
+   "LA": {
+    "n": 51,
+    "success": 30,
+    "harmful": 0,
+    "missing": 0,
+    "format_error": 1,
+    "step_limit": 0,
+    "over_abstain": 1,
+    "false_conflict": 19,
+    "arbitrary_pick": 0,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.06,
+    "arbiter_calls_mean": 0.84,
+    "latency_s_mean": 2.04
+   },
+   "LG": {
+    "n": 51,
+    "success": 37,
+    "harmful": 3,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 1,
+    "false_conflict": 10,
+    "arbitrary_pick": 1,
+    "stale_value": 2,
+    "unsupported": 0,
+    "notices": 10,
+    "reverted": 0,
+    "model_calls_mean": 3.27,
+    "arbiter_calls_mean": 0.84,
+    "latency_s_mean": 2.21
+   },
+   "R": {
+    "n": 51,
+    "success": 32,
+    "harmful": 10,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 9,
+    "arbitrary_pick": 2,
+    "stale_value": 8,
+    "unsupported": 0,
+    "notices": 11,
+    "reverted": 0,
+    "model_calls_mean": 3.43,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.73
+   },
+   "RT": {
+    "n": 51,
+    "success": 36,
+    "harmful": 8,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 2,
+    "false_conflict": 5,
+    "arbitrary_pick": 0,
+    "stale_value": 8,
+    "unsupported": 0,
+    "notices": 20,
+    "reverted": 0,
+    "model_calls_mean": 3.39,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.77
+   },
+   "T": {
+    "n": 51,
+    "success": 30,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 20,
+    "arbitrary_pick": 0,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.0,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.47
+   }
+  },
+  "Qwen/Qwen2.5-7B-Instruct": {
+   "B": {
+    "n": 51,
+    "success": 36,
+    "harmful": 3,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 3,
+    "over_abstain": 1,
+    "false_conflict": 8,
+    "arbitrary_pick": 2,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.51,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.75
+   },
+   "EB": {
+    "n": 51,
+    "success": 44,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 2,
+    "over_abstain": 0,
+    "false_conflict": 4,
+    "arbitrary_pick": 0,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.51,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.71
+   },
+   "EBG": {
+    "n": 51,
+    "success": 42,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 2,
+    "over_abstain": 0,
+    "false_conflict": 6,
+    "arbitrary_pick": 0,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 2,
+    "reverted": 0,
+    "model_calls_mean": 3.59,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.81
+   },
+   "EBG-all": {
+    "n": 51,
+    "success": 44,
+    "harmful": 3,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 2,
+    "over_abstain": 0,
+    "false_conflict": 2,
+    "arbitrary_pick": 2,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 8,
+    "reverted": 0,
+    "model_calls_mean": 3.71,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.99
+   },
+   "EBG-noR3": {
+    "n": 51,
+    "success": 42,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 2,
+    "over_abstain": 0,
+    "false_conflict": 6,
+    "arbitrary_pick": 0,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 2,
+    "reverted": 0,
+    "model_calls_mean": 3.59,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.81
+   },
+   "EBG-unsafe": {
+    "n": 51,
+    "success": 42,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 2,
+    "over_abstain": 0,
+    "false_conflict": 6,
+    "arbitrary_pick": 0,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 2,
+    "reverted": 0,
+    "model_calls_mean": 3.59,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.81
+   },
+   "G": {
+    "n": 51,
+    "success": 35,
+    "harmful": 4,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 1,
+    "over_abstain": 0,
+    "false_conflict": 11,
+    "arbitrary_pick": 0,
+    "stale_value": 4,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.73,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.06
+   },
+   "LA": {
+    "n": 51,
+    "success": 36,
+    "harmful": 13,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 2,
+    "over_abstain": 0,
+    "false_conflict": 0,
+    "arbitrary_pick": 11,
+    "stale_value": 2,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.61,
+    "arbiter_calls_mean": 0.84,
+    "latency_s_mean": 4.73
+   },
+   "LG": {
+    "n": 51,
+    "success": 27,
+    "harmful": 18,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 2,
+    "over_abstain": 0,
+    "false_conflict": 4,
+    "arbitrary_pick": 15,
+    "stale_value": 3,
+    "unsupported": 0,
+    "notices": 9,
+    "reverted": 0,
+    "model_calls_mean": 3.82,
+    "arbiter_calls_mean": 0.84,
+    "latency_s_mean": 5.05
+   },
+   "R": {
+    "n": 51,
+    "success": 33,
+    "harmful": 7,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 1,
+    "over_abstain": 0,
+    "false_conflict": 10,
+    "arbitrary_pick": 0,
+    "stale_value": 7,
+    "unsupported": 0,
+    "notices": 7,
+    "reverted": 0,
+    "model_calls_mean": 3.9,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.31
+   },
+   "RT": {
+    "n": 51,
+    "success": 34,
+    "harmful": 13,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 1,
+    "over_abstain": 0,
+    "false_conflict": 3,
+    "arbitrary_pick": 2,
+    "stale_value": 11,
+    "unsupported": 0,
+    "notices": 9,
+    "reverted": 0,
+    "model_calls_mean": 3.73,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.08
+   },
+   "T": {
+    "n": 51,
+    "success": 41,
+    "harmful": 6,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 1,
+    "over_abstain": 0,
+    "false_conflict": 3,
+    "arbitrary_pick": 0,
+    "stale_value": 6,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.53,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.78
+   }
+  },
+  "Qwen/Qwen3-8B": {
+   "B": {
+    "n": 51,
+    "success": 39,
+    "harmful": 5,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 1,
+    "over_abstain": 0,
+    "false_conflict": 6,
+    "arbitrary_pick": 4,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.45,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.7
+   },
+   "EB": {
+    "n": 51,
+    "success": 48,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 2,
+    "arbitrary_pick": 0,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.04,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.52
+   },
+   "EBG": {
+    "n": 51,
+    "success": 46,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 4,
+    "arbitrary_pick": 0,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 2,
+    "reverted": 0,
+    "model_calls_mean": 3.08,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.61
+   },
+   "EBG-all": {
+    "n": 51,
+    "success": 46,
+    "harmful": 3,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 2,
+    "arbitrary_pick": 2,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 6,
+    "reverted": 0,
+    "model_calls_mean": 3.16,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.76
+   },
+   "EBG-noR3": {
+    "n": 51,
+    "success": 46,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 4,
+    "arbitrary_pick": 0,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 2,
+    "reverted": 0,
+    "model_calls_mean": 3.08,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.61
+   },
+   "EBG-unsafe": {
+    "n": 51,
+    "success": 46,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 4,
+    "arbitrary_pick": 0,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 2,
+    "reverted": 0,
+    "model_calls_mean": 3.08,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.61
+   },
+   "G": {
+    "n": 51,
+    "success": 38,
+    "harmful": 3,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 10,
+    "arbitrary_pick": 0,
+    "stale_value": 3,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.37,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.74
+   },
+   "LA": {
+    "n": 51,
+    "success": 47,
+    "harmful": 3,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 1,
+    "arbitrary_pick": 2,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.08,
+    "arbiter_calls_mean": 0.84,
+    "latency_s_mean": 4.77
+   },
+   "LG": {
+    "n": 51,
+    "success": 42,
+    "harmful": 6,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 3,
+    "arbitrary_pick": 5,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 8,
+    "reverted": 0,
+    "model_calls_mean": 3.24,
+    "arbiter_calls_mean": 0.84,
+    "latency_s_mean": 5.08
+   },
+   "R": {
+    "n": 51,
+    "success": 36,
+    "harmful": 4,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 11,
+    "arbitrary_pick": 0,
+    "stale_value": 4,
+    "unsupported": 0,
+    "notices": 7,
+    "reverted": 0,
+    "model_calls_mean": 3.51,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.04
+   },
+   "RT": {
+    "n": 51,
+    "success": 36,
+    "harmful": 8,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 7,
+    "arbitrary_pick": 2,
+    "stale_value": 6,
+    "unsupported": 0,
+    "notices": 12,
+    "reverted": 0,
+    "model_calls_mean": 3.59,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.23
+   },
+   "T": {
+    "n": 51,
+    "success": 41,
+    "harmful": 3,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 7,
+    "arbitrary_pick": 0,
+    "stale_value": 3,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.35,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.75
+   }
+  },
+  "meta-llama/Llama-3.1-8B-Instruct": {
+   "B": {
+    "n": 51,
+    "success": 11,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 0,
+    "over_abstain": 32,
+    "false_conflict": 2,
+    "arbitrary_pick": 1,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 4.41,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.82
+   },
+   "EB": {
+    "n": 51,
+    "success": 18,
+    "harmful": 0,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 1,
+    "over_abstain": 21,
+    "false_conflict": 6,
+    "arbitrary_pick": 0,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 4.2,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.65
+   },
+   "EBG": {
+    "n": 51,
+    "success": 20,
+    "harmful": 0,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 0,
+    "over_abstain": 21,
+    "false_conflict": 5,
+    "arbitrary_pick": 0,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 12,
+    "reverted": 7,
+    "model_calls_mean": 4.8,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.16
+   },
+   "EBG-all": {
+    "n": 51,
+    "success": 21,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 0,
+    "over_abstain": 23,
+    "false_conflict": 1,
+    "arbitrary_pick": 1,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 17,
+    "reverted": 7,
+    "model_calls_mean": 4.9,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.31
+   },
+   "EBG-noR3": {
+    "n": 51,
+    "success": 19,
+    "harmful": 0,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 0,
+    "over_abstain": 23,
+    "false_conflict": 4,
+    "arbitrary_pick": 0,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 2,
+    "reverted": 0,
+    "model_calls_mean": 4.27,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.76
+   },
+   "EBG-unsafe": {
+    "n": 51,
+    "success": 19,
+    "harmful": 0,
+    "missing": 0,
+    "format_error": 12,
+    "step_limit": 0,
+    "over_abstain": 15,
+    "false_conflict": 5,
+    "arbitrary_pick": 0,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 12,
+    "reverted": 0,
+    "model_calls_mean": 4.8,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.16
+   },
+   "G": {
+    "n": 51,
+    "success": 15,
+    "harmful": 0,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 1,
+    "over_abstain": 23,
+    "false_conflict": 7,
+    "arbitrary_pick": 0,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 4.33,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.72
+   },
+   "LA": {
+    "n": 51,
+    "success": 13,
+    "harmful": 0,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 1,
+    "over_abstain": 28,
+    "false_conflict": 4,
+    "arbitrary_pick": 0,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 4.35,
+    "arbiter_calls_mean": 0.59,
+    "latency_s_mean": 4.55
+   },
+   "LG": {
+    "n": 51,
+    "success": 11,
+    "harmful": 3,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 0,
+    "over_abstain": 32,
+    "false_conflict": 0,
+    "arbitrary_pick": 3,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 19,
+    "reverted": 8,
+    "model_calls_mean": 5.1,
+    "arbiter_calls_mean": 0.75,
+    "latency_s_mean": 5.48
+   },
+   "R": {
+    "n": 51,
+    "success": 19,
+    "harmful": 0,
+    "missing": 0,
+    "format_error": 10,
+    "step_limit": 0,
+    "over_abstain": 17,
+    "false_conflict": 5,
+    "arbitrary_pick": 0,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 12,
+    "reverted": 0,
+    "model_calls_mean": 4.88,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.22
+   },
+   "RT": {
+    "n": 51,
+    "success": 18,
+    "harmful": 0,
+    "missing": 0,
+    "format_error": 10,
+    "step_limit": 0,
+    "over_abstain": 20,
+    "false_conflict": 3,
+    "arbitrary_pick": 0,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 13,
+    "reverted": 0,
+    "model_calls_mean": 4.86,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.21
+   },
+   "T": {
+    "n": 51,
+    "success": 16,
+    "harmful": 0,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 1,
+    "over_abstain": 26,
+    "false_conflict": 3,
+    "arbitrary_pick": 0,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 4.27,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.68
+   }
+  },
+  "ALL": {
+   "B": {
+    "n": 204,
+    "success": 115,
+    "harmful": 15,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 4,
+    "over_abstain": 34,
+    "false_conflict": 31,
+    "arbitrary_pick": 12,
+    "stale_value": 2,
+    "unsupported": 1,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.61,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.25
+   },
+   "EB": {
+    "n": 204,
+    "success": 141,
+    "harmful": 2,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 3,
+    "over_abstain": 21,
+    "false_conflict": 32,
+    "arbitrary_pick": 0,
+    "stale_value": 2,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.44,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.09
+   },
+   "EBG": {
+    "n": 204,
+    "success": 148,
+    "harmful": 5,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 2,
+    "over_abstain": 21,
+    "false_conflict": 23,
+    "arbitrary_pick": 0,
+    "stale_value": 5,
+    "unsupported": 0,
+    "notices": 28,
+    "reverted": 7,
+    "model_calls_mean": 3.68,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.31
+   },
+   "EBG-all": {
+    "n": 204,
+    "success": 156,
+    "harmful": 12,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 2,
+    "over_abstain": 23,
+    "false_conflict": 6,
+    "arbitrary_pick": 7,
+    "stale_value": 5,
+    "unsupported": 0,
+    "notices": 52,
+    "reverted": 7,
+    "model_calls_mean": 3.79,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.47
+   },
+   "EBG-noR3": {
+    "n": 204,
+    "success": 147,
+    "harmful": 5,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 2,
+    "over_abstain": 23,
+    "false_conflict": 22,
+    "arbitrary_pick": 0,
+    "stale_value": 5,
+    "unsupported": 0,
+    "notices": 18,
+    "reverted": 0,
+    "model_calls_mean": 3.54,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.21
+   },
+   "EBG-unsafe": {
+    "n": 204,
+    "success": 147,
+    "harmful": 5,
+    "missing": 0,
+    "format_error": 12,
+    "step_limit": 2,
+    "over_abstain": 15,
+    "false_conflict": 23,
+    "arbitrary_pick": 0,
+    "stale_value": 5,
+    "unsupported": 0,
+    "notices": 28,
+    "reverted": 0,
+    "model_calls_mean": 3.68,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.31
+   },
+   "G": {
+    "n": 204,
+    "success": 115,
+    "harmful": 11,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 3,
+    "over_abstain": 23,
+    "false_conflict": 47,
+    "arbitrary_pick": 2,
+    "stale_value": 9,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.66,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.27
+   },
+   "LA": {
+    "n": 204,
+    "success": 126,
+    "harmful": 16,
+    "missing": 0,
+    "format_error": 6,
+    "step_limit": 3,
+    "over_abstain": 29,
+    "false_conflict": 24,
+    "arbitrary_pick": 13,
+    "stale_value": 3,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.52,
+    "arbiter_calls_mean": 0.78,
+    "latency_s_mean": 4.02
+   },
+   "LG": {
+    "n": 204,
+    "success": 117,
+    "harmful": 30,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 2,
+    "over_abstain": 33,
+    "false_conflict": 17,
+    "arbitrary_pick": 24,
+    "stale_value": 6,
+    "unsupported": 0,
+    "notices": 46,
+    "reverted": 8,
+    "model_calls_mean": 3.86,
+    "arbiter_calls_mean": 0.82,
+    "latency_s_mean": 4.46
+   },
+   "R": {
+    "n": 204,
+    "success": 120,
+    "harmful": 21,
+    "missing": 0,
+    "format_error": 10,
+    "step_limit": 1,
+    "over_abstain": 17,
+    "false_conflict": 35,
+    "arbitrary_pick": 2,
+    "stale_value": 19,
+    "unsupported": 0,
+    "notices": 37,
+    "reverted": 0,
+    "model_calls_mean": 3.93,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.57
+   },
+   "RT": {
+    "n": 204,
+    "success": 124,
+    "harmful": 29,
+    "missing": 0,
+    "format_error": 10,
+    "step_limit": 1,
+    "over_abstain": 22,
+    "false_conflict": 18,
+    "arbitrary_pick": 4,
+    "stale_value": 25,
+    "unsupported": 0,
+    "notices": 54,
+    "reverted": 0,
+    "model_calls_mean": 3.89,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.57
+   },
+   "T": {
+    "n": 204,
+    "success": 128,
+    "harmful": 10,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 2,
+    "over_abstain": 26,
+    "false_conflict": 33,
+    "arbitrary_pick": 0,
+    "stale_value": 10,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.54,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.17
+   }
+  }
+ },
+ "per_category": {
+  "Qwen/Qwen2.5-3B-Instruct": {
+   "B": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     1,
+     4
+    ],
+    "negated_both_stand": [
+     1,
+     2
+    ],
+    "negated_replacement": [
+     2,
+     3
+    ],
+    "retention": [
+     3,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     3,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     0,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     3,
+     4
+    ]
+   },
+   "EB": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     1,
+     3
+    ],
+    "retention": [
+     3,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     1,
+     4
+    ],
+    "single_record_control": [
+     3,
+     4
+    ],
+    "supersession_later_ref": [
+     0,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     1,
+     3
+    ],
+    "retention": [
+     3,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     3,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG-all": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     0,
+     2
+    ],
+    "negated_replacement": [
+     3,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     3,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     3,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     1,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG-noR3": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     1,
+     3
+    ],
+    "retention": [
+     3,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     3,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG-unsafe": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     1,
+     3
+    ],
+    "retention": [
+     3,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     3,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "G": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     1,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "single_record_control": [
+     3,
+     4
+    ],
+    "supersession_later_ref": [
+     2,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "LA": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     3,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     2,
+     3
+    ],
+    "retention": [
+     2,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     1,
+     4
+    ],
+    "single_record_control": [
+     3,
+     4
+    ],
+    "supersession_later_ref": [
+     0,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "LG": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     1,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     3,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     2,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     1,
+     3
+    ],
+    "same_day_correction_ref": [
+     1,
+     4
+    ],
+    "single_record_control": [
+     3,
+     4
+    ],
+    "supersession_later_ref": [
+     2,
+     4
+    ],
+    "unconfirmed_change": [
+     1,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "R": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     2,
+     4
+    ],
+    "same_day_correction_noref": [
+     1,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "RT": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     0,
+     2
+    ],
+    "negated_replacement": [
+     1,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     2,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "T": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     3,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "single_record_control": [
+     3,
+     4
+    ],
+    "supersession_later_ref": [
+     1,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   }
+  },
+  "Qwen/Qwen2.5-7B-Instruct": {
+   "B": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     3,
+     4
+    ],
+    "conflict_same_validity": [
+     0,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     1,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     2,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     2,
+     3
+    ],
+    "same_day_correction_ref": [
+     2,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     1,
+     4
+    ],
+    "unconfirmed_change": [
+     1,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EB": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     2,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     3,
+     4
+    ],
+    "same_day_correction_noref": [
+     3,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     3,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     3,
+     4
+    ],
+    "same_day_correction_noref": [
+     3,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     3,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG-all": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     0,
+     2
+    ],
+    "negated_replacement": [
+     3,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     3,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     3,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG-noR3": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     3,
+     4
+    ],
+    "same_day_correction_noref": [
+     3,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     3,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG-unsafe": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     3,
+     4
+    ],
+    "same_day_correction_noref": [
+     3,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     3,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "G": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     2,
+     3
+    ],
+    "incidental_change_word": [
+     3,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     3,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "LA": {
+    "authority_both": [
+     0,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     2,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     2,
+     3
+    ],
+    "incidental_change_word": [
+     2,
+     4
+    ],
+    "negated_both_stand": [
+     0,
+     2
+    ],
+    "negated_replacement": [
+     3,
+     3
+    ],
+    "retention": [
+     3,
+     4
+    ],
+    "same_day_correction_noref": [
+     3,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     3,
+     4
+    ],
+    "unconfirmed_change": [
+     1,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "LG": {
+    "authority_both": [
+     0,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     1,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     0,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     0,
+     4
+    ],
+    "negated_both_stand": [
+     0,
+     2
+    ],
+    "negated_replacement": [
+     2,
+     3
+    ],
+    "retention": [
+     1,
+     4
+    ],
+    "same_day_correction_noref": [
+     3,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     3,
+     4
+    ],
+    "unconfirmed_change": [
+     1,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "R": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     1,
+     3
+    ],
+    "incidental_change_word": [
+     3,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     2,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "RT": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     0,
+     2
+    ],
+    "negated_replacement": [
+     1,
+     3
+    ],
+    "retention": [
+     1,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     3,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "T": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     1,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     2,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     3,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   }
+  },
+  "Qwen/Qwen3-8B": {
+   "B": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     1,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     2,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     2,
+     3
+    ],
+    "same_day_correction_ref": [
+     2,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     3,
+     4
+    ],
+    "unconfirmed_change": [
+     1,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EB": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     2,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     2,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     2,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     1,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     2,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     2,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     1,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG-all": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     0,
+     2
+    ],
+    "negated_replacement": [
+     3,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     3,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     1,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG-noR3": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     2,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     2,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     1,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG-unsafe": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     2,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     2,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     1,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "G": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     2,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     1,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "LA": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     3,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     2,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     3,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     3,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "LG": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     2,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     0,
+     2
+    ],
+    "negated_replacement": [
+     3,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     3,
+     3
+    ],
+    "same_day_correction_ref": [
+     4,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "R": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     1,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "RT": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     0,
+     2
+    ],
+    "negated_replacement": [
+     1,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     2,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "T": {
+    "authority_both": [
+     4,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     4,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     2,
+     3
+    ],
+    "incidental_change_word": [
+     4,
+     4
+    ],
+    "negated_both_stand": [
+     2,
+     2
+    ],
+    "negated_replacement": [
+     2,
+     3
+    ],
+    "retention": [
+     4,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     2,
+     4
+    ],
+    "single_record_control": [
+     4,
+     4
+    ],
+    "supersession_later_ref": [
+     4,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   }
+  },
+  "meta-llama/Llama-3.1-8B-Instruct": {
+   "B": {
+    "authority_both": [
+     2,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     1,
+     4
+    ],
+    "conflict_rival_neutral": [
+     1,
+     4
+    ],
+    "conflict_same_validity": [
+     0,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     0,
+     4
+    ],
+    "negated_both_stand": [
+     1,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     0,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "single_record_control": [
+     1,
+     4
+    ],
+    "supersession_later_ref": [
+     1,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EB": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     2,
+     4
+    ],
+    "negated_both_stand": [
+     1,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     0,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     1,
+     4
+    ],
+    "single_record_control": [
+     0,
+     4
+    ],
+    "supersession_later_ref": [
+     1,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     3,
+     4
+    ]
+   },
+   "EBG": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     3,
+     4
+    ],
+    "negated_both_stand": [
+     1,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     0,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     1,
+     4
+    ],
+    "single_record_control": [
+     0,
+     4
+    ],
+    "supersession_later_ref": [
+     1,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG-all": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     3,
+     4
+    ],
+    "negated_both_stand": [
+     0,
+     2
+    ],
+    "negated_replacement": [
+     1,
+     3
+    ],
+    "retention": [
+     1,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     1,
+     4
+    ],
+    "single_record_control": [
+     0,
+     4
+    ],
+    "supersession_later_ref": [
+     1,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG-noR3": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     2,
+     4
+    ],
+    "negated_both_stand": [
+     1,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     0,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     1,
+     4
+    ],
+    "single_record_control": [
+     0,
+     4
+    ],
+    "supersession_later_ref": [
+     1,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "EBG-unsafe": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     3,
+     4
+    ],
+    "negated_both_stand": [
+     1,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     0,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     1,
+     4
+    ],
+    "single_record_control": [
+     0,
+     4
+    ],
+    "supersession_later_ref": [
+     1,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     3,
+     4
+    ]
+   },
+   "G": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     1,
+     4
+    ],
+    "negated_both_stand": [
+     1,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     0,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "single_record_control": [
+     0,
+     4
+    ],
+    "supersession_later_ref": [
+     0,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     3,
+     4
+    ]
+   },
+   "LA": {
+    "authority_both": [
+     1,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     3,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     0,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     1,
+     4
+    ],
+    "negated_both_stand": [
+     1,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     0,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     1,
+     4
+    ],
+    "single_record_control": [
+     0,
+     4
+    ],
+    "supersession_later_ref": [
+     1,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     3,
+     4
+    ]
+   },
+   "LG": {
+    "authority_both": [
+     0,
+     4
+    ],
+    "backfilled_entry": [
+     1,
+     2
+    ],
+    "conflict_plain": [
+     0,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     0,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     1,
+     4
+    ],
+    "negated_both_stand": [
+     0,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     1,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     1,
+     4
+    ],
+    "single_record_control": [
+     0,
+     4
+    ],
+    "supersession_later_ref": [
+     1,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     4,
+     4
+    ]
+   },
+   "R": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     1,
+     3
+    ],
+    "incidental_change_word": [
+     2,
+     4
+    ],
+    "negated_both_stand": [
+     1,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     1,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "single_record_control": [
+     0,
+     4
+    ],
+    "supersession_later_ref": [
+     1,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     3,
+     4
+    ]
+   },
+   "RT": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     2,
+     4
+    ],
+    "negated_both_stand": [
+     0,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     1,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "single_record_control": [
+     0,
+     4
+    ],
+    "supersession_later_ref": [
+     2,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     3,
+     4
+    ]
+   },
+   "T": {
+    "authority_both": [
+     3,
+     4
+    ],
+    "backfilled_entry": [
+     0,
+     2
+    ],
+    "conflict_plain": [
+     4,
+     4
+    ],
+    "conflict_rival_neutral": [
+     2,
+     4
+    ],
+    "conflict_same_validity": [
+     1,
+     1
+    ],
+    "historical_question": [
+     0,
+     3
+    ],
+    "incidental_change_word": [
+     1,
+     4
+    ],
+    "negated_both_stand": [
+     1,
+     2
+    ],
+    "negated_replacement": [
+     0,
+     3
+    ],
+    "retention": [
+     0,
+     4
+    ],
+    "same_day_correction_noref": [
+     0,
+     3
+    ],
+    "same_day_correction_ref": [
+     0,
+     4
+    ],
+    "single_record_control": [
+     0,
+     4
+    ],
+    "supersession_later_ref": [
+     1,
+     4
+    ],
+    "unconfirmed_change": [
+     0,
+     1
+    ],
+    "unsupported": [
+     3,
+     4
+    ]
+   }
+  },
+  "ALL": {
+   "B": {
+    "authority_both": [
+     12,
+     16
+    ],
+    "backfilled_entry": [
+     4,
+     8
+    ],
+    "conflict_plain": [
+     13,
+     16
+    ],
+    "conflict_rival_neutral": [
+     12,
+     16
+    ],
+    "conflict_same_validity": [
+     2,
+     4
+    ],
+    "historical_question": [
+     0,
+     12
+    ],
+    "incidental_change_word": [
+     3,
+     16
+    ],
+    "negated_both_stand": [
+     6,
+     8
+    ],
+    "negated_replacement": [
+     6,
+     12
+    ],
+    "retention": [
+     11,
+     16
+    ],
+    "same_day_correction_noref": [
+     4,
+     12
+    ],
+    "same_day_correction_ref": [
+     7,
+     16
+    ],
+    "single_record_control": [
+     13,
+     16
+    ],
+    "supersession_later_ref": [
+     5,
+     16
+    ],
+    "unconfirmed_change": [
+     2,
+     4
+    ],
+    "unsupported": [
+     15,
+     16
+    ]
+   },
+   "EB": {
+    "authority_both": [
+     15,
+     16
+    ],
+    "backfilled_entry": [
+     4,
+     8
+    ],
+    "conflict_plain": [
+     16,
+     16
+    ],
+    "conflict_rival_neutral": [
+     14,
+     16
+    ],
+    "conflict_same_validity": [
+     4,
+     4
+    ],
+    "historical_question": [
+     4,
+     12
+    ],
+    "incidental_change_word": [
+     14,
+     16
+    ],
+    "negated_both_stand": [
+     7,
+     8
+    ],
+    "negated_replacement": [
+     3,
+     12
+    ],
+    "retention": [
+     10,
+     16
+    ],
+    "same_day_correction_noref": [
+     5,
+     12
+    ],
+    "same_day_correction_ref": [
+     10,
+     16
+    ],
+    "single_record_control": [
+     11,
+     16
+    ],
+    "supersession_later_ref": [
+     8,
+     16
+    ],
+    "unconfirmed_change": [
+     1,
+     4
+    ],
+    "unsupported": [
+     15,
+     16
+    ]
+   },
+   "EBG": {
+    "authority_both": [
+     15,
+     16
+    ],
+    "backfilled_entry": [
+     6,
+     8
+    ],
+    "conflict_plain": [
+     16,
+     16
+    ],
+    "conflict_rival_neutral": [
+     14,
+     16
+    ],
+    "conflict_same_validity": [
+     4,
+     4
+    ],
+    "historical_question": [
+     0,
+     12
+    ],
+    "incidental_change_word": [
+     15,
+     16
+    ],
+    "negated_both_stand": [
+     7,
+     8
+    ],
+    "negated_replacement": [
+     3,
+     12
+    ],
+    "retention": [
+     10,
+     16
+    ],
+    "same_day_correction_noref": [
+     5,
+     12
+    ],
+    "same_day_correction_ref": [
+     13,
+     16
+    ],
+    "single_record_control": [
+     11,
+     16
+    ],
+    "supersession_later_ref": [
+     12,
+     16
+    ],
+    "unconfirmed_change": [
+     1,
+     4
+    ],
+    "unsupported": [
+     16,
+     16
+    ]
+   },
+   "EBG-all": {
+    "authority_both": [
+     15,
+     16
+    ],
+    "backfilled_entry": [
+     6,
+     8
+    ],
+    "conflict_plain": [
+     16,
+     16
+    ],
+    "conflict_rival_neutral": [
+     14,
+     16
+    ],
+    "conflict_same_validity": [
+     4,
+     4
+    ],
+    "historical_question": [
+     0,
+     12
+    ],
+    "incidental_change_word": [
+     15,
+     16
+    ],
+    "negated_both_stand": [
+     0,
+     8
+    ],
+    "negated_replacement": [
+     10,
+     12
+    ],
+    "retention": [
+     13,
+     16
+    ],
+    "same_day_correction_noref": [
+     9,
+     12
+    ],
+    "same_day_correction_ref": [
+     13,
+     16
+    ],
+    "single_record_control": [
+     11,
+     16
+    ],
+    "supersession_later_ref": [
+     12,
+     16
+    ],
+    "unconfirmed_change": [
+     2,
+     4
+    ],
+    "unsupported": [
+     16,
+     16
+    ]
+   },
+   "EBG-noR3": {
+    "authority_both": [
+     15,
+     16
+    ],
+    "backfilled_entry": [
+     6,
+     8
+    ],
+    "conflict_plain": [
+     16,
+     16
+    ],
+    "conflict_rival_neutral": [
+     14,
+     16
+    ],
+    "conflict_same_validity": [
+     4,
+     4
+    ],
+    "historical_question": [
+     0,
+     12
+    ],
+    "incidental_change_word": [
+     14,
+     16
+    ],
+    "negated_both_stand": [
+     7,
+     8
+    ],
+    "negated_replacement": [
+     3,
+     12
+    ],
+    "retention": [
+     10,
+     16
+    ],
+    "same_day_correction_noref": [
+     5,
+     12
+    ],
+    "same_day_correction_ref": [
+     13,
+     16
+    ],
+    "single_record_control": [
+     11,
+     16
+    ],
+    "supersession_later_ref": [
+     12,
+     16
+    ],
+    "unconfirmed_change": [
+     1,
+     4
+    ],
+    "unsupported": [
+     16,
+     16
+    ]
+   },
+   "EBG-unsafe": {
+    "authority_both": [
+     15,
+     16
+    ],
+    "backfilled_entry": [
+     6,
+     8
+    ],
+    "conflict_plain": [
+     16,
+     16
+    ],
+    "conflict_rival_neutral": [
+     14,
+     16
+    ],
+    "conflict_same_validity": [
+     4,
+     4
+    ],
+    "historical_question": [
+     0,
+     12
+    ],
+    "incidental_change_word": [
+     15,
+     16
+    ],
+    "negated_both_stand": [
+     7,
+     8
+    ],
+    "negated_replacement": [
+     3,
+     12
+    ],
+    "retention": [
+     10,
+     16
+    ],
+    "same_day_correction_noref": [
+     5,
+     12
+    ],
+    "same_day_correction_ref": [
+     13,
+     16
+    ],
+    "single_record_control": [
+     11,
+     16
+    ],
+    "supersession_later_ref": [
+     12,
+     16
+    ],
+    "unconfirmed_change": [
+     1,
+     4
+    ],
+    "unsupported": [
+     15,
+     16
+    ]
+   },
+   "G": {
+    "authority_both": [
+     15,
+     16
+    ],
+    "backfilled_entry": [
+     0,
+     8
+    ],
+    "conflict_plain": [
+     16,
+     16
+    ],
+    "conflict_rival_neutral": [
+     12,
+     16
+    ],
+    "conflict_same_validity": [
+     4,
+     4
+    ],
+    "historical_question": [
+     4,
+     12
+    ],
+    "incidental_change_word": [
+     12,
+     16
+    ],
+    "negated_both_stand": [
+     7,
+     8
+    ],
+    "negated_replacement": [
+     1,
+     12
+    ],
+    "retention": [
+     9,
+     16
+    ],
+    "same_day_correction_noref": [
+     0,
+     12
+    ],
+    "same_day_correction_ref": [
+     0,
+     16
+    ],
+    "single_record_control": [
+     11,
+     16
+    ],
+    "supersession_later_ref": [
+     9,
+     16
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     15,
+     16
+    ]
+   },
+   "LA": {
+    "authority_both": [
+     8,
+     16
+    ],
+    "backfilled_entry": [
+     4,
+     8
+    ],
+    "conflict_plain": [
+     13,
+     16
+    ],
+    "conflict_rival_neutral": [
+     10,
+     16
+    ],
+    "conflict_same_validity": [
+     3,
+     4
+    ],
+    "historical_question": [
+     4,
+     12
+    ],
+    "incidental_change_word": [
+     11,
+     16
+    ],
+    "negated_both_stand": [
+     5,
+     8
+    ],
+    "negated_replacement": [
+     8,
+     12
+    ],
+    "retention": [
+     9,
+     16
+    ],
+    "same_day_correction_noref": [
+     6,
+     12
+    ],
+    "same_day_correction_ref": [
+     10,
+     16
+    ],
+    "single_record_control": [
+     11,
+     16
+    ],
+    "supersession_later_ref": [
+     8,
+     16
+    ],
+    "unconfirmed_change": [
+     1,
+     4
+    ],
+    "unsupported": [
+     15,
+     16
+    ]
+   },
+   "LG": {
+    "authority_both": [
+     7,
+     16
+    ],
+    "backfilled_entry": [
+     6,
+     8
+    ],
+    "conflict_plain": [
+     9,
+     16
+    ],
+    "conflict_rival_neutral": [
+     9,
+     16
+    ],
+    "conflict_same_validity": [
+     2,
+     4
+    ],
+    "historical_question": [
+     0,
+     12
+    ],
+    "incidental_change_word": [
+     9,
+     16
+    ],
+    "negated_both_stand": [
+     2,
+     8
+    ],
+    "negated_replacement": [
+     7,
+     12
+    ],
+    "retention": [
+     10,
+     16
+    ],
+    "same_day_correction_noref": [
+     7,
+     12
+    ],
+    "same_day_correction_ref": [
+     10,
+     16
+    ],
+    "single_record_control": [
+     11,
+     16
+    ],
+    "supersession_later_ref": [
+     10,
+     16
+    ],
+    "unconfirmed_change": [
+     2,
+     4
+    ],
+    "unsupported": [
+     16,
+     16
+    ]
+   },
+   "R": {
+    "authority_both": [
+     15,
+     16
+    ],
+    "backfilled_entry": [
+     0,
+     8
+    ],
+    "conflict_plain": [
+     16,
+     16
+    ],
+    "conflict_rival_neutral": [
+     12,
+     16
+    ],
+    "conflict_same_validity": [
+     4,
+     4
+    ],
+    "historical_question": [
+     2,
+     12
+    ],
+    "incidental_change_word": [
+     13,
+     16
+    ],
+    "negated_both_stand": [
+     7,
+     8
+    ],
+    "negated_replacement": [
+     1,
+     12
+    ],
+    "retention": [
+     9,
+     16
+    ],
+    "same_day_correction_noref": [
+     1,
+     12
+    ],
+    "same_day_correction_ref": [
+     0,
+     16
+    ],
+    "single_record_control": [
+     12,
+     16
+    ],
+    "supersession_later_ref": [
+     13,
+     16
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     15,
+     16
+    ]
+   },
+   "RT": {
+    "authority_both": [
+     15,
+     16
+    ],
+    "backfilled_entry": [
+     0,
+     8
+    ],
+    "conflict_plain": [
+     16,
+     16
+    ],
+    "conflict_rival_neutral": [
+     14,
+     16
+    ],
+    "conflict_same_validity": [
+     4,
+     4
+    ],
+    "historical_question": [
+     0,
+     12
+    ],
+    "incidental_change_word": [
+     14,
+     16
+    ],
+    "negated_both_stand": [
+     0,
+     8
+    ],
+    "negated_replacement": [
+     3,
+     12
+    ],
+    "retention": [
+     10,
+     16
+    ],
+    "same_day_correction_noref": [
+     0,
+     12
+    ],
+    "same_day_correction_ref": [
+     7,
+     16
+    ],
+    "single_record_control": [
+     12,
+     16
+    ],
+    "supersession_later_ref": [
+     14,
+     16
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     15,
+     16
+    ]
+   },
+   "T": {
+    "authority_both": [
+     15,
+     16
+    ],
+    "backfilled_entry": [
+     0,
+     8
+    ],
+    "conflict_plain": [
+     16,
+     16
+    ],
+    "conflict_rival_neutral": [
+     14,
+     16
+    ],
+    "conflict_same_validity": [
+     4,
+     4
+    ],
+    "historical_question": [
+     3,
+     12
+    ],
+    "incidental_change_word": [
+     13,
+     16
+    ],
+    "negated_both_stand": [
+     7,
+     8
+    ],
+    "negated_replacement": [
+     4,
+     12
+    ],
+    "retention": [
+     11,
+     16
+    ],
+    "same_day_correction_noref": [
+     0,
+     12
+    ],
+    "same_day_correction_ref": [
+     5,
+     16
+    ],
+    "single_record_control": [
+     11,
+     16
+    ],
+    "supersession_later_ref": [
+     10,
+     16
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     15,
+     16
+    ]
+   }
+  }
+ },
+ "contrasts": {
+  "EBG-RT": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 7.8,
+     "ci95_pp": [
+      -3.9,
+      19.6
+     ],
+     "families_pos": 7,
+     "families_neg": 3,
+     "p": 0.34457655423445765,
+     "p_holm": null,
+     "p_bh_exploratory": 0.5335378904275473,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -9.8,
+     "ci95_pp": [
+      -17.6,
+      -2.0
+     ],
+     "families_pos": 0,
+     "families_neg": 5,
+     "p": 0.06299937000629993
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 15.7,
+     "ci95_pp": [
+      3.9,
+      29.4
+     ],
+     "families_pos": 10,
+     "families_neg": 2,
+     "p": 0.038069619303806965,
+     "p_holm": null,
+     "p_bh_exploratory": 0.09754007723080664,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -23.5,
+     "ci95_pp": [
+      -35.3,
+      -11.8
+     ],
+     "families_pos": 0,
+     "families_neg": 12,
+     "p": 0.0005499945000549994
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 19.6,
+     "ci95_pp": [
+      9.8,
+      31.4
+     ],
+     "families_pos": 10,
+     "families_neg": 0,
+     "p": 0.002039979600203998,
+     "p_holm": null,
+     "p_bh_exploratory": 0.019679803201967983,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -13.7,
+     "ci95_pp": [
+      -23.5,
+      -5.9
+     ],
+     "families_pos": 0,
+     "families_neg": 7,
+     "p": 0.016129838701612983
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 3.9,
+     "ci95_pp": [
+      -5.9,
+      15.7
+     ],
+     "families_pos": 5,
+     "families_neg": 3,
+     "p": 0.7255227447725523,
+     "p_holm": null,
+     "p_bh_exploratory": 0.8503993008850398,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": 11.8,
+     "ci95_pp": [
+      4.4,
+      19.6
+     ],
+     "families_pos": 14,
+     "families_neg": 4,
+     "p": 0.004749952500474996,
+     "p_holm": 0.009499905000949991,
+     "p_bh_exploratory": null,
+     "confirmatory": true
+    },
+    "harmful": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": -11.8,
+     "ci95_pp": [
+      -18.1,
+      -5.9
+     ],
+     "families_pos": 0,
+     "families_neg": 13,
+     "p": 0.00021999780002199978
+    }
+   }
+  },
+  "EBG-T": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 19.6,
+     "ci95_pp": [
+      9.8,
+      31.4
+     ],
+     "families_pos": 10,
+     "families_neg": 0,
+     "p": 0.001939980600193998,
+     "p_holm": null,
+     "p_bh_exploratory": 0.019679803201967983,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 3.9,
+     "ci95_pp": [
+      -3.9,
+      11.8
+     ],
+     "families_pos": 3,
+     "families_neg": 1,
+     "p": 0.6250137498625014
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 2.0,
+     "ci95_pp": [
+      -11.8,
+      13.7
+     ],
+     "families_pos": 6,
+     "families_neg": 5,
+     "p": 1.0,
+     "p_holm": null,
+     "p_bh_exploratory": 1.0,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -9.8,
+     "ci95_pp": [
+      -17.6,
+      -2.0
+     ],
+     "families_pos": 0,
+     "families_neg": 5,
+     "p": 0.06232937670623294
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 9.8,
+     "ci95_pp": [
+      -2.0,
+      21.6
+     ],
+     "families_pos": 7,
+     "families_neg": 2,
+     "p": 0.1789682103178968,
+     "p_holm": null,
+     "p_bh_exploratory": 0.33066130877152766,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -9.8,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 2,
+     "p": 0.5005949940500595
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 7.8,
+     "ci95_pp": [
+      0.0,
+      17.6
+     ],
+     "families_pos": 5,
+     "families_neg": 1,
+     "p": 0.21925780742192577,
+     "p_holm": null,
+     "p_bh_exploratory": 0.3897916576389791,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": 9.8,
+     "ci95_pp": [
+      2.9,
+      16.7
+     ],
+     "families_pos": 16,
+     "families_neg": 5,
+     "p": 0.011269887301126989,
+     "p_holm": 0.011269887301126989,
+     "p_bh_exploratory": null,
+     "confirmatory": true
+    },
+    "harmful": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": -2.5,
+     "ci95_pp": [
+      -5.9,
+      0.5
+     ],
+     "families_pos": 2,
+     "families_neg": 5,
+     "p": 0.2811471885281147
+    }
+   }
+  },
+  "EBG-LG": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 5.9,
+     "ci95_pp": [
+      -7.8,
+      17.6
+     ],
+     "families_pos": 7,
+     "families_neg": 4,
+     "p": 0.5477545224547754,
+     "p_holm": null,
+     "p_bh_exploratory": 0.715115011012052,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      -9.8,
+      9.8
+     ],
+     "families_pos": 3,
+     "families_neg": 3,
+     "p": 1.0
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 29.4,
+     "ci95_pp": [
+      11.8,
+      47.1
+     ],
+     "families_pos": 19,
+     "families_neg": 4,
+     "p": 0.002769972300276997,
+     "p_holm": null,
+     "p_bh_exploratory": 0.019679803201967983,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -33.3,
+     "ci95_pp": [
+      -47.1,
+      -21.6
+     ],
+     "families_pos": 0,
+     "families_neg": 17,
+     "p": 1.999980000199998e-05
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 7.8,
+     "ci95_pp": [
+      -2.0,
+      19.6
+     ],
+     "families_pos": 6,
+     "families_neg": 2,
+     "p": 0.2888471115288847,
+     "p_holm": null,
+     "p_bh_exploratory": 0.46733932660673394,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -9.8,
+     "ci95_pp": [
+      -19.6,
+      -2.0
+     ],
+     "families_pos": 0,
+     "families_neg": 5,
+     "p": 0.06328936710632893
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 17.6,
+     "ci95_pp": [
+      5.9,
+      31.4
+     ],
+     "families_pos": 11,
+     "families_neg": 2,
+     "p": 0.021719782802171978,
+     "p_holm": null,
+     "p_bh_exploratory": 0.06830931690683094,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -5.9,
+     "ci95_pp": [
+      -13.7,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 3,
+     "p": 0.24962750372496276
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": 15.2,
+     "ci95_pp": [
+      7.4,
+      23.0
+     ],
+     "families_pos": 26,
+     "families_neg": 7,
+     "p": 0.0007499925000749992,
+     "p_holm": 0.0022499775002249975,
+     "p_bh_exploratory": null,
+     "confirmatory": true
+    },
+    "harmful": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": -12.3,
+     "ci95_pp": [
+      -17.6,
+      -6.9
+     ],
+     "families_pos": 3,
+     "families_neg": 22,
+     "p": 7.999920000799993e-05
+    }
+   }
+  },
+  "EBG-B": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 21.6,
+     "ci95_pp": [
+      7.8,
+      35.3
+     ],
+     "families_pos": 13,
+     "families_neg": 2,
+     "p": 0.007529924700752992,
+     "p_holm": null,
+     "p_bh_exploratory": 0.03614363856361437,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -5.9,
+     "ci95_pp": [
+      -17.6,
+      5.9
+     ],
+     "families_pos": 3,
+     "families_neg": 6,
+     "p": 0.5081049189508104
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 11.8,
+     "ci95_pp": [
+      -2.0,
+      25.5
+     ],
+     "families_pos": 10,
+     "families_neg": 4,
+     "p": 0.17910820891791082,
+     "p_holm": null,
+     "p_bh_exploratory": 0.33066130877152766,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -9.8,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 2,
+     "p": 0.5002649973500265
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 13.7,
+     "ci95_pp": [
+      5.9,
+      23.5
+     ],
+     "families_pos": 7,
+     "families_neg": 0,
+     "p": 0.014999850001499985,
+     "p_holm": null,
+     "p_bh_exploratory": 0.05948248209825595,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -7.8,
+     "ci95_pp": [
+      -15.7,
+      -2.0
+     ],
+     "families_pos": 0,
+     "families_neg": 4,
+     "p": 0.12309876901230987
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 17.6,
+     "ci95_pp": [
+      5.9,
+      31.4
+     ],
+     "families_pos": 11,
+     "families_neg": 2,
+     "p": 0.02276977230227698,
+     "p_holm": null,
+     "p_bh_exploratory": 0.06830931690683094,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -2.0,
+     "ci95_pp": [
+      -5.9,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 1,
+     "p": 1.0
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": 16.2,
+     "ci95_pp": [
+      8.3,
+      24.5
+     ],
+     "families_pos": 24,
+     "families_neg": 6,
+     "p": 0.0004999950000499995,
+     "p_holm": 0.001999980000199998,
+     "p_bh_exploratory": null,
+     "confirmatory": true
+    },
+    "harmful": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": -4.9,
+     "ci95_pp": [
+      -9.8,
+      -0.5
+     ],
+     "families_pos": 3,
+     "families_neg": 9,
+     "p": 0.06328936710632893
+    }
+   }
+  },
+  "EBG-EB": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 17.6,
+     "ci95_pp": [
+      7.8,
+      29.4
+     ],
+     "families_pos": 9,
+     "families_neg": 0,
+     "p": 0.0044299557004429954,
+     "p_holm": null,
+     "p_bh_exploratory": 0.023626430402362644,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 5.9,
+     "ci95_pp": [
+      0.0,
+      13.7
+     ],
+     "families_pos": 3,
+     "families_neg": 0,
+     "p": 0.24897751022489775
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -9.8,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 2,
+     "p": 0.4976350236497635,
+     "p_holm": null,
+     "p_bh_exploratory": 0.6835680214626425,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -9.8,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 2,
+     "p": 0.4976350236497635,
+     "p_holm": null,
+     "p_bh_exploratory": 0.6835680214626425,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 3.9,
+     "ci95_pp": [
+      0.0,
+      9.8
+     ],
+     "families_pos": 2,
+     "families_neg": 0,
+     "p": 0.4984350156498435,
+     "p_holm": null,
+     "p_bh_exploratory": 0.6835680214626425,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": 3.4,
+     "ci95_pp": [
+      -1.0,
+      7.4
+     ],
+     "families_pos": 11,
+     "families_neg": 2,
+     "p": 0.17139828601713983,
+     "p_holm": null,
+     "p_bh_exploratory": 0.33066130877152766,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": 1.5,
+     "ci95_pp": [
+      0.0,
+      3.4
+     ],
+     "families_pos": 3,
+     "families_neg": 0,
+     "p": 0.24897751022489775
+    }
+   }
+  },
+  "EBG-R": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 15.7,
+     "ci95_pp": [
+      2.0,
+      29.4
+     ],
+     "families_pos": 11,
+     "families_neg": 3,
+     "p": 0.05689943100568994,
+     "p_holm": null,
+     "p_bh_exploratory": 0.13655863441365584,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -13.7,
+     "ci95_pp": [
+      -23.5,
+      -5.9
+     ],
+     "families_pos": 0,
+     "families_neg": 7,
+     "p": 0.015309846901530985
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 17.6,
+     "ci95_pp": [
+      3.9,
+      31.4
+     ],
+     "families_pos": 12,
+     "families_neg": 3,
+     "p": 0.035139648603513964,
+     "p_holm": null,
+     "p_bh_exploratory": 0.09754007723080664,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -11.8,
+     "ci95_pp": [
+      -21.6,
+      -3.9
+     ],
+     "families_pos": 0,
+     "families_neg": 6,
+     "p": 0.03074969250307497
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 19.6,
+     "ci95_pp": [
+      9.8,
+      31.4
+     ],
+     "families_pos": 10,
+     "families_neg": 0,
+     "p": 0.002169978300216998,
+     "p_holm": null,
+     "p_bh_exploratory": 0.019679803201967983,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -5.9,
+     "ci95_pp": [
+      -13.7,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 3,
+     "p": 0.24996750032499676
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 2.0,
+     "ci95_pp": [
+      -7.8,
+      11.8
+     ],
+     "families_pos": 4,
+     "families_neg": 3,
+     "p": 1.0,
+     "p_holm": null,
+     "p_bh_exploratory": 1.0,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": 13.7,
+     "ci95_pp": [
+      5.9,
+      22.1
+     ],
+     "families_pos": 19,
+     "families_neg": 4,
+     "p": 0.0028699713002869973,
+     "p_holm": null,
+     "p_bh_exploratory": 0.019679803201967983,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": -7.8,
+     "ci95_pp": [
+      -13.7,
+      -2.9
+     ],
+     "families_pos": 0,
+     "families_neg": 8,
+     "p": 0.007379926200737992
+    }
+   }
+  },
+  "EB-T": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 2.0,
+     "ci95_pp": [
+      -3.9,
+      7.8
+     ],
+     "families_pos": 2,
+     "families_neg": 1,
+     "p": 1.0,
+     "p_holm": null,
+     "p_bh_exploratory": 1.0,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -2.0,
+     "ci95_pp": [
+      -5.9,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 1,
+     "p": 1.0
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 5.9,
+     "ci95_pp": [
+      -5.9,
+      17.6
+     ],
+     "families_pos": 7,
+     "families_neg": 4,
+     "p": 0.5512344876551234,
+     "p_holm": null,
+     "p_bh_exploratory": 0.715115011012052,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -9.8,
+     "ci95_pp": [
+      -17.6,
+      -2.0
+     ],
+     "families_pos": 0,
+     "families_neg": 5,
+     "p": 0.06232937670623294
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 13.7,
+     "ci95_pp": [
+      5.9,
+      23.5
+     ],
+     "families_pos": 7,
+     "families_neg": 0,
+     "p": 0.016079839201607982,
+     "p_holm": null,
+     "p_bh_exploratory": 0.05948248209825595,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -9.8,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 2,
+     "p": 0.5005949940500595
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 3.9,
+     "ci95_pp": [
+      -3.9,
+      11.8
+     ],
+     "families_pos": 3,
+     "families_neg": 1,
+     "p": 0.6233737662623374,
+     "p_holm": null,
+     "p_bh_exploratory": 0.7874194942261104,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": 6.4,
+     "ci95_pp": [
+      1.0,
+      11.8
+     ],
+     "families_pos": 11,
+     "families_neg": 3,
+     "p": 0.03860961390386096,
+     "p_holm": null,
+     "p_bh_exploratory": 0.09754007723080664,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -7.4,
+      -1.0
+     ],
+     "families_pos": 0,
+     "families_neg": 6,
+     "p": 0.03180968190318097
+    }
+   }
+  },
+  "EB-G": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 7.8,
+     "ci95_pp": [
+      -2.0,
+      19.6
+     ],
+     "families_pos": 6,
+     "families_neg": 2,
+     "p": 0.2920870791292087,
+     "p_holm": null,
+     "p_bh_exploratory": 0.46733932660673394,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -7.8,
+     "ci95_pp": [
+      -15.7,
+      -2.0
+     ],
+     "families_pos": 0,
+     "families_neg": 4,
+     "p": 0.12661873381266187
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 17.6,
+     "ci95_pp": [
+      5.9,
+      31.4
+     ],
+     "families_pos": 11,
+     "families_neg": 2,
+     "p": 0.02261977380226198,
+     "p_holm": null,
+     "p_bh_exploratory": 0.06830931690683094,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -5.9,
+     "ci95_pp": [
+      -13.7,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 3,
+     "p": 0.24996750032499676
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 19.6,
+     "ci95_pp": [
+      9.8,
+      31.4
+     ],
+     "families_pos": 10,
+     "families_neg": 0,
+     "p": 0.002169978300216998,
+     "p_holm": null,
+     "p_bh_exploratory": 0.019679803201967983,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -9.8,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 2,
+     "p": 0.5005949940500595
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 5.9,
+     "ci95_pp": [
+      0.0,
+      13.7
+     ],
+     "families_pos": 3,
+     "families_neg": 0,
+     "p": 0.2501674983250167,
+     "p_holm": null,
+     "p_bh_exploratory": 0.4288585685571715,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": 12.7,
+     "ci95_pp": [
+      6.9,
+      19.1
+     ],
+     "families_pos": 19,
+     "families_neg": 3,
+     "p": 0.00024999750002499977,
+     "p_holm": null,
+     "p_bh_exploratory": 0.011999880001199989,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": -4.4,
+     "ci95_pp": [
+      -7.8,
+      -1.5
+     ],
+     "families_pos": 0,
+     "families_neg": 7,
+     "p": 0.015309846901530985
+    }
+   }
+  },
+  "LG-LA": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 13.7,
+     "ci95_pp": [
+      5.9,
+      23.5
+     ],
+     "families_pos": 7,
+     "families_neg": 0,
+     "p": 0.016109838901610985,
+     "p_holm": null,
+     "p_bh_exploratory": 0.05948248209825595,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 5.9,
+     "ci95_pp": [
+      0.0,
+      13.7
+     ],
+     "families_pos": 3,
+     "families_neg": 0,
+     "p": 0.25040749592504075
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -17.6,
+     "ci95_pp": [
+      -29.4,
+      -7.8
+     ],
+     "families_pos": 0,
+     "families_neg": 9,
+     "p": 0.004069959300406996,
+     "p_holm": null,
+     "p_bh_exploratory": 0.023626430402362644,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 9.8,
+     "ci95_pp": [
+      2.0,
+      19.6
+     ],
+     "families_pos": 5,
+     "families_neg": 0,
+     "p": 0.06291937080629194
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -9.8,
+     "ci95_pp": [
+      -19.6,
+      -2.0
+     ],
+     "families_pos": 0,
+     "families_neg": 5,
+     "p": 0.06182938170618294,
+     "p_holm": null,
+     "p_bh_exploratory": 0.14132430104270388,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 5.9,
+     "ci95_pp": [
+      0.0,
+      13.7
+     ],
+     "families_pos": 3,
+     "families_neg": 0,
+     "p": 0.24990750092499076
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -15.7,
+      5.9
+     ],
+     "families_pos": 3,
+     "families_neg": 5,
+     "p": 0.7263827361726383,
+     "p_holm": null,
+     "p_bh_exploratory": 0.8503993008850398,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 5.9,
+     "ci95_pp": [
+      0.0,
+      13.7
+     ],
+     "families_pos": 3,
+     "families_neg": 0,
+     "p": 0.24962750372496276
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": -4.4,
+     "ci95_pp": [
+      -9.8,
+      1.0
+     ],
+     "families_pos": 9,
+     "families_neg": 14,
+     "p": 0.17813821861781381,
+     "p_holm": null,
+     "p_bh_exploratory": 0.33066130877152766,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": 6.9,
+     "ci95_pp": [
+      3.9,
+      10.3
+     ],
+     "families_pos": 13,
+     "families_neg": 0,
+     "p": 0.0003099969000309997
+    }
+   }
+  },
+  "EBG-EBG-all": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -9.8,
+     "ci95_pp": [
+      -21.6,
+      2.0
+     ],
+     "families_pos": 2,
+     "families_neg": 7,
+     "p": 0.17903820961790382,
+     "p_holm": null,
+     "p_bh_exploratory": 0.33066130877152766,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -9.8,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 2,
+     "p": 0.4984050159498405
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -13.7,
+      5.9
+     ],
+     "families_pos": 2,
+     "families_neg": 4,
+     "p": 0.6853231467685323,
+     "p_holm": null,
+     "p_bh_exploratory": 0.8434746421766552,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -9.8,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 2,
+     "p": 0.4984050159498405
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      -7.8,
+      7.8
+     ],
+     "families_pos": 2,
+     "families_neg": 2,
+     "p": 1.0,
+     "p_holm": null,
+     "p_bh_exploratory": 1.0,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -9.8,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 2,
+     "p": 0.4984050159498405
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -2.0,
+     "ci95_pp": [
+      -9.8,
+      3.9
+     ],
+     "families_pos": 1,
+     "families_neg": 2,
+     "p": 1.0,
+     "p_holm": null,
+     "p_bh_exploratory": 1.0,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": -2.0,
+     "ci95_pp": [
+      -5.9,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 1,
+     "p": 1.0
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -10.8,
+      3.4
+     ],
+     "families_pos": 2,
+     "families_neg": 9,
+     "p": 0.36129638703612965,
+     "p_holm": null,
+     "p_bh_exploratory": 0.5419445805541945,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": -3.4,
+     "ci95_pp": [
+      -8.8,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 2,
+     "p": 0.4984050159498405
+    }
+   }
+  },
+  "EBG-EBG-unsafe": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null,
+     "p_holm": null,
+     "p_bh_exploratory": null,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null,
+     "p_holm": null,
+     "p_bh_exploratory": null,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null,
+     "p_holm": null,
+     "p_bh_exploratory": null,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 2.0,
+     "ci95_pp": [
+      0.0,
+      5.9
+     ],
+     "families_pos": 1,
+     "families_neg": 0,
+     "p": 1.0,
+     "p_holm": null,
+     "p_bh_exploratory": 1.0,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 51,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": 0.5,
+     "ci95_pp": [
+      0.0,
+      1.5
+     ],
+     "families_pos": 1,
+     "families_neg": 0,
+     "p": 1.0,
+     "p_holm": null,
+     "p_bh_exploratory": 1.0,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 204,
+     "n_families": 51,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      0.0,
+      0.0
+     ],
+     "families_pos": 0,
+     "families_neg": 0,
+     "p": null
+    }
+   }
+  }
+ }
+}

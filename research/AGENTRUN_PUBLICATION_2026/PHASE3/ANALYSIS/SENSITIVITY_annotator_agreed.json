@@ -1,0 +1,8148 @@
+{
+ "n_tasks": 161,
+ "models": [
+  "Qwen/Qwen2.5-3B-Instruct",
+  "Qwen/Qwen2.5-7B-Instruct",
+  "Qwen/Qwen3-8B",
+  "meta-llama/Llama-3.1-8B-Instruct"
+ ],
+ "configs": [
+  "B",
+  "EB",
+  "EBG",
+  "EBG-all",
+  "EBG-noR3",
+  "EBG-unsafe",
+  "G",
+  "LA",
+  "LG",
+  "R",
+  "RT",
+  "T"
+ ],
+ "n_rows": 30912,
+ "n_families": 94,
+ "per_model": {
+  "Qwen/Qwen2.5-3B-Instruct": {
+   "B": {
+    "n": 644,
+    "success": 408,
+    "harmful": 43,
+    "missing": 0,
+    "format_error": 1,
+    "step_limit": 2,
+    "over_abstain": 8,
+    "false_conflict": 182,
+    "arbitrary_pick": 38,
+    "stale_value": 3,
+    "unsupported": 2,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.11,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.79
+   },
+   "EB": {
+    "n": 644,
+    "success": 384,
+    "harmful": 7,
+    "missing": 0,
+    "format_error": 3,
+    "step_limit": 10,
+    "over_abstain": 18,
+    "false_conflict": 222,
+    "arbitrary_pick": 3,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.21,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.67
+   },
+   "EBG": {
+    "n": 644,
+    "success": 462,
+    "harmful": 12,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 2,
+    "over_abstain": 21,
+    "false_conflict": 147,
+    "arbitrary_pick": 2,
+    "stale_value": 7,
+    "unsupported": 0,
+    "notices": 70,
+    "reverted": 0,
+    "model_calls_mean": 3.31,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.76
+   },
+   "EBG-all": {
+    "n": 644,
+    "success": 547,
+    "harmful": 37,
+    "missing": 0,
+    "format_error": 7,
+    "step_limit": 5,
+    "over_abstain": 16,
+    "false_conflict": 32,
+    "arbitrary_pick": 25,
+    "stale_value": 11,
+    "unsupported": 0,
+    "notices": 220,
+    "reverted": 0,
+    "model_calls_mean": 3.6,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.97
+   },
+   "EBG-noR3": {
+    "n": 644,
+    "success": 450,
+    "harmful": 13,
+    "missing": 0,
+    "format_error": 2,
+    "step_limit": 7,
+    "over_abstain": 20,
+    "false_conflict": 152,
+    "arbitrary_pick": 4,
+    "stale_value": 7,
+    "unsupported": 0,
+    "notices": 73,
+    "reverted": 0,
+    "model_calls_mean": 3.36,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.78
+   },
+   "EBG-unsafe": {
+    "n": 644,
+    "success": 462,
+    "harmful": 10,
+    "missing": 0,
+    "format_error": 2,
+    "step_limit": 9,
+    "over_abstain": 16,
+    "false_conflict": 145,
+    "arbitrary_pick": 0,
+    "stale_value": 9,
+    "unsupported": 0,
+    "notices": 76,
+    "reverted": 0,
+    "model_calls_mean": 3.38,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.79
+   },
+   "G": {
+    "n": 644,
+    "success": 362,
+    "harmful": 22,
+    "missing": 0,
+    "format_error": 6,
+    "step_limit": 11,
+    "over_abstain": 13,
+    "false_conflict": 230,
+    "arbitrary_pick": 11,
+    "stale_value": 10,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.18,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.68
+   },
+   "LA": {
+    "n": 644,
+    "success": 398,
+    "harmful": 11,
+    "missing": 0,
+    "format_error": 5,
+    "step_limit": 25,
+    "over_abstain": 12,
+    "false_conflict": 193,
+    "arbitrary_pick": 4,
+    "stale_value": 4,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.26,
+    "arbiter_calls_mean": 0.84,
+    "latency_s_mean": 2.27
+   },
+   "LG": {
+    "n": 644,
+    "success": 369,
+    "harmful": 88,
+    "missing": 0,
+    "format_error": 7,
+    "step_limit": 13,
+    "over_abstain": 21,
+    "false_conflict": 146,
+    "arbitrary_pick": 64,
+    "stale_value": 21,
+    "unsupported": 0,
+    "notices": 163,
+    "reverted": 2,
+    "model_calls_mean": 3.54,
+    "arbiter_calls_mean": 0.84,
+    "latency_s_mean": 2.48
+   },
+   "R": {
+    "n": 644,
+    "success": 407,
+    "harmful": 76,
+    "missing": 0,
+    "format_error": 2,
+    "step_limit": 7,
+    "over_abstain": 20,
+    "false_conflict": 132,
+    "arbitrary_pick": 22,
+    "stale_value": 51,
+    "unsupported": 0,
+    "notices": 151,
+    "reverted": 0,
+    "model_calls_mean": 3.45,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.88
+   },
+   "RT": {
+    "n": 644,
+    "success": 423,
+    "harmful": 98,
+    "missing": 0,
+    "format_error": 3,
+    "step_limit": 2,
+    "over_abstain": 31,
+    "false_conflict": 87,
+    "arbitrary_pick": 30,
+    "stale_value": 63,
+    "unsupported": 1,
+    "notices": 229,
+    "reverted": 0,
+    "model_calls_mean": 3.5,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.93
+   },
+   "T": {
+    "n": 644,
+    "success": 377,
+    "harmful": 9,
+    "missing": 0,
+    "format_error": 1,
+    "step_limit": 9,
+    "over_abstain": 15,
+    "false_conflict": 233,
+    "arbitrary_pick": 6,
+    "stale_value": 3,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.14,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 1.66
+   }
+  },
+  "Qwen/Qwen2.5-7B-Instruct": {
+   "B": {
+    "n": 644,
+    "success": 455,
+    "harmful": 43,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 43,
+    "over_abstain": 6,
+    "false_conflict": 97,
+    "arbitrary_pick": 39,
+    "stale_value": 4,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.76,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.04
+   },
+   "EB": {
+    "n": 644,
+    "success": 544,
+    "harmful": 15,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 29,
+    "over_abstain": 4,
+    "false_conflict": 52,
+    "arbitrary_pick": 5,
+    "stale_value": 10,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.55,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.63
+   },
+   "EBG": {
+    "n": 644,
+    "success": 550,
+    "harmful": 14,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 18,
+    "over_abstain": 3,
+    "false_conflict": 59,
+    "arbitrary_pick": 3,
+    "stale_value": 11,
+    "unsupported": 0,
+    "notices": 11,
+    "reverted": 0,
+    "model_calls_mean": 3.63,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.75
+   },
+   "EBG-all": {
+    "n": 644,
+    "success": 578,
+    "harmful": 35,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 18,
+    "over_abstain": 1,
+    "false_conflict": 12,
+    "arbitrary_pick": 24,
+    "stale_value": 10,
+    "unsupported": 0,
+    "notices": 84,
+    "reverted": 0,
+    "model_calls_mean": 3.75,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.93
+   },
+   "EBG-noR3": {
+    "n": 644,
+    "success": 552,
+    "harmful": 15,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 17,
+    "over_abstain": 2,
+    "false_conflict": 58,
+    "arbitrary_pick": 5,
+    "stale_value": 10,
+    "unsupported": 0,
+    "notices": 9,
+    "reverted": 0,
+    "model_calls_mean": 3.65,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.73
+   },
+   "EBG-unsafe": {
+    "n": 644,
+    "success": 554,
+    "harmful": 16,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 18,
+    "over_abstain": 1,
+    "false_conflict": 55,
+    "arbitrary_pick": 5,
+    "stale_value": 11,
+    "unsupported": 0,
+    "notices": 12,
+    "reverted": 0,
+    "model_calls_mean": 3.65,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.77
+   },
+   "G": {
+    "n": 644,
+    "success": 446,
+    "harmful": 46,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 38,
+    "over_abstain": 1,
+    "false_conflict": 113,
+    "arbitrary_pick": 20,
+    "stale_value": 26,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.71,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.83
+   },
+   "LA": {
+    "n": 644,
+    "success": 409,
+    "harmful": 179,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 24,
+    "over_abstain": 1,
+    "false_conflict": 31,
+    "arbitrary_pick": 147,
+    "stale_value": 32,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.7,
+    "arbiter_calls_mean": 0.85,
+    "latency_s_mean": 4.85
+   },
+   "LG": {
+    "n": 644,
+    "success": 361,
+    "harmful": 234,
+    "missing": 0,
+    "format_error": 2,
+    "step_limit": 17,
+    "over_abstain": 1,
+    "false_conflict": 29,
+    "arbitrary_pick": 186,
+    "stale_value": 45,
+    "unsupported": 0,
+    "notices": 106,
+    "reverted": 0,
+    "model_calls_mean": 3.9,
+    "arbiter_calls_mean": 0.85,
+    "latency_s_mean": 5.15
+   },
+   "R": {
+    "n": 644,
+    "success": 428,
+    "harmful": 76,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 22,
+    "over_abstain": 3,
+    "false_conflict": 115,
+    "arbitrary_pick": 23,
+    "stale_value": 53,
+    "unsupported": 0,
+    "notices": 79,
+    "reverted": 0,
+    "model_calls_mean": 3.89,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.13
+   },
+   "RT": {
+    "n": 644,
+    "success": 409,
+    "harmful": 125,
+    "missing": 0,
+    "format_error": 2,
+    "step_limit": 24,
+    "over_abstain": 1,
+    "false_conflict": 83,
+    "arbitrary_pick": 32,
+    "stale_value": 92,
+    "unsupported": 1,
+    "notices": 134,
+    "reverted": 0,
+    "model_calls_mean": 3.98,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.26
+   },
+   "T": {
+    "n": 644,
+    "success": 471,
+    "harmful": 37,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 31,
+    "over_abstain": 4,
+    "false_conflict": 101,
+    "arbitrary_pick": 6,
+    "stale_value": 29,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.68,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.79
+   }
+  },
+  "Qwen/Qwen3-8B": {
+   "B": {
+    "n": 644,
+    "success": 476,
+    "harmful": 56,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 2,
+    "over_abstain": 1,
+    "false_conflict": 109,
+    "arbitrary_pick": 45,
+    "stale_value": 5,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.36,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.63
+   },
+   "EB": {
+    "n": 644,
+    "success": 586,
+    "harmful": 16,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 3,
+    "over_abstain": 0,
+    "false_conflict": 39,
+    "arbitrary_pick": 4,
+    "stale_value": 12,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.22,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.72
+   },
+   "EBG": {
+    "n": 644,
+    "success": 580,
+    "harmful": 17,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 47,
+    "arbitrary_pick": 4,
+    "stale_value": 13,
+    "unsupported": 0,
+    "notices": 8,
+    "reverted": 0,
+    "model_calls_mean": 3.2,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.71
+   },
+   "EBG-all": {
+    "n": 644,
+    "success": 596,
+    "harmful": 36,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 12,
+    "arbitrary_pick": 24,
+    "stale_value": 12,
+    "unsupported": 0,
+    "notices": 70,
+    "reverted": 0,
+    "model_calls_mean": 3.31,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.93
+   },
+   "EBG-noR3": {
+    "n": 644,
+    "success": 581,
+    "harmful": 16,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 47,
+    "arbitrary_pick": 4,
+    "stale_value": 12,
+    "unsupported": 0,
+    "notices": 8,
+    "reverted": 0,
+    "model_calls_mean": 3.21,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.73
+   },
+   "EBG-unsafe": {
+    "n": 644,
+    "success": 581,
+    "harmful": 16,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 47,
+    "arbitrary_pick": 4,
+    "stale_value": 12,
+    "unsupported": 0,
+    "notices": 8,
+    "reverted": 0,
+    "model_calls_mean": 3.22,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.73
+   },
+   "G": {
+    "n": 644,
+    "success": 446,
+    "harmful": 33,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 5,
+    "over_abstain": 0,
+    "false_conflict": 160,
+    "arbitrary_pick": 20,
+    "stale_value": 13,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.42,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.81
+   },
+   "LA": {
+    "n": 644,
+    "success": 547,
+    "harmful": 77,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 1,
+    "over_abstain": 0,
+    "false_conflict": 19,
+    "arbitrary_pick": 51,
+    "stale_value": 26,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.25,
+    "arbiter_calls_mean": 0.85,
+    "latency_s_mean": 5.0
+   },
+   "LG": {
+    "n": 644,
+    "success": 510,
+    "harmful": 115,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 19,
+    "arbitrary_pick": 72,
+    "stale_value": 43,
+    "unsupported": 0,
+    "notices": 92,
+    "reverted": 0,
+    "model_calls_mean": 3.41,
+    "arbiter_calls_mean": 0.85,
+    "latency_s_mean": 5.3
+   },
+   "R": {
+    "n": 644,
+    "success": 437,
+    "harmful": 61,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 2,
+    "over_abstain": 0,
+    "false_conflict": 144,
+    "arbitrary_pick": 20,
+    "stale_value": 41,
+    "unsupported": 0,
+    "notices": 88,
+    "reverted": 0,
+    "model_calls_mean": 3.52,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.05
+   },
+   "RT": {
+    "n": 644,
+    "success": 459,
+    "harmful": 95,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 0,
+    "over_abstain": 0,
+    "false_conflict": 90,
+    "arbitrary_pick": 40,
+    "stale_value": 55,
+    "unsupported": 0,
+    "notices": 158,
+    "reverted": 0,
+    "model_calls_mean": 3.55,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.24
+   },
+   "T": {
+    "n": 644,
+    "success": 497,
+    "harmful": 17,
+    "missing": 0,
+    "format_error": 0,
+    "step_limit": 4,
+    "over_abstain": 0,
+    "false_conflict": 126,
+    "arbitrary_pick": 6,
+    "stale_value": 11,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.31,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.75
+   }
+  },
+  "meta-llama/Llama-3.1-8B-Instruct": {
+   "B": {
+    "n": 644,
+    "success": 167,
+    "harmful": 11,
+    "missing": 0,
+    "format_error": 68,
+    "step_limit": 10,
+    "over_abstain": 355,
+    "false_conflict": 33,
+    "arbitrary_pick": 10,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 4.4,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.83
+   },
+   "EB": {
+    "n": 644,
+    "success": 213,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 68,
+    "step_limit": 1,
+    "over_abstain": 284,
+    "false_conflict": 77,
+    "arbitrary_pick": 0,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 4.27,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.77
+   },
+   "EBG": {
+    "n": 644,
+    "success": 292,
+    "harmful": 4,
+    "missing": 0,
+    "format_error": 65,
+    "step_limit": 1,
+    "over_abstain": 222,
+    "false_conflict": 60,
+    "arbitrary_pick": 1,
+    "stale_value": 3,
+    "unsupported": 0,
+    "notices": 152,
+    "reverted": 67,
+    "model_calls_mean": 4.77,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.23
+   },
+   "EBG-all": {
+    "n": 644,
+    "success": 287,
+    "harmful": 7,
+    "missing": 0,
+    "format_error": 66,
+    "step_limit": 0,
+    "over_abstain": 261,
+    "false_conflict": 23,
+    "arbitrary_pick": 6,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 211,
+    "reverted": 66,
+    "model_calls_mean": 4.89,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.41
+   },
+   "EBG-noR3": {
+    "n": 644,
+    "success": 245,
+    "harmful": 4,
+    "missing": 0,
+    "format_error": 64,
+    "step_limit": 1,
+    "over_abstain": 281,
+    "false_conflict": 49,
+    "arbitrary_pick": 0,
+    "stale_value": 4,
+    "unsupported": 0,
+    "notices": 26,
+    "reverted": 0,
+    "model_calls_mean": 4.3,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.84
+   },
+   "EBG-unsafe": {
+    "n": 644,
+    "success": 278,
+    "harmful": 5,
+    "missing": 0,
+    "format_error": 133,
+    "step_limit": 2,
+    "over_abstain": 173,
+    "false_conflict": 53,
+    "arbitrary_pick": 0,
+    "stale_value": 5,
+    "unsupported": 0,
+    "notices": 159,
+    "reverted": 0,
+    "model_calls_mean": 4.78,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.24
+   },
+   "G": {
+    "n": 644,
+    "success": 219,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 71,
+    "step_limit": 1,
+    "over_abstain": 249,
+    "false_conflict": 103,
+    "arbitrary_pick": 1,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 4.36,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.81
+   },
+   "LA": {
+    "n": 644,
+    "success": 163,
+    "harmful": 7,
+    "missing": 0,
+    "format_error": 68,
+    "step_limit": 2,
+    "over_abstain": 354,
+    "false_conflict": 50,
+    "arbitrary_pick": 6,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 4.36,
+    "arbiter_calls_mean": 0.59,
+    "latency_s_mean": 4.65
+   },
+   "LG": {
+    "n": 644,
+    "success": 137,
+    "harmful": 42,
+    "missing": 0,
+    "format_error": 63,
+    "step_limit": 0,
+    "over_abstain": 374,
+    "false_conflict": 28,
+    "arbitrary_pick": 40,
+    "stale_value": 2,
+    "unsupported": 0,
+    "notices": 269,
+    "reverted": 80,
+    "model_calls_mean": 5.14,
+    "arbiter_calls_mean": 0.77,
+    "latency_s_mean": 5.68
+   },
+   "R": {
+    "n": 644,
+    "success": 234,
+    "harmful": 1,
+    "missing": 0,
+    "format_error": 126,
+    "step_limit": 13,
+    "over_abstain": 154,
+    "false_conflict": 116,
+    "arbitrary_pick": 0,
+    "stale_value": 1,
+    "unsupported": 0,
+    "notices": 176,
+    "reverted": 0,
+    "model_calls_mean": 4.98,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.39
+   },
+   "RT": {
+    "n": 644,
+    "success": 225,
+    "harmful": 2,
+    "missing": 0,
+    "format_error": 135,
+    "step_limit": 14,
+    "over_abstain": 201,
+    "false_conflict": 67,
+    "arbitrary_pick": 2,
+    "stale_value": 0,
+    "unsupported": 0,
+    "notices": 197,
+    "reverted": 0,
+    "model_calls_mean": 5.03,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 4.47
+   },
+   "T": {
+    "n": 644,
+    "success": 213,
+    "harmful": 2,
+    "missing": 0,
+    "format_error": 68,
+    "step_limit": 0,
+    "over_abstain": 276,
+    "false_conflict": 85,
+    "arbitrary_pick": 0,
+    "stale_value": 2,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 4.26,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.75
+   }
+  },
+  "ALL": {
+   "B": {
+    "n": 2576,
+    "success": 1506,
+    "harmful": 153,
+    "missing": 0,
+    "format_error": 69,
+    "step_limit": 57,
+    "over_abstain": 370,
+    "false_conflict": 421,
+    "arbitrary_pick": 132,
+    "stale_value": 12,
+    "unsupported": 2,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.66,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.32
+   },
+   "EB": {
+    "n": 2576,
+    "success": 1727,
+    "harmful": 39,
+    "missing": 0,
+    "format_error": 71,
+    "step_limit": 43,
+    "over_abstain": 306,
+    "false_conflict": 390,
+    "arbitrary_pick": 12,
+    "stale_value": 24,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.56,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.2
+   },
+   "EBG": {
+    "n": 2576,
+    "success": 1884,
+    "harmful": 47,
+    "missing": 0,
+    "format_error": 65,
+    "step_limit": 21,
+    "over_abstain": 246,
+    "false_conflict": 313,
+    "arbitrary_pick": 10,
+    "stale_value": 34,
+    "unsupported": 0,
+    "notices": 241,
+    "reverted": 67,
+    "model_calls_mean": 3.73,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.37
+   },
+   "EBG-all": {
+    "n": 2576,
+    "success": 2008,
+    "harmful": 115,
+    "missing": 0,
+    "format_error": 73,
+    "step_limit": 23,
+    "over_abstain": 278,
+    "false_conflict": 79,
+    "arbitrary_pick": 79,
+    "stale_value": 33,
+    "unsupported": 0,
+    "notices": 585,
+    "reverted": 66,
+    "model_calls_mean": 3.89,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.56
+   },
+   "EBG-noR3": {
+    "n": 2576,
+    "success": 1828,
+    "harmful": 48,
+    "missing": 0,
+    "format_error": 66,
+    "step_limit": 25,
+    "over_abstain": 303,
+    "false_conflict": 306,
+    "arbitrary_pick": 13,
+    "stale_value": 33,
+    "unsupported": 0,
+    "notices": 116,
+    "reverted": 0,
+    "model_calls_mean": 3.63,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.27
+   },
+   "EBG-unsafe": {
+    "n": 2576,
+    "success": 1875,
+    "harmful": 47,
+    "missing": 0,
+    "format_error": 135,
+    "step_limit": 29,
+    "over_abstain": 190,
+    "false_conflict": 300,
+    "arbitrary_pick": 9,
+    "stale_value": 37,
+    "unsupported": 0,
+    "notices": 255,
+    "reverted": 0,
+    "model_calls_mean": 3.76,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.38
+   },
+   "G": {
+    "n": 2576,
+    "success": 1473,
+    "harmful": 102,
+    "missing": 0,
+    "format_error": 77,
+    "step_limit": 55,
+    "over_abstain": 263,
+    "false_conflict": 606,
+    "arbitrary_pick": 52,
+    "stale_value": 49,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.67,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.28
+   },
+   "LA": {
+    "n": 2576,
+    "success": 1517,
+    "harmful": 274,
+    "missing": 0,
+    "format_error": 73,
+    "step_limit": 52,
+    "over_abstain": 367,
+    "false_conflict": 293,
+    "arbitrary_pick": 208,
+    "stale_value": 63,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.64,
+    "arbiter_calls_mean": 0.79,
+    "latency_s_mean": 4.19
+   },
+   "LG": {
+    "n": 2576,
+    "success": 1377,
+    "harmful": 479,
+    "missing": 0,
+    "format_error": 72,
+    "step_limit": 30,
+    "over_abstain": 396,
+    "false_conflict": 222,
+    "arbitrary_pick": 362,
+    "stale_value": 111,
+    "unsupported": 0,
+    "notices": 630,
+    "reverted": 82,
+    "model_calls_mean": 4.0,
+    "arbiter_calls_mean": 0.83,
+    "latency_s_mean": 4.65
+   },
+   "R": {
+    "n": 2576,
+    "success": 1506,
+    "harmful": 214,
+    "missing": 0,
+    "format_error": 128,
+    "step_limit": 44,
+    "over_abstain": 177,
+    "false_conflict": 507,
+    "arbitrary_pick": 65,
+    "stale_value": 146,
+    "unsupported": 0,
+    "notices": 494,
+    "reverted": 0,
+    "model_calls_mean": 3.96,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.61
+   },
+   "RT": {
+    "n": 2576,
+    "success": 1516,
+    "harmful": 320,
+    "missing": 0,
+    "format_error": 140,
+    "step_limit": 40,
+    "over_abstain": 233,
+    "false_conflict": 327,
+    "arbitrary_pick": 104,
+    "stale_value": 210,
+    "unsupported": 2,
+    "notices": 718,
+    "reverted": 0,
+    "model_calls_mean": 4.02,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.72
+   },
+   "T": {
+    "n": 2576,
+    "success": 1558,
+    "harmful": 65,
+    "missing": 0,
+    "format_error": 69,
+    "step_limit": 44,
+    "over_abstain": 295,
+    "false_conflict": 545,
+    "arbitrary_pick": 18,
+    "stale_value": 45,
+    "unsupported": 0,
+    "notices": 0,
+    "reverted": 0,
+    "model_calls_mean": 3.6,
+    "arbiter_calls_mean": 0.0,
+    "latency_s_mean": 3.24
+   }
+  }
+ },
+ "per_category": {
+  "Qwen/Qwen2.5-3B-Instruct": {
+   "B": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     42,
+     48
+    ],
+    "backfilled_entry": [
+     2,
+     20
+    ],
+    "conflict_plain": [
+     44,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     21,
+     28
+    ],
+    "historical_question": [
+     1,
+     24
+    ],
+    "hypothetical_change": [
+     3,
+     4
+    ],
+    "incidental_change_word": [
+     26,
+     40
+    ],
+    "missing_timestamp": [
+     20,
+     20
+    ],
+    "negated_both_stand": [
+     12,
+     20
+    ],
+    "negated_replacement": [
+     15,
+     40
+    ],
+    "retention": [
+     38,
+     48
+    ],
+    "same_day_correction_noref": [
+     12,
+     44
+    ],
+    "same_day_correction_ref": [
+     22,
+     48
+    ],
+    "single_record_control": [
+     34,
+     48
+    ],
+    "supersession_later_ref": [
+     26,
+     44
+    ],
+    "three_value_chain": [
+     0,
+     12
+    ],
+    "unconfirmed_change": [
+     2,
+     4
+    ],
+    "unsupported": [
+     44,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "EB": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     14,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     41,
+     44
+    ],
+    "conflict_same_validity": [
+     27,
+     28
+    ],
+    "historical_question": [
+     1,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     39,
+     40
+    ],
+    "missing_timestamp": [
+     15,
+     20
+    ],
+    "negated_both_stand": [
+     20,
+     20
+    ],
+    "negated_replacement": [
+     1,
+     40
+    ],
+    "retention": [
+     17,
+     48
+    ],
+    "same_day_correction_noref": [
+     7,
+     44
+    ],
+    "same_day_correction_ref": [
+     5,
+     48
+    ],
+    "single_record_control": [
+     28,
+     48
+    ],
+    "supersession_later_ref": [
+     23,
+     44
+    ],
+    "three_value_chain": [
+     2,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "EBG": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     16,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     43,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     15,
+     20
+    ],
+    "negated_both_stand": [
+     20,
+     20
+    ],
+    "negated_replacement": [
+     3,
+     40
+    ],
+    "retention": [
+     20,
+     48
+    ],
+    "same_day_correction_noref": [
+     7,
+     44
+    ],
+    "same_day_correction_ref": [
+     45,
+     48
+    ],
+    "single_record_control": [
+     27,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     6,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "EBG-all": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     18,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     40,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     4,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     17,
+     20
+    ],
+    "negated_both_stand": [
+     0,
+     20
+    ],
+    "negated_replacement": [
+     36,
+     40
+    ],
+    "retention": [
+     46,
+     48
+    ],
+    "same_day_correction_noref": [
+     38,
+     44
+    ],
+    "same_day_correction_ref": [
+     45,
+     48
+    ],
+    "single_record_control": [
+     27,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     9,
+     12
+    ],
+    "unconfirmed_change": [
+     3,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "EBG-noR3": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     18,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     41,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     37,
+     40
+    ],
+    "missing_timestamp": [
+     15,
+     20
+    ],
+    "negated_both_stand": [
+     20,
+     20
+    ],
+    "negated_replacement": [
+     1,
+     40
+    ],
+    "retention": [
+     18,
+     48
+    ],
+    "same_day_correction_noref": [
+     4,
+     44
+    ],
+    "same_day_correction_ref": [
+     45,
+     48
+    ],
+    "single_record_control": [
+     27,
+     48
+    ],
+    "supersession_later_ref": [
+     43,
+     44
+    ],
+    "three_value_chain": [
+     4,
+     12
+    ],
+    "unconfirmed_change": [
+     1,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "EBG-unsafe": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     19,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     39,
+     40
+    ],
+    "missing_timestamp": [
+     16,
+     20
+    ],
+    "negated_both_stand": [
+     20,
+     20
+    ],
+    "negated_replacement": [
+     2,
+     40
+    ],
+    "retention": [
+     21,
+     48
+    ],
+    "same_day_correction_noref": [
+     6,
+     44
+    ],
+    "same_day_correction_ref": [
+     45,
+     48
+    ],
+    "single_record_control": [
+     26,
+     48
+    ],
+    "supersession_later_ref": [
+     43,
+     44
+    ],
+    "three_value_chain": [
+     5,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "G": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     46,
+     48
+    ],
+    "backfilled_entry": [
+     2,
+     20
+    ],
+    "conflict_plain": [
+     46,
+     48
+    ],
+    "conflict_rival_neutral": [
+     40,
+     44
+    ],
+    "conflict_same_validity": [
+     26,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     12,
+     20
+    ],
+    "negated_both_stand": [
+     20,
+     20
+    ],
+    "negated_replacement": [
+     0,
+     40
+    ],
+    "retention": [
+     27,
+     48
+    ],
+    "same_day_correction_noref": [
+     0,
+     44
+    ],
+    "same_day_correction_ref": [
+     0,
+     48
+    ],
+    "single_record_control": [
+     29,
+     48
+    ],
+    "supersession_later_ref": [
+     27,
+     44
+    ],
+    "three_value_chain": [
+     0,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     47,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "LA": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     47,
+     48
+    ],
+    "backfilled_entry": [
+     7,
+     20
+    ],
+    "conflict_plain": [
+     47,
+     48
+    ],
+    "conflict_rival_neutral": [
+     39,
+     44
+    ],
+    "conflict_same_validity": [
+     27,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     3,
+     4
+    ],
+    "incidental_change_word": [
+     33,
+     40
+    ],
+    "missing_timestamp": [
+     18,
+     20
+    ],
+    "negated_both_stand": [
+     20,
+     20
+    ],
+    "negated_replacement": [
+     13,
+     40
+    ],
+    "retention": [
+     29,
+     48
+    ],
+    "same_day_correction_noref": [
+     3,
+     44
+    ],
+    "same_day_correction_ref": [
+     9,
+     48
+    ],
+    "single_record_control": [
+     27,
+     48
+    ],
+    "supersession_later_ref": [
+     25,
+     44
+    ],
+    "three_value_chain": [
+     0,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     2,
+     4
+    ],
+    "valid_time_same_import": [
+     1,
+     4
+    ]
+   },
+   "LG": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     39,
+     48
+    ],
+    "backfilled_entry": [
+     11,
+     20
+    ],
+    "conflict_plain": [
+     41,
+     48
+    ],
+    "conflict_rival_neutral": [
+     23,
+     44
+    ],
+    "conflict_same_validity": [
+     5,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     4,
+     4
+    ],
+    "incidental_change_word": [
+     31,
+     40
+    ],
+    "missing_timestamp": [
+     18,
+     20
+    ],
+    "negated_both_stand": [
+     15,
+     20
+    ],
+    "negated_replacement": [
+     18,
+     40
+    ],
+    "retention": [
+     43,
+     48
+    ],
+    "same_day_correction_noref": [
+     2,
+     44
+    ],
+    "same_day_correction_ref": [
+     19,
+     48
+    ],
+    "single_record_control": [
+     29,
+     48
+    ],
+    "supersession_later_ref": [
+     17,
+     44
+    ],
+    "three_value_chain": [
+     0,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     47,
+     48
+    ],
+    "update_record_time": [
+     3,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "R": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     3,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     42,
+     44
+    ],
+    "conflict_same_validity": [
+     27,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     38,
+     40
+    ],
+    "missing_timestamp": [
+     0,
+     20
+    ],
+    "negated_both_stand": [
+     20,
+     20
+    ],
+    "negated_replacement": [
+     0,
+     40
+    ],
+    "retention": [
+     37,
+     48
+    ],
+    "same_day_correction_noref": [
+     2,
+     44
+    ],
+    "same_day_correction_ref": [
+     1,
+     48
+    ],
+    "single_record_control": [
+     36,
+     48
+    ],
+    "supersession_later_ref": [
+     41,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "RT": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     7,
+     20
+    ],
+    "conflict_plain": [
+     47,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     25,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     39,
+     40
+    ],
+    "missing_timestamp": [
+     2,
+     20
+    ],
+    "negated_both_stand": [
+     0,
+     20
+    ],
+    "negated_replacement": [
+     20,
+     40
+    ],
+    "retention": [
+     37,
+     48
+    ],
+    "same_day_correction_noref": [
+     0,
+     44
+    ],
+    "same_day_correction_ref": [
+     13,
+     48
+    ],
+    "single_record_control": [
+     36,
+     48
+    ],
+    "supersession_later_ref": [
+     43,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     46,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "T": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     6,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     42,
+     44
+    ],
+    "conflict_same_validity": [
+     27,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     39,
+     40
+    ],
+    "missing_timestamp": [
+     20,
+     20
+    ],
+    "negated_both_stand": [
+     16,
+     20
+    ],
+    "negated_replacement": [
+     0,
+     40
+    ],
+    "retention": [
+     25,
+     48
+    ],
+    "same_day_correction_noref": [
+     1,
+     44
+    ],
+    "same_day_correction_ref": [
+     1,
+     48
+    ],
+    "single_record_control": [
+     27,
+     48
+    ],
+    "supersession_later_ref": [
+     29,
+     44
+    ],
+    "three_value_chain": [
+     1,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     47,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   }
+  },
+  "Qwen/Qwen2.5-7B-Instruct": {
+   "B": {
+    "as_of_question": [
+     4,
+     4
+    ],
+    "authority_both": [
+     43,
+     48
+    ],
+    "backfilled_entry": [
+     20,
+     20
+    ],
+    "conflict_plain": [
+     43,
+     48
+    ],
+    "conflict_rival_neutral": [
+     41,
+     44
+    ],
+    "conflict_same_validity": [
+     24,
+     28
+    ],
+    "historical_question": [
+     2,
+     24
+    ],
+    "hypothetical_change": [
+     2,
+     4
+    ],
+    "incidental_change_word": [
+     15,
+     40
+    ],
+    "missing_timestamp": [
+     17,
+     20
+    ],
+    "negated_both_stand": [
+     14,
+     20
+    ],
+    "negated_replacement": [
+     21,
+     40
+    ],
+    "retention": [
+     48,
+     48
+    ],
+    "same_day_correction_noref": [
+     20,
+     44
+    ],
+    "same_day_correction_ref": [
+     32,
+     48
+    ],
+    "single_record_control": [
+     43,
+     48
+    ],
+    "supersession_later_ref": [
+     25,
+     44
+    ],
+    "three_value_chain": [
+     3,
+     12
+    ],
+    "unconfirmed_change": [
+     1,
+     4
+    ],
+    "unsupported": [
+     36,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     1,
+     4
+    ]
+   },
+   "EB": {
+    "as_of_question": [
+     1,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     20,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     39,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     14,
+     24
+    ],
+    "hypothetical_change": [
+     4,
+     4
+    ],
+    "incidental_change_word": [
+     39,
+     40
+    ],
+    "missing_timestamp": [
+     15,
+     20
+    ],
+    "negated_both_stand": [
+     19,
+     20
+    ],
+    "negated_replacement": [
+     8,
+     40
+    ],
+    "retention": [
+     38,
+     48
+    ],
+    "same_day_correction_noref": [
+     41,
+     44
+    ],
+    "same_day_correction_ref": [
+     47,
+     48
+    ],
+    "single_record_control": [
+     43,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     1,
+     4
+    ],
+    "unsupported": [
+     30,
+     48
+    ],
+    "update_record_time": [
+     3,
+     4
+    ],
+    "valid_time_same_import": [
+     2,
+     4
+    ]
+   },
+   "EBG": {
+    "as_of_question": [
+     1,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     20,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     41,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     7,
+     24
+    ],
+    "hypothetical_change": [
+     4,
+     4
+    ],
+    "incidental_change_word": [
+     39,
+     40
+    ],
+    "missing_timestamp": [
+     20,
+     20
+    ],
+    "negated_both_stand": [
+     20,
+     20
+    ],
+    "negated_replacement": [
+     6,
+     40
+    ],
+    "retention": [
+     36,
+     48
+    ],
+    "same_day_correction_noref": [
+     38,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     45,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     38,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     3,
+     4
+    ]
+   },
+   "EBG-all": {
+    "as_of_question": [
+     2,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     20,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     39,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     3,
+     24
+    ],
+    "hypothetical_change": [
+     4,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     20,
+     20
+    ],
+    "negated_both_stand": [
+     0,
+     20
+    ],
+    "negated_replacement": [
+     38,
+     40
+    ],
+    "retention": [
+     47,
+     48
+    ],
+    "same_day_correction_noref": [
+     43,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     43,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     4,
+     4
+    ],
+    "unsupported": [
+     39,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "EBG-noR3": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     20,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     42,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     7,
+     24
+    ],
+    "hypothetical_change": [
+     3,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     18,
+     20
+    ],
+    "negated_both_stand": [
+     18,
+     20
+    ],
+    "negated_replacement": [
+     10,
+     40
+    ],
+    "retention": [
+     38,
+     48
+    ],
+    "same_day_correction_noref": [
+     37,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     46,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     11,
+     12
+    ],
+    "unconfirmed_change": [
+     1,
+     4
+    ],
+    "unsupported": [
+     37,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "EBG-unsafe": {
+    "as_of_question": [
+     1,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     19,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     40,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     7,
+     24
+    ],
+    "hypothetical_change": [
+     3,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     19,
+     20
+    ],
+    "negated_both_stand": [
+     19,
+     20
+    ],
+    "negated_replacement": [
+     8,
+     40
+    ],
+    "retention": [
+     38,
+     48
+    ],
+    "same_day_correction_noref": [
+     40,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     47,
+     48
+    ],
+    "supersession_later_ref": [
+     42,
+     44
+    ],
+    "three_value_chain": [
+     11,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     40,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "G": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     46,
+     48
+    ],
+    "backfilled_entry": [
+     5,
+     20
+    ],
+    "conflict_plain": [
+     46,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     12,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     33,
+     40
+    ],
+    "missing_timestamp": [
+     4,
+     20
+    ],
+    "negated_both_stand": [
+     20,
+     20
+    ],
+    "negated_replacement": [
+     0,
+     40
+    ],
+    "retention": [
+     47,
+     48
+    ],
+    "same_day_correction_noref": [
+     9,
+     44
+    ],
+    "same_day_correction_ref": [
+     20,
+     48
+    ],
+    "single_record_control": [
+     47,
+     48
+    ],
+    "supersession_later_ref": [
+     40,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     28,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     1,
+     4
+    ]
+   },
+   "LA": {
+    "as_of_question": [
+     3,
+     4
+    ],
+    "authority_both": [
+     21,
+     48
+    ],
+    "backfilled_entry": [
+     16,
+     20
+    ],
+    "conflict_plain": [
+     25,
+     48
+    ],
+    "conflict_rival_neutral": [
+     20,
+     44
+    ],
+    "conflict_same_validity": [
+     13,
+     28
+    ],
+    "historical_question": [
+     8,
+     24
+    ],
+    "hypothetical_change": [
+     2,
+     4
+    ],
+    "incidental_change_word": [
+     5,
+     40
+    ],
+    "missing_timestamp": [
+     4,
+     20
+    ],
+    "negated_both_stand": [
+     11,
+     20
+    ],
+    "negated_replacement": [
+     22,
+     40
+    ],
+    "retention": [
+     38,
+     48
+    ],
+    "same_day_correction_noref": [
+     42,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     44,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     4,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     34,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     1,
+     4
+    ]
+   },
+   "LG": {
+    "as_of_question": [
+     2,
+     4
+    ],
+    "authority_both": [
+     17,
+     48
+    ],
+    "backfilled_entry": [
+     16,
+     20
+    ],
+    "conflict_plain": [
+     15,
+     48
+    ],
+    "conflict_rival_neutral": [
+     0,
+     44
+    ],
+    "conflict_same_validity": [
+     5,
+     28
+    ],
+    "historical_question": [
+     7,
+     24
+    ],
+    "hypothetical_change": [
+     4,
+     4
+    ],
+    "incidental_change_word": [
+     4,
+     40
+    ],
+    "missing_timestamp": [
+     3,
+     20
+    ],
+    "negated_both_stand": [
+     12,
+     20
+    ],
+    "negated_replacement": [
+     20,
+     40
+    ],
+    "retention": [
+     26,
+     48
+    ],
+    "same_day_correction_noref": [
+     41,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     47,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     4,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     41,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     1,
+     4
+    ]
+   },
+   "R": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     47,
+     48
+    ],
+    "backfilled_entry": [
+     0,
+     20
+    ],
+    "conflict_plain": [
+     45,
+     48
+    ],
+    "conflict_rival_neutral": [
+     43,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     4,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     38,
+     40
+    ],
+    "missing_timestamp": [
+     1,
+     20
+    ],
+    "negated_both_stand": [
+     20,
+     20
+    ],
+    "negated_replacement": [
+     1,
+     40
+    ],
+    "retention": [
+     37,
+     48
+    ],
+    "same_day_correction_noref": [
+     5,
+     44
+    ],
+    "same_day_correction_ref": [
+     17,
+     48
+    ],
+    "single_record_control": [
+     46,
+     48
+    ],
+    "supersession_later_ref": [
+     42,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     37,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     1,
+     4
+    ]
+   },
+   "RT": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     47,
+     48
+    ],
+    "backfilled_entry": [
+     4,
+     20
+    ],
+    "conflict_plain": [
+     45,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     2,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     39,
+     40
+    ],
+    "missing_timestamp": [
+     8,
+     20
+    ],
+    "negated_both_stand": [
+     0,
+     20
+    ],
+    "negated_replacement": [
+     4,
+     40
+    ],
+    "retention": [
+     33,
+     48
+    ],
+    "same_day_correction_noref": [
+     3,
+     44
+    ],
+    "same_day_correction_ref": [
+     13,
+     48
+    ],
+    "single_record_control": [
+     47,
+     48
+    ],
+    "supersession_later_ref": [
+     42,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     34,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "T": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     7,
+     20
+    ],
+    "conflict_plain": [
+     44,
+     48
+    ],
+    "conflict_rival_neutral": [
+     43,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     18,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     39,
+     40
+    ],
+    "missing_timestamp": [
+     17,
+     20
+    ],
+    "negated_both_stand": [
+     15,
+     20
+    ],
+    "negated_replacement": [
+     11,
+     40
+    ],
+    "retention": [
+     44,
+     48
+    ],
+    "same_day_correction_noref": [
+     6,
+     44
+    ],
+    "same_day_correction_ref": [
+     16,
+     48
+    ],
+    "single_record_control": [
+     44,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     10,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     34,
+     48
+    ],
+    "update_record_time": [
+     3,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   }
+  },
+  "Qwen/Qwen3-8B": {
+   "B": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     16,
+     20
+    ],
+    "conflict_plain": [
+     46,
+     48
+    ],
+    "conflict_rival_neutral": [
+     40,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     3,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     9,
+     40
+    ],
+    "missing_timestamp": [
+     20,
+     20
+    ],
+    "negated_both_stand": [
+     12,
+     20
+    ],
+    "negated_replacement": [
+     36,
+     40
+    ],
+    "retention": [
+     48,
+     48
+    ],
+    "same_day_correction_noref": [
+     23,
+     44
+    ],
+    "same_day_correction_ref": [
+     20,
+     48
+    ],
+    "single_record_control": [
+     48,
+     48
+    ],
+    "supersession_later_ref": [
+     28,
+     44
+    ],
+    "three_value_chain": [
+     0,
+     12
+    ],
+    "unconfirmed_change": [
+     3,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "EB": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     20,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     16,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     20,
+     20
+    ],
+    "negated_both_stand": [
+     16,
+     20
+    ],
+    "negated_replacement": [
+     20,
+     40
+    ],
+    "retention": [
+     48,
+     48
+    ],
+    "same_day_correction_noref": [
+     33,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     48,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     45,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "EBG": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     20,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     8,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     20,
+     20
+    ],
+    "negated_both_stand": [
+     16,
+     20
+    ],
+    "negated_replacement": [
+     20,
+     40
+    ],
+    "retention": [
+     48,
+     48
+    ],
+    "same_day_correction_noref": [
+     32,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     48,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "EBG-all": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     20,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     40,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     4,
+     24
+    ],
+    "hypothetical_change": [
+     4,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     20,
+     20
+    ],
+    "negated_both_stand": [
+     0,
+     20
+    ],
+    "negated_replacement": [
+     40,
+     40
+    ],
+    "retention": [
+     48,
+     48
+    ],
+    "same_day_correction_noref": [
+     44,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     48,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     4,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "EBG-noR3": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     20,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     8,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     20,
+     20
+    ],
+    "negated_both_stand": [
+     16,
+     20
+    ],
+    "negated_replacement": [
+     22,
+     40
+    ],
+    "retention": [
+     48,
+     48
+    ],
+    "same_day_correction_noref": [
+     31,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     48,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "EBG-unsafe": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     20,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     8,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     20,
+     20
+    ],
+    "negated_both_stand": [
+     16,
+     20
+    ],
+    "negated_replacement": [
+     22,
+     40
+    ],
+    "retention": [
+     48,
+     48
+    ],
+    "same_day_correction_noref": [
+     31,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     48,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     4,
+     4
+    ]
+   },
+   "G": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     0,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     12,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     39,
+     40
+    ],
+    "missing_timestamp": [
+     0,
+     20
+    ],
+    "negated_both_stand": [
+     20,
+     20
+    ],
+    "negated_replacement": [
+     2,
+     40
+    ],
+    "retention": [
+     48,
+     48
+    ],
+    "same_day_correction_noref": [
+     0,
+     44
+    ],
+    "same_day_correction_ref": [
+     4,
+     48
+    ],
+    "single_record_control": [
+     48,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     45,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "LA": {
+    "as_of_question": [
+     1,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     18,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     29,
+     44
+    ],
+    "conflict_same_validity": [
+     24,
+     28
+    ],
+    "historical_question": [
+     16,
+     24
+    ],
+    "hypothetical_change": [
+     3,
+     4
+    ],
+    "incidental_change_word": [
+     32,
+     40
+    ],
+    "missing_timestamp": [
+     0,
+     20
+    ],
+    "negated_both_stand": [
+     16,
+     20
+    ],
+    "negated_replacement": [
+     25,
+     40
+    ],
+    "retention": [
+     48,
+     48
+    ],
+    "same_day_correction_noref": [
+     36,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     48,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     8,
+     12
+    ],
+    "unconfirmed_change": [
+     4,
+     4
+    ],
+    "unsupported": [
+     47,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "LG": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     20,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     17,
+     44
+    ],
+    "conflict_same_validity": [
+     24,
+     28
+    ],
+    "historical_question": [
+     4,
+     24
+    ],
+    "hypothetical_change": [
+     3,
+     4
+    ],
+    "incidental_change_word": [
+     32,
+     40
+    ],
+    "missing_timestamp": [
+     0,
+     20
+    ],
+    "negated_both_stand": [
+     7,
+     20
+    ],
+    "negated_replacement": [
+     27,
+     40
+    ],
+    "retention": [
+     40,
+     48
+    ],
+    "same_day_correction_noref": [
+     36,
+     44
+    ],
+    "same_day_correction_ref": [
+     48,
+     48
+    ],
+    "single_record_control": [
+     48,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     8,
+     12
+    ],
+    "unconfirmed_change": [
+     4,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "R": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     0,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     2,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     38,
+     40
+    ],
+    "missing_timestamp": [
+     0,
+     20
+    ],
+    "negated_both_stand": [
+     20,
+     20
+    ],
+    "negated_replacement": [
+     1,
+     40
+    ],
+    "retention": [
+     48,
+     48
+    ],
+    "same_day_correction_noref": [
+     0,
+     44
+    ],
+    "same_day_correction_ref": [
+     4,
+     48
+    ],
+    "single_record_control": [
+     48,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "RT": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     4,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     7,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     0,
+     20
+    ],
+    "negated_both_stand": [
+     0,
+     20
+    ],
+    "negated_replacement": [
+     20,
+     40
+    ],
+    "retention": [
+     48,
+     48
+    ],
+    "same_day_correction_noref": [
+     0,
+     44
+    ],
+    "same_day_correction_ref": [
+     16,
+     48
+    ],
+    "single_record_control": [
+     48,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     48,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "T": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     48,
+     48
+    ],
+    "backfilled_entry": [
+     4,
+     20
+    ],
+    "conflict_plain": [
+     48,
+     48
+    ],
+    "conflict_rival_neutral": [
+     44,
+     44
+    ],
+    "conflict_same_validity": [
+     28,
+     28
+    ],
+    "historical_question": [
+     15,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     40,
+     40
+    ],
+    "missing_timestamp": [
+     17,
+     20
+    ],
+    "negated_both_stand": [
+     17,
+     20
+    ],
+    "negated_replacement": [
+     19,
+     40
+    ],
+    "retention": [
+     48,
+     48
+    ],
+    "same_day_correction_noref": [
+     0,
+     44
+    ],
+    "same_day_correction_ref": [
+     16,
+     48
+    ],
+    "single_record_control": [
+     48,
+     48
+    ],
+    "supersession_later_ref": [
+     44,
+     44
+    ],
+    "three_value_chain": [
+     12,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     45,
+     48
+    ],
+    "update_record_time": [
+     4,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   }
+  },
+  "meta-llama/Llama-3.1-8B-Instruct": {
+   "B": {
+    "as_of_question": [
+     1,
+     4
+    ],
+    "authority_both": [
+     9,
+     48
+    ],
+    "backfilled_entry": [
+     0,
+     20
+    ],
+    "conflict_plain": [
+     17,
+     48
+    ],
+    "conflict_rival_neutral": [
+     21,
+     44
+    ],
+    "conflict_same_validity": [
+     5,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     2,
+     40
+    ],
+    "missing_timestamp": [
+     1,
+     20
+    ],
+    "negated_both_stand": [
+     11,
+     20
+    ],
+    "negated_replacement": [
+     0,
+     40
+    ],
+    "retention": [
+     16,
+     48
+    ],
+    "same_day_correction_noref": [
+     8,
+     44
+    ],
+    "same_day_correction_ref": [
+     8,
+     48
+    ],
+    "single_record_control": [
+     12,
+     48
+    ],
+    "supersession_later_ref": [
+     14,
+     44
+    ],
+    "three_value_chain": [
+     1,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     41,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "EB": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     29,
+     48
+    ],
+    "backfilled_entry": [
+     0,
+     20
+    ],
+    "conflict_plain": [
+     28,
+     48
+    ],
+    "conflict_rival_neutral": [
+     31,
+     44
+    ],
+    "conflict_same_validity": [
+     16,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     24,
+     40
+    ],
+    "missing_timestamp": [
+     3,
+     20
+    ],
+    "negated_both_stand": [
+     12,
+     20
+    ],
+    "negated_replacement": [
+     0,
+     40
+    ],
+    "retention": [
+     5,
+     48
+    ],
+    "same_day_correction_noref": [
+     3,
+     44
+    ],
+    "same_day_correction_ref": [
+     5,
+     48
+    ],
+    "single_record_control": [
+     7,
+     48
+    ],
+    "supersession_later_ref": [
+     9,
+     44
+    ],
+    "three_value_chain": [
+     0,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     41,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "EBG": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     35,
+     48
+    ],
+    "backfilled_entry": [
+     2,
+     20
+    ],
+    "conflict_plain": [
+     41,
+     48
+    ],
+    "conflict_rival_neutral": [
+     37,
+     44
+    ],
+    "conflict_same_validity": [
+     21,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     33,
+     40
+    ],
+    "missing_timestamp": [
+     6,
+     20
+    ],
+    "negated_both_stand": [
+     16,
+     20
+    ],
+    "negated_replacement": [
+     0,
+     40
+    ],
+    "retention": [
+     10,
+     48
+    ],
+    "same_day_correction_noref": [
+     2,
+     44
+    ],
+    "same_day_correction_ref": [
+     14,
+     48
+    ],
+    "single_record_control": [
+     14,
+     48
+    ],
+    "supersession_later_ref": [
+     17,
+     44
+    ],
+    "three_value_chain": [
+     0,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     43,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     1,
+     4
+    ]
+   },
+   "EBG-all": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     39,
+     48
+    ],
+    "backfilled_entry": [
+     0,
+     20
+    ],
+    "conflict_plain": [
+     41,
+     48
+    ],
+    "conflict_rival_neutral": [
+     35,
+     44
+    ],
+    "conflict_same_validity": [
+     20,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     1,
+     4
+    ],
+    "incidental_change_word": [
+     34,
+     40
+    ],
+    "missing_timestamp": [
+     4,
+     20
+    ],
+    "negated_both_stand": [
+     7,
+     20
+    ],
+    "negated_replacement": [
+     6,
+     40
+    ],
+    "retention": [
+     12,
+     48
+    ],
+    "same_day_correction_noref": [
+     5,
+     44
+    ],
+    "same_day_correction_ref": [
+     12,
+     48
+    ],
+    "single_record_control": [
+     11,
+     48
+    ],
+    "supersession_later_ref": [
+     14,
+     44
+    ],
+    "three_value_chain": [
+     0,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     44,
+     48
+    ],
+    "update_record_time": [
+     2,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "EBG-noR3": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     33,
+     48
+    ],
+    "backfilled_entry": [
+     0,
+     20
+    ],
+    "conflict_plain": [
+     29,
+     48
+    ],
+    "conflict_rival_neutral": [
+     33,
+     44
+    ],
+    "conflict_same_validity": [
+     16,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     26,
+     40
+    ],
+    "missing_timestamp": [
+     5,
+     20
+    ],
+    "negated_both_stand": [
+     14,
+     20
+    ],
+    "negated_replacement": [
+     1,
+     40
+    ],
+    "retention": [
+     7,
+     48
+    ],
+    "same_day_correction_noref": [
+     2,
+     44
+    ],
+    "same_day_correction_ref": [
+     11,
+     48
+    ],
+    "single_record_control": [
+     5,
+     48
+    ],
+    "supersession_later_ref": [
+     17,
+     44
+    ],
+    "three_value_chain": [
+     2,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     43,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     1,
+     4
+    ]
+   },
+   "EBG-unsafe": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     38,
+     48
+    ],
+    "backfilled_entry": [
+     3,
+     20
+    ],
+    "conflict_plain": [
+     41,
+     48
+    ],
+    "conflict_rival_neutral": [
+     35,
+     44
+    ],
+    "conflict_same_validity": [
+     20,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     29,
+     40
+    ],
+    "missing_timestamp": [
+     6,
+     20
+    ],
+    "negated_both_stand": [
+     17,
+     20
+    ],
+    "negated_replacement": [
+     1,
+     40
+    ],
+    "retention": [
+     10,
+     48
+    ],
+    "same_day_correction_noref": [
+     2,
+     44
+    ],
+    "same_day_correction_ref": [
+     14,
+     48
+    ],
+    "single_record_control": [
+     7,
+     48
+    ],
+    "supersession_later_ref": [
+     19,
+     44
+    ],
+    "three_value_chain": [
+     1,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     35,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "G": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     30,
+     48
+    ],
+    "backfilled_entry": [
+     0,
+     20
+    ],
+    "conflict_plain": [
+     29,
+     48
+    ],
+    "conflict_rival_neutral": [
+     33,
+     44
+    ],
+    "conflict_same_validity": [
+     16,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     21,
+     40
+    ],
+    "missing_timestamp": [
+     0,
+     20
+    ],
+    "negated_both_stand": [
+     14,
+     20
+    ],
+    "negated_replacement": [
+     0,
+     40
+    ],
+    "retention": [
+     16,
+     48
+    ],
+    "same_day_correction_noref": [
+     0,
+     44
+    ],
+    "same_day_correction_ref": [
+     0,
+     48
+    ],
+    "single_record_control": [
+     4,
+     48
+    ],
+    "supersession_later_ref": [
+     10,
+     44
+    ],
+    "three_value_chain": [
+     1,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     44,
+     48
+    ],
+    "update_record_time": [
+     1,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "LA": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     19,
+     48
+    ],
+    "backfilled_entry": [
+     1,
+     20
+    ],
+    "conflict_plain": [
+     17,
+     48
+    ],
+    "conflict_rival_neutral": [
+     24,
+     44
+    ],
+    "conflict_same_validity": [
+     4,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     6,
+     40
+    ],
+    "missing_timestamp": [
+     6,
+     20
+    ],
+    "negated_both_stand": [
+     9,
+     20
+    ],
+    "negated_replacement": [
+     2,
+     40
+    ],
+    "retention": [
+     15,
+     48
+    ],
+    "same_day_correction_noref": [
+     4,
+     44
+    ],
+    "same_day_correction_ref": [
+     4,
+     48
+    ],
+    "single_record_control": [
+     5,
+     48
+    ],
+    "supersession_later_ref": [
+     8,
+     44
+    ],
+    "three_value_chain": [
+     0,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     39,
+     48
+    ],
+    "update_record_time": [
+     0,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "LG": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     4,
+     48
+    ],
+    "backfilled_entry": [
+     2,
+     20
+    ],
+    "conflict_plain": [
+     7,
+     48
+    ],
+    "conflict_rival_neutral": [
+     11,
+     44
+    ],
+    "conflict_same_validity": [
+     1,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     3,
+     40
+    ],
+    "missing_timestamp": [
+     1,
+     20
+    ],
+    "negated_both_stand": [
+     5,
+     20
+    ],
+    "negated_replacement": [
+     5,
+     40
+    ],
+    "retention": [
+     4,
+     48
+    ],
+    "same_day_correction_noref": [
+     6,
+     44
+    ],
+    "same_day_correction_ref": [
+     19,
+     48
+    ],
+    "single_record_control": [
+     9,
+     48
+    ],
+    "supersession_later_ref": [
+     15,
+     44
+    ],
+    "three_value_chain": [
+     1,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     42,
+     48
+    ],
+    "update_record_time": [
+     1,
+     4
+    ],
+    "valid_time_same_import": [
+     1,
+     4
+    ]
+   },
+   "R": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     36,
+     48
+    ],
+    "backfilled_entry": [
+     1,
+     20
+    ],
+    "conflict_plain": [
+     33,
+     48
+    ],
+    "conflict_rival_neutral": [
+     37,
+     44
+    ],
+    "conflict_same_validity": [
+     19,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     22,
+     40
+    ],
+    "missing_timestamp": [
+     0,
+     20
+    ],
+    "negated_both_stand": [
+     12,
+     20
+    ],
+    "negated_replacement": [
+     0,
+     40
+    ],
+    "retention": [
+     10,
+     48
+    ],
+    "same_day_correction_noref": [
+     0,
+     44
+    ],
+    "same_day_correction_ref": [
+     0,
+     48
+    ],
+    "single_record_control": [
+     12,
+     48
+    ],
+    "supersession_later_ref": [
+     16,
+     44
+    ],
+    "three_value_chain": [
+     2,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     33,
+     48
+    ],
+    "update_record_time": [
+     1,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "RT": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     34,
+     48
+    ],
+    "backfilled_entry": [
+     0,
+     20
+    ],
+    "conflict_plain": [
+     37,
+     48
+    ],
+    "conflict_rival_neutral": [
+     35,
+     44
+    ],
+    "conflict_same_validity": [
+     18,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     27,
+     40
+    ],
+    "missing_timestamp": [
+     1,
+     20
+    ],
+    "negated_both_stand": [
+     5,
+     20
+    ],
+    "negated_replacement": [
+     2,
+     40
+    ],
+    "retention": [
+     9,
+     48
+    ],
+    "same_day_correction_noref": [
+     0,
+     44
+    ],
+    "same_day_correction_ref": [
+     4,
+     48
+    ],
+    "single_record_control": [
+     8,
+     48
+    ],
+    "supersession_later_ref": [
+     13,
+     44
+    ],
+    "three_value_chain": [
+     1,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     30,
+     48
+    ],
+    "update_record_time": [
+     1,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   },
+   "T": {
+    "as_of_question": [
+     0,
+     4
+    ],
+    "authority_both": [
+     28,
+     48
+    ],
+    "backfilled_entry": [
+     1,
+     20
+    ],
+    "conflict_plain": [
+     32,
+     48
+    ],
+    "conflict_rival_neutral": [
+     36,
+     44
+    ],
+    "conflict_same_validity": [
+     16,
+     28
+    ],
+    "historical_question": [
+     0,
+     24
+    ],
+    "hypothetical_change": [
+     0,
+     4
+    ],
+    "incidental_change_word": [
+     21,
+     40
+    ],
+    "missing_timestamp": [
+     1,
+     20
+    ],
+    "negated_both_stand": [
+     7,
+     20
+    ],
+    "negated_replacement": [
+     0,
+     40
+    ],
+    "retention": [
+     14,
+     48
+    ],
+    "same_day_correction_noref": [
+     0,
+     44
+    ],
+    "same_day_correction_ref": [
+     0,
+     48
+    ],
+    "single_record_control": [
+     5,
+     48
+    ],
+    "supersession_later_ref": [
+     9,
+     44
+    ],
+    "three_value_chain": [
+     2,
+     12
+    ],
+    "unconfirmed_change": [
+     0,
+     4
+    ],
+    "unsupported": [
+     40,
+     48
+    ],
+    "update_record_time": [
+     1,
+     4
+    ],
+    "valid_time_same_import": [
+     0,
+     4
+    ]
+   }
+  },
+  "ALL": {
+   "B": {
+    "as_of_question": [
+     5,
+     16
+    ],
+    "authority_both": [
+     142,
+     192
+    ],
+    "backfilled_entry": [
+     38,
+     80
+    ],
+    "conflict_plain": [
+     150,
+     192
+    ],
+    "conflict_rival_neutral": [
+     146,
+     176
+    ],
+    "conflict_same_validity": [
+     78,
+     112
+    ],
+    "historical_question": [
+     6,
+     96
+    ],
+    "hypothetical_change": [
+     5,
+     16
+    ],
+    "incidental_change_word": [
+     52,
+     160
+    ],
+    "missing_timestamp": [
+     58,
+     80
+    ],
+    "negated_both_stand": [
+     49,
+     80
+    ],
+    "negated_replacement": [
+     72,
+     160
+    ],
+    "retention": [
+     150,
+     192
+    ],
+    "same_day_correction_noref": [
+     63,
+     176
+    ],
+    "same_day_correction_ref": [
+     82,
+     192
+    ],
+    "single_record_control": [
+     137,
+     192
+    ],
+    "supersession_later_ref": [
+     93,
+     176
+    ],
+    "three_value_chain": [
+     4,
+     48
+    ],
+    "unconfirmed_change": [
+     6,
+     16
+    ],
+    "unsupported": [
+     169,
+     192
+    ],
+    "update_record_time": [
+     0,
+     16
+    ],
+    "valid_time_same_import": [
+     1,
+     16
+    ]
+   },
+   "EB": {
+    "as_of_question": [
+     1,
+     16
+    ],
+    "authority_both": [
+     173,
+     192
+    ],
+    "backfilled_entry": [
+     54,
+     80
+    ],
+    "conflict_plain": [
+     172,
+     192
+    ],
+    "conflict_rival_neutral": [
+     155,
+     176
+    ],
+    "conflict_same_validity": [
+     99,
+     112
+    ],
+    "historical_question": [
+     31,
+     96
+    ],
+    "hypothetical_change": [
+     4,
+     16
+    ],
+    "incidental_change_word": [
+     142,
+     160
+    ],
+    "missing_timestamp": [
+     53,
+     80
+    ],
+    "negated_both_stand": [
+     67,
+     80
+    ],
+    "negated_replacement": [
+     29,
+     160
+    ],
+    "retention": [
+     108,
+     192
+    ],
+    "same_day_correction_noref": [
+     84,
+     176
+    ],
+    "same_day_correction_ref": [
+     105,
+     192
+    ],
+    "single_record_control": [
+     126,
+     192
+    ],
+    "supersession_later_ref": [
+     120,
+     176
+    ],
+    "three_value_chain": [
+     26,
+     48
+    ],
+    "unconfirmed_change": [
+     1,
+     16
+    ],
+    "unsupported": [
+     164,
+     192
+    ],
+    "update_record_time": [
+     7,
+     16
+    ],
+    "valid_time_same_import": [
+     6,
+     16
+    ]
+   },
+   "EBG": {
+    "as_of_question": [
+     1,
+     16
+    ],
+    "authority_both": [
+     179,
+     192
+    ],
+    "backfilled_entry": [
+     58,
+     80
+    ],
+    "conflict_plain": [
+     185,
+     192
+    ],
+    "conflict_rival_neutral": [
+     165,
+     176
+    ],
+    "conflict_same_validity": [
+     105,
+     112
+    ],
+    "historical_question": [
+     15,
+     96
+    ],
+    "hypothetical_change": [
+     4,
+     16
+    ],
+    "incidental_change_word": [
+     152,
+     160
+    ],
+    "missing_timestamp": [
+     61,
+     80
+    ],
+    "negated_both_stand": [
+     72,
+     80
+    ],
+    "negated_replacement": [
+     29,
+     160
+    ],
+    "retention": [
+     114,
+     192
+    ],
+    "same_day_correction_noref": [
+     79,
+     176
+    ],
+    "same_day_correction_ref": [
+     155,
+     192
+    ],
+    "single_record_control": [
+     134,
+     192
+    ],
+    "supersession_later_ref": [
+     149,
+     176
+    ],
+    "three_value_chain": [
+     30,
+     48
+    ],
+    "unconfirmed_change": [
+     0,
+     16
+    ],
+    "unsupported": [
+     177,
+     192
+    ],
+    "update_record_time": [
+     8,
+     16
+    ],
+    "valid_time_same_import": [
+     12,
+     16
+    ]
+   },
+   "EBG-all": {
+    "as_of_question": [
+     2,
+     16
+    ],
+    "authority_both": [
+     183,
+     192
+    ],
+    "backfilled_entry": [
+     58,
+     80
+    ],
+    "conflict_plain": [
+     185,
+     192
+    ],
+    "conflict_rival_neutral": [
+     154,
+     176
+    ],
+    "conflict_same_validity": [
+     104,
+     112
+    ],
+    "historical_question": [
+     7,
+     96
+    ],
+    "hypothetical_change": [
+     13,
+     16
+    ],
+    "incidental_change_word": [
+     154,
+     160
+    ],
+    "missing_timestamp": [
+     61,
+     80
+    ],
+    "negated_both_stand": [
+     7,
+     80
+    ],
+    "negated_replacement": [
+     120,
+     160
+    ],
+    "retention": [
+     153,
+     192
+    ],
+    "same_day_correction_noref": [
+     130,
+     176
+    ],
+    "same_day_correction_ref": [
+     153,
+     192
+    ],
+    "single_record_control": [
+     129,
+     192
+    ],
+    "supersession_later_ref": [
+     146,
+     176
+    ],
+    "three_value_chain": [
+     33,
+     48
+    ],
+    "unconfirmed_change": [
+     11,
+     16
+    ],
+    "unsupported": [
+     179,
+     192
+    ],
+    "update_record_time": [
+     14,
+     16
+    ],
+    "valid_time_same_import": [
+     12,
+     16
+    ]
+   },
+   "EBG-noR3": {
+    "as_of_question": [
+     0,
+     16
+    ],
+    "authority_both": [
+     177,
+     192
+    ],
+    "backfilled_entry": [
+     58,
+     80
+    ],
+    "conflict_plain": [
+     173,
+     192
+    ],
+    "conflict_rival_neutral": [
+     160,
+     176
+    ],
+    "conflict_same_validity": [
+     100,
+     112
+    ],
+    "historical_question": [
+     15,
+     96
+    ],
+    "hypothetical_change": [
+     3,
+     16
+    ],
+    "incidental_change_word": [
+     143,
+     160
+    ],
+    "missing_timestamp": [
+     58,
+     80
+    ],
+    "negated_both_stand": [
+     68,
+     80
+    ],
+    "negated_replacement": [
+     34,
+     160
+    ],
+    "retention": [
+     111,
+     192
+    ],
+    "same_day_correction_noref": [
+     74,
+     176
+    ],
+    "same_day_correction_ref": [
+     152,
+     192
+    ],
+    "single_record_control": [
+     126,
+     192
+    ],
+    "supersession_later_ref": [
+     148,
+     176
+    ],
+    "three_value_chain": [
+     29,
+     48
+    ],
+    "unconfirmed_change": [
+     2,
+     16
+    ],
+    "unsupported": [
+     176,
+     192
+    ],
+    "update_record_time": [
+     8,
+     16
+    ],
+    "valid_time_same_import": [
+     13,
+     16
+    ]
+   },
+   "EBG-unsafe": {
+    "as_of_question": [
+     1,
+     16
+    ],
+    "authority_both": [
+     182,
+     192
+    ],
+    "backfilled_entry": [
+     61,
+     80
+    ],
+    "conflict_plain": [
+     185,
+     192
+    ],
+    "conflict_rival_neutral": [
+     163,
+     176
+    ],
+    "conflict_same_validity": [
+     104,
+     112
+    ],
+    "historical_question": [
+     15,
+     96
+    ],
+    "hypothetical_change": [
+     3,
+     16
+    ],
+    "incidental_change_word": [
+     148,
+     160
+    ],
+    "missing_timestamp": [
+     61,
+     80
+    ],
+    "negated_both_stand": [
+     72,
+     80
+    ],
+    "negated_replacement": [
+     33,
+     160
+    ],
+    "retention": [
+     117,
+     192
+    ],
+    "same_day_correction_noref": [
+     79,
+     176
+    ],
+    "same_day_correction_ref": [
+     155,
+     192
+    ],
+    "single_record_control": [
+     128,
+     192
+    ],
+    "supersession_later_ref": [
+     148,
+     176
+    ],
+    "three_value_chain": [
+     29,
+     48
+    ],
+    "unconfirmed_change": [
+     0,
+     16
+    ],
+    "unsupported": [
+     171,
+     192
+    ],
+    "update_record_time": [
+     8,
+     16
+    ],
+    "valid_time_same_import": [
+     12,
+     16
+    ]
+   },
+   "G": {
+    "as_of_question": [
+     0,
+     16
+    ],
+    "authority_both": [
+     170,
+     192
+    ],
+    "backfilled_entry": [
+     7,
+     80
+    ],
+    "conflict_plain": [
+     169,
+     192
+    ],
+    "conflict_rival_neutral": [
+     161,
+     176
+    ],
+    "conflict_same_validity": [
+     98,
+     112
+    ],
+    "historical_question": [
+     24,
+     96
+    ],
+    "hypothetical_change": [
+     0,
+     16
+    ],
+    "incidental_change_word": [
+     133,
+     160
+    ],
+    "missing_timestamp": [
+     16,
+     80
+    ],
+    "negated_both_stand": [
+     74,
+     80
+    ],
+    "negated_replacement": [
+     2,
+     160
+    ],
+    "retention": [
+     138,
+     192
+    ],
+    "same_day_correction_noref": [
+     9,
+     176
+    ],
+    "same_day_correction_ref": [
+     24,
+     192
+    ],
+    "single_record_control": [
+     128,
+     192
+    ],
+    "supersession_later_ref": [
+     121,
+     176
+    ],
+    "three_value_chain": [
+     25,
+     48
+    ],
+    "unconfirmed_change": [
+     0,
+     16
+    ],
+    "unsupported": [
+     164,
+     192
+    ],
+    "update_record_time": [
+     9,
+     16
+    ],
+    "valid_time_same_import": [
+     1,
+     16
+    ]
+   },
+   "LA": {
+    "as_of_question": [
+     4,
+     16
+    ],
+    "authority_both": [
+     135,
+     192
+    ],
+    "backfilled_entry": [
+     42,
+     80
+    ],
+    "conflict_plain": [
+     137,
+     192
+    ],
+    "conflict_rival_neutral": [
+     112,
+     176
+    ],
+    "conflict_same_validity": [
+     68,
+     112
+    ],
+    "historical_question": [
+     24,
+     96
+    ],
+    "hypothetical_change": [
+     8,
+     16
+    ],
+    "incidental_change_word": [
+     76,
+     160
+    ],
+    "missing_timestamp": [
+     28,
+     80
+    ],
+    "negated_both_stand": [
+     56,
+     80
+    ],
+    "negated_replacement": [
+     62,
+     160
+    ],
+    "retention": [
+     130,
+     192
+    ],
+    "same_day_correction_noref": [
+     85,
+     176
+    ],
+    "same_day_correction_ref": [
+     109,
+     192
+    ],
+    "single_record_control": [
+     124,
+     192
+    ],
+    "supersession_later_ref": [
+     121,
+     176
+    ],
+    "three_value_chain": [
+     12,
+     48
+    ],
+    "unconfirmed_change": [
+     4,
+     16
+    ],
+    "unsupported": [
+     168,
+     192
+    ],
+    "update_record_time": [
+     10,
+     16
+    ],
+    "valid_time_same_import": [
+     2,
+     16
+    ]
+   },
+   "LG": {
+    "as_of_question": [
+     2,
+     16
+    ],
+    "authority_both": [
+     108,
+     192
+    ],
+    "backfilled_entry": [
+     49,
+     80
+    ],
+    "conflict_plain": [
+     111,
+     192
+    ],
+    "conflict_rival_neutral": [
+     51,
+     176
+    ],
+    "conflict_same_validity": [
+     35,
+     112
+    ],
+    "historical_question": [
+     11,
+     96
+    ],
+    "hypothetical_change": [
+     11,
+     16
+    ],
+    "incidental_change_word": [
+     70,
+     160
+    ],
+    "missing_timestamp": [
+     22,
+     80
+    ],
+    "negated_both_stand": [
+     39,
+     80
+    ],
+    "negated_replacement": [
+     70,
+     160
+    ],
+    "retention": [
+     113,
+     192
+    ],
+    "same_day_correction_noref": [
+     85,
+     176
+    ],
+    "same_day_correction_ref": [
+     134,
+     192
+    ],
+    "single_record_control": [
+     133,
+     192
+    ],
+    "supersession_later_ref": [
+     120,
+     176
+    ],
+    "three_value_chain": [
+     13,
+     48
+    ],
+    "unconfirmed_change": [
+     4,
+     16
+    ],
+    "unsupported": [
+     178,
+     192
+    ],
+    "update_record_time": [
+     12,
+     16
+    ],
+    "valid_time_same_import": [
+     6,
+     16
+    ]
+   },
+   "R": {
+    "as_of_question": [
+     0,
+     16
+    ],
+    "authority_both": [
+     179,
+     192
+    ],
+    "backfilled_entry": [
+     4,
+     80
+    ],
+    "conflict_plain": [
+     174,
+     192
+    ],
+    "conflict_rival_neutral": [
+     166,
+     176
+    ],
+    "conflict_same_validity": [
+     102,
+     112
+    ],
+    "historical_question": [
+     6,
+     96
+    ],
+    "hypothetical_change": [
+     0,
+     16
+    ],
+    "incidental_change_word": [
+     136,
+     160
+    ],
+    "missing_timestamp": [
+     1,
+     80
+    ],
+    "negated_both_stand": [
+     72,
+     80
+    ],
+    "negated_replacement": [
+     2,
+     160
+    ],
+    "retention": [
+     132,
+     192
+    ],
+    "same_day_correction_noref": [
+     7,
+     176
+    ],
+    "same_day_correction_ref": [
+     22,
+     192
+    ],
+    "single_record_control": [
+     142,
+     192
+    ],
+    "supersession_later_ref": [
+     143,
+     176
+    ],
+    "three_value_chain": [
+     38,
+     48
+    ],
+    "unconfirmed_change": [
+     0,
+     16
+    ],
+    "unsupported": [
+     166,
+     192
+    ],
+    "update_record_time": [
+     13,
+     16
+    ],
+    "valid_time_same_import": [
+     1,
+     16
+    ]
+   },
+   "RT": {
+    "as_of_question": [
+     0,
+     16
+    ],
+    "authority_both": [
+     177,
+     192
+    ],
+    "backfilled_entry": [
+     15,
+     80
+    ],
+    "conflict_plain": [
+     177,
+     192
+    ],
+    "conflict_rival_neutral": [
+     167,
+     176
+    ],
+    "conflict_same_validity": [
+     99,
+     112
+    ],
+    "historical_question": [
+     9,
+     96
+    ],
+    "hypothetical_change": [
+     0,
+     16
+    ],
+    "incidental_change_word": [
+     145,
+     160
+    ],
+    "missing_timestamp": [
+     11,
+     80
+    ],
+    "negated_both_stand": [
+     5,
+     80
+    ],
+    "negated_replacement": [
+     46,
+     160
+    ],
+    "retention": [
+     127,
+     192
+    ],
+    "same_day_correction_noref": [
+     3,
+     176
+    ],
+    "same_day_correction_ref": [
+     46,
+     192
+    ],
+    "single_record_control": [
+     139,
+     192
+    ],
+    "supersession_later_ref": [
+     142,
+     176
+    ],
+    "three_value_chain": [
+     37,
+     48
+    ],
+    "unconfirmed_change": [
+     0,
+     16
+    ],
+    "unsupported": [
+     158,
+     192
+    ],
+    "update_record_time": [
+     13,
+     16
+    ],
+    "valid_time_same_import": [
+     0,
+     16
+    ]
+   },
+   "T": {
+    "as_of_question": [
+     0,
+     16
+    ],
+    "authority_both": [
+     172,
+     192
+    ],
+    "backfilled_entry": [
+     18,
+     80
+    ],
+    "conflict_plain": [
+     172,
+     192
+    ],
+    "conflict_rival_neutral": [
+     165,
+     176
+    ],
+    "conflict_same_validity": [
+     99,
+     112
+    ],
+    "historical_question": [
+     33,
+     96
+    ],
+    "hypothetical_change": [
+     0,
+     16
+    ],
+    "incidental_change_word": [
+     139,
+     160
+    ],
+    "missing_timestamp": [
+     55,
+     80
+    ],
+    "negated_both_stand": [
+     55,
+     80
+    ],
+    "negated_replacement": [
+     30,
+     160
+    ],
+    "retention": [
+     131,
+     192
+    ],
+    "same_day_correction_noref": [
+     7,
+     176
+    ],
+    "same_day_correction_ref": [
+     33,
+     192
+    ],
+    "single_record_control": [
+     124,
+     192
+    ],
+    "supersession_later_ref": [
+     126,
+     176
+    ],
+    "three_value_chain": [
+     25,
+     48
+    ],
+    "unconfirmed_change": [
+     0,
+     16
+    ],
+    "unsupported": [
+     166,
+     192
+    ],
+    "update_record_time": [
+     8,
+     16
+    ],
+    "valid_time_same_import": [
+     0,
+     16
+    ]
+   }
+  }
+ },
+ "contrasts": {
+  "EBG-RT": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 6.1,
+     "ci95_pp": [
+      -2.1,
+      14.6
+     ],
+     "families_pos": 28,
+     "families_neg": 16,
+     "p": 0.17378826211737883,
+     "p_holm": null,
+     "p_bh_exploratory": 0.24620003799962,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -13.4,
+     "ci95_pp": [
+      -19.4,
+      -8.1
+     ],
+     "families_pos": 3,
+     "families_neg": 26,
+     "p": 9.99990000099999e-06
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 21.9,
+     "ci95_pp": [
+      14.2,
+      30.1
+     ],
+     "families_pos": 41,
+     "families_neg": 6,
+     "p": 9.99990000099999e-06,
+     "p_holm": null,
+     "p_bh_exploratory": 4.636317273190905e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -17.2,
+     "ci95_pp": [
+      -24.8,
+      -10.4
+     ],
+     "families_pos": 2,
+     "families_neg": 26,
+     "p": 9.99990000099999e-06
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 18.8,
+     "ci95_pp": [
+      11.7,
+      26.6
+     ],
+     "families_pos": 25,
+     "families_neg": 2,
+     "p": 9.99990000099999e-06,
+     "p_holm": null,
+     "p_bh_exploratory": 4.636317273190905e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -12.1,
+     "ci95_pp": [
+      -18.6,
+      -6.3
+     ],
+     "families_pos": 2,
+     "families_neg": 19,
+     "p": 0.00022999770002299976
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 10.4,
+     "ci95_pp": [
+      5.8,
+      15.2
+     ],
+     "families_pos": 40,
+     "families_neg": 14,
+     "p": 5.999940000599994e-05,
+     "p_holm": null,
+     "p_bh_exploratory": 0.00019124808751912482,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.3,
+     "ci95_pp": [
+      -0.4,
+      1.1
+     ],
+     "families_pos": 4,
+     "families_neg": 2,
+     "p": 0.6864731352686473
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": 14.3,
+     "ci95_pp": [
+      8.8,
+      20.4
+     ],
+     "families_pos": 56,
+     "families_neg": 22,
+     "p": 9.99990000099999e-06,
+     "p_holm": 3.999960000399996e-05,
+     "p_bh_exploratory": null,
+     "confirmatory": true
+    },
+    "harmful": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": -10.6,
+     "ci95_pp": [
+      -15.3,
+      -6.5
+     ],
+     "families_pos": 4,
+     "families_neg": 34,
+     "p": 9.99990000099999e-06
+    }
+   }
+  },
+  "EBG-T": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 13.2,
+     "ci95_pp": [
+      6.4,
+      20.3
+     ],
+     "families_pos": 29,
+     "families_neg": 7,
+     "p": 0.0001999980000199998,
+     "p_holm": null,
+     "p_bh_exploratory": 0.0005368367368957889,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.5,
+     "ci95_pp": [
+      -1.5,
+      2.4
+     ],
+     "families_pos": 7,
+     "families_neg": 4,
+     "p": 0.7442225577744223
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 12.3,
+     "ci95_pp": [
+      5.1,
+      19.9
+     ],
+     "families_pos": 34,
+     "families_neg": 12,
+     "p": 0.0017299827001729983,
+     "p_holm": null,
+     "p_bh_exploratory": 0.003393427604185497,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -3.6,
+     "ci95_pp": [
+      -6.5,
+      -0.9
+     ],
+     "families_pos": 5,
+     "families_neg": 16,
+     "p": 0.017239827601723982
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 12.9,
+     "ci95_pp": [
+      5.9,
+      20.5
+     ],
+     "families_pos": 21,
+     "families_neg": 5,
+     "p": 0.0005399946000539995,
+     "p_holm": null,
+     "p_bh_exploratory": 0.0013114154572739986,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      -2.4,
+      2.4
+     ],
+     "families_pos": 3,
+     "families_neg": 4,
+     "p": 1.0
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 12.3,
+     "ci95_pp": [
+      7.1,
+      17.5
+     ],
+     "families_pos": 40,
+     "families_neg": 9,
+     "p": 1.999980000199998e-05,
+     "p_holm": null,
+     "p_bh_exploratory": 7.846075385399993e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.3,
+     "ci95_pp": [
+      -0.5,
+      1.1
+     ],
+     "families_pos": 4,
+     "families_neg": 2,
+     "p": 0.6869831301686983
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": 12.7,
+     "ci95_pp": [
+      7.8,
+      17.8
+     ],
+     "families_pos": 64,
+     "families_neg": 15,
+     "p": 9.99990000099999e-06,
+     "p_holm": 3.999960000399996e-05,
+     "p_bh_exploratory": null,
+     "confirmatory": true
+    },
+    "harmful": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": -0.7,
+     "ci95_pp": [
+      -1.9,
+      0.5
+     ],
+     "families_pos": 8,
+     "families_neg": 21,
+     "p": 0.28323716762832374
+    }
+   }
+  },
+  "EBG-LG": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 14.4,
+     "ci95_pp": [
+      5.9,
+      22.9
+     ],
+     "families_pos": 43,
+     "families_neg": 17,
+     "p": 0.0013999860001399987,
+     "p_holm": null,
+     "p_bh_exploratory": 0.002974970250297497,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -11.8,
+     "ci95_pp": [
+      -16.8,
+      -7.1
+     ],
+     "families_pos": 5,
+     "families_neg": 34,
+     "p": 1.999980000199998e-05
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 29.3,
+     "ci95_pp": [
+      19.7,
+      39.4
+     ],
+     "families_pos": 48,
+     "families_neg": 16,
+     "p": 9.99990000099999e-06,
+     "p_holm": null,
+     "p_bh_exploratory": 4.636317273190905e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -34.2,
+     "ci95_pp": [
+      -42.9,
+      -25.9
+     ],
+     "families_pos": 3,
+     "families_neg": 50,
+     "p": 9.99990000099999e-06
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 10.9,
+     "ci95_pp": [
+      4.7,
+      17.8
+     ],
+     "families_pos": 20,
+     "families_neg": 7,
+     "p": 0.0013599864001359986,
+     "p_holm": null,
+     "p_bh_exploratory": 0.002974970250297497,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -15.2,
+     "ci95_pp": [
+      -21.6,
+      -9.5
+     ],
+     "families_pos": 1,
+     "families_neg": 23,
+     "p": 9.99990000099999e-06
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 24.1,
+     "ci95_pp": [
+      16.0,
+      32.4
+     ],
+     "families_pos": 47,
+     "families_neg": 16,
+     "p": 9.99990000099999e-06,
+     "p_holm": null,
+     "p_bh_exploratory": 4.636317273190905e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -5.9,
+     "ci95_pp": [
+      -8.7,
+      -3.4
+     ],
+     "families_pos": 2,
+     "families_neg": 22,
+     "p": 9.99990000099999e-06
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": 19.7,
+     "ci95_pp": [
+      13.8,
+      25.7
+     ],
+     "families_pos": 64,
+     "families_neg": 23,
+     "p": 9.99990000099999e-06,
+     "p_holm": 3.999960000399996e-05,
+     "p_bh_exploratory": null,
+     "confirmatory": true
+    },
+    "harmful": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": -16.8,
+     "ci95_pp": [
+      -21.0,
+      -12.9
+     ],
+     "families_pos": 4,
+     "families_neg": 59,
+     "p": 9.99990000099999e-06
+    }
+   }
+  },
+  "EBG-B": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 8.4,
+     "ci95_pp": [
+      0.0,
+      17.0
+     ],
+     "families_pos": 27,
+     "families_neg": 20,
+     "p": 0.058269417305826944,
+     "p_holm": null,
+     "p_bh_exploratory": 0.090052735836278,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -4.8,
+     "ci95_pp": [
+      -9.7,
+      -0.6
+     ],
+     "families_pos": 9,
+     "families_neg": 11,
+     "p": 0.04886951130488695
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 14.8,
+     "ci95_pp": [
+      7.4,
+      22.1
+     ],
+     "families_pos": 49,
+     "families_neg": 15,
+     "p": 0.00014999850001499985,
+     "p_holm": null,
+     "p_bh_exploratory": 0.0004249957500424996,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -4.5,
+     "ci95_pp": [
+      -8.5,
+      -0.9
+     ],
+     "families_pos": 6,
+     "families_neg": 16,
+     "p": 0.027059729402705974
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 16.1,
+     "ci95_pp": [
+      8.0,
+      24.8
+     ],
+     "families_pos": 26,
+     "families_neg": 8,
+     "p": 0.0002999970000299997,
+     "p_holm": null,
+     "p_bh_exploratory": 0.0007649923500764992,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -6.1,
+     "ci95_pp": [
+      -10.8,
+      -1.9
+     ],
+     "families_pos": 2,
+     "families_neg": 12,
+     "p": 0.008299917000829991
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 19.4,
+     "ci95_pp": [
+      11.9,
+      27.1
+     ],
+     "families_pos": 49,
+     "families_neg": 16,
+     "p": 9.99990000099999e-06,
+     "p_holm": null,
+     "p_bh_exploratory": 4.636317273190905e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -1.1,
+     "ci95_pp": [
+      -2.6,
+      0.3
+     ],
+     "families_pos": 4,
+     "families_neg": 8,
+     "p": 0.2218577814221858
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": 14.7,
+     "ci95_pp": [
+      9.3,
+      20.3
+     ],
+     "families_pos": 67,
+     "families_neg": 25,
+     "p": 9.99990000099999e-06,
+     "p_holm": 3.999960000399996e-05,
+     "p_bh_exploratory": null,
+     "confirmatory": true
+    },
+    "harmful": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": -4.1,
+     "ci95_pp": [
+      -7.1,
+      -1.4
+     ],
+     "families_pos": 11,
+     "families_neg": 25,
+     "p": 0.004599954000459996
+    }
+   }
+  },
+  "EBG-EB": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 12.1,
+     "ci95_pp": [
+      6.5,
+      18.2
+     ],
+     "families_pos": 27,
+     "families_neg": 6,
+     "p": 2.999970000299997e-05,
+     "p_holm": null,
+     "p_bh_exploratory": 0.0001092846214394999,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.8,
+     "ci95_pp": [
+      -0.6,
+      2.5
+     ],
+     "families_pos": 6,
+     "families_neg": 3,
+     "p": 0.5034049659503405
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.9,
+     "ci95_pp": [
+      -2.0,
+      3.9
+     ],
+     "families_pos": 16,
+     "families_neg": 10,
+     "p": 0.6181638183618163,
+     "p_holm": null,
+     "p_bh_exploratory": 0.7148088519114809,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -0.2,
+     "ci95_pp": [
+      -1.1,
+      0.7
+     ],
+     "families_pos": 3,
+     "families_neg": 3,
+     "p": 1.0
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -0.9,
+     "ci95_pp": [
+      -3.2,
+      0.9
+     ],
+     "families_pos": 1,
+     "families_neg": 3,
+     "p": 0.37442625573744265,
+     "p_holm": null,
+     "p_bh_exploratory": 0.46574973274657505,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.2,
+     "ci95_pp": [
+      0.0,
+      0.5
+     ],
+     "families_pos": 1,
+     "families_neg": 0,
+     "p": 1.0
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 12.3,
+     "ci95_pp": [
+      7.3,
+      17.3
+     ],
+     "families_pos": 42,
+     "families_neg": 12,
+     "p": 9.99990000099999e-06,
+     "p_holm": null,
+     "p_bh_exploratory": 4.636317273190905e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.5,
+     "ci95_pp": [
+      0.0,
+      1.1
+     ],
+     "families_pos": 3,
+     "families_neg": 0,
+     "p": 0.25052749472505276
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": 6.1,
+     "ci95_pp": [
+      3.8,
+      8.5
+     ],
+     "families_pos": 57,
+     "families_neg": 18,
+     "p": 9.99990000099999e-06,
+     "p_holm": null,
+     "p_bh_exploratory": 4.636317273190905e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": 0.3,
+     "ci95_pp": [
+      -0.1,
+      0.9
+     ],
+     "families_pos": 7,
+     "families_neg": 5,
+     "p": 0.3168268317316827
+    }
+   }
+  },
+  "EBG-R": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 8.5,
+     "ci95_pp": [
+      1.0,
+      16.3
+     ],
+     "families_pos": 26,
+     "families_neg": 12,
+     "p": 0.03706962930370696,
+     "p_holm": null,
+     "p_bh_exploratory": 0.05907972170278297,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -9.9,
+     "ci95_pp": [
+      -15.3,
+      -5.2
+     ],
+     "families_pos": 4,
+     "families_neg": 20,
+     "p": 4.999950000499995e-05
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 18.9,
+     "ci95_pp": [
+      11.8,
+      26.7
+     ],
+     "families_pos": 36,
+     "families_neg": 5,
+     "p": 9.99990000099999e-06,
+     "p_holm": null,
+     "p_bh_exploratory": 4.636317273190905e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -9.6,
+     "ci95_pp": [
+      -15.3,
+      -4.7
+     ],
+     "families_pos": 2,
+     "families_neg": 18,
+     "p": 0.00012999870001299986
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 22.2,
+     "ci95_pp": [
+      14.3,
+      30.8
+     ],
+     "families_pos": 29,
+     "families_neg": 2,
+     "p": 9.99990000099999e-06,
+     "p_holm": null,
+     "p_bh_exploratory": 4.636317273190905e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -6.8,
+     "ci95_pp": [
+      -12.5,
+      -1.8
+     ],
+     "families_pos": 3,
+     "families_neg": 12,
+     "p": 0.013739862601373986
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 9.0,
+     "ci95_pp": [
+      3.9,
+      14.4
+     ],
+     "families_pos": 35,
+     "families_neg": 16,
+     "p": 0.001019989800101999,
+     "p_holm": null,
+     "p_bh_exploratory": 0.0023645218093273613,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.5,
+     "ci95_pp": [
+      -0.2,
+      1.2
+     ],
+     "families_pos": 4,
+     "families_neg": 1,
+     "p": 0.3756862431375686
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": 14.7,
+     "ci95_pp": [
+      9.3,
+      20.5
+     ],
+     "families_pos": 55,
+     "families_neg": 20,
+     "p": 9.99990000099999e-06,
+     "p_holm": null,
+     "p_bh_exploratory": 4.636317273190905e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": -6.5,
+     "ci95_pp": [
+      -10.4,
+      -3.1
+     ],
+     "families_pos": 6,
+     "families_neg": 25,
+     "p": 0.00012999870001299986
+    }
+   }
+  },
+  "EB-T": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 1.1,
+     "ci95_pp": [
+      -3.7,
+      5.8
+     ],
+     "families_pos": 20,
+     "families_neg": 15,
+     "p": 0.7037829621703783,
+     "p_holm": null,
+     "p_bh_exploratory": 0.7712099474749933,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -0.3,
+     "ci95_pp": [
+      -2.0,
+      1.1
+     ],
+     "families_pos": 4,
+     "families_neg": 4,
+     "p": 0.8749412505874942
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 11.3,
+     "ci95_pp": [
+      4.4,
+      18.8
+     ],
+     "families_pos": 29,
+     "families_neg": 18,
+     "p": 0.0022699773002269976,
+     "p_holm": null,
+     "p_bh_exploratory": 0.004134601511127745,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -3.4,
+     "ci95_pp": [
+      -6.4,
+      -0.6
+     ],
+     "families_pos": 4,
+     "families_neg": 15,
+     "p": 0.026429735702642974
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 13.8,
+     "ci95_pp": [
+      7.1,
+      21.3
+     ],
+     "families_pos": 21,
+     "families_neg": 3,
+     "p": 0.00010999890001099989,
+     "p_holm": null,
+     "p_bh_exploratory": 0.0003299967000329997,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -0.2,
+     "ci95_pp": [
+      -2.5,
+      2.2
+     ],
+     "families_pos": 3,
+     "families_neg": 5,
+     "p": 1.0
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      -3.7,
+      4.2
+     ],
+     "families_pos": 21,
+     "families_neg": 28,
+     "p": 1.0,
+     "p_holm": null,
+     "p_bh_exploratory": 1.0,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -0.2,
+     "ci95_pp": [
+      -0.7,
+      0.3
+     ],
+     "families_pos": 1,
+     "families_neg": 2,
+     "p": 1.0
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": 6.6,
+     "ci95_pp": [
+      2.5,
+      10.9
+     ],
+     "families_pos": 42,
+     "families_neg": 33,
+     "p": 0.002119978800211998,
+     "p_holm": null,
+     "p_bh_exploratory": 0.004004404400400441,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": -1.0,
+     "ci95_pp": [
+      -2.1,
+      0.0
+     ],
+     "families_pos": 8,
+     "families_neg": 23,
+     "p": 0.07053929460705392
+    }
+   }
+  },
+  "EB-G": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 3.4,
+     "ci95_pp": [
+      -0.6,
+      7.6
+     ],
+     "families_pos": 23,
+     "families_neg": 12,
+     "p": 0.12220877791222087,
+     "p_holm": null,
+     "p_bh_exploratory": 0.17807564781495042,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -2.3,
+     "ci95_pp": [
+      -5.2,
+      0.2
+     ],
+     "families_pos": 4,
+     "families_neg": 8,
+     "p": 0.11876881231187689
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 15.2,
+     "ci95_pp": [
+      8.5,
+      22.5
+     ],
+     "families_pos": 41,
+     "families_neg": 15,
+     "p": 1.999980000199998e-05,
+     "p_holm": null,
+     "p_bh_exploratory": 7.846075385399993e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -4.8,
+     "ci95_pp": [
+      -8.5,
+      -1.8
+     ],
+     "families_pos": 3,
+     "families_neg": 17,
+     "p": 0.004759952400475995
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 21.7,
+     "ci95_pp": [
+      13.7,
+      30.5
+     ],
+     "families_pos": 28,
+     "families_neg": 2,
+     "p": 9.99990000099999e-06,
+     "p_holm": null,
+     "p_bh_exploratory": 4.636317273190905e-05,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -2.6,
+     "ci95_pp": [
+      -7.0,
+      1.2
+     ],
+     "families_pos": 3,
+     "families_neg": 7,
+     "p": 0.27243727562724374
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -0.9,
+     "ci95_pp": [
+      -4.9,
+      3.1
+     ],
+     "families_pos": 22,
+     "families_neg": 26,
+     "p": 0.7107228927710723,
+     "p_holm": null,
+     "p_bh_exploratory": 0.7712099474749933,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      -0.5,
+      0.5
+     ],
+     "families_pos": 1,
+     "families_neg": 1,
+     "p": 1.0
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": 9.9,
+     "ci95_pp": [
+      5.5,
+      14.5
+     ],
+     "families_pos": 51,
+     "families_neg": 30,
+     "p": 5.999940000599994e-05,
+     "p_holm": null,
+     "p_bh_exploratory": 0.00019124808751912482,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": -2.4,
+     "ci95_pp": [
+      -4.7,
+      -0.5
+     ],
+     "families_pos": 8,
+     "families_neg": 23,
+     "p": 0.021939780602193978
+    }
+   }
+  },
+  "LG-LA": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -4.5,
+     "ci95_pp": [
+      -11.6,
+      2.5
+     ],
+     "families_pos": 24,
+     "families_neg": 30,
+     "p": 0.23210767892321077,
+     "p_holm": null,
+     "p_bh_exploratory": 0.2983342666573334,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 12.0,
+     "ci95_pp": [
+      7.4,
+      17.0
+     ],
+     "families_pos": 33,
+     "families_neg": 5,
+     "p": 9.99990000099999e-06
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -7.5,
+     "ci95_pp": [
+      -13.2,
+      -2.2
+     ],
+     "families_pos": 16,
+     "families_neg": 32,
+     "p": 0.01037989620103799,
+     "p_holm": null,
+     "p_bh_exploratory": 0.017076603427514114,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 8.5,
+     "ci95_pp": [
+      3.5,
+      14.1
+     ],
+     "families_pos": 29,
+     "families_neg": 12,
+     "p": 0.0014499855001449985
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -5.7,
+     "ci95_pp": [
+      -10.2,
+      -2.0
+     ],
+     "families_pos": 5,
+     "families_neg": 12,
+     "p": 0.006759932400675993,
+     "p_holm": null,
+     "p_bh_exploratory": 0.011491885081149187,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 5.9,
+     "ci95_pp": [
+      2.7,
+      9.7
+     ],
+     "families_pos": 14,
+     "families_neg": 2,
+     "p": 0.000969990300096999
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -4.0,
+     "ci95_pp": [
+      -10.3,
+      2.3
+     ],
+     "families_pos": 27,
+     "families_neg": 35,
+     "p": 0.22794772052279477,
+     "p_holm": null,
+     "p_bh_exploratory": 0.2983342666573334,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 5.4,
+     "ci95_pp": [
+      3.1,
+      8.0
+     ],
+     "families_pos": 21,
+     "families_neg": 1,
+     "p": 9.99990000099999e-06
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": -5.4,
+     "ci95_pp": [
+      -9.4,
+      -1.8
+     ],
+     "families_pos": 37,
+     "families_neg": 45,
+     "p": 0.006589934100658994,
+     "p_holm": null,
+     "p_bh_exploratory": 0.011491885081149187,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": 8.0,
+     "ci95_pp": [
+      5.5,
+      10.9
+     ],
+     "families_pos": 52,
+     "families_neg": 6,
+     "p": 9.99990000099999e-06
+    }
+   }
+  },
+  "EBG-EBG-all": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -13.2,
+     "ci95_pp": [
+      -21.4,
+      -5.0
+     ],
+     "families_pos": 6,
+     "families_neg": 26,
+     "p": 0.0015799842001579985,
+     "p_holm": null,
+     "p_bh_exploratory": 0.003223167768322317,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -3.9,
+     "ci95_pp": [
+      -8.2,
+      -0.6
+     ],
+     "families_pos": 2,
+     "families_neg": 6,
+     "p": 0.05516944830551695
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -4.3,
+     "ci95_pp": [
+      -10.7,
+      2.1
+     ],
+     "families_pos": 11,
+     "families_neg": 18,
+     "p": 0.2057279427205728,
+     "p_holm": null,
+     "p_bh_exploratory": 0.28357094807430305,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -3.3,
+     "ci95_pp": [
+      -7.4,
+      -0.2
+     ],
+     "families_pos": 1,
+     "families_neg": 6,
+     "p": 0.1253687463125369
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -2.5,
+     "ci95_pp": [
+      -7.9,
+      3.0
+     ],
+     "families_pos": 5,
+     "families_neg": 10,
+     "p": 0.43568564314356856,
+     "p_holm": null,
+     "p_bh_exploratory": 0.5290468523886189,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -3.0,
+     "ci95_pp": [
+      -6.5,
+      -0.3
+     ],
+     "families_pos": 1,
+     "families_neg": 4,
+     "p": 0.12541874581254187
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.8,
+     "ci95_pp": [
+      -3.5,
+      5.1
+     ],
+     "families_pos": 29,
+     "families_neg": 27,
+     "p": 0.7807721922780773,
+     "p_holm": null,
+     "p_bh_exploratory": 0.8295704542954571,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -0.5,
+     "ci95_pp": [
+      -1.5,
+      0.5
+     ],
+     "families_pos": 3,
+     "families_neg": 5,
+     "p": 0.5641743582564175
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": -4.8,
+     "ci95_pp": [
+      -9.7,
+      0.3
+     ],
+     "families_pos": 27,
+     "families_neg": 43,
+     "p": 0.06320936790632094,
+     "p_holm": null,
+     "p_bh_exploratory": 0.09481405185948141,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": -2.6,
+     "ci95_pp": [
+      -5.7,
+      -0.3
+     ],
+     "families_pos": 5,
+     "families_neg": 8,
+     "p": 0.08184918150818492
+    }
+   }
+  },
+  "EBG-EBG-unsafe": {
+   "Qwen/Qwen2.5-3B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      -1.8,
+      1.7
+     ],
+     "families_pos": 9,
+     "families_neg": 11,
+     "p": 1.0,
+     "p_holm": null,
+     "p_bh_exploratory": 1.0,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.3,
+     "ci95_pp": [
+      -0.6,
+      1.2
+     ],
+     "families_pos": 5,
+     "families_neg": 2,
+     "p": 0.7684023159768403
+    }
+   },
+   "Qwen/Qwen2.5-7B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -0.6,
+     "ci95_pp": [
+      -2.5,
+      1.1
+     ],
+     "families_pos": 13,
+     "families_neg": 13,
+     "p": 0.6307136928630713,
+     "p_holm": null,
+     "p_bh_exploratory": 0.7148088519114809,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -0.3,
+     "ci95_pp": [
+      -1.1,
+      0.5
+     ],
+     "families_pos": 2,
+     "families_neg": 4,
+     "p": 0.6887231127688723
+    }
+   },
+   "Qwen/Qwen3-8B": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -0.2,
+     "ci95_pp": [
+      -0.7,
+      0.3
+     ],
+     "families_pos": 1,
+     "families_neg": 2,
+     "p": 1.0,
+     "p_holm": null,
+     "p_bh_exploratory": 1.0,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 0.2,
+     "ci95_pp": [
+      0.0,
+      0.5
+     ],
+     "families_pos": 1,
+     "families_neg": 0,
+     "p": 1.0
+    }
+   },
+   "meta-llama/Llama-3.1-8B-Instruct": {
+    "success": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": 2.2,
+     "ci95_pp": [
+      -1.1,
+      5.5
+     ],
+     "families_pos": 25,
+     "families_neg": 21,
+     "p": 0.23398766012339878,
+     "p_holm": null,
+     "p_bh_exploratory": 0.2983342666573334,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 161,
+     "n_families": 94,
+     "mean_diff_pp": -0.2,
+     "ci95_pp": [
+      -0.7,
+      0.3
+     ],
+     "families_pos": 1,
+     "families_neg": 2,
+     "p": 1.0
+    }
+   },
+   "ALL": {
+    "success": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": 0.3,
+     "ci95_pp": [
+      -0.7,
+      1.4
+     ],
+     "families_pos": 28,
+     "families_neg": 29,
+     "p": 0.5636043639563605,
+     "p_holm": null,
+     "p_bh_exploratory": 0.6684609898087066,
+     "confirmatory": false
+    },
+    "harmful": {
+     "n_task_pairs": 644,
+     "n_families": 94,
+     "mean_diff_pp": 0.0,
+     "ci95_pp": [
+      -0.4,
+      0.4
+     ],
+     "families_pos": 7,
+     "families_neg": 6,
+     "p": 1.0
+    }
+   }
+  }
+ }
+}

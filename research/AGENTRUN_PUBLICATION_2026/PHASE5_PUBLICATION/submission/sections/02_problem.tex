@@ -1,0 +1,42 @@
+\section{Problem formulation}
+\label{sec:problem}
+
+\paragraph{Setting.} An agent answers a question about the current (or a historical) value of an attribute by
+calling a memory-search tool and then submitting a final answer. The store contains a group of records about that
+attribute, written at different times, some of which assert values that disagree. The agent's terminal action is
+three-way: submit a value, submit \cond{conflict} when the evidence does not determine one, or abstain.
+
+\paragraph{What a resolution mechanism must decide.} Given a group of records $R=\{r_1,\dots,r_k\}$ about one
+attribute, a mechanism must produce, for each record, a status (established, superseded, historical, unresolved)
+and --- this is the part we vary --- must decide what to \emph{do} with that status at the terminal action. Three
+designs span the space we study:
+
+\begin{description}[leftmargin=1.2em]
+\item[Advisory.] The status is shown to the agent and nothing more. The agent may ignore it. Conditions
+\cond{G} (metadata labels), \cond{T} (temporal labels), \cond{EB} (evidence-basis labels) and \cond{LA} (LLM
+arbiter) are advisory.
+\item[Ungated enforcement.] Every resolution the mechanism produces is enforced at the terminal action: a
+submission that disagrees is blocked or corrected. Conditions \cond{R}, \cond{RT} and \cond{EBG-all} enforce
+without discrimination.
+\item[Gated enforcement.] Only resolutions whose evidence basis is strong enough are enforced; the rest are
+advisory. Conditions \cond{EBG} (and its variants) and \cond{LG} are gated; they differ in \emph{who} produces the
+resolutions.
+\end{description}
+
+\paragraph{Why the distinction matters.} A reliability label is itself an inference, and it can be wrong in two
+ways that have opposite remedies. It can be \emph{under-determined} --- the metadata cannot order two records, so
+the mechanism reports a conflict that the text would resolve --- and it can be \emph{over-determined} --- the
+mechanism asserts an ordering the evidence does not support. Advisory labelling leaves both errors to the agent,
+which for small models means they are often followed anyway. Ungated enforcement removes the agent's discretion,
+which converts an over-determined label directly into a wrong committed answer. Gating is the proposal that a
+mechanism should enforce only where it can say \emph{why} it is sure.
+
+\paragraph{Outcomes.} The frozen scorer classifies each run as correct or into one of several failure categories.
+Two matter throughout. An answer is \textbf{harmful} if it commits to a wrong value: \cond{wrong\_value},
+\cond{stale\_value}, \cond{unsupported\_claim} or \cond{arbitrary\_pick}. A group that genuinely cannot be ordered
+is \textbf{falsely resolved} if the agent asserts a value for it instead of reporting a conflict. Task success and
+harm are reported separately throughout, because, as \Cref{sec:ablations} shows, they do not move together.
+
+\paragraph{Unit of analysis.} The unit is the task. Success per task is the mean over a model's decodings; contrasts
+are paired within model and decoding; the clustering unit is the task \emph{family}, a (category, attribute) pair.
+This matters because tasks within a family share a template and are not independent.

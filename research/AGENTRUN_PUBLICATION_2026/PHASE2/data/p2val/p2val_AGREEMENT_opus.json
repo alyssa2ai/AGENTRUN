@@ -1,0 +1,78 @@
+{
+ "split": "p2val",
+ "annotators": {
+  "opus": {
+   "n": 77,
+   "kappa_class": 0.7289,
+   "exact_agreement": [
+    67,
+    77
+   ],
+   "low_confidence": 5,
+   "unparsed": 0
+  }
+ },
+ "n_valid": 77,
+ "n_primary": 66,
+ "n_flagged": 11,
+ "primary_by_category": {
+  "as_of_question": 4,
+  "authority_both": 4,
+  "backfilled_entry": 3,
+  "conflict_plain": 3,
+  "conflict_rival_neutral": 4,
+  "conflict_same_validity": 2,
+  "historical_question": 3,
+  "hypothetical_change": 4,
+  "missing_timestamp": 4,
+  "retention": 4,
+  "same_day_correction_noref": 3,
+  "same_day_correction_ref": 4,
+  "single_record_control": 4,
+  "supersession_later_ref": 3,
+  "three_value_chain": 4,
+  "unconfirmed_change": 2,
+  "unsupported": 3,
+  "update_record_time": 4,
+  "valid_time_same_import": 4
+ },
+ "flags": {
+  "p2val-0014": [
+   "opus:disagree"
+  ],
+  "p2val-0015": [
+   "opus:disagree",
+   "opus:low_confidence"
+  ],
+  "p2val-0017": [
+   "opus:low_confidence"
+  ],
+  "p2val-0021": [
+   "opus:disagree",
+   "opus:low_confidence"
+  ],
+  "p2val-0036": [
+   "opus:disagree"
+  ],
+  "p2val-0037": [
+   "opus:disagree"
+  ],
+  "p2val-0043": [
+   "opus:disagree",
+   "opus:low_confidence"
+  ],
+  "p2val-0058": [
+   "opus:disagree"
+  ],
+  "p2val-0059": [
+   "opus:disagree"
+  ],
+  "p2val-0065": [
+   "opus:disagree",
+   "opus:low_confidence"
+  ],
+  "p2val-0080": [
+   "opus:disagree"
+  ]
+ }
+}

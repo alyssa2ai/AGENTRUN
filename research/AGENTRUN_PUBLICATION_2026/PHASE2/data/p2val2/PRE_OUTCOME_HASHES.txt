@@ -1,0 +1,6 @@
+2026-11-16T10:03Z  pre-outcome record (written before any p2val2 mechanism/annotator output was opened)
+1fa5cfa1645b8f69c3fa2f04061375ccd40871af35fa6e8ce9667eb377caf4da *data/p2val2/P2VAL2_ITEM_AUDIT.md
+30b7ac3e1bbb59c2aa814893a4cc91bd4dd47498871ec4bb8805284edab6ecd0 *data/p2val2/p2val2_AUDIT_FLAGGED_IDS.json
+2026-11-16T10:14Z  primary-rule decision, before p2val2 mechanism outputs were opened
+2d56789e2c1f64c45f64704d447bcae5de3461e2e25c85b60e03e92a7773330d *data/p2val2/PRIMARY_RULE_DECISION.md
+aa3c7a7bc7d645db468d8e24c7dae5a452f9b02abc9a4a63ef56ef35b6fb7781 *PREREGISTRATION.md

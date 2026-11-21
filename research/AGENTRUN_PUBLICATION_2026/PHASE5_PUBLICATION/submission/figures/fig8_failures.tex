@@ -1,0 +1,51 @@
+% Figure 8 -- observed failure categories by condition.
+% Data: figures/data/fig8_failure_mix.dat, from PHASE3/results/per_model_config.csv (primary models).
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  paperaxis,
+  width=0.95\linewidth, height=5.6cm,
+  ybar stacked, bar width=7.5pt,
+  ymin=0, ymax=100,
+  ylabel={\% of runs},
+  symbolic x coords={B,G,T,R,RT,LA,LG,EB,EBG,EBG-all,EBG-unsafe,EBG-noR3},
+  xtick=data,
+  x tick label style={font=\scriptsize, rotate=32, anchor=east},
+  ymajorgrids, ytick={0,20,40,60,80,100},
+  legend style={at={(0.5,-0.42)}, anchor=north, legend columns=5, draw=cNeutral},
+  legend cell align=left,
+]
+\addplot[draw=cEBG, fill=cEBG, fill opacity=0.85]
+  table[col sep=tab, x=config, y=correct] {figures/data/fig8_failure_mix.dat};
+\addplot[draw=cAdv!70!black, fill=cAdv, fill opacity=0.9]
+  table[col sep=tab, x=config, y=false_conflict] {figures/data/fig8_failure_mix.dat};
+\addplot[draw=cNone, fill=cNone, fill opacity=0.55]
+  table[col sep=tab, x=config, y=over_abstain] {figures/data/fig8_failure_mix.dat};
+\addplot[draw=cHarm, fill=cHarm, fill opacity=0.9, postaction={pattern=north east lines, pattern color=white}]
+  table[col sep=tab, x=config, y=harmful] {figures/data/fig8_failure_mix.dat};
+\addplot[draw=cLLM!70!black, fill=cLLM, fill opacity=0.9]
+  table[col sep=tab, x=config, y=format_err] {figures/data/fig8_failure_mix.dat};
+\legend{correct, false conflict, unnecessary abstention, harmful answer, format failure}
+\end{axis}
+\end{tikzpicture}
+
+\vspace{4mm}
+\caption[Observed failure categories by condition]{%
+\textbf{Where the failures go.} Outcome rates from the frozen scorer, pooled over the four primary models and four
+decodings ($n=4288$ runs per condition). Only \emph{observed} categories are shown; each is a rate over all runs,
+and because the scorer's categories are not mutually exclusive the five bands do not sum to 100\% --- the
+remainder (step-limit exhaustion, stale values counted inside ``harmful'', and unclassified residue) is omitted
+rather than invented. Three readings matter. Metadata labels (\cond{G}) leave the agent \emph{worse} than no labels
+(\cond{B}): more false conflicts and more harm. Enforcing record-derived labels (\cond{R}, \cond{RT}) produces the
+largest harmful bands in the study. And the residual failure of the proposed condition \cond{EBG} is
+over-conservatism --- 20.2\% false conflicts and 11.5\% unnecessary abstentions --- against 3.1\% harm; the
+mechanism moved errors where it was designed to move them, which is a claim about direction, not about whether
+that is the right place for them.\\
+\emph{Accessible description:} twelve stacked bars; the correct band is largest for \cond{EBG-all} and
+\cond{EBG}, while the hatched harmful band is widest for \cond{RT}, \cond{LG} and \cond{R} and almost invisible for
+\cond{EB} and \cond{EBG}.\\
+\emph{Source:} \srcfile{PHASE3/results/per_model_config.csv}; plotted from
+\srcfile{figures/data/fig8_failure_mix.dat}.}
+\label{fig:failures}
+\end{figure}

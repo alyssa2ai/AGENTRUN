@@ -1,10 +1,26 @@
 # AGENTRUN
 
-**QLoRA fine-tuning of a tool-using 7B model on a fixed 23-task benchmark: a fine-tuning regression, an infrastructure ablation, and a failure-informed recovery.**
+**Two studies on tool-using language-model agents: a QLoRA fine-tuning ablation on a 23-task benchmark (2026-09),
+and a pre-registered evaluation of evidence-basis arbitration for conflicting persistent memory (2026-11).**
 
 [![tests](https://github.com/alyssa2ai/AGENTRUN/actions/workflows/tests.yml/badge.svg)](https://github.com/alyssa2ai/AGENTRUN/actions/workflows/tests.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22346935.svg)](https://doi.org/10.5281/zenodo.22346935)
 [![License: MIT](https://img.shields.io/badge/code%20license-MIT-blue.svg)](LICENSE)
+
+| | Study 1 — QLoRA specialization | Study 2 — persistent-memory reliability |
+|---|---|---|
+| Question | how much of a fine-tuning score change comes from the model and how much from the infrastructure around it | does arbitration that states its *evidence basis*, and enforces only what that basis supports, improve reliability — and can indiscriminate enforcement increase harmful answers |
+| Design | 4 conditions, 23 tasks, N=1 per condition, no seeds | pre-registered; 18 model x decoding cells, 12 conditions, 268 sealed tasks, 57,888 runs |
+| Status | preprint on Zenodo (not peer reviewed); updated manuscript unpublished | manuscript complete, **not submitted anywhere**, not peer reviewed |
+| Where | this repository root (`eval/`, `training/`, `serving/`, `evaluation/`, `results/`) | [`research/AGENTRUN_PUBLICATION_2026/`](research/AGENTRUN_PUBLICATION_2026/) |
+
+The two studies share a name and a repository, and nothing else: different question, different models, different
+benchmark, different method, different code. Results from one are never pooled with the other. Study 1 remains
+exactly as published; Study 2 was added in November 2026.
+
+---
+
+# Study 1 — QLoRA specialization for multi-tool use
 
 AGENTRUN fine-tunes `Qwen/Qwen2.5-7B-Instruct` with QLoRA on small sets of tool-use trajectories and evaluates it on a fixed, machine-scored, 23-task multi-tool benchmark. Tools run through the Model Context Protocol (MCP). The first adapter scored lower than the base model. We considered two candidate causes, a brittle serving-layer tool-call parser and gaps in training-data coverage, and ran an ablation (E4) that re-evaluated the first adapter behind the corrected parser.
 
@@ -92,6 +108,99 @@ python results/verify_results.py    # recompute every reported score from result
 
 No seeds were set in the original runs, and the search and weather observations are live. A re-run is a replication attempt, not a bit-exact reproduction. Report any difference from the committed results; do not overwrite them. Full procedure: [`docs/reproducibility.md`](docs/reproducibility.md).
 
+---
+
+# Study 2 — Evidence-basis arbitration for conflicting persistent memory
+
+**An agent with persistent memory will eventually read two records that disagree.** The common remedy — label
+records by reliability from their metadata, and enforce those labels at the terminal action — can make small
+models *worse*. This study tests an alternative: an arbiter that reports the **evidence basis** for each
+resolution (an explicit correction naming the rival value, a stated validity date, the record date, an
+authoritative source, a genuine contradiction, or insufficient evidence) and a **strength**, with the policy
+enforcing only resolutions of strong strength.
+
+Everything was frozen before the data existed: the mechanism (14 November 2026), the evaluation set
+(16 November), and the analysis and hypotheses (17 November). Every job re-verified all three hashes at start.
+
+## Scale
+
+| | |
+|---|---|
+| Models | 4 primary (3B–8B, two families) + 2 secondary, all open-weight |
+| Cells | 18 (model x decoding), 12 conditions each |
+| Tasks | 268 sealed, in 135 families |
+| Runs | **57,888**, with 0 missing pairs, 0 duplicates and 0 harness errors |
+| Inference | family-clustered sign-flip permutation, 100,000 seeded draws; Holm over four contrasts |
+
+## Pre-registered results
+
+All four contrasts are supported. Differences are percentage points of task success, pooled over the four primary
+models (51,456 runs), with 95% family-bootstrap intervals.
+
+| Hypothesis | Contrast | Difference | 95% CI | Holm-adjusted *p* | Verdict |
+|---|---|---:|---|---:|---|
+| H-primary | EBG − RT | **+17.1** | [12.2, 22.1] | 4×10⁻⁵ | supported |
+| S1 | EBG − T | +14.5 | [10.5, 18.6] | 4×10⁻⁵ | supported |
+| S2 | EBG − LG | +15.9 | [10.4, 21.2] | 4×10⁻⁵ | supported |
+| S3 | EBG − B | +15.3 | [10.3, 20.5] | 4×10⁻⁵ | supported |
+| S4 | EBG − RT, harmful | −19.4 | [−24.6, −14.6] | — | **not falsified** |
+
+Harmful answers fell from 22.6% to 3.1%; arbitrary picks from 252 runs to 13. An independent re-implementation
+recomputed the 60 model × condition counts and the four effect sizes and agrees exactly.
+
+## Three results that cut against the proposed design
+
+These are reported as prominently as the supportive ones, because together they locate the contribution more
+precisely than the headline contrasts do.
+
+1. **Gating costs accuracy.** Enforcing *every* arbitration rather than only strong ones scored **9.7 pp higher**
+   (71.1% against 61.3%) while more than doubling the harmful rate (6.9% against 3.1%) and raising false
+   resolution from 1.9% to 12.9%. Gating is a trade, not a dominance, and this benchmark does not price it.
+2. **Most of the benefit is in the labels, not the enforcement.** Evidence-basis labels with no enforcement at all
+   are worth +11.8 pp over metadata labels; gating adds a further +6.0 pp.
+3. **Enforcement inherits the reliability of its labels.** The same gating driven by an LLM arbiter gave no
+   success gain and 8.1 pp *more* harm, with 37.0% false resolution — worse than no mechanism at all.
+
+The best condition still answers only 61.3% of tasks correctly, and its residual failure is over-conservatism
+(20.2% false conflicts, 11.5% unnecessary abstentions) rather than harm. Effects also differ by model family: the
+Llama models gain by converting abstentions into answers rather than harmful answers into correct ones, so the
+harm-reduction claim is demonstrated on the models that actually produce harm.
+
+## Deviations, disclosed
+
+An unplanned compute-node reboot changed the host kernel and GPU driver partway through two of the eighteen cells,
+affecting 980 of 57,888 rows (1.69%). Removing the affected cell moves the pooled estimates by at most 0.1 pp —
+but no task and condition was run on both platforms, so **whether the driver change altered generation is unknown
+and not knowable from this campaign**, and the paper says so. The full ledger, the forensic record and a
+reporting-only platform-continuity check are in
+[`PHASE3/PHASE3_DEVIATIONS.md`](research/AGENTRUN_PUBLICATION_2026/PHASE3/PHASE3_DEVIATIONS.md).
+
+## Where things are
+
+| Path | Contents |
+|---|---|
+| [`PHASE2/`](research/AGENTRUN_PUBLICATION_2026/PHASE2/) | the frozen mechanism (`evarb/`), the runner and analysis scripts, the benchmark builders, the pre-registration and freeze records, and the tests |
+| [`PHASE3/`](research/AGENTRUN_PUBLICATION_2026/PHASE3/) | the campaign: final report, statistical analysis, comparison and ablation tables, failure analysis, deviations, forensic report, machine-readable verdicts, result CSVs and the SHA-256 manifest |
+| [`PHASE4/`](research/AGENTRUN_PUBLICATION_2026/PHASE4/) | the long-form manuscript and the reproducibility package (environment, model snapshots, dataset rules, analysis instructions, expected outputs, limitations) |
+| [`PHASE5_PUBLICATION/`](research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/) | the typeset paper: LaTeX source, bibliography, nine vector figures with their data, the supplement, and the compiled PDFs in `build/` |
+
+## Reproducing the analysis
+
+The analysis is reproducible byte for byte from the archived raw outputs; the permutations and bootstraps are
+seeded and the integrity gates re-verify the inputs first. See
+[`PHASE4/reproducibility/`](research/AGENTRUN_PUBLICATION_2026/PHASE4/reproducibility/). Three limits are stated
+there and in the paper: GPU kernels are not bitwise deterministic across hardware or library versions; two cells
+were not produced on a single host platform; and one of those re-seeded its sampler when it resumed.
+
+## What is not released
+
+The confirmatory evaluation items, their annotations and the per-run transcripts are **withheld until
+publication**, so the test set stays uncontaminated — their hashes are public in `PHASE2/FREEZE_eval3.json`, so a
+later release can be checked against the frozen versions. Cluster job logs are withheld because their progress
+lines carry per-task outcomes. Model weights are not redistributed; the exact snapshot hashes are listed.
+
+---
+
 ## Repository map
 
 | Path | Contents |
@@ -106,6 +215,7 @@ No seeds were set in the original runs, and the search and weather observations 
 | [`notebooks/`](notebooks/) | Colab session log for the E4 run (credentials redacted) |
 | [`publication/`](publication/) | LaTeX manuscript, bibliography, and supplementary material |
 | [`docs/`](docs/) | [Architecture](docs/architecture.md), [benchmark](docs/benchmark.md), [reproducibility](docs/reproducibility.md), [experiment log](docs/experiment-log.md), [project map](docs/project-map.md), [research audit (historical)](docs/research/2026-09_research_audit_and_roadmap.md) |
+| [`research/AGENTRUN_PUBLICATION_2026/`](research/AGENTRUN_PUBLICATION_2026/) | **Study 2**: mechanism, pre-registration, campaign reports, manuscript and publication package |
 
 `agent.py`, `main.py`, and `memory.py` are the Phase 1 Gemini agent that preceded the Qwen experiments. They are not used by the four reported conditions.
 
@@ -115,9 +225,17 @@ No seeds were set in the original runs, and the search and weather observations 
 - **Updated manuscript:** [`publication/manuscript.tex`](publication/manuscript.tex) (*Disentangling Parser and Data Effects in Tool-Using LLM Fine-Tuning*) adds E4. It has not been published or peer reviewed.
 - **WI-IAT submission:** withdrawn on 9 October 2026. No submission is currently under review.
 
+**Study 2 (persistent memory).** The manuscript in
+[`PHASE5_PUBLICATION/`](research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/) is complete and typeset for
+*Transactions on Machine Learning Research*. It has **not been submitted anywhere, is not under review, and is
+not peer reviewed**; no submission account exists and no preprint has been posted. The venue comparison that led
+to that choice is in
+[`VENUE_SELECTION.md`](research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/VENUE_SELECTION.md). See
+[`PUBLICATION_STATUS.md`](PUBLICATION_STATUS.md) for the full status of both studies.
+
 ## Citation
 
-Please cite the Zenodo preprint (see also [`CITATION.cff`](CITATION.cff)):
+For **Study 1**, please cite the Zenodo preprint (see also [`CITATION.cff`](CITATION.cff)):
 
 ```bibtex
 @misc{l2026agentrun,
@@ -130,6 +248,9 @@ Please cite the Zenodo preprint (see also [`CITATION.cff`](CITATION.cff)):
   note         = {Preprint}
 }
 ```
+
+**Study 2 has no citable publication yet.** It is unsubmitted and unreviewed; please cite the repository and the
+commit you used, and do not describe it as published, submitted or peer reviewed.
 
 ## License and security
 

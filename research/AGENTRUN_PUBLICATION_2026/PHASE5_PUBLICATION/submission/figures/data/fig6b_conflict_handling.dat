@@ -1,0 +1,14 @@
+# source: PHASE3/ANALYSIS/METRICS.json -> POOLED[config]
+config	conflict_preserved	false_resolution	unnecessary_abstention
+B	65.2	12.8	19.5
+G	72.8	9.2	16.0
+T	79.6	3.6	16.9
+R	74.2	12.3	9.4
+RT	66.8	19.0	11.1
+LA	57.8	21.9	18.4
+LG	42.4	37.0	17.1
+EB	81.6	2.0	16.7
+EBG	88.5	1.9	12.8
+EBG-all	77.3	12.9	13.9
+EBG-unsafe	89.0	1.6	9.9
+EBG-noR3	83.3	1.9	17.6

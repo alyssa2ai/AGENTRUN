@@ -1,0 +1,90 @@
+{"item_id": "p2val2-0001", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0001\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0002", "label": "answer:5", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0002\",\n  \"label\": \"answer:5\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0003", "label": "answer:9454", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0003\",\n  \"label\": \"answer:9454\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0004", "label": "answer: Bruno Tresith", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0004\", \"label\": \"answer: Bruno Tresith\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0005", "label": "answer:south-delta-3", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0005\", \"label\": \"answer:south-delta-3\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0006", "label": "answer:2027-07-10", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0006\",\n  \"label\": \"answer:2027-07-10\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0007", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0007\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0008", "label": "answer:17", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0008\", \"label\": \"answer:17\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0009", "label": "answer:7019", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0009\", \"label\": \"answer:7019\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0010", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0010\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0011", "label": "answer:south-delta-3", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0011\", \"label\": \"answer:south-delta-3\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0012", "label": "answer:2027-07-11", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0012\", \"label\": \"answer:2027-07-11\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0013", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0013\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0014", "label": "answer:28", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0014\", \"label\": \"answer:28\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0015", "label": "conflict", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0015\",\n  \"label\": \"conflict\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0016", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0016\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0017", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0017\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0019", "label": "conflict", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0019\",\n  \"label\": \"conflict\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0020", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0020\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0021", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0021\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0022", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0022\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0023", "label": "abstain", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0023\", \"label\": \"abstain\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0024", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0024\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0025", "label": "answer:9115", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0025\",\n  \"label\": \"answer:9115\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0026", "label": "answer:Pavel Zouzaem", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0026\", \"label\": \"answer:Pavel Zouzaem\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0027", "label": "answer:east-mesa-1", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0027\",\n  \"label\": \"answer:east-mesa-1\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0028", "label": "answer:2027-10-23", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0028\",\n  \"label\": \"answer:2027-10-23\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0029", "label": "answer:142500", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0029\",\n  \"label\": \"answer:142500\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0030", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0030\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0031", "label": "answer:3983", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0031\", \"label\": \"answer:3983\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0032", "label": "answer:Pavel Tiotraen", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0032\", \"label\": \"answer:Pavel Tiotraen\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0033", "label": "answer:far-cape-5", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0033\", \"label\": \"answer:far-cape-5\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0034", "label": "answer:2027-10-31", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0034\", \"label\": \"answer:2027-10-31\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0035", "label": "abstain", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0035\",\n  \"label\": \"abstain\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0036", "label": "abstain", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0036\", \"label\": \"abstain\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0037", "label": "answer:9872", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0037\", \"label\": \"answer:9872\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0038", "label": "conflict", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0038\",\n  \"label\": \"conflict\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0039", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0039\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0040", "label": "conflict", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0040\",\n  \"label\": \"conflict\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0041", "label": "answer:805900", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0041\",\n  \"label\": \"answer:805900\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0042", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0042\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0043", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0043\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0044", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0044\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0045", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0045\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0046", "label": "abstain", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0046\", \"label\": \"abstain\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0047", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0047\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0048", "label": "answer:Oona Naebrael", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0048\", \"label\": \"answer:Oona Naebrael\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0049", "label": "conflict", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0049\",\n  \"label\": \"conflict\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0050", "label": "answer:2027-01-12", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0050\",\n  \"label\": \"answer:2027-01-12\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0051", "label": "answer:499900", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0051\", \"label\": \"answer:499900\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0052", "label": "answer:28", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0052\", \"label\": \"answer:28\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0053", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0053\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0054", "label": "answer:Pavel Vaequur", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0054\", \"label\": \"answer:Pavel Vaequur\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0055", "label": "answer:mid-basin-4", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0055\", \"label\": \"answer:mid-basin-4\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0056", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0056\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0057", "label": "answer:75900", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0057\",\n  \"label\": \"answer:75900\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0058", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0058\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0059", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0059\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0060", "label": "answer:Jonah Nakoth", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0060\", \"label\": \"answer:Jonah Nakoth\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0061", "label": "conflict", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0061\",\n  \"label\": \"conflict\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0062", "label": "answer:2027-08-30", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0062\", \"label\": \"answer:2027-08-30\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0063", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0063\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0064", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0064\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0065", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0065\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0066", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0066\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0067", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0067\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0068", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0068\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0069", "label": "abstain", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0069\", \"label\": \"abstain\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0070", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0070\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0071", "label": "conflict", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0071\",\n  \"label\": \"conflict\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0073", "label": "answer:68500", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0073\",\n  \"label\": \"answer:68500\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0074", "label": "answer:40", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0074\", \"label\": \"answer:40\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0075", "label": "answer:7076", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0075\",\n  \"label\": \"answer:7076\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0076", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0076\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0077", "label": "answer:west-ridge-1", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0077\", \"label\": \"answer:west-ridge-1\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0078", "label": "answer:2027-04-29", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0078\", \"label\": \"answer:2027-04-29\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0079", "label": "answer:745500", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0079\",\n  \"label\": \"answer:745500\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0080", "label": "answer:19", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0080\",\n  \"label\": \"answer:19\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0081", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0081\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0082", "label": "abstain", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0082\", \"label\": \"abstain\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0083", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0083\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0084", "label": "conflict", "confidence": "high", "raw": "```json\n{\n  \"item_id\": \"p2val2-0084\",\n  \"label\": \"conflict\",\n  \"confidence\": \"high\"\n}\n```"}
+{"item_id": "p2val2-0085", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0085\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0086", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0086\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0087", "label": "answer:3089", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0087\", \"label\": \"answer:3089\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0088", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0088\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0089", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0089\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0090", "label": "answer:2027-01-08", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0090\", \"label\": \"answer:2027-01-08\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0091", "label": "conflict", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0091\", \"label\": \"conflict\", \"confidence\": \"high\"}"}
+{"item_id": "p2val2-0092", "label": "abstain", "confidence": "high", "raw": "{\"item_id\": \"p2val2-0092\", \"label\": \"abstain\", \"confidence\": \"high\"}"}

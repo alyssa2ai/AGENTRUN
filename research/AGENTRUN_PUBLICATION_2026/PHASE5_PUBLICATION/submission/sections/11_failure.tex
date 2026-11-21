@@ -1,0 +1,54 @@
+\section{Failure analysis}
+\label{sec:failure}
+
+\input{figures/fig8_failures}
+
+\subsection{Where the failures go}
+
+\cond{EBG} answers 61.3\% of pooled primary runs correctly, so roughly two runs in five still fail. Of those,
+20.2\% of all runs report a false conflict, 11.5\% abstain unnecessarily, 2.8\% answer with the superseded value,
+2.8\% produce no parsable answer, 1.0\% exhaust the step budget and 0.3\% are arbitrary picks; no run produced an
+unsupported claim and none was missing.
+
+The residual failure is therefore \textbf{over-conservatism, not harm}: false conflicts and unnecessary
+abstentions together account for 31.7\% of runs against 3.1\% harmful. The mechanism was designed to move errors
+in exactly this direction, and it did. Whether that is the right place for them is a deployment question this
+benchmark cannot settle, because it assigns no relative cost to a wrong confident answer and a missed correct one.
+
+Part of the false-conflict residue is the arbiter's own documented limitations, pinned by tests before the freeze
+and deliberately not fixed during the campaign: a negator more than four tokens before the cue is missed,
+``correcting'' is not treated as a correction cue, and one negated-both-stand pattern resolves to the rival instead
+of a contradiction. We cannot say how much of the 20.2\% these account for without a transcript study
+(\Cref{sec:limitations}).
+
+\subsection{The two mechanism-level failures the design targets}
+
+False resolution --- asserting an ordering the evidence does not support --- falls from 12.8\% of conflict groups
+under plain memory, 19.0\% under \cond{RT} and 37.0\% under \cond{LG} to \textbf{1.9\%} under \cond{EBG}. Conflict
+preservation rises from 65.2\%, 66.8\% and 42.4\% to \textbf{88.5\%}. These two measures, rather than task
+success, are where the mechanism's design is visible most directly.
+
+\subsection{Model families fail differently in kind}
+
+\Cref{fig:failures} is pooled; the per-model picture divides along family lines. Under \cond{EBG} the three Qwen
+models abstain unnecessarily on 0.0--3.6\% of runs and fail to format an answer on at most 0.1\%; Llama-3.1-8B
+abstains on 44.0\% and fails to format on 11.1\%, while being the \emph{least} harmful model in the study under
+every condition. It rarely commits to a wrong value because it rarely commits. This is the sharpest limit on
+generalisation in our results: the harm-reduction claim is demonstrated on models that actually produce harmful
+answers. Qwen2.5-14B's 13.8\% format-error rate is constant across all twelve conditions and is a harness
+formatting artefact, not a mechanism effect.
+
+\subsection{Execution failures}
+
+There were none in the analysis sense: all 18 cells reached 3216 rows with 0 missing pairs, 0 duplicates and 0
+harness-error rows across all 57{,}888 runs, so no run was scored as missing and the pre-registered missing-run
+rule never applied. Two cells were interrupted by the infrastructure event described in
+\Cref{sec:limitations} and resumed without losing a completed run.
+
+\subsection{What this analysis does not cover}
+
+The eval3 task texts, gold labels and per-run transcripts remain sealed until publication, so every statement here
+is at the level of the frozen scorer's outcome categories and their rates. We did not inspect individual failing
+runs. In particular we cannot say which of \cond{EBG}'s false conflicts the arbiter could have resolved from the
+text and which are items where reporting a conflict is correct, nor can we confirm that the development failure
+mechanisms are the ones that produced the eval3 residue. Both require a transcript study after the data release.
