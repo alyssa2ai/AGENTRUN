@@ -6,7 +6,7 @@ Every number comes from generated tables: `tables/hpc_greedy/`, `tables/hpc_all/
 
 | Set | Where | Models | Blocks x configs | Runs | Status |
 |---|---|---|---|---|---|
-| **Local models (primary)** | SIT HPC, node `sit-gpu`, NVIDIA L40, Slurm array 4138 | Qwen2.5-7B-Instruct; Qwen3-8B; Qwen2.5-7B-Instruct + the repository's LoRA adapter (all greedy) | 3 x 48 x 5 | 720 | **complete** |
+| **Local models (primary)** | SIT HPC, node `<compute-node>`, NVIDIA L40, Slurm array 4138 | Qwen2.5-7B-Instruct; Qwen3-8B; Qwen2.5-7B-Instruct + the repository's LoRA adapter (all greedy) | 3 x 48 x 5 | 720 | **complete** |
 | Local models, sampled repeats | same array | Qwen2.5-7B T=0.7 seeds 1 and 2; Qwen3-8B T=0.7 seed 1 | 3 x 48 x 5 | 720 | **complete** |
 | Hosted models | laptop calling the Groq endpoint | gpt-oss-120b (35 blocks), gpt-oss-20b (29), qwen3.8-27b (7) | 71 x 5 | 355 scored (358 written) | **truncated** by a 200,000 tokens/day cap |
 | Retrieval at scale | SIT HPC job 4144, L40 | hash256 (AGENTRUN default), BM25, all-MiniLM-L6-v2, bge-small-en-v1.5 | 3 seeds x 3 store sizes x 300 queries x 2 query styles | 96 result rows | **complete** |

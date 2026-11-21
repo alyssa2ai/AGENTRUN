@@ -112,6 +112,6 @@ Working title: *"Tell or enforce? Capacity-dependent compliance with memory-reli
    - hard override instead of a notice;
    - a value-reminder variant (CICM-style: "current value: V") versus a record-status label.
 2. A new sealed memlab split (≥40 families, held-out templates, S7/S8 included), frozen and pre-registered before any run.
-3. A second model family. The Llama snapshots on `sit-gpu` are incomplete (3.2-3B: 8.9 MB; 3.1-8B: 5.3 GB), so a complete download or another family is needed.
+3. A second model family. The Llama snapshots on `<compute-node>` are incomplete (3.2-3B: 8.9 MB; 3.1-8B: 5.3 GB), so a complete download or another family is needed.
 4. Three decoding seeds plus greedy.
 5. A STALE subset adapter (State Resolution and Premise Resistance) with the record-status interface.

@@ -38,7 +38,7 @@
 
 | Location | Status |
 |---|---|
-| HPC backup (`/home/gpuuser12/AGENTRUN_HPC/backups/c2_backup_20261112_120842`) | Verified, 113 MB, 5,223 checksummed files |
+| HPC backup (`/home/<user>/AGENTRUN_HPC/backups/c2_backup_20261112_120842`) | Verified, 113 MB, 5,223 checksummed files |
 | Local copy (`research/AGENTRUN_DEEPENING_2026-11-11/raw_results/`) | Complete for all 14 jobs |
 | Git commits | `998e42e`, `ca664fa` (pre-existing, unpushed) |
 

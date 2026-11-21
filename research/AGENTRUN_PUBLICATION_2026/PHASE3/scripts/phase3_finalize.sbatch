@@ -125,6 +125,6 @@ cat >> "$STATUS" <<EOF
 PHASE3_EXECUTION_LOG.md, PHASE3_STATISTICAL_ANALYSIS.md, PHASE3_COMPARISON_TABLES.md, PHASE3_ABLATION_RESULTS.md,
 PHASE3_FAILURE_TABLES.md, PHASE3_DECISIONS.json, results/*.csv, ANALYSIS/*, PHASE3_SHA256_MANIFEST.txt,
 PHASE4/manuscript/07_results_AUTO.md. Fetch to the laptop with:
-  git fetch gpuuser12@192.168.192.11:AGENTRUN_HPC/finalize/AGENTRUN research/memory-ablation-2026-11:hpc-final
+  git fetch <user>@<cluster-login>:AGENTRUN_HPC/finalize/AGENTRUN research/memory-ablation-2026-11:hpc-final
 EOF
 note "finalization complete"

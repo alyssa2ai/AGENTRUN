@@ -1,12 +1,12 @@
 {
  "_comment": "Host-platform evidence for the Phase 3 G5 platform-continuity report. Collected read-only on 2026-11-21 during the G4 forensic investigation (PHASE3_G4_FORENSIC_REPORT.md). Each fact carries its epistemic status: 'verified' = read directly from a system source named in `source`; 'inferred' = deduced from verified facts, with the reasoning in `reasoning`; 'unknown' = could not be established, with what would settle it in `would_settle`. Nothing here is used by any statistical computation.",
  "collected_utc": "2026-11-21T04:30:00Z",
- "node": "sit-gpu",
+ "node": "<compute-node>",
  "boot_event": {
   "status": "verified",
   "node_boot_utc": "2026-11-20T10:11:58",
   "slurmd_start_utc": "2026-11-20T10:12:11",
-  "source": "scontrol show node sit-gpu (BootTime, SlurmdStartTime)"
+  "source": "scontrol show node <compute-node> (BootTime, SlurmdStartTime)"
  },
  "previous_boot": {
   "status": "verified",
@@ -17,7 +17,7 @@
  "kernel_after": {
   "status": "verified",
   "release": "6.8.0-149-generic",
-  "source": "scontrol show node sit-gpu (OS line); uname -r on sit-gpu",
+  "source": "scontrol show node <compute-node> (OS line); uname -r on <compute-node>",
   "package_installed_utc": "2026-11-13 06:13:43",
   "package_source": "/var/log/dpkg.log (linux-image-6.8.0-149-generic 6.8.0-149.149)"
  },

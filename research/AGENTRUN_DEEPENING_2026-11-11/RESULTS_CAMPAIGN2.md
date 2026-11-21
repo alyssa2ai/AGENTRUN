@@ -4,7 +4,7 @@ Design and rationale: [CAMPAIGN2_PLAN.md](CAMPAIGN2_PLAN.md), written before any
 
 ## What ran
 
-Slurm array 4148 on node `sit-gpu` (NVIDIA L40), 21 jobs, two at a time.
+Slurm array 4148 on node `<compute-node>` (NVIDIA L40), 21 jobs, two at a time.
 
 | Jobs | What | Status |
 |---|---|---|

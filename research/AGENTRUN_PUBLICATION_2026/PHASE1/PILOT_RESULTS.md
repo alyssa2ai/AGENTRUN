@@ -39,7 +39,7 @@ Nothing here is a confirmatory result, and nothing was run on the sealed sets.
 - Every planned run in `prototype/launch_pilot.sh` exists. Nothing was relaunched or resumed.
 
 **Hashes.**
-- All files were copied from `sit-gpu` and sha256-compared, node versus laptop: 42 of 42 identical.
+- All files were copied from `<compute-node>` and sha256-compared, node versus laptop: 42 of 42 identical.
 - Hashes for every file in `PHASE1/` are in `HASH_MANIFEST.txt`.
 
 ## 2. Design of the first pilot

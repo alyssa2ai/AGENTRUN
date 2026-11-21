@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-- SSH access to SIT HPC (`gpuuser12@192.168.192.11` or `gpuuser12@192.168.192.9`)
+- SSH access to SIT HPC (`<user>@<cluster-login>` or `<user>@<compute-node>`)
 - Working Slurm controller on the login node
 - Two NVIDIA L40 GPUs (functional `nvidia-smi`)
 - Pre-downloaded models in the HuggingFace cache
@@ -23,17 +23,17 @@
 ### Step 1: Verify environment
 
 ```bash
-ssh gpuuser12@192.168.192.11
-cd /home/gpuuser12/AGENTRUN_HPC/20261111
+ssh <user>@<cluster-login>
+cd /home/<user>/AGENTRUN_HPC/20261111
 source environment/venv/bin/activate
 python -c "import torch; print(torch.cuda.is_available(), torch.cuda.device_count())"
-squeue -u gpuuser12
+squeue -u <user>
 ```
 
 ### Step 2: Submit all 21 jobs
 
 ```bash
-cd /home/gpuuser12/AGENTRUN_HPC/20261111
+cd /home/<user>/AGENTRUN_HPC/20261111
 sbatch scripts/campaign2.sbatch
 ```
 
@@ -42,7 +42,7 @@ This submits a 21-job Slurm array with max 2 concurrent. Jobs are resumable: res
 ### Step 3: Monitor
 
 ```bash
-watch -n 30 'squeue -u gpuuser12; wc -l manifests/jobs_finished.tsv'
+watch -n 30 'squeue -u <user>; wc -l manifests/jobs_finished.tsv'
 ```
 
 Expected wall time: ~8 hours with 2 concurrent jobs.
@@ -52,13 +52,13 @@ Expected wall time: ~8 hours with 2 concurrent jobs.
 ```bash
 # On local machine
 RBASE=research/AGENTRUN_DEEPENING_2026-11-11/raw_results
-REMOTE=/home/gpuuser12/AGENTRUN_HPC/20261111/experiments/raw_results
-for d in $(ssh gpuuser12@192.168.192.9 "ls $REMOTE"); do
+REMOTE=/home/<user>/AGENTRUN_HPC/20261111/experiments/raw_results
+for d in $(ssh <user>@<compute-node> "ls $REMOTE"); do
   mkdir -p "$RBASE/$d"
-  scp "gpuuser12@192.168.192.9:$REMOTE/$d/runs.jsonl" "$RBASE/$d/" 2>/dev/null
-  scp "gpuuser12@192.168.192.9:$REMOTE/$d/DONE" "$RBASE/$d/" 2>/dev/null
-  scp "gpuuser12@192.168.192.9:$REMOTE/$d/manifest.jsonl" "$RBASE/$d/" 2>/dev/null
-  scp "gpuuser12@192.168.192.9:$REMOTE/$d/scores.json" "$RBASE/$d/" 2>/dev/null
+  scp "<user>@<compute-node>:$REMOTE/$d/runs.jsonl" "$RBASE/$d/" 2>/dev/null
+  scp "<user>@<compute-node>:$REMOTE/$d/DONE" "$RBASE/$d/" 2>/dev/null
+  scp "<user>@<compute-node>:$REMOTE/$d/manifest.jsonl" "$RBASE/$d/" 2>/dev/null
+  scp "<user>@<compute-node>:$REMOTE/$d/scores.json" "$RBASE/$d/" 2>/dev/null
 done
 ```
 
@@ -81,11 +81,11 @@ py -3.11 leakage_audit.py
 ## Reproducing only the 7 missing jobs
 
 ```bash
-ssh gpuuser12@192.168.192.11
-cd /home/gpuuser12/AGENTRUN_HPC/20261111
+ssh <user>@<cluster-login>
+cd /home/<user>/AGENTRUN_HPC/20261111
 
 # Verify Slurm is operational
-squeue -u gpuuser12
+squeue -u <user>
 
 # Submit only missing indices
 sbatch --array=14-20%2 scripts/campaign2.sbatch
@@ -106,12 +106,12 @@ sbatch --array=14-20%2 scripts/campaign2.sbatch
 
 | Path | Contents |
 |---|---|
-| `/home/gpuuser12/AGENTRUN_HPC/20261111/scripts/campaign2.sbatch` | Job array definition |
-| `/home/gpuuser12/AGENTRUN_HPC/20261111/source/` | All source code |
-| `/home/gpuuser12/AGENTRUN_HPC/20261111/experiments/raw_results/` | Run outputs |
-| `/home/gpuuser12/AGENTRUN_HPC/20261111/experiments/logs/` | Slurm stdout/stderr |
-| `/home/gpuuser12/AGENTRUN_HPC/20261111/manifests/jobs_finished.tsv` | Completion log |
-| `/home/gpuuser12/AGENTRUN_HPC/backups/c2_backup_20261112_120842/` | Timestamped backup |
+| `/home/<user>/AGENTRUN_HPC/20261111/scripts/campaign2.sbatch` | Job array definition |
+| `/home/<user>/AGENTRUN_HPC/20261111/source/` | All source code |
+| `/home/<user>/AGENTRUN_HPC/20261111/experiments/raw_results/` | Run outputs |
+| `/home/<user>/AGENTRUN_HPC/20261111/experiments/logs/` | Slurm stdout/stderr |
+| `/home/<user>/AGENTRUN_HPC/20261111/manifests/jobs_finished.tsv` | Completion log |
+| `/home/<user>/AGENTRUN_HPC/backups/c2_backup_20261112_120842/` | Timestamped backup |
 
 ## Key file locations locally
 

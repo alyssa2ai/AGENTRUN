@@ -34,12 +34,12 @@
 
 ## Infrastructure blocker
 
-- **Login node** (192.168.192.11, `sitgpumaster`): SSH times out / "No route to host". This node runs the Slurm controller.
-- **Compute node** (192.168.192.9, `sit-gpu`): SSH succeeds, node up >51 days, load ≈ 0.
+- **Login node** (<cluster-login>, `<cluster-login>`): SSH times out / "No route to host". This node runs the Slurm controller.
+- **Compute node** (<compute-node>, `<compute-node>`): SSH succeeds, node up >51 days, load ≈ 0.
 - `squeue`/`scontrol` on the compute node: `Unable to contact slurm controller (connect failure)`.
 - `nvidia-smi`: `Failed to initialize NVML: Driver/library version mismatch (NVML library version: 580.178)`.
-- No AGENTRUN processes running under gpuuser12.
-- The BeyondSilence service running under gpuuser12 was not disturbed.
+- No AGENTRUN processes running under <user>.
+- The BeyondSilence service running under <user> was not disturbed.
 
 **Root cause:** The Slurm controller daemon on the login node is unreachable because the login node itself is down or unreachable. The 7 unstarted jobs were queued but never dispatched.
 
@@ -50,10 +50,10 @@
 Once the Slurm controller is restored, resubmit with:
 
 ```bash
-ssh gpuuser12@192.168.192.11
-cd /home/gpuuser12/AGENTRUN_HPC/20261111
+ssh <user>@<cluster-login>
+cd /home/<user>/AGENTRUN_HPC/20261111
 # Verify controller is back
-squeue -u gpuuser12
+squeue -u <user>
 
 # Check if original array 4148 has any active/pending tasks
 scontrol show job 4148
@@ -62,14 +62,14 @@ scontrol show job 4148
 sbatch --array=14-20%2 scripts/campaign2.sbatch
 
 # Monitor
-watch -n 30 'squeue -u gpuuser12; tail -5 manifests/jobs_finished.tsv'
+watch -n 30 'squeue -u <user>; tail -5 manifests/jobs_finished.tsv'
 ```
 
 The campaign2.sbatch script is resumable: it will skip experiments that already have a DONE marker.
 
 ## Backup verification
 
-- **HPC backup:** `/home/gpuuser12/AGENTRUN_HPC/backups/c2_backup_20261112_120842`
+- **HPC backup:** `/home/<user>/AGENTRUN_HPC/backups/c2_backup_20261112_120842`
 - **Size:** 113 MB
 - **Checksummed files:** 5,223
 - **Contents:** manifests, scripts, benchmark freeze files, all raw_results, all experiment logs.

@@ -46,7 +46,7 @@ Sensitivity: with 14B at the scaled 9.1 s/run the total is 91.0 GPU-h. The earli
 
 ## 4. Sharing the node
 
-- Node `sit-gpu`: 2 × L40, 96 CPUs, 515 GB RAM. Shared with Veriflow, ErrorEcho (same Unix account, separate projects) and other users.
+- Node `<compute-node>`: 2 × L40, 96 CPUs, 515 GB RAM. Shared with Veriflow, ErrorEcho (same Unix account, separate projects) and other users.
 - AGENTRUN rule (`PHASE1/HPC_RESOURCE_SHARING.md`): at most one GPU, always through Slurm, `--time` set, `squeue` checked immediately before each submission, never touch other projects' processes or files.
 - Veriflow submits one-GPU arrays (`%1`, up to ≈ 42 GB VRAM). With AGENTRUN also at one GPU, both fit at the same time. A 4.5-day campaign should be announced to the Veriflow and ErrorEcho owners in advance; ErrorEcho's queued jobs on 16 November were CPU-only.
 - **Observed on 16 November:** job 4196 (`vne_compare`, another user) requested `--mem=0`, i.e. all 515 GB, with a 365-day limit, and uses no GPU. While it runs, Slurm cannot start any other job on the node (scheduler's projected start for AGENTRUN's queued job: 2027-11-16). Phase 3 cannot start until this is resolved by its owner or the administrator.

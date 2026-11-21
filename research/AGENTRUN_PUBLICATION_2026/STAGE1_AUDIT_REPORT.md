@@ -73,7 +73,7 @@ Inference is the exact family-level sign-flip test, with a 95% family-bootstrap 
 
 ## 7. Single most important next action
 
-**Get the SIT Slurm controller restored.** Report "Slurmctld(primary) at sitgpumaster is DOWN; login node 192.168.192.11 unreachable" to the administrator. Meanwhile, build and seal the eval3 split and its pre-registration offline, so that the confirmatory run can start as soon as the controller is back.
+**Get the SIT Slurm controller restored.** Report "Slurmctld(primary) at <cluster-login> is DOWN; login node <cluster-login> unreachable" to the administrator. Meanwhile, build and seal the eval3 split and its pre-registration offline, so that the confirmatory run can start as soon as the controller is back.
 
 ## Companion files (all in `research/AGENTRUN_PUBLICATION_2026/`)
 

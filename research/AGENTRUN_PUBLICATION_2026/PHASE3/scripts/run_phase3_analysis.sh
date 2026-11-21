@@ -11,7 +11,7 @@
 #   all       fetch, verify, analyze, exploratory, report
 # DRY=1 runs verify+analyze on the p2val2 development runs (no cluster, no eval3) to test the pipeline.
 set -euo pipefail
-H=gpuuser12@192.168.192.11
+H=<user>@<cluster-login>
 R=AGENTRUN_HPC/20261111/source/research/AGENTRUN_PUBLICATION_2026/PHASE2
 S=AGENTRUN_HPC/sealed/eval3
 cd "$(dirname "$0")/.."

@@ -10,7 +10,7 @@ Times are UTC. IST = UTC + 5:30. Early times on 11 November are approximate.
 | ~08:50 | Local environment check | Python 3.11 has pytest, numpy, scipy; no GPU, no Slurm, no local model; a Groq key is present in the environment |
 | ~08:55 | `py -3.11 -m pytest` in the repository | 185 passed, 1 failed (`test_env_data_regenerates_byte_for_byte`, CRLF on Windows; pre-existing; writes to a temp dir only) |
 | ~08:55 | `py -3.11 results/verify_results.py` | Base 22, V1 18, E4 18, V2 23 of 23; invariant true |
-| ~09:00 | `ssh sitgpumaster` | Failed: the alias is not defined on this machine |
+| ~09:00 | `ssh <cluster-login>` | Failed: the alias is not defined on this machine |
 | 09:00-09:25 | Wrote `scripts/memlab.py`, `build_benchmark.py`, `run_ablation.py`, `tests/test_memlab.py`; built dev and eval splits | 9 tests pass |
 | 09:05-09:25 | Three rounds of dev smoke runs on the hosted endpoint (`raw_results/dev_*`) | Found and fixed: final answer as a tool call rejected by the endpoint; "not found" retried six times; malformed and empty generations |
 | 09:27 | Final freeze (`benchmark/FREEZE.json`); static leakage audit | 14 of 14 gates pass |
@@ -19,8 +19,8 @@ Times are UTC. IST = UTC + 5:30. Early times on 11 November are approximate.
 | 10:40-10:50 | Wrote `analyze.py`, `leakage_audit.py`, `lit_check.py`; arXiv related-work queries | Web search was unavailable in the session; the arXiv API was used instead |
 | ~10:58-11:10 | All three hosted runs stopped | Daily token cap (200,000 per model): 35, 29 and 7 complete blocks. Organisation id redacted from the logs |
 | ~11:10 | Hosted analysis and transcript audit | 71 blocks; audit passes |
-| 11:14 | `ssh gpuuser12@192.168.192.11` (login supplied by the user) | Connected with key authentication |
-| 11:15 | Created `/home/gpuuser12/AGENTRUN_HPC/20261111/`; job 4133 (diagnostic) | Completed. `InvalidAccount` shown briefly, then it ran; `nvidia-smi` broken on the node; 496 GiB RAM available |
+| 11:14 | `ssh <user>@<cluster-login>` (login supplied by the user) | Connected with key authentication |
+| 11:15 | Created `/home/<user>/AGENTRUN_HPC/20261111/`; job 4133 (diagnostic) | Completed. `InvalidAccount` shown briefly, then it ran; `nvidia-smi` broken on the node; 496 GiB RAM available |
 | 11:16 | Job 4134 (CUDA probe using an existing environment, read only) | CUDA works on the L40 |
 | 11:16-11:26 | Created the project venv; `pip install` on the login node | torch 2.15.0, transformers 5.22.2, peft 0.21.2 |
 | 11:17-11:21 | Wrote `hf_client.py` and `retrieval_bench.py`; added `--backend hf` to the runner; transferred 20 source files and the adapter | Hashes in `manifests/source_sha256.txt` |
@@ -43,7 +43,7 @@ Times are UTC. IST = UTC + 5:30. Early times on 11 November are approximate.
 
 ## Changes to existing files
 
-None. All new files are under `research/AGENTRUN_DEEPENING_2026-11-11/`. Nothing was committed or pushed. The real `memory_store.json` is unchanged (same SHA-256 before and after). On the cluster, only `/home/gpuuser12/AGENTRUN_HPC/` and two small embedding models in the Hugging Face cache were added.
+None. All new files are under `research/AGENTRUN_DEEPENING_2026-11-11/`. Nothing was committed or pushed. The real `memory_store.json` is unchanged (same SHA-256 before and after). On the cluster, only `/home/<user>/AGENTRUN_HPC/` and two small embedding models in the Hugging Face cache were added.
 
 ## Mistakes made along the way, and how they were caught
 

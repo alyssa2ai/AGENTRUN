@@ -33,7 +33,7 @@
 ## What this session completed
 
 1. Recovered the literature scan from the transcript, re-fetched full metadata (title, authors, dates, comments, abstract) for 24 arXiv papers and found 6 more by title (`literature/arxiv_metadata.json`, `literature/arxiv_title_search.json`, script `scripts/fetch_literature.py`).
-2. Rechecked the HPC (10:45 UTC): compute node reachable, `scontrol ping` reports "Slurmctld(primary) at sitgpumaster is DOWN", login node unreachable. Read-only access only; nothing on the cluster was changed.
+2. Rechecked the HPC (10:45 UTC): compute node reachable, `scontrol ping` reports "Slurmctld(primary) at <cluster-login> is DOWN", login node unreachable. Read-only access only; nothing on the cluster was changed.
 3. Copied the size-sweep memory-store files (6 × 384) and the adapter v2-dev budget-3 run (hash-verified) from the compute node; re-ran the full eval2 leakage audit with store checks now covering all ten unpadded runs: 77/77 pass.
 4. Verified data completeness for all 12 Campaign 2 agent datasets: every expected (task, configuration) pair present, no duplicates, one manifest each, identical benchmark/prompt/harness hashes, model snapshot recorded.
 5. Checked whether the sealed 130-task split was ever read: scanned every session transcript. The only read (previous session) printed the task count and field names, no contents. File hashes still match `SEAL.json`.

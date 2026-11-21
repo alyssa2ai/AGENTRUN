@@ -9,7 +9,6 @@ SHA256SUMS          every file in the package
 SHA256SUMS_SOURCES  the originals the copies were taken from, at their repository paths
 """
 import hashlib
-import re
 import sys
 from pathlib import Path
 
@@ -19,17 +18,12 @@ P3 = PUB / "PHASE3"
 P2 = PUB / "PHASE2"
 R = P4 / "reproducibility"
 
-REDACTIONS = [
-    (re.compile(r"gpuuser12@192\.168\.192\.11"), "<user>@<cluster-login>"),
-    (re.compile(r"gpuuser12@192\.168\.192\.9"), "<user>@<compute-node>"),
-    (re.compile(r"192\.168\.192\.11"), "<cluster-login>"),
-    (re.compile(r"192\.168\.192\.9"), "<compute-node>"),
-    (re.compile(r"/home/gpuuser12"), "$HOME"),
-    (re.compile(r"\bgpuuser12\b"), "<user>"),
-    (re.compile(r"\bsitgpumaster\b"), "<cluster-login>"),
-    (re.compile(r"\bsit-gpu\b"), "<compute-node>"),
-    (re.compile(r"\bgpu-nodes\b"), "<partition>"),
-]
+# The identifiers themselves live in a gitignored local config, so that no tracked file contains a real host
+# name, address or account. See PHASE5_PUBLICATION/tools/redaction_identifiers.example.json.
+sys.path.insert(0, str(PUB / "PHASE5_PUBLICATION" / "tools"))
+import redaction  # noqa: E402
+
+REDACTIONS, LEAK = redaction.load()
 
 BYTE_COPIES = {  # package path -> source path (must stay byte-identical)
     "configs/FREEZE_evarb.json": P2 / "FREEZE_evarb.json",
@@ -85,7 +79,7 @@ for rel, src in REDACTED_COPIES.items():
 
 # leftover copies whose source no longer exists (e.g. the old controller/eval3 sbatch files) are kept as they are,
 # but they must still be free of host identifiers.
-leak = re.compile(r"gpuuser12|192\.168\.192\.|sitgpumaster|sit-gpu")
+leak = LEAK
 for p in sorted(R.rglob("*")):
     if p.is_file() and p.name not in ("SHA256SUMS", "SHA256SUMS_SOURCES"):
         try:
@@ -104,8 +98,9 @@ for rel in BYTE_COPIES:
         problems.append(f"NOTE frozen byte copy {rel} contains '{m}' (not altered: it must match the original)")
 
 files = sorted(p for p in R.rglob("*") if p.is_file() and p.name not in ("SHA256SUMS", "SHA256SUMS_SOURCES"))
-(R / "SHA256SUMS").write_text(
-    "".join(f"{sha(p)}  {p.relative_to(R).as_posix()}\n" for p in files), encoding="utf-8")
+# LF-only line endings so that `sha256sum -c` works on Windows checkouts as well as on Linux.
+with open(R / "SHA256SUMS", "w", encoding="utf-8", newline="\n") as _f:
+    _f.write("".join(f"{sha(p)}  {p.relative_to(R).as_posix()}\n" for p in files))
 
 lines = ["# Hashes of the repository originals from which this package's copies were made.",
          "# configs/ are byte-identical to these; scripts/ and slurm/ are the same files with host identifiers redacted.",
@@ -113,7 +108,8 @@ lines = ["# Hashes of the repository originals from which this package's copies 
 for rel, src in list(BYTE_COPIES.items()) + list(REDACTED_COPIES.items()):
     if src.exists():
         lines.append(f"{sha(src)}  {src.relative_to(PUB).as_posix()}   -> {rel}")
-(R / "SHA256SUMS_SOURCES").write_text("\n".join(lines) + "\n", encoding="utf-8")
+with open(R / "SHA256SUMS_SOURCES", "w", encoding="utf-8", newline="\n") as _f:
+    _f.write("\n".join(lines) + "\n")
 
 print(f"package files hashed: {len(files)}")
 print(f"byte copies verified: {len(BYTE_COPIES)}; redacted copies refreshed: {len(REDACTED_COPIES)}")

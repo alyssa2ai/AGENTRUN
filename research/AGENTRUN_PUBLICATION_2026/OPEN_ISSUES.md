@@ -4,7 +4,7 @@
 
 | # | Issue | Blocks | Owner | Next action |
 |---|---|---|---|---|
-| 1 | **Slurm controller down** at `sitgpumaster` (192.168.192.11). `scontrol ping`: "Slurmctld(primary) at sitgpumaster is DOWN"; login node port 22 unreachable. Compute node `sit-gpu` is up | E0–E5, every new experiment | SIT HPC administrator | Report it to the administrator. When it is back, run `squeue`, then submit only indices 14–20 (`EXPERIMENT_ROADMAP.md` E0) |
+| 1 | **Slurm controller down** at `<cluster-login>` (<cluster-login>). `scontrol ping`: "Slurmctld(primary) at <cluster-login> is DOWN"; login node port 22 unreachable. Compute node `<compute-node>` is up | E0–E5, every new experiment | SIT HPC administrator | Report it to the administrator. When it is back, run `squeue`, then submit only indices 14–20 (`EXPERIMENT_ROADMAP.md` E0) |
 | 2 | **No untouched test set for the memory study.** eval2 (96 tasks) is now a validation set | Any confirmatory claim | Researcher | Build, freeze and seal eval3 with held-out templates (E1); pre-register |
 | 3 | **Closest papers read from abstracts only.** DISCERN (2611.15729, posted 11 Nov 2026), PACMI, AMV-Guard, GPM, STALE, CICM | Related work; final novelty verdict | Researcher | Read the full texts. Check whether any already reports a component-by-capacity ablation |
 | 4 | **Single model family and greedy decoding.** Capacity claims rest on Qwen2.5 alone (plus one Qwen3 size); no variance estimate | H2, generality | Researcher + HPC | E2; jobs 19–20 give a first variance estimate |

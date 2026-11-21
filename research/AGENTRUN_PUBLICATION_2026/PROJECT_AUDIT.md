@@ -50,7 +50,7 @@ All figures below were recomputed in this session from raw run records (see STAT
 
 ## 5. HPC and data integrity (summary; detail in DATA_INTEGRITY_REPORT.md)
 
-- Compute node `sit-gpu` (192.168.192.9) reachable; **login node / Slurm controller (192.168.192.11) down since 2026-11-12 ~12:08 UTC** — no job submission possible until the HPC administrator restores it.
+- Compute node `<compute-node>` (<compute-node>) reachable; **login node / Slurm controller (<cluster-login>) down since 2026-11-12 ~12:08 UTC** — no job submission possible until the HPC administrator restores it.
 - CUDA works on both L40s through PyTorch 2.15.0+cu132 despite the NVML mismatch (verified live).
 - All 14 completed Campaign 2 jobs are preserved locally (5,184 runs + 450 benchmark evaluations, reconciled file-by-file) and in a checksummed cluster backup (5,336 files, SHA256SUMS.txt).
 - Jobs 14–20 were **never dispatched** (absent from `manifests/jobs_finished.tsv`); the sbatch is resumable, so `--array=14-20%2` is safe once the controller returns.

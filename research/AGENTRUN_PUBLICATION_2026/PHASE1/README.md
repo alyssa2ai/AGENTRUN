@@ -23,7 +23,7 @@
 | `scripts/arbiter_offline_eval.py` | Label accuracy of the legacy gate and TEA on p1dev, p1hold, eval2 → `data/arbiter_offline_eval.json` |
 | `scripts/analyze_pilot.py`, `failure_taxonomy.py`, `abstention_breakdown.py`, `extract_examples.py` | Per-run tables; Campaign 2 failure analysis |
 | `scripts/make_manifest.py` | Writes `HASH_MANIFEST.txt` |
-| `raw_pilot/` | Raw runs copied from `sit-gpu` (runs.jsonl, manifest.jsonl, tasks.jsonl, DONE) |
+| `raw_pilot/` | Raw runs copied from `<compute-node>` (runs.jsonl, manifest.jsonl, tasks.jsonl, DONE) |
 | `logs/` | Queue logs (13 Nov) and Slurm job 4173 logs (14 Nov) |
 | `HASH_MANIFEST.txt` | sha256 of every file in this folder |
 

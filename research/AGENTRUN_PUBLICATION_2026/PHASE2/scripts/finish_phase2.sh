@@ -8,7 +8,7 @@
 #   analyze  component comparison, agent-level analysis, power, budget (run only AFTER the p2val2 text audit)
 # Never submits jobs. Never reads ~/AGENTRUN_HPC/sealed/eval3 contents.
 set -euo pipefail
-H=gpuuser12@192.168.192.11
+H=<user>@<cluster-login>
 R=AGENTRUN_HPC/20261111/source/research/AGENTRUN_PUBLICATION_2026/PHASE2
 J1=${J1:-4199}; J2=${J2:-4200}; J3=${J3:-4213}
 MODELS="qwen25_3b qwen25_7b llama31_8b"

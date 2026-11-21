@@ -1,4 +1,4 @@
-# AGENTRUN compute coordination (sit-gpu)
+# AGENTRUN compute coordination (<compute-node>)
 
 **Updated 16 November 2026, 09:40 UTC.** A copy is kept on the cluster at `~/AGENTRUN_HPC/COORDINATION.md` for the other projects' sessions.
 
@@ -6,7 +6,7 @@
 
 | Job(s) | Project | Needs | State |
 |---|---|---|---|
-| 4196 `vne_compare` | another user (gpuuser16) | `--mem=0` = all 515 GB, 2 CPU, no GPU, 365-day limit | RUNNING; blocks every other job on the node. Reported to the administrators by the AGENTRUN owner on 16 Nov |
+| 4196 `vne_compare` | another user (<other-user>) | `--mem=0` = all 515 GB, 2 CPU, no GPU, 365-day limit | RUNNING; blocks every other job on the node. Reported to the administrators by the AGENTRUN owner on 16 Nov |
 | 4199 → 4200 → 4201[0-2]%1 | AGENTRUN | 1 GPU at a time; 64 / 64 / 48 GB RAM; 4 CPUs; ≈ 0.6 h + 1 h + 6 h | PENDING (chained by dependencies; no duplicates will be submitted) |
 | 4204–4212 | ErrorEcho | CPU only; 8–128 GB RAM each, 1–16 CPUs, chained | PENDING |
 | — | Veriflow | nothing queued | — |

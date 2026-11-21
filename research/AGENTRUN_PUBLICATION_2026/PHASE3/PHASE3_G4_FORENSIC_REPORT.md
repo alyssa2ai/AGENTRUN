@@ -8,7 +8,7 @@
 
 ## 0. Verdict in one paragraph
 
-Both failures have the same single cause. The only `client` subfield that differs between the two starts of the two affected cells is `gpu_mem_gib`, which changed from `44.6` to `44.4`. That field is read-only telemetry — `round(torch.cuda.get_device_properties(0).total_memory / 2**30, 1)` — and is never used to configure the model, the loader, the decoding or anything else. Every identity-bearing field is byte-identical across the two starts: model, snapshot path, adapter, dtype, temperature, seed, `max_new_tokens`, decoding, parser version, family adapter, torch, transformers, CUDA runtime, all 14 frozen code hashes, the split hash and the 12 configuration names. **The flagged field is therefore metadata-only (category A at the level of the field).** However, the *reason* the telemetry changed is a real one: the compute node `sit-gpu` rebooted at `2026-11-20T10:11:58` into a newer Linux kernel and a newer NVIDIA kernel driver, and the two affected cells are the only two whose rows straddle that reboot. **So this is not a cosmetic event, and I am not classifying it as plain A.** The honest classification is given in §3: metadata-only for the flagged field, genuine host-platform change underneath it, affecting 980 of 57,888 rows (1.69%), balanced across the 12 configurations except for exactly two boundary tasks.
+Both failures have the same single cause. The only `client` subfield that differs between the two starts of the two affected cells is `gpu_mem_gib`, which changed from `44.6` to `44.4`. That field is read-only telemetry — `round(torch.cuda.get_device_properties(0).total_memory / 2**30, 1)` — and is never used to configure the model, the loader, the decoding or anything else. Every identity-bearing field is byte-identical across the two starts: model, snapshot path, adapter, dtype, temperature, seed, `max_new_tokens`, decoding, parser version, family adapter, torch, transformers, CUDA runtime, all 14 frozen code hashes, the split hash and the 12 configuration names. **The flagged field is therefore metadata-only (category A at the level of the field).** However, the *reason* the telemetry changed is a real one: the compute node `<compute-node>` rebooted at `2026-11-20T10:11:58` into a newer Linux kernel and a newer NVIDIA kernel driver, and the two affected cells are the only two whose rows straddle that reboot. **So this is not a cosmetic event, and I am not classifying it as plain A.** The honest classification is given in §3: metadata-only for the flagged field, genuine host-platform change underneath it, affecting 980 of 57,888 rows (1.69%), balanced across the 12 configurations except for exactly two boundary tasks.
 
 My recommendation is to keep both cells, disclose the deviation, narrow the G4 check so it names the field it is comparing instead of comparing the whole `client` blob, and rerun only the finalization pipeline. Justification in §5.
 
@@ -18,7 +18,7 @@ My recommendation is to keep both cells, disclose the deviation, narrow the G4 c
 
 ### 1.1 What the gate said
 
-`/home/gpuuser12/AGENTRUN_HPC/finalize/finalize_4270.out`:
+`/home/<user>/AGENTRUN_HPC/finalize/finalize_4270.out`:
 
 ```
 gates: FAIL; cells DONE 18/18
@@ -48,8 +48,8 @@ Both cells have exactly two manifest lines; all 16 other cells have one. `manife
 | `llama32_3b_greedy` | 1 | 4327 | 2026-11-20T10:18:08Z | 3107 | `phase3_4327_17.out` |
 
 Paths:
-`/home/gpuuser12/AGENTRUN_HPC/phase3_raw/eval3_qwen3_8b_T07_s3/manifest.jsonl` — sha256 `1f35ea2d34f86d0909816feed2e84d84a2e5211ccd7a3e0584ac0a4fdbf49d27`
-`/home/gpuuser12/AGENTRUN_HPC/phase3_raw/eval3_llama32_3b_greedy/manifest.jsonl` — sha256 `e3a348e53e7a88d4044909b581221b12a1c7a7f96cbc68869f36cb1fc49b58eb`
+`/home/<user>/AGENTRUN_HPC/phase3_raw/eval3_qwen3_8b_T07_s3/manifest.jsonl` — sha256 `1f35ea2d34f86d0909816feed2e84d84a2e5211ccd7a3e0584ac0a4fdbf49d27`
+`/home/<user>/AGENTRUN_HPC/phase3_raw/eval3_llama32_3b_greedy/manifest.jsonl` — sha256 `e3a348e53e7a88d4044909b581221b12a1c7a7f96cbc68869f36cb1fc49b58eb`
 
 ### 1.3 The exact differing values
 
@@ -107,7 +107,7 @@ The controller did not decide to restart these cells. Sequence, from `scontrol`,
 2026-11-19T05:48:48Z  controller submits cell 15 (qwen3_8b_T07_s3)   -> job 4315
 2026-11-19T06:23:50Z  controller submits cell 17 (llama32_3b_greedy) -> job 4324
 2026-11-19T07:29:06Z  last readable journal entry of boot -1 (node going down)
-2026-11-20T10:11:58   sit-gpu BootTime  (scontrol show node sit-gpu)
+2026-11-20T10:11:58   <compute-node> BootTime  (scontrol show node <compute-node>)
 2026-11-20T10:12:11   SlurmdStartTime
 2026-11-20T10:12:26Z  Slurm requeues 4315 and 4324; both restart and exit=1 within the same second
 2026-11-20T10:12:26Z  controller v2 (job 4257) restarts
@@ -143,7 +143,7 @@ The 0.2 GiB difference is not noise and not a different GPU board. Evidence:
 
 A driver revision changing its reserved carve-out by ~215 MiB is ordinary and fully accounts for 44.6 → 44.4.
 
-**Residual uncertainty (stated, not papered over):** the kernel-log banner of boot `-1` is not readable from the `gpuuser12` account (not in `adm`/`systemd-journal`), so the pre-reboot *loaded* module version is inferred from boot time versus package dates plus the documented mismatch symptom, rather than read directly. An admin can confirm it in one command; see §6.
+**Residual uncertainty (stated, not papered over):** the kernel-log banner of boot `-1` is not readable from the `<user>` account (not in `adm`/`systemd-journal`), so the pre-reboot *loaded* module version is inferred from boot time versus package dates plus the documented mismatch symptom, rather than read directly. An admin can confirm it in one command; see §6.
 
 ---
 
@@ -212,7 +212,7 @@ Campaign-wide: **980 of 57,888 rows (1.69%)** were produced on the new platform;
 
 Confirmed untouched, and verified after the investigation:
 
-- All 18 `runs.jsonl`, `manifest.jsonl` and `DONE` files: `sha256sum -c SHA256SUMS` in `/home/gpuuser12/AGENTRUN_HPC/phase3_raw` → **54/54 OK**.
+- All 18 `runs.jsonl`, `manifest.jsonl` and `DONE` files: `sha256sum -c SHA256SUMS` in `/home/<user>/AGENTRUN_HPC/phase3_raw` → **54/54 OK**.
 - Both quarantined fragments retained in place with the hashes in §1.6.
 - Affected-cell hashes for the record:
 
@@ -305,7 +305,7 @@ After the gate correction is approved and committed, resubmit `phase3_finalize.s
 
 ## 6. What this investigation could not establish
 
-1. **The pre-reboot NVIDIA module version was inferred, not read.** Boot `-1`'s kernel log is not readable from `gpuuser12`. One admin command settles it: `journalctl -b -1 -k | grep NVRM` on `sit-gpu`, which should print the `580.173.02` banner. Until then the chain is boot date (2026-10-03) + package date (2026-10-11) + the documented `nvidia-smi` mismatch — strong, but circumstantial.
+1. **The pre-reboot NVIDIA module version was inferred, not read.** Boot `-1`'s kernel log is not readable from `<user>`. One admin command settles it: `journalctl -b -1 -k | grep NVRM` on `<compute-node>`, which should print the `580.173.02` banner. Until then the chain is boot date (2026-10-03) + package date (2026-10-11) + the documented `nvidia-smi` mismatch — strong, but circumstantial.
 2. **No empirical determinism comparison is possible.** No `(task, config)` pair exists on both platforms (quarantines hold zero complete rows), so the claim "the platform change did not alter generations" is an argument from identical inputs and an inert field, not a measurement. It cannot be upgraded without re-running, which §4 excludes.
 3. **The original Slurm console logs of starts 0 of both cells are gone**, overwritten by Slurm's requeue at `2026-11-20 10:12:26`. Their manifest lines, with code hashes and freeze state, survive.
 4. **Whether anything else changed at the reboot** (BIOS, firmware, ECC state, persistence mode) is not knowable retrospectively from this account; `nvidia-smi` today reports ECC `Enabled` and persistence `Disabled` on both devices, but there is no pre-reboot reading to compare against — `nvidia-smi` was broken on this node before the reboot.
@@ -314,7 +314,7 @@ After the gate correction is approved and committed, resubmit `phase3_finalize.s
 
 ## Appendix — commands and paths used
 
-Cluster: `ssh <user>@<cluster-login>` (login `sitgpumaster`), `ssh <user>@<compute-node>` (compute `sit-gpu`, read-only checks).
+Cluster: `ssh <user>@<cluster-login>` (login `<cluster-login>`), `ssh <user>@<compute-node>` (compute `<compute-node>`, read-only checks).
 
 | Artefact | Path |
 |---|---|
@@ -329,4 +329,4 @@ Cluster: `ssh <user>@<cluster-login>` (login `sitgpumaster`), `ssh <user>@<compu
 | Controller | `~/AGENTRUN_HPC/phase3_controller/{events.log,status.txt,ALL_DONE}` |
 | Preregistration | `…/PHASE2/PREREGISTRATION.md` (sealed hash `221013b3cee87c00`) |
 
-Evidence commands: `scontrol show node sit-gpu`; `journalctl --list-boots`; `cat /proc/driver/nvidia/version`; `modinfo nvidia`; `nvidia-smi --query-gpu=index,name,memory.total,ecc.mode.current,driver_version,persistence_mode --format=csv`; `zgrep nvidia-dkms-580-server /var/log/dpkg.log*`; `sha256sum -c SHA256SUMS`; `run_p2.code_hashes()` recomputed against `manifest.jsonl`.
+Evidence commands: `scontrol show node <compute-node>`; `journalctl --list-boots`; `cat /proc/driver/nvidia/version`; `modinfo nvidia`; `nvidia-smi --query-gpu=index,name,memory.total,ecc.mode.current,driver_version,persistence_mode --format=csv`; `zgrep nvidia-dkms-580-server /var/log/dpkg.log*`; `sha256sum -c SHA256SUMS`; `run_p2.code_hashes()` recomputed against `manifest.jsonl`.

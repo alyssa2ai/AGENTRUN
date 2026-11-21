@@ -21,10 +21,10 @@ Details, job IDs and exact errors are in OVERNIGHT_STATUS.md.
 
 | Item | Value |
 |---|---|
-| Access | `ssh gpuuser12@192.168.192.11` (login node `sitgpumaster`); the SSH alias is not configured on the laptop |
-| Compute node | `sit-gpu`: 2 x NVIDIA L40 (44.6 GiB each visible to PyTorch), 96 logical CPUs, 503 GiB RAM |
+| Access | `ssh <user>@<cluster-login>` (login node `<cluster-login>`); the SSH alias is not configured on the laptop |
+| Compute node | `<compute-node>`: 2 x NVIDIA L40 (44.6 GiB each visible to PyTorch), 96 logical CPUs, 503 GiB RAM |
 | Scheduler | Slurm, partition `gpu-nodes`, `--gres=gpu:1`, accounting disabled (`sacct` unavailable) |
-| Workspace | `/home/gpuuser12/AGENTRUN_HPC/20261111/` |
+| Workspace | `/home/<user>/AGENTRUN_HPC/20261111/` |
 | Environment | Python 3.12.3 venv; torch 2.15.0 (CUDA 13.2), transformers 5.22.2, peft 0.21.2, accelerate 1.15.0, sentence-transformers 6.2.0; `hpc/from_cluster/manifests/pip_freeze.txt` |
 | Models | Qwen/Qwen2.5-7B-Instruct and Qwen/Qwen3-8B from the cluster's Hugging Face cache, bfloat16, loaded offline; adapter = repository root `adapter_model.safetensors` merged into the base |
 | Decoding | greedy (primary) or sampling T=0.7, top-p 0.9, seeds 1 and 2; max 700 new tokens; thinking disabled in the chat template |

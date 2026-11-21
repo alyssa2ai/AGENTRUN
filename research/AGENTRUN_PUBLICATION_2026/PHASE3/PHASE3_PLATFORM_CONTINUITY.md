@@ -60,12 +60,12 @@ The runner iterates tasks in sorted `task_id` order (outer) and the 12 frozen co
 ### Directly verified (8)
 
 - **`boot_event`**; node_boot_utc: `2026-11-20T10:11:58`
-  - source: `scontrol show node sit-gpu (BootTime, SlurmdStartTime)`
+  - source: `scontrol show node <compute-node> (BootTime, SlurmdStartTime)`
 - **`gpu_devices`**; count: `2`; model: `NVIDIA L40`
   - source: `nvidia-smi --query-gpu=index,name,memory.total,ecc.mode.current,driver_version,persistence_mode --format=csv, run 2026-11-21 (after the reboot)`
   - caveat: both devices report identical totals, which excludes device identity as the cause of the gpu_mem_gib change; the two affected cells ran on CUDA_VISIBLE_DEVICES=0 and =1 respectively in BOTH of their starts
 - **`kernel_after`**; release: `6.8.0-149-generic`
-  - source: `scontrol show node sit-gpu (OS line); uname -r on sit-gpu`
+  - source: `scontrol show node <compute-node> (OS line); uname -r on <compute-node>`
 - **`logs_lost`**; what: `the Slurm console logs of the first starts of both affected cells`
   - reasoning: Slurm requeued jobs 4315 and 4324 after the reboot and truncated their output files; mtime 2026-11-20 10:12:26
 - **`nvidia_module_after`**; version: `580.178.04`

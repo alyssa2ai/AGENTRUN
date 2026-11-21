@@ -22,7 +22,7 @@ Corrections to the resume brief: job 4189 wrote all 88 p2val items (11 failed va
 
 ## 2. Blocker
 
-Job **4196** (`vne_compare`, user `gpuuser16`, not an AGENTRUN, Veriflow or ErrorEcho job) requested `--mem=0`, i.e. **all 515,705 MB** of the node's memory, with a **365-day** time limit. It uses no GPU and 2 CPUs, but while it runs Slurm cannot place any other job on `sit-gpu`. The scheduler's projected start for AGENTRUN's next job is **2027-11-16**. Both L40s are idle. ErrorEcho's jobs were blocked the same way.
+Job **4196** (`vne_compare`, user `<other-user>`, not an AGENTRUN, Veriflow or ErrorEcho job) requested `--mem=0`, i.e. **all 515,705 MB** of the node's memory, with a **365-day** time limit. It uses no GPU and 2 CPUs, but while it runs Slurm cannot place any other job on `<compute-node>`. The scheduler's projected start for AGENTRUN's next job is **2027-11-16**. Both L40s are idle. ErrorEcho's jobs were blocked the same way.
 
 AGENTRUN does not bypass Slurm and does not touch other users' jobs. **Resolution needs the job's owner or the cluster administrator** (re-submit 4196 with a real `--mem`, or cancel it). The AGENTRUN owner emailed the administrators on 16 November. Queue and sharing details: `hpc/COORDINATION.md`.
 

@@ -16,7 +16,7 @@
 
 Other families will differ.
 
-**Blocker for all of them.** The SIT Slurm controller is down: `scontrol ping` reports "Slurmctld(primary) at sitgpumaster is DOWN" (13 Nov 2026, 10:45 UTC). Running directly on `sit-gpu` without the scheduler is **not** planned; that decision belongs to the cluster administrator and the researcher.
+**Blocker for all of them.** The SIT Slurm controller is down: `scontrol ping` reports "Slurmctld(primary) at <cluster-login> is DOWN" (13 Nov 2026, 10:45 UTC). Running directly on `<compute-node>` without the scheduler is **not** planned; that decision belongs to the cluster administrator and the researcher.
 
 ## E0. Finish the pre-registered Campaign 2 jobs (14–20)
 

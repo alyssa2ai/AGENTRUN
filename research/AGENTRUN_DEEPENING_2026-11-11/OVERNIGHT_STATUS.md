@@ -5,14 +5,14 @@ Written 2026-11-12 about 04:15 UTC (09:45 IST). **Every submitted experiment has
 ## 1. Connection
 
 ```bash
-ssh gpuuser12@192.168.192.11
+ssh <user>@<cluster-login>
 ```
 
-Key authentication works from the laptop (no password prompt). The alias `sitgpumaster` is still not defined in `C:\Users\Bhagya\.ssh\config`; the explicit address is used everywhere.
+Key authentication works from the laptop (no password prompt). The alias `<cluster-login>` is still not defined in `C:\Users\Bhagya\.ssh\config`; the explicit address is used everywhere.
 
 ## 2. Remote workspace
 
-`/home/gpuuser12/AGENTRUN_HPC/20261111/`
+`/home/<user>/AGENTRUN_HPC/20261111/`
 
 | Path | Contents |
 |---|---|
@@ -29,8 +29,8 @@ Not transferred: `.env`, any API key, virtual environments, training data, the s
 
 | Item | Value |
 |---|---|
-| Login node | `sitgpumaster`, Intel i7-14700, 15 GB RAM, no GPU (not used for compute) |
-| Compute node | `sit-gpu`, 2 x Intel Xeon Gold 6542Y (96 logical CPUs), 503 GiB RAM of which 496 GiB available |
+| Login node | `<cluster-login>`, Intel i7-14700, 15 GB RAM, no GPU (not used for compute) |
+| Compute node | `<compute-node>`, 2 x Intel Xeon Gold 6542Y (96 logical CPUs), 503 GiB RAM of which 496 GiB available |
 | GPUs | 2 x NVIDIA L40, 44.6 GiB visible to PyTorch each |
 | Slurm | partition `gpu-nodes`, no time limit, `--gres=gpu:1` syntax, accounting disabled |
 | Python | 3.12.3 (system), venv in user space, no `module`, no conda |
@@ -80,7 +80,7 @@ The array ran two tasks at a time (`--array=0-5%2`), one GPU, 8 CPUs and 48 GB e
 
 ## 8. Raw results
 
-- Cluster: `/home/gpuuser12/AGENTRUN_HPC/20261111/experiments/raw_results/<run>/`
+- Cluster: `/home/<user>/AGENTRUN_HPC/20261111/experiments/raw_results/<run>/`
 - Laptop: `research/AGENTRUN_DEEPENING_2026-11-11/raw_results/<run>/` (copied 2026-11-12, verified 1,440 lines across the six run files)
 
 ## 9. Metrics available now
@@ -111,19 +111,19 @@ The pilot (4135, 4136) used an existing environment on the cluster (`~/ErrorEcho
 Check the queue and what finished:
 
 ```bash
-ssh gpuuser12@192.168.192.11 "squeue -u gpuuser12; cat ~/AGENTRUN_HPC/20261111/manifests/jobs_finished.tsv"
+ssh <user>@<cluster-login> "squeue -u <user>; cat ~/AGENTRUN_HPC/20261111/manifests/jobs_finished.tsv"
 ```
 
 Check that a run is complete (240 lines and a DONE file):
 
 ```bash
-ssh gpuuser12@192.168.192.11 "cd ~/AGENTRUN_HPC/20261111/experiments/raw_results && wc -l hpc_q*/runs.jsonl && ls hpc_*/DONE"
+ssh <user>@<cluster-login> "cd ~/AGENTRUN_HPC/20261111/experiments/raw_results && wc -l hpc_q*/runs.jsonl && ls hpc_*/DONE"
 ```
 
 Resubmit the array (safe: finished runs are skipped):
 
 ```bash
-ssh gpuuser12@192.168.192.11 "cd ~/AGENTRUN_HPC/20261111 && sbatch scripts/ablation_array.sbatch"
+ssh <user>@<cluster-login> "cd ~/AGENTRUN_HPC/20261111 && sbatch scripts/ablation_array.sbatch"
 ```
 
 Copy results back and re-analyse, from `research/AGENTRUN_DEEPENING_2026-11-11/scripts` on the laptop:
@@ -152,12 +152,12 @@ Slurm array **4148**, 21 jobs, `hpc/campaign2.sbatch` (copy on the cluster: `scr
 | 12-13 | hash256 and BM25 with 2,000 background records | complete, exit 0 |
 | 14-20 | dense retriever; v1r; adapter on eval2 (v1, v2); v2 at T=0.7 (seeds 1, 2) | **never dispatched** |
 
-Jobs 0-13 ran 04:58 to 08:42 UTC. An earlier session observed at 12:08 UTC that the login node (which runs the Slurm controller) did not answer and that `squeue` on the compute node failed with "Unable to contact slurm controller"; it also reports a backup at `/home/gpuuser12/AGENTRUN_HPC/backups/c2_backup_20261112_120842`. At 13:50 UTC neither cluster address answered from the laptop, so neither statement could be re-checked. All results of jobs 0-13 are on the laptop except the per-task log of one v2-dev run (adapter, budget 3), whose summary is in `logs/hpc/c2-4148_5.out`.
+Jobs 0-13 ran 04:58 to 08:42 UTC. An earlier session observed at 12:08 UTC that the login node (which runs the Slurm controller) did not answer and that `squeue` on the compute node failed with "Unable to contact slurm controller"; it also reports a backup at `/home/<user>/AGENTRUN_HPC/backups/c2_backup_20261112_120842`. At 13:50 UTC neither cluster address answered from the laptop, so neither statement could be re-checked. All results of jobs 0-13 are on the laptop except the per-task log of one v2-dev run (adapter, budget 3), whose summary is in `logs/hpc/c2-4148_5.out`.
 
 To finish the campaign once the controller is back (resumable; finished runs are skipped):
 
 ```bash
-ssh gpuuser12@192.168.192.11 "squeue -u gpuuser12; cd ~/AGENTRUN_HPC/20261111 && sbatch --array=14-20%2 scripts/campaign2.sbatch"
+ssh <user>@<cluster-login> "squeue -u <user>; cd ~/AGENTRUN_HPC/20261111 && sbatch --array=14-20%2 scripts/campaign2.sbatch"
 ```
 
 Then copy the new `c2_*` directories into `raw_results/` and run, from `scripts/`:

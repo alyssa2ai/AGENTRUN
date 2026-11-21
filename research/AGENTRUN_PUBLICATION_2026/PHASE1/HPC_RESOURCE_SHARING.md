@@ -6,21 +6,21 @@
 
 | Item | Observed (14 Nov, 02:57–03:08 UTC) |
 |---|---|
-| Login/controller node | `sitgpumaster`, 192.168.192.11. Slurm works: `squeue`, `sinfo` and `sbatch` respond |
-| Compute node | `sit-gpu`, 192.168.192.9: 2 × L40, 96 CPUs, ~504 GB RAM; up 52 days; load average 0.01 |
+| Login/controller node | `<cluster-login>`, <cluster-login>. Slurm works: `squeue`, `sinfo` and `sbatch` respond |
+| Compute node | `<compute-node>`, <compute-node>: 2 × L40, 96 CPUs, ~504 GB RAM; up 52 days; load average 0.01 |
 | Partition | `gpu-nodes`, `Gres=gpu:2` |
 | NVML | `nvidia-smi` still fails: "Driver/library version mismatch" (NVML 580.178). CUDA works through PyTorch, so `nvidia-smi` cannot be used to see VRAM |
 | Slurm accounting | Disabled (`sacct` does not work). Jobs are tracked with `squeue` and the job's own logs and manifests |
 
-**Slurm status change.** On 13 Nov the previous session found the Slurm controller down. It therefore ran the pilot queues directly on `sit-gpu` with `launch_pilot.sh`, outside Slurm. On 14 Nov the controller works. **From now on every AGENTRUN GPU workload goes through `sbatch`.** `launch_pilot.sh` is kept only as the record of how the 13 Nov runs were made; do not use it again while Slurm is up.
+**Slurm status change.** On 13 Nov the previous session found the Slurm controller down. It therefore ran the pilot queues directly on `<compute-node>` with `launch_pilot.sh`, outside Slurm. On 14 Nov the controller works. **From now on every AGENTRUN GPU workload goes through `sbatch`.** `launch_pilot.sh` is kept only as the record of how the 13 Nov runs were made; do not use it again while Slurm is up.
 
 ## 2. Previous AGENTRUN processes (13 Nov pilot)
 
 The brief listed PIDs 1860975 and 1860976 (launchers), 1870401 (14B) and 1878788 (Qwen3-8B). None was matched by PID. Processes were identified by command line, owner and start time instead:
 
-- **On `sit-gpu`:** the only user process apart from the session daemons and the diagnostic shell was the BeyondSilence recognition service (§3). There was no `python run_pilot.py`, no `launch_pilot.sh` and no other AGENTRUN process.
+- **On `<compute-node>`:** the only user process apart from the session daemons and the diagnostic shell was the BeyondSilence recognition service (§3). There was no `python run_pilot.py`, no `launch_pilot.sh` and no other AGENTRUN process.
 - **On the login node:** no user processes.
-- **No process held a `/dev/nvidia*` file descriptor** among the processes visible to `gpuuser12`.
+- **No process held a `/dev/nvidia*` file descriptor** among the processes visible to `<user>`.
 
 **The queue logs show both launchers finished normally:**
 
@@ -35,7 +35,7 @@ Every run printed `exit=0`. Nothing needed resuming, and nothing was relaunched.
 
 **How it schedules.** Only through Slurm:
 
-- `slurm/*.sbatch`: `--partition=gpu-nodes --nodelist=sit-gpu --gres=gpu:1`, 8 CPUs, 16–64 GB RAM, time limits from 15 min to 4 h.
+- `slurm/*.sbatch`: `--partition=gpu-nodes --nodelist=<compute-node> --gres=gpu:1`, 8 CPUs, 16–64 GB RAM, time limits from 15 min to 4 h.
 - Its array script states its own policy: "Always one at a time", submitted with `--array=…%1`.
 
 **Most recent work.**
@@ -47,7 +47,7 @@ Every run printed `exit=0`. Nothing needed resuming, and nothing was relaunched.
 
 **At 02:58 and again at 03:07:30 UTC:**
 - `squeue` was empty;
-- `sit-gpu` was `idle` with 0/96 CPUs and 0/2 GPUs allocated;
+- `<compute-node>` was `idle` with 0/96 CPUs and 0/2 GPUs allocated;
 - no Veriflow process existed on either node.
 
 **Near-term need.** Unknown. The grid analysis just finished, so a new array could be submitted at any time. Given its policy it would most likely need **one GPU at a time**, using up to about 42 GB VRAM.
@@ -90,12 +90,12 @@ Directories exist in the home directory. No processes or jobs were seen. They we
 
 ## 6. Read-only diagnostic commands used
 
-On `sit-gpu`, through `ssh gpuuser12@192.168.192.9`:
+On `<compute-node>`, through `ssh <user>@<compute-node>`:
 
 ```bash
 hostname; date; uptime
 ps -eo pid,ppid,user,lstart,etime,stat,pcpu,pmem,rss,args --sort=pid
-ps -u gpuuser12 -o pid,lstart,etime,stat,args
+ps -u <user> -o pid,lstart,etime,stat,args
 for p in /proc/[0-9]*; do ls -l $p/fd 2>/dev/null | grep -q /dev/nvidia && echo "$(basename $p) $(tr '\0' ' ' < $p/cmdline)"; done
 nvidia-smi
 ```
@@ -110,13 +110,13 @@ cat raw_pilot/*/DONE raw_pilot/*/manifest.jsonl
 sha256sum raw_pilot/*/* logs/* prototype/*
 ```
 
-On `sitgpumaster`, through `ssh gpuuser12@192.168.192.11`:
+On `<cluster-login>`, through `ssh <user>@<cluster-login>`:
 
 ```bash
 squeue -a -o "%.10i %.12P %.30j %.10u %.8T %.10M %.6D %R %b"
 sinfo -N -o "%N %P %T %G %C %m"
-scontrol show node sit-gpu
-ps -u gpuuser12 -o pid,lstart,etime,args
+scontrol show node <compute-node>
+ps -u <user> -o pid,lstart,etime,args
 ```
 
 Veriflow, metadata only:
@@ -138,7 +138,7 @@ Q=$(squeue -h -a | wc -l); if [ "$Q" = "0" ]; then sbatch prototype/tea_pilot.sb
 ## 7. Before the next AGENTRUN GPU job
 
 ```bash
-ssh gpuuser12@192.168.192.11 'squeue -a; sinfo -N -o "%N %T %G %C"; ls -la --time-style=full-iso ~/VERIFLOW/results/* ~/VERIFLOW/logs/slurm | tail'
+ssh <user>@<cluster-login> 'squeue -a; sinfo -N -o "%N %T %G %C"; ls -la --time-style=full-iso ~/VERIFLOW/results/* ~/VERIFLOW/logs/slurm | tail'
 ```
 
 **Submit only if:**

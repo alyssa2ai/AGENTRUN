@@ -18,7 +18,7 @@ How do persistent memory, retrieval quality, evidence provenance and verificatio
 - **14 of 21** Slurm array jobs completed successfully (all exit 0).
 - **7 jobs** never started (Slurm controller lost contact with the login node; the controller remains unreachable).
 - **No job failures** — every job that started completed successfully.
-- All completed data is backed up on HPC (`/home/gpuuser12/AGENTRUN_HPC/backups/c2_backup_20261112_120842`, 113 MB, 5223 checksummed files) and downloaded locally.
+- All completed data is backed up on HPC (`/home/<user>/AGENTRUN_HPC/backups/c2_backup_20261112_120842`, 113 MB, 5223 checksummed files) and downloaded locally.
 
 ## Key experiments completed
 

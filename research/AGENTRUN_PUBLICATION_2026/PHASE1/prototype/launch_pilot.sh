@@ -1,5 +1,5 @@
 #!/bin/bash
-# Phase 1 pilot launcher for sit-gpu (192.168.192.9), run directly on the compute node because the
+# Phase 1 pilot launcher for <compute-node> (<compute-node>), run directly on the compute node because the
 # Slurm controller is down (13 Nov 2026). One queue per GPU; each queue runs its models sequentially.
 # Usage (on the node):  bash launch_pilot.sh 0   # GPU 0 queue
 #                       bash launch_pilot.sh 1   # GPU 1 queue

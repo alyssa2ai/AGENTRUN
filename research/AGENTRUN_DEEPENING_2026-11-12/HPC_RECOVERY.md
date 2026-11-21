@@ -6,11 +6,11 @@
 
 | Component | Status | Details |
 |---|---|---|
-| Login node (192.168.192.11) | DOWN | SSH: "Connection timed out" / "No route to host" |
-| Compute node (192.168.192.9) | UP | SSH connects, uptime >51 days, load ≈ 0 |
+| Login node (<cluster-login>) | DOWN | SSH: "Connection timed out" / "No route to host" |
+| Compute node (<compute-node>) | UP | SSH connects, uptime >51 days, load ≈ 0 |
 | Slurm controller | UNREACHABLE | `Unable to contact slurm controller (connect failure)` from compute node |
 | nvidia-smi | BROKEN | `Failed to initialize NVML: Driver/library version mismatch (NVML library version: 580.178)` |
-| User processes | NONE | No AGENTRUN processes under gpuuser12 (BeyondSilence service running — do not touch) |
+| User processes | NONE | No AGENTRUN processes under <user> (BeyondSilence service running — do not touch) |
 
 ## What happened
 
@@ -22,7 +22,7 @@
 
 ## What needs to happen (requires SIT administrator)
 
-1. **Restore the login node** (192.168.192.11) or the Slurm controller daemon.
+1. **Restore the login node** (<cluster-login>) or the Slurm controller daemon.
 2. **Fix the NVML driver mismatch.** The nvidia-smi failure may be unrelated to the Slurm outage but would prevent any GPU workload from running even if Slurm is restored. This likely requires `sudo` access to update the NVIDIA driver.
 3. **Verify GPU functionality** with `nvidia-smi` and a test CUDA program.
 
@@ -30,24 +30,24 @@
 
 ```bash
 # 1. Connect to the login node
-ssh gpuuser12@192.168.192.11
+ssh <user>@<cluster-login>
 
 # 2. Verify Slurm is back
-squeue -u gpuuser12
+squeue -u <user>
 scontrol show partition gpu-nodes
 
 # 3. Check if original array 4148 is still active
 scontrol show job 4148
 
 # 4a. If array is dead (COMPLETED or FAILED), submit only missing indices:
-cd /home/gpuuser12/AGENTRUN_HPC/20261111
+cd /home/<user>/AGENTRUN_HPC/20261111
 sbatch --array=14-20%2 scripts/campaign2.sbatch
 
 # 4b. If array is still pending, check which tasks are pending:
-squeue -u gpuuser12 --array
+squeue -u <user> --array
 
 # 5. Monitor progress
-watch -n 30 'squeue -u gpuuser12; tail -3 manifests/jobs_finished.tsv'
+watch -n 30 'squeue -u <user>; tail -3 manifests/jobs_finished.tsv'
 
 # 6. Verify completions
 for i in 14 15 16 17 18 19 20; do
@@ -74,13 +74,13 @@ done
 ```bash
 # From local machine, after jobs complete:
 RBASE=research/AGENTRUN_DEEPENING_2026-11-11/raw_results
-REMOTE=/home/gpuuser12/AGENTRUN_HPC/20261111/experiments/raw_results
+REMOTE=/home/<user>/AGENTRUN_HPC/20261111/experiments/raw_results
 
 for exp in c2_qwen25_7b_v2_dense_pad2000 c2_qwen25_7b_v1r c2_qwen3_8b_v1r c2_qwen25_7b_lora_v1 c2_qwen25_7b_lora_v2 c2_qwen25_7b_v2_T07_s1 c2_qwen25_7b_v2_T07_s2; do
   mkdir -p "$RBASE/$exp"
-  scp "gpuuser12@192.168.192.9:$REMOTE/$exp/runs.jsonl" "$RBASE/$exp/"
-  scp "gpuuser12@192.168.192.9:$REMOTE/$exp/DONE" "$RBASE/$exp/"
-  scp "gpuuser12@192.168.192.9:$REMOTE/$exp/manifest.jsonl" "$RBASE/$exp/"
+  scp "<user>@<compute-node>:$REMOTE/$exp/runs.jsonl" "$RBASE/$exp/"
+  scp "<user>@<compute-node>:$REMOTE/$exp/DONE" "$RBASE/$exp/"
+  scp "<user>@<compute-node>:$REMOTE/$exp/manifest.jsonl" "$RBASE/$exp/"
 done
 
 # Re-run analysis

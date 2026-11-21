@@ -2,7 +2,7 @@
 # PREPARED, NOT EXECUTED. Verify partition, gres syntax, modules and paths on the cluster first.
 #SBATCH --job-name=memlab-qwen7b
 #SBATCH --partition=gpu-nodes
-#SBATCH --nodelist=sit-gpu
+#SBATCH --nodelist=<compute-node>
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=48G

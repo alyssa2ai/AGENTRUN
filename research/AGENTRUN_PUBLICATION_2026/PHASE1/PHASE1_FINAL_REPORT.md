@@ -141,7 +141,7 @@ sbatch prototype/tea_pilot.sbatch
 
 ## 8. Remaining blockers and open items
 
-- **Second model family:** Llama snapshots on `sit-gpu` look incomplete. They need a load test or a download (Phase 2 step 2.5).
+- **Second model family:** Llama snapshots on `<compute-node>` look incomplete. They need a load test or a download (Phase 2 step 2.5).
 - **Phrasing independence:** a third development split written by someone other than the arbiter's author (Phase 2 step 2.6).
 - **Compute:** the Phase 3 estimate is about 130 GPU-hours. It needs an agreed window with Veriflow, which currently runs one GPU at a time through Slurm.
 - **Veriflow's next GPU need is unknown.** Recheck before every submission.

@@ -2,7 +2,7 @@
 
 **13 November 2026.** Everything below was read from the code, not from documentation:
 
-- `research/AGENTRUN_DEEPENING_2026-11-11/scripts/memlab.py`, sha256 `dc28584c…`, identical on the laptop and on `sit-gpu`;
+- `research/AGENTRUN_DEEPENING_2026-11-11/scripts/memlab.py`, sha256 `dc28584c…`, identical on the laptop and on `<compute-node>`;
 - `run_ablation.py`;
 - `hf_client.py`;
 - the repository's `memory.py`, sha256 `8d73adf3…`.

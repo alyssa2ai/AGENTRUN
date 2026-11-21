@@ -22,10 +22,10 @@ Every record carries full message transcripts, tool calls, token usage and timin
 
 ## Remote state (SIT HPC, checked 2026-11-13 10:12 UTC)
 
-- `192.168.192.9` (`sit-gpu`): **reachable**, up 52 days. `/home` at 88% (426 GB free).
-- `192.168.192.11` (login node, Slurm controller): **unreachable** (SSH timeout). `squeue` from sit-gpu: "Unable to contact slurm controller". Needs the HPC administrator.
+- `<compute-node>` (`<compute-node>`): **reachable**, up 52 days. `/home` at 88% (426 GB free).
+- `<cluster-login>` (login node, Slurm controller): **unreachable** (SSH timeout). `squeue` from <compute-node>: "Unable to contact slurm controller". Needs the HPC administrator.
 - GPUs: `nvidia-smi` still fails (NVML 580.178 driver/library mismatch) but **CUDA works**: torch 2.15.0+cu132 sees 2 × NVIDIA L40 (verified in the project venv). Every campaign job ran in this state; it is a monitoring problem, not a compute problem.
-- Workspace `/home/gpuuser12/AGENTRUN_HPC/20261111/` intact: environment, experiments (111 MB raw_results, 5,255 files), manifests, scripts, source.
+- Workspace `/home/<user>/AGENTRUN_HPC/20261111/` intact: environment, experiments (111 MB raw_results, 5,255 files), manifests, scripts, source.
 - `manifests/jobs_finished.tsv`: campaign2 array 4148 tasks **0–13 all exit=0** (2026-11-12 05:31–08:42 UTC); tasks 14–20 absent — **never dispatched**, consistent with the controller dying while the array (concurrency %2) was still queued.
 - Backup `AGENTRUN_HPC/backups/c2_backup_20261112_120842/`: 5,336 files incl. SHA256SUMS.txt, plus a 4.9 MB partial tarball. The earlier "5,223 checksummed files" claim undercounts slightly; the backup as found contains 5,336 files.
 - The unrelated BeyondSilence artifacts under the same account were not touched.
@@ -52,5 +52,5 @@ The sbatch is resumable ("resubmitting skips finished work"), so when the contro
 ## Discrepancies found
 
 1. "5,223 checksummed files" (previous session) vs 5,336 files in the backup directory — the backup is larger than reported, not smaller; no data loss.
-2. `c2_v2dev55_adapter_b3` per-task file exists only on the cluster; retrieve it (low priority) next time the login node allows rsync, or read it from `sit-gpu` directly.
+2. `c2_v2dev55_adapter_b3` per-task file exists only on the cluster; retrieve it (low priority) next time the login node allows rsync, or read it from `<compute-node>` directly.
 3. Nothing else: counts, hashes and manifests agree across laptop, cluster and committed tables.

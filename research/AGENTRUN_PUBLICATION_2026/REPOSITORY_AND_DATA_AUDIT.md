@@ -60,7 +60,7 @@ For each of the 12 campaign-2 agent datasets (`raw_results/c2_qwen*`):
 | Model snapshot recorded | yes: Qwen2.5-1.5B `989aa798…`, 3B `aa8e7253…`, 7B `a09a3545…`, 14B `cf98f3b3…`, Qwen3-8B `b968826d…` |
 | API/generation errors logged | 3 (Qwen2.5-7B v1; handled by the harness's fixed notice); 0 elsewhere |
 
-**Gap found and fixed.** The size-sweep datasets (1.5B, 3B, 14B) had no `stores/` folders on the laptop, because the session that copied them took only `runs.jsonl`, `manifest.jsonl` and `DONE`. The leakage audit silently skips the store-isolation check when a store file is missing, so that check had covered only the 7B and 8B runs. This session copied the 6 × 384 store files from `sit-gpu` (no existing file overwritten), re-ran the audit, and all 77 checks pass with store isolation now verified for all ten unpadded runs.
+**Gap found and fixed.** The size-sweep datasets (1.5B, 3B, 14B) had no `stores/` folders on the laptop, because the session that copied them took only `runs.jsonl`, `manifest.jsonl` and `DONE`. The leakage audit silently skips the store-isolation check when a store file is missing, so that check had covered only the 7B and 8B runs. This session copied the 6 × 384 store files from `<compute-node>` (no existing file overwritten), re-ran the audit, and all 77 checks pass with store isolation now verified for all ten unpadded runs.
 
 **Recovered.** `c2_v2dev55_adapter_b3` (adapter, v2-dev, budget 3) existed only on the cluster. It was copied and hash-checked (`scores.json` `edff47a8…`, `v2_log.jsonl` `934a51b4…`); it scores 51/55, matching the summary in the job log.
 
@@ -84,13 +84,13 @@ Evidence: `manifests/jobs_finished.tsv` on the cluster (and the copy in `hpc/fro
 
 | Component | State |
 |---|---|
-| Login node `sitgpumaster` (192.168.192.11) | port 22 unreachable |
-| Compute node `sit-gpu` (192.168.192.9) | reachable; up 52 days; load 0 |
-| Slurm | `scontrol ping`: "Slurmctld(primary) at sitgpumaster is DOWN"; `squeue`: "Unable to contact slurm controller" |
+| Login node `<cluster-login>` (<cluster-login>) | port 22 unreachable |
+| Compute node `<compute-node>` (<compute-node>) | reachable; up 52 days; load 0 |
+| Slurm | `scontrol ping`: "Slurmctld(primary) at <cluster-login> is DOWN"; `squeue`: "Unable to contact slurm controller" |
 | GPUs | `nvidia-smi` fails (NVML 580.178 mismatch); CUDA works via PyTorch 2.15.0+cu132 (2 × NVIDIA L40), verified by the previous session at 10:12 UTC |
 | Workspace and backup | intact; backup `AGENTRUN_HPC/backups/c2_backup_20261112_120842/` with 5,336 files and `SHA256SUMS.txt` (previous session's count) |
 
-No job was submitted, no service touched, no `sudo` used, and the unrelated BeyondSilence service was not disturbed. Running experiments directly on `sit-gpu` without Slurm would bypass the scheduler; this was not done.
+No job was submitted, no service touched, no `sudo` used, and the unrelated BeyondSilence service was not disturbed. Running experiments directly on `<compute-node>` without Slurm would bypass the scheduler; this was not done.
 
 ## 7. Provenance limits
 

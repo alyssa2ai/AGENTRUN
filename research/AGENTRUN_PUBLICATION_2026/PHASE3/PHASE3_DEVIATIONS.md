@@ -12,8 +12,8 @@ generated G5 report), `platform_evidence.json` (the raw evidence with epistemic 
 
 ## D1 — Unplanned node reboot mid-campaign, with a host-platform transition
 
-**What happened.** The compute node `sit-gpu` rebooted at `2026-11-20T10:11:58` (verified: `scontrol show node
-sit-gpu`, `BootTime`). The node had been up since `2026-10-03T06:51:20` (verified: `journalctl --list-boots`).
+**What happened.** The compute node `<compute-node>` rebooted at `2026-11-20T10:11:58` (verified: `scontrol show node
+<compute-node>`, `BootTime`). The node had been up since `2026-10-03T06:51:20` (verified: `journalctl --list-boots`).
 Across that reboot:
 
 | | Before | After | Status |
@@ -27,9 +27,9 @@ The "before" values are inferred, not read: the previous boot began before the N
 `2026-10-11 06:53:41` (`/var/log/dpkg.log`: `nvidia-dkms-580-server 580.173.02 → 580.178.04`), so the node continued
 running the already-loaded `580.173.02` module against `580.178.04` userspace. That is independently corroborated by
 the recorded failure of `nvidia-smi` on this node on 2026-11-11 with a driver/library version mismatch, and by
-`nvidia-smi` working again after the reboot. The previous boot's kernel log is not readable from the `gpuuser12`
+`nvidia-smi` working again after the reboot. The previous boot's kernel log is not readable from the `<user>`
 account, so the pre-reboot module version cannot be read directly. One privileged command would settle it:
-`journalctl -b -1 -k | grep NVRM` on `sit-gpu`.
+`journalctl -b -1 -k | grep NVRM` on `<compute-node>`.
 
 **How it surfaced.** As a 0.2 GiB change in read-only telemetry. `client.gpu_mem_gib` —
 `round(torch.cuda.get_device_properties(0).total_memory / 2**30, 1)`, `hf_client.py:58` — moved from `44.6` to
