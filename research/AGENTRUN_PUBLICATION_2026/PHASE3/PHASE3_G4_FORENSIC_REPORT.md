@@ -314,7 +314,7 @@ After the gate correction is approved and committed, resubmit `phase3_finalize.s
 
 ## Appendix — commands and paths used
 
-Cluster: `ssh gpuuser12@192.168.192.11` (login `sitgpumaster`), `ssh gpuuser12@192.168.192.9` (compute `sit-gpu`, read-only checks).
+Cluster: `ssh <user>@<cluster-login>` (login `sitgpumaster`), `ssh <user>@<compute-node>` (compute `sit-gpu`, read-only checks).
 
 | Artefact | Path |
 |---|---|
