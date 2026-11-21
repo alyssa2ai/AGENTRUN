@@ -7,7 +7,8 @@
 #   analyze   frozen analyze_p2 (primary cells pooled; Holm over EBG-RT, EBG-T, EBG-LG, EBG-B), secondary cells,
 #             flagged-complement sensitivity, descriptive metrics -> ANALYSIS/
 #   report    independent cross-check of the headline numbers + PHASE3_* tables (build_reports.py)
-#   all       fetch, verify, analyze, report
+#   exploratory  post-hoc sensitivity analyses (PHASE3_DEVIATIONS.md D7); eval3 only
+#   all       fetch, verify, analyze, exploratory, report
 # DRY=1 runs verify+analyze on the p2val2 development runs (no cluster, no eval3) to test the pipeline.
 set -euo pipefail
 H=<user>@<cluster-login>
@@ -70,6 +71,19 @@ analyze)
     python $A/analyze_p2.py --tasks SEALED_LOCAL/eval3_tasks_qwen14b_agreed.jsonl --runs $PRIMARY_CELLS --out $OUT/SENSITIVITY_qwen14b_agreed --holm EBG-RT,EBG-T,EBG-LG,EBG-B
   fi
   python scripts/phase3_metrics.py --tasks $TASKS --runs $PRIMARY_CELLS $SEC_CELLS --out $OUT/METRICS ;;
+exploratory)
+  # POST-HOC, EXPLORATORY (PHASE3_DEVIATIONS.md D7). Never a confirmatory test; reported separately.
+  A=$P2/scripts
+  if [ "${DRY:-0}" = 1 ]; then echo "exploratory stage is eval3-only"; exit 0; fi
+  STRADDLER=$RUNROOT/${PFX}qwen3_8b_T07_s3
+  NOSTRADDLE=""
+  for m in $TAGS_PRIMARY; do for d in $DECS; do c=$RUNROOT/${PFX}${m}_$d; [ "$c" = "$STRADDLER" ] || NOSTRADDLE="$NOSTRADDLE $c"; done; done
+  python $A/analyze_p2.py --tasks $TASKS --runs $NOSTRADDLE --out $OUT/EXPLORATORY_no_straddling_cell \
+    --holm EBG-RT,EBG-T,EBG-LG,EBG-B --n-perm 100000
+  Q3=""
+  for d in greedy T07_s1 T07_s2; do Q3="$Q3 $RUNROOT/${PFX}qwen3_8b_$d"; done
+  python $A/analyze_p2.py --tasks $TASKS --runs $Q3 --out $OUT/EXPLORATORY_qwen3_pre_reboot_only \
+    --holm EBG-RT,EBG-T,EBG-LG,EBG-B --n-perm 100000 ;;
 report)
   python scripts/crosscheck_phase3.py --tasks $TASKS --runs $PRIMARY_CELLS --analysis $OUT/CONFIRMATORY_primary_cells.json --out $OUT/CROSSCHECK
   if [ "${DRY:-0}" = 1 ]; then
@@ -77,6 +91,6 @@ report)
   else
     python scripts/build_reports.py --src $OUT --dest . --cells $PRIMARY_CELLS $SEC_CELLS --logs logs
   fi ;;
-all) bash "$0" fetch; bash "$0" verify; bash "$0" analyze; bash "$0" report ;;
-*) echo "usage: $0 status|fetch|verify|analyze|report|all   (DRY=1 for the p2val2 pipeline test)"; exit 1 ;;
+all) bash "$0" fetch; bash "$0" verify; bash "$0" analyze; bash "$0" exploratory; bash "$0" report ;;
+*) echo "usage: $0 status|fetch|verify|analyze|exploratory|report|all   (DRY=1 for the p2val2 pipeline test)"; exit 1 ;;
 esac

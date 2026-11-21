@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=agentrun-p3-final
-#SBATCH --partition=gpu-nodes
+#SBATCH --partition=<partition>
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
-#SBATCH --mem=16G
-#SBATCH --time=2-00:00:00
+#SBATCH --mem=6G
+#SBATCH --time=04:00:00
 #SBATCH --output=/home/%u/AGENTRUN_HPC/finalize/finalize_%j.out
 # Phase 3 finalization on the cluster (no GPU, no laptop, no SSH session). Submitted with
 #   sbatch --dependency=afterany:<controller v2 job> phase3_finalize.sbatch
@@ -72,15 +72,25 @@ cp -p $LOGS/phase3_* logs/ 2>/dev/null
 cp -p $H/finalize/gates.json ANALYSIS/FINALIZE_GATES.json
 note "staged 18 cells, logs and sealed inputs into the clone (gitignored); copies re-verified"
 
+stage=platform_report
+python $P3/scripts/platform_continuity.py --raw $RAW --evidence $P3/platform_evidence.json \
+  --out-json ANALYSIS/PLATFORM_CONTINUITY.json --out-md PHASE3_PLATFORM_CONTINUITY.md \
+  > ANALYSIS/finalize_platform.log 2>&1 || fail "G5 platform-continuity report could not be generated"
+note "G5 platform-continuity report written (reporting only): $(tail -1 ANALYSIS/finalize_platform.log)"
+[ -s PHASE3_DEVIATIONS.md ] || fail "PHASE3_DEVIATIONS.md is missing: the G5 disclosure has no home"
+
 stage=verify
 bash scripts/run_phase3_analysis.sh verify > ANALYSIS/finalize_verify.log 2>&1 || fail "verify_phase3.py reported integrity problems (ANALYSIS/finalize_verify.log)"
 note "verify_phase3: no integrity problems"
 stage=analyze
 bash scripts/run_phase3_analysis.sh analyze > ANALYSIS/finalize_analyze.log 2>&1 || fail "analysis failed (ANALYSIS/finalize_analyze.log)"
 note "analysis done: primary (100,000 permutations, Holm), sensitivity (a), flagged complement, set (b), secondary, metrics"
+stage=exploratory
+bash scripts/run_phase3_analysis.sh exploratory > ANALYSIS/finalize_exploratory.log 2>&1 || fail "exploratory sensitivity analyses failed (ANALYSIS/finalize_exploratory.log)"
+note "exploratory (post-hoc, NOT confirmatory): primary contrasts without the straddling cell; Qwen3-8B pre-reboot decodings only"
 stage=report
 bash scripts/run_phase3_analysis.sh report > ANALYSIS/finalize_report.log 2>&1 || fail "cross-check disagreement or report generation failed (ANALYSIS/finalize_report.log)"
-for f in PHASE3_EXECUTION_LOG.md PHASE3_COMPARISON_TABLES.md PHASE3_ABLATION_RESULTS.md PHASE3_STATISTICAL_ANALYSIS.md PHASE3_FAILURE_TABLES.md PHASE3_DECISIONS.json; do
+for f in PHASE3_EXECUTION_LOG.md PHASE3_COMPARISON_TABLES.md PHASE3_ABLATION_RESULTS.md PHASE3_STATISTICAL_ANALYSIS.md PHASE3_FAILURE_TABLES.md PHASE3_DECISIONS.json PHASE3_PLATFORM_CONTINUITY.md PHASE3_DEVIATIONS.md PHASE3_G4_FORENSIC_REPORT.md ANALYSIS/EXPLORATORY_no_straddling_cell.json ANALYSIS/EXPLORATORY_qwen3_pre_reboot_only.json; do
   [ -s $f ] || fail "missing report $f"; done
 grep -q "all values agree" ANALYSIS/CROSSCHECK.md || fail "cross-check did not confirm"
 note "reports written; independent cross-check agrees with the frozen analysis"
@@ -93,15 +103,18 @@ stage=seal
   echo "## raw cells (gitignored; on the cluster in $RAW)"; cat ANALYSIS/controller_SHA256SUMS.txt
   echo "## sealed eval3 (cluster only)"; sha256sum $SEAL/SHA256SUMS | sed "s#$SEAL/##"
   echo "## outputs"; find ANALYSIS results scripts tests -type f ! -path "ANALYSIS/DRYRUN/*" -print0 | sort -z | xargs -0 sha256sum
-  sha256sum PHASE3_*.md PHASE3_DECISIONS.json LIMITATIONS.md $PUB/PHASE4/manuscript/07_results_AUTO.md | sed "s#$PUB/##"
+  sha256sum PHASE3_*.md PHASE3_DECISIONS.json platform_evidence.json LIMITATIONS.md $PUB/PHASE4/manuscript/07_results_AUTO.md | sed "s#$PUB/##"
 } > PHASE3_SHA256_MANIFEST.txt
 cd $REPO
 if git status --short -- research/AGENTRUN_PUBLICATION_2026 | grep -qE "SEALED_LOCAL|RAW_RESULTS/eval3_|PHASE3/logs/"; then fail "sealed/raw files would enter git"; fi
 git add research/AGENTRUN_PUBLICATION_2026/PHASE3 research/AGENTRUN_PUBLICATION_2026/PHASE4
 git commit -q -m "research: Phase 3 confirmatory analysis (HPC finalization job ${SLURM_JOB_ID:-local})
 
-All 18 cells passed the integrity gates; frozen analyze_p2 with 100,000 permutations and Holm over the four
-primary contrasts; sensitivity analyses; independent cross-check agrees. Interpretation pending.
+All 18 cells passed the integrity gates under G4 policy g4-v2 (gpu_mem_gib declared observational;
+every identity field strict and closed by default); reporting-only G5 platform-continuity report;
+frozen analyze_p2 with 100,000 permutations and Holm over the four primary contrasts; preregistered
+sensitivity analyses plus two post-hoc exploratory ones (PHASE3_DEVIATIONS.md D7); independent
+cross-check agrees. Interpretation pending.
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" || fail "git commit"
 note "committed in the HPC clone: $(git log --oneline -1)"

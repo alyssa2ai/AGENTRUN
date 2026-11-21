@@ -1,0 +1,19 @@
+# Hashes of the repository originals from which this package's copies were made.
+# configs/ are byte-identical to these; scripts/ and slurm/ are the same files with host identifiers redacted.
+
+5ae8ebe3c2b110bd89348e113c3b0b7803efb6ec0020275a0dd1ab75fc2b7ad8  PHASE2/FREEZE_evarb.json   -> configs/FREEZE_evarb.json
+29fabde4bfe3861cfa235c190c83b8f6a4be5ef1261b2968f1cd5c9c86e8488f  PHASE2/FREEZE_eval3.json   -> configs/FREEZE_eval3.json
+221013b3cee87c003894ba1837e8a62b586e7acf02c22f0c6fbb59c34a6218d1  PHASE2/PREREGISTRATION.md   -> configs/PREREGISTRATION.md
+2d56789e2c1f64c45f64704d447bcae5de3461e2e25c85b60e03e92a7773330d  PHASE2/data/p2val2/PRIMARY_RULE_DECISION.md   -> configs/PRIMARY_RULE_DECISION.md
+fb32ca32dec390dbcecc18e33dff2363dee4a34326f9cd469c8d33601ab90e27  PHASE3/scripts/finalize_gates.py   -> scripts/finalize_gates.py
+8c1870f0725131c12ee4a4b3b67687426c3490b9d6967643b41f1364dc9e704d  PHASE3/scripts/finalize_gates_v1_frozen.py   -> scripts/finalize_gates_v1_frozen.py
+55d323b9361fb77fab59ad1de4986180d2313ce46d67fc2b448302c7290af815  PHASE3/scripts/platform_continuity.py   -> scripts/platform_continuity.py
+109fcea05b8160656fa9cd9344111b0e698e9d63839b86bb51749df1eca45f71  PHASE3/scripts/verify_phase3.py   -> scripts/verify_phase3.py
+9630020b40db489eba3003c130ec60c0abce60730355e0c8317b193408bd3920  PHASE3/scripts/crosscheck_phase3.py   -> scripts/crosscheck_phase3.py
+729b1ce910bc4e56462b00ef4bdfbcd515297be434da96d1042db421f886decd  PHASE3/scripts/phase3_metrics.py   -> scripts/phase3_metrics.py
+8fbaae239fc6cb8ce0ba0134ff18697078de8bb293df62c75a0bec87d2e72ace  PHASE3/scripts/build_reports.py   -> scripts/build_reports.py
+4f4983c075c18fd41ec2a017c3f17f58eadfe5e8b8a70b025360e985f2a6179a  PHASE3/scripts/write_results_section.py   -> scripts/write_results_section.py
+a570a8ce35c29514337787393c3a5c2939d2402e6ba8baa162783e2062f1dc42  PHASE3/scripts/agreed_ids_b.py   -> scripts/agreed_ids_b.py
+7f2e2da6dac2e85c0536b66e6b35319e4b19c1321879884d116713f4fb7a08e6  PHASE3/scripts/run_phase3_analysis.sh   -> scripts/run_phase3_analysis.sh
+a8830b7bdd8616f35c129dd309c6e218b731e9319de9d098653b38a14370ab58  PHASE4/scripts/assemble_manuscript.py   -> scripts/assemble_manuscript.py
+19b5d3ddcc4576163c414339a22d390a9ca662a7711e57104b9951ab4fb87efc  PHASE3/scripts/phase3_finalize.sbatch   -> slurm/phase3_finalize.sbatch
