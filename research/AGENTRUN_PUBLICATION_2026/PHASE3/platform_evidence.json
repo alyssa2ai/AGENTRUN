@@ -1,0 +1,93 @@
+{
+ "_comment": "Host-platform evidence for the Phase 3 G5 platform-continuity report. Collected read-only on 2026-11-21 during the G4 forensic investigation (PHASE3_G4_FORENSIC_REPORT.md). Each fact carries its epistemic status: 'verified' = read directly from a system source named in `source`; 'inferred' = deduced from verified facts, with the reasoning in `reasoning`; 'unknown' = could not be established, with what would settle it in `would_settle`. Nothing here is used by any statistical computation.",
+ "collected_utc": "2026-11-21T04:30:00Z",
+ "node": "sit-gpu",
+ "boot_event": {
+  "status": "verified",
+  "node_boot_utc": "2026-11-20T10:11:58",
+  "slurmd_start_utc": "2026-11-20T10:12:11",
+  "source": "scontrol show node sit-gpu (BootTime, SlurmdStartTime)"
+ },
+ "previous_boot": {
+  "status": "verified",
+  "first_entry_utc": "2026-10-03T06:51:20",
+  "last_readable_entry_utc": "2026-11-19T07:29:06",
+  "source": "journalctl --list-boots (boot -1); the user account cannot read system-scope journal entries, so the last readable entry is a lower bound on the node's uptime, not the shutdown time"
+ },
+ "kernel_after": {
+  "status": "verified",
+  "release": "6.8.0-149-generic",
+  "source": "scontrol show node sit-gpu (OS line); uname -r on sit-gpu",
+  "package_installed_utc": "2026-11-13 06:13:43",
+  "package_source": "/var/log/dpkg.log (linux-image-6.8.0-149-generic 6.8.0-149.149)"
+ },
+ "kernel_before": {
+  "status": "inferred",
+  "release": "6.8.0-139-generic",
+  "reasoning": "boot -1 began 2026-10-03, before linux-image-6.8.0-149-generic was installed on 2026-11-13; 6.8.0-139-generic was installed 2026-09-05 and is the only other kernel with a DKMS build present on the node",
+  "source": "/var/log/dpkg.log install records; dkms status",
+  "would_settle": "journalctl -b -1 -k | head -1 (requires membership of 'adm' or 'systemd-journal')"
+ },
+ "nvidia_module_after": {
+  "status": "verified",
+  "version": "580.178.04",
+  "source": "/proc/driver/nvidia/version (NVRM banner); modinfo nvidia; nvidia-smi --query-gpu=driver_version",
+  "module_file": "/lib/modules/6.8.0-149-generic/updates/dkms/nvidia.ko.zst",
+  "module_build_utc": "2026-11-13 06:14:15",
+  "module_loaded_utc": "2026-11-20 10:12:02",
+  "loaded_source": "creation time of /sys/module/nvidia"
+ },
+ "nvidia_module_before": {
+  "status": "inferred",
+  "version": "580.173.02",
+  "reasoning": "the node booted 2026-10-03 and therefore loaded the module version installed at that date; nvidia-dkms-580-server was upgraded 580.173.02 -> 580.178.04 on 2026-10-11 06:53:41 while the node stayed up, which leaves the running kernel module at 580.173.02 against 580.178.04 userspace. That is corroborated by the independently recorded failure of nvidia-smi on this node on 2026-11-11 with a driver/library version mismatch, and by nvidia-smi working again after the 2026-11-20 reboot.",
+  "source": "/var/log/dpkg.log (nvidia-dkms-580-server upgrades: 580.159.03 -> 580.173.02 on 2026-07-24; 580.173.02 -> 580.178.04 on 2026-10-11)",
+  "would_settle": "journalctl -b -1 -k | grep NVRM (requires membership of 'adm' or 'systemd-journal')"
+ },
+ "gpu_devices": {
+  "status": "verified",
+  "count": 2,
+  "model": "NVIDIA L40",
+  "memory_total_mib_each": 46068,
+  "ecc_mode_current": "Enabled",
+  "persistence_mode": "Disabled",
+  "source": "nvidia-smi --query-gpu=index,name,memory.total,ecc.mode.current,driver_version,persistence_mode --format=csv, run 2026-11-21 (after the reboot)",
+  "caveat": "both devices report identical totals, which excludes device identity as the cause of the gpu_mem_gib change; the two affected cells ran on CUDA_VISIBLE_DEVICES=0 and =1 respectively in BOTH of their starts"
+ },
+ "gpu_state_before_reboot": {
+  "status": "unknown",
+  "what": "ECC mode, persistence mode, clocks and firmware state of the two L40s before 2026-11-20",
+  "reasoning": "nvidia-smi was non-functional on this node before the reboot (driver/library mismatch), so no pre-reboot reading exists",
+  "would_settle": "nothing available retrospectively from an unprivileged account"
+ },
+ "telemetry_change": {
+  "status": "verified",
+  "field": "client.gpu_mem_gib",
+  "before": 44.6,
+  "after": 44.4,
+  "definition": "round(torch.cuda.get_device_properties(0).total_memory / 2**30, 1), hf_client.py:58",
+  "causal_role": "none: stored in HFClient._versions, consumed only by HFClient.describe() to build the manifest; the model is loaded with device_map={\"\": 0} and no max_memory (hf_client.py:45)",
+  "source": "the 20 manifest lines of the 18 cells"
+ },
+ "driver_effect_on_generation": {
+  "status": "unknown",
+  "what": "whether NVIDIA 580.173.02 and 580.178.04 select different kernels or produce different outputs for these models",
+  "reasoning": "no (task, config) pair exists on both platforms: the two quarantined fragments contain zero complete rows, so there is no re-executed pair to compare. Establishing it would require re-running completed cells, which the preregistration does not permit and which would be a post-hoc choice taken with knowledge of which cells were affected.",
+  "would_settle": "a dedicated non-eval3 determinism experiment on both driver versions, which is out of scope for this campaign"
+ },
+ "logs_lost": {
+  "status": "verified",
+  "what": "the Slurm console logs of the first starts of both affected cells",
+  "files": ["phase3_4315_15.out", "phase3_4324_17.out"],
+  "reasoning": "Slurm requeued jobs 4315 and 4324 after the reboot and truncated their output files; mtime 2026-11-20 10:12:26",
+  "mitigation": "the corresponding manifest lines survive intact and carry the code hashes, freeze state and start timestamps"
+ },
+ "rng_reseed": {
+  "status": "verified",
+  "what": "a resumed sampled cell restarts its random stream instead of continuing it",
+  "mechanism": "HFClient.__init__ calls torch.manual_seed(seed) once per process (hf_client.py:54); a resume is a fresh process, so the post-resume segment re-seeds from the same base seed rather than continuing the stream an uninterrupted run would have had",
+  "affected_cells": ["qwen3_8b_T07_s3"],
+  "unaffected": "llama32_3b_greedy is greedy (do_sample=False), so it has no sampling stream; no other cell was resumed",
+  "effect": "no bias: the pre-registered design fixes T=0.7 with seeds 1, 2, 3 and makes no claim about the stream's continuity. The limitation is on exact byte-reproduction of that one cell, which would now require reproducing the interruption at the same row."
+ }
+}
