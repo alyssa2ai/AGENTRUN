@@ -16,6 +16,7 @@ It covers only the persistent-memory reliability study. The earlier QLoRA specia
 | `EXPECTED_OUTPUTS.md` | directory layout, row counts and file formats of raw and analysis outputs |
 | `TESTS.md` | test suites and what they cover |
 | `LIMITATIONS_AND_FAILURE_MODES.md` | known failure modes of the mechanism, data and execution |
+| `DEVIATIONS.md` | pointer to the Phase 3 deviation ledger: the host platform transition, the resume recovery, the re-seeding limitation and the integrity-gate correction |
 | `configs/` | frozen manifests (`FREEZE_evarb.json`, `FREEZE_eval3.json`), `PREREGISTRATION.md`, primary-set decision record (byte copies) |
 | `slurm/` | Slurm scripts used for Phase 3 (`phase3_finalize.sbatch` with host identifiers redacted) |
 | `scripts/` | Phase 3 analysis scripts (copies; `run_phase3_analysis.sh` with host identifiers redacted) |

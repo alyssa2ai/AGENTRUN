@@ -3,8 +3,8 @@
 #SBATCH --partition=gpu-nodes
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=2
-#SBATCH --mem=16G
-#SBATCH --time=2-00:00:00
+#SBATCH --mem=6G
+#SBATCH --time=04:00:00
 #SBATCH --output=/home/%u/AGENTRUN_HPC/finalize/finalize_%j.out
 # Phase 3 finalization on the cluster (no GPU, no laptop, no SSH session). Submitted with
 #   sbatch --dependency=afterany:<controller v2 job> phase3_finalize.sbatch

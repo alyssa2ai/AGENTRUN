@@ -36,10 +36,10 @@ We phrase the contributions as tests and artefacts. Whether any hypothesis is su
 2. **Component ablations, reported as exploratory.** The design isolates the value of enforcement (EBG − EB), of gating (EBG − EBG-all), of safe submission (EBG − EBG-unsafe) and of search-before-submit (EBG − EBG-noR3), with Benjamini–Hochberg control and no claim resting on them (E1–E5).
 3. **A deterministic-versus-LLM arbiter comparison under one policy.** LA and LG fill the same output schema with the agent's own model as arbiter, so that the contrast EBG − LG separates *who arbitrates* from *what the policy does with the arbitration*.
 4. **A sealed evaluation set whose gold is fixed before any text exists** (eval3; Section 5), written by a model that never saw the mechanism or the gold, with blind model annotation and no human validation. We do not present it as a benchmark of record.
-5. **A pre-stated account of the mechanism's known failures** (Section 6), written before any confirmatory outcome.
+5. **A pre-stated account of the mechanism's known failures** (Section 13), written before any confirmatory outcome.
 
 Results: [RESULTS PENDING — filled from PHASE3 verified outputs]
 
 ## 1.6 Scope
 
-The study concerns small open-weight models (3B–14B) in one synthetic tool-use harness with templated records, English text and ISO-format value dates. It makes no claim about frontier models, natural memory logs, implicit conflicts without lexical cues, or other harnesses. Section 6 lists the limitations that were fixed before the confirmatory results existed.
+The study concerns small open-weight models (3B–14B) in one synthetic tool-use harness with templated records, English text and ISO-format value dates. It makes no claim about frontier models, natural memory logs, implicit conflicts without lexical cues, or other harnesses. Section 13 lists the limitations that were fixed before the confirmatory results existed.

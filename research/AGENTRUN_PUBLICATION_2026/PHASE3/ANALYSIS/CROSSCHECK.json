@@ -1,0 +1,572 @@
+{
+ "n_tasks": 268,
+ "counts": [
+  {
+   "model": "ALL",
+   "config": "B",
+   "n": 4288,
+   "success": 1972,
+   "harmful": 302,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "EB",
+   "n": 4288,
+   "success": 2372,
+   "harmful": 115,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "EBG",
+   "n": 4288,
+   "success": 2630,
+   "harmful": 135,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "EBG-all",
+   "n": 4288,
+   "success": 3047,
+   "harmful": 294,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "EBG-noR3",
+   "n": 4288,
+   "success": 2573,
+   "harmful": 145,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "EBG-unsafe",
+   "n": 4288,
+   "success": 2638,
+   "harmful": 142,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "G",
+   "n": 4288,
+   "success": 1867,
+   "harmful": 337,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "LA",
+   "n": 4288,
+   "success": 2053,
+   "harmful": 568,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "LG",
+   "n": 4288,
+   "success": 1948,
+   "harmful": 914,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "R",
+   "n": 4288,
+   "success": 1931,
+   "harmful": 689,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "RT",
+   "n": 4288,
+   "success": 1897,
+   "harmful": 968,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "ALL",
+   "config": "T",
+   "n": 4288,
+   "success": 2009,
+   "harmful": 316,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "B",
+   "n": 1072,
+   "success": 522,
+   "harmful": 68,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "EB",
+   "n": 1072,
+   "success": 468,
+   "harmful": 16,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "EBG",
+   "n": 1072,
+   "success": 638,
+   "harmful": 31,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "EBG-all",
+   "n": 1072,
+   "success": 847,
+   "harmful": 90,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "EBG-noR3",
+   "n": 1072,
+   "success": 626,
+   "harmful": 36,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "EBG-unsafe",
+   "n": 1072,
+   "success": 640,
+   "harmful": 34,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "G",
+   "n": 1072,
+   "success": 435,
+   "harmful": 34,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "LA",
+   "n": 1072,
+   "success": 490,
+   "harmful": 20,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "LG",
+   "n": 1072,
+   "success": 507,
+   "harmful": 152,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "R",
+   "n": 1072,
+   "success": 527,
+   "harmful": 237,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "RT",
+   "n": 1072,
+   "success": 531,
+   "harmful": 301,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-3B-Instruct",
+   "config": "T",
+   "n": 1072,
+   "success": 456,
+   "harmful": 23,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "B",
+   "n": 1072,
+   "success": 609,
+   "harmful": 110,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "EB",
+   "n": 1072,
+   "success": 793,
+   "harmful": 46,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "EBG",
+   "n": 1072,
+   "success": 804,
+   "harmful": 46,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "EBG-all",
+   "n": 1072,
+   "success": 903,
+   "harmful": 88,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "EBG-noR3",
+   "n": 1072,
+   "success": 808,
+   "harmful": 49,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "EBG-unsafe",
+   "n": 1072,
+   "success": 813,
+   "harmful": 46,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "G",
+   "n": 1072,
+   "success": 585,
+   "harmful": 176,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "LA",
+   "n": 1072,
+   "success": 598,
+   "harmful": 339,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "LG",
+   "n": 1072,
+   "success": 555,
+   "harmful": 411,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "R",
+   "n": 1072,
+   "success": 560,
+   "harmful": 231,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "RT",
+   "n": 1072,
+   "success": 519,
+   "harmful": 343,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen2.5-7B-Instruct",
+   "config": "T",
+   "n": 1072,
+   "success": 636,
+   "harmful": 170,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "B",
+   "n": 1072,
+   "success": 645,
+   "harmful": 111,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "EB",
+   "n": 1072,
+   "success": 841,
+   "harmful": 48,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "EBG",
+   "n": 1072,
+   "success": 834,
+   "harmful": 50,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "EBG-all",
+   "n": 1072,
+   "success": 936,
+   "harmful": 96,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "EBG-noR3",
+   "n": 1072,
+   "success": 831,
+   "harmful": 52,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "EBG-unsafe",
+   "n": 1072,
+   "success": 832,
+   "harmful": 51,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "G",
+   "n": 1072,
+   "success": 593,
+   "harmful": 123,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "LA",
+   "n": 1072,
+   "success": 763,
+   "harmful": 196,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "LG",
+   "n": 1072,
+   "success": 707,
+   "harmful": 277,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "R",
+   "n": 1072,
+   "success": 565,
+   "harmful": 213,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "RT",
+   "n": 1072,
+   "success": 566,
+   "harmful": 313,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "Qwen/Qwen3-8B",
+   "config": "T",
+   "n": 1072,
+   "success": 663,
+   "harmful": 120,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "B",
+   "n": 1072,
+   "success": 196,
+   "harmful": 13,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "EB",
+   "n": 1072,
+   "success": 270,
+   "harmful": 5,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "EBG",
+   "n": 1072,
+   "success": 354,
+   "harmful": 8,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "EBG-all",
+   "n": 1072,
+   "success": 361,
+   "harmful": 20,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "EBG-noR3",
+   "n": 1072,
+   "success": 308,
+   "harmful": 8,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "EBG-unsafe",
+   "n": 1072,
+   "success": 353,
+   "harmful": 11,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "G",
+   "n": 1072,
+   "success": 254,
+   "harmful": 4,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "LA",
+   "n": 1072,
+   "success": 202,
+   "harmful": 13,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "LG",
+   "n": 1072,
+   "success": 179,
+   "harmful": 74,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "R",
+   "n": 1072,
+   "success": 279,
+   "harmful": 8,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "RT",
+   "n": 1072,
+   "success": 281,
+   "harmful": 11,
+   "missing": 0,
+   "matches_analysis": true
+  },
+  {
+   "model": "meta-llama/Llama-3.1-8B-Instruct",
+   "config": "T",
+   "n": 1072,
+   "success": 254,
+   "harmful": 3,
+   "missing": 0,
+   "matches_analysis": true
+  }
+ ],
+ "primary_diffs": {
+  "EBG-RT": {
+   "crosscheck_pp": 17.1,
+   "analysis_pp": 17.1,
+   "task_pairs": 1072,
+   "analysis_task_pairs": 1072
+  },
+  "EBG-T": {
+   "crosscheck_pp": 14.5,
+   "analysis_pp": 14.5,
+   "task_pairs": 1072,
+   "analysis_task_pairs": 1072
+  },
+  "EBG-LG": {
+   "crosscheck_pp": 15.9,
+   "analysis_pp": 15.9,
+   "task_pairs": 1072,
+   "analysis_task_pairs": 1072
+  },
+  "EBG-B": {
+   "crosscheck_pp": 15.3,
+   "analysis_pp": 15.3,
+   "task_pairs": 1072,
+   "analysis_task_pairs": 1072
+  }
+ },
+ "problems": []
+}

@@ -108,4 +108,4 @@ The p2val2 item audit was performed by the mechanism's maintainer. File timestam
 
 ## 4.11 Execution
 
-Phase 3 started as Slurm array job 4233 (repository commit `d82155c`). Deviations from the planned execution that were recorded before any eval3 outcome was analysed are listed in Section 6.6. Results: [RESULTS PENDING — filled from PHASE3 verified outputs].
+Phase 3 started as Slurm array job 4233 (repository commit `d82155c`). Deviations from the planned execution that were recorded before any eval3 outcome was analysed are listed in Section 13.6. Results: [RESULTS PENDING — filled from PHASE3 verified outputs].

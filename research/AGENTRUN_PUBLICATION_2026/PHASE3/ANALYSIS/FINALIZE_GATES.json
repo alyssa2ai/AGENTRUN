@@ -1,0 +1,318 @@
+{
+ "gate_policy_version": "g4-v2 (2026-11-21)",
+ "client_identity_fields": [
+  "backend",
+  "family",
+  "family_adapter",
+  "model",
+  "model_path",
+  "adapter",
+  "adapter_sha256",
+  "temperature",
+  "seed",
+  "decoding",
+  "max_new_tokens",
+  "dtype",
+  "thinking",
+  "parser_version",
+  "torch",
+  "transformers",
+  "cuda",
+  "gpu"
+ ],
+ "client_observational_fields": [
+  "gpu_mem_gib"
+ ],
+ "n_tasks": 268,
+ "expected_rows_per_cell": 3216,
+ "cells": [
+  {
+   "cell": "qwen25_3b_greedy",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-17T08:58:33+00:00",
+    0,
+    "phase3_4233_0.out"
+   ]
+  },
+  {
+   "cell": "qwen25_3b_T07_s1",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-17T10:40:44+00:00",
+    0,
+    "phase3_4233_1.out"
+   ]
+  },
+  {
+   "cell": "qwen25_3b_T07_s2",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-17T12:24:53+00:00",
+    0,
+    "phase3_4233_2.out"
+   ]
+  },
+  {
+   "cell": "qwen25_3b_T07_s3",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-17T14:10:41+00:00",
+    0,
+    "phase3_4233_3.out"
+   ]
+  },
+  {
+   "cell": "qwen25_7b_greedy",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-17T15:55:15+00:00",
+    0,
+    "phase3_4233_4.out"
+   ]
+  },
+  {
+   "cell": "qwen25_7b_T07_s1",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-17T19:37:52+00:00",
+    0,
+    "phase3_4233_5.out"
+   ]
+  },
+  {
+   "cell": "qwen25_7b_T07_s2",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-17T23:29:58+00:00",
+    0,
+    "phase3_4233_6.out"
+   ]
+  },
+  {
+   "cell": "qwen25_7b_T07_s3",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-18T03:20:32+00:00",
+    0,
+    "phase3_4233_7.out"
+   ]
+  },
+  {
+   "cell": "llama31_8b_greedy",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-18T07:11:02+00:00",
+    0,
+    "phase3_4233_8.out"
+   ]
+  },
+  {
+   "cell": "llama31_8b_T07_s1",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-18T11:03:05+00:00",
+    0,
+    "phase3_4289_9.out"
+   ]
+  },
+  {
+   "cell": "llama31_8b_T07_s2",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-18T14:58:25+00:00",
+    0,
+    "phase3_4290_10.out"
+   ]
+  },
+  {
+   "cell": "llama31_8b_T07_s3",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-18T18:53:25+00:00",
+    0,
+    "phase3_4291_11.out"
+   ]
+  },
+  {
+   "cell": "qwen3_8b_greedy",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-18T22:48:28+00:00",
+    0,
+    "phase3_4292_12.out"
+   ]
+  },
+  {
+   "cell": "qwen3_8b_T07_s1",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-19T01:58:37+00:00",
+    0,
+    "phase3_4293_13.out"
+   ]
+  },
+  {
+   "cell": "qwen3_8b_T07_s2",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-19T02:33:39+00:00",
+    0,
+    "phase3_4294_14.out"
+   ]
+  },
+  {
+   "cell": "qwen3_8b_T07_s3",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 2,
+   "client_observational_diffs": {
+    "gpu_mem_gib": [
+     44.6,
+     44.4
+    ]
+   },
+   "last_segment": [
+    "2026-11-20T10:17:27+00:00",
+    0,
+    "phase3_4326_15.out"
+   ]
+  },
+  {
+   "cell": "qwen25_14b_greedy",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 1,
+   "last_segment": [
+    "2026-11-18T08:58:22+00:00",
+    0,
+    "phase3_4259_16.out"
+   ]
+  },
+  {
+   "cell": "llama32_3b_greedy",
+   "done": true,
+   "rows": 3216,
+   "expected": 3216,
+   "duplicates": 0,
+   "unparsable": 0,
+   "harness_errors": 0,
+   "starts": 2,
+   "client_observational_diffs": {
+    "gpu_mem_gib": [
+     44.6,
+     44.4
+    ]
+   },
+   "last_segment": [
+    "2026-11-20T10:17:57+00:00",
+    0,
+    "phase3_4327_17.out"
+   ]
+  }
+ ],
+ "observational_notes": [
+  "qwen3_8b_T07_s3: observational client.gpu_mem_gib differs between starts start 0=44.6 vs start 1=44.4 (declared observational; excluded from identity comparison only)",
+  "llama32_3b_greedy: observational client.gpu_mem_gib differs between starts start 0=44.6 vs start 1=44.4 (declared observational; excluded from identity comparison only)"
+ ],
+ "failures": [],
+ "pass": true
+}

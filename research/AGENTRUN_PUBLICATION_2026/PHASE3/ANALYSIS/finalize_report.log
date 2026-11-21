@@ -1,0 +1,15 @@
+# Independent cross-check of the analysis output
+
+60 model x configuration counts and 4 pooled primary differences recomputed from raw runs.
+
+| Contrast | cross-check pp | analysis pp | task pairs (cross-check / analysis) |
+|---|---|---|---|
+| EBG-RT | 17.1 | 17.1 | 1072 / 1072 |
+| EBG-T | 14.5 | 14.5 | 1072 / 1072 |
+| EBG-LG | 15.9 | 15.9 | 1072 / 1072 |
+| EBG-B | 15.3 | 15.3 | 1072 / 1072 |
+
+Count rows matching the analysis: 60 / 60
+
+Result: **all values agree**
+wrote PHASE3_ABLATION_RESULTS.md, PHASE3_COMPARISON_TABLES.md, PHASE3_DECISIONS.json, PHASE3_DEVIATIONS.md, PHASE3_EXECUTION_LOG.md, PHASE3_FAILURE_TABLES.md, PHASE3_G4_FORENSIC_REPORT.md, PHASE3_PLATFORM_CONTINUITY.md, PHASE3_STATISTICAL_ANALYSIS.md, PHASE3_STATUS.md and 10 CSV files to .

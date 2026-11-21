@@ -1,0 +1,43 @@
+{
+ "split": "eval3",
+ "annotators": {
+  "qwen14b": {
+   "n": 268,
+   "kappa_class": 0.7674,
+   "exact_agreement": [
+    232,
+    268
+   ],
+   "low_confidence": 6,
+   "unparsed": 0
+  }
+ },
+ "n_valid": 268,
+ "n_primary": 226,
+ "n_flagged": 42,
+ "primary_by_category": {
+  "as_of_question": 6,
+  "authority_both": 12,
+  "backfilled_entry": 10,
+  "conflict_plain": 12,
+  "conflict_rival_neutral": 11,
+  "conflict_same_validity": 10,
+  "historical_question": 9,
+  "hypothetical_change": 11,
+  "incidental_change_word": 12,
+  "missing_timestamp": 8,
+  "negated_both_stand": 7,
+  "negated_replacement": 12,
+  "retention": 12,
+  "same_day_correction_noref": 12,
+  "same_day_correction_ref": 12,
+  "single_record_control": 12,
+  "supersession_later_ref": 12,
+  "three_value_chain": 10,
+  "unconfirmed_change": 11,
+  "unsupported": 12,
+  "update_record_time": 8,
+  "valid_time_same_import": 5
+ },
+ "primary_ids_sha256": "2bc5245ee27aea281f009b3af227ab6109151b11c82604e7a5c01406870ef833"
+}
