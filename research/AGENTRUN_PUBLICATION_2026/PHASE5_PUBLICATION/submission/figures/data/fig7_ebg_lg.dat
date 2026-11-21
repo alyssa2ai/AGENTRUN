@@ -1,0 +1,6 @@
+# source: PHASE3/ANALYSIS/CONFIRMATORY_primary_cells.json -> contrasts[EBG-LG][model]
+y	model	diff	lo	hi	harm	harm_lo	harm_hi	fam_pos	fam_neg
+4	Qwen2.5-3B	12.2	4.6	19.9	-11.3	-15.6	-7.0	62	35
+3	Qwen2.5-7B	23.2	14.9	31.4	-34.0	-40.6	-27.6	66	32
+2	Qwen3-8B	11.8	5.1	18.8	-21.2	-26.8	-15.7	35	17
+1	Llama-3.1-8B	16.3	10.6	22.3	-6.2	-8.3	-4.2	57	27

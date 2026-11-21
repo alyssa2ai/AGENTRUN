@@ -1,0 +1,188 @@
+\documentclass[10pt]{article}
+\usepackage{tmlr}
+
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,shapes.symbols,calc,fit,backgrounds,patterns,patterns.meta,decorations.pathreplacing}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{cleveref}
+
+\input{../figures/palette}
+
+\newcommand{\pp}{\,pp}
+\newcommand{\ci}[2]{[#1,\,#2]}
+\newcommand{\cond}[1]{\textsf{#1}}
+% file paths that may break across lines (hyperref's \nolinkurl breaks at / and _)
+\urlstyle{tt}
+\newcommand{\srcfile}[1]{\nolinkurl{#1}}
+
+\title{Supplementary Material\\
+Evidence-Basis Arbitration for Conflicting Persistent Memory\\in Small Tool-Using Agents}
+\author{\name Anonymous Authors \email anonymous \\ \addr Anonymous Institution}
+\def\month{11}
+\def\year{2026}
+\def\openreview{\url{https://openreview.net/forum?id=XXXX}}
+
+% Give TeX a little slack so that long verbatim paths in captions do not overflow the text block.
+\emergencystretch=6em
+\hyphenpenalty=500
+\tolerance=1200
+
+\begin{document}
+\maketitle
+
+\noindent This supplement contains the material moved out of the main paper: the full result tables, the extended
+benchmark and annotation protocol, the complete deviation record with the epistemic status of each fact, and the
+reproduction instructions. \textbf{It contains no evaluation task text, no gold label, no per-run transcript, no
+credential and no infrastructure identifier.} Section numbers here are independent of the main paper; references
+of the form ``main paper \S8'' point into it.
+
+\tableofcontents
+
+\section{Benchmark construction and annotation}
+
+\subsection{Construction order}
+
+The construction order is what makes the set usable as a confirmatory test, so we state it explicitly.
+
+\begin{enumerate}[leftmargin=1.6em,itemsep=1pt]
+\item A skeleton generator emits groups of records about one (entity, attribute) pair as \emph{structured briefs}:
+the group structure, the record dates, the intended relation between the records, and therefore the correct
+answer. No prose exists at this point, and the gold answer is already fixed.
+\item Record texts and the wording of historical questions are written by Qwen2.5-14B-Instruct \emph{from the
+briefs only}. The writer input contains no gold field, no date or source field and no label words. The writer must
+keep each record's own value verbatim and must write date \emph{values} in ISO form, so that the mechanical
+validator does not reject correct long-form dates; validity dates that are not values may appear in any form.
+Questions about the current state use templates shared with every split, as do distractor texts.
+\item A mechanical validator rejects any item whose text fails to carry its own value, whose value appears in the
+question, or that contains no entity. Of 276 skeleton items, \textbf{268 remained valid}, spanning \textbf{135
+families}; the eight exclusions are recorded by identifier and were caused by long-form value dates.
+\item The set is sealed: a hash manifest over the task file, the skeleton, the groups and the annotations, with
+the manifest's own hash recorded in the freeze record. The runner refuses any task file whose hash differs from
+the sealed one.
+\end{enumerate}
+
+\subsection{Annotation}
+
+eval3 has \textbf{no human validation}. Two model annotators labelled it blind against the three gold classes.
+Agreement with gold was 174/268 ($\kappa=0.471$) for one and 232/268 ($\kappa=0.767$) for the other; 161 items
+have double agreement and 107 are flagged by at least one annotator. These are annotation statistics, not
+outcomes. They are not used as a filter: the primary analysis uses all 268 valid items, and the three subsets are
+reported as sensitivity analyses (\Cref{tab:s-contrasts}).
+
+\subsection{Semantics}
+
+eval3 uses the v2 semantics adopted after a blind annotation of the first validation split showed the earlier gold
+for negated and reported claims to be inconsistent: \emph{a record that only reports a claim, proposes,
+conditions, or says it does not replace the other value does not establish its value, so the established value
+stands.} A conflict requires two asserted values with nothing ordering them, or an explicit statement that both
+stand. The change was made and frozen before the confirmatory data existed.
+
+\section{Complete results}
+
+\subsection{Every contrast, on every item set}
+
+\input{tab_s_contrasts}
+
+\subsection{Every model \texorpdfstring{$\times$}{x} condition cell}
+
+\input{tab_s_permodel}
+
+\subsection{Success by decoding}
+
+\input{tab_s_decoding}
+
+\section{Deviations, with the status of each fact}
+
+The deviation ledger is summarised in the main paper (Table 5). What follows is the part that does not fit there:
+the \emph{epistemic status} of each underlying fact. The distinction matters because the central question --- did
+the platform transition change anything? --- turns on which facts are verified and which are inferred.
+
+\subsection{Verified}
+
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+\item The compute node rebooted at a recorded time, and had been up continuously for the preceding seven weeks
+(scheduler node record; system boot log index).
+\item The post-reboot kernel release and GPU kernel-driver version, and the time the driver module was loaded.
+\item Both GPUs in the node report identical total memory, which excludes device identity as the cause of the
+telemetry change.
+\item The telemetry field recorded in the run manifest moved from 44.6 to 44.4\,GiB, in exactly two cells.
+\item The quarantined fragments contain \textbf{zero complete rows}: 1153 and 3617 bytes respectively.
+\item The console logs of the two interrupted job starts were overwritten by the scheduler's requeue and are
+permanently lost; the corresponding run manifests survive intact.
+\item A resumed sampled cell re-seeds its sampler, because the client seeds once per process.
+\item All 14 mechanism-file hashes, the split hash, the condition list, and every run-identity field are identical
+across both starts of both affected cells and across all 20 starts of the campaign.
+\end{itemize}
+
+\subsection{Inferred}
+
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+\item The \emph{pre}-reboot kernel release and GPU driver version. The node booted before the driver packages were
+upgraded, so it continued running the previously loaded module against newer user-space libraries. This is
+corroborated by a recorded driver/library mismatch on that node during the campaign and by that mismatch
+disappearing after the reboot. The previous boot's kernel log is not readable from the account used, so the
+pre-reboot module version is deduced rather than read. One privileged command would convert it to a verified fact.
+\end{itemize}
+
+\subsection{Unknown}
+
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+\item \textbf{Whether the two driver versions differ in generation behaviour.} No (task, condition) pair exists on
+both platforms --- the quarantined fragments hold no complete rows --- so there is nothing to compare. Settling it
+would require re-running completed cells, which the pre-registration does not permit and which would be a post-hoc
+choice taken with knowledge of which cells were affected. The sensitivity analyses in the main paper's \S9.2
+test a weaker and different question.
+\item The ECC, persistence and firmware state of the GPUs before the reboot: the query tool was non-functional on
+that node at the time, so no reading exists.
+\end{itemize}
+
+\subsection{Scope, restated precisely}
+
+980 of 57{,}888 rows (1.69\%) were produced on the new platform: 871 of 3216 in one cell and 109 of 3216 in the
+other. Because the runner's outer loop is over tasks and its inner loop over the twelve conditions, a resumed
+segment carries all twelve conditions for every whole task it contains; the post-transition segments are balanced
+across conditions to within one row per condition. Exactly two tasks have their own rows split across platforms.
+
+\section{Reproduction}
+
+\subsection{Regenerating the reported numbers}
+
+\begin{enumerate}[leftmargin=1.6em,itemsep=1pt]
+\item Obtain the archived raw outputs and the sealed task file (restricted until publication; hashes are public).
+\item Run the integrity gates. They verify that all 18 cells finished, that each holds exactly $268\times12$
+unique (task, condition) pairs with no duplicate and no unparsable line, that every cell's last job exited
+cleanly, and that the run identity is constant across every start of a cell.
+\item Run the frozen analysis: 100{,}000 seeded permutations, 10{,}000 seeded family bootstraps, Holm over the
+four pre-registered contrasts.
+\item Run the independent cross-check. It recomputes the 60 model $\times$ condition counts and the four primary
+effect sizes by a different route and must agree exactly, or the pipeline stops.
+\item Run the report generator, which computes no statistic of its own.
+\end{enumerate}
+
+All five steps run as one CPU-only batch job with no interactive steps.
+
+\subsection{Regenerating the figures}
+
+Every number plotted in the paper is extracted from the analysis outputs by one script, which writes
+tab-separated data files alongside a provenance index naming the source file and JSON path for each. The figures
+read those files; no figure contains a hand-typed value.
+
+\subsection{What a reproduction cannot match}
+
+GPU kernels are not bitwise deterministic across hardware or library versions. Two cells were not produced on a
+single host platform and cannot be reproduced row for row on one driver version, and one of those re-seeded its
+sampler on resume, so reproducing it byte for byte would require reproducing the interruption at the same row. The
+\emph{analysis} remains byte-reproducible from the archived raw outputs regardless.
+
+\end{document}

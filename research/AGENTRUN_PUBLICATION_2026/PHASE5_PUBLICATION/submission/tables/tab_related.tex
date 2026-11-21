@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\caption{The six closest systems we read in full, against the design dimensions this study varies. Entries for
+prior work describe what those papers do, not how well they do it. The last column states what this study
+\emph{tests}, not what it finds.}
+\label{tab:related}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{0.165\linewidth}p{0.10\linewidth}p{0.08\linewidth}p{0.10\linewidth}p{0.085\linewidth}p{0.095\linewidth}p{0.085\linewidth}p{0.14\linewidth}@{}}
+\toprule
+\textbf{Dimension} & \textbf{DISCERN} & \textbf{PACMI} & \textbf{AMV-Guard} & \textbf{GPM} & \textbf{STALE} & \textbf{CICM} & \textbf{This study} \\
+\midrule
+Who makes the terminal decision
+ & det.\ code over an LLM-built graph & LLM, prompt-level correction & decision-theoretic gate
+ & det.\ services & LLM, constrained readout & the model (reminder or steering)
+ & the agent; policy may send one reversible notice \\[2pt]
+Same information advisory vs enforced, compared
+ & no & no & vs fixed policies & governed vs ungoverned & not directly & reminder vs routing
+ & \textbf{yes} (\cond{T}/\cond{RT}; \cond{EB}/\cond{EBG}; \cond{LA}/\cond{LG}) \\[2pt]
+Labels state their evidence basis; enforcement gated on it
+ & no (uniform gates) & no & no & no & no & no
+ & \textbf{tested} (\cond{EBG}/\cond{EBG-all}) \\[2pt]
+Deterministic vs LLM arbiter under one policy
+ & no & no & no & no & no & no & \textbf{tested} (\cond{EBG}/\cond{LG}) \\[2pt]
+Agents $\le$ 14B, open weights
+ & no & no & no & baseline only & partly & yes, not agentic & yes (3B--14B) \\[2pt]
+Cost of a wrong reliability label measured
+ & no & partly & modelled & fail-closed by design & implicit & no
+ & harmful-answer rate per condition \\
+\bottomrule
+\end{tabular}
+\end{table}

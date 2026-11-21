@@ -1,0 +1,32 @@
+\begin{table}[h]
+\centering
+\caption{What this paper contributes, and where each claim is supported. ``Confirmatory'' means pre-registered and
+frozen before the data existed; everything else is labelled as it is reported.}
+\label{tab:contributions}
+\small
+\begin{tabular}{@{}p{0.46\linewidth}p{0.26\linewidth}p{0.22\linewidth}@{}}
+\toprule
+\textbf{Contribution} & \textbf{Status of the evidence} & \textbf{Where} \\
+\midrule
+A pre-registered confirmatory comparison of gated evidence-basis enforcement against enforced record-and-temporal
+labels, advisory temporal labels, an LLM arbiter under the same policy, and unlabelled memory, with Holm
+correction over the four contrasts.
+& Confirmatory & \Cref{sec:results}, \Cref{fig:forest} \\[2pt]
+A measurement of the cost of enforcing labels the evidence does not support: harmful-answer and false-resolution
+rates per condition, including the pre-registered harm test.
+& Confirmatory (harm test); descriptive rates & \Cref{sec:results}, \Cref{fig:tradeoff} \\[2pt]
+Component ablations that separate labels, enforcement, gating, safe submission and search-before-submit --- and
+show that gating \emph{costs} accuracy.
+& Exploratory, BH-adjusted & \Cref{sec:ablations} \\[2pt]
+A deterministic-versus-LLM arbiter comparison under one identical downstream policy, separating arbitration
+quality from policy.
+& Exploratory & \Cref{sec:ablations} \\[2pt]
+A sealed evaluation set whose gold is fixed before any text exists, with blind model annotation; released with
+hashes. We do not present it as a benchmark of record.
+& Artifact & \Cref{sec:dataset} \\[2pt]
+A pre-stated account of the mechanism's known failures, written before any confirmatory outcome, extended
+afterwards without softening.
+& Pre-registered, then extended & \Cref{sec:limitations} \\
+\bottomrule
+\end{tabular}
+\end{table}

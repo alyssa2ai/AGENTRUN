@@ -1,0 +1,30 @@
+\begin{table}[t]
+\centering
+\caption{Sensitivity of the four pre-registered contrasts, in percentage points of task success. The top block
+varies the item set and was pre-registered; the bottom block varies the data included because of the platform
+transition (\Cref{tab:deviations}) and is post-hoc and exploratory. In the top block every contrast keeps its
+sign, every interval excludes zero, and every Holm-adjusted $p$ stays below 0.05.}
+\label{tab:sensitivity}
+\small
+\setlength{\tabcolsep}{5.5pt}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+\textbf{Analysis} & \textbf{Tasks} & \textbf{Runs} & \cond{EBG}$-$\cond{RT} & \cond{EBG}$-$\cond{T} & \cond{EBG}$-$\cond{LG} & \cond{EBG}$-$\cond{B} \\
+\midrule
+\textbf{Primary (confirmatory)} & 268 & 51\,456 & $\boldsymbol{+17.1}$ & $\boldsymbol{+14.5}$ & $\boldsymbol{+15.9}$ & $\boldsymbol{+15.3}$ \\
+Double-agreement subset         & 161 & 30\,912 & $+14.3$ & $+12.7$ & $+19.7$ & $+14.7$ \\
+Flagged complement              & 107 & 20\,544 & $+21.3$ & $+17.2$ & $+10.2$ & $+16.4$ \\
+Qwen2.5-14B-agreed subset       & 232 & 44\,544 & $+15.3$ & $+13.9$ & $+15.5$ & $+14.8$ \\
+\midrule
+\multicolumn{7}{@{}l}{\emph{Post-hoc, exploratory: sensitivity to the mid-campaign platform transition}} \\
+Straddling cell excluded        & 268 & 48\,240 & $+17.0$ & $+14.4$ & $+15.9$ & $+15.3$ \\
+Qwen3-8B, pre-transition only\footnotemark[2] & 268 & 9\,648 & $+24.8$ & $+15.7$ & $+11.9$ & $+17.4$ \\
+\bottomrule
+\end{tabular}
+\footnotetext[2]{A single-model analysis, comparable to that model's own confirmatory estimates
+(\cond{EBG}$-$\cond{RT} $=+25.0$ with all four decodings), not to the pooled figures above it.}
+
+\vspace{2pt}
+{\footnotesize Source: \texttt{PHASE3/ANALYSIS/\{CONFIRMATORY\_primary\_cells, SENSITIVITY\_*,
+EXPLORATORY\_*\}.json}.}
+\end{table}

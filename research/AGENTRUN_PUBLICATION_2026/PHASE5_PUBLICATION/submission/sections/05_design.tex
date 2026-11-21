@@ -1,0 +1,65 @@
+\section{Experimental design and pre-registration}
+\label{sec:design}
+
+\input{figures/fig4_design}
+
+\subsection{What was frozen, and when}
+
+The mechanism was frozen on 14 November 2026: nine arbiter modules, the runner, the analysis script and the
+component evaluator, with three frozen dependencies, recorded as a hash manifest. The evaluation set was sealed on
+16 November, its gold fixed before any agent saw it. The analysis was pre-registered and frozen on 17 November,
+with its own SHA-256 recorded in the seal manifest, \emph{before} the first confirmatory run. Every job then
+refused to start unless the mechanism files matched the freeze, the sealed directory passed its checksum, and the
+pre-registration hash matched the recorded value; all 20 job starts of the campaign passed all three.
+
+\subsection{Hypotheses}
+
+The pre-registration fixes four success contrasts and one harm test, in this order, with Holm correction over the
+four:
+
+\begin{description}[leftmargin=4.4em,itemsep=1pt,topsep=2pt,font=\normalfont\sffamily]
+\item[H-primary] \cond{EBG} yields higher task success than \cond{RT} (enforced record-and-temporal labels).
+\item[S1] \cond{EBG} yields higher task success than \cond{T} (advisory temporal labels).
+\item[S2] \cond{EBG} yields higher task success than \cond{LG} (LLM arbiter under the same gated policy).
+\item[S3] \cond{EBG} yields higher task success than \cond{B} (memory without labels).
+\item[S4] \cond{EBG}'s harmful-answer rate is \emph{no higher} than \cond{RT}'s.
+\end{description}
+
+S4 is a test the mechanism can fail, not one it can pass: its possible verdicts are ``falsified'' and ``not
+falsified''. The pre-registration also named three outcomes that would falsify the contribution ---
+\cond{EBG} $-$ \cond{RT} $\le 0$, \cond{EBG} $-$ \cond{LG} $\le 0$, and \cond{EBG}'s harmful rate exceeding
+\cond{RT}'s --- and required all of them to be reported whatever their sign.
+
+\subsection{Unit, clustering and test}
+
+The unit of analysis is the task. Success per task is the mean over a model's decodings; contrasts are paired
+within model and decoding. Families --- (category, attribute) pairs, 135 of them among the valid items --- are the
+clustering unit, because tasks within a family share a template and are not independent. The test is a two-sided
+sign-flip permutation of family-level summed differences with families pooled across models, so a family's sign is
+flipped for all models together; with 135 families exact enumeration is infeasible and the analysis uses 100{,}000
+seeded Monte-Carlo draws, whose smallest attainable estimate is $1\times10^{-5}$
+\citep{good2005permutation}. Confidence intervals are 95\% percentile bootstraps over families with 10{,}000
+seeded resamples \citep{efron1979bootstrap,field2007clustered}. Holm's step-down procedure controls the familywise
+error rate over the four pre-registered contrasts at $\alpha=0.05$ \citep{holm1979simple}; every other contrast is
+exploratory and reported with Benjamini--Hochberg adjustment \citep{benjamini1995fdr}.
+
+\subsection{Exclusions and missing runs}
+
+There are \textbf{no run-level exclusions}. Unparsable outputs, harness errors and step-limit hits are failures. A
+(task, condition) pair with no row, or with a harness error, is scored as a failure and counted separately; a cell
+with more than 5\% missing pairs is re-submitted once, with the runner resuming. In this campaign no pair was
+missing and no harness error occurred, so these rules never had to be applied.
+
+\subsection{A documented inconsistency in the frozen document}
+
+The pre-registration is internally inconsistent about the primary item set. Its \S5 states that the primary set is
+every mechanically valid item; its \S6 and \S8 still contain an earlier rule under which flagged items --- those
+with annotator disagreement or low confidence --- would be excluded from the primary analysis. The \S6 and \S8
+wording was not updated when \S5 was revised.
+
+We follow \S5 and the recorded primary-set decision: the primary set is all 268 valid items, and the
+double-agreement and flagged subsets are reported as sensitivity analyses. We report this as a defect in the frozen
+document rather than correct it silently, and \Cref{tab:sensitivity} gives the numbers a reader who prefers the
+\S6 reading would need: the four contrasts are $+14.3$, $+12.7$, $+19.7$ and $+14.7$\pp{} on the 161-task
+double-agreement subset, all with intervals above zero and Holm-adjusted $p<0.05$. The conclusions do not depend
+on which reading is taken.

@@ -1,0 +1,48 @@
+\section{Statistical analysis}
+\label{sec:statistics}
+
+\input{tables/tab_sensitivity}
+
+\subsection{Sensitivity to the item set}
+
+\Cref{sec:design} records a wording inconsistency in the frozen pre-registration about which items form the
+primary set. The analysis follows \S5 --- all 268 mechanically valid items --- and reports the alternatives so
+that a reader who prefers the \S6 reading can apply it. Across the double-agreement subset (161 tasks), the
+flagged complement (107) and the subset agreed by the stronger annotator (232), every contrast keeps its sign,
+every interval excludes zero, and every Holm-adjusted $p$ stays below 0.05 (\Cref{tab:sensitivity}). The
+pre-registered conclusions do not depend on the item-set reading.
+
+\subsection{Sensitivity to the platform transition}
+
+Two of the eighteen cells contain rows produced after an unplanned compute-node reboot that changed the host
+kernel and GPU driver (\Cref{sec:limitations}, \Cref{tab:deviations}). Both analyses below were specified
+\emph{after} that transition came to light and \emph{before} any confirmatory outcome was inspected, but they are
+post-hoc with respect to the pre-registration. They are exploratory, reported separately, and they do not change
+the pre-registered verdicts.
+
+Dropping the straddling cell entirely moves the pooled primary estimates by at most $0.1$\pp. Restricting Qwen3-8B
+to its three pre-transition decodings gives $+24.8$\pp{} on H-primary against $+25.0$\pp{} with all four --- a
+difference far inside the bootstrap interval.
+
+\paragraph{What this establishes, and what it does not.} It establishes that the pre-registered conclusions do not
+depend on the one cell whose rows straddle the platform change. It does \emph{not} establish that the platform
+change had no effect on generation: these analyses drop or isolate the straddling cell, they do not compare the
+same task and condition across the two driver versions, which this campaign cannot do because no such pair exists.
+Agreement here is consistent with the transition being inert and equally consistent with an effect too small to
+move a family-clustered permutation test at this sample size, and it says nothing about the two individual tasks
+whose own rows are split across platforms.
+
+\subsection{Independent cross-check}
+
+A second implementation recomputed the 60 model $\times$ condition success counts and the four pooled primary
+differences directly from the raw run files, by a different route from the frozen analysis. All 60 counts and all
+four differences agree exactly ($+17.1$ against $+17.1$ on H-primary, 1072 task pairs against 1072, and likewise
+for the other three). The pipeline is configured to stop if they disagree.
+
+\subsection{Multiplicity and what is not corrected}
+
+Holm correction covers exactly the four pre-registered contrasts. Everything else --- the component ablations of
+\Cref{sec:ablations}, the per-model estimates, the descriptive rates and the two platform analyses above --- is
+exploratory and reported with Benjamini--Hochberg adjustment where a $p$-value is given at all. We draw no
+confirmatory conclusion from any of them, including the \cond{EBG} $-$ \cond{EBG-all} result that we consider the
+most interesting finding in the paper.

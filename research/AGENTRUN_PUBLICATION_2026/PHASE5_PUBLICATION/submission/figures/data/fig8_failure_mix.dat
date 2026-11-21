@@ -1,0 +1,14 @@
+# source: PHASE3/results/per_model_config.csv (primary models); categories are not mutually exclusive in the scorer, so 'other' absorbs the remainder and the bars are a decomposition of outcome rates, not a partition
+config	correct	false_conflict	over_abstain	harmful	format_err	other
+B	46.0	26.4	15.3	7.0	2.8	2.4
+G	43.5	31.4	11.9	7.9	3.1	2.1
+T	46.9	28.5	13.0	7.4	2.6	1.7
+R	45.0	24.1	7.7	16.1	5.3	1.8
+RT	44.2	16.3	9.7	22.6	5.5	1.8
+LA	47.9	19.3	14.8	13.2	3.0	1.8
+LG	45.4	13.4	15.8	21.3	2.8	1.3
+EB	55.3	24.3	13.2	2.7	2.5	2.0
+EBG	61.3	20.2	11.5	3.1	2.8	1.0
+EBG-all	71.1	5.5	12.7	6.9	2.8	1.0
+EBG-unsafe	61.5	19.5	8.7	3.3	5.8	1.1
+EBG-noR3	60.0	19.1	14.1	3.4	2.4	1.0

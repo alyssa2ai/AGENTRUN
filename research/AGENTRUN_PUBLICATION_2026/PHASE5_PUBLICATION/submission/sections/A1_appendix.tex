@@ -1,0 +1,54 @@
+\section{Pre-registered verdict rules}
+\label{app:verdicts}
+
+The verdict for each hypothesis was fixed before the data existed and applied mechanically by the analysis script.
+For H-primary and S1--S3 a hypothesis is \emph{supported} if its Holm-adjusted $p<0.05$ \emph{and} its 95\%
+confidence interval lies entirely above zero; otherwise it is \emph{not supported}. S4 has only two possible
+verdicts: it is \emph{falsified} if the confidence interval for the \cond{EBG} $-$ \cond{RT} harmful difference
+lies entirely above zero, or if \cond{EBG}'s arbitrary-pick count exceeds \cond{RT}'s; otherwise it is \emph{not
+falsified}. No verdict rule was changed after the freeze, and the script that applies them is released.
+
+\section{Condition-level rates}
+\label{app:rates}
+
+\Cref{tab:rates} gives the pooled primary rates behind \Cref{fig:tradeoff} and \Cref{fig:failures}. Per-model
+tables, per-decoding tables, per-category tables and the full set of contrasts for every item set are in the
+supplementary material.
+
+\begin{table}[h]
+\centering
+\caption{Outcome rates by condition, pooled over the four primary models and four decodings ($n=4288$ runs per
+condition). Conflict preservation and false resolution are over conflict groups and are pooled over all six
+models. Source: \srcfile{PHASE3/results/per_model_config.csv} and
+\srcfile{PHASE3/ANALYSIS/METRICS.json}.}
+\label{tab:rates}
+\small
+\setlength{\tabcolsep}{4.4pt}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+\textbf{Cond.} & \textbf{Success} & \textbf{Harmful} & \textbf{Arb.} & \textbf{Unnec.} & \textbf{Format} & \textbf{Conflict} & \textbf{False} \\
+ & \% & \% & \textbf{picks} & \textbf{abst.\ \%} & \textbf{err.\ \%} & \textbf{pres.\ \%} & \textbf{res.\ \%} \\
+\midrule
+\cond{B}           & 46.0 & 7.0  & 172 & 19.5 & 3.2 & 65.2 & 12.8 \\
+\cond{G}           & 43.5 & 7.9  & 109 & 16.0 & 3.7 & 72.8 & 9.2  \\
+\cond{T}           & 46.9 & 7.4  & 35  & 16.9 & 3.1 & 79.6 & 3.6  \\
+\cond{R}           & 45.0 & 16.1 & 153 & 9.4  & 6.1 & 74.2 & 12.3 \\
+\cond{RT}          & 44.2 & 22.6 & 252 & 11.1 & 6.2 & 66.8 & 19.0 \\
+\cond{LA}          & 47.9 & 13.2 & 295 & 18.4 & 3.5 & 57.8 & 21.9 \\
+\cond{LG}          & 45.4 & 21.3 & 510 & 17.1 & 3.3 & 42.4 & 37.0 \\
+\cond{EB}          & 55.3 & 2.7  & 13  & 16.7 & 3.1 & 81.6 & 2.0  \\
+\textbf{\cond{EBG}} & \bfseries 61.3 & \bfseries 3.1 & \textbf{13} & \bfseries 12.8 & \bfseries 3.3 & \bfseries 88.5 & \bfseries 1.9 \\
+\cond{EBG-all}     & 71.1 & 6.9  & 166 & 13.9 & 3.3 & 77.3 & 12.9 \\
+\cond{EBG-unsafe}  & 61.5 & 3.3  & 12  & 9.9  & 6.4 & 89.0 & 1.6  \\
+\cond{EBG-noR3}    & 60.0 & 3.4  & 14  & 17.6 & 2.9 & 83.3 & 1.9  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Supplementary material}
+\label{app:supp}
+
+The supplement contains the full per-model and per-decoding result tables, the complete contrast set for all four
+item sets, the extended failure tables, the detailed benchmark construction and annotation protocol, the
+deviation ledger with its evidence classified as verified, inferred or unknown, and the reproduction instructions.
+It contains no eval3 task text, gold label, per-run transcript, credential or infrastructure identifier.

@@ -1,0 +1,6 @@
+# source: PHASE3/ANALYSIS -> Qwen2.5-14B-agreed (232 tasks)
+y	diff	lo	hi	contrast
+4	15.3	10.2	20.7	EBG-RT
+3	13.9	9.6	18.4	EBG-T
+2	15.5	9.8	21.4	EBG-LG
+1	14.8	9.5	20.3	EBG-B

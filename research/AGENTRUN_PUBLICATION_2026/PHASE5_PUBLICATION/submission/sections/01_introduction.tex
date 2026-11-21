@@ -1,0 +1,76 @@
+\section{Introduction}
+\label{sec:intro}
+
+An agent with persistent memory is an agent that will eventually read two records that disagree. A budget was
+revised, a deadline moved, a staging port changed; the store holds both the old statement and the new one, and
+sometimes holds two statements that nothing in the record metadata can order. What the agent does at that moment
+determines whether persistent memory is an asset or a liability.
+
+The common engineering answer is to label records by reliability --- derived from when each was written --- and to
+enforce those labels at the terminal action, so that the agent cannot submit a value the labelling says is stale.
+This paper reports that, for small open-weight agents, both halves of that answer can misfire, and measures by how
+much.
+
+\subsection{Two failures that motivate the work}
+
+The study began from a specific failure observed during development, not from a general belief that memory
+safeguards help. In an exploratory pilot on development splits we gave small agents reliability labels derived only
+from record metadata --- the date a record was written. When that metadata could not order the records, as for a
+same-day correction or a pair ordered only by dates stated in the text, the labels declared the records
+``conflicting''. The agents followed the label instead of the text. For one 7B model on same-day corrections,
+correct runs fell from 22 of 24 without labels to 3 of 24 with metadata labels. Enforcing the labels at the terminal
+action did not repair this, because enforcement reads the same labels.
+
+A follow-up arbiter that ordered records from textual evidence removed much of that harm on held-out development
+phrasings, but exposed the counterpart risk. When the arbiter itself resolved a genuine conflict wrongly --- a
+negated cue read as a correction --- enforcement turned five or six of six correct \cond{conflict} answers per model
+into arbitrary picks. We call this \textbf{false-resolution harm}: a mechanism confidently asserts an ordering the
+evidence does not support, and the agent, or the harness acting for it, commits to a wrong value.
+
+These two failures have the same shape. A reliability signal is produced from the wrong information, and the
+machinery downstream --- the agent's deference, or the policy's enforcement --- amplifies it.
+
+\subsection{Approach}
+
+We test \textbf{evidence-basis arbitration}. A deterministic arbiter, Evarb-0.2, assigns every record in a group of
+same-attribute records a status together with the \emph{evidence basis} for that status --- an explicit correction
+naming the rival value, a stated validity date, the record date, an authoritative source, a genuine contradiction,
+or insufficient evidence --- and a \emph{strength}: strong, moderate or none. The agent is shown these labels. At the
+terminal action a policy may send one reversible notice when the submitted answer disagrees with the arbitration,
+but it \emph{enforces} only resolutions of strong strength. This is \textbf{gating}. If the agent's response to a
+notice is unusable, the pre-notice answer stands (\textbf{safe submission}). The full condition, \cond{EBG}, also
+asks the agent to search memory before submitting when it has not done so.
+
+The central question has two halves, and we test both:
+
+\begin{quote}
+Does evidence-basis-aware arbitration improve persistent-memory reliability in tool-using LLM agents, and can
+indiscriminate enforcement of memory labels cause more harmful answers despite improving raw accuracy?
+\end{quote}
+
+\subsection{Contributions}
+
+\input{tables/tab_contributions}
+
+The mechanism was frozen before the confirmatory data set was built, and the analysis was pre-registered and frozen
+before any confirmatory run. The campaign produced 57{,}888 agent runs with no missing pair, no duplicate and no
+harness error.
+
+\textbf{Results.} All four pre-registered contrasts are supported: \cond{EBG} raised task success over enforced
+record-and-temporal labels by $17.1$\pp, over advisory temporal labels by $14.5$\pp, over an LLM arbiter under the
+same gated policy by $15.9$\pp, and over unlabelled memory by $15.3$\pp, each with a bootstrap interval clear of
+zero after Holm correction and in the same direction for all six models. The harmful-answer rate fell from 22.6\% to
+3.1\% and arbitrary picks from 252 runs to 13.
+
+\textbf{And two results that cut against the proposed design.} Enforcing every arbitration instead of only
+strong-strength ones scored $9.7$\pp{} \emph{higher} while more than doubling harm; and the same gating driven by an
+LLM arbiter gave no gain and $8.1$\pp{} more harm. We report these as prominently as the supportive results, because
+together they locate the contribution more precisely than the headline contrasts do: what matters is not
+enforcement, and not gating, but having an evidence basis that tells enforcement where to stop.
+
+\subsection{Scope}
+
+The study concerns small open-weight models (3B--14B) in one synthetic tool-use harness with templated records,
+English text and ISO-format value dates. It makes no claim about frontier models, natural memory logs, implicit
+conflicts without lexical cues, or other harnesses. \Cref{sec:limitations} lists the limitations that were fixed
+before the confirmatory results existed, and those the results themselves revealed.

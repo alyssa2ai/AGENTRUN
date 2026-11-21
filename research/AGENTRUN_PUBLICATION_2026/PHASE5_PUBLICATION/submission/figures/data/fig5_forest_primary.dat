@@ -1,0 +1,6 @@
+# source: PHASE3/PHASE3_DECISIONS.json -> hypotheses[*].diff_pp, ci95_pp
+y	diff	lo	hi	hyp	contrast
+4	17.1	12.2	22.1	H-primary	EBG$-$RT
+3	14.5	10.5	18.6	S1	EBG$-$T
+2	15.9	10.4	21.2	S2	EBG$-$LG
+1	15.3	10.3	20.5	S3	EBG$-$B

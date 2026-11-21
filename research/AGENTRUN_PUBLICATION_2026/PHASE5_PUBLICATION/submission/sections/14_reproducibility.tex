@@ -1,0 +1,52 @@
+\section{Reproducibility and artifact availability}
+\label{sec:reproducibility}
+
+\input{figures/fig9_integrity}
+
+\subsection{Provenance of every row}
+
+Each cell writes a manifest at every start recording the model identity and resolved snapshot, the adapter (none
+here) and its hash, decoding parameters and seed, dtype, maximum new tokens, parser version, family adapter,
+framework and CUDA runtime versions, the GPU model, the split hash, the condition list, the SHA-256 of all 14
+mechanism and harness files, the job id, the start time, and how many pairs were already complete at that start.
+The 14 code hashes are identical across all 20 starts of the campaign. A SHA-256 manifest over every raw file is
+written when the campaign closes and re-verified before anything is analysed (\Cref{fig:integrity}).
+
+\subsection{Regenerating every number}
+
+The whole pipeline runs as one CPU-only batch job with no interactive steps: integrity gates, staging, the
+platform-continuity report, verification, the frozen analysis, the exploratory analyses, an independent
+cross-check, report generation and a final hash manifest, stopping at the first failure. Every reported number
+comes from that path; the independent cross-check must agree exactly or the pipeline stops, and the report
+generator computes no statistic of its own. On the shareable development split the same pipeline reproduces its
+outputs byte for byte.
+
+\subsection{What a reproduction can and cannot match}
+
+The \emph{analysis} is reproducible byte for byte from the archived raw outputs: permutations and bootstraps are
+seeded and the gates re-verify the inputs first. Regenerating the \emph{raw outputs} is a weaker guarantee, with
+three specific caveats: GPU kernels are not bitwise deterministic across hardware or library versions; two cells
+were not produced on a single host platform and cannot be reproduced row for row on one driver version; and one of
+those cells re-seeded its sampler when it resumed, so reproducing it byte for byte would require reproducing the
+interruption at the same row (\Cref{tab:deviations}).
+
+\subsection{Availability}
+
+\textbf{Released with the paper:} the code (mechanism, harness, runner, analysis, integrity gates, tests), the
+frozen manifests, the pre-registration, the development splits and their runs, all aggregate results in JSON and
+CSV, the generated reports, the deviation ledger and the platform-continuity report, and a reproducibility package
+documenting environment, model snapshots, dataset rules, batch scripts, analysis instructions, expected outputs,
+tests, limitations and deviations, with SHA-256 manifests over all of it.
+
+\textbf{Withheld until publication:} the eval3 items, their annotations and the per-run transcripts, so that the
+test set stays uncontaminated; their hashes are public, so a later release can be checked against the frozen
+versions. The cluster's per-run logs are withheld for the same reason, because their progress lines carry per-task
+outcomes.
+
+\textbf{Not redistributed:} model weights. The exact snapshot hashes are listed in the package; obtain the weights
+under each model's own licence. Because the eval3 texts were written by Qwen2.5-14B-Instruct, that model's licence
+terms on outputs apply to them.
+
+Nothing here claims public availability for an artifact that is in fact restricted, and the released materials
+contain no credentials, tokens, keys, host names, addresses or account identifiers; a check in the packaging
+script fails the build if any appear.

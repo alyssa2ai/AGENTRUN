@@ -1,0 +1,79 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{What the study shows}
+
+The research question had two halves, and they do not point the same way.
+
+On the first, the pre-registered comparison is unambiguous within its scope. The full mechanism beat enforced
+record-and-temporal labels by $17.1$\pp{} of task success, advisory temporal labels by $14.5$\pp, an LLM arbiter
+under the same gated policy by $15.9$\pp, and unlabelled memory by $15.3$\pp, with every interval clear of zero
+after Holm correction, in the same direction for all six models, and stable across three item-set definitions.
+Harm fell with it: 3.1\% of \cond{EBG} runs were harmful against 22.6\% under \cond{RT}, and arbitrary picks fell
+from 252 to 13.
+
+On the second, the answer is yes --- and it cuts against our own design. Enforcing every arbitration rather than
+only strong ones raised false resolution from 1.9\% to 12.9\%, restored arbitrary picks from 13 to 166, and more
+than doubled the harmful rate. It also scored $9.7$\pp{} \emph{higher} on task success. Gating buys safety with
+accuracy; it does not dominate.
+
+\subsection{Where the effect actually comes from}
+
+The ablations locate the benefit more precisely than the headline contrasts do, and they relocate it. Most of it
+is in the labels: evidence-basis statuses with no enforcement at all are worth $+11.8$\pp{} over metadata labels
+and $+8.5$\pp{} over advisory temporal labels, and cut harm from about 7.5\% to 2.7\%. Gating adds a further
+$+6.0$\pp. Safe submission adds nothing measurable to success while halving format errors, and
+search-before-submit adds about $1.3$\pp.
+
+The \cond{LG} $-$ \cond{LA} contrast says why that ordering matters. The same gating machinery driven by an LLM
+arbiter produced no success gain and $8.1$\pp{} \emph{more} harm, with 37.0\% false resolution. Enforcement
+inherits the reliability of whatever supplies its labels: enforcing a record-metadata scanner's labels tripled harm
+relative to plain memory, enforcing a language model's tripled it too, and enforcing a deterministic,
+evidence-grounded arbiter's strong resolutions did not. The contribution is therefore best stated as \emph{the
+evidence basis is what makes enforcement safe to apply and tells you where to stop applying it} --- not that
+gating, or enforcement, is good in itself.
+
+\subsection{The label-harm finding replicates}
+
+The study began from a development observation: metadata-derived reliability labels made small agents worse than
+no labels, because the agents followed the label instead of the text. On sealed confirmatory data this replicates
+without modification --- \cond{G} 43.5\% against \cond{B} 46.0\%, with more harm and more false conflicts --- and
+enforcing those labels made it worse again. A reliability signal the evidence does not support is not merely
+useless to a small agent; it is actively misleading, and enforcement amplifies it. This is consistent with prior
+mechanistic evidence that models can bind a stale value while still encoding the update, and that compliance with
+an advisory correction depends on the model family \citep{guo2026cicm}.
+
+\subsection{Where it does not generalise}
+
+Model family matters more than model size for \emph{how} the mechanism helps. For the three Qwen models the story
+is the one the hypotheses describe: harmful answers become correct ones, with harm differences of $-24.5$ to
+$-27.7$\pp. For Llama-3.1-8B it is not: that model abstains on 44\% of \cond{EBG} runs, fails to format an answer
+on 11\%, is the least harmful model in the study under every condition, and gains its $+6.8$\pp{} by converting
+abstentions into answers. Its harm difference is $-0.3$\pp{} because there was almost no harm to remove. The
+pre-registration anticipated this risk; eval3 gives a small positive effect whose interval excludes zero, which is
+better than the development data suggested but is not the same effect as the one measured on Qwen. We do not claim
+universal superiority across families.
+
+Nor is the absolute picture good. The best condition answers 61.3\% of tasks correctly and 46.0\% of those with a
+definite answer. These are small models on synthetic, template-regular, English, ISO-dated records in one harness,
+and on a benchmark that by construction contains the lexically signalled cases this arbiter is built to read.
+
+\subsection{Three kinds of evidence, kept apart}
+
+Three kinds of claim appear in this paper and should not be read alike. The pilot observations and the development
+split results are \textbf{development evidence}: they motivated the design and the power analysis and are not
+tests of it. The four Holm-corrected contrasts and S4 are \textbf{confirmatory}: pre-registered, frozen before the
+data existed, reported here with whatever sign they came out. Everything in \Cref{sec:ablations}, the three
+item-set sensitivity analyses and the two platform analyses are \textbf{exploratory}; the last two are
+additionally post-hoc. We draw no confirmatory conclusion from any of them --- including the
+\cond{EBG} $-$ \cond{EBG-all} trade that we consider the most interesting result in the paper.
+
+\subsection{What would change our mind}
+
+Four results would undermine the contribution as stated. A replication in which evidence-basis labels without
+enforcement did not beat metadata labels would remove the part of the effect we consider best supported. A
+benchmark that prices wrong confident answers against missed correct ones, on which ungated enforcement came out
+ahead overall, would make gating the wrong default rather than a defensible one. A model family on which
+\cond{EBG} lowered success would bound the claim further than Llama-3.1-8B already does. And a transcript study
+showing that \cond{EBG}'s remaining 20.2\% false conflicts are items the arbiter \emph{could} have resolved from
+the text would move its known limitations from a documented residue to a design flaw.

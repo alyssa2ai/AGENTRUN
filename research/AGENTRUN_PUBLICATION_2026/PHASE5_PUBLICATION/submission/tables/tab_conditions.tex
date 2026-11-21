@@ -1,0 +1,30 @@
+\begin{table}[t]
+\centering
+\caption{The twelve conditions. All twelve run in every cell. \cond{EBG} is the proposed condition; \cond{RT} is
+the pre-registered primary comparator. ``Enforced'' means the policy may block or correct a submission that
+disagrees with the arbitration; ``gated'' restricts that to resolutions of strong strength.}
+\label{tab:conditions}
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llllccl@{}}
+\toprule
+\textbf{Condition} & \textbf{Labels shown} & \textbf{Enforcement} & \textbf{Search} & \textbf{Safe} & \textbf{Role} \\
+ & & & \textbf{first} & \textbf{submit} & \\
+\midrule
+\cond{B}   & none (memory only)      & ---                     & ---  & ---  & no-label baseline \\
+\cond{G}   & metadata (record date)  & ---                     & ---  & ---  & advisory metadata \\
+\cond{R}   & metadata                & every label             & yes  & no   & prior enforcement \\
+\cond{T}   & temporal arbiter        & ---                     & ---  & ---  & advisory temporal labels \\
+\cond{RT}  & temporal arbiter        & every label             & yes  & no   & \textbf{primary comparator} \\
+\midrule
+\cond{EB}  & evidence basis          & ---                     & ---  & ---  & labels only, advisory \\
+\textbf{\cond{EBG}} & \textbf{evidence basis} & \textbf{gated (strong only)} & \textbf{yes} & \textbf{yes} & \textbf{proposed} \\
+\cond{EBG-all}      & evidence basis  & strong \emph{and} moderate & yes & yes & ablation: the gate \\
+\cond{EBG-unsafe}   & evidence basis  & gated                   & yes  & no   & ablation: safe submission \\
+\cond{EBG-noR3}     & evidence basis  & gated                   & no   & yes  & ablation: search-before-submit \\
+\midrule
+\cond{LA}  & LLM arbiter             & ---                     & ---  & ---  & LLM arbiter, advisory \\
+\cond{LG}  & LLM arbiter             & gated                   & yes  & yes  & LLM arbiter, EBG policy \\
+\bottomrule
+\end{tabular}
+\end{table}

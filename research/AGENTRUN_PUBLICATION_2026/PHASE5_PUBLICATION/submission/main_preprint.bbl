@@ -1,0 +1,222 @@
+\begin{thebibliography}{37}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ahuja et~al.(2026)Ahuja, Tanov, Kakarla, and Taws]{ahuja2026discern}
+Chirag Ahuja, Vladislav Tanov, Ramcharan Kakarla, and Jonathan Taws.
+\newblock {DISCERN}: Preserve at write, resolve at read for persistent
+  {LLM}-agent memory, 2026.
+
+\bibitem[Anand et~al.(2026)Anand, Raj, Jha, and Saha]{anand2026memoir}
+Mayank Anand, Subham Raj, Aman~Vaibhav Jha, and Sriparna Saha.
+\newblock {MEMOIR}: A training-free memory lifecycle for long-horizon {LLM}
+  agents, 2026.
+
+\bibitem[Asai et~al.(2023)Asai, Wu, Wang, Sil, and Hajishirzi]{asai2023selfrag}
+Akari Asai, Zeqiu Wu, Yizhong Wang, Avirup Sil, and Hannaneh Hajishirzi.
+\newblock {Self-RAG}: Learning to retrieve, generate, and critique through
+  self-reflection, 2023.
+
+\bibitem[Benjamini \& Hochberg(1995)Benjamini and Hochberg]{benjamini1995fdr}
+Yoav Benjamini and Yosef Hochberg.
+\newblock Controlling the false discovery rate: A practical and powerful
+  approach to multiple testing.
+\newblock \emph{Journal of the Royal Statistical Society: Series B
+  (Methodological)}, 57\penalty0 (1):\penalty0 289--300, 1995.
+\newblock \doi{10.1111/j.2517-6161.1995.tb02031.x}.
+
+\bibitem[Chao et~al.(2026)Chao, Bai, Sheng, Li, and Sun]{chao2026stale}
+Hanxiang Chao, Yihan Bai, Rui Sheng, Tianle Li, and Yushi Sun.
+\newblock {STALE}: Can {LLM} agents know when their memories are no longer
+  valid?, 2026.
+
+\bibitem[Chhikara et~al.(2025)Chhikara, Khant, Aryan, Singh, and
+  Yadav]{chhikara2025mem0}
+Prateek Chhikara, Dev Khant, Saket Aryan, Taranjeet Singh, and Deshraj Yadav.
+\newblock {Mem0}: Building production-ready {AI} agents with scalable long-term
+  memory, 2025.
+
+\bibitem[Cohen(1960)]{cohen1960kappa}
+Jacob Cohen.
+\newblock A coefficient of agreement for nominal scales.
+\newblock \emph{Educational and Psychological Measurement}, 20\penalty0
+  (1):\penalty0 37--46, 1960.
+\newblock \doi{10.1177/001316446002000104}.
+
+\bibitem[Efron(1979)]{efron1979bootstrap}
+Bradley Efron.
+\newblock Bootstrap methods: Another look at the jackknife.
+\newblock \emph{The Annals of Statistics}, 7\penalty0 (1):\penalty0 1--26,
+  1979.
+\newblock \doi{10.1214/aos/1176344552}.
+
+\bibitem[Field \& Welsh(2007)Field and Welsh]{field2007clustered}
+Christopher~A. Field and Alan~H. Welsh.
+\newblock Bootstrapping clustered data.
+\newblock \emph{Journal of the Royal Statistical Society: Series B (Statistical
+  Methodology)}, 69\penalty0 (3):\penalty0 369--390, 2007.
+\newblock \doi{10.1111/j.1467-9868.2007.00593.x}.
+
+\bibitem[Good(2005)]{good2005permutation}
+Phillip~I. Good.
+\newblock \emph{Permutation, Parametric and Bootstrap Tests of Hypotheses}.
+\newblock Springer, 3 edition, 2005.
+\newblock \doi{10.1007/b138696}.
+
+\bibitem[Grattafiori et~al.(2024)]{grattafiori2024llama3}
+Aaron Grattafiori et~al.
+\newblock The llama 3 herd of models, 2024.
+
+\bibitem[Guo et~al.(2026)Guo, Fang, Gu, Spanos, Demmel, and
+  Lavaei]{guo2026cicm}
+Junyu Guo, Yuchen Fang, Shangding Gu, Costas Spanos, James Demmel, and Javad
+  Lavaei.
+\newblock When context changes: Understanding update failures in {LLMs}, 2026.
+
+\bibitem[Holm(1979)]{holm1979simple}
+Sture Holm.
+\newblock A simple sequentially rejective multiple test procedure.
+\newblock \emph{Scandinavian Journal of Statistics}, 6\penalty0 (2):\penalty0
+  65--70, 1979.
+\newblock JSTOR 4615733; MR 538597.
+
+\bibitem[Hu et~al.(2025)Hu, Wang, and McAuley]{hu2025memoryagentbench}
+Yuanzhe Hu, Yu~Wang, and Julian McAuley.
+\newblock Evaluating memory in {LLM} agents via incremental multi-turn
+  interactions, 2025.
+
+\bibitem[Huang et~al.(2023)Huang, Chen, Mishra, Zheng, Yu, Song, and
+  Zhou]{huang2023selfcorrect}
+Jie Huang, Xinyun Chen, Swaroop Mishra, Huaixiu~Steven Zheng, Adams~Wei Yu,
+  Xinying Song, and Denny Zhou.
+\newblock Large language models cannot self-correct reasoning yet, 2023.
+
+\bibitem[Jensen \& Snodgrass(1999)Jensen and Snodgrass]{jensen1999temporal}
+Christian~S. Jensen and Richard~T. Snodgrass.
+\newblock Temporal data management.
+\newblock \emph{IEEE Transactions on Knowledge and Data Engineering},
+  11\penalty0 (1):\penalty0 36--44, 1999.
+\newblock \doi{10.1109/69.755613}.
+
+\bibitem[Kamoi et~al.(2024)Kamoi, Zhang, Zhang, Han, and
+  Zhang]{kamoi2024survey}
+Ryo Kamoi, Yusen Zhang, Nan Zhang, Jiawei Han, and Rui Zhang.
+\newblock When can {LLMs} actually correct their own mistakes? {A} critical
+  survey of self-correction of {LLMs}, 2024.
+
+\bibitem[Maharana et~al.(2024)Maharana, Lee, Tulyakov, Bansal, Barbieri, and
+  Fang]{maharana2024locomo}
+Adyasha Maharana, Dong-Ho Lee, Sergey Tulyakov, Mohit Bansal, Francesco
+  Barbieri, and Yuwei Fang.
+\newblock Evaluating very long-term conversational memory of {LLM} agents,
+  2024.
+
+\bibitem[Ouyang \& Hou(2026)Ouyang and Hou]{ouyang2026memlineage}
+Ciyan Ouyang and Rui Hou.
+\newblock {MemLineage}: Lineage-guided enforcement for {LLM} agent memory,
+  2026.
+
+\bibitem[Packer et~al.(2023)Packer, Wooders, Lin, Fang, Patil, Stoica, and
+  Gonzalez]{packer2023memgpt}
+Charles Packer, Sarah Wooders, Kevin Lin, Vivian Fang, Shishir~G. Patil, Ion
+  Stoica, and Joseph~E. Gonzalez.
+\newblock {MemGPT}: Towards {LLMs} as operating systems, 2023.
+
+\bibitem[Pakhomov \& Nijkamp(2026)Pakhomov and
+  Nijkamp]{pakhomov2026bookkeeping}
+Egor Pakhomov and Erik Nijkamp.
+\newblock Bookkeeping, composition, or unreachable gold? reading
+  {MemoryAgentBench}'s conflict-resolution scores against a frozen last-write
+  resolver, 2026.
+
+\bibitem[Pathirage \& Srijomkwan(2026)Pathirage and
+  Srijomkwan]{pathirage2026confident}
+Nipun~D. Pathirage and Kwan Srijomkwan.
+\newblock Confident fools or careful searchers? {A} behavioural study of when
+  {LLMs} search beyond their static internal memory, 2026.
+
+\bibitem[Peng et~al.(2026)Peng, Feng, Wu, Chen, Su, Zhou, Du, and
+  Ji]{peng2026statewise}
+Yongyuan Peng, Zhou Feng, Tongying Wu, Jiahao Chen, Yuan Su, Chunyi Zhou,
+  Tianyu Du, and Shouling Ji.
+\newblock {StateWise}: Diagnosing and repairing persistent operational state
+  before agent actions, 2026.
+
+\bibitem[{Qwen Team}(2024)]{qwen2024qwen25}
+{Qwen Team}.
+\newblock Qwen2.5 technical report, 2024.
+
+\bibitem[Rasmussen et~al.(2025)Rasmussen, Paliychuk, Beauvais, Ryan, and
+  Chalef]{rasmussen2025zep}
+Preston Rasmussen, Pavlo Paliychuk, Travis Beauvais, Jack Ryan, and Daniel
+  Chalef.
+\newblock {Zep}: A temporal knowledge graph architecture for agent memory,
+  2025.
+
+\bibitem[Wang et~al.(2026{\natexlab{a}})Wang, Liu, Zhang, Wu, Duan, Zheng, and
+  Cai]{wang2026pacmi}
+Yiqi Wang, Jiaqi Liu, Jiaqi Zhang, Zhangkai Wu, Yiqun Duan, Mingkai Zheng, and
+  Taotao Cai.
+\newblock {PACMI}: Provenance-aware cascading memory invalidation for long-term
+  {LLM} agents, 2026{\natexlab{a}}.
+
+\bibitem[Wang et~al.(2026{\natexlab{b}})Wang, Wang, Zhang, Wu, Duan, Cai, and
+  Zheng]{wang2026amvguard}
+Yiqi Wang, Yifei Wang, Jiaqi Zhang, Zhangkai Wu, Yiqun Duan, Taotao Cai, and
+  Mingkai Zheng.
+\newblock When is a memory safe enough to act on? action-conditioned
+  verification for long-lived agents, 2026{\natexlab{b}}.
+
+\bibitem[Wang(2026)]{wang2026toki}
+Ziming Wang.
+\newblock {TOKI}: A bitemporal operator algebra for contradiction resolution in
+  {LLM}-agent persistent memory, 2026.
+
+\bibitem[Wu et~al.(2024)Wu, Wang, Yu, Zhang, Chang, and Yu]{wu2024longmemeval}
+Di~Wu, Hongwei Wang, Wenhao Yu, Yuwei Zhang, Kai-Wei Chang, and Dong Yu.
+\newblock {LongMemEval}: Benchmarking chat assistants on long-term interactive
+  memory, 2024.
+
+\bibitem[Xu et~al.(2026{\natexlab{a}})Xu, Li, and Xu]{xu2026delivered}
+Changran Xu, Zeju Li, and Qiang Xu.
+\newblock Delivered, not used: Evaluating agent memory at its point of use,
+  2026{\natexlab{a}}.
+
+\bibitem[Xu(2026)]{xu2026gpm}
+Guodong Xu.
+\newblock Governed persistent memory: Source-bound state semantics and
+  fail-closed release for long-horizon agents, 2026.
+
+\bibitem[Xu et~al.(2026{\natexlab{b}})Xu, Xiao, Shao, Liu, and Li]{xu2026ppmf}
+Jinghan Xu, Yiyong Xiao, Wanru Shao, Hankai Liu, and Xinjin Li.
+\newblock Memory provenance laundering in {LLM} agents: A non-amplification
+  firewall for persistent memory, 2026{\natexlab{b}}.
+
+\bibitem[Yan et~al.(2024)Yan, Gu, Zhu, and Ling]{yan2024crag}
+Shi-Qi Yan, Jia-Chen Gu, Yun Zhu, and Zhen-Hua Ling.
+\newblock Corrective retrieval augmented generation, 2024.
+
+\bibitem[Yang et~al.(2025)]{yang2025qwen3}
+An~Yang et~al.
+\newblock Qwen3 technical report, 2025.
+
+\bibitem[Zhang \& Sun(2026)Zhang and Sun]{zhang2026horn}
+Xinyu Zhang and Weiwei Sun.
+\newblock Knowing when the evidence is enough: Requirement-directed search with
+  horn-closure certificates, 2026.
+
+\bibitem[Zhao et~al.(2026)Zhao, Zhou, Jha, Bastian, and Shah]{zhao2026accept}
+Runze Zhao, Dongruo Zhou, Sumit~Kumar Jha, Nathaniel~D. Bastian, and Ankit
+  Shah.
+\newblock Accept changes, reject attacks: Robust memory management for {LLM}
+  agents, 2026.
+
+\bibitem[Zhou et~al.(2026)Zhou, Rong, Lin, and Zhang]{zhou2026manysteps}
+Jianghong Zhou, Hao Rong, Chen Lin, and Daoan Zhang.
+\newblock Many steps into one: Reasoning contraction and the limits of safe
+  memory reuse for {LLM} agents, 2026.
+
+\end{thebibliography}

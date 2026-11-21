@@ -1,0 +1,58 @@
+% Figure 2 -- the arbitration workflow, in the order implemented by evarb/arbiter.py (arbitrate()).
+% All content is kept inside x in [8,148] so the picture sits squarely in the text block.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\footnotesize, x=1mm, y=1mm,
+  wfstep/.style={blk, minimum width=44mm, minimum height=7.6mm},
+  wfout/.style={blkacc, minimum width=42mm, minimum height=7.6mm}]
+
+\node[blkplain, minimum width=44mm, minimum height=7.6mm] (in) at (36,92)
+  {records of one (entity, attribute) group};
+\node[blkplain, minimum width=56mm, minimum height=9mm] (clause) at (36,80)
+  {clause-level cue extraction\\[-1pt]\scriptsize 7 cue kinds $\times$ \{negated, quoted, hypothetical\},\\[-2pt]\scriptsize rival reference, validity dates};
+
+\node[wfstep] (s1) at (36,67) {1\quad one distinct value?};
+\node[wfstep, minimum height=9mm] (s2) at (36,56) {2\quad set aside records that do not\\[-1pt]establish their own value};
+\node[wfstep] (s3) at (36,45) {3\quad negated pair / ``both stand''?};
+\node[wfstep] (s4) at (36,35) {4\quad asserted referenced edges?};
+\node[wfstep] (s5) at (36,25) {5\quad validity dates on all?};
+\node[wfstep] (s6) at (36,15) {6\quad unique latest \cond{recorded\_on}?};
+\node[wfstep] (s7) at (36,5)  {7\quad tie-break, in order};
+\node[wfstep, fill=cWarnFill, draw=cEnf] (s8) at (36,-6) {8\quad missing dates, no text dates};
+
+\node[wfout] (o1) at (108,67) {\cond{unchallenged}};
+\node[wfout] (o2) at (108,56) {remainder current \scriptsize(moderate)};
+\node[wfout] (o3) at (108,45) {\cond{contradiction}};
+\node[wfout, minimum height=8.4mm] (o4) at (108,35) {winner, or \cond{unresolved}\\[-1pt]\scriptsize if inconsistent};
+\node[wfout] (o5) at (108,25) {order by valid time \scriptsize(strong)};
+\node[wfout, minimum height=8.4mm] (o6) at (108,15) {order by record time\\[-1pt]\scriptsize strong; moderate under doubt};
+\node[wfout, minimum height=11mm] (o7) at (108,5)
+  {\scriptsize unreferenced correction (mod.) $\to$ reported or\\[-1pt]\scriptsize hypothetical cue (\cond{unresolved}) $\to$ unique\\[-1pt]\scriptsize authoritative source (mod.) $\to$ \cond{contradiction}};
+\node[wfout, minimum height=8.4mm] (o8) at (108,-6) {\cond{unresolved}\\[-1pt]\scriptsize strength \cond{none}};
+
+\foreach \a/\b in {in/clause, clause/s1, s1/s2, s2/s3, s3/s4, s4/s5, s5/s6, s6/s7, s7/s8}
+  \draw[flow] (\a) -- (\b);
+\foreach \s/\o in {s1/o1, s2/o2, s3/o3, s4/o4, s5/o5, s6/o6, s7/o7, s8/o8}
+  \draw[flowacc] (\s) -- (\o);
+
+\node[blkwarn, minimum width=56mm, minimum height=11mm, align=center] at (101,-19)
+  {\scriptsize \textbf{Every outcome carries a basis and a strength.}\\[-1pt]
+   \scriptsize The policy enforces strong only (\cond{EBG}); strong $+$\\[-2pt]
+   \scriptsize moderate (\cond{EBG-all}); never (advisory conditions).};
+\end{tikzpicture}
+
+\vspace{1mm}
+\caption[Evarb-0.2 arbitration workflow]{%
+\textbf{The arbitration workflow.} Steps are applied in this order, the first whose condition holds decides, and a
+step that does not fire falls through to the next. Everything shown is implemented in \srcfile{evarb/arbiter.py};
+nothing in the figure is proposed future work. The design choice this paper tests is not the ordering --- which is
+close to standard bitemporal practice --- but the right-hand column: every outcome is accompanied by the
+\emph{basis} on which it was reached and a \emph{strength}, and the downstream policy may enforce only what that
+strength permits. Step 2 implements the benchmark's v2 semantics, under which a record that does not establish its
+own value leaves the established value standing.\\
+\emph{Accessible description:} a vertical chain of eight numbered tests, from the record group down to ``missing
+dates''; each test has an arrow to the right into the outcome it produces; a box at the bottom states that
+enforcement is gated on the strength attached to every outcome.\\
+\emph{Source:} \srcfile{evarb/arbiter.py}; \srcfile{EVIDENCE_ARBITRATION_SPEC.md} \S3--\S4.}
+\label{fig:workflow}
+\end{figure}

@@ -1,0 +1,63 @@
+% Figure 7 -- per-model effects. Data: figures/data/fig7_ebg_rt.dat (and the three other contrasts).
+% Generated from PHASE3/ANALYSIS/CONFIRMATORY_primary_cells.json by figures_source/make_figure_data.py.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{groupplot}[
+  paperaxis,
+  group style={group size=2 by 1, horizontal sep=14mm},
+  width=0.455\linewidth, height=4.4cm,
+  ymin=0.5, ymax=4.5, ytick={4,3,2,1},
+  yticklabels={Qwen2.5-3B, Qwen2.5-7B, Qwen3-8B, Llama-3.1-8B},
+  yticklabel style={font=\scriptsize},
+  xmajorgrids,
+]
+
+\nextgroupplot[xlabel={task success, EBG $-$ RT (pp)}, xmin=-3, xmax=38, xtick={0,10,20,30},
+               title={(a) success}]
+\addplot[draw=cInk, line width=0.5pt, dashed] coordinates {(0,0.5) (0,4.5)};
+% the other three pre-registered contrasts, for context
+\foreach \f in {fig7_ebg_t, fig7_ebg_lg, fig7_ebg_b} {
+  \addplot[only marks, mark=o, mark size=1.1pt, draw=cNeutral] table[col sep=tab, x=diff, y expr={\thisrow{y}+0.22}] {figures/data/\f.dat};
+}
+\addplot[only marks, mark=*, mark size=1.9pt, draw=cEBG, fill=cEBG,
+         error bars/.cd, x dir=both, x explicit,
+         error bar style={draw=cEBG, line width=0.8pt}]
+  table[col sep=tab, x=diff, y=y,
+        x error plus expr={\thisrow{hi}-\thisrow{diff}},
+        x error minus expr={\thisrow{diff}-\thisrow{lo}}]
+  {figures/data/fig7_ebg_rt.dat};
+
+\nextgroupplot[xlabel={harmful answers, EBG $-$ RT (pp)}, xmin=-38, xmax=6, xtick={-30,-20,-10,0},
+               title={(b) harm}]
+\addplot[draw=cInk, line width=0.5pt, dashed] coordinates {(0,0.5) (0,4.5)};
+\addplot[only marks, mark=square*, mark size=1.7pt, draw=cHarm, fill=cHarm,
+         error bars/.cd, x dir=both, x explicit,
+         error bar style={draw=cHarm, line width=0.8pt}]
+  table[col sep=tab, x=harm, y=y,
+        x error plus expr={\thisrow{harm_hi}-\thisrow{harm}},
+        x error minus expr={\thisrow{harm}-\thisrow{harm_lo}}]
+  {figures/data/fig7_ebg_rt.dat};
+\node[lbl, text=cEnf, anchor=east, align=right] at (axis cs:-2,1.62)
+  {\scriptsize no harm removed:\\[-1pt]\scriptsize $-0.3$\pp{} \ci{-1.0}{0.4}};
+\end{groupplot}
+\end{tikzpicture}
+
+\vspace{-1mm}
+\caption[Per-model effects]{%
+\textbf{The effect holds for every model; the mechanism behind it does not.} Filled markers are the per-model
+EBG $-$ RT difference with its 95\% family bootstrap interval; open grey markers in (a) are the same model's
+EBG $-$ T, EBG $-$ LG and EBG $-$ B differences, shown for context. Per-model estimates are descriptive: the
+confirmatory claims rest on the pooled, family-clustered tests of \Cref{fig:forest}. \textbf{(a)} Success improves
+for all four models, but by $6.8$--$10.0$\pp{} for Llama-3.1-8B and Qwen2.5-3B against $25.0$--$26.6$\pp{} for
+Qwen2.5-7B and Qwen3-8B. \textbf{(b)} Harm falls by 24--28\pp{} for the three Qwen models but by only
+$0.3$\pp{} for Llama-3.1-8B, whose interval includes zero. That model abstains on 44.0\% of EBG runs and fails to
+format an answer on 11.1\%, so it produces almost no harmful answers under any condition and there is almost
+nothing for the mechanism to remove: its success gain comes from converting abstentions into answers, which is a
+different causal route from the one the hypotheses describe.\\
+\emph{Accessible description:} two dot-and-interval panels over four models; in (a) all intervals lie right of
+zero, in (b) three lie far left of zero and the fourth straddles it.\\
+\emph{Source:} \srcfile{PHASE3/ANALYSIS/CONFIRMATORY_primary_cells.json}; plotted from
+\srcfile{figures/data/fig7_ebg_rt.dat}.}
+\label{fig:permodel}
+\end{figure}

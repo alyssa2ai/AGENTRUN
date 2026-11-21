@@ -1,0 +1,76 @@
+% Figure 1 -- system architecture. Drawn from the implementation: memlab (harness, tools, scorer),
+% evarb/{arbiter,policy,render,clients}.py, agentrun_v2.parser, scripts/run_p2.py.
+% Explicit mm coordinates: nothing overlaps, nothing leaves the text block.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\footnotesize, x=1mm, y=1mm]
+
+% ---------------- row A (y=46): the agent's control flow
+\node[blkplain, minimum width=18mm, minimum height=9mm]  (task)   at (12,46) {Task\\question};
+\node[blk,      minimum width=26mm, minimum height=11mm] (agent)  at (44,46) {\textbf{LLM agent}\\[-1pt]\scriptsize tool loop};
+\node[blk,      minimum width=26mm, minimum height=11mm] (submit) at (80,46) {\cond{submit\_answer}\\[-1pt]\scriptsize value / \cond{conflict} / abstain};
+\node[blkacc,   minimum width=27mm, minimum height=11mm] (policy) at (116,46) {\textbf{Basis-gated}\\[-1pt]\textbf{policy} \scriptsize P1--P4};
+\node[blkplain, minimum width=20mm, minimum height=9mm]  (final)  at (151,46) {Final\\answer};
+
+% ---------------- row B (y=28): the gate and the single notice
+\node[dec, minimum width=16mm] (gate)   at (128,28) {strength\\strong?};
+\node[blkwarn, minimum width=20mm, minimum height=9mm] (notice) at (152,28) {one reversible\\notice};
+
+% ---------------- row C (y=10): retrieval and arbitration
+\node[store,    minimum width=18mm, minimum height=12mm] (store) at (12,10) {Memory\\store};
+\node[blkplain, minimum width=25mm, minimum height=9mm]  (retr)  at (44,10) {\cond{memory\_search}\\[-1pt]\scriptsize hashed BoW, top 4};
+\node[blkacc,   minimum width=26mm, minimum height=11mm] (arb)   at (84,10) {\textbf{Evarb-0.2 arbiter}\\[-1pt]\scriptsize status, basis, strength};
+\node[blkplain, minimum width=25mm, minimum height=7mm]  (reg)   at (74,-4) {registry lookup};
+
+% ---------------- control flow
+\draw[flow] (task) -- (agent);
+\draw[flow] (agent) -- (submit);
+\draw[flow] (submit) -- (policy);
+\draw[flow] (policy) -- (final);
+\node[lbl, above=0.4mm of final] {\scriptsize to the frozen scorer};
+
+% ---------------- retrieval and arbitration
+\draw[flow] (38,40.5) -- node[lbl, left, pos=0.45, xshift=-0.5mm] {\scriptsize tool calls} (38,14.5);
+\draw[flow] (38,30) -- (26,30) -- (26,-4) -- (reg.west);
+\draw[flow] (store) -- (retr);
+\draw[flowacc] (retr) -- (arb);
+\draw[flowacc] (arb.north) -- (84,26) -- node[lbl, above, pos=0.62]
+      {\scriptsize labelled records: status, basis, strength} (52,26) -- (52,40.5);
+\draw[flowacc] (arb.east) -| node[lbl, pos=0.72, right, xshift=0.5mm] {\scriptsize resolution} (106,40.5);
+
+% ---------------- the gate
+\draw[flow] (124,40.5) -- (gate.north);
+\draw[flowwarn] (gate) -- (notice);
+
+ode[lbl, text=cEnf, anchor=south] at (139,31.5) {\scriptsize yes};
+\draw[flowwarn] (notice.north) -- (152,62) -- node[lbl, above, pos=0.55]
+      {\scriptsize the agent may resubmit once} (44,62) -- (agent.north);
+\node[lbl, text=cNone, align=center, anchor=north] at (128,20)
+  {\scriptsize no $\rightarrow$ advise:\\[-1pt]\scriptsize the submission stands};
+
+\node[lbl, text=cEnf, align=left, anchor=north west] at (114,7)
+  {\scriptsize \textbf{safe submission:} if the\\[-1pt]\scriptsize resubmission is unusable, the\\[-1pt]\scriptsize pre-notice answer stands};
+
+\begin{scope}[on background layer]
+\node[grp, fit=(store)(retr)(arb)(reg), inner sep=2.5mm,
+      label={[lbl, text=cNone, anchor=north west, xshift=1mm]below left:\scriptsize retrieval and arbitration}] {};
+\end{scope}
+\end{tikzpicture}
+
+\vspace{1mm}
+\caption[AGENTRUN / Evarb system architecture]{%
+\textbf{System architecture.} Everything the study varies lives in the two shaded components. The
+\emph{arbiter} decides what the agent is told about a group of records --- a status, the evidence basis for that
+status, and a strength. The \emph{policy} decides what happens when the agent's submission disagrees with the
+arbitration: it may send at most one reversible notice, and it enforces only when the resolution's strength passes
+the gate. The store, the retrieval function, the tool schemas, the prompts and the scorer are identical in all
+twelve conditions. Advisory conditions keep the arbiter and disable the policy; ungated conditions widen the gate
+to accept moderate strength as well as strong.\\
+\emph{Accessible description:} a left-to-right control flow along the top (task, agent, submission, policy, final
+answer); a lower band in which the memory store feeds search and search feeds the arbiter, which both returns
+labelled records to the agent and sends its resolution to the policy; below the policy a strength gate either
+issues one notice, which returns to the agent along the top of the figure, or lets the submission stand.\\
+\emph{Source:} drawn from the implementation (\texttt{memlab}, \texttt{evarb/\{arbiter,policy,render\}.py},
+\srcfile{scripts/run_p2.py}); no component is hypothetical.}
+\label{fig:architecture}
+\end{figure}

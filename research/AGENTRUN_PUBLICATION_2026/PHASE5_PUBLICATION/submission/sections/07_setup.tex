@@ -1,0 +1,55 @@
+\section{Experimental setup and baselines}
+\label{sec:setup}
+
+\input{tables/tab_setup}
+
+\subsection{Models and decoding}
+
+Six open-weight instruction-tuned models were run, four as primary and two as secondary
+(\Cref{tab:setup}). Models run locally in bfloat16 on a single 48\,GB GPU, loaded from pinned snapshots, with at
+most 700 new tokens per call and chat templates with thinking disabled where supported. Greedy conditions use base
+seed 20261111; sampled conditions use $T=0.7$ with top-$p=0.9$ and seeds 1, 2 and 3. Tool calls are parsed from
+the raw generation by the project's own parser, and the raw text, parser version and parse path are logged, so a
+parse failure is visible as such rather than silently scored as a wrong answer.
+
+Llama-3.2-3B failed the pre-registered readiness criterion before the campaign --- it does not reliably produce the
+tool-call format --- and was retained as a format-limited secondary cell, reported separately and never pooled.
+That decision was made and recorded before any confirmatory run.
+
+\subsection{Baselines}
+
+The comparison set is built from the mechanisms this work is meant to improve on, not from weak straw men.
+
+\begin{description}[leftmargin=3.2em,itemsep=1.5pt,topsep=2pt,font=\normalfont\sffamily]
+\item[\cond{B}] Memory with no labels: the agent reads the retrieved records and decides. This is the floor that
+any labelling must beat.
+\item[\cond{G}, \cond{R}] Metadata labels that order records by record date alone and mark same-date
+disagreements as conflicting, advisory (\cond{G}) and enforced (\cond{R}). This is the design that motivated the
+study.
+\item[\cond{T}, \cond{RT}] A lexical temporal arbiter that orders by stated validity dates where all competing
+records have them, else by a unique latest record date, breaking ties on a correction cue naming the rival's
+value. It has no negation, quotation or modality scope and its labels carry no strength --- which is exactly what
+gating would need and cannot get from it. \cond{RT} enforces every label it produces and has no safe submission;
+it is the pre-registered primary comparator.
+\item[\cond{LA}, \cond{LG}] The agent's own model as arbiter, filling the same output schema from a prompt
+stating the same evidence rules in plain language, advisory (\cond{LA}) and under the identical gated policy
+(\cond{LG}). Unparsable or inconsistent arbiter output becomes \cond{unresolved} and is counted as a format
+failure. Arbiter calls are logged and counted separately from the agent's.
+\end{description}
+
+\subsection{Scoring}
+
+A frozen scorer classifies each run. Task success requires the submitted answer to match the gold answer, where the
+gold may be a value, the literal \cond{conflict}, or an abstention. Four outcomes count as \textbf{harmful}:
+\cond{wrong\_value}, \cond{stale\_value}, \cond{unsupported\_claim} and \cond{arbitrary\_pick}. The descriptive
+measures also report conflict preservation (the share of genuinely unresolvable groups still reported as a
+conflict), false resolution (the share for which a value is asserted instead), unnecessary abstention, format
+failure, step-limit exhaustion, and per-run tool, model and arbiter call counts with latency.
+
+\subsection{Execution}
+
+Each cell ran as a single scheduled job on one GPU, with a controller keeping at most two cells in flight and
+resubmitting any cell that stopped short. A separate CPU-only job then ran the integrity gates, the staging, the
+verification, the frozen analysis, the independent cross-check, the report generation and a final hash manifest,
+stopping at the first failure. No interactive session takes part in any of this, which is what makes the chain in
+\Cref{fig:integrity} auditable after the fact.

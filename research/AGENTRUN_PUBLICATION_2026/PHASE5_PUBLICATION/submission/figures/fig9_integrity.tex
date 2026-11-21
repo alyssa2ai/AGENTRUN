@@ -1,0 +1,58 @@
+% Figure 9 -- the integrity chain, from freeze to published numbers. No infrastructure addresses or account
+% names appear; hosts are referred to by role only.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\footnotesize, x=1mm, y=1mm,
+  stg/.style={blk, minimum width=26mm, minimum height=12mm, align=center},
+  chk/.style={blkacc, minimum width=26mm, minimum height=9mm, align=center, font=\scriptsize}]
+
+\node[stg] (freeze) at (16,34) {\textbf{Freeze}\\[-1pt]\scriptsize mechanism, runner,\\[-2pt]\scriptsize analysis};
+\node[stg] (seal)   at (50,34) {\textbf{Seal}\\[-1pt]\scriptsize benchmark hashed,\\[-2pt]\scriptsize gold fixed};
+\node[stg] (prereg) at (84,34) {\textbf{Pre-register}\\[-1pt]\scriptsize hypotheses, test,\\[-2pt]\scriptsize corrections};
+\node[stg] (run)    at (118,34){\textbf{Run}\\[-1pt]\scriptsize 18 cells,\\[-2pt]\scriptsize 57{,}888 runs};
+\node[stg] (anal)   at (150,34){\textbf{Analyse}\\[-1pt]\scriptsize frozen script,\\[-2pt]\scriptsize 100{,}000 permutations};
+
+\foreach \a/\b in {freeze/seal, seal/prereg, prereg/run, run/anal} \draw[flow] (\a) -- (\b);
+
+\node[chk] (c1) at (16,17) {file hashes match\\\cond{FREEZE} manifest};
+\node[chk] (c2) at (50,17) {\cond{sha256sum -c}\\on the sealed set};
+\node[chk] (c3) at (84,17) {document hash\\matches the freeze};
+\node[chk, minimum height=12mm] (c4) at (118,17)
+  {gates G1--G4: all cells\\done, exact row counts,\\clean exits, run identity};
+\node[chk] (c5) at (150,17) {independent\\cross-check agrees};
+
+\foreach \s/\c in {freeze/c1, seal/c2, prereg/c3, run/c4, anal/c5} \draw[flowacc] (\s) -- (\c);
+
+\node[lbl, text=cEBG, anchor=north, align=center] at (50,8)
+  {\scriptsize checked at \textbf{every one} of the 20 job starts, not once at the end};
+
+\node[blkwarn, minimum width=54mm, minimum height=13mm, align=center] (recov) at (118,2)
+  {\scriptsize \textbf{Recovery, recorded not hidden:} a node reboot interrupted\\[-1pt]
+   \scriptsize two cells. The damaged tail of each output file was\\[-1pt]
+   \scriptsize quarantined (0 complete rows lost) and the cells resumed.\\[-1pt]
+   \scriptsize A reporting-only check (G5) records the platform transition.};
+\draw[flowwarn] (c4.south) -- (118,8.5);
+
+\node[blkplain, minimum width=44mm, minimum height=8mm, align=center] (man) at (140,-14)
+  {\scriptsize \textbf{SHA-256 manifest} over every\\[-1pt]\scriptsize input, output, script and report};
+\draw[flow] (c5.south) -- (152,-8) -- (140,-8) -- (140,-10);
+\end{tikzpicture}
+
+\vspace{1mm}
+\caption[Experimental integrity chain]{%
+\textbf{The integrity chain.} Each stage has a check that must pass before the next begins, and the checks on the
+first three stages were re-run at every one of the 20 job starts rather than once at the end: all 20 reported zero
+mechanism-file mismatches and the same pre-registration hash. The gates before analysis verify that all 18 cells
+finished, that each holds exactly 268 $\times$ 12 unique (task, condition) pairs with no duplicate and no
+unparsable line, that every cell's last job exited cleanly, and that the recorded run identity --- model, snapshot,
+decoding, seed, dtype, parser, framework versions, and the hashes of all 14 mechanism files --- is identical across
+every start of a cell. One deviation is recorded rather than smoothed over: an unplanned reboot interrupted two
+cells, which resumed after the damaged tail of each file was quarantined, and a separate reporting-only check
+documents the resulting platform transition (\Cref{sec:limitations}). Host names and addresses are deliberately
+absent from this figure and from the released artifacts.\\
+\emph{Accessible description:} a five-stage left-to-right chain, each stage with a check box beneath it, plus a
+recovery note under the run stage and a final hash manifest.\\
+\emph{Source:} \srcfile{PHASE3/scripts/finalize_gates.py}, \texttt{verify\_phase3.py},
+\texttt{platform\_continuity.py}; \srcfile{PHASE3/PHASE3_SHA256_MANIFEST.txt}.}
+\label{fig:integrity}
+\end{figure}

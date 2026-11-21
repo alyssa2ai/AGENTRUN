@@ -1,0 +1,81 @@
+% Figure 3 -- the ten implemented evidence bases, grouped by the strength they can carry.
+% Names, conditions and strengths are taken verbatim from EVIDENCE_ARBITRATION_SPEC.md section 3
+% (and evarb/arbiter.py). No basis is renamed, added or omitted.
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[font=\footnotesize, x=1mm, y=1mm,
+  base/.style={draw=cBoxEdge, line width=0.4pt, rounded corners=1.2pt, align=left,
+               inner sep=2.4pt, text width=46mm, font=\scriptsize, text=cInk, minimum height=9mm},
+  hdr/.style={align=center, font=\scriptsize\bfseries, text=white, inner sep=2.2pt,
+              rounded corners=1.2pt, minimum height=5.2mm, text width=48mm}]
+
+% ---- column headers: the gate admits the left column only
+\node[hdr, fill=cEBG]   (hs) at (26,86) {STRONG\quad\textnormal{\scriptsize the only column the gate admits}};
+\node[hdr, fill=cAll, text=cInk] (hm) at (80,86) {MODERATE\quad\textnormal{\scriptsize enforced only by \cond{EBG-all}}};
+\node[hdr, fill=cNone]  (hn) at (134,86) {NONE\quad\textnormal{\scriptsize never enforced}};
+
+% ---- strong
+\node[base, fill=cAccentFill] (b1) at (26,78)
+  {\textbf{\cond{explicit\_correction}}\\asserted correction or dismissal referring to the rival, at different dates};
+\node[base, fill=cAccentFill] (b2) at (26,65.5)
+  {\textbf{\cond{explicit\_supersession}}\\asserted replacement or revision referring to the rival, at different dates};
+\node[base, fill=cAccentFill] (b3) at (26,53)
+  {\textbf{\cond{same\_day\_correction}}\\asserted correction, dismissal or supersession between same-date records, referring to the rival};
+\node[base, fill=cAccentFill] (b4) at (26,40.5)
+  {\textbf{\cond{valid\_time}}\\every established record states a validity date; the latest is unique};
+\node[base, fill=cAccentFill] (b5) at (26,28)
+  {\textbf{\cond{record\_time}}\\unique latest \cond{recorded\_on}};
+\node[base, fill=cAccentFill] (b6) at (26,15.5)
+  {\textbf{\cond{genuine\_contradiction}}\\same time, different values, no ordering evidence, no cue of any kind};
+\node[base, fill=cAccentFill] (b7) at (26,3)
+  {\textbf{\cond{negated\_correction}}\\negated correction with an asserted ``both stand / disagree'' marker};
+
+% ---- moderate (demotions of the same bases, plus two of their own)
+\node[base, fill=cWarnFill] (m1) at (80,78)
+  {\textbf{\cond{explicit\_correction} / \cond{explicit\_supersession}}\\\emph{demoted} when the correcting record is the older one};
+\node[base, fill=cWarnFill] (m2) at (80,65.5)
+  {\textbf{\cond{same\_day\_correction}}\\\emph{demoted} when the correction is unreferenced and only breaks a same-time tie};
+\node[base, fill=cWarnFill] (m3) at (80,53)
+  {\textbf{\cond{record\_time}}\\\emph{demoted} when the winner's own text signals doubt (``proposed'', ``planned'', \ldots)};
+\node[base, fill=cWarnFill] (m4) at (80,40.5)
+  {\textbf{\cond{genuine\_contradiction}}\\\emph{demoted} when any cue is present};
+\node[base, fill=cWarnFill] (m5) at (80,28)
+  {\textbf{\cond{negated\_correction}}\\negated replacement without a marker, retention of the rival, or an unconfirmed change: that record is set aside};
+\node[base, fill=cWarnFill] (m6) at (80,15.5)
+  {\textbf{\cond{source\_authority}}\\same-time tie in which exactly one value comes from an authoritative source};
+\node[base, fill=cWarnFill] (m7) at (80,3)
+  {\textbf{\cond{quoted\_or\_hypothetical}}\\the record's own change or value is hypothetical: that record is set aside};
+
+% ---- none
+\node[base, fill=white] (n1) at (134,78)
+  {\textbf{\cond{quoted\_or\_hypothetical}}\\the only ordering cue is reported speech $\rightarrow$ \cond{unresolved}};
+\node[base, fill=white] (n2) at (134,65.5)
+  {\textbf{\cond{insufficient\_evidence}}\\missing dates without text dates; cyclic or inconsistent cues $\rightarrow$ \cond{unresolved}};
+
+\node[base, draw=none, fill=none, text width=50mm] (note) at (134,48)
+  {\textbf{Ten bases, three strengths.} Six bases can carry more than one strength depending on their
+   conditions, which is why gating cannot be replaced by a fixed list of ``trusted'' cue types: the same
+   cue licenses enforcement in one context and only advice in another.};
+
+\node[base, draw=cEnf, fill=cWarnFill, text width=50mm] (note2) at (134,22)
+  {\textbf{What the gate costs.} Moving the gate from \emph{strong} to \emph{strong\,+\,moderate} ---
+   that is, enabling the middle column --- raised task success by $9.7$\pp{} and the harmful-answer rate from
+   3.1\% to 6.9\% (\Cref{sec:ablations}).};
+
+\draw[decorate, decoration={brace, amplitude=3.5pt}, draw=cEBG, line width=0.6pt]
+  (51.8,83.5) -- (51.8,-2.5);
+\end{tikzpicture}
+
+\vspace{1mm}
+\caption[The ten evidence bases of Evarb-0.2]{%
+\textbf{The ten evidence bases, grouped by the strength they can carry.} Names and conditions are verbatim from
+the frozen specification; no basis is renamed, added or omitted. The left column is what gated enforcement acts on.
+Six of the ten bases appear in more than one column because their strength depends on their conditions --- a
+correction whose correcting record is the older one is demoted, an ordering by record date is demoted when the
+winning record's own text signals doubt, and a contradiction is demoted when any cue is present. This
+context-dependence is the reason the mechanism reports a basis and a strength rather than a verdict.\\
+\emph{Accessible description:} a three-column layout headed STRONG, MODERATE and NONE, holding seven, seven and two
+entries respectively; a brace marks the left column as the only one the gate admits.\\
+\emph{Source:} \srcfile{EVIDENCE_ARBITRATION_SPEC.md} \S3; \srcfile{evarb/arbiter.py}.}
+\label{fig:bases}
+\end{figure}

@@ -1,0 +1,14 @@
+# source: PHASE3/results/per_model_config.csv, summed over the four primary models
+config	success	harmful	over_abstain	false_conflict	arbitrary	format_err	step_limit	n	family
+B	46.0	7.0	15.3	26.4	172	2.8	2.4	4288	none
+G	43.5	7.9	11.9	31.4	109	3.1	2.1	4288	advisory
+T	46.9	7.4	13.0	28.5	35	2.6	1.7	4288	advisory
+R	45.0	16.1	7.7	24.1	153	5.3	1.8	4288	enforced
+RT	44.2	22.6	9.7	16.3	252	5.5	1.8	4288	enforced
+LA	47.9	13.2	14.8	19.3	295	3.0	1.8	4288	llm
+LG	45.4	21.3	15.8	13.4	510	2.8	1.3	4288	llm
+EB	55.3	2.7	13.2	24.3	13	2.5	2.0	4288	evarb
+EBG	61.3	3.1	11.5	20.2	13	2.8	1.0	4288	evarb
+EBG-all	71.1	6.9	12.7	5.5	166	2.8	1.0	4288	evarb
+EBG-unsafe	61.5	3.3	8.7	19.5	12	5.8	1.1	4288	evarb
+EBG-noR3	60.0	3.4	14.1	19.1	14	2.4	1.0	4288	evarb

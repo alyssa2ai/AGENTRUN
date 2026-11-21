@@ -1,0 +1,47 @@
+\section{Dataset and benchmark construction}
+\label{sec:dataset}
+
+\subsection{How eval3 was built}
+
+The evaluation set, \textbf{eval3}, was constructed so that its gold answers are fixed \emph{before any text
+exists}. A skeleton generator produces groups of records about one (entity, attribute) pair --- the structure, the
+record dates, the intended relation between the records and therefore the correct answer --- as structured briefs
+with no prose. Only then were the record texts written, by Qwen2.5-14B-Instruct from the briefs alone. The writer
+input contained no gold field, no date or source field and no label words, and the writer was required to keep each
+record's own value verbatim and to write date \emph{values} in ISO form so that the mechanical validator would not
+reject correct long-form dates. Questions about the current state use templates shared with every split.
+
+A mechanical validator then rejected items whose text failed to carry its own value, whose value appeared in the
+question, or that contained no entity. Of 276 skeleton items, \textbf{268 remained valid}, spanning
+\textbf{135 families}. The eight exclusions are recorded by identifier.
+
+The set was sealed on the cluster before any confirmatory run: a hash manifest over the task file, the skeleton,
+the groups and the annotations, with the manifest's own hash recorded in the freeze record. The runner refuses any
+task file whose hash differs from the sealed one.
+
+\subsection{Annotation, and why it is a sensitivity analysis rather than a filter}
+
+eval3 has \textbf{no human validation}. It was annotated blind by two model annotators against the three gold
+classes. Agreement with gold was 174 of 268 ($\kappa=0.471$) for one annotator and 232 of 268 ($\kappa=0.767$) for
+the other \citep{cohen1960kappa}; 161 items have double agreement and 107 are flagged by at least one annotator.
+
+These numbers are annotation statistics, not outcomes, and they are reported here because they bound what the set
+can support. We do \emph{not} filter on them: the primary analysis uses all 268 valid items, and the
+double-agreement subset (161), the flagged complement (107) and the subset agreed by the stronger annotator (232)
+are three separate sensitivity analyses (\Cref{tab:sensitivity}). Effects are somewhat \emph{larger} on the
+flagged complement ($+21.3$\pp{} on H-primary) than on the double-agreement subset ($+14.3$\pp), which is the
+opposite of what an ``annotator noise inflates the effect'' account would predict.
+
+\subsection{What the set is, and is not}
+
+eval3 is synthetic, templated, English-only, ISO-dated, model-written and model-annotated. It was built to be
+sealed and pre-registered against, and that is the only claim we make for it. It is not a benchmark of record: the
+closest external set, STALE, has 400 expert-validated scenarios, and DISCERN's evaluation set is human-vetted
+\citep{chao2026stale,ahuja2026discern}. One consequence is worth stating plainly: the writer, Qwen2.5-14B, is also
+one of the annotators and one of the evaluated secondary models, so that model's results carry a dependence the
+others do not. We report it separately and never pool it.
+
+A second consequence runs the other way. Because eval3 \emph{includes} explicitly signalled invalidation --- the
+corrections, supersessions and negations a lexical arbiter is built to read --- it is favourable ground for Evarb
+by construction. STALE deliberately excludes those cases, which makes it the natural external test of what this
+mechanism cannot do, and an obvious next step rather than a result we can claim here.

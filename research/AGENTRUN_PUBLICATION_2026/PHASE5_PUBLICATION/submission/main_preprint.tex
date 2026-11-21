@@ -1,0 +1,95 @@
+\documentclass[10pt]{article}
+
+% Official TMLR style file (github.com/JmlrOrg/tmlr-style-file). Anonymous by default: do NOT add the
+% [accepted] or [preprint] option for a submission -- non-anonymous submissions are rejected without review.
+% The non-anonymous build is produced from main_preprint.tex, which passes [preprint].
+\usepackage[preprint]{tmlr}  % NON-ANONYMOUS build; replace the author block below (AUTHOR_INFORMATION.md)
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,shapes.symbols,calc,fit,backgrounds,patterns,patterns.meta,decorations.pathreplacing}
+\usepgfplotslibrary{groupplots}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{cleveref}
+
+\hypersetup{colorlinks=true, linkcolor=black!70!blue, citecolor=black!70!blue, urlcolor=black!70!blue,
+            pdftitle={Evidence-Basis Arbitration for Conflicting Persistent Memory in Small Tool-Using Agents},
+            pdfsubject={Preregistered evaluation of gated enforcement for agent memory},
+            pdfkeywords={LLM agents; persistent memory; memory conflict; evidence-basis arbitration;
+                         selective enforcement; preregistration; reliability; harmful answers}}
+
+\input{figures/palette}
+
+\newcommand{\pp}{\,pp}
+\newcommand{\ci}[2]{[#1,\,#2]}
+\newcommand{\cond}[1]{\textsf{#1}}
+% file paths that may break across lines (hyperref's \nolinkurl breaks at / and _)
+\urlstyle{tt}
+\newcommand{\srcfile}[1]{\nolinkurl{#1}}
+
+\title{Evidence-Basis Arbitration for Conflicting Persistent Memory\\in Small Tool-Using Agents:\\
+A Pre-registered Evaluation of Gated Enforcement}
+
+% Authors are deliberately absent: the tmlr package hides them unless [accepted]/[preprint] is given.
+% Author details for the camera-ready are kept in AUTHOR_INFORMATION.md, not in this file.
+\author{\name Anonymous Authors \email anonymous \\ \addr Anonymous Institution}
+
+\def\month{11}
+\def\year{2026}
+\def\openreview{\url{https://openreview.net/forum?id=XXXX}}
+
+% Give TeX a little slack so that long verbatim paths in captions do not overflow the text block.
+\emergencystretch=6em
+\hyphenpenalty=500
+\tolerance=1200
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+
+\vspace{-2mm}
+\noindent\textbf{Keywords:} persistent memory for LLM agents; memory conflict resolution; evidence-basis
+arbitration; selective enforcement; pre-registered evaluation; reliability and harmful answers; small open-weight
+models.
+\vspace{1mm}
+
+\input{sections/01_introduction}
+\input{sections/02_problem}
+\input{sections/03_related_work}
+\input{sections/04_method}
+\input{sections/05_design}
+\input{sections/06_dataset}
+\input{sections/07_setup}
+\input{sections/08_results}
+\input{sections/09_statistics}
+\input{sections/10_ablations}
+\input{sections/11_failure}
+\input{sections/12_discussion}
+\input{sections/13_limitations}
+\input{sections/14_reproducibility}
+\input{sections/15_conclusion}
+
+% long author-year labels can overflow their box; give the bibliography extra breaking freedom
+\begingroup
+\sloppy
+\emergencystretch=4em
+\bibliographystyle{tmlr}
+\bibliography{references}
+\endgroup
+
+\appendix
+\input{sections/A1_appendix}
+
+\end{document}

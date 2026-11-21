@@ -1,0 +1,84 @@
+\section{Threats to validity and limitations}
+\label{sec:limitations}
+
+The first six subsections were written before any confirmatory outcome was known; the seventh was added
+afterwards and extends them without softening any of them.
+
+\subsection{Construct validity: the data}
+
+eval3 is synthetic, templated, English-only and ISO-dated, written by a language model and annotated by language
+models with no human validation (\Cref{sec:dataset}). Its writer is also one of its annotators and one of the
+evaluated secondary models. By construction it \emph{contains} the explicitly signalled invalidation that a lexical
+arbiter is built to read, which makes it favourable ground for this mechanism; the natural external test is a
+benchmark that deliberately excludes those cases \citep{chao2026stale}.
+
+\subsection{Construct validity: the mechanism}
+
+Evarb-0.2 reads English lexical cues. Paraphrases outside its cue lists fall back to time order. Three failures
+were documented and pinned by tests before the freeze and were deliberately not fixed during the campaign: a
+negator more than four tokens before the cue is missed; ``correcting'' is not treated as a correction cue; and one
+negated-both-stand pattern resolves to the rival rather than a contradiction. Items of these forms count against
+the mechanism as written.
+
+\subsection{Internal validity: analyst degrees of freedom}
+
+The mechanism, the analysis and the hypotheses were frozen before the confirmatory data existed, and every job
+re-verified all three hashes at start. The primary contrast \cond{EBG} $-$ \cond{RT} nevertheless changes the
+arbiter, the gating, the notice wording and safe submission together, so it cannot attribute its effect to any one
+of them; that is what the exploratory ablations are for, and they are exploratory.
+
+\subsection{Statistical conclusion validity}
+
+The four pre-registered contrasts all reach the Monte-Carlo floor of the permutation test, so the $p$-values
+report that floor rather than a resolved value. Family-level clustering assumes families are exchangeable under
+the null. Per-model estimates are descriptive and not corrected for multiplicity.
+
+\subsection{External validity}
+
+Small open-weight models (3B--14B), one harness, one retrieval function, one answer schema. No claim is made about
+frontier models, natural memory logs, implicit conflicts without lexical cues, multi-turn memory writing, or other
+agent architectures.
+
+\subsection{Execution}
+
+Cells ran up to two at a time on one node, so the reported latency is not strictly single-occupancy. During the
+campaign three per-run outcome labels from one cell's progress log were displayed to an operator; no task text,
+gold label or aggregate was seen, and nothing was changed.
+
+\input{tables/tab_deviations}
+
+\subsection{Limitations revealed by the results}
+
+\paragraph{Gating is a trade, not an improvement.} Ungated enforcement of the same labels scored $9.7$\pp{}
+higher while more than doubling harm (\Cref{sec:ablations}). Our design prefers the safer side, but this
+benchmark assigns no relative cost to a wrong confident answer and a missed correct one, so it cannot establish
+that the preference is right. The gap is item-set sensitive: $-4.8$\pp{} and not significant on the
+double-agreement subset, $-17.1$\pp{} on the flagged complement.
+
+\paragraph{The harm-reduction claim rests on models that produce harm.} It is demonstrated on the three Qwen
+models ($-24.5$ to $-27.7$\pp) and not on Llama-3.1-8B ($-0.3$\pp), whose dominant failures are abstention and
+malformed output (\Cref{sec:failure}).
+
+\paragraph{Residual failure is over-conservatism.} 20.2\% false conflicts and 11.5\% unnecessary abstentions
+against 3.1\% harm. Whether that distribution of errors is preferable is a deployment judgement the study does not
+make.
+
+\paragraph{Absolute performance is low.} 61.3\% task success for the best condition; 46.0\% on tasks with a
+definite answer.
+
+\paragraph{One component is unsupported on success.} Safe submission changes success by $-0.2$\pp{}
+($p_{\text{BH}}=0.78$). It is retained for format robustness, not because the success data support it.
+
+\paragraph{The platform transition cannot be shown to be inert.} 1.69\% of rows were produced after a mid-campaign
+kernel and GPU-driver change (\Cref{tab:deviations}, D1). Removing the affected cell moves the pooled estimates by
+at most $0.1$\pp, but no task and condition was executed on both platforms, so whether the change altered
+generation is unknown and not knowable from this campaign. Two cells are consequently not byte-reproducible; the
+\emph{analysis} remains byte-reproducible from the archived raw outputs.
+
+\paragraph{The failure analysis is category-level only.} eval3 transcripts stay sealed until publication, so we did
+not inspect individual failures and cannot confirm which mechanism produced the residue
+(\Cref{sec:failure}).
+
+\paragraph{The literature search was arXiv-only and closed on 14 November 2026}, with most entries read at
+abstract level. The novelty statement in \Cref{sec:novelty} should be read as ``in the work we examined'', and a
+broader search of non-arXiv venues remains outstanding.

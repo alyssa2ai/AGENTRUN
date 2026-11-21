@@ -1,0 +1,10 @@
+# source: PHASE3/ANALYSIS/SECONDARY_cells.json -> contrasts[contrast][model].success
+model	contrast	contrast_idx	diff	lo	hi
+Qwen2.5-14B	EBG-RT	0	29.9	23.0	36.9
+Qwen2.5-14B	EBG-T	1	22.8	15.9	29.9
+Qwen2.5-14B	EBG-LG	2	13.8	8.5	19.3
+Qwen2.5-14B	EBG-B	3	17.2	10.1	24.3
+Llama-3.2-3B	EBG-RT	0	12.3	6.3	18.3
+Llama-3.2-3B	EBG-T	1	29.5	22.8	36.3
+Llama-3.2-3B	EBG-LG	2	7.1	1.5	12.6
+Llama-3.2-3B	EBG-B	3	34.7	27.7	41.7
