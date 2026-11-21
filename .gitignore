@@ -127,3 +127,10 @@ research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/tools/redaction_identifier
 
 # Phase 5: page contact sheets are review artifacts, regenerate with tools/contact_sheet.py
 research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/build/pages/
+
+# LaTeX build artifacts in the publication package
+research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/**/*.aux
+research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/**/*.log
+research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/**/*.out
+research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/**/*.toc
+research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/**/*.blg
