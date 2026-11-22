@@ -1,25 +1,0 @@
-Could not reach the Hub (Cannot reach https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11653.99it/s]
-Could not reach the Hub (Cannot reach https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'sentence-transformers/all-MiniLM-L6-v2'.
-Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 10812.50it/s]
-Could not reach the Hub (Cannot reach https://huggingface.co/api/models/BAAI/bge-small-en-v1.5: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'BAAI/bge-small-en-v1.5'.
-Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 8140.78it/s]
-Could not reach the Hub (Cannot reach https://huggingface.co/api/models/BAAI/bge-small-en-v1.5: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable.). Using cached commit hash for 'BAAI/bge-small-en-v1.5'.
-Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 9604.80it/s]
-Traceback (most recent call last):
-  File "/home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_DEEPENING_2026-11-11/scripts/retrieval_bench.py", line 221, in <module>
-    raise SystemExit(main())
-                     ^^^^^^
-  File "/home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_DEEPENING_2026-11-11/scripts/retrieval_bench.py", line 190, in main
-    texts, queries = build(seed, size)
-                     ^^^^^^^^^^^^^^^^^
-  File "/home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_DEEPENING_2026-11-11/scripts/retrieval_bench.py", line 71, in build
-    add(next(it, None) or "Project " + str(len(texts)), a, w.value(a))
-                                                           ^^^^^^^^^^
-  File "/home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_DEEPENING_2026-11-11/scripts/memlab.py", line 119, in value
-    v = r.choice(_FIRST) + " " + self.name()
-                                 ^^^^^^^^^^^
-  File "/home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_DEEPENING_2026-11-11/scripts/memlab.py", line 104, in name
-    return self.names[self._i - 1]
-           ~~~~~~~~~~^^^^^^^^^^^^^
-IndexError: list index out of range

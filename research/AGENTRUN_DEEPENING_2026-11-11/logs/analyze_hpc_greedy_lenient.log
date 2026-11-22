@@ -1,4 +1,0 @@
-  File "E:\agentrun\research\AGENTRUN_DEEPENING_2026-11-11\scripts\analyze.py", line 88
-    v = re.search(r"value\W{0,3}[:=]\s*\"?([^
-                  ^
-SyntaxError: unterminated string literal (detected at line 88)

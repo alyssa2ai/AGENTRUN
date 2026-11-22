@@ -1,4 +1,0 @@
-[      3s req=   4] dev-S1_context_loss-00 B -> correct
-[     56s req=   8] dev-S1_context_loss-00 E -> correct
-[    106s req=  11] dev-S2_retrieval-00 B -> correct
-[    108s req=  15] dev-S2_retrieval-00 E -> correct

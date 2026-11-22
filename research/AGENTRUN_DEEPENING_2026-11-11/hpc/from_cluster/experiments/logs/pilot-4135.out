@@ -1,5 +1,0 @@
-Start: 2026-11-11T11:21:23+00:00 job=4135 host=sit-gpu CUDA_VISIBLE_DEVICES=0
-               total        used        free      shared  buff/cache   available
-Mem:           503Gi       7.2Gi       1.6Gi       5.8Mi       498Gi       496Gi
-2.14.1+cu130 5.18.0 True NVIDIA L40
-End: 2026-11-11T11:21:30+00:00 exit=1

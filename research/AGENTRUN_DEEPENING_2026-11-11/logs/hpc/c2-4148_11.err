@@ -1,3 +1,0 @@
-Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   6%|▌         | 21/338 [00:00<00:01, 209.64it/s]Loading weights:  25%|██▍       | 83/338 [00:00<00:00, 429.44it/s]Loading weights:  47%|████▋     | 160/338 [00:00<00:00, 570.57it/s]Loading weights:  67%|██████▋   | 227/338 [00:00<00:00, 607.93it/s]Loading weights:  86%|████████▌ | 291/338 [00:00<00:00, 616.13it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 585.65it/s]
-fatal: not a git repository (or any parent up to mount point /)
-Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
