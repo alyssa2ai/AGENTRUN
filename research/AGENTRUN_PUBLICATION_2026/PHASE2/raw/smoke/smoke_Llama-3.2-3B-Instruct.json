@@ -1,0 +1,45 @@
+{
+ "model": "meta-llama/Llama-3.2-3B-Instruct",
+ "client": {
+  "backend": "hf-local",
+  "model": "meta-llama/Llama-3.2-3B-Instruct",
+  "model_path": "/home/gpuuser12/.cache/huggingface/hub/models--meta-llama--Llama-3.2-3B-Instruct/snapshots/0cb88a4f764b7a12671c53f0838cd831a0843b95",
+  "adapter": null,
+  "adapter_sha256": null,
+  "temperature": 0.0,
+  "seed": 20261111,
+  "max_new_tokens": 700,
+  "dtype": "bfloat16",
+  "parser_version": "two-pass-v2+client-fallback",
+  "decoding": "greedy",
+  "thinking": "disabled via chat template where supported",
+  "torch": "2.15.0+cu132",
+  "transformers": "5.22.2",
+  "cuda": "13.2",
+  "gpu": "NVIDIA L40",
+  "gpu_mem_gib": 44.6,
+  "family": "llama",
+  "family_adapter": "evarb.clients.FamilyClient/1"
+ },
+ "load_s": 11.2,
+ "peak_vram_gib": 6.22,
+ "n_runs": 20,
+ "turns": 98,
+ "turn_counts": {
+  "tool_call": 84,
+  "path:family_llama_json": 84,
+  "other_text": 14,
+  "path:none": 14
+ },
+ "frozen_parser_only": {
+  "none": 98
+ },
+ "parsable_rate": 0.8571,
+ "family_reparses": 84,
+ "outcomes": {
+  "B:over_abstain": 6,
+  "G:over_abstain": 6,
+  "B:correct": 4,
+  "G:correct": 4
+ }
+}

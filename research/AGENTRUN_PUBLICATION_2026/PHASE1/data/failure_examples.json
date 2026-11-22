@@ -1,0 +1,5030 @@
+{
+ "format_error": [
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  }
+ ],
+ "incorrect_despite_memory": [
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-01",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-01",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  }
+ ],
+ "memory_never_queried": [
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-01",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S3_conflict-01",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  }
+ ],
+ "tool_failure_not_retried": [
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-04",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-04",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-04",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-04",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-04",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-08",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-08",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-08",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-08",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-08",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-12",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-12",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-12",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-12",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-12",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "A",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "E",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  }
+ ],
+ "unnecessary_abstention": [
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "A",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "B",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "A",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "B",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S4_stale-00",
+   "config": "A",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S4_stale-00",
+   "config": "B",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S4_stale-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S4_stale-00",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S4_stale-00",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "A",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "B",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "B",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "A",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "B",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S4_stale-01",
+   "config": "A",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S4_stale-01",
+   "config": "B",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S4_stale-01",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S4_stale-01",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S4_stale-01",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "A",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "B",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "A",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  }
+ ],
+ "correct_without_memory": [
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-02",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-02",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-03",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-04",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-05",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-06",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-06",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-07",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-08",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-09",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-10",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-10",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-11",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-12",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-13",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-14",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-14",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-15",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-04",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-08",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-12",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-00",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-02",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-02",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-03",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-04",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-04",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-05",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-06",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-06",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-07",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-08",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-08",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-09",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-10",
+   "config": "A",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  }
+ ],
+ "verifier_accepted_harmful": [
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "D",
+   "outcome": "unsupported_claim",
+   "draft_outcome": "unsupported_claim",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "E",
+   "outcome": "unsupported_claim",
+   "draft_outcome": "unsupported_claim",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S4_stale-02",
+   "config": "C",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S4_stale-02",
+   "config": "D",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-13",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S3_conflict-04",
+   "config": "D",
+   "outcome": "arbitrary_pick",
+   "draft_outcome": "arbitrary_pick",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen3_8b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "C",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen3_8b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "D",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen3_8b_v1",
+   "task_id": "eval2-S3_conflict-06",
+   "config": "D",
+   "outcome": "arbitrary_pick",
+   "draft_outcome": "arbitrary_pick",
+   "verdict": "SUPPORTED"
+  }
+ ],
+ "failure_to_abstain": [
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "D",
+   "outcome": "unsupported_claim",
+   "draft_outcome": "unsupported_claim",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "E",
+   "outcome": "unsupported_claim",
+   "draft_outcome": "unsupported_claim",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_14b_v1",
+   "task_id": "eval2-S5_unsupported-03",
+   "config": "B",
+   "outcome": "unsupported_claim",
+   "draft_outcome": "unsupported_claim",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_14b_v1",
+   "task_id": "eval2-S5_unsupported-07",
+   "config": "B",
+   "outcome": "unsupported_claim",
+   "draft_outcome": "unsupported_claim",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_14b_v1",
+   "task_id": "eval2-S5_unsupported-09",
+   "config": "B",
+   "outcome": "unsupported_claim",
+   "draft_outcome": "unsupported_claim",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_14b_v1",
+   "task_id": "eval2-S5_unsupported-15",
+   "config": "B",
+   "outcome": "unsupported_claim",
+   "draft_outcome": "unsupported_claim",
+   "verdict": null
+  }
+ ],
+ "verifier_caught_harmful": [
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S6_tool_failure-09",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-13",
+   "config": "D",
+   "outcome": "correct",
+   "draft_outcome": "unsupported_claim",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_1p5b_v2",
+   "task_id": "eval2-S5_unsupported-13",
+   "config": "E",
+   "outcome": "correct",
+   "draft_outcome": "unsupported_claim",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "stale_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-04",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-04",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-04",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-07",
+   "config": "C",
+   "outcome": "false_conflict",
+   "draft_outcome": "stale_value",
+   "verdict": "CONFLICT"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S3_conflict-14",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "arbitrary_pick",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-06",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-06",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-06",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-08",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-08",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-08",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-14",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-14",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-14",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-12",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-06",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-06",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-06",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-08",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-08",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-08",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-10",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-10",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-10",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S1_context_loss-12",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "wrong_value",
+   "verdict": "UNSUPPORTED"
+  }
+ ],
+ "gold_retrieved_but_wrong_outcome": [
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "B",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "C",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "D",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-00",
+   "config": "E",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "B",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "C",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "D",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "E",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "B",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "stale_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "D",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "E",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "B",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "C",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "D",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "E",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "B",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "C",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "D",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "E",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-03",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-04",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-04",
+   "config": "B",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-04",
+   "config": "C",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-04",
+   "config": "D",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-04",
+   "config": "E",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-05",
+   "config": "B",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-05",
+   "config": "C",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-05",
+   "config": "D",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-05",
+   "config": "E",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-06",
+   "config": "B",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-06",
+   "config": "C",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-06",
+   "config": "D",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-06",
+   "config": "E",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-07",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-07",
+   "config": "D",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  }
+ ],
+ "verifier_rejected_correct": [
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-03",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-04",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-07",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-13",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-03",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-04",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-05",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-05",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-05",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-05",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-06",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S4_stale-07",
+   "config": "C",
+   "outcome": "false_conflict",
+   "draft_outcome": "correct",
+   "verdict": "CONFLICT"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-09",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-09",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-12",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S6_tool_failure-03",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S6_tool_failure-03",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S6_tool_failure-03",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S2_retrieval-07",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-08",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-08",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-10",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S2_retrieval-12",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S2_retrieval-12",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S2_retrieval-13",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S2_retrieval-13",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  }
+ ],
+ "abstained_with_gold_in_hand": [
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "stale_value",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-03",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-04",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-07",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-07",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-10",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-10",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-13",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "B",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-03",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-03",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-04",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-05",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-05",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-05",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-05",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-05",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-06",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-09",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-09",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-11",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-12",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-15",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S6_tool_failure-03",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S6_tool_failure-03",
+   "config": "D",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  }
+ ],
+ "hit_step_limit": [
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-03",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S5_unsupported-10",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S2_retrieval-13",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S3_conflict-00",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-01",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-03",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-03",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-04",
+   "config": "B",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-04",
+   "config": "C",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-04",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-04",
+   "config": "E",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S4_stale-05",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S3_conflict-06",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-10",
+   "config": "B",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-10",
+   "config": "C",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-10",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-10",
+   "config": "E",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-10",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S4_stale-11",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-12",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-12",
+   "config": "E",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S3_conflict-12",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-13",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "B",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "C",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S3_conflict-02",
+   "config": "E",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "B",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "C",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S4_stale-03",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S3_conflict-04",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S3_conflict-04",
+   "config": "E",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S3_conflict-05",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S5_unsupported-05",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S1_context_loss-06",
+   "config": "A",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S4_stale-07",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  }
+ ],
+ "redundant_search_after_gold_retrieved": [
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "D",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-01",
+   "config": "E",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-03",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-03",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-03",
+   "config": "D",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-03",
+   "config": "E",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "B",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "E",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-09",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-09",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-09",
+   "config": "D",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-09",
+   "config": "E",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-11",
+   "config": "B",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-11",
+   "config": "C",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-11",
+   "config": "D",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-11",
+   "config": "E",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-13",
+   "config": "B",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-13",
+   "config": "C",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-13",
+   "config": "D",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-13",
+   "config": "E",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-00",
+   "config": "D",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S3_conflict-01",
+   "config": "E",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "E",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-03",
+   "config": "B",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-03",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-03",
+   "config": "D",
+   "outcome": "false_conflict",
+   "draft_outcome": "false_conflict",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-03",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "over_abstain",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-06",
+   "config": "B",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-06",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "B",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "C",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "D",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "E",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-09",
+   "config": "B",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-09",
+   "config": "C",
+   "outcome": "over_abstain",
+   "draft_outcome": "correct",
+   "verdict": "UNSUPPORTED"
+  }
+ ],
+ "stale_memory_used": [
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-01",
+   "config": "B",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S4_stale-07",
+   "config": "B",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S4_stale-02",
+   "config": "B",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S4_stale-02",
+   "config": "C",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S4_stale-02",
+   "config": "D",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen3_8b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "B",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen3_8b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "C",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen3_8b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "D",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen3_8b_v2",
+   "task_id": "eval2-S4_stale-02",
+   "config": "B",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen3_8b_v2",
+   "task_id": "eval2-S4_stale-02",
+   "config": "C",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_14b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "B",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_14b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "C",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_14b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "D",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_14b_v2",
+   "task_id": "eval2-S4_stale-02",
+   "config": "B",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_14b_v2",
+   "task_id": "eval2-S4_stale-02",
+   "config": "C",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_14b_v2",
+   "task_id": "eval2-S4_stale-02",
+   "config": "D",
+   "outcome": "stale_value",
+   "draft_outcome": "stale_value",
+   "verdict": "SUPPORTED"
+  }
+ ],
+ "answer_with_empty_value": [
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "A",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "B",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S1_context_loss-04",
+   "config": "B",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "B",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "A",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "B",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-00",
+   "config": "A",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "A",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "B",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-01",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-02",
+   "config": "A",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-05",
+   "config": "A",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-06",
+   "config": "A",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-06",
+   "config": "B",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-07",
+   "config": "A",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-08",
+   "config": "B",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-10",
+   "config": "A",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "A",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "B",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "C",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "D",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S6_tool_failure-13",
+   "config": "E",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-14",
+   "config": "A",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S1_context_loss-14",
+   "config": "B",
+   "outcome": "wrong_value",
+   "draft_outcome": "wrong_value",
+   "verdict": null
+  }
+ ],
+ "conflict_resolved_arbitrarily": [
+  {
+   "run_id": "c2_qwen25_3b_v1",
+   "task_id": "eval2-S3_conflict-14",
+   "config": "B",
+   "outcome": "arbitrary_pick",
+   "draft_outcome": "arbitrary_pick",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S3_conflict-04",
+   "config": "D",
+   "outcome": "arbitrary_pick",
+   "draft_outcome": "arbitrary_pick",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen3_8b_v1",
+   "task_id": "eval2-S3_conflict-05",
+   "config": "B",
+   "outcome": "arbitrary_pick",
+   "draft_outcome": "arbitrary_pick",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen3_8b_v1",
+   "task_id": "eval2-S3_conflict-06",
+   "config": "D",
+   "outcome": "arbitrary_pick",
+   "draft_outcome": "arbitrary_pick",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen3_8b_v1",
+   "task_id": "eval2-S3_conflict-11",
+   "config": "B",
+   "outcome": "arbitrary_pick",
+   "draft_outcome": "arbitrary_pick",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen3_8b_v1",
+   "task_id": "eval2-S3_conflict-13",
+   "config": "B",
+   "outcome": "arbitrary_pick",
+   "draft_outcome": "arbitrary_pick",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen3_8b_v2",
+   "task_id": "eval2-S3_conflict-05",
+   "config": "B",
+   "outcome": "arbitrary_pick",
+   "draft_outcome": "arbitrary_pick",
+   "verdict": null
+  }
+ ],
+ "three_or_more_memory_searches": [
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S3_conflict-01",
+   "config": "E",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-02",
+   "config": "E",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": "SUPPORTED"
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S5_unsupported-03",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-12",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-12",
+   "config": "E",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_3b_v2",
+   "task_id": "eval2-S2_retrieval-14",
+   "config": "D",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S5_unsupported-00",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S3_conflict-02",
+   "config": "E",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "B",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S4_stale-02",
+   "config": "C",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S4_stale-03",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S3_conflict-04",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S3_conflict-04",
+   "config": "E",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S3_conflict-05",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S4_stale-07",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S5_unsupported-07",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S5_unsupported-07",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S5_unsupported-07",
+   "config": "D",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S4_stale-08",
+   "config": "B",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S4_stale-08",
+   "config": "C",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S4_stale-08",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S3_conflict-11",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v1",
+   "task_id": "eval2-S3_conflict-12",
+   "config": "D",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S4_stale-00",
+   "config": "B",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S4_stale-00",
+   "config": "C",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "B",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S5_unsupported-01",
+   "config": "C",
+   "outcome": "format_error",
+   "draft_outcome": "format_error",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S5_unsupported-03",
+   "config": "B",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S5_unsupported-03",
+   "config": "C",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S4_stale-04",
+   "config": "B",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S4_stale-04",
+   "config": "C",
+   "outcome": "max_steps",
+   "draft_outcome": "max_steps",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S5_unsupported-05",
+   "config": "B",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S5_unsupported-05",
+   "config": "C",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S5_unsupported-05",
+   "config": "D",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  },
+  {
+   "run_id": "c2_qwen25_7b_v2",
+   "task_id": "eval2-S5_unsupported-05",
+   "config": "E",
+   "outcome": "correct",
+   "draft_outcome": "correct",
+   "verdict": null
+  }
+ ]
+}

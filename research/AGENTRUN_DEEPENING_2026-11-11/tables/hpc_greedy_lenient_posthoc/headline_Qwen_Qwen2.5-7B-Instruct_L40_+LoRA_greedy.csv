@@ -1,0 +1,6 @@
+Config,n,Task success (95% Wilson CI),Harmful assertion,Safe miss,Format/steps,Answers whose value is in tool evidence
+A: stateless baseline,48,8/48 (16.7%; 9-30),0/48 (0.0%; 0-7),12/48,28/48,4/4 (100.0%; 51-100)
+B: retrieval,48,24/48 (50.0%; 36-64),1/48 (2.1%; 0-11),10/48,13/48,14/15 (93.3%; 70-99)
+C: verified retrieval,48,20/48 (41.7%; 29-56),0/48 (0.0%; 0-7),15/48,13/48,10/10 (100.0%; 72-100)
+D: + provenance,48,25/48 (52.1%; 38-66),1/48 (2.1%; 0-11),8/48,14/48,16/16 (100.0%; 81-100)
+E: + reliability gate,48,34/48 (70.8%; 57-82),0/48 (0.0%; 0-7),6/48,8/48,21/21 (100.0%; 85-100)

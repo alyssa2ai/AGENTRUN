@@ -1,0 +1,15 @@
+run                              harm empty real 0-tool repair rep->ok round() mem used S1-4,B-E
+c2_qwen25_14b_v1                   10     0   10      0      0       0      21           236/256
+c2_qwen25_14b_v2                    3     0    3      0     50       2      19           232/256
+c2_qwen25_1p5b_v1                   0     0    0      0      0       0       0             0/256
+c2_qwen25_1p5b_v2                  24     0   24      0    480      94       0             0/256
+c2_qwen25_3b_v1                    24    15    9      1      0       0       0           164/256
+c2_qwen25_3b_v2                    37    20   17     11    120      39       0           224/256
+c2_qwen25_7b_v1                     1     0    1      0      0       0       0           208/256
+c2_qwen25_7b_v2                     7     0    7      4     14      14       0           232/256
+c2_qwen25_7b_v2_bm25_pad2000        6     0    6      4      6       6       0           174/192
+c2_qwen25_7b_v2_hash_pad2000       10     0   10      4      4       4       1           174/192
+c2_qwen3_8b_v1                      7     0    7      0      0       0       0           256/256
+c2_qwen3_8b_v2                      3     0    3      0      0       0       0           256/256
+
+repository adapter: 18 steps over 3.0 epochs = 6 steps/epoch; batch 2 x accumulation 4 gives 5 steps/epoch for 35 examples (V1) and 6 for 46 examples (V2)

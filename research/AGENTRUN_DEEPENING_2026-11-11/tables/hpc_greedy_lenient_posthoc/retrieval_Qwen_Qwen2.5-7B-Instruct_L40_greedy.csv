@@ -1,0 +1,17 @@
+Config,Scenario,runs with a memory call,recall@4 (first query),precision@4 (first query),recall (all queries),precision (all queries),memory calls/run
+B,S1_context_loss,7,1.00,0.50,1.00,0.50,1.00
+B,S2_retrieval,7,1.00,0.25,1.00,0.25,1.00
+B,S3_conflict,6,1.00,0.50,1.00,0.72,2.00
+B,S4_stale,6,1.00,0.50,1.00,0.89,1.83
+C,S1_context_loss,7,1.00,0.50,1.00,0.50,1.00
+C,S2_retrieval,7,1.00,0.25,1.00,0.25,1.00
+C,S3_conflict,6,1.00,0.50,1.00,0.72,2.00
+C,S4_stale,6,1.00,0.50,1.00,0.89,1.83
+D,S1_context_loss,7,1.00,0.50,1.00,0.50,1.00
+D,S2_retrieval,7,1.00,0.25,1.00,0.25,1.00
+D,S3_conflict,6,1.00,0.50,1.00,0.72,2.17
+D,S4_stale,6,1.00,0.50,1.00,0.89,2.17
+E,S1_context_loss,7,1.00,0.50,1.00,0.50,1.00
+E,S2_retrieval,7,1.00,0.25,1.00,0.25,1.00
+E,S3_conflict,6,1.00,0.50,1.00,0.72,1.67
+E,S4_stale,6,1.00,0.50,1.00,0.89,1.33

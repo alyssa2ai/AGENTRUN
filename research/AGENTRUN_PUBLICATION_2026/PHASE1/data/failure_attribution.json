@@ -1,0 +1,2090 @@
+{
+ "c2_qwen25_3b_v2": {
+  "cause_by_config": {
+   "B": {
+    "_n": 64,
+    "never_searched": 8,
+    "success": 29,
+    "gold_in_hand": 26,
+    "gold_not_retrieved": 1
+   },
+   "C": {
+    "_n": 64,
+    "never_searched": 8,
+    "verifier_overturned": 10,
+    "success": 19,
+    "gold_in_hand": 26,
+    "gold_not_retrieved": 1
+   },
+   "D": {
+    "_n": 64,
+    "never_searched": 8,
+    "success": 24,
+    "gold_in_hand": 30,
+    "gold_not_retrieved": 1,
+    "verifier_overturned": 1
+   },
+   "E": {
+    "_n": 64,
+    "never_searched": 8,
+    "success": 27,
+    "gold_in_hand": 27,
+    "verifier_overturned": 2
+   }
+  },
+  "gold_in_hand_by_config": {
+   "B": {
+    "S4:false_conflict": 14,
+    "S2:over_abstain": 1,
+    "S2:false_conflict": 8,
+    "S1:false_conflict": 3
+   },
+   "C": {
+    "S4:false_conflict": 14,
+    "S2:over_abstain": 1,
+    "S2:false_conflict": 8,
+    "S1:false_conflict": 3
+   },
+   "D": {
+    "S4:false_conflict": 15,
+    "S1:wrong_value": 1,
+    "S2:over_abstain": 2,
+    "S2:max_steps": 2,
+    "S1:false_conflict": 1,
+    "S2:false_conflict": 7,
+    "S2:format_error": 1,
+    "S1:over_abstain": 1
+   },
+   "E": {
+    "S4:false_conflict": 14,
+    "S1:over_abstain": 2,
+    "S2:false_conflict": 8,
+    "S2:over_abstain": 1,
+    "S2:max_steps": 1,
+    "S1:wrong_value": 1
+   }
+  },
+  "gold_in_hand_examples": [
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-01",
+    "config": "D",
+    "outcome": "wrong_value",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-01",
+    "config": "E",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-01",
+    "config": "B",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-01",
+    "config": "C",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-01",
+    "config": "D",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-01",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-02",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-02",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-02",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 5
+   },
+   {
+    "task_id": "eval2-S1_context_loss-03",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S1_context_loss-03",
+    "config": "E",
+    "outcome": "over_abstain",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S2_retrieval-03",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-03",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-03",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-03",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-04",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-04",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-04",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-04",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-05",
+    "config": "E",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-06",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-06",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-06",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-06",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-06",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-07",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-07",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-07",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-07",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-08",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-08",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-08",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-08",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-09",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-09",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   }
+  ]
+ },
+ "c2_qwen25_7b_v1": {
+  "cause_by_config": {
+   "B": {
+    "_n": 64,
+    "success": 26,
+    "gold_in_hand": 26,
+    "never_searched": 12
+   },
+   "C": {
+    "_n": 64,
+    "verifier_overturned": 7,
+    "gold_in_hand": 26,
+    "never_searched": 12,
+    "success": 19
+   },
+   "D": {
+    "_n": 64,
+    "verifier_overturned": 4,
+    "gold_in_hand": 16,
+    "success": 32,
+    "never_searched": 12
+   },
+   "E": {
+    "_n": 64,
+    "verifier_overturned": 1,
+    "gold_in_hand": 7,
+    "success": 44,
+    "never_searched": 12
+   }
+  },
+  "gold_in_hand_by_config": {
+   "D": {
+    "S2:over_abstain": 1,
+    "S4:false_conflict": 4,
+    "S4:max_steps": 3,
+    "S3:max_steps": 4,
+    "S3:format_error": 1,
+    "S2:max_steps": 1,
+    "S1:max_steps": 1,
+    "S4:format_error": 1
+   },
+   "E": {
+    "S2:over_abstain": 1,
+    "S3:max_steps": 2,
+    "S4:false_conflict": 2,
+    "S3:format_error": 1,
+    "S2:max_steps": 1
+   },
+   "B": {
+    "S3:format_error": 9,
+    "S1:max_steps": 4,
+    "S4:false_conflict": 4,
+    "S4:max_steps": 2,
+    "S4:format_error": 6,
+    "S1:wrong_value": 1
+   },
+   "C": {
+    "S3:format_error": 9,
+    "S1:max_steps": 4,
+    "S4:false_conflict": 4,
+    "S4:max_steps": 2,
+    "S4:format_error": 6,
+    "S1:over_abstain": 1
+   }
+  },
+  "gold_in_hand_examples": [
+   {
+    "task_id": "eval2-S2_retrieval-00",
+    "config": "D",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-00",
+    "config": "E",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-00",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-00",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S1_context_loss-01",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-01",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-02",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-02",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-02",
+    "config": "E",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-02",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-02",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-02",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-02",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-03",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-03",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S3_conflict-04",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-04",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-04",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S3_conflict-04",
+    "config": "E",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-04",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-04",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-05",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-05",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-05",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-06",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-06",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "E",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-09",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-09",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-09",
+    "config": "D",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-09",
+    "config": "E",
+    "outcome": "format_error",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-10",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-10",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S1_context_loss-11",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S1_context_loss-11",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S2_retrieval-11",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-11",
+    "config": "E",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-11",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-11",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-11",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "B",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "C",
+    "outcome": "format_error",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S1_context_loss-12",
+    "config": "B",
+    "outcome": "wrong_value",
+    "n_memory_calls": 1
+   }
+  ]
+ },
+ "c2_qwen25_7b_v2": {
+  "cause_by_config": {
+   "B": {
+    "_n": 64,
+    "never_searched": 6,
+    "success": 45,
+    "gold_in_hand": 13
+   },
+   "C": {
+    "_n": 64,
+    "never_searched": 6,
+    "verifier_overturned": 11,
+    "success": 34,
+    "gold_in_hand": 13
+   },
+   "D": {
+    "_n": 64,
+    "never_searched": 6,
+    "success": 36,
+    "gold_in_hand": 19,
+    "verifier_overturned": 3
+   },
+   "E": {
+    "_n": 64,
+    "never_searched": 6,
+    "success": 56,
+    "verifier_overturned": 1,
+    "gold_in_hand": 1
+   }
+  },
+  "gold_in_hand_by_config": {
+   "B": {
+    "S4:max_steps": 2,
+    "S4:false_conflict": 11
+   },
+   "C": {
+    "S4:max_steps": 2,
+    "S4:false_conflict": 11
+   },
+   "D": {
+    "S4:false_conflict": 12,
+    "S3:arbitrary_pick": 1,
+    "S2:max_steps": 3,
+    "S4:max_steps": 1,
+    "S3:max_steps": 1,
+    "S1:max_steps": 1
+   },
+   "E": {
+    "S2:max_steps": 1
+   }
+  },
+  "gold_in_hand_examples": [
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-02",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-02",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-02",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-04",
+    "config": "D",
+    "outcome": "arbitrary_pick",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-04",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-04",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-04",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-05",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-05",
+    "config": "E",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-06",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S2_retrieval-08",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-10",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-10",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-10",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S2_retrieval-11",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-13",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-13",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-13",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-14",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-14",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-14",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-15",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-15",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-15",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-15",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   }
+  ]
+ },
+ "c2_qwen3_8b_v1": {
+  "cause_by_config": {
+   "B": {
+    "_n": 64,
+    "success": 45,
+    "gold_in_hand": 18,
+    "gold_not_retrieved": 1
+   },
+   "C": {
+    "_n": 64,
+    "success": 43,
+    "gold_in_hand": 17,
+    "gold_not_retrieved": 1,
+    "verifier_overturned": 3
+   },
+   "D": {
+    "_n": 64,
+    "success": 50,
+    "gold_in_hand": 12,
+    "gold_not_retrieved": 1,
+    "verifier_overturned": 1
+   },
+   "E": {
+    "_n": 64,
+    "success": 63,
+    "gold_in_hand": 1
+   }
+  },
+  "gold_in_hand_by_config": {
+   "D": {
+    "S3:over_abstain": 2,
+    "S4:false_conflict": 3,
+    "S4:max_steps": 5,
+    "S3:arbitrary_pick": 1,
+    "S3:max_steps": 1
+   },
+   "B": {
+    "S4:max_steps": 5,
+    "S4:false_conflict": 6,
+    "S3:max_steps": 4,
+    "S3:arbitrary_pick": 3
+   },
+   "C": {
+    "S4:max_steps": 5,
+    "S4:false_conflict": 6,
+    "S3:max_steps": 4,
+    "S3:over_abstain": 2
+   },
+   "E": {
+    "S4:max_steps": 1
+   }
+  },
+  "gold_in_hand_examples": [
+   {
+    "task_id": "eval2-S3_conflict-00",
+    "config": "D",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-02",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S3_conflict-02",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-05",
+    "config": "B",
+    "outcome": "arbitrary_pick",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-05",
+    "config": "C",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-06",
+    "config": "D",
+    "outcome": "arbitrary_pick",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "E",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S3_conflict-09",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S3_conflict-09",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S3_conflict-11",
+    "config": "B",
+    "outcome": "arbitrary_pick",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-11",
+    "config": "D",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-12",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-12",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S4_stale-12",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-13",
+    "config": "B",
+    "outcome": "arbitrary_pick",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-13",
+    "config": "C",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-13",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-13",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-14",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S3_conflict-14",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S3_conflict-15",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S3_conflict-15",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 3
+   },
+   {
+    "task_id": "eval2-S3_conflict-15",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-15",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-15",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-15",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   }
+  ]
+ },
+ "c2_qwen3_8b_v2": {
+  "cause_by_config": {
+   "B": {
+    "_n": 64,
+    "success": 51,
+    "gold_in_hand": 12,
+    "gold_not_retrieved": 1
+   },
+   "C": {
+    "_n": 64,
+    "success": 46,
+    "gold_in_hand": 12,
+    "gold_not_retrieved": 1,
+    "verifier_overturned": 5
+   },
+   "D": {
+    "_n": 64,
+    "success": 51,
+    "gold_in_hand": 8,
+    "gold_not_retrieved": 1,
+    "verifier_overturned": 4
+   },
+   "E": {
+    "_n": 64,
+    "success": 62,
+    "verifier_overturned": 2
+   }
+  },
+  "gold_in_hand_by_config": {
+   "B": {
+    "S4:false_conflict": 11,
+    "S3:arbitrary_pick": 1
+   },
+   "C": {
+    "S4:false_conflict": 11,
+    "S3:over_abstain": 1
+   },
+   "D": {
+    "S4:false_conflict": 7,
+    "S3:over_abstain": 1
+   }
+  },
+  "gold_in_hand_examples": [
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-05",
+    "config": "B",
+    "outcome": "arbitrary_pick",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-05",
+    "config": "C",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-06",
+    "config": "D",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-07",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-08",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-12",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-12",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-13",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-13",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-13",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-15",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-15",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-15",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   }
+  ]
+ },
+ "c2_qwen25_14b_v2": {
+  "cause_by_config": {
+   "B": {
+    "_n": 64,
+    "gold_in_hand": 13,
+    "success": 44,
+    "never_searched": 6,
+    "gold_not_retrieved": 1
+   },
+   "C": {
+    "_n": 64,
+    "gold_in_hand": 13,
+    "success": 44,
+    "never_searched": 6,
+    "gold_not_retrieved": 1
+   },
+   "D": {
+    "_n": 64,
+    "success": 46,
+    "gold_in_hand": 10,
+    "never_searched": 6,
+    "gold_not_retrieved": 1,
+    "verifier_overturned": 1
+   },
+   "E": {
+    "_n": 64,
+    "gold_in_hand": 8,
+    "success": 49,
+    "never_searched": 6,
+    "gold_not_retrieved": 1
+   }
+  },
+  "gold_in_hand_by_config": {
+   "B": {
+    "S1:max_steps": 4,
+    "S4:false_conflict": 8,
+    "S4:over_abstain": 1
+   },
+   "C": {
+    "S1:max_steps": 4,
+    "S4:false_conflict": 8,
+    "S4:over_abstain": 1
+   },
+   "E": {
+    "S1:max_steps": 7,
+    "S3:over_abstain": 1
+   },
+   "D": {
+    "S4:false_conflict": 3,
+    "S1:max_steps": 4,
+    "S3:over_abstain": 1,
+    "S1:over_abstain": 1,
+    "S2:over_abstain": 1
+   }
+  },
+  "gold_in_hand_examples": [
+   {
+    "task_id": "eval2-S1_context_loss-00",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S1_context_loss-00",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S1_context_loss-00",
+    "config": "E",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-00",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-01",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-02",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-02",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-02",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-02",
+    "config": "E",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-03",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-04",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S1_context_loss-04",
+    "config": "E",
+    "outcome": "max_steps",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-05",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-06",
+    "config": "E",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-07",
+    "config": "E",
+    "outcome": "over_abstain",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S1_context_loss-08",
+    "config": "E",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-09",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-10",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-10",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-10",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-10",
+    "config": "E",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S3_conflict-10",
+    "config": "D",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "B",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "C",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-11",
+    "config": "D",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-12",
+    "config": "D",
+    "outcome": "over_abstain",
+    "n_memory_calls": 2
+   },
+   {
+    "task_id": "eval2-S2_retrieval-12",
+    "config": "D",
+    "outcome": "over_abstain",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-12",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-12",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-14",
+    "config": "B",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-14",
+    "config": "C",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-14",
+    "config": "D",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S1_context_loss-14",
+    "config": "E",
+    "outcome": "max_steps",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-14",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-14",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-15",
+    "config": "B",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   },
+   {
+    "task_id": "eval2-S4_stale-15",
+    "config": "C",
+    "outcome": "false_conflict",
+    "n_memory_calls": 1
+   }
+  ]
+ }
+}

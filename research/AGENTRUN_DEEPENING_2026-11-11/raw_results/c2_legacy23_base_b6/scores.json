@@ -1,0 +1,153 @@
+{
+ "run_id": "c2_legacy23_base_b6",
+ "model": "Qwen/Qwen2.5-7B-Instruct",
+ "adapter_sha256": null,
+ "condition": "base",
+ "tasks": "legacy",
+ "max_steps": 6,
+ "client": {
+  "backend": "hf-local",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "model_path": "/home/gpuuser12/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+  "adapter": null,
+  "adapter_sha256": null,
+  "temperature": 0.0,
+  "seed": 20261111,
+  "max_new_tokens": 700,
+  "dtype": "bfloat16",
+  "parser_version": "two-pass-v2+client-fallback",
+  "decoding": "greedy",
+  "thinking": "disabled via chat template where supported",
+  "torch": "2.15.0+cu132",
+  "transformers": "5.22.2",
+  "cuda": "13.2",
+  "gpu": "NVIDIA L40",
+  "gpu_mem_gib": 44.6
+ },
+ "summary": {
+  "scorer": "eval/harness.py (frozen R0)",
+  "n": 23,
+  "r0_pass": 22
+ },
+ "per_task": [
+  {
+   "task_id": "calc_basic_1",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "calc_basic_2",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "calc_order_of_ops",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "wordcount_basic",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "weather_basic_1",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "weather_basic_2",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "search_basic_1",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "search_basic_2",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "multi_weather_calc",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "multi_wordcount_calc",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "multi_search_weather",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "multi_three_tools",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "chain_weather_then_calc",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "time_sensitive_1",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "no_tool_needed_1",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "no_tool_needed_2",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "adversarial_negative_multiply",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "adversarial_decimal_division",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "adversarial_percentage",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "adversarial_false_premise",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "adversarial_chained_search_calc",
+   "r0": true,
+   "failure_reasons": []
+  },
+  {
+   "task_id": "adversarial_division_by_zero",
+   "r0": false,
+   "failure_reasons": [
+    "missing_required_tools:['calculator']",
+    "expected_tool_error_but_none_occurred"
+   ]
+  },
+  {
+   "task_id": "adversarial_ambiguous_city",
+   "r0": true,
+   "failure_reasons": []
+  }
+ ],
+ "wall_s": 40.8
+}

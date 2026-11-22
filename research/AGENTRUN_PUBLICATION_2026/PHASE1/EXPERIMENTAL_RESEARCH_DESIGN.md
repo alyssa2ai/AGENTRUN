@@ -1,0 +1,111 @@
+# Experimental research design: Phase 2 (development) and Phase 3 (confirmatory)
+
+**Version 2, 14 November 2026.** This replaces version 1 (13 Nov). Version 1 asked "tell or enforce?". The completed pilot (`PILOT_RESULTS.md`) shows that this question is incomplete: the reliability label is itself a source of harm when its evidence is insufficient. The question now has two parts (`SELECTED_RESEARCH_DIRECTION.md`).
+
+**Status.** Plan only. Nothing in Phase 2 or Phase 3 has been run.
+
+## 0. Research question and hypotheses
+
+> **RQ.** For small open-weight tool-using agents with persistent memory, what may a reliability label assert, given the evidence behind it? And when should that assertion be enforced at the terminal action rather than merely shown?
+
+| # | Hypothesis | Pilot status (exploratory) |
+|---|---|---|
+| H1 | Labels computed from metadata alone harm models ≤ 8B on metadata-insufficient memory: G < B on S7/S8-type tasks | Observed: 7B −50 pp (p = 0.004); 3B −23; Q3-8B −31; 14B +6 |
+| H2 | Enforcement benefit falls with capacity: R − G is largest at 3B and ≈ 0 at ≥ 8B | Observed: +18 / +12 / 0 / +3 pp (3B / 7B / 8B / 14B) |
+| H3 | Evidence-basis arbitration (TEA) removes the H1 harm when the text contains ordering evidence, and enforcement on TEA's state (RT) recovers small models | p1dev RT − R: +26.6 / +20.3 / +25.0 pp (3B / 7B / Q3-8B). p1hold TEA-resolvable RT − R: +83 / +83 / +89 pp. Advice alone (T) suffices at ≥ 7B, not at 3B |
+| H4 | TEA introduces new harm when it resolves a genuine conflict (false resolution). Under enforcement (RT) that harm is larger than under advice (T) | Observed: N3 correct `conflict` lost to arbitrary pick or abstention under RT: 5 / 5 / 6 of 6; under T: 0 / 1 / 0 |
+| H5 | Basis-gated enforcement (enforce only metadata-ordered or explicit-correction bases; advise on text-date bases; never enforce on lexical cues near a negation) keeps most of H3's gain and removes most of H4's harm | Not tested; Phase 2 |
+| H6 | R3 (search before submit) has a net cost at 3B on tool-failure tasks with no memory fallback | Observed: 4 + 1 broken correct abstentions at 3B |
+
+**Falsification.**
+- **H3** fails if RT − R ≤ 0 on text-resolvable tasks at 3B on the sealed split.
+- **H4** fails if neither T nor RT raises arbitrary-pick (harmful) answers on genuine conflicts with misleading cues.
+- **H5** fails if the gated variant's net effect is not better than both RT and T. It would then be a design curiosity, not a contribution.
+
+## 1. Phase 2: development (exploratory; may iterate; development splits only)
+
+| Step | Content | Exit criterion |
+|---|---|---|
+| 2.1 | **Arbiter variants** in `prototype/tea.py`: (a) TEA-lexical (now); (b) TEA + a negation guard and a wider cue list, developed on `p1dev`/`p1hold` only; (c) **TEA-LLM**: the same `basis` schema, filled by an LLM extractor at write time (DISCERN/CUPMem-style baseline), with the same 3B/7B model and with a stronger extractor model; (d) **oracle** labels from the generator (upper bound) | Fixture tests; arbiter precision and recall on p1dev + p1hold, reported per basis |
+| 2.2 | **Enforcement variants:** RT (all bases); **RT-gated** (H5); RT-noR3; R3-only; **R3-guarded** (no R3 after ≥ 2 failed registry calls on an abstain); hard override (substitute the resolved value) as an ablation | Unit tests; smoke run on p1dev |
+| 2.3 | **Notice text.** The R2 notice says "no two different values on the same latest date", which is false for explicit-correction ties. Give each basis its own notice text, and ablate notice wording against status-only | Fixture tests |
+| 2.4 | **Scorer.** Count empty-value answers separately; flag S4 `date_in_metadata_only` under B as rational conflict (`ARCHITECTURE_AND_FAILURE_ANALYSIS.md` §3 item 7); add `arbitrary_pick` on genuine conflicts as the primary harm measure for H4 | Scorer versioned; old numbers reproduce |
+| 2.5 | **Second model family.** Load test for Llama-3.2-3B / Llama-3.1-8B (cache directories look incomplete: 8.9 MB and 5.3 GB) or Gemma 3 4B / 12B; parser check on 10 dev tasks | ≥ 95% parsable tool calls |
+| 2.6 | **Phrasing generalisation.** A third development split, written by **someone other than the arbiter's author** (or LLM-paraphrased from a fixed seed set and then human-checked), with correction, validity and negation phrasings not seen in p1dev or p1hold | Split hashed before any arbiter is run on it |
+| 2.7 | **STALE adapter**: State Resolution and Premise Resistance items; licence check first. STALE excludes explicit corrections (its Axiom 2), so it tests only TEA's fallback behaviour (must not resolve implicit conflicts falsely) | 20 items end to end |
+| 2.8 | **Scorer validation:** 200 stratified runs, two annotators, Cohen's κ | κ ≥ 0.8 |
+| 2.9 | **Pre-registration** in the repository, hashed: H1–H6, primary contrasts, tests, multiplicity, exclusions, stopping rules | Commit hash recorded |
+| 2.10 | **Sealed split `eval3`** (§2). Generated by script, hash in `FREEZE_eval3.json`, stored outside the repository until Phase 3 | Leakage audit: 17 static checks + template disjointness + phrasing disjointness from 2.6 |
+
+**Phase 2 GPU budget.** About 15–20 GPU-hours (3B/7B/8B × variants × p1dev + p1hold + 2.6 split, greedy + 2 seeds), in jobs of ≤ 3 h, one GPU (`HPC_RESOURCE_SHARING.md` §4).
+
+## 2. Sealed split `eval3` (built in 2.10, opened only in Phase 3)
+
+- **About 240 tasks, ≥ 48 scenario-variant families, ≥ 1 held-out template per scenario.**
+- **Scenarios:**
+  - S1–S6 as in memlab;
+  - **metadata-insufficient:** same-day correction naming the old value; correction not naming it; validity dates in text (ISO and long form); back-filled entries (metadata order reversed);
+  - **genuine conflicts:** plain; same text date; rival value mentioned neutrally; negated or hypothetical correction cues;
+  - multi-step supersession chains (three values);
+  - **incomplete metadata** (records without `recorded_on`).
+- **Names:** a new slice of the name pool (≥ [10400:]).
+- **The 130-task benchmark-v2 sealed set is not used.** It belongs to the fine-tuning thread and has no memory scenarios.
+
+## 3. Phase 3: confirmatory runs
+
+**Design.**
+- **Models:** Qwen2.5 3B / 7B / 14B, Qwen3-8B, and the second family at 2–3 sizes.
+- **Configurations:** B, G, R, T, RT, RT-gated, TEA-LLM-T, TEA-LLM-RT, R3-guarded.
+- **Decoding:** greedy + 3 seeds at T = 0.7.
+- **Splits:** eval3 and the STALE subset.
+
+**Primary contrasts (pre-registered).**
+
+| # | Contrast | Subset | Hypothesis |
+|---|---|---|---|
+| P1 | G − B | metadata-insufficient | H1 (< 0 for ≤ 8B) |
+| P2 | R − G | metadata-sufficient | H2 (falls with size) |
+| P3 | RT − R | text-resolvable | H3 (> 0, largest at 3B) |
+| P4 | arbitrary-pick rate, RT − R and T − G | genuine conflicts with misleading cues | H4 (> 0) |
+| P5 | RT-gated − RT (net success), and its arbitrary-pick rate | all / genuine conflicts | H5 |
+| P6 | R3-guarded − R | S6 | H6 |
+
+**Statistics.**
+- **Unit:** task. Seeds are averaged within a task, paired within decoding. Tests are at family level.
+- **Tests:** exact family sign-flip permutation; 95% family-bootstrap CIs. Size interactions (P2, P3) use a family-level permutation on the difference of differences.
+- **Multiplicity:** Benjamini–Hochberg over P1–P6 within each split; Holm alongside.
+- **Practical significance:** pp differences with CIs, plus intervention fix/break counts. No claim rests on p alone.
+- **Missing data:** unparsable or crashed runs count as failures and are also reported separately.
+
+**Power.** The pilot's 7B S7/S8 effect (−50 pp over 12 families) would be detected easily. The 14B and 8B R − G effects (≤ 3 pp) would not, and need not be: they are predicted to be ≈ 0. Simulate from the pilot variances before freezing.
+
+**GPU estimate.**
+- 240 tasks × 9 configurations × 4 decodings ≈ 8,600 runs per model.
+- 3B ≈ 6 h; 7B ≈ 11 h; 8B ≈ 20 h; 14B ≈ 60 h; second family ≈ 30 h. **About 130 GPU-hours.**
+- On one L40 at a time this is about 6 days of continuous use. Agree a window with Veriflow, or drop 14B to greedy only (the pilot shows it is insensitive to labels).
+
+## 4. Measures reported for every cell
+
+- success;
+- correct-answer rate on answerable tasks;
+- unnecessary abstention;
+- false conflict;
+- **arbitrary pick on genuine conflicts (harm)**;
+- unsupported answers on should-abstain tasks;
+- stale-value answers;
+- S7-type and S8-type accuracy;
+- conflict accuracy;
+- intervention rate, fix and break;
+- format errors;
+- step-limit hits;
+- tool calls and model calls;
+- latency (single-occupancy runs only);
+- label tokens;
+- arbiter precision and recall per basis.
+
+## 5. Stopping and reporting rules
+
+- **No sealed split is opened before 2.9 and 2.10 are committed.**
+- **If RT − R on text-resolvable tasks is ≤ 0 at 3B across seeds in Phase 2,** stop and report a negative development result.
+- **If TEA-LLM dominates TEA-lexical on both precision and recall at acceptable cost,** the contribution is the measurement (H1, H4, H5), not the deterministic arbiter. Write it up that way.
+- **All of H1–H6 are reported whatever their sign.**

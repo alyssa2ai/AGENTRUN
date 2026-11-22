@@ -1,0 +1,90 @@
+start 2026-11-14T04:25:25+00:00 job=4183 host=sit-gpu CUDA_VISIBLE_DEVICES=0
+start 2026-11-14T04:25:25+00:00 meta-llama/Llama-3.2-3B-Instruct
+{
+ "model": "meta-llama/Llama-3.2-3B-Instruct",
+ "load_s": 11.2,
+ "peak_vram_gib": 6.22,
+ "n_runs": 20,
+ "turns": 98,
+ "turn_counts": {
+  "tool_call": 84,
+  "path:family_llama_json": 84,
+  "other_text": 14,
+  "path:none": 14
+ },
+ "frozen_parser_only": {
+  "none": 98
+ },
+ "parsable_rate": 0.8571,
+ "family_reparses": 84,
+ "outcomes": {
+  "B:over_abstain": 6,
+  "G:over_abstain": 6,
+  "B:correct": 4,
+  "G:correct": 4
+ }
+}
+exit=0 2026-11-14T04:26:20+00:00 meta-llama/Llama-3.2-3B-Instruct
+start 2026-11-14T04:26:20+00:00 meta-llama/Llama-3.1-8B-Instruct
+{
+ "model": "meta-llama/Llama-3.1-8B-Instruct",
+ "load_s": 20.3,
+ "peak_vram_gib": 15.47,
+ "n_runs": 20,
+ "turns": 99,
+ "turn_counts": {
+  "tool_call": 95,
+  "path:family_llama_json": 95,
+  "other_text": 4,
+  "path:none": 4
+ },
+ "frozen_parser_only": {
+  "none": 99
+ },
+ "parsable_rate": 0.9596,
+ "family_reparses": 95,
+ "outcomes": {
+  "B:over_abstain": 6,
+  "G:max_steps": 2,
+  "G:over_abstain": 4,
+  "G:correct": 2,
+  "B:format_error": 1,
+  "G:format_error": 1,
+  "B:correct": 1,
+  "B:false_conflict": 1,
+  "G:false_conflict": 1,
+  "B:max_steps": 1
+ }
+}
+exit=0 2026-11-14T04:28:17+00:00 meta-llama/Llama-3.1-8B-Instruct
+start 2026-11-14T04:28:17+00:00 Qwen/Qwen2.5-3B-Instruct
+{
+ "model": "Qwen/Qwen2.5-3B-Instruct",
+ "load_s": 5.4,
+ "peak_vram_gib": 5.94,
+ "n_runs": 20,
+ "turns": 71,
+ "turn_counts": {
+  "tool_call": 69,
+  "path:closed": 69,
+  "other_text": 2,
+  "path:none": 2
+ },
+ "frozen_parser_only": {
+  "tool_call": 69,
+  "none": 2
+ },
+ "parsable_rate": 0.9718,
+ "family_reparses": 0,
+ "outcomes": {
+  "B:wrong_value": 1,
+  "G:wrong_value": 1,
+  "B:correct": 6,
+  "G:correct": 5,
+  "B:false_conflict": 3,
+  "G:false_conflict": 3,
+  "G:max_steps": 1
+ }
+}
+exit=0 2026-11-14T04:29:14+00:00 Qwen/Qwen2.5-3B-Instruct
+job finished 2026-11-14T04:29:14+00:00

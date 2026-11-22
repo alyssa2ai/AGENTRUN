@@ -1,0 +1,4187 @@
+[
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-00",
+  "config": "B",
+  "variant": "budget_usd",
+  "outcome": "over_abstain",
+  "prompt": "What is the approved budget, in USD, for Project Skomix?",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 458800,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Skomix"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Skomix.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Skomix.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-00",
+  "config": "C",
+  "variant": "budget_usd",
+  "outcome": "over_abstain",
+  "prompt": "What is the approved budget, in USD, for Project Skomix?",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 458800,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Skomix"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Skomix.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Skomix.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-00",
+  "config": "D",
+  "variant": "budget_usd",
+  "outcome": "over_abstain",
+  "prompt": "What is the approved budget, in USD, for Project Skomix?",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 458800,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Skomix"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Skomix.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Skomix.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-00",
+  "config": "E",
+  "variant": "budget_usd",
+  "outcome": "over_abstain",
+  "prompt": "What is the approved budget, in USD, for Project Skomix?",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 458800,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Skomix"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Skomix.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Skomix.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-00",
+  "config": "E",
+  "variant": "date_in_text",
+  "outcome": "over_abstain",
+  "prompt": "Which port does the staging server for Project Traesam listen on?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": 6974,
+   "tol": 0.011,
+   "value": 3693,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "port",
+     "entity": "Project Traesam"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Traesam port.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Traesam port.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-01",
+  "config": "B",
+  "variant": "team_size",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Faedroult?",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 10,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Faedroult"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for team size of Project Faedroult.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for team size of Project Faedroult.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-01",
+  "config": "C",
+  "variant": "team_size",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Faedroult?",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 10,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Faedroult"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for team size of Project Faedroult.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for team size of Project Faedroult.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-01",
+  "config": "D",
+  "variant": "team_size",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Faedroult?",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 10,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Faedroult"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for team size of Project Faedroult.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for team size of Project Faedroult.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-01",
+  "config": "B",
+  "variant": "date_in_metadata_only",
+  "outcome": "over_abstain",
+  "prompt": "Who is the lead of Project Quoucoust?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "Hana Tasuth",
+   "tol": null,
+   "value": "Soren Vounioth",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Quoucoust"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Quoucoust lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Quoucoust lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-01",
+  "config": "C",
+  "variant": "date_in_metadata_only",
+  "outcome": "over_abstain",
+  "prompt": "Who is the lead of Project Quoucoust?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "Hana Tasuth",
+   "tol": null,
+   "value": "Soren Vounioth",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Quoucoust"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Quoucoust lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Quoucoust lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-01",
+  "config": "D",
+  "variant": "date_in_metadata_only",
+  "outcome": "over_abstain",
+  "prompt": "Who is the lead of Project Quoucoust?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "Hana Tasuth",
+   "tol": null,
+   "value": "Soren Vounioth",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Quoucoust"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Quoucoust lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Quoucoust lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-01",
+  "config": "E",
+  "variant": "date_in_metadata_only",
+  "outcome": "over_abstain",
+  "prompt": "Who is the lead of Project Quoucoust?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "Hana Tasuth",
+   "tol": null,
+   "value": "Soren Vounioth",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Quoucoust"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Quoucoust lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Quoucoust lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-02",
+  "config": "B",
+  "variant": "lead",
+  "outcome": "over_abstain",
+  "prompt": "Who is the lead of Project Nimaex?",
+  "expected": {
+   "conflict_values": [
+    "Goran Nutouth",
+    "Bruno Druroux"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Nimaex"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Nimaex lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Nimaex lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-02",
+  "config": "C",
+  "variant": "lead",
+  "outcome": "over_abstain",
+  "prompt": "Who is the lead of Project Nimaex?",
+  "expected": {
+   "conflict_values": [
+    "Goran Nutouth",
+    "Bruno Druroux"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Nimaex"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry for Project Nimaex lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry for Project Nimaex lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-02",
+  "config": "D",
+  "variant": "lead",
+  "outcome": "over_abstain",
+  "prompt": "Who is the lead of Project Nimaex?",
+  "expected": {
+   "conflict_values": [
+    "Goran Nutouth",
+    "Bruno Druroux"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Nimaex"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Nimaex lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Nimaex lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-02",
+  "config": "E",
+  "variant": "lead",
+  "outcome": "over_abstain",
+  "prompt": "Who is the lead of Project Nimaex?",
+  "expected": {
+   "conflict_values": [
+    "Goran Nutouth",
+    "Bruno Druroux"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Nimaex"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Nimaex lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Nimaex lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-02",
+  "config": "B",
+  "variant": "date_in_text",
+  "outcome": "over_abstain",
+  "prompt": "In which cloud region is Project Quouralt hosted?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "north-fjord-2",
+   "tol": null,
+   "value": "low-marsh-1",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "region",
+     "entity": "Project Quouralt"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Quouralt.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Quouralt.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-02",
+  "config": "C",
+  "variant": "date_in_text",
+  "outcome": "over_abstain",
+  "prompt": "In which cloud region is Project Quouralt hosted?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "north-fjord-2",
+   "tol": null,
+   "value": "low-marsh-1",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "region",
+     "entity": "Project Quouralt"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry for Project Quouralt region.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry for Project Quouralt region.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-02",
+  "config": "D",
+  "variant": "date_in_text",
+  "outcome": "over_abstain",
+  "prompt": "In which cloud region is Project Quouralt hosted?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "north-fjord-2",
+   "tol": null,
+   "value": "low-marsh-1",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "region",
+     "entity": "Project Quouralt"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Quouralt.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Quouralt.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-02",
+  "config": "E",
+  "variant": "date_in_text",
+  "outcome": "over_abstain",
+  "prompt": "In which cloud region is Project Quouralt hosted?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "north-fjord-2",
+   "tol": null,
+   "value": "low-marsh-1",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "region",
+     "entity": "Project Quouralt"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry for Project Quouralt region.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry for Project Quouralt region.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-03",
+  "config": "B",
+  "variant": "lead",
+  "outcome": "over_abstain",
+  "prompt": "Who is the lead of Project Koudron?",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "Zeno Douthoum",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Koudron"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry for Project Koudron lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry for Project Koudron lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-03",
+  "config": "C",
+  "variant": "lead",
+  "outcome": "over_abstain",
+  "prompt": "Who is the lead of Project Koudron?",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "Zeno Douthoum",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Koudron"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for lead of Project Koudron",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for lead of Project Koudron",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-03",
+  "config": "D",
+  "variant": "lead",
+  "outcome": "over_abstain",
+  "prompt": "Who is the lead of Project Koudron?",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "Zeno Douthoum",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Koudron"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for lead of Project Koudron.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for lead of Project Koudron.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-03",
+  "config": "E",
+  "variant": "lead",
+  "outcome": "over_abstain",
+  "prompt": "Who is the lead of Project Koudron?",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "Zeno Douthoum",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Koudron"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Koudron lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Koudron lead.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-03",
+  "config": "B",
+  "variant": "region",
+  "outcome": "over_abstain",
+  "prompt": "In which cloud region is Project Potast hosted?",
+  "expected": {
+   "conflict_values": [
+    "west-ridge-1",
+    "far-cape-5"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "region",
+     "entity": "Project Potast"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Potast.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Potast.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-03",
+  "config": "C",
+  "variant": "region",
+  "outcome": "over_abstain",
+  "prompt": "In which cloud region is Project Potast hosted?",
+  "expected": {
+   "conflict_values": [
+    "west-ridge-1",
+    "far-cape-5"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "region",
+     "entity": "Project Potast"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Potast.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Potast.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-03",
+  "config": "D",
+  "variant": "region",
+  "outcome": "over_abstain",
+  "prompt": "In which cloud region is Project Potast hosted?",
+  "expected": {
+   "conflict_values": [
+    "west-ridge-1",
+    "far-cape-5"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "region",
+     "entity": "Project Potast"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Potast.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Potast.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-03",
+  "config": "E",
+  "variant": "region",
+  "outcome": "over_abstain",
+  "prompt": "In which cloud region is Project Potast hosted?",
+  "expected": {
+   "conflict_values": [
+    "west-ridge-1",
+    "far-cape-5"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "region",
+     "entity": "Project Potast"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Potast.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Potast.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-03",
+  "config": "B",
+  "variant": "date_in_metadata_only",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Traekaelt? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "2027-05-12",
+   "tol": null,
+   "value": "2027-03-13",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Traekaelt"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline information found for Project Traekaelt.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline information found for Project Traekaelt.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-03",
+  "config": "C",
+  "variant": "date_in_metadata_only",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Traekaelt? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "2027-05-12",
+   "tol": null,
+   "value": "2027-03-13",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Traekaelt"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Traekaelt",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Traekaelt",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-03",
+  "config": "D",
+  "variant": "date_in_metadata_only",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Traekaelt? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "2027-05-12",
+   "tol": null,
+   "value": "2027-03-13",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Traekaelt"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Traekaelt",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Traekaelt",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-03",
+  "config": "E",
+  "variant": "date_in_metadata_only",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Traekaelt? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "2027-05-12",
+   "tol": null,
+   "value": "2027-03-13",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Traekaelt"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Traekaelt",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Traekaelt",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S6_tool_failure-03",
+  "config": "B",
+  "variant": "permanent_memory_fallback",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Nadron? This fact is tracked in the registry.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 32,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "Registry unavailable after retries; cannot determine team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "Registry unavailable after retries; cannot determine team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": [
+   "http400:{\"error\":{\"message\":\"Tool call validation failed: tool call validation failed: attempted to call tool 'json' which was not in request.tools\",\"type\":\"invalid_request_error\",\"code\":\"tool_use_failed\",\"failed_generation\":\"{\\\"name\\\": \\\"json\\\", \\\"arguments\\\": {\\n  \\\"evidence\\\": [],\\n  \\\"note\\\": \\\""
+  ]
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S6_tool_failure-03",
+  "config": "C",
+  "variant": "permanent_memory_fallback",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Nadron? This fact is tracked in the registry.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 32,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "Registry lookup failed after retries; cannot determine team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "Registry lookup failed after retries; cannot determine team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S6_tool_failure-03",
+  "config": "D",
+  "variant": "permanent_memory_fallback",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Nadron? This fact is tracked in the registry.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 32,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "Registry lookup failed after retries; cannot determine team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "Registry lookup failed after retries; cannot determine team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S6_tool_failure-03",
+  "config": "E",
+  "variant": "permanent_memory_fallback",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Nadron? This fact is tracked in the registry.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 32,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "Registry unavailable after retries; cannot determine team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "Registry unavailable after retries; cannot determine team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": [
+   "http400:{\"error\":{\"message\":\"Tool call validation failed: tool call validation failed: attempted to call tool 'json' which was not in request.tools\",\"type\":\"invalid_request_error\",\"code\":\"tool_use_failed\",\"failed_generation\":\"{\\\"name\\\": \\\"json\\\", \\\"arguments\\\": {\\n  \\\"evidence\\\": [],\\n  \\\"note\\\": \\\""
+  ]
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-04",
+  "config": "B",
+  "variant": "region",
+  "outcome": "over_abstain",
+  "prompt": "In which cloud region is Project Thiosiost hosted?",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "mid-basin-4",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "region",
+     "entity": "Project Thiosiost"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Thiosiost.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Thiosiost.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-04",
+  "config": "C",
+  "variant": "region",
+  "outcome": "over_abstain",
+  "prompt": "In which cloud region is Project Thiosiost hosted?",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "mid-basin-4",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "region",
+     "entity": "Project Thiosiost"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Thiosiost.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Thiosiost.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-04",
+  "config": "D",
+  "variant": "region",
+  "outcome": "over_abstain",
+  "prompt": "In which cloud region is Project Thiosiost hosted?",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "mid-basin-4",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "region",
+     "entity": "Project Thiosiost"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Thiosiost.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Thiosiost.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-04",
+  "config": "E",
+  "variant": "region",
+  "outcome": "over_abstain",
+  "prompt": "In which cloud region is Project Thiosiost hosted?",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "mid-basin-4",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "region",
+     "entity": "Project Thiosiost"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Thiosiost.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No region information found for Project Thiosiost.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-04",
+  "config": "B",
+  "variant": "deadline",
+  "outcome": "arbitrary_pick",
+  "prompt": "What is the delivery deadline for Project Skofiom? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "conflict_values": [
+    "2027-02-06",
+    "2027-04-03"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Skofiom"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "memory_search",
+    "arguments": {
+     "query": "Project Skofiom deadline"
+    },
+    "status": "OK",
+    "observation": "{\"results\": [{\"text\": \"The delivery deadline for Project Skofiom is 2027-04-03.\"}, {\"text\": \"The delivery deadline for Project Skofiom is 2027-02-06.\"}]}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Most recent deadline among conflicting records",
+   "status": "answer",
+   "value": "2027-04-03"
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Most recent deadline among conflicting records",
+   "status": "answer",
+   "value": "2027-04-03"
+  },
+  "draft_text": null,
+  "api_errors": [
+   "http400:{\"error\":{\"message\":\"Parsing failed. The model generated output that could not be parsed. Please adjust your prompt. See 'failed_generation' for more details.\",\"type\":\"invalid_request_error\",\"code\":\"output_parse_failed\",\"failed_generation\":\"We got not found. No other source. So abstain.\"}}\n"
+  ]
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-04",
+  "config": "D",
+  "variant": "deadline",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Skofiom? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "conflict_values": [
+    "2027-02-06",
+    "2027-04-03"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Skofiom"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Skofiom",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Skofiom",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-04",
+  "config": "E",
+  "variant": "deadline",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Skofiom? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "conflict_values": [
+    "2027-02-06",
+    "2027-04-03"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Skofiom"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Skofiom",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Skofiom",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-04",
+  "config": "B",
+  "variant": "date_in_text",
+  "outcome": "over_abstain",
+  "prompt": "What is the approved budget, in USD, for Project Douskoun?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": 36200,
+   "tol": 0.011,
+   "value": 761100,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Douskoun"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Douskoun.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Douskoun.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-04",
+  "config": "C",
+  "variant": "date_in_text",
+  "outcome": "over_abstain",
+  "prompt": "What is the approved budget, in USD, for Project Douskoun?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": 36200,
+   "tol": 0.011,
+   "value": 761100,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Douskoun"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Douskoun.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Douskoun.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-04",
+  "config": "D",
+  "variant": "date_in_text",
+  "outcome": "over_abstain",
+  "prompt": "What is the approved budget, in USD, for Project Douskoun?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": 36200,
+   "tol": 0.011,
+   "value": 761100,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Douskoun"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Douskoun.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Douskoun.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-04",
+  "config": "E",
+  "variant": "date_in_text",
+  "outcome": "over_abstain",
+  "prompt": "What is the approved budget, in USD, for Project Douskoun?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": 36200,
+   "tol": 0.011,
+   "value": 761100,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Douskoun"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Douskoun.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Douskoun.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S1_context_loss-05",
+  "config": "B",
+  "variant": "combined",
+  "outcome": "wrong_value",
+  "prompt": "In earlier sessions I told you the approved budgets for Project Mevaex and Project Rouvuth. What is their combined budget in USD?",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 949400,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "memory_search",
+    "arguments": {
+     "query": "Project Mevaex approved budget"
+    },
+    "status": "OK",
+    "observation": "{\"results\": [{\"text\": \"The approved budget for Project Mevaex is 844300 USD.\"}, {\"text\": \"The approved budget for Project Sudash is 384300 USD.\"}, {\"text\": \"The approved budget for Project Rouvuth is 105100 USD.\"}, {\"text\": \"The approved budget for Project Gaefiol is 648400 USD.\"}]}"
+   },
+   {
+    "name": "calculator",
+    "arguments": {
+     "expression": "844300 + 105100"
+    },
+    "status": "OK",
+    "observation": "949400"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "memory_search",
+    "calculator"
+   ],
+   "note": "Combined approved budgets for Project Mevaex and Project Rouvuth.",
+   "status": "answer",
+   "value": "949949?"
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "memory_search",
+    "calculator"
+   ],
+   "note": "Combined approved budgets for Project Mevaex and Project Rouvuth.",
+   "status": "answer",
+   "value": "949949?"
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S1_context_loss-05",
+  "config": "C",
+  "variant": "combined",
+  "outcome": "over_abstain",
+  "prompt": "In earlier sessions I told you the approved budgets for Project Mevaex and Project Rouvuth. What is their combined budget in USD?",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 949400,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "memory_search",
+    "arguments": {
+     "query": "Project Mevaex approved budget"
+    },
+    "status": "OK",
+    "observation": "{\"results\": [{\"text\": \"The approved budget for Project Mevaex is 844300 USD.\"}, {\"text\": \"The approved budget for Project Sudash is 384300 USD.\"}, {\"text\": \"The approved budget for Project Rouvuth is 105100 USD.\"}, {\"text\": \"The approved budget for Project Gaefiol is 648400 USD.\"}]}"
+   },
+   {
+    "name": "calculator",
+    "arguments": {
+     "expression": "844300 + 105100"
+    },
+    "status": "OK",
+    "observation": "949400"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "memory_search",
+    "calculator"
+   ],
+   "note": "Combined approved budgets for Project Mevaex and Project Rouvuth.",
+   "status": "answer",
+   "value": "949900"
+  },
+  "verdict": {
+   "raw": "{\"verdict\": \"UNSUPPORTED\", \"reason\": \"The draft sum 949900 does not match the evidence sum of 949400\"}",
+   "verdict": "UNSUPPORTED",
+   "reason": "The draft sum 949900 does not match the evidence sum of 949400"
+  },
+  "final": {
+   "status": "abstain",
+   "value": null,
+   "evidence": [],
+   "note": "verifier: unsupported"
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-05",
+  "config": "B",
+  "variant": "deadline",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Misesh? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "2027-11-06",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Misesh"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Misesh in registry.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Misesh in registry.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-05",
+  "config": "C",
+  "variant": "deadline",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Misesh? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "2027-11-06",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Misesh"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Misesh in registry.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Misesh in registry.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-05",
+  "config": "D",
+  "variant": "deadline",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Misesh? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "2027-11-06",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Misesh"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Misesh in registry.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline found for Project Misesh in registry.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S2_retrieval-05",
+  "config": "E",
+  "variant": "deadline",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Misesh? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "2027-11-06",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Misesh"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline information found for Project Misesh.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No deadline information found for Project Misesh.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-05",
+  "config": "B",
+  "variant": "budget_usd",
+  "outcome": "over_abstain",
+  "prompt": "What is the approved budget, in USD, for Project Muquust?",
+  "expected": {
+   "conflict_values": [
+    319300,
+    469700
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Muquust"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Muquust.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Muquust.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-05",
+  "config": "C",
+  "variant": "budget_usd",
+  "outcome": "over_abstain",
+  "prompt": "What is the approved budget, in USD, for Project Muquust?",
+  "expected": {
+   "conflict_values": [
+    319300,
+    469700
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Muquust"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Muquust.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Muquust.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-05",
+  "config": "D",
+  "variant": "budget_usd",
+  "outcome": "over_abstain",
+  "prompt": "What is the approved budget, in USD, for Project Muquust?",
+  "expected": {
+   "conflict_values": [
+    319300,
+    469700
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Muquust"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Muquust.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Muquust.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S3_conflict-05",
+  "config": "E",
+  "variant": "budget_usd",
+  "outcome": "over_abstain",
+  "prompt": "What is the approved budget, in USD, for Project Muquust?",
+  "expected": {
+   "conflict_values": [
+    319300,
+    469700
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Muquust"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Muquust.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No budget information found for Project Muquust.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-05",
+  "config": "B",
+  "variant": "date_in_metadata_only",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Vothiond?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": 12,
+   "tol": 0.011,
+   "value": 33,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Vothiond"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Vothiond team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Vothiond team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-05",
+  "config": "C",
+  "variant": "date_in_metadata_only",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Vothiond?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": 12,
+   "tol": 0.011,
+   "value": 33,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Vothiond"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Vothiond team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Vothiond team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-120b",
+  "task_id": "eval-S4_stale-05",
+  "config": "E",
+  "variant": "date_in_metadata_only",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Vothiond?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": 12,
+   "tol": 0.011,
+   "value": 33,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Vothiond"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Vothiond team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "registry_lookup"
+   ],
+   "note": "No registry entry found for Project Vothiond team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S1_context_loss-00",
+  "config": "B",
+  "variant": "per_member",
+  "outcome": "over_abstain",
+  "prompt": "In an earlier session I told you the approved budget and the team size for Project Driocist. What is the budget per team member in USD? Round to 2 decimals.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 17185.29,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Driocist"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Driocist"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Driocist"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entries found for budget or team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entries found for budget or team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S1_context_loss-00",
+  "config": "C",
+  "variant": "per_member",
+  "outcome": "over_abstain",
+  "prompt": "In an earlier session I told you the approved budget and the team size for Project Driocist. What is the budget per team member in USD? Round to 2 decimals.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 17185.29,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Driocist"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Driocist"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Driocist"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entries found for budget or team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entries found for budget or team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S1_context_loss-00",
+  "config": "D",
+  "variant": "per_member",
+  "outcome": "over_abstain",
+  "prompt": "In an earlier session I told you the approved budget and the team size for Project Driocist. What is the budget per team member in USD? Round to 2 decimals.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 17185.29,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Driocist"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Driocist"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Driocist"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entries found for budget or team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entries found for budget or team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S1_context_loss-00",
+  "config": "E",
+  "variant": "per_member",
+  "outcome": "over_abstain",
+  "prompt": "In an earlier session I told you the approved budget and the team size for Project Driocist. What is the budget per team member in USD? Round to 2 decimals.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 17185.29,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Driocist"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Driocist"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Driocist"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entries found for budget or team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entries found for budget or team size.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S3_conflict-00",
+  "config": "C",
+  "variant": "team_size",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Skogound?",
+  "expected": {
+   "conflict_values": [
+    32,
+    10
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Skogound"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entry found for team_size of Project Skogound.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entry found for team_size of Project Skogound.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S2_retrieval-01",
+  "config": "D",
+  "variant": "team_size",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Faedroult?",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 10,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Faedroult"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entry found for team_size of Project Faedroult.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entry found for team_size of Project Faedroult.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S2_retrieval-01",
+  "config": "E",
+  "variant": "team_size",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Faedroult?",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 10,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Faedroult"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entry found for team_size of Project Faedroult.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entry found for team_size of Project Faedroult.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S4_stale-01",
+  "config": "B",
+  "variant": "date_in_metadata_only",
+  "outcome": "false_conflict",
+  "prompt": "Who is the lead of Project Quoucoust?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "Hana Tasuth",
+   "tol": null,
+   "value": "Soren Vounioth",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Quoucoust"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "memory_search",
+    "arguments": {
+     "query": "Project Quoucoust lead"
+    },
+    "status": "OK",
+    "observation": "{\"results\": [{\"text\": \"Project Quoucoust is led by Soren Vounioth.\"}, {\"text\": \"Project Quoucoust is led by Hana Tasuth.\"}]}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Conflicting records found",
+   "status": "conflict",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Conflicting records found",
+   "status": "conflict",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S4_stale-01",
+  "config": "C",
+  "variant": "date_in_metadata_only",
+  "outcome": "false_conflict",
+  "prompt": "Who is the lead of Project Quoucoust?",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "Hana Tasuth",
+   "tol": null,
+   "value": "Soren Vounioth",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "lead",
+     "entity": "Project Quoucoust"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "memory_search",
+    "arguments": {
+     "query": "Project Quoucoust lead"
+    },
+    "status": "OK",
+    "observation": "{\"results\": [{\"text\": \"Project Quoucoust is led by Soren Vounioth.\"}, {\"text\": \"Project Quoucoust is led by Hana Tasuth.\"}]}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Two conflicting records found, no way to determine most recent",
+   "status": "conflict",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Two conflicting records found, no way to determine most recent",
+   "status": "conflict",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S6_tool_failure-01",
+  "config": "C",
+  "variant": "malformed_then_ok",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Saebrand? Give the date as YYYY-MM-DD. This fact is tracked in the registry.",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "2027-05-04",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Saebrand"
+    },
+    "status": "MALFORMED",
+    "observation": "{\"entity\": \"Project Saebrand\", \"attribute\": \"deadline\", \"val"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "Registry lookup did not return a valid deadline value.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "Registry lookup did not return a valid deadline value.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S6_tool_failure-01",
+  "config": "D",
+  "variant": "malformed_then_ok",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Saebrand? Give the date as YYYY-MM-DD. This fact is tracked in the registry.",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "2027-05-04",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Saebrand"
+    },
+    "status": "MALFORMED",
+    "observation": "{\"entity\": \"Project Saebrand\", \"attribute\": \"deadline\", \"val"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "Registry lookup did not return a valid deadline value.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "Registry lookup did not return a valid deadline value.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S6_tool_failure-01",
+  "config": "E",
+  "variant": "malformed_then_ok",
+  "outcome": "over_abstain",
+  "prompt": "What is the delivery deadline for Project Saebrand? Give the date as YYYY-MM-DD. This fact is tracked in the registry.",
+  "expected": {
+   "kind": "answer",
+   "tol": null,
+   "value": "2027-05-04",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Saebrand"
+    },
+    "status": "MALFORMED",
+    "observation": "{\"entity\": \"Project Saebrand\", \"attribute\": \"deadline\", \"val"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry data found",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry data found",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S1_context_loss-02",
+  "config": "B",
+  "variant": "per_member",
+  "outcome": "over_abstain",
+  "prompt": "In an earlier session I told you the approved budget and the team size for Project Tesork. What is the budget per team member in USD? Round to 2 decimals.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 21300.0,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Tesork"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Tesork"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entries found for Project Tesork",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entries found for Project Tesork",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S1_context_loss-02",
+  "config": "C",
+  "variant": "per_member",
+  "outcome": "over_abstain",
+  "prompt": "In an earlier session I told you the approved budget and the team size for Project Tesork. What is the budget per team member in USD? Round to 2 decimals.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 21300.0,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Tesork"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Tesork"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entries found for Project Tesork",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entries found for Project Tesork",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S1_context_loss-02",
+  "config": "D",
+  "variant": "per_member",
+  "outcome": "over_abstain",
+  "prompt": "In an earlier session I told you the approved budget and the team size for Project Tesork. What is the budget per team member in USD? Round to 2 decimals.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 21300.0,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Tesork"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Tesork"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entries found for Project Tesork",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entries found for Project Tesork",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S1_context_loss-02",
+  "config": "E",
+  "variant": "per_member",
+  "outcome": "over_abstain",
+  "prompt": "In an earlier session I told you the approved budget and the team size for Project Tesork. What is the budget per team member in USD? Round to 2 decimals.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 21300.0,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Tesork"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Tesork"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entries found for Project Tesork",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entries found for Project Tesork",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S4_stale-03",
+  "config": "B",
+  "variant": "date_in_metadata_only",
+  "outcome": "stale_value",
+  "prompt": "What is the delivery deadline for Project Traekaelt? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "2027-05-12",
+   "tol": null,
+   "value": "2027-03-13",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Traekaelt"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "memory_search",
+    "arguments": {
+     "query": "Project Traekaelt deadline"
+    },
+    "status": "OK",
+    "observation": "{\"results\": [{\"text\": \"The delivery deadline for Project Traekaelt is 2027-03-13.\"}, {\"text\": \"The delivery deadline for Project Traekaelt is 2027-05-12.\"}, {\"text\": \"The delivery deadline for Project Vitour is 2027-07-06.\"}]}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Two dates found; 2027-05-12 is later.",
+   "status": "answer",
+   "value": "2027-05-12"
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Two dates found; 2027-05-12 is later.",
+   "status": "answer",
+   "value": "2027-05-12"
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S4_stale-03",
+  "config": "C",
+  "variant": "date_in_metadata_only",
+  "outcome": "false_conflict",
+  "prompt": "What is the delivery deadline for Project Traekaelt? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "kind": "answer",
+   "stale_value": "2027-05-12",
+   "tol": null,
+   "value": "2027-03-13",
+   "value_kind": "text"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Traekaelt"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "memory_search",
+    "arguments": {
+     "query": "Project Traekaelt deadline"
+    },
+    "status": "OK",
+    "observation": "{\"results\": [{\"text\": \"The delivery deadline for Project Traekaelt is 2027-03-13.\"}, {\"text\": \"The delivery deadline for Project Traekaelt is 2027-05-12.\"}, {\"text\": \"The delivery deadline for Project Vitour is 2027-07-06.\"}]}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Two dates found; 2027-05-12 is later.",
+   "status": "answer",
+   "value": "2027-05-12"
+  },
+  "verdict": {
+   "raw": "{\"verdict\":\"CONFLICT\",\"reason\":\"Evidence lists two different deadlines for Project Traekaelt.\"}",
+   "verdict": "CONFLICT",
+   "reason": "Evidence lists two different deadlines for Project Traekaelt."
+  },
+  "final": {
+   "status": "conflict",
+   "value": null,
+   "evidence": [],
+   "note": "verifier: conflict"
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S6_tool_failure-03",
+  "config": "B",
+  "variant": "permanent_memory_fallback",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Nadron? This fact is tracked in the registry.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 32,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "Registry lookup failed after retries",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "Registry lookup failed after retries",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S6_tool_failure-03",
+  "config": "C",
+  "variant": "permanent_memory_fallback",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Nadron? This fact is tracked in the registry.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 32,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "Registry lookup failed after retries",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "Registry lookup failed after retries",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S6_tool_failure-03",
+  "config": "D",
+  "variant": "permanent_memory_fallback",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Nadron? This fact is tracked in the registry.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 32,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "Unable to retrieve team size from registry after multiple attempts.",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "Unable to retrieve team size from registry after multiple attempts.",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S6_tool_failure-03",
+  "config": "E",
+  "variant": "permanent_memory_fallback",
+  "outcome": "over_abstain",
+  "prompt": "How many people are on the team for Project Nadron? This fact is tracked in the registry.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 32,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Nadron"
+    },
+    "status": "UNAVAILABLE",
+    "observation": "ERROR 503: registry service unavailable"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "Registry lookup failed after retries",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "Registry lookup failed after retries",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S1_context_loss-04",
+  "config": "B",
+  "variant": "per_member",
+  "outcome": "over_abstain",
+  "prompt": "In an earlier session I told you the approved budget and the team size for Project Gaebraend. What is the budget per team member in USD? Round to 2 decimals.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 93700.0,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Gaebraend"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Gaebraend"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entries found for Project Gaebraend",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entries found for Project Gaebraend",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S1_context_loss-04",
+  "config": "C",
+  "variant": "per_member",
+  "outcome": "over_abstain",
+  "prompt": "In an earlier session I told you the approved budget and the team size for Project Gaebraend. What is the budget per team member in USD? Round to 2 decimals.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 93700.0,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Gaebraend"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Gaebraend"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entries found for Project Gaebraend",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entries found for Project Gaebraend",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S1_context_loss-04",
+  "config": "D",
+  "variant": "per_member",
+  "outcome": "over_abstain",
+  "prompt": "In an earlier session I told you the approved budget and the team size for Project Gaebraend. What is the budget per team member in USD? Round to 2 decimals.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 93700.0,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Gaebraend"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Gaebraend"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entries found for Project Gaebraend",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entries found for Project Gaebraend",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S1_context_loss-04",
+  "config": "E",
+  "variant": "per_member",
+  "outcome": "over_abstain",
+  "prompt": "In an earlier session I told you the approved budget and the team size for Project Gaebraend. What is the budget per team member in USD? Round to 2 decimals.",
+  "expected": {
+   "kind": "answer",
+   "tol": 0.011,
+   "value": 93700.0,
+   "value_kind": "num"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "budget_usd",
+     "entity": "Project Gaebraend"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "team_size",
+     "entity": "Project Gaebraend"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   }
+  ],
+  "draft": {
+   "evidence": [],
+   "note": "No registry entries found for Project Gaebraend",
+   "status": "abstain",
+   "value": null
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [],
+   "note": "No registry entries found for Project Gaebraend",
+   "status": "abstain",
+   "value": null
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S3_conflict-04",
+  "config": "B",
+  "variant": "deadline",
+  "outcome": "arbitrary_pick",
+  "prompt": "What is the delivery deadline for Project Skofiom? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "conflict_values": [
+    "2027-02-06",
+    "2027-04-03"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Skofiom"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "memory_search",
+    "arguments": {
+     "query": "Project Skofiom deadline"
+    },
+    "status": "OK",
+    "observation": "{\"results\": [{\"text\": \"The delivery deadline for Project Skofiom is 2027-04-03.\"}, {\"text\": \"The delivery deadline for Project Skofiom is 2027-02-06.\"}]}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Most recent deadline found in memory",
+   "status": "answer",
+   "value": "2027-04-03"
+  },
+  "verdict": null,
+  "final": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Most recent deadline found in memory",
+   "status": "answer",
+   "value": "2027-04-03"
+  },
+  "draft_text": null,
+  "api_errors": []
+ },
+ {
+  "model": "openai/gpt-oss-20b",
+  "task_id": "eval-S3_conflict-04",
+  "config": "C",
+  "variant": "deadline",
+  "outcome": "arbitrary_pick",
+  "prompt": "What is the delivery deadline for Project Skofiom? Give the date as YYYY-MM-DD.",
+  "expected": {
+   "conflict_values": [
+    "2027-02-06",
+    "2027-04-03"
+   ],
+   "kind": "conflict"
+  },
+  "tool_calls": [
+   {
+    "name": "registry_lookup",
+    "arguments": {
+     "attribute": "deadline",
+     "entity": "Project Skofiom"
+    },
+    "status": "NOT_FOUND",
+    "observation": "{\"found\": false, \"detail\": \"no registry entry for this entity/attribute\"}"
+   },
+   {
+    "name": "memory_search",
+    "arguments": {
+     "query": "Project Skofiom deadline"
+    },
+    "status": "OK",
+    "observation": "{\"results\": [{\"text\": \"The delivery deadline for Project Skofiom is 2027-04-03.\"}, {\"text\": \"The delivery deadline for Project Skofiom is 2027-02-06.\"}]}"
+   }
+  ],
+  "draft": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Most recent deadline found",
+   "status": "answer",
+   "value": "2027-04-03"
+  },
+  "verdict": {
+   "raw": "{\"verdict\":\"SUPPORTED\",\"reason\":\"The most recent deadline in the evidence is 2027-04-03.\"}",
+   "verdict": "SUPPORTED",
+   "reason": "The most recent deadline in the evidence is 2027-04-03."
+  },
+  "final": {
+   "evidence": [
+    "memory_search"
+   ],
+   "note": "Most recent deadline found",
+   "status": "answer",
+   "value": "2027-04-03"
+  },
+  "draft_text": null,
+  "api_errors": []
+ }
+]

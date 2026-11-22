@@ -1,0 +1,11 @@
+[      2s req=   3] dev-S1_context_loss-00 A -> over_abstain
+[      3s req=   5] dev-S1_context_loss-00 D -> format_error
+[      4s req=   7] dev-S2_retrieval-00 A -> over_abstain
+[     52s req=  11] dev-S2_retrieval-00 D -> correct
+[     56s req=  13] dev-S3_conflict-00 A -> over_abstain
+[     57s req=  15] dev-S3_conflict-00 D -> over_abstain
+[     57s req=  17] dev-S4_stale-00 A -> over_abstain
+[     60s req=  21] dev-S4_stale-00 D -> correct
+[    104s req=  23] dev-S5_unsupported-00 A -> correct
+[    105s req=  26] dev-S5_unsupported-00 D -> correct
+[    107s req=  29] dev-S6_tool_failure-00 A -> correct

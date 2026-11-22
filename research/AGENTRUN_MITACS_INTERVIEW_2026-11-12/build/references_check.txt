@@ -1,0 +1,23 @@
+2310.08560v2 | 2023 | Charles Packer et al. | MemGPT: Towards LLMs as Operating Systems
+2505.09388v1 | 2025 | An Yang et al. | Qwen3 Technical Report
+2504.19413v1 | 2025 | Prateek Chhikara et al. | Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory
+2410.10813v2 | 2024 | Di Wu et al. | LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory
+2210.03629v3 | 2022 | Shunyu Yao et al. | ReAct: Synergizing Reasoning and Acting in Language Models
+2305.14314v1 | 2023 | Tim Dettmers et al. | QLoRA: Efficient Finetuning of Quantized LLMs
+2309.07597v5 | 2023 | Shitao Xiao et al. | C-Pack: Packed Resources For General Chinese Embeddings
+2507.05257v4 | 2025 | Yuanzhe Hu et al. | Evaluating Memory in LLM Agents via Incremental Multi-Turn Interactions
+2302.04761v1 | 2023 | Timo Schick et al. | Toolformer: Language Models Can Teach Themselves to Use Tools
+2605.06527v1 | 2026 | Hanxiang Chao et al. | STALE: Can LLM Agents Know When Their Memories Are No Longer Valid?
+1908.10084v1 | 2019 | Nils Reimers et al. | Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks
+2310.11511v1 | 2023 | Akari Asai et al. | Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection
+2304.03442v2 | 2023 | Joon Sung Park et al. | Generative Agents: Interactive Simulacra of Human Behavior
+2005.11401v4 | 2020 | Patrick Lewis et al. | Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks
+2401.15884v3 | 2024 | Shi-Qi Yan et al. | Corrective Retrieval Augmented Generation
+2412.15115v2 | 2024 |  Qwen et al. | Qwen2.5 Technical Report
+2310.01798v2 | 2023 | Jie Huang et al. | Large Language Models Cannot Self-Correct Reasoning Yet
+2608.12476v2 | 2026 | Guodong Xu | Governed Persistent Memory: Source-Bound State Semantics and Fail-Closed Release for Long-Horizon Agents
+2610.09193v1 | 2026 | Egor Pakhomov et al. | Bookkeeping, Composition, or Unreachable Gold? Reading MemoryAgentBench's Conflict-Resolution Scores Against a Frozen Last-Write Resolver
+2501.13956v1 | 2025 | Preston Rasmussen et al. | Zep: A Temporal Knowledge Graph Architecture for Agent Memory
+2402.17753v1 | 2024 | Adyasha Maharana et al. | Evaluating Very Long-Term Conversational Memory of LLM Agents
+2106.09685v2 | 2021 | Edward J. Hu et al. | LoRA: Low-Rank Adaptation of Large Language Models
+2406.01297v3 | 2024 | Ryo Kamoi et al. | When Can LLMs Actually Correct Their Own Mistakes? A Critical Survey of Self-Correction of LLMs

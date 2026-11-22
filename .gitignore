@@ -91,3 +91,46 @@ memory_store.json
 Thumbs.db
 
 memory_store.json
+
+# ANTIC 2026 Overleaf project: build by-products (sources, figures, ZIP and
+# the delivered PDF are tracked)
+publication/antic2026_submission/overleaf/*.aux
+publication/antic2026_submission/overleaf/*.log
+publication/antic2026_submission/overleaf/*.out
+publication/antic2026_submission/overleaf/*.blg
+publication/antic2026_submission/overleaf/*.bbl
+publication/antic2026_submission/overleaf/*.fls
+publication/antic2026_submission/overleaf/*.fdb_latexmk
+publication/antic2026_submission/overleaf/*.synctex.gz
+publication/antic2026_submission/overleaf/main.pdf
+
+# ============================================================
+# FOLLOW-UP STUDY (agentrun_v2) — sealed and private material
+# ============================================================
+# The sealed benchmark-v2 test split and its secret seed must live OUTSIDE the
+# repository; these patterns are a safety net in case a copy lands here.
+.sealed/
+**/SECRET_seed.json
+**/test_leakage_detail.json
+benchmark_v2/test.jsonl
+# E0 annotation: the key, returned sheets and analysis stay private until
+# adjudication is complete.
+annotation/e0/key/
+annotation/e0/returned/
+annotation/e0/analysis/
+annotation/e0/e0_sheet_*.csv
+# Run logs and cassettes are large; publish them with the release instead.
+runs/
+
+# Local redaction config: real cluster identifiers, never committed
+research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/tools/redaction_identifiers.json
+
+# Phase 5: page contact sheets are review artifacts, regenerate with tools/contact_sheet.py
+research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/build/pages/
+
+# LaTeX build artifacts in the publication package
+research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/**/*.aux
+research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/**/*.log
+research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/**/*.out
+research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/**/*.toc
+research/AGENTRUN_PUBLICATION_2026/PHASE5_PUBLICATION/**/*.blg

@@ -1,0 +1,2008 @@
+start 2026-11-16T10:46:42+00:00 job=4213_0 model=Qwen/Qwen2.5-3B-Instruct split=p2val2 CUDA_VISIBLE_DEVICES=0
+[      2s] p2val2-0001 B -> false_conflict
+[      3s] p2val2-0001 G -> false_conflict
+[      5s] p2val2-0001 R -> correct R2
+[      7s] p2val2-0001 T -> false_conflict
+[      9s] p2val2-0001 RT -> correct R2
+[     10s] p2val2-0001 EB -> false_conflict
+[     12s] p2val2-0001 EBG -> false_conflict
+[     14s] p2val2-0001 LA -> false_conflict
+[     17s] p2val2-0001 LG -> stale_value P2
+[     19s] p2val2-0001 EBG-all -> correct P2
+[     21s] p2val2-0001 EBG-unsafe -> false_conflict
+[     22s] p2val2-0001 EBG-noR3 -> false_conflict
+[     24s] p2val2-0002 B -> false_conflict
+[     25s] p2val2-0002 G -> false_conflict
+[     27s] p2val2-0002 R -> false_conflict
+[     28s] p2val2-0002 T -> false_conflict
+[     30s] p2val2-0002 RT -> false_conflict
+[     32s] p2val2-0002 EB -> false_conflict
+[     34s] p2val2-0002 EBG -> correct P2
+[     36s] p2val2-0002 LA -> false_conflict
+[     39s] p2val2-0002 LG -> correct P2
+[     41s] p2val2-0002 EBG-all -> correct P2
+[     43s] p2val2-0002 EBG-unsafe -> correct P2
+[     46s] p2val2-0002 EBG-noR3 -> correct P2
+[     47s] p2val2-0003 B -> false_conflict
+[     49s] p2val2-0003 G -> false_conflict
+[     51s] p2val2-0003 R -> stale_value R2
+[     53s] p2val2-0003 T -> false_conflict
+[     55s] p2val2-0003 RT -> stale_value R2
+[     57s] p2val2-0003 EB -> false_conflict
+[     60s] p2val2-0003 EBG -> correct P2
+[     62s] p2val2-0003 LA -> false_conflict
+[     66s] p2val2-0003 LG -> stale_value P2
+[     68s] p2val2-0003 EBG-all -> correct P2
+[     71s] p2val2-0003 EBG-unsafe -> correct P2
+[     74s] p2val2-0003 EBG-noR3 -> correct P2
+[     75s] p2val2-0004 B -> correct
+[     77s] p2val2-0004 G -> false_conflict
+[     78s] p2val2-0004 R -> false_conflict
+[     80s] p2val2-0004 T -> false_conflict
+[     82s] p2val2-0004 RT -> false_conflict
+[     83s] p2val2-0004 EB -> false_conflict
+[     85s] p2val2-0004 EBG -> correct P2
+[     87s] p2val2-0004 LA -> false_conflict
+[     89s] p2val2-0004 LG -> false_conflict
+[     91s] p2val2-0004 EBG-all -> correct P2
+[     93s] p2val2-0004 EBG-unsafe -> correct P2
+[     95s] p2val2-0004 EBG-noR3 -> correct P2
+[     96s] p2val2-0005 B -> false_conflict
+[     98s] p2val2-0005 G -> false_conflict
+[    100s] p2val2-0005 R -> false_conflict
+[    101s] p2val2-0005 T -> false_conflict
+[    103s] p2val2-0005 RT -> false_conflict
+[    104s] p2val2-0005 EB -> false_conflict
+[    105s] p2val2-0005 EBG -> false_conflict
+[    108s] p2val2-0005 LA -> false_conflict
+[    110s] p2val2-0005 LG -> false_conflict
+[    111s] p2val2-0005 EBG-all -> false_conflict
+[    112s] p2val2-0005 EBG-unsafe -> false_conflict
+[    114s] p2val2-0005 EBG-noR3 -> false_conflict
+[    115s] p2val2-0006 B -> false_conflict
+[    117s] p2val2-0006 G -> correct
+[    118s] p2val2-0006 R -> correct
+[    120s] p2val2-0006 T -> false_conflict
+[    122s] p2val2-0006 RT -> correct R2
+[    123s] p2val2-0006 EB -> false_conflict
+[    125s] p2val2-0006 EBG -> correct P2
+[    127s] p2val2-0006 LA -> false_conflict
+[    130s] p2val2-0006 LG -> correct P2
+[    132s] p2val2-0006 EBG-all -> correct P2
+[    134s] p2val2-0006 EBG-unsafe -> correct P2
+[    137s] p2val2-0006 EBG-noR3 -> correct P2
+[    138s] p2val2-0007 B -> false_conflict
+[    140s] p2val2-0007 G -> false_conflict
+[    142s] p2val2-0007 R -> correct R2
+[    144s] p2val2-0007 T -> correct
+[    146s] p2val2-0007 RT -> correct
+[    147s] p2val2-0007 EB -> false_conflict
+[    149s] p2val2-0007 EBG -> false_conflict
+[    151s] p2val2-0007 LA -> false_conflict
+[    154s] p2val2-0007 LG -> false_conflict
+[    156s] p2val2-0007 EBG-all -> false_conflict P2
+[    158s] p2val2-0007 EBG-unsafe -> false_conflict
+[    160s] p2val2-0007 EBG-noR3 -> false_conflict
+[    161s] p2val2-0008 B -> correct
+[    163s] p2val2-0008 G -> false_conflict
+[    165s] p2val2-0008 R -> correct R2
+[    166s] p2val2-0008 T -> false_conflict
+[    168s] p2val2-0008 RT -> correct R2
+[    169s] p2val2-0008 EB -> false_conflict
+[    171s] p2val2-0008 EBG -> false_conflict
+[    172s] p2val2-0008 LA -> false_conflict
+[    173s] p2val2-0008 LG -> false_conflict
+[    175s] p2val2-0008 EBG-all -> false_conflict
+[    176s] p2val2-0008 EBG-unsafe -> false_conflict
+[    177s] p2val2-0008 EBG-noR3 -> false_conflict
+[    179s] p2val2-0009 B -> false_conflict
+[    181s] p2val2-0009 G -> false_conflict
+[    183s] p2val2-0009 R -> stale_value R2
+[    184s] p2val2-0009 T -> false_conflict
+[    187s] p2val2-0009 RT -> stale_value R2
+[    188s] p2val2-0009 EB -> false_conflict
+[    191s] p2val2-0009 EBG -> stale_value P2
+[    193s] p2val2-0009 LA -> false_conflict
+[    195s] p2val2-0009 LG -> false_conflict
+[    198s] p2val2-0009 EBG-all -> stale_value P2
+[    201s] p2val2-0009 EBG-unsafe -> stale_value P2
+[    203s] p2val2-0009 EBG-noR3 -> stale_value P2
+[    205s] p2val2-0010 B -> false_conflict
+[    206s] p2val2-0010 G -> false_conflict
+[    208s] p2val2-0010 R -> false_conflict
+[    209s] p2val2-0010 T -> false_conflict
+[    211s] p2val2-0010 RT -> false_conflict
+[    213s] p2val2-0010 EB -> false_conflict
+[    214s] p2val2-0010 EBG -> false_conflict
+[    217s] p2val2-0010 LA -> false_conflict
+[    220s] p2val2-0010 LG -> false_conflict
+[    221s] p2val2-0010 EBG-all -> false_conflict
+[    223s] p2val2-0010 EBG-unsafe -> false_conflict
+[    225s] p2val2-0010 EBG-noR3 -> false_conflict
+[    227s] p2val2-0011 B -> correct
+[    228s] p2val2-0011 G -> correct
+[    230s] p2val2-0011 R -> correct R1
+[    232s] p2val2-0011 T -> correct
+[    234s] p2val2-0011 RT -> correct R1
+[    236s] p2val2-0011 EB -> correct
+[    237s] p2val2-0011 EBG -> correct
+[    240s] p2val2-0011 LA -> correct
+[    242s] p2val2-0011 LG -> correct
+[    243s] p2val2-0011 EBG-all -> correct
+[    245s] p2val2-0011 EBG-unsafe -> correct
+[    247s] p2val2-0011 EBG-noR3 -> correct
+[    248s] p2val2-0012 B -> false_conflict
+[    249s] p2val2-0012 G -> false_conflict
+[    251s] p2val2-0012 R -> stale_value R2
+[    253s] p2val2-0012 T -> false_conflict
+[    255s] p2val2-0012 RT -> stale_value R2
+[    256s] p2val2-0012 EB -> false_conflict
+[    257s] p2val2-0012 EBG -> false_conflict
+[    259s] p2val2-0012 LA -> false_conflict
+[    262s] p2val2-0012 LG -> correct P2
+[    264s] p2val2-0012 EBG-all -> correct P2
+[    265s] p2val2-0012 EBG-unsafe -> false_conflict
+[    267s] p2val2-0012 EBG-noR3 -> false_conflict
+[    268s] p2val2-0013 B -> false_conflict
+[    270s] p2val2-0013 G -> false_conflict
+[    272s] p2val2-0013 R -> stale_value R2
+[    273s] p2val2-0013 T -> false_conflict
+[    275s] p2val2-0013 RT -> stale_value R2
+[    277s] p2val2-0013 EB -> correct
+[    279s] p2val2-0013 EBG -> correct
+[    281s] p2val2-0013 LA -> false_conflict
+[    283s] p2val2-0013 LG -> false_conflict
+[    285s] p2val2-0013 EBG-all -> correct
+[    287s] p2val2-0013 EBG-unsafe -> correct
+[    289s] p2val2-0013 EBG-noR3 -> correct
+[    291s] p2val2-0014 B -> false_conflict
+[    293s] p2val2-0014 G -> false_conflict
+[    294s] p2val2-0014 R -> false_conflict
+[    296s] p2val2-0014 T -> false_conflict
+[    299s] p2val2-0014 RT -> stale_value R2
+[    300s] p2val2-0014 EB -> false_conflict
+[    302s] p2val2-0014 EBG -> false_conflict
+[    304s] p2val2-0014 LA -> false_conflict
+[    306s] p2val2-0014 LG -> false_conflict
+[    309s] p2val2-0014 EBG-all -> correct P2
+[    310s] p2val2-0014 EBG-unsafe -> false_conflict
+[    312s] p2val2-0014 EBG-noR3 -> false_conflict
+[    314s] p2val2-0015 B -> correct
+[    315s] p2val2-0015 G -> correct
+[    317s] p2val2-0015 R -> correct
+[    319s] p2val2-0015 T -> correct
+[    322s] p2val2-0015 RT -> over_abstain R2
+[    324s] p2val2-0015 EB -> correct
+[    326s] p2val2-0015 EBG -> correct
+[    328s] p2val2-0015 LA -> correct
+[    330s] p2val2-0015 LG -> correct
+[    333s] p2val2-0015 EBG-all -> arbitrary_pick P2
+[    335s] p2val2-0015 EBG-unsafe -> correct
+[    337s] p2val2-0015 EBG-noR3 -> correct
+[    339s] p2val2-0016 B -> false_conflict
+[    340s] p2val2-0016 G -> false_conflict
+[    342s] p2val2-0016 R -> false_conflict
+[    343s] p2val2-0016 T -> false_conflict
+[    346s] p2val2-0016 RT -> over_abstain R2
+[    347s] p2val2-0016 EB -> false_conflict
+[    348s] p2val2-0016 EBG -> false_conflict
+[    351s] p2val2-0016 LA -> false_conflict
+[    354s] p2val2-0016 LG -> correct P2
+[    356s] p2val2-0016 EBG-all -> correct P2
+[    357s] p2val2-0016 EBG-unsafe -> false_conflict
+[    359s] p2val2-0016 EBG-noR3 -> false_conflict
+[    360s] p2val2-0017 B -> correct
+[    362s] p2val2-0017 G -> correct
+[    363s] p2val2-0017 R -> correct
+[    365s] p2val2-0017 T -> correct
+[    367s] p2val2-0017 RT -> correct
+[    369s] p2val2-0017 EB -> correct
+[    370s] p2val2-0017 EBG -> correct
+[    373s] p2val2-0017 LA -> correct
+[    375s] p2val2-0017 LG -> correct
+[    377s] p2val2-0017 EBG-all -> correct
+[    379s] p2val2-0017 EBG-unsafe -> correct
+[    380s] p2val2-0017 EBG-noR3 -> correct
+[    382s] p2val2-0019 B -> correct
+[    384s] p2val2-0019 G -> arbitrary_pick
+[    386s] p2val2-0019 R -> arbitrary_pick
+[    388s] p2val2-0019 T -> correct
+[    389s] p2val2-0019 RT -> correct
+[    390s] p2val2-0019 EB -> correct
+[    392s] p2val2-0019 EBG -> correct
+[    394s] p2val2-0019 LA -> correct
+[    396s] p2val2-0019 LG -> correct
+[    397s] p2val2-0019 EBG-all -> correct
+[    399s] p2val2-0019 EBG-unsafe -> correct
+[    400s] p2val2-0019 EBG-noR3 -> correct
+[    402s] p2val2-0020 B -> arbitrary_pick
+[    403s] p2val2-0020 G -> correct
+[    405s] p2val2-0020 R -> correct
+[    406s] p2val2-0020 T -> correct
+[    407s] p2val2-0020 RT -> correct
+[    409s] p2val2-0020 EB -> correct
+[    410s] p2val2-0020 EBG -> correct
+[    412s] p2val2-0020 LA -> correct
+[    414s] p2val2-0020 LG -> correct
+[    416s] p2val2-0020 EBG-all -> correct
+[    417s] p2val2-0020 EBG-unsafe -> correct
+[    418s] p2val2-0020 EBG-noR3 -> correct
+[    420s] p2val2-0021 B -> correct
+[    421s] p2val2-0021 G -> arbitrary_pick
+[    423s] p2val2-0021 R -> arbitrary_pick
+[    424s] p2val2-0021 T -> correct
+[    427s] p2val2-0021 RT -> arbitrary_pick R2
+[    429s] p2val2-0021 EB -> max_steps
+[    432s] p2val2-0021 EBG -> max_steps
+[    435s] p2val2-0021 LA -> correct
+[    437s] p2val2-0021 LG -> correct
+[    440s] p2val2-0021 EBG-all -> max_steps
+[    443s] p2val2-0021 EBG-unsafe -> max_steps
+[    446s] p2val2-0021 EBG-noR3 -> max_steps
+[    448s] p2val2-0022 B -> arbitrary_pick
+[    449s] p2val2-0022 G -> correct
+[    451s] p2val2-0022 R -> correct
+[    452s] p2val2-0022 T -> correct
+[    453s] p2val2-0022 RT -> correct
+[    455s] p2val2-0022 EB -> correct
+[    456s] p2val2-0022 EBG -> correct
+[    458s] p2val2-0022 LA -> correct
+[    461s] p2val2-0022 LG -> correct P2
+[    462s] p2val2-0022 EBG-all -> correct
+[    464s] p2val2-0022 EBG-unsafe -> correct
+[    466s] p2val2-0022 EBG-noR3 -> correct
+[    467s] p2val2-0023 B -> correct
+[    468s] p2val2-0023 G -> correct
+[    470s] p2val2-0023 R -> correct
+[    471s] p2val2-0023 T -> correct
+[    472s] p2val2-0023 RT -> correct
+[    474s] p2val2-0023 EB -> correct
+[    475s] p2val2-0023 EBG -> correct
+[    476s] p2val2-0023 LA -> correct
+[    478s] p2val2-0023 LG -> correct
+[    479s] p2val2-0023 EBG-all -> correct
+[    480s] p2val2-0023 EBG-unsafe -> correct
+[    482s] p2val2-0023 EBG-noR3 -> correct
+[    483s] p2val2-0024 B -> false_conflict
+[    485s] p2val2-0024 G -> false_conflict
+[    487s] p2val2-0024 R -> correct R2
+[    489s] p2val2-0024 T -> false_conflict
+[    491s] p2val2-0024 RT -> correct R2
+[    492s] p2val2-0024 EB -> false_conflict
+[    494s] p2val2-0024 EBG -> correct P2
+[    496s] p2val2-0024 LA -> false_conflict
+[    498s] p2val2-0024 LG -> false_conflict
+[    500s] p2val2-0024 EBG-all -> correct P2
+[    503s] p2val2-0024 EBG-unsafe -> correct P2
+[    505s] p2val2-0024 EBG-noR3 -> correct P2
+[    507s] p2val2-0025 B -> false_conflict
+[    508s] p2val2-0025 G -> false_conflict
+[    510s] p2val2-0025 R -> false_conflict
+[    511s] p2val2-0025 T -> false_conflict
+[    513s] p2val2-0025 RT -> false_conflict
+[    515s] p2val2-0025 EB -> false_conflict
+[    517s] p2val2-0025 EBG -> stale_value P2
+[    520s] p2val2-0025 LA -> false_conflict
+[    522s] p2val2-0025 LG -> false_conflict
+[    525s] p2val2-0025 EBG-all -> stale_value P2
+[    527s] p2val2-0025 EBG-unsafe -> stale_value P2
+[    530s] p2val2-0025 EBG-noR3 -> stale_value P2
+[    532s] p2val2-0026 B -> false_conflict
+[    533s] p2val2-0026 G -> false_conflict
+[    535s] p2val2-0026 R -> stale_value R2
+[    537s] p2val2-0026 T -> false_conflict
+[    540s] p2val2-0026 RT -> stale_value R2
+[    541s] p2val2-0026 EB -> false_conflict
+[    544s] p2val2-0026 EBG -> correct P2
+[    546s] p2val2-0026 LA -> false_conflict
+[    549s] p2val2-0026 LG -> correct P2
+[    552s] p2val2-0026 EBG-all -> correct P2
+[    554s] p2val2-0026 EBG-unsafe -> correct P2
+[    556s] p2val2-0026 EBG-noR3 -> correct P2
+[    558s] p2val2-0027 B -> correct
+[    560s] p2val2-0027 G -> false_conflict
+[    561s] p2val2-0027 R -> false_conflict
+[    563s] p2val2-0027 T -> false_conflict
+[    565s] p2val2-0027 RT -> correct R2
+[    566s] p2val2-0027 EB -> false_conflict
+[    568s] p2val2-0027 EBG -> correct P2
+[    570s] p2val2-0027 LA -> correct
+[    572s] p2val2-0027 LG -> correct
+[    574s] p2val2-0027 EBG-all -> correct P2
+[    576s] p2val2-0027 EBG-unsafe -> correct P2
+[    578s] p2val2-0027 EBG-noR3 -> correct P2
+[    581s] p2val2-0028 B -> false_conflict
+[    583s] p2val2-0028 G -> false_conflict
+[    584s] p2val2-0028 R -> false_conflict
+[    585s] p2val2-0028 T -> false_conflict
+[    587s] p2val2-0028 RT -> false_conflict
+[    588s] p2val2-0028 EB -> false_conflict
+[    589s] p2val2-0028 EBG -> false_conflict
+[    591s] p2val2-0028 LA -> false_conflict
+[    593s] p2val2-0028 LG -> false_conflict
+[    595s] p2val2-0028 EBG-all -> correct P2
+[    597s] p2val2-0028 EBG-unsafe -> false_conflict
+[    598s] p2val2-0028 EBG-noR3 -> false_conflict
+[    600s] p2val2-0029 B -> false_conflict
+[    601s] p2val2-0029 G -> false_conflict
+[    603s] p2val2-0029 R -> correct R2
+[    605s] p2val2-0029 T -> false_conflict
+[    607s] p2val2-0029 RT -> correct R2
+[    608s] p2val2-0029 EB -> false_conflict
+[    610s] p2val2-0029 EBG -> correct P2
+[    613s] p2val2-0029 LA -> false_conflict
+[    615s] p2val2-0029 LG -> correct P2
+[    618s] p2val2-0029 EBG-all -> correct P2
+[    620s] p2val2-0029 EBG-unsafe -> correct P2
+[    622s] p2val2-0029 EBG-noR3 -> correct P2
+[    626s] p2val2-0030 B -> false_conflict
+[    627s] p2val2-0030 G -> false_conflict
+[    629s] p2val2-0030 R -> correct R2
+[    630s] p2val2-0030 T -> false_conflict
+[    632s] p2val2-0030 RT -> correct R2
+[    634s] p2val2-0030 EB -> false_conflict
+[    636s] p2val2-0030 EBG -> correct P2
+[    638s] p2val2-0030 LA -> false_conflict
+[    640s] p2val2-0030 LG -> false_conflict
+[    642s] p2val2-0030 EBG-all -> correct P2
+[    644s] p2val2-0030 EBG-unsafe -> correct P2
+[    646s] p2val2-0030 EBG-noR3 -> correct P2
+[    648s] p2val2-0031 B -> correct
+[    649s] p2val2-0031 G -> correct
+[    651s] p2val2-0031 R -> correct
+[    652s] p2val2-0031 T -> correct
+[    654s] p2val2-0031 RT -> correct
+[    655s] p2val2-0031 EB -> correct
+[    657s] p2val2-0031 EBG -> correct
+[    659s] p2val2-0031 LA -> correct
+[    660s] p2val2-0031 LG -> correct
+[    662s] p2val2-0031 EBG-all -> correct
+[    663s] p2val2-0031 EBG-unsafe -> correct
+[    665s] p2val2-0031 EBG-noR3 -> correct
+[    666s] p2val2-0032 B -> false_conflict
+[    667s] p2val2-0032 G -> false_conflict
+[    669s] p2val2-0032 R -> stale_value R2
+[    671s] p2val2-0032 T -> false_conflict
+[    673s] p2val2-0032 RT -> stale_value R2
+[    675s] p2val2-0032 EB -> false_conflict
+[    676s] p2val2-0032 EBG -> false_conflict
+[    678s] p2val2-0032 LA -> false_conflict
+[    680s] p2val2-0032 LG -> false_conflict
+[    682s] p2val2-0032 EBG-all -> false_conflict
+[    684s] p2val2-0032 EBG-unsafe -> false_conflict
+[    685s] p2val2-0032 EBG-noR3 -> false_conflict
+[    687s] p2val2-0033 B -> false_conflict
+[    689s] p2val2-0033 G -> false_conflict
+[    690s] p2val2-0033 R -> false_conflict
+[    691s] p2val2-0033 T -> false_conflict
+[    693s] p2val2-0033 RT -> false_conflict
+[    695s] p2val2-0033 EB -> format_error
+[    698s] p2val2-0033 EBG -> over_abstain
+[    700s] p2val2-0033 LA -> false_conflict
+[    702s] p2val2-0033 LG -> false_conflict
+[    706s] p2val2-0033 EBG-all -> over_abstain
+[    709s] p2val2-0033 EBG-unsafe -> over_abstain
+[    712s] p2val2-0033 EBG-noR3 -> over_abstain
+[    715s] p2val2-0034 B -> correct
+[    716s] p2val2-0034 G -> stale_value
+[    718s] p2val2-0034 R -> stale_value
+[    719s] p2val2-0034 T -> correct
+[    722s] p2val2-0034 RT -> correct R1
+[    723s] p2val2-0034 EB -> correct
+[    725s] p2val2-0034 EBG -> correct
+[    727s] p2val2-0034 LA -> false_conflict
+[    730s] p2val2-0034 LG -> correct P2
+[    732s] p2val2-0034 EBG-all -> correct
+[    733s] p2val2-0034 EBG-unsafe -> correct
+[    735s] p2val2-0034 EBG-noR3 -> correct
+[    736s] p2val2-0035 B -> stale_value
+[    738s] p2val2-0035 G -> false_conflict
+[    740s] p2val2-0035 R -> stale_value R2
+[    742s] p2val2-0035 T -> false_conflict
+[    744s] p2val2-0035 RT -> stale_value R2
+[    746s] p2val2-0035 EB -> false_conflict
+[    747s] p2val2-0035 EBG -> false_conflict
+[    749s] p2val2-0035 LA -> false_conflict
+[    752s] p2val2-0035 LG -> stale_value P2
+[    755s] p2val2-0035 EBG-all -> correct P2
+[    757s] p2val2-0035 EBG-unsafe -> false_conflict
+[    758s] p2val2-0035 EBG-noR3 -> false_conflict
+[    761s] p2val2-0036 B -> false_conflict
+[    762s] p2val2-0036 G -> false_conflict
+[    764s] p2val2-0036 R -> stale_value R2
+[    765s] p2val2-0036 T -> false_conflict
+[    767s] p2val2-0036 RT -> stale_value R2
+[    769s] p2val2-0036 EB -> false_conflict
+[    770s] p2val2-0036 EBG -> false_conflict
+[    772s] p2val2-0036 LA -> false_conflict
+[    774s] p2val2-0036 LG -> false_conflict
+[    776s] p2val2-0036 EBG-all -> correct P2
+[    777s] p2val2-0036 EBG-unsafe -> false_conflict
+[    779s] p2val2-0036 EBG-noR3 -> false_conflict
+[    780s] p2val2-0037 B -> correct
+[    782s] p2val2-0037 G -> false_conflict
+[    784s] p2val2-0037 R -> false_conflict
+[    785s] p2val2-0037 T -> stale_value
+[    787s] p2val2-0037 RT -> stale_value
+[    789s] p2val2-0037 EB -> correct
+[    790s] p2val2-0037 EBG -> correct
+[    793s] p2val2-0037 LA -> correct
+[    795s] p2val2-0037 LG -> correct
+[    797s] p2val2-0037 EBG-all -> correct
+[    799s] p2val2-0037 EBG-unsafe -> correct
+[    800s] p2val2-0037 EBG-noR3 -> correct
+[    802s] p2val2-0038 B -> arbitrary_pick
+[    804s] p2val2-0038 G -> correct
+[    805s] p2val2-0038 R -> correct
+[    807s] p2val2-0038 T -> correct
+[    809s] p2val2-0038 RT -> over_abstain R2
+[    811s] p2val2-0038 EB -> correct
+[    812s] p2val2-0038 EBG -> correct
+[    814s] p2val2-0038 LA -> correct
+[    816s] p2val2-0038 LG -> correct
+[    819s] p2val2-0038 EBG-all -> arbitrary_pick P2
+[    820s] p2val2-0038 EBG-unsafe -> correct
+[    822s] p2val2-0038 EBG-noR3 -> correct
+[    824s] p2val2-0039 B -> stale_value
+[    825s] p2val2-0039 G -> false_conflict
+[    826s] p2val2-0039 R -> false_conflict
+[    828s] p2val2-0039 T -> false_conflict
+[    830s] p2val2-0039 RT -> stale_value R2
+[    831s] p2val2-0039 EB -> false_conflict
+[    832s] p2val2-0039 EBG -> false_conflict
+[    834s] p2val2-0039 LA -> false_conflict
+[    836s] p2val2-0039 LG -> false_conflict
+[    838s] p2val2-0039 EBG-all -> stale_value P2
+[    840s] p2val2-0039 EBG-unsafe -> false_conflict
+[    841s] p2val2-0039 EBG-noR3 -> false_conflict
+[    843s] p2val2-0040 B -> correct
+[    844s] p2val2-0040 G -> correct
+[    846s] p2val2-0040 R -> correct
+[    847s] p2val2-0040 T -> correct
+[    848s] p2val2-0040 RT -> correct
+[    850s] p2val2-0040 EB -> correct
+[    851s] p2val2-0040 EBG -> correct
+[    853s] p2val2-0040 LA -> correct
+[    855s] p2val2-0040 LG -> correct
+[    856s] p2val2-0040 EBG-all -> correct
+[    858s] p2val2-0040 EBG-unsafe -> correct
+[    859s] p2val2-0040 EBG-noR3 -> correct
+[    860s] p2val2-0041 B -> correct
+[    862s] p2val2-0041 G -> correct
+[    864s] p2val2-0041 R -> correct
+[    865s] p2val2-0041 T -> correct
+[    867s] p2val2-0041 RT -> correct
+[    869s] p2val2-0041 EB -> correct
+[    870s] p2val2-0041 EBG -> correct
+[    873s] p2val2-0041 LA -> correct
+[    875s] p2val2-0041 LG -> correct
+[    877s] p2val2-0041 EBG-all -> correct
+[    879s] p2val2-0041 EBG-unsafe -> correct
+[    880s] p2val2-0041 EBG-noR3 -> correct
+[    882s] p2val2-0042 B -> correct
+[    883s] p2val2-0042 G -> correct
+[    884s] p2val2-0042 R -> correct
+[    886s] p2val2-0042 T -> correct
+[    888s] p2val2-0042 RT -> correct
+[    889s] p2val2-0042 EB -> correct
+[    890s] p2val2-0042 EBG -> correct
+[    892s] p2val2-0042 LA -> correct
+[    894s] p2val2-0042 LG -> correct
+[    896s] p2val2-0042 EBG-all -> correct
+[    897s] p2val2-0042 EBG-unsafe -> correct
+[    898s] p2val2-0042 EBG-noR3 -> correct
+[    900s] p2val2-0043 B -> correct
+[    902s] p2val2-0043 G -> correct
+[    904s] p2val2-0043 R -> correct
+[    905s] p2val2-0043 T -> correct
+[    906s] p2val2-0043 RT -> correct
+[    908s] p2val2-0043 EB -> correct
+[    909s] p2val2-0043 EBG -> correct
+[    911s] p2val2-0043 LA -> correct
+[    913s] p2val2-0043 LG -> correct
+[    915s] p2val2-0043 EBG-all -> correct
+[    916s] p2val2-0043 EBG-unsafe -> correct
+[    917s] p2val2-0043 EBG-noR3 -> correct
+[    919s] p2val2-0044 B -> correct
+[    921s] p2val2-0044 G -> correct
+[    923s] p2val2-0044 R -> arbitrary_pick R2
+[    925s] p2val2-0044 T -> correct
+[    928s] p2val2-0044 RT -> over_abstain R2
+[    929s] p2val2-0044 EB -> correct
+[    931s] p2val2-0044 EBG -> correct
+[    933s] p2val2-0044 LA -> correct
+[    936s] p2val2-0044 LG -> correct
+[    937s] p2val2-0044 EBG-all -> correct
+[    939s] p2val2-0044 EBG-unsafe -> correct
+[    941s] p2val2-0044 EBG-noR3 -> correct
+[    942s] p2val2-0045 B -> correct
+[    944s] p2val2-0045 G -> correct
+[    945s] p2val2-0045 R -> correct
+[    947s] p2val2-0045 T -> correct
+[    949s] p2val2-0045 RT -> correct
+[    950s] p2val2-0045 EB -> correct
+[    951s] p2val2-0045 EBG -> correct
+[    953s] p2val2-0045 LA -> correct
+[    955s] p2val2-0045 LG -> correct
+[    957s] p2val2-0045 EBG-all -> correct
+[    958s] p2val2-0045 EBG-unsafe -> correct
+[    959s] p2val2-0045 EBG-noR3 -> correct
+[    961s] p2val2-0046 B -> correct
+[    962s] p2val2-0046 G -> correct
+[    963s] p2val2-0046 R -> correct
+[    964s] p2val2-0046 T -> correct
+[    966s] p2val2-0046 RT -> correct
+[    967s] p2val2-0046 EB -> correct
+[    968s] p2val2-0046 EBG -> correct
+[    970s] p2val2-0046 LA -> correct
+[    971s] p2val2-0046 LG -> correct
+[    972s] p2val2-0046 EBG-all -> correct
+[    974s] p2val2-0046 EBG-unsafe -> correct
+[    975s] p2val2-0046 EBG-noR3 -> correct
+[    977s] p2val2-0047 B -> false_conflict
+[    978s] p2val2-0047 G -> false_conflict
+[    981s] p2val2-0047 R -> correct R2
+[    982s] p2val2-0047 T -> false_conflict
+[    984s] p2val2-0047 RT -> correct R2
+[    986s] p2val2-0047 EB -> false_conflict
+[    988s] p2val2-0047 EBG -> over_abstain P2
+[    990s] p2val2-0047 LA -> false_conflict
+[    993s] p2val2-0047 LG -> false_conflict
+[    995s] p2val2-0047 EBG-all -> over_abstain P2
+[    997s] p2val2-0047 EBG-unsafe -> over_abstain P2
+[    999s] p2val2-0047 EBG-noR3 -> over_abstain P2
+[   1001s] p2val2-0048 B -> false_conflict
+[   1002s] p2val2-0048 G -> false_conflict
+[   1004s] p2val2-0048 R -> false_conflict
+[   1005s] p2val2-0048 T -> false_conflict
+[   1007s] p2val2-0048 RT -> false_conflict
+[   1009s] p2val2-0048 EB -> false_conflict
+[   1012s] p2val2-0048 EBG -> correct P2
+[   1014s] p2val2-0048 LA -> false_conflict
+[   1017s] p2val2-0048 LG -> correct P2
+[   1020s] p2val2-0048 EBG-all -> correct P2
+[   1023s] p2val2-0048 EBG-unsafe -> correct P2
+[   1025s] p2val2-0048 EBG-noR3 -> correct P2
+[   1027s] p2val2-0049 B -> false_conflict
+[   1028s] p2val2-0049 G -> false_conflict
+[   1030s] p2val2-0049 R -> stale_value R2
+[   1032s] p2val2-0049 T -> false_conflict
+[   1034s] p2val2-0049 RT -> stale_value R2
+[   1035s] p2val2-0049 EB -> false_conflict
+[   1038s] p2val2-0049 EBG -> correct P2
+[   1040s] p2val2-0049 LA -> false_conflict
+[   1043s] p2val2-0049 LG -> stale_value P2
+[   1045s] p2val2-0049 EBG-all -> correct P2
+[   1048s] p2val2-0049 EBG-unsafe -> correct P2
+[   1050s] p2val2-0049 EBG-noR3 -> correct P2
+[   1052s] p2val2-0050 B -> correct
+[   1054s] p2val2-0050 G -> false_conflict
+[   1055s] p2val2-0050 R -> false_conflict
+[   1057s] p2val2-0050 T -> false_conflict
+[   1059s] p2val2-0050 RT -> correct R2
+[   1060s] p2val2-0050 EB -> false_conflict
+[   1063s] p2val2-0050 EBG -> correct P2
+[   1065s] p2val2-0050 LA -> false_conflict
+[   1067s] p2val2-0050 LG -> false_conflict
+[   1069s] p2val2-0050 EBG-all -> correct P2
+[   1072s] p2val2-0050 EBG-unsafe -> correct P2
+[   1074s] p2val2-0050 EBG-noR3 -> correct P2
+[   1076s] p2val2-0051 B -> false_conflict
+[   1078s] p2val2-0051 G -> max_steps
+[   1081s] p2val2-0051 R -> correct
+[   1083s] p2val2-0051 T -> false_conflict
+[   1084s] p2val2-0051 RT -> false_conflict
+[   1086s] p2val2-0051 EB -> false_conflict
+[   1087s] p2val2-0051 EBG -> false_conflict
+[   1089s] p2val2-0051 LA -> false_conflict
+[   1092s] p2val2-0051 LG -> correct P2
+[   1094s] p2val2-0051 EBG-all -> correct P2
+[   1096s] p2val2-0051 EBG-unsafe -> false_conflict
+[   1098s] p2val2-0051 EBG-noR3 -> false_conflict
+[   1099s] p2val2-0052 B -> false_conflict
+[   1101s] p2val2-0052 G -> false_conflict
+[   1103s] p2val2-0052 R -> correct R2
+[   1104s] p2val2-0052 T -> false_conflict
+[   1106s] p2val2-0052 RT -> correct R2
+[   1107s] p2val2-0052 EB -> false_conflict
+[   1109s] p2val2-0052 EBG -> correct P2
+[   1111s] p2val2-0052 LA -> false_conflict
+[   1113s] p2val2-0052 LG -> false_conflict
+[   1115s] p2val2-0052 EBG-all -> correct P2
+[   1117s] p2val2-0052 EBG-unsafe -> correct P2
+[   1119s] p2val2-0052 EBG-noR3 -> correct P2
+[   1121s] p2val2-0053 B -> false_conflict
+[   1123s] p2val2-0053 G -> false_conflict
+[   1125s] p2val2-0053 R -> correct R2
+[   1126s] p2val2-0053 T -> false_conflict
+[   1128s] p2val2-0053 RT -> correct R2
+[   1130s] p2val2-0053 EB -> false_conflict
+[   1132s] p2val2-0053 EBG -> correct P2
+[   1134s] p2val2-0053 LA -> false_conflict
+[   1137s] p2val2-0053 LG -> false_conflict
+[   1139s] p2val2-0053 EBG-all -> correct P2
+[   1141s] p2val2-0053 EBG-unsafe -> correct P2
+[   1143s] p2val2-0053 EBG-noR3 -> correct P2
+[   1145s] p2val2-0054 B -> correct
+[   1147s] p2val2-0054 G -> correct
+[   1148s] p2val2-0054 R -> correct
+[   1150s] p2val2-0054 T -> correct
+[   1151s] p2val2-0054 RT -> correct
+[   1153s] p2val2-0054 EB -> correct
+[   1155s] p2val2-0054 EBG -> correct
+[   1156s] p2val2-0054 LA -> correct
+[   1158s] p2val2-0054 LG -> correct
+[   1159s] p2val2-0054 EBG-all -> correct
+[   1161s] p2val2-0054 EBG-unsafe -> correct
+[   1163s] p2val2-0054 EBG-noR3 -> correct
+[   1165s] p2val2-0055 B -> over_abstain
+[   1166s] p2val2-0055 G -> false_conflict
+[   1168s] p2val2-0055 R -> stale_value R2
+[   1170s] p2val2-0055 T -> false_conflict
+[   1172s] p2val2-0055 RT -> stale_value R2
+[   1173s] p2val2-0055 EB -> false_conflict
+[   1175s] p2val2-0055 EBG -> stale_value P2
+[   1177s] p2val2-0055 LA -> over_abstain
+[   1179s] p2val2-0055 LG -> over_abstain
+[   1181s] p2val2-0055 EBG-all -> stale_value P2
+[   1183s] p2val2-0055 EBG-unsafe -> stale_value P2
+[   1185s] p2val2-0055 EBG-noR3 -> stale_value P2
+[   1188s] p2val2-0056 B -> false_conflict
+[   1189s] p2val2-0056 G -> false_conflict
+[   1191s] p2val2-0056 R -> false_conflict
+[   1192s] p2val2-0056 T -> false_conflict
+[   1194s] p2val2-0056 RT -> false_conflict
+[   1195s] p2val2-0056 EB -> false_conflict
+[   1197s] p2val2-0056 EBG -> false_conflict
+[   1199s] p2val2-0056 LA -> false_conflict
+[   1201s] p2val2-0056 LG -> false_conflict
+[   1203s] p2val2-0056 EBG-all -> false_conflict
+[   1204s] p2val2-0056 EBG-unsafe -> false_conflict
+[   1206s] p2val2-0056 EBG-noR3 -> false_conflict
+[   1208s] p2val2-0057 B -> correct
+[   1210s] p2val2-0057 G -> stale_value
+[   1211s] p2val2-0057 R -> stale_value
+[   1213s] p2val2-0057 T -> correct
+[   1216s] p2val2-0057 RT -> correct R1
+[   1217s] p2val2-0057 EB -> correct
+[   1219s] p2val2-0057 EBG -> correct
+[   1221s] p2val2-0057 LA -> correct
+[   1224s] p2val2-0057 LG -> correct
+[   1225s] p2val2-0057 EBG-all -> correct
+[   1227s] p2val2-0057 EBG-unsafe -> correct
+[   1229s] p2val2-0057 EBG-noR3 -> correct
+[   1230s] p2val2-0058 B -> false_conflict
+[   1232s] p2val2-0058 G -> false_conflict
+[   1234s] p2val2-0058 R -> stale_value R2
+[   1236s] p2val2-0058 T -> false_conflict
+[   1238s] p2val2-0058 RT -> stale_value R2
+[   1240s] p2val2-0058 EB -> false_conflict
+[   1241s] p2val2-0058 EBG -> false_conflict
+[   1244s] p2val2-0058 LA -> false_conflict
+[   1246s] p2val2-0058 LG -> false_conflict
+[   1248s] p2val2-0058 EBG-all -> correct P2
+[   1250s] p2val2-0058 EBG-unsafe -> false_conflict
+[   1252s] p2val2-0058 EBG-noR3 -> false_conflict
+[   1253s] p2val2-0059 B -> false_conflict
+[   1255s] p2val2-0059 G -> false_conflict
+[   1257s] p2val2-0059 R -> stale_value R2
+[   1259s] p2val2-0059 T -> false_conflict
+[   1261s] p2val2-0059 RT -> stale_value R2
+[   1263s] p2val2-0059 EB -> max_steps
+[   1266s] p2val2-0059 EBG -> max_steps
+[   1269s] p2val2-0059 LA -> correct
+[   1272s] p2val2-0059 LG -> correct
+[   1276s] p2val2-0059 EBG-all -> max_steps
+[   1279s] p2val2-0059 EBG-unsafe -> max_steps
+[   1282s] p2val2-0059 EBG-noR3 -> max_steps
+[   1284s] p2val2-0060 B -> correct
+[   1285s] p2val2-0060 G -> false_conflict
+[   1287s] p2val2-0060 R -> false_conflict
+[   1288s] p2val2-0060 T -> false_conflict
+[   1290s] p2val2-0060 RT -> correct R2
+[   1291s] p2val2-0060 EB -> false_conflict
+[   1293s] p2val2-0060 EBG -> false_conflict
+[   1295s] p2val2-0060 LA -> correct
+[   1297s] p2val2-0060 LG -> correct
+[   1299s] p2val2-0060 EBG-all -> correct P2
+[   1301s] p2val2-0060 EBG-unsafe -> false_conflict
+[   1302s] p2val2-0060 EBG-noR3 -> false_conflict
+[   1304s] p2val2-0061 B -> correct
+[   1305s] p2val2-0061 G -> correct
+[   1307s] p2val2-0061 R -> correct
+[   1308s] p2val2-0061 T -> correct
+[   1311s] p2val2-0061 RT -> over_abstain R2
+[   1313s] p2val2-0061 EB -> correct
+[   1314s] p2val2-0061 EBG -> correct
+[   1316s] p2val2-0061 LA -> correct
+[   1319s] p2val2-0061 LG -> correct
+[   1321s] p2val2-0061 EBG-all -> arbitrary_pick P2
+[   1323s] p2val2-0061 EBG-unsafe -> correct
+[   1324s] p2val2-0061 EBG-noR3 -> correct
+[   1326s] p2val2-0062 B -> false_conflict
+[   1328s] p2val2-0062 G -> false_conflict
+[   1329s] p2val2-0062 R -> false_conflict
+[   1330s] p2val2-0062 T -> false_conflict
+[   1331s] p2val2-0062 RT -> false_conflict
+[   1333s] p2val2-0062 EB -> false_conflict
+[   1334s] p2val2-0062 EBG -> false_conflict
+[   1336s] p2val2-0062 LA -> false_conflict
+[   1339s] p2val2-0062 LG -> correct P2
+[   1341s] p2val2-0062 EBG-all -> correct P2
+[   1342s] p2val2-0062 EBG-unsafe -> false_conflict
+[   1343s] p2val2-0062 EBG-noR3 -> false_conflict
+[   1345s] p2val2-0063 B -> correct
+[   1346s] p2val2-0063 G -> correct
+[   1348s] p2val2-0063 R -> correct
+[   1349s] p2val2-0063 T -> correct
+[   1351s] p2val2-0063 RT -> correct
+[   1352s] p2val2-0063 EB -> correct
+[   1353s] p2val2-0063 EBG -> correct
+[   1356s] p2val2-0063 LA -> correct
+[   1358s] p2val2-0063 LG -> correct
+[   1359s] p2val2-0063 EBG-all -> correct
+[   1361s] p2val2-0063 EBG-unsafe -> correct
+[   1362s] p2val2-0063 EBG-noR3 -> correct
+[   1363s] p2val2-0064 B -> correct
+[   1365s] p2val2-0064 G -> correct
+[   1366s] p2val2-0064 R -> correct
+[   1368s] p2val2-0064 T -> correct
+[   1369s] p2val2-0064 RT -> correct
+[   1370s] p2val2-0064 EB -> correct
+[   1372s] p2val2-0064 EBG -> correct
+[   1374s] p2val2-0064 LA -> correct
+[   1376s] p2val2-0064 LG -> correct
+[   1377s] p2val2-0064 EBG-all -> correct
+[   1378s] p2val2-0064 EBG-unsafe -> correct
+[   1380s] p2val2-0064 EBG-noR3 -> correct
+[   1381s] p2val2-0065 B -> correct
+[   1384s] p2val2-0065 G -> arbitrary_pick
+[   1387s] p2val2-0065 R -> arbitrary_pick
+[   1388s] p2val2-0065 T -> correct
+[   1389s] p2val2-0065 RT -> correct
+[   1391s] p2val2-0065 EB -> correct
+[   1392s] p2val2-0065 EBG -> correct
+[   1395s] p2val2-0065 LA -> format_error
+[   1400s] p2val2-0065 LG -> arbitrary_pick
+[   1401s] p2val2-0065 EBG-all -> correct
+[   1402s] p2val2-0065 EBG-unsafe -> correct
+[   1404s] p2val2-0065 EBG-noR3 -> correct
+[   1405s] p2val2-0066 B -> correct
+[   1407s] p2val2-0066 G -> correct
+[   1408s] p2val2-0066 R -> correct
+[   1410s] p2val2-0066 T -> correct
+[   1412s] p2val2-0066 RT -> correct
+[   1413s] p2val2-0066 EB -> correct
+[   1415s] p2val2-0066 EBG -> correct
+[   1417s] p2val2-0066 LA -> correct
+[   1419s] p2val2-0066 LG -> correct
+[   1421s] p2val2-0066 EBG-all -> correct
+[   1422s] p2val2-0066 EBG-unsafe -> correct
+[   1424s] p2val2-0066 EBG-noR3 -> correct
+[   1425s] p2val2-0067 B -> correct
+[   1427s] p2val2-0067 G -> arbitrary_pick
+[   1428s] p2val2-0067 R -> arbitrary_pick
+[   1430s] p2val2-0067 T -> correct
+[   1433s] p2val2-0067 RT -> arbitrary_pick R2
+[   1434s] p2val2-0067 EB -> correct
+[   1436s] p2val2-0067 EBG -> correct
+[   1438s] p2val2-0067 LA -> correct
+[   1440s] p2val2-0067 LG -> correct
+[   1442s] p2val2-0067 EBG-all -> correct
+[   1443s] p2val2-0067 EBG-unsafe -> correct
+[   1445s] p2val2-0067 EBG-noR3 -> correct
+[   1447s] p2val2-0068 B -> arbitrary_pick
+[   1448s] p2val2-0068 G -> correct
+[   1450s] p2val2-0068 R -> correct
+[   1451s] p2val2-0068 T -> correct
+[   1452s] p2val2-0068 RT -> correct
+[   1454s] p2val2-0068 EB -> correct
+[   1455s] p2val2-0068 EBG -> correct
+[   1457s] p2val2-0068 LA -> correct
+[   1459s] p2val2-0068 LG -> correct
+[   1460s] p2val2-0068 EBG-all -> correct
+[   1462s] p2val2-0068 EBG-unsafe -> correct
+[   1463s] p2val2-0068 EBG-noR3 -> correct
+[   1464s] p2val2-0069 B -> correct
+[   1466s] p2val2-0069 G -> correct
+[   1467s] p2val2-0069 R -> correct
+[   1469s] p2val2-0069 T -> correct
+[   1470s] p2val2-0069 RT -> correct
+[   1471s] p2val2-0069 EB -> correct
+[   1473s] p2val2-0069 EBG -> correct
+[   1474s] p2val2-0069 LA -> correct
+[   1476s] p2val2-0069 LG -> correct
+[   1477s] p2val2-0069 EBG-all -> correct
+[   1478s] p2val2-0069 EBG-unsafe -> correct
+[   1480s] p2val2-0069 EBG-noR3 -> correct
+[   1481s] p2val2-0070 B -> false_conflict
+[   1483s] p2val2-0070 G -> false_conflict
+[   1485s] p2val2-0070 R -> correct R2
+[   1487s] p2val2-0070 T -> false_conflict
+[   1489s] p2val2-0070 RT -> correct R2
+[   1490s] p2val2-0070 EB -> false_conflict
+[   1492s] p2val2-0070 EBG -> correct P2
+[   1495s] p2val2-0070 LA -> false_conflict
+[   1497s] p2val2-0070 LG -> false_conflict
+[   1499s] p2val2-0070 EBG-all -> correct P2
+[   1501s] p2val2-0070 EBG-unsafe -> correct P2
+[   1504s] p2val2-0070 EBG-noR3 -> correct P2
+[   1505s] p2val2-0071 B -> over_abstain
+[   1507s] p2val2-0071 G -> false_conflict
+[   1508s] p2val2-0071 R -> false_conflict
+[   1509s] p2val2-0071 T -> false_conflict
+[   1511s] p2val2-0071 RT -> false_conflict
+[   1513s] p2val2-0071 EB -> max_steps
+[   1517s] p2val2-0071 EBG -> over_abstain
+[   1519s] p2val2-0071 LA -> false_conflict
+[   1521s] p2val2-0071 LG -> stale_value P2
+[   1525s] p2val2-0071 EBG-all -> over_abstain
+[   1528s] p2val2-0071 EBG-unsafe -> over_abstain
+[   1531s] p2val2-0071 EBG-noR3 -> over_abstain
+[   1533s] p2val2-0073 B -> false_conflict
+[   1535s] p2val2-0073 G -> false_conflict
+[   1536s] p2val2-0073 R -> false_conflict
+[   1538s] p2val2-0073 T -> false_conflict
+[   1539s] p2val2-0073 RT -> false_conflict
+[   1541s] p2val2-0073 EB -> correct
+[   1543s] p2val2-0073 EBG -> correct
+[   1545s] p2val2-0073 LA -> false_conflict
+[   1547s] p2val2-0073 LG -> false_conflict
+[   1548s] p2val2-0073 EBG-all -> correct
+[   1550s] p2val2-0073 EBG-unsafe -> correct
+[   1552s] p2val2-0073 EBG-noR3 -> correct
+[   1554s] p2val2-0074 B -> false_conflict
+[   1556s] p2val2-0074 G -> false_conflict
+[   1557s] p2val2-0074 R -> false_conflict
+[   1558s] p2val2-0074 T -> false_conflict
+[   1560s] p2val2-0074 RT -> false_conflict
+[   1561s] p2val2-0074 EB -> false_conflict
+[   1562s] p2val2-0074 EBG -> false_conflict
+[   1564s] p2val2-0074 LA -> false_conflict
+[   1567s] p2val2-0074 LG -> stale_value P2
+[   1569s] p2val2-0074 EBG-all -> correct P2
+[   1571s] p2val2-0074 EBG-unsafe -> false_conflict
+[   1572s] p2val2-0074 EBG-noR3 -> false_conflict
+[   1574s] p2val2-0075 B -> false_conflict
+[   1577s] p2val2-0075 G -> correct
+[   1580s] p2val2-0075 R -> correct
+[   1581s] p2val2-0075 T -> correct
+[   1583s] p2val2-0075 RT -> correct
+[   1585s] p2val2-0075 EB -> false_conflict
+[   1587s] p2val2-0075 EBG -> correct P2
+[   1589s] p2val2-0075 LA -> false_conflict
+[   1591s] p2val2-0075 LG -> false_conflict
+[   1593s] p2val2-0075 EBG-all -> correct P2
+[   1595s] p2val2-0075 EBG-unsafe -> correct P2
+[   1597s] p2val2-0075 EBG-noR3 -> correct P2
+[   1599s] p2val2-0076 B -> false_conflict
+[   1600s] p2val2-0076 G -> false_conflict
+[   1602s] p2val2-0076 R -> correct R2
+[   1604s] p2val2-0076 T -> false_conflict
+[   1606s] p2val2-0076 RT -> correct R2
+[   1607s] p2val2-0076 EB -> false_conflict
+[   1610s] p2val2-0076 EBG -> correct P2
+[   1612s] p2val2-0076 LA -> false_conflict
+[   1615s] p2val2-0076 LG -> false_conflict
+[   1617s] p2val2-0076 EBG-all -> correct P2
+[   1620s] p2val2-0076 EBG-unsafe -> correct P2
+[   1623s] p2val2-0076 EBG-noR3 -> correct P2
+[   1624s] p2val2-0077 B -> correct
+[   1626s] p2val2-0077 G -> correct
+[   1627s] p2val2-0077 R -> correct
+[   1629s] p2val2-0077 T -> correct
+[   1630s] p2val2-0077 RT -> correct
+[   1632s] p2val2-0077 EB -> correct
+[   1633s] p2val2-0077 EBG -> correct
+[   1635s] p2val2-0077 LA -> correct
+[   1637s] p2val2-0077 LG -> correct
+[   1638s] p2val2-0077 EBG-all -> correct
+[   1640s] p2val2-0077 EBG-unsafe -> correct
+[   1641s] p2val2-0077 EBG-noR3 -> correct
+[   1643s] p2val2-0078 B -> false_conflict
+[   1644s] p2val2-0078 G -> false_conflict
+[   1646s] p2val2-0078 R -> stale_value R2
+[   1647s] p2val2-0078 T -> false_conflict
+[   1649s] p2val2-0078 RT -> stale_value R2
+[   1651s] p2val2-0078 EB -> false_conflict
+[   1653s] p2val2-0078 EBG -> stale_value P2
+[   1655s] p2val2-0078 LA -> false_conflict
+[   1657s] p2val2-0078 LG -> false_conflict
+[   1659s] p2val2-0078 EBG-all -> stale_value P2
+[   1661s] p2val2-0078 EBG-unsafe -> stale_value P2
+[   1663s] p2val2-0078 EBG-noR3 -> stale_value P2
+[   1665s] p2val2-0079 B -> false_conflict
+[   1667s] p2val2-0079 G -> false_conflict
+[   1668s] p2val2-0079 R -> false_conflict
+[   1670s] p2val2-0079 T -> false_conflict
+[   1672s] p2val2-0079 RT -> stale_value R2
+[   1674s] p2val2-0079 EB -> false_conflict
+[   1675s] p2val2-0079 EBG -> false_conflict
+[   1679s] p2val2-0079 LA -> false_conflict
+[   1682s] p2val2-0079 LG -> false_conflict
+[   1683s] p2val2-0079 EBG-all -> false_conflict
+[   1685s] p2val2-0079 EBG-unsafe -> false_conflict
+[   1686s] p2val2-0079 EBG-noR3 -> false_conflict
+[   1689s] p2val2-0080 B -> false_conflict
+[   1690s] p2val2-0080 G -> false_conflict
+[   1692s] p2val2-0080 R -> correct R2
+[   1694s] p2val2-0080 T -> false_conflict
+[   1696s] p2val2-0080 RT -> correct R2
+[   1697s] p2val2-0080 EB -> false_conflict
+[   1699s] p2val2-0080 EBG -> false_conflict
+[   1701s] p2val2-0080 LA -> false_conflict
+[   1703s] p2val2-0080 LG -> correct P2
+[   1705s] p2val2-0080 EBG-all -> correct P2
+[   1707s] p2val2-0080 EBG-unsafe -> false_conflict
+[   1708s] p2val2-0080 EBG-noR3 -> false_conflict
+[   1710s] p2val2-0081 B -> stale_value
+[   1712s] p2val2-0081 G -> stale_value
+[   1713s] p2val2-0081 R -> stale_value
+[   1715s] p2val2-0081 T -> false_conflict
+[   1717s] p2val2-0081 RT -> stale_value R2
+[   1719s] p2val2-0081 EB -> false_conflict
+[   1721s] p2val2-0081 EBG -> false_conflict
+[   1723s] p2val2-0081 LA -> correct
+[   1726s] p2val2-0081 LG -> correct
+[   1729s] p2val2-0081 EBG-all -> correct P2
+[   1730s] p2val2-0081 EBG-unsafe -> false_conflict
+[   1732s] p2val2-0081 EBG-noR3 -> false_conflict
+[   1734s] p2val2-0082 B -> false_conflict
+[   1735s] p2val2-0082 G -> false_conflict
+[   1738s] p2val2-0082 R -> stale_value R2
+[   1740s] p2val2-0082 T -> false_conflict
+[   1742s] p2val2-0082 RT -> stale_value R2
+[   1744s] p2val2-0082 EB -> false_conflict
+[   1746s] p2val2-0082 EBG -> false_conflict
+[   1748s] p2val2-0082 LA -> false_conflict
+[   1751s] p2val2-0082 LG -> correct P2
+[   1754s] p2val2-0082 EBG-all -> correct P2
+[   1756s] p2val2-0082 EBG-unsafe -> false_conflict
+[   1757s] p2val2-0082 EBG-noR3 -> false_conflict
+[   1760s] p2val2-0083 B -> false_conflict
+[   1762s] p2val2-0083 G -> false_conflict
+[   1764s] p2val2-0083 R -> false_conflict
+[   1765s] p2val2-0083 T -> false_conflict
+[   1768s] p2val2-0083 RT -> stale_value R2
+[   1769s] p2val2-0083 EB -> false_conflict
+[   1771s] p2val2-0083 EBG -> false_conflict
+[   1773s] p2val2-0083 LA -> false_conflict
+[   1776s] p2val2-0083 LG -> correct P2
+[   1778s] p2val2-0083 EBG-all -> correct P2
+[   1779s] p2val2-0083 EBG-unsafe -> false_conflict
+[   1780s] p2val2-0083 EBG-noR3 -> false_conflict
+[   1783s] p2val2-0084 B -> correct
+[   1784s] p2val2-0084 G -> correct
+[   1785s] p2val2-0084 R -> correct
+[   1787s] p2val2-0084 T -> correct
+[   1789s] p2val2-0084 RT -> arbitrary_pick R2
+[   1791s] p2val2-0084 EB -> correct
+[   1792s] p2val2-0084 EBG -> correct
+[   1794s] p2val2-0084 LA -> correct
+[   1796s] p2val2-0084 LG -> correct
+[   1799s] p2val2-0084 EBG-all -> arbitrary_pick P2
+[   1801s] p2val2-0084 EBG-unsafe -> correct
+[   1802s] p2val2-0084 EBG-noR3 -> correct
+[   1804s] p2val2-0085 B -> false_conflict
+[   1806s] p2val2-0085 G -> stale_value
+[   1808s] p2val2-0085 R -> stale_value
+[   1810s] p2val2-0085 T -> correct
+[   1813s] p2val2-0085 RT -> correct
+[   1814s] p2val2-0085 EB -> false_conflict
+[   1815s] p2val2-0085 EBG -> false_conflict
+[   1817s] p2val2-0085 LA -> false_conflict
+[   1820s] p2val2-0085 LG -> correct P2
+[   1822s] p2val2-0085 EBG-all -> correct P2
+[   1824s] p2val2-0085 EBG-unsafe -> false_conflict
+[   1825s] p2val2-0085 EBG-noR3 -> false_conflict
+[   1828s] p2val2-0086 B -> correct
+[   1830s] p2val2-0086 G -> correct
+[   1831s] p2val2-0086 R -> correct
+[   1833s] p2val2-0086 T -> correct
+[   1834s] p2val2-0086 RT -> correct
+[   1836s] p2val2-0086 EB -> correct
+[   1837s] p2val2-0086 EBG -> correct
+[   1839s] p2val2-0086 LA -> correct
+[   1841s] p2val2-0086 LG -> correct
+[   1842s] p2val2-0086 EBG-all -> correct
+[   1844s] p2val2-0086 EBG-unsafe -> correct
+[   1845s] p2val2-0086 EBG-noR3 -> correct
+[   1847s] p2val2-0087 B -> arbitrary_pick
+[   1848s] p2val2-0087 G -> correct
+[   1850s] p2val2-0087 R -> correct
+[   1852s] p2val2-0087 T -> correct
+[   1853s] p2val2-0087 RT -> correct
+[   1855s] p2val2-0087 EB -> correct
+[   1857s] p2val2-0087 EBG -> correct
+[   1859s] p2val2-0087 LA -> correct
+[   1862s] p2val2-0087 LG -> arbitrary_pick P2
+[   1864s] p2val2-0087 EBG-all -> correct
+[   1866s] p2val2-0087 EBG-unsafe -> correct
+[   1868s] p2val2-0087 EBG-noR3 -> correct
+[   1869s] p2val2-0088 B -> correct
+[   1871s] p2val2-0088 G -> correct
+[   1872s] p2val2-0088 R -> correct
+[   1874s] p2val2-0088 T -> correct
+[   1876s] p2val2-0088 RT -> correct
+[   1878s] p2val2-0088 EB -> correct
+[   1880s] p2val2-0088 EBG -> correct
+[   1882s] p2val2-0088 LA -> correct
+[   1884s] p2val2-0088 LG -> correct
+[   1886s] p2val2-0088 EBG-all -> correct
+[   1888s] p2val2-0088 EBG-unsafe -> correct
+[   1890s] p2val2-0088 EBG-noR3 -> correct
+[   1892s] p2val2-0089 B -> correct
+[   1893s] p2val2-0089 G -> correct
+[   1895s] p2val2-0089 R -> correct
+[   1896s] p2val2-0089 T -> correct
+[   1898s] p2val2-0089 RT -> correct
+[   1900s] p2val2-0089 EB -> correct
+[   1901s] p2val2-0089 EBG -> correct
+[   1904s] p2val2-0089 LA -> correct
+[   1906s] p2val2-0089 LG -> correct
+[   1907s] p2val2-0089 EBG-all -> correct
+[   1909s] p2val2-0089 EBG-unsafe -> correct
+[   1911s] p2val2-0089 EBG-noR3 -> correct
+[   1913s] p2val2-0090 B -> correct
+[   1915s] p2val2-0090 G -> arbitrary_pick
+[   1916s] p2val2-0090 R -> arbitrary_pick
+[   1918s] p2val2-0090 T -> correct
+[   1920s] p2val2-0090 RT -> arbitrary_pick R2
+[   1921s] p2val2-0090 EB -> correct
+[   1922s] p2val2-0090 EBG -> correct
+[   1924s] p2val2-0090 LA -> correct
+[   1926s] p2val2-0090 LG -> correct
+[   1928s] p2val2-0090 EBG-all -> correct
+[   1929s] p2val2-0090 EBG-unsafe -> correct
+[   1930s] p2val2-0090 EBG-noR3 -> correct
+[   1932s] p2val2-0091 B -> arbitrary_pick
+[   1933s] p2val2-0091 G -> correct
+[   1934s] p2val2-0091 R -> correct
+[   1936s] p2val2-0091 T -> correct
+[   1937s] p2val2-0091 RT -> correct
+[   1939s] p2val2-0091 EB -> correct
+[   1940s] p2val2-0091 EBG -> correct
+[   1942s] p2val2-0091 LA -> correct
+[   1944s] p2val2-0091 LG -> correct
+[   1946s] p2val2-0091 EBG-all -> correct
+[   1948s] p2val2-0091 EBG-unsafe -> correct
+[   1950s] p2val2-0091 EBG-noR3 -> correct
+[   1951s] p2val2-0092 B -> unsupported_claim
+[   1953s] p2val2-0092 G -> correct
+[   1954s] p2val2-0092 R -> correct
+[   1956s] p2val2-0092 T -> correct
+[   1957s] p2val2-0092 RT -> correct
+[   1958s] p2val2-0092 EB -> correct
+[   1960s] p2val2-0092 EBG -> correct
+[   1961s] p2val2-0092 LA -> correct
+[   1962s] p2val2-0092 LG -> correct
+[   1964s] p2val2-0092 EBG-all -> correct
+[   1965s] p2val2-0092 EBG-unsafe -> correct
+[   1966s] p2val2-0092 EBG-noR3 -> correct
+exit=0 2026-11-16T11:19:36+00:00 Qwen/Qwen2.5-3B-Instruct p2val2
+start 2026-11-16T11:19:36+00:00 job=4213_0 model=Qwen/Qwen2.5-3B-Instruct split=p2val CUDA_VISIBLE_DEVICES=0
+[      2s] p2val-0001 B -> false_conflict
+[      4s] p2val-0001 G -> max_steps
+[      7s] p2val-0001 R -> max_steps
+[      9s] p2val-0001 T -> false_conflict
+[     11s] p2val-0001 RT -> correct R2
+[     14s] p2val-0001 EB -> max_steps
+[     17s] p2val-0001 EBG -> max_steps
+[     20s] p2val-0001 LA -> correct
+[     22s] p2val-0001 LG -> correct
+[     26s] p2val-0001 EBG-all -> max_steps
+[     29s] p2val-0001 EBG-unsafe -> max_steps
+[     32s] p2val-0001 EBG-noR3 -> max_steps
+[     34s] p2val-0002 B -> false_conflict
+[     35s] p2val-0002 G -> false_conflict
+[     37s] p2val-0002 R -> false_conflict
+[     38s] p2val-0002 T -> false_conflict
+[     39s] p2val-0002 RT -> false_conflict
+[     41s] p2val-0002 EB -> false_conflict
+[     43s] p2val-0002 EBG -> correct P2
+[     45s] p2val-0002 LA -> false_conflict
+[     48s] p2val-0002 LG -> correct P2
+[     51s] p2val-0002 EBG-all -> correct P2
+[     53s] p2val-0002 EBG-unsafe -> correct P2
+[     55s] p2val-0002 EBG-noR3 -> correct P2
+[     57s] p2val-0003 B -> false_conflict
+[     59s] p2val-0003 G -> false_conflict
+[     61s] p2val-0003 R -> stale_value R2
+[     63s] p2val-0003 T -> false_conflict
+[     65s] p2val-0003 RT -> stale_value R2
+[     67s] p2val-0003 EB -> correct
+[     68s] p2val-0003 EBG -> correct
+[     71s] p2val-0003 LA -> false_conflict
+[     73s] p2val-0003 LG -> false_conflict
+[     75s] p2val-0003 EBG-all -> correct
+[     76s] p2val-0003 EBG-unsafe -> correct
+[     78s] p2val-0003 EBG-noR3 -> correct
+[     80s] p2val-0004 B -> false_conflict
+[     81s] p2val-0004 G -> false_conflict
+[     83s] p2val-0004 R -> false_conflict
+[     84s] p2val-0004 T -> false_conflict
+[     86s] p2val-0004 RT -> false_conflict
+[     88s] p2val-0004 EB -> false_conflict
+[     90s] p2val-0004 EBG -> correct P2
+[     92s] p2val-0004 LA -> false_conflict
+[     95s] p2val-0004 LG -> correct P2
+[     97s] p2val-0004 EBG-all -> correct P2
+[     99s] p2val-0004 EBG-unsafe -> correct P2
+[    101s] p2val-0004 EBG-noR3 -> correct P2
+[    103s] p2val-0005 B -> false_conflict
+[    104s] p2val-0005 G -> false_conflict
+[    106s] p2val-0005 R -> false_conflict
+[    108s] p2val-0005 T -> false_conflict
+[    110s] p2val-0005 RT -> false_conflict
+[    111s] p2val-0005 EB -> false_conflict
+[    113s] p2val-0005 EBG -> false_conflict
+[    115s] p2val-0005 LA -> false_conflict
+[    118s] p2val-0005 LG -> false_conflict
+[    120s] p2val-0005 EBG-all -> correct P2
+[    122s] p2val-0005 EBG-unsafe -> false_conflict
+[    124s] p2val-0005 EBG-noR3 -> false_conflict
+[    126s] p2val-0007 B -> false_conflict
+[    127s] p2val-0007 G -> false_conflict
+[    130s] p2val-0007 R -> correct R2
+[    131s] p2val-0007 T -> false_conflict
+[    133s] p2val-0007 RT -> correct R2
+[    135s] p2val-0007 EB -> false_conflict
+[    137s] p2val-0007 EBG -> false_conflict
+[    139s] p2val-0007 LA -> false_conflict
+[    142s] p2val-0007 LG -> false_conflict
+[    144s] p2val-0007 EBG-all -> correct P2
+[    146s] p2val-0007 EBG-unsafe -> false_conflict
+[    148s] p2val-0007 EBG-noR3 -> false_conflict
+[    149s] p2val-0008 B -> correct
+[    151s] p2val-0008 G -> correct
+[    152s] p2val-0008 R -> correct
+[    154s] p2val-0008 T -> correct
+[    155s] p2val-0008 RT -> correct
+[    157s] p2val-0008 EB -> correct
+[    158s] p2val-0008 EBG -> correct
+[    160s] p2val-0008 LA -> correct
+[    161s] p2val-0008 LG -> correct
+[    163s] p2val-0008 EBG-all -> correct
+[    164s] p2val-0008 EBG-unsafe -> correct
+[    166s] p2val-0008 EBG-noR3 -> correct
+[    167s] p2val-0009 B -> false_conflict
+[    169s] p2val-0009 G -> false_conflict
+[    171s] p2val-0009 R -> correct R2
+[    173s] p2val-0009 T -> false_conflict
+[    175s] p2val-0009 RT -> correct R2
+[    176s] p2val-0009 EB -> false_conflict
+[    178s] p2val-0009 EBG -> correct P2
+[    181s] p2val-0009 LA -> false_conflict
+[    183s] p2val-0009 LG -> false_conflict
+[    185s] p2val-0009 EBG-all -> correct P2
+[    187s] p2val-0009 EBG-unsafe -> correct P2
+[    189s] p2val-0009 EBG-noR3 -> correct P2
+[    191s] p2val-0010 B -> false_conflict
+[    193s] p2val-0010 G -> false_conflict
+[    195s] p2val-0010 R -> false_conflict
+[    197s] p2val-0010 T -> false_conflict
+[    198s] p2val-0010 RT -> false_conflict
+[    200s] p2val-0010 EB -> false_conflict
+[    202s] p2val-0010 EBG -> false_conflict
+[    205s] p2val-0010 LA -> false_conflict
+[    208s] p2val-0010 LG -> false_conflict
+[    210s] p2val-0010 EBG-all -> false_conflict
+[    212s] p2val-0010 EBG-unsafe -> false_conflict
+[    214s] p2val-0010 EBG-noR3 -> false_conflict
+[    216s] p2val-0011 B -> correct
+[    217s] p2val-0011 G -> false_conflict
+[    219s] p2val-0011 R -> correct R2
+[    221s] p2val-0011 T -> false_conflict
+[    223s] p2val-0011 RT -> correct R2
+[    225s] p2val-0011 EB -> false_conflict
+[    227s] p2val-0011 EBG -> false_conflict
+[    229s] p2val-0011 LA -> correct
+[    231s] p2val-0011 LG -> correct
+[    234s] p2val-0011 EBG-all -> correct P2
+[    236s] p2val-0011 EBG-unsafe -> false_conflict
+[    238s] p2val-0011 EBG-noR3 -> false_conflict
+[    239s] p2val-0013 B -> correct
+[    242s] p2val-0013 G -> max_steps
+[    245s] p2val-0013 R -> format_error
+[    247s] p2val-0013 T -> max_steps
+[    251s] p2val-0013 RT -> format_error
+[    252s] p2val-0013 EB -> false_conflict
+[    253s] p2val-0013 EBG -> false_conflict
+[    255s] p2val-0013 LA -> false_conflict
+[    258s] p2val-0013 LG -> stale_value P2
+[    260s] p2val-0013 EBG-all -> correct P2
+[    261s] p2val-0013 EBG-unsafe -> false_conflict
+[    263s] p2val-0013 EBG-noR3 -> false_conflict
+[    264s] p2val-0014 B -> arbitrary_pick
+[    266s] p2val-0014 G -> correct
+[    267s] p2val-0014 R -> correct
+[    268s] p2val-0014 T -> correct
+[    270s] p2val-0014 RT -> arbitrary_pick R2
+[    272s] p2val-0014 EB -> correct
+[    273s] p2val-0014 EBG -> correct
+[    275s] p2val-0014 LA -> correct
+[    277s] p2val-0014 LG -> correct
+[    279s] p2val-0014 EBG-all -> arbitrary_pick P2
+[    280s] p2val-0014 EBG-unsafe -> correct
+[    282s] p2val-0014 EBG-noR3 -> correct
+[    283s] p2val-0015 B -> arbitrary_pick
+[    285s] p2val-0015 G -> correct
+[    287s] p2val-0015 R -> correct
+[    291s] p2val-0015 T -> arbitrary_pick
+[    294s] p2val-0015 RT -> arbitrary_pick
+[    296s] p2val-0015 EB -> correct
+[    298s] p2val-0015 EBG -> correct
+[    301s] p2val-0015 LA -> arbitrary_pick
+[    303s] p2val-0015 LG -> arbitrary_pick
+[    306s] p2val-0015 EBG-all -> arbitrary_pick P2
+[    308s] p2val-0015 EBG-unsafe -> correct
+[    310s] p2val-0015 EBG-noR3 -> correct
+[    312s] p2val-0016 B -> correct
+[    313s] p2val-0016 G -> correct
+[    315s] p2val-0016 R -> correct
+[    317s] p2val-0016 T -> correct
+[    318s] p2val-0016 RT -> correct
+[    320s] p2val-0016 EB -> correct
+[    322s] p2val-0016 EBG -> correct
+[    324s] p2val-0016 LA -> correct
+[    326s] p2val-0016 LG -> correct
+[    328s] p2val-0016 EBG-all -> correct
+[    330s] p2val-0016 EBG-unsafe -> correct
+[    331s] p2val-0016 EBG-noR3 -> correct
+[    333s] p2val-0017 B -> correct
+[    335s] p2val-0017 G -> correct
+[    336s] p2val-0017 R -> correct
+[    338s] p2val-0017 T -> correct
+[    340s] p2val-0017 RT -> correct
+[    341s] p2val-0017 EB -> correct
+[    343s] p2val-0017 EBG -> correct
+[    345s] p2val-0017 LA -> arbitrary_pick
+[    347s] p2val-0017 LG -> arbitrary_pick
+[    349s] p2val-0017 EBG-all -> correct
+[    351s] p2val-0017 EBG-unsafe -> correct
+[    353s] p2val-0017 EBG-noR3 -> correct
+[    355s] p2val-0018 B -> correct
+[    356s] p2val-0018 G -> correct
+[    357s] p2val-0018 R -> correct
+[    359s] p2val-0018 T -> correct
+[    360s] p2val-0018 RT -> correct
+[    362s] p2val-0018 EB -> correct
+[    363s] p2val-0018 EBG -> correct
+[    365s] p2val-0018 LA -> correct
+[    368s] p2val-0018 LG -> arbitrary_pick P2
+[    370s] p2val-0018 EBG-all -> correct
+[    371s] p2val-0018 EBG-unsafe -> correct
+[    373s] p2val-0018 EBG-noR3 -> correct
+[    375s] p2val-0019 B -> correct
+[    376s] p2val-0019 G -> correct
+[    377s] p2val-0019 R -> correct
+[    379s] p2val-0019 T -> correct
+[    381s] p2val-0019 RT -> correct
+[    382s] p2val-0019 EB -> correct
+[    384s] p2val-0019 EBG -> correct
+[    386s] p2val-0019 LA -> correct
+[    388s] p2val-0019 LG -> correct
+[    389s] p2val-0019 EBG-all -> correct
+[    391s] p2val-0019 EBG-unsafe -> correct
+[    392s] p2val-0019 EBG-noR3 -> correct
+[    395s] p2val-0020 B -> arbitrary_pick
+[    396s] p2val-0020 G -> correct
+[    398s] p2val-0020 R -> arbitrary_pick R2
+[    400s] p2val-0020 T -> correct
+[    402s] p2val-0020 RT -> arbitrary_pick R2
+[    403s] p2val-0020 EB -> correct
+[    405s] p2val-0020 EBG -> correct
+[    408s] p2val-0020 LA -> arbitrary_pick
+[    410s] p2val-0020 LG -> arbitrary_pick
+[    412s] p2val-0020 EBG-all -> correct
+[    413s] p2val-0020 EBG-unsafe -> correct
+[    414s] p2val-0020 EBG-noR3 -> correct
+[    416s] p2val-0021 B -> arbitrary_pick
+[    418s] p2val-0021 G -> max_steps
+[    421s] p2val-0021 R -> max_steps
+[    423s] p2val-0021 T -> correct
+[    425s] p2val-0021 RT -> correct
+[    426s] p2val-0021 EB -> correct
+[    428s] p2val-0021 EBG -> correct
+[    430s] p2val-0021 LA -> arbitrary_pick
+[    433s] p2val-0021 LG -> arbitrary_pick
+[    435s] p2val-0021 EBG-all -> correct
+[    436s] p2val-0021 EBG-unsafe -> correct
+[    438s] p2val-0021 EBG-noR3 -> correct
+[    440s] p2val-0022 B -> correct
+[    441s] p2val-0022 G -> correct
+[    443s] p2val-0022 R -> correct
+[    444s] p2val-0022 T -> correct
+[    446s] p2val-0022 RT -> correct
+[    447s] p2val-0022 EB -> correct
+[    449s] p2val-0022 EBG -> correct
+[    450s] p2val-0022 LA -> correct
+[    451s] p2val-0022 LG -> correct
+[    453s] p2val-0022 EBG-all -> correct
+[    454s] p2val-0022 EBG-unsafe -> correct
+[    456s] p2val-0022 EBG-noR3 -> correct
+[    457s] p2val-0023 B -> false_conflict
+[    459s] p2val-0023 G -> false_conflict
+[    461s] p2val-0023 R -> correct R2
+[    463s] p2val-0023 T -> false_conflict
+[    465s] p2val-0023 RT -> correct R2
+[    466s] p2val-0023 EB -> false_conflict
+[    469s] p2val-0023 EBG -> correct P2
+[    471s] p2val-0023 LA -> false_conflict
+[    473s] p2val-0023 LG -> false_conflict
+[    475s] p2val-0023 EBG-all -> correct P2
+[    477s] p2val-0023 EBG-unsafe -> correct P2
+[    479s] p2val-0023 EBG-noR3 -> correct P2
+[    481s] p2val-0024 B -> false_conflict
+[    483s] p2val-0024 G -> false_conflict
+[    484s] p2val-0024 R -> false_conflict
+[    486s] p2val-0024 T -> false_conflict
+[    487s] p2val-0024 RT -> false_conflict
+[    489s] p2val-0024 EB -> false_conflict
+[    492s] p2val-0024 EBG -> stale_value P2
+[    495s] p2val-0024 LA -> false_conflict
+[    498s] p2val-0024 LG -> false_conflict
+[    501s] p2val-0024 EBG-all -> stale_value P2
+[    503s] p2val-0024 EBG-unsafe -> stale_value P2
+[    506s] p2val-0024 EBG-noR3 -> stale_value P2
+[    508s] p2val-0025 B -> false_conflict
+[    510s] p2val-0025 G -> false_conflict
+[    512s] p2val-0025 R -> stale_value R2
+[    513s] p2val-0025 T -> false_conflict
+[    515s] p2val-0025 RT -> stale_value R2
+[    517s] p2val-0025 EB -> correct
+[    518s] p2val-0025 EBG -> correct
+[    520s] p2val-0025 LA -> false_conflict
+[    523s] p2val-0025 LG -> stale_value P2
+[    525s] p2val-0025 EBG-all -> correct
+[    526s] p2val-0025 EBG-unsafe -> correct
+[    528s] p2val-0025 EBG-noR3 -> correct
+[    530s] p2val-0026 B -> correct
+[    531s] p2val-0026 G -> false_conflict
+[    533s] p2val-0026 R -> false_conflict
+[    535s] p2val-0026 T -> false_conflict
+[    537s] p2val-0026 RT -> correct R2
+[    539s] p2val-0026 EB -> false_conflict
+[    542s] p2val-0026 EBG -> correct P2
+[    544s] p2val-0026 LA -> false_conflict
+[    546s] p2val-0026 LG -> false_conflict
+[    548s] p2val-0026 EBG-all -> correct P2
+[    551s] p2val-0026 EBG-unsafe -> correct P2
+[    554s] p2val-0026 EBG-noR3 -> correct P2
+[    555s] p2val-0028 B -> stale_value
+[    557s] p2val-0028 G -> correct
+[    559s] p2val-0028 R -> correct
+[    560s] p2val-0028 T -> false_conflict
+[    562s] p2val-0028 RT -> correct R2
+[    564s] p2val-0028 EB -> false_conflict
+[    566s] p2val-0028 EBG -> correct P2
+[    568s] p2val-0028 LA -> correct
+[    572s] p2val-0028 LG -> false_conflict P1
+[    574s] p2val-0028 EBG-all -> correct P2
+[    576s] p2val-0028 EBG-unsafe -> correct P2
+[    578s] p2val-0028 EBG-noR3 -> correct P2
+[    580s] p2val-0029 B -> false_conflict
+[    582s] p2val-0029 G -> max_steps
+[    585s] p2val-0029 R -> false_conflict
+[    587s] p2val-0029 T -> false_conflict
+[    589s] p2val-0029 RT -> correct R2
+[    590s] p2val-0029 EB -> false_conflict
+[    592s] p2val-0029 EBG -> correct P2
+[    596s] p2val-0029 LA -> stale_value
+[    599s] p2val-0029 LG -> stale_value
+[    601s] p2val-0029 EBG-all -> correct P2
+[    604s] p2val-0029 EBG-unsafe -> correct P2
+[    606s] p2val-0029 EBG-noR3 -> correct P2
+[    608s] p2val-0030 B -> correct
+[    610s] p2val-0030 G -> correct
+[    612s] p2val-0030 R -> correct
+[    614s] p2val-0030 T -> correct
+[    616s] p2val-0030 RT -> correct
+[    618s] p2val-0030 EB -> correct
+[    620s] p2val-0030 EBG -> correct
+[    622s] p2val-0030 LA -> correct
+[    624s] p2val-0030 LG -> correct
+[    626s] p2val-0030 EBG-all -> correct
+[    628s] p2val-0030 EBG-unsafe -> correct
+[    630s] p2val-0030 EBG-noR3 -> correct
+[    632s] p2val-0031 B -> false_conflict
+[    633s] p2val-0031 G -> false_conflict
+[    636s] p2val-0031 R -> stale_value R2
+[    637s] p2val-0031 T -> false_conflict
+[    640s] p2val-0031 RT -> stale_value R2
+[    641s] p2val-0031 EB -> false_conflict
+[    643s] p2val-0031 EBG -> false_conflict
+[    645s] p2val-0031 LA -> false_conflict
+[    647s] p2val-0031 LG -> false_conflict
+[    648s] p2val-0031 EBG-all -> false_conflict
+[    650s] p2val-0031 EBG-unsafe -> false_conflict
+[    652s] p2val-0031 EBG-noR3 -> false_conflict
+[    654s] p2val-0032 B -> false_conflict
+[    655s] p2val-0032 G -> false_conflict
+[    656s] p2val-0032 R -> false_conflict
+[    658s] p2val-0032 T -> false_conflict
+[    659s] p2val-0032 RT -> false_conflict
+[    661s] p2val-0032 EB -> false_conflict
+[    662s] p2val-0032 EBG -> false_conflict
+[    664s] p2val-0032 LA -> false_conflict
+[    666s] p2val-0032 LG -> false_conflict
+[    668s] p2val-0032 EBG-all -> false_conflict
+[    670s] p2val-0032 EBG-unsafe -> false_conflict
+[    671s] p2val-0032 EBG-noR3 -> false_conflict
+[    673s] p2val-0033 B -> false_conflict
+[    675s] p2val-0033 G -> correct
+[    677s] p2val-0033 R -> correct R1
+[    679s] p2val-0033 T -> correct
+[    681s] p2val-0033 RT -> correct R1
+[    683s] p2val-0033 EB -> false_conflict
+[    684s] p2val-0033 EBG -> false_conflict
+[    686s] p2val-0033 LA -> false_conflict
+[    689s] p2val-0033 LG -> correct P2
+[    691s] p2val-0033 EBG-all -> correct P2
+[    693s] p2val-0033 EBG-unsafe -> false_conflict
+[    694s] p2val-0033 EBG-noR3 -> false_conflict
+[    696s] p2val-0034 B -> correct
+[    698s] p2val-0034 G -> stale_value
+[    700s] p2val-0034 R -> stale_value
+[    701s] p2val-0034 T -> stale_value
+[    703s] p2val-0034 RT -> stale_value
+[    705s] p2val-0034 EB -> false_conflict
+[    707s] p2val-0034 EBG -> false_conflict
+[    709s] p2val-0034 LA -> correct
+[    711s] p2val-0034 LG -> correct
+[    714s] p2val-0034 EBG-all -> correct P2
+[    716s] p2val-0034 EBG-unsafe -> false_conflict
+[    719s] p2val-0034 EBG-noR3 -> false_conflict
+[    720s] p2val-0035 B -> correct
+[    722s] p2val-0035 G -> stale_value
+[    724s] p2val-0035 R -> stale_value
+[    726s] p2val-0035 T -> false_conflict
+[    728s] p2val-0035 RT -> stale_value R2
+[    730s] p2val-0035 EB -> max_steps
+[    733s] p2val-0035 EBG -> max_steps
+[    735s] p2val-0035 LA -> false_conflict
+[    737s] p2val-0035 LG -> false_conflict
+[    740s] p2val-0035 EBG-all -> max_steps
+[    743s] p2val-0035 EBG-unsafe -> max_steps
+[    746s] p2val-0035 EBG-noR3 -> max_steps
+[    748s] p2val-0036 B -> arbitrary_pick
+[    753s] p2val-0036 G -> arbitrary_pick
+[    757s] p2val-0036 R -> arbitrary_pick
+[    758s] p2val-0036 T -> correct
+[    761s] p2val-0036 RT -> arbitrary_pick R2
+[    764s] p2val-0036 EB -> max_steps
+[    768s] p2val-0036 EBG -> arbitrary_pick
+[    770s] p2val-0036 LA -> correct
+[    772s] p2val-0036 LG -> correct
+[    776s] p2val-0036 EBG-all -> arbitrary_pick
+[    780s] p2val-0036 EBG-unsafe -> arbitrary_pick
+[    783s] p2val-0036 EBG-noR3 -> arbitrary_pick
+[    785s] p2val-0037 B -> correct
+[    787s] p2val-0037 G -> correct
+[    788s] p2val-0037 R -> correct
+[    790s] p2val-0037 T -> correct
+[    793s] p2val-0037 RT -> arbitrary_pick R2
+[    795s] p2val-0037 EB -> correct
+[    797s] p2val-0037 EBG -> correct
+[    799s] p2val-0037 LA -> correct
+[    802s] p2val-0037 LG -> arbitrary_pick P2
+[    804s] p2val-0037 EBG-all -> arbitrary_pick P2
+[    806s] p2val-0037 EBG-unsafe -> correct
+[    808s] p2val-0037 EBG-noR3 -> correct
+[    810s] p2val-0038 B -> correct
+[    811s] p2val-0038 G -> correct
+[    813s] p2val-0038 R -> correct
+[    814s] p2val-0038 T -> correct
+[    816s] p2val-0038 RT -> correct
+[    817s] p2val-0038 EB -> correct
+[    819s] p2val-0038 EBG -> correct
+[    821s] p2val-0038 LA -> correct
+[    823s] p2val-0038 LG -> correct
+[    824s] p2val-0038 EBG-all -> correct
+[    825s] p2val-0038 EBG-unsafe -> correct
+[    827s] p2val-0038 EBG-noR3 -> correct
+[    828s] p2val-0040 B -> correct
+[    830s] p2val-0040 G -> correct
+[    832s] p2val-0040 R -> correct
+[    833s] p2val-0040 T -> correct
+[    835s] p2val-0040 RT -> correct
+[    837s] p2val-0040 EB -> correct
+[    839s] p2val-0040 EBG -> correct
+[    841s] p2val-0040 LA -> correct
+[    843s] p2val-0040 LG -> correct
+[    845s] p2val-0040 EBG-all -> correct
+[    846s] p2val-0040 EBG-unsafe -> correct
+[    848s] p2val-0040 EBG-noR3 -> correct
+[    850s] p2val-0041 B -> arbitrary_pick
+[    851s] p2val-0041 G -> correct
+[    853s] p2val-0041 R -> correct
+[    855s] p2val-0041 T -> correct
+[    856s] p2val-0041 RT -> correct
+[    858s] p2val-0041 EB -> correct
+[    859s] p2val-0041 EBG -> correct
+[    861s] p2val-0041 LA -> correct
+[    863s] p2val-0041 LG -> correct
+[    865s] p2val-0041 EBG-all -> correct
+[    866s] p2val-0041 EBG-unsafe -> correct
+[    867s] p2val-0041 EBG-noR3 -> correct
+[    869s] p2val-0042 B -> correct
+[    871s] p2val-0042 G -> correct
+[    873s] p2val-0042 R -> arbitrary_pick R2
+[    874s] p2val-0042 T -> correct
+[    877s] p2val-0042 RT -> arbitrary_pick R2
+[    879s] p2val-0042 EB -> format_error
+[    882s] p2val-0042 EBG -> correct
+[    884s] p2val-0042 LA -> correct
+[    887s] p2val-0042 LG -> correct
+[    890s] p2val-0042 EBG-all -> correct
+[    893s] p2val-0042 EBG-unsafe -> correct
+[    896s] p2val-0042 EBG-noR3 -> correct
+[    898s] p2val-0043 B -> correct
+[    903s] p2val-0043 G -> correct
+[    908s] p2val-0043 R -> correct
+[    909s] p2val-0043 T -> correct
+[    910s] p2val-0043 RT -> correct
+[    912s] p2val-0043 EB -> correct
+[    913s] p2val-0043 EBG -> correct
+[    915s] p2val-0043 LA -> correct
+[    917s] p2val-0043 LG -> correct
+[    918s] p2val-0043 EBG-all -> correct
+[    920s] p2val-0043 EBG-unsafe -> correct
+[    921s] p2val-0043 EBG-noR3 -> correct
+[    923s] p2val-0045 B -> false_conflict
+[    924s] p2val-0045 G -> false_conflict
+[    927s] p2val-0045 R -> correct R2
+[    928s] p2val-0045 T -> false_conflict
+[    931s] p2val-0045 RT -> correct R2
+[    932s] p2val-0045 EB -> false_conflict
+[    935s] p2val-0045 EBG -> correct P2
+[    937s] p2val-0045 LA -> false_conflict
+[    939s] p2val-0045 LG -> false_conflict
+[    942s] p2val-0045 EBG-all -> correct P2
+[    945s] p2val-0045 EBG-unsafe -> correct P2
+[    947s] p2val-0045 EBG-noR3 -> correct P2
+[    949s] p2val-0046 B -> false_conflict
+[    950s] p2val-0046 G -> false_conflict
+[    952s] p2val-0046 R -> false_conflict
+[    953s] p2val-0046 T -> false_conflict
+[    955s] p2val-0046 RT -> false_conflict
+[    956s] p2val-0046 EB -> false_conflict
+[    958s] p2val-0046 EBG -> correct P2
+[    960s] p2val-0046 LA -> false_conflict
+[    963s] p2val-0046 LG -> stale_value P2
+[    965s] p2val-0046 EBG-all -> correct P2
+[    967s] p2val-0046 EBG-unsafe -> correct P2
+[    969s] p2val-0046 EBG-noR3 -> correct P2
+[    971s] p2val-0047 B -> correct
+[    972s] p2val-0047 G -> false_conflict
+[    975s] p2val-0047 R -> stale_value R2
+[    976s] p2val-0047 T -> false_conflict
+[    978s] p2val-0047 RT -> stale_value R2
+[    980s] p2val-0047 EB -> false_conflict
+[    983s] p2val-0047 EBG -> correct P2
+[    985s] p2val-0047 LA -> correct
+[    987s] p2val-0047 LG -> correct
+[    990s] p2val-0047 EBG-all -> correct P2
+[    992s] p2val-0047 EBG-unsafe -> correct P2
+[    995s] p2val-0047 EBG-noR3 -> correct P2
+[    997s] p2val-0048 B -> false_conflict
+[    998s] p2val-0048 G -> false_conflict
+[    999s] p2val-0048 R -> false_conflict
+[   1001s] p2val-0048 T -> false_conflict
+[   1003s] p2val-0048 RT -> correct R2
+[   1004s] p2val-0048 EB -> false_conflict
+[   1006s] p2val-0048 EBG -> correct P2
+[   1008s] p2val-0048 LA -> false_conflict
+[   1011s] p2val-0048 LG -> correct P2
+[   1013s] p2val-0048 EBG-all -> correct P2
+[   1015s] p2val-0048 EBG-unsafe -> correct P2
+[   1017s] p2val-0048 EBG-noR3 -> correct P2
+[   1019s] p2val-0049 B -> false_conflict
+[   1020s] p2val-0049 G -> false_conflict
+[   1022s] p2val-0049 R -> false_conflict
+[   1023s] p2val-0049 T -> false_conflict
+[   1025s] p2val-0049 RT -> false_conflict
+[   1027s] p2val-0049 EB -> false_conflict
+[   1028s] p2val-0049 EBG -> false_conflict
+[   1030s] p2val-0049 LA -> false_conflict
+[   1033s] p2val-0049 LG -> false_conflict
+[   1035s] p2val-0049 EBG-all -> correct P2
+[   1037s] p2val-0049 EBG-unsafe -> false_conflict
+[   1038s] p2val-0049 EBG-noR3 -> false_conflict
+[   1040s] p2val-0050 B -> correct
+[   1042s] p2val-0050 G -> correct
+[   1043s] p2val-0050 R -> correct
+[   1045s] p2val-0050 T -> correct
+[   1046s] p2val-0050 RT -> correct
+[   1048s] p2val-0050 EB -> format_error
+[   1052s] p2val-0050 EBG -> correct
+[   1054s] p2val-0050 LA -> correct
+[   1057s] p2val-0050 LG -> false_conflict P1
+[   1060s] p2val-0050 EBG-all -> correct
+[   1063s] p2val-0050 EBG-unsafe -> correct
+[   1066s] p2val-0050 EBG-noR3 -> correct
+[   1069s] p2val-0051 B -> false_conflict
+[   1070s] p2val-0051 G -> false_conflict
+[   1072s] p2val-0051 R -> correct R2
+[   1074s] p2val-0051 T -> false_conflict
+[   1076s] p2val-0051 RT -> correct R2
+[   1078s] p2val-0051 EB -> false_conflict
+[   1080s] p2val-0051 EBG -> correct P2
+[   1084s] p2val-0051 LA -> max_steps
+[   1089s] p2val-0051 LG -> format_error
+[   1091s] p2val-0051 EBG-all -> correct P2
+[   1093s] p2val-0051 EBG-unsafe -> correct P2
+[   1096s] p2val-0051 EBG-noR3 -> correct P2
+[   1097s] p2val-0052 B -> correct
+[   1099s] p2val-0052 G -> correct
+[   1101s] p2val-0052 R -> correct
+[   1102s] p2val-0052 T -> correct
+[   1104s] p2val-0052 RT -> correct
+[   1105s] p2val-0052 EB -> correct
+[   1107s] p2val-0052 EBG -> correct
+[   1109s] p2val-0052 LA -> correct
+[   1110s] p2val-0052 LG -> correct
+[   1112s] p2val-0052 EBG-all -> correct
+[   1113s] p2val-0052 EBG-unsafe -> correct
+[   1115s] p2val-0052 EBG-noR3 -> correct
+[   1117s] p2val-0053 B -> false_conflict
+[   1118s] p2val-0053 G -> false_conflict
+[   1121s] p2val-0053 R -> stale_value R2
+[   1122s] p2val-0053 T -> false_conflict
+[   1124s] p2val-0053 RT -> stale_value R2
+[   1126s] p2val-0053 EB -> false_conflict
+[   1128s] p2val-0053 EBG -> false_conflict
+[   1130s] p2val-0053 LA -> false_conflict
+[   1132s] p2val-0053 LG -> false_conflict
+[   1133s] p2val-0053 EBG-all -> false_conflict
+[   1135s] p2val-0053 EBG-unsafe -> false_conflict
+[   1137s] p2val-0053 EBG-noR3 -> false_conflict
+[   1139s] p2val-0054 B -> false_conflict
+[   1140s] p2val-0054 G -> false_conflict
+[   1142s] p2val-0054 R -> false_conflict
+[   1143s] p2val-0054 T -> false_conflict
+[   1144s] p2val-0054 RT -> false_conflict
+[   1146s] p2val-0054 EB -> false_conflict
+[   1147s] p2val-0054 EBG -> false_conflict
+[   1149s] p2val-0054 LA -> false_conflict
+[   1151s] p2val-0054 LG -> false_conflict
+[   1152s] p2val-0054 EBG-all -> false_conflict
+[   1154s] p2val-0054 EBG-unsafe -> false_conflict
+[   1155s] p2val-0054 EBG-noR3 -> false_conflict
+[   1156s] p2val-0055 B -> false_conflict
+[   1158s] p2val-0055 G -> false_conflict
+[   1160s] p2val-0055 R -> correct R2
+[   1162s] p2val-0055 T -> false_conflict
+[   1164s] p2val-0055 RT -> correct R2
+[   1166s] p2val-0055 EB -> false_conflict
+[   1167s] p2val-0055 EBG -> false_conflict
+[   1169s] p2val-0055 LA -> false_conflict
+[   1171s] p2val-0055 LG -> false_conflict
+[   1174s] p2val-0055 EBG-all -> correct P2
+[   1175s] p2val-0055 EBG-unsafe -> false_conflict
+[   1176s] p2val-0055 EBG-noR3 -> false_conflict
+[   1178s] p2val-0057 B -> correct
+[   1180s] p2val-0057 G -> false_conflict
+[   1182s] p2val-0057 R -> stale_value R2
+[   1184s] p2val-0057 T -> false_conflict
+[   1187s] p2val-0057 RT -> stale_value R2
+[   1188s] p2val-0057 EB -> false_conflict
+[   1190s] p2val-0057 EBG -> false_conflict
+[   1192s] p2val-0057 LA -> false_conflict
+[   1196s] p2val-0057 LG -> correct P2
+[   1198s] p2val-0057 EBG-all -> correct P2
+[   1200s] p2val-0057 EBG-unsafe -> false_conflict
+[   1202s] p2val-0057 EBG-noR3 -> false_conflict
+[   1204s] p2val-0058 B -> arbitrary_pick
+[   1205s] p2val-0058 G -> correct
+[   1207s] p2val-0058 R -> correct
+[   1208s] p2val-0058 T -> correct
+[   1211s] p2val-0058 RT -> arbitrary_pick R2
+[   1212s] p2val-0058 EB -> correct
+[   1214s] p2val-0058 EBG -> correct
+[   1216s] p2val-0058 LA -> correct
+[   1219s] p2val-0058 LG -> arbitrary_pick P2
+[   1221s] p2val-0058 EBG-all -> arbitrary_pick P2
+[   1222s] p2val-0058 EBG-unsafe -> correct
+[   1224s] p2val-0058 EBG-noR3 -> correct
+[   1225s] p2val-0059 B -> arbitrary_pick
+[   1227s] p2val-0059 G -> correct
+[   1229s] p2val-0059 R -> correct
+[   1230s] p2val-0059 T -> correct
+[   1233s] p2val-0059 RT -> arbitrary_pick R2
+[   1235s] p2val-0059 EB -> correct
+[   1237s] p2val-0059 EBG -> correct
+[   1239s] p2val-0059 LA -> correct
+[   1241s] p2val-0059 LG -> correct
+[   1243s] p2val-0059 EBG-all -> arbitrary_pick P2
+[   1245s] p2val-0059 EBG-unsafe -> correct
+[   1247s] p2val-0059 EBG-noR3 -> correct
+[   1248s] p2val-0061 B -> correct
+[   1250s] p2val-0061 G -> correct
+[   1251s] p2val-0061 R -> correct
+[   1252s] p2val-0061 T -> correct
+[   1254s] p2val-0061 RT -> correct
+[   1255s] p2val-0061 EB -> correct
+[   1257s] p2val-0061 EBG -> correct
+[   1259s] p2val-0061 LA -> correct
+[   1262s] p2val-0061 LG -> arbitrary_pick P2
+[   1263s] p2val-0061 EBG-all -> correct
+[   1264s] p2val-0061 EBG-unsafe -> correct
+[   1266s] p2val-0061 EBG-noR3 -> correct
+[   1267s] p2val-0062 B -> correct
+[   1269s] p2val-0062 G -> correct
+[   1270s] p2val-0062 R -> correct
+[   1271s] p2val-0062 T -> correct
+[   1273s] p2val-0062 RT -> correct
+[   1274s] p2val-0062 EB -> correct
+[   1276s] p2val-0062 EBG -> correct
+[   1278s] p2val-0062 LA -> correct
+[   1280s] p2val-0062 LG -> arbitrary_pick P2
+[   1282s] p2val-0062 EBG-all -> correct
+[   1283s] p2val-0062 EBG-unsafe -> correct
+[   1284s] p2val-0062 EBG-noR3 -> correct
+[   1286s] p2val-0063 B -> correct
+[   1288s] p2val-0063 G -> correct
+[   1291s] p2val-0063 R -> correct
+[   1292s] p2val-0063 T -> correct
+[   1294s] p2val-0063 RT -> correct
+[   1296s] p2val-0063 EB -> correct
+[   1298s] p2val-0063 EBG -> correct
+[   1300s] p2val-0063 LA -> correct
+[   1302s] p2val-0063 LG -> correct
+[   1304s] p2val-0063 EBG-all -> correct
+[   1305s] p2val-0063 EBG-unsafe -> correct
+[   1307s] p2val-0063 EBG-noR3 -> correct
+[   1309s] p2val-0064 B -> correct
+[   1310s] p2val-0064 G -> correct
+[   1312s] p2val-0064 R -> arbitrary_pick R2
+[   1314s] p2val-0064 T -> correct
+[   1316s] p2val-0064 RT -> over_abstain R2
+[   1318s] p2val-0064 EB -> correct
+[   1320s] p2val-0064 EBG -> correct
+[   1322s] p2val-0064 LA -> correct
+[   1324s] p2val-0064 LG -> correct
+[   1326s] p2val-0064 EBG-all -> correct
+[   1327s] p2val-0064 EBG-unsafe -> correct
+[   1329s] p2val-0064 EBG-noR3 -> correct
+[   1331s] p2val-0065 B -> arbitrary_pick
+[   1333s] p2val-0065 G -> correct
+[   1334s] p2val-0065 R -> correct
+[   1336s] p2val-0065 T -> correct
+[   1337s] p2val-0065 RT -> correct
+[   1339s] p2val-0065 EB -> correct
+[   1341s] p2val-0065 EBG -> correct
+[   1343s] p2val-0065 LA -> correct
+[   1345s] p2val-0065 LG -> correct
+[   1347s] p2val-0065 EBG-all -> correct
+[   1348s] p2val-0065 EBG-unsafe -> correct
+[   1350s] p2val-0065 EBG-noR3 -> correct
+[   1352s] p2val-0066 B -> correct
+[   1353s] p2val-0066 G -> correct
+[   1354s] p2val-0066 R -> correct
+[   1356s] p2val-0066 T -> correct
+[   1357s] p2val-0066 RT -> correct
+[   1358s] p2val-0066 EB -> correct
+[   1360s] p2val-0066 EBG -> correct
+[   1361s] p2val-0066 LA -> correct
+[   1362s] p2val-0066 LG -> correct
+[   1364s] p2val-0066 EBG-all -> correct
+[   1365s] p2val-0066 EBG-unsafe -> correct
+[   1366s] p2val-0066 EBG-noR3 -> correct
+[   1368s] p2val-0067 B -> false_conflict
+[   1369s] p2val-0067 G -> false_conflict
+[   1371s] p2val-0067 R -> correct R2
+[   1373s] p2val-0067 T -> false_conflict
+[   1375s] p2val-0067 RT -> correct R2
+[   1376s] p2val-0067 EB -> false_conflict
+[   1378s] p2val-0067 EBG -> over_abstain P2
+[   1382s] p2val-0067 LA -> false_conflict
+[   1385s] p2val-0067 LG -> false_conflict
+[   1387s] p2val-0067 EBG-all -> over_abstain P2
+[   1389s] p2val-0067 EBG-unsafe -> over_abstain P2
+[   1392s] p2val-0067 EBG-noR3 -> over_abstain P2
+[   1393s] p2val-0068 B -> false_conflict
+[   1395s] p2val-0068 G -> false_conflict
+[   1396s] p2val-0068 R -> false_conflict
+[   1397s] p2val-0068 T -> false_conflict
+[   1399s] p2val-0068 RT -> false_conflict
+[   1400s] p2val-0068 EB -> false_conflict
+[   1403s] p2val-0068 EBG -> correct P2
+[   1405s] p2val-0068 LA -> false_conflict
+[   1408s] p2val-0068 LG -> stale_value P2
+[   1410s] p2val-0068 EBG-all -> correct P2
+[   1413s] p2val-0068 EBG-unsafe -> correct P2
+[   1416s] p2val-0068 EBG-noR3 -> correct P2
+[   1418s] p2val-0070 B -> correct
+[   1419s] p2val-0070 G -> false_conflict
+[   1421s] p2val-0070 R -> false_conflict
+[   1422s] p2val-0070 T -> false_conflict
+[   1424s] p2val-0070 RT -> false_conflict
+[   1425s] p2val-0070 EB -> false_conflict
+[   1428s] p2val-0070 EBG -> correct P2
+[   1430s] p2val-0070 LA -> correct
+[   1432s] p2val-0070 LG -> correct
+[   1434s] p2val-0070 EBG-all -> correct P2
+[   1436s] p2val-0070 EBG-unsafe -> correct P2
+[   1439s] p2val-0070 EBG-noR3 -> correct P2
+[   1441s] p2val-0071 B -> false_conflict
+[   1443s] p2val-0071 G -> false_conflict
+[   1444s] p2val-0071 R -> false_conflict
+[   1446s] p2val-0071 T -> false_conflict
+[   1447s] p2val-0071 RT -> false_conflict
+[   1448s] p2val-0071 EB -> false_conflict
+[   1450s] p2val-0071 EBG -> false_conflict
+[   1452s] p2val-0071 LA -> false_conflict
+[   1454s] p2val-0071 LG -> false_conflict
+[   1456s] p2val-0071 EBG-all -> correct P2
+[   1457s] p2val-0071 EBG-unsafe -> false_conflict
+[   1459s] p2val-0071 EBG-noR3 -> false_conflict
+[   1460s] p2val-0072 B -> correct
+[   1462s] p2val-0072 G -> correct
+[   1463s] p2val-0072 R -> correct
+[   1465s] p2val-0072 T -> correct
+[   1466s] p2val-0072 RT -> correct
+[   1468s] p2val-0072 EB -> false_conflict
+[   1470s] p2val-0072 EBG -> correct P2
+[   1473s] p2val-0072 LA -> false_conflict
+[   1476s] p2val-0072 LG -> correct P2
+[   1478s] p2val-0072 EBG-all -> correct P2
+[   1481s] p2val-0072 EBG-unsafe -> correct P2
+[   1483s] p2val-0072 EBG-noR3 -> correct P2
+[   1485s] p2val-0073 B -> false_conflict
+[   1486s] p2val-0073 G -> false_conflict
+[   1488s] p2val-0073 R -> correct R2
+[   1490s] p2val-0073 T -> false_conflict
+[   1493s] p2val-0073 RT -> correct R2
+[   1494s] p2val-0073 EB -> false_conflict
+[   1497s] p2val-0073 EBG -> correct P2
+[   1499s] p2val-0073 LA -> false_conflict
+[   1502s] p2val-0073 LG -> false_conflict
+[   1504s] p2val-0073 EBG-all -> correct P2
+[   1507s] p2val-0073 EBG-unsafe -> correct P2
+[   1509s] p2val-0073 EBG-noR3 -> correct P2
+[   1511s] p2val-0074 B -> wrong_value
+[   1513s] p2val-0074 G -> correct
+[   1514s] p2val-0074 R -> correct
+[   1516s] p2val-0074 T -> correct
+[   1517s] p2val-0074 RT -> correct
+[   1519s] p2val-0074 EB -> correct
+[   1521s] p2val-0074 EBG -> correct
+[   1522s] p2val-0074 LA -> correct
+[   1524s] p2val-0074 LG -> correct
+[   1525s] p2val-0074 EBG-all -> correct
+[   1527s] p2val-0074 EBG-unsafe -> correct
+[   1528s] p2val-0074 EBG-noR3 -> correct
+[   1530s] p2val-0076 B -> false_conflict
+[   1532s] p2val-0076 G -> false_conflict
+[   1534s] p2val-0076 R -> false_conflict
+[   1536s] p2val-0076 T -> false_conflict
+[   1539s] p2val-0076 RT -> stale_value R2
+[   1540s] p2val-0076 EB -> false_conflict
+[   1542s] p2val-0076 EBG -> false_conflict
+[   1544s] p2val-0076 LA -> false_conflict
+[   1547s] p2val-0076 LG -> false_conflict
+[   1549s] p2val-0076 EBG-all -> false_conflict
+[   1550s] p2val-0076 EBG-unsafe -> false_conflict
+[   1552s] p2val-0076 EBG-noR3 -> false_conflict
+[   1554s] p2val-0077 B -> correct
+[   1555s] p2val-0077 G -> false_conflict
+[   1557s] p2val-0077 R -> correct R2
+[   1559s] p2val-0077 T -> false_conflict
+[   1561s] p2val-0077 RT -> correct R2
+[   1562s] p2val-0077 EB -> false_conflict
+[   1564s] p2val-0077 EBG -> false_conflict
+[   1566s] p2val-0077 LA -> false_conflict
+[   1569s] p2val-0077 LG -> correct P2
+[   1571s] p2val-0077 EBG-all -> correct P2
+[   1573s] p2val-0077 EBG-unsafe -> false_conflict
+[   1575s] p2val-0077 EBG-noR3 -> false_conflict
+[   1577s] p2val-0078 B -> correct
+[   1578s] p2val-0078 G -> false_conflict
+[   1580s] p2val-0078 R -> stale_value R2
+[   1582s] p2val-0078 T -> false_conflict
+[   1584s] p2val-0078 RT -> stale_value R2
+[   1585s] p2val-0078 EB -> false_conflict
+[   1587s] p2val-0078 EBG -> false_conflict
+[   1589s] p2val-0078 LA -> false_conflict
+[   1591s] p2val-0078 LG -> false_conflict
+[   1593s] p2val-0078 EBG-all -> correct P2
+[   1594s] p2val-0078 EBG-unsafe -> false_conflict
+[   1596s] p2val-0078 EBG-noR3 -> false_conflict
+[   1597s] p2val-0079 B -> false_conflict
+[   1598s] p2val-0079 G -> false_conflict
+[   1600s] p2val-0079 R -> stale_value R2
+[   1602s] p2val-0079 T -> false_conflict
+[   1604s] p2val-0079 RT -> stale_value R2
+[   1605s] p2val-0079 EB -> false_conflict
+[   1607s] p2val-0079 EBG -> false_conflict
+[   1609s] p2val-0079 LA -> false_conflict
+[   1611s] p2val-0079 LG -> correct P2
+[   1613s] p2val-0079 EBG-all -> correct P2
+[   1615s] p2val-0079 EBG-unsafe -> false_conflict
+[   1616s] p2val-0079 EBG-noR3 -> false_conflict
+[   1618s] p2val-0080 B -> correct
+[   1619s] p2val-0080 G -> correct
+[   1621s] p2val-0080 R -> correct
+[   1622s] p2val-0080 T -> correct
+[   1624s] p2val-0080 RT -> arbitrary_pick R2
+[   1625s] p2val-0080 EB -> correct
+[   1627s] p2val-0080 EBG -> correct
+[   1629s] p2val-0080 LA -> correct
+[   1631s] p2val-0080 LG -> arbitrary_pick P2
+[   1634s] p2val-0080 EBG-all -> arbitrary_pick P2
+[   1635s] p2val-0080 EBG-unsafe -> correct
+[   1636s] p2val-0080 EBG-noR3 -> correct
+[   1638s] p2val-0082 B -> correct
+[   1639s] p2val-0082 G -> correct
+[   1641s] p2val-0082 R -> correct
+[   1643s] p2val-0082 T -> correct
+[   1644s] p2val-0082 RT -> correct
+[   1646s] p2val-0082 EB -> correct
+[   1648s] p2val-0082 EBG -> correct
+[   1650s] p2val-0082 LA -> correct
+[   1652s] p2val-0082 LG -> correct
+[   1654s] p2val-0082 EBG-all -> correct
+[   1656s] p2val-0082 EBG-unsafe -> correct
+[   1658s] p2val-0082 EBG-noR3 -> correct
+[   1659s] p2val-0083 B -> correct
+[   1660s] p2val-0083 G -> correct
+[   1662s] p2val-0083 R -> correct
+[   1664s] p2val-0083 T -> correct
+[   1665s] p2val-0083 RT -> correct
+[   1667s] p2val-0083 EB -> correct
+[   1668s] p2val-0083 EBG -> correct
+[   1670s] p2val-0083 LA -> correct
+[   1672s] p2val-0083 LG -> correct
+[   1673s] p2val-0083 EBG-all -> correct
+[   1675s] p2val-0083 EBG-unsafe -> correct
+[   1676s] p2val-0083 EBG-noR3 -> correct
+[   1678s] p2val-0084 B -> correct
+[   1679s] p2val-0084 G -> correct
+[   1681s] p2val-0084 R -> correct
+[   1682s] p2val-0084 T -> correct
+[   1684s] p2val-0084 RT -> correct
+[   1685s] p2val-0084 EB -> correct
+[   1687s] p2val-0084 EBG -> correct
+[   1689s] p2val-0084 LA -> correct
+[   1691s] p2val-0084 LG -> correct
+[   1693s] p2val-0084 EBG-all -> correct
+[   1695s] p2val-0084 EBG-unsafe -> correct
+[   1696s] p2val-0084 EBG-noR3 -> correct
+[   1698s] p2val-0085 B -> correct
+[   1699s] p2val-0085 G -> correct
+[   1700s] p2val-0085 R -> correct
+[   1702s] p2val-0085 T -> correct
+[   1703s] p2val-0085 RT -> correct
+[   1705s] p2val-0085 EB -> correct
+[   1706s] p2val-0085 EBG -> correct
+[   1708s] p2val-0085 LA -> correct
+[   1710s] p2val-0085 LG -> correct
+[   1711s] p2val-0085 EBG-all -> correct
+[   1713s] p2val-0085 EBG-unsafe -> correct
+[   1714s] p2val-0085 EBG-noR3 -> correct
+[   1716s] p2val-0086 B -> correct
+[   1717s] p2val-0086 G -> correct
+[   1720s] p2val-0086 R -> arbitrary_pick R2
+[   1721s] p2val-0086 T -> correct
+[   1724s] p2val-0086 RT -> arbitrary_pick R2
+[   1726s] p2val-0086 EB -> correct
+[   1727s] p2val-0086 EBG -> correct
+[   1730s] p2val-0086 LA -> correct
+[   1732s] p2val-0086 LG -> correct
+[   1733s] p2val-0086 EBG-all -> correct
+[   1735s] p2val-0086 EBG-unsafe -> correct
+[   1737s] p2val-0086 EBG-noR3 -> correct
+[   1739s] p2val-0088 B -> unsupported_claim
+[   1741s] p2val-0088 G -> correct
+[   1742s] p2val-0088 R -> correct
+[   1744s] p2val-0088 T -> correct
+[   1746s] p2val-0088 RT -> correct
+[   1748s] p2val-0088 EB -> correct
+[   1750s] p2val-0088 EBG -> correct
+[   1752s] p2val-0088 LA -> correct
+[   1754s] p2val-0088 LG -> correct
+[   1756s] p2val-0088 EBG-all -> correct
+[   1758s] p2val-0088 EBG-unsafe -> correct
+[   1759s] p2val-0088 EBG-noR3 -> correct
+exit=0 2026-11-16T11:49:03+00:00 Qwen/Qwen2.5-3B-Instruct p2val

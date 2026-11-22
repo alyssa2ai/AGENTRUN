@@ -1,0 +1,88 @@
+start 2026-11-14T05:09:32+00:00 python write_and_annotate.py write --split p2val --dir /home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_PUBLICATION_2026/PHASE2/data/p2val --model Qwen/Qwen2.5-14B-Instruct
+{"mode": "write", "split": "p2val", "model": "Qwen/Qwen2.5-14B-Instruct", "client": {"backend": "hf-local", "model": "Qwen/Qwen2.5-14B-Instruct", "model_path": "/home/gpuuser12/.cache/huggingface/hub/models--Qwen--Qwen2.5-14B-Instruct/snapshots/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8", "adapter": null, "adapter_sha256": null, "temperature": 0.0, "seed": 20261111, "max_new_tokens": 600, "dtype": "bfloat16", "parser_version": "two-pass-v2+client-fallback", "decoding": "greedy", "thinking": "disabled via chat template where supported", "torch": "2.15.0+cu132", "transformers": "5.22.2", "cuda": "13.2", "gpu": "NVIDIA L40", "gpu_mem_gib": 44.6, "family": "qwen", "family_adapter": "evarb.clients.FamilyClient/1"}}
+exit=0 2026-11-14T05:17:15+00:00 python write_and_annotate.py
+start 2026-11-14T05:17:15+00:00 python assemble.py --split p2val --dir /home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_PUBLICATION_2026/PHASE2/data/p2val
+{
+ "split": "p2val",
+ "n_skeleton": 88,
+ "n_valid": 77,
+ "excluded_ids": {
+  "p2val-0006": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0012": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0027": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0039": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0044": [
+   "slot 1 lacks own value"
+  ],
+  "p2val-0056": [
+   "slot 2 lacks entity"
+  ],
+  "p2val-0060": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0069": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0075": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0081": [
+   "slot 1 lacks own value",
+   "slot 2 lacks own value"
+  ],
+  "p2val-0087": [
+   "slot 1 lacks own value",
+   "slot 2 lacks entity",
+   "slot 2 lacks own value"
+  ]
+ },
+ "skeleton.jsonl": "3410b0285ea738e5b64bbaa6fbc14ec98ff34a3299eccd75f7fff808b413666e",
+ "texts.jsonl": "0497e796240e1a2a55f376f60e1d7afb43fd8195e0c53f239f0feb7d23693fbf",
+ "groups.jsonl": "afcccc676973a125e5a9642979784b4950f875a5ef84292eeae19b1069df5ccf",
+ "tasks.jsonl": "82fab1f265861a59a46f0f4a4c22845cc237ca85e640ed38c35e967830c75bf6",
+ "annotator_input.jsonl": "913b81af2cbe499afad3af4e1102f5182e75b691b76ee5c9778c2057372cdd6c",
+ "family_definition": "category x attribute"
+}
+exit=0 2026-11-14T05:17:19+00:00 python assemble.py
+start 2026-11-14T05:17:19+00:00 python write_and_annotate.py annotate --split p2val --dir /home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_PUBLICATION_2026/PHASE2/data/p2val --model meta-llama/Llama-3.1-8B-Instruct --tag llama8b
+{"mode": "annotate", "split": "p2val", "model": "meta-llama/Llama-3.1-8B-Instruct", "client": {"backend": "hf-local", "model": "meta-llama/Llama-3.1-8B-Instruct", "model_path": "/home/gpuuser12/.cache/huggingface/hub/models--meta-llama--Llama-3.1-8B-Instruct/snapshots/0e9e39f249a16976918f6564b8830bc894c89659", "adapter": null, "adapter_sha256": null, "temperature": 0.0, "seed": 20261111, "max_new_tokens": 600, "dtype": "bfloat16", "parser_version": "two-pass-v2+client-fallback", "decoding": "greedy", "thinking": "disabled via chat template where supported", "torch": "2.15.0+cu132", "transformers": "5.22.2", "cuda": "13.2", "gpu": "NVIDIA L40", "gpu_mem_gib": 44.6, "family": "llama", "family_adapter": "evarb.clients.FamilyClient/1"}}
+exit=0 2026-11-14T05:18:27+00:00 python write_and_annotate.py
+start 2026-11-14T05:18:27+00:00 python write_and_annotate.py annotate --split p2val --dir /home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_PUBLICATION_2026/PHASE2/data/p2val --model Qwen/Qwen2.5-14B-Instruct --tag qwen14b
+{"mode": "annotate", "split": "p2val", "model": "Qwen/Qwen2.5-14B-Instruct", "client": {"backend": "hf-local", "model": "Qwen/Qwen2.5-14B-Instruct", "model_path": "/home/gpuuser12/.cache/huggingface/hub/models--Qwen--Qwen2.5-14B-Instruct/snapshots/cf98f3b3bbb457ad9e2bb7baf9a0125b6b88caa8", "adapter": null, "adapter_sha256": null, "temperature": 0.0, "seed": 20261111, "max_new_tokens": 600, "dtype": "bfloat16", "parser_version": "two-pass-v2+client-fallback", "decoding": "greedy", "thinking": "disabled via chat template where supported", "torch": "2.15.0+cu132", "transformers": "5.22.2", "cuda": "13.2", "gpu": "NVIDIA L40", "gpu_mem_gib": 44.6, "family": "qwen", "family_adapter": "evarb.clients.FamilyClient/1"}}
+exit=0 2026-11-14T05:20:51+00:00 python write_and_annotate.py
+start 2026-11-14T05:20:51+00:00 python llm_arbiter_eval.py --model Qwen/Qwen2.5-3B-Instruct --groups ../data/dev_groups.jsonl ../data/regression_groups.jsonl /home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_PUBLICATION_2026/PHASE2/data/p2val/p2val_groups.jsonl --out ../raw/llm_arbiter
+Qwen2.5-3B-Instruct__dev_groups.jsonl: done; parse failures so far 0/114
+Qwen2.5-3B-Instruct__regression_groups.jsonl: done; parse failures so far 0/160
+Qwen2.5-3B-Instruct__p2val_groups.jsonl: done; parse failures so far 0/230
+exit=0 2026-11-14T05:23:38+00:00 python llm_arbiter_eval.py
+start 2026-11-14T05:23:38+00:00 python llm_arbiter_eval.py --model Qwen/Qwen2.5-7B-Instruct --groups ../data/dev_groups.jsonl ../data/regression_groups.jsonl /home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_PUBLICATION_2026/PHASE2/data/p2val/p2val_groups.jsonl --out ../raw/llm_arbiter
+Qwen2.5-7B-Instruct__dev_groups.jsonl: done; parse failures so far 0/114
+Qwen2.5-7B-Instruct__regression_groups.jsonl: done; parse failures so far 0/160
+Qwen2.5-7B-Instruct__p2val_groups.jsonl: done; parse failures so far 1/230
+exit=0 2026-11-14T05:28:20+00:00 python llm_arbiter_eval.py
+start 2026-11-14T05:28:20+00:00 python llm_arbiter_eval.py --model meta-llama/Llama-3.1-8B-Instruct --groups ../data/dev_groups.jsonl ../data/regression_groups.jsonl /home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_PUBLICATION_2026/PHASE2/data/p2val/p2val_groups.jsonl --out ../raw/llm_arbiter
+Llama-3.1-8B-Instruct__dev_groups.jsonl: done; parse failures so far 0/114
+Llama-3.1-8B-Instruct__regression_groups.jsonl: done; parse failures so far 0/160
+Llama-3.1-8B-Instruct__p2val_groups.jsonl: done; parse failures so far 0/230
+exit=0 2026-11-14T05:33:30+00:00 python llm_arbiter_eval.py
+start 2026-11-14T05:33:30+00:00 python llm_arbiter_eval.py --model Qwen/Qwen2.5-14B-Instruct --groups ../data/dev_groups.jsonl ../data/regression_groups.jsonl /home/gpuuser12/AGENTRUN_HPC/20261111/source/research/AGENTRUN_PUBLICATION_2026/PHASE2/data/p2val/p2val_groups.jsonl --out ../raw/llm_arbiter
+Qwen2.5-14B-Instruct__dev_groups.jsonl: done; parse failures so far 0/114
+Qwen2.5-14B-Instruct__regression_groups.jsonl: done; parse failures so far 1/160
+Qwen2.5-14B-Instruct__p2val_groups.jsonl: done; parse failures so far 1/230
+exit=0 2026-11-14T05:44:07+00:00 python llm_arbiter_eval.py
+job finished 2026-11-14T05:44:07+00:00

@@ -1,0 +1,987 @@
+{
+ "source": "Extracted from results/eval_results_{base,v1,e4,v2}.json and eval/tasks.py of github.com/alyssa2ai/AGENTRUN at commit a4a6976; sha256 is of the file content as stored in git (LF line endings)",
+ "files": {
+  "Base": {
+   "path": "results/eval_results_base.json",
+   "sha256": "2da872c87f08b822866256e55dfe0c083b8f60777ea0c2abb0507a4c798fe9b5"
+  },
+  "V1": {
+   "path": "results/eval_results_v1.json",
+   "sha256": "ee8f11708746885fd9261f8b007d5d71dc9177268aa724200dc19aead7cdc039"
+  },
+  "E4": {
+   "path": "results/eval_results_e4.json",
+   "sha256": "2dc621d2f0178762786a579f6a9675c65e3ebda6d7c5ae92acdd4d2a7572fc45"
+  },
+  "V2": {
+   "path": "results/eval_results_v2.json",
+   "sha256": "b110ee8a180d8ceda15705505bf5b7e342c223f4e868bd960ef2c9e7579d3763"
+  }
+ },
+ "tasks": [
+  {
+   "id": "calc_basic_1",
+   "category": "math",
+   "required_tools": [
+    "calculator"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "calc_basic_2",
+   "category": "math",
+   "required_tools": [
+    "calculator"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "calc_order_of_ops",
+   "category": "math",
+   "required_tools": [
+    "calculator"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "wordcount_basic",
+   "category": "text",
+   "required_tools": [
+    "word_count"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "weather_basic_1",
+   "category": "weather",
+   "required_tools": [
+    "get_weather"
+   ],
+   "content_check": false,
+   "expect_tool_error": false
+  },
+  {
+   "id": "weather_basic_2",
+   "category": "weather",
+   "required_tools": [
+    "get_weather"
+   ],
+   "content_check": false,
+   "expect_tool_error": false
+  },
+  {
+   "id": "search_basic_1",
+   "category": "search",
+   "required_tools": [
+    "web_search"
+   ],
+   "content_check": false,
+   "expect_tool_error": false
+  },
+  {
+   "id": "search_basic_2",
+   "category": "search",
+   "required_tools": [
+    "web_search"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "multi_weather_calc",
+   "category": "multi_tool",
+   "required_tools": [
+    "calculator",
+    "get_weather"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "multi_wordcount_calc",
+   "category": "multi_tool",
+   "required_tools": [
+    "calculator",
+    "word_count"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "multi_search_weather",
+   "category": "multi_tool",
+   "required_tools": [
+    "get_weather",
+    "web_search"
+   ],
+   "content_check": false,
+   "expect_tool_error": false
+  },
+  {
+   "id": "multi_three_tools",
+   "category": "multi_tool",
+   "required_tools": [
+    "calculator",
+    "get_weather",
+    "web_search"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "chain_weather_then_calc",
+   "category": "chained_reasoning",
+   "required_tools": [
+    "calculator",
+    "get_weather"
+   ],
+   "content_check": false,
+   "expect_tool_error": false
+  },
+  {
+   "id": "time_sensitive_1",
+   "category": "time_sensitive",
+   "required_tools": [
+    "web_search"
+   ],
+   "content_check": false,
+   "expect_tool_error": false
+  },
+  {
+   "id": "no_tool_needed_1",
+   "category": "no_tool_expected",
+   "required_tools": [],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "no_tool_needed_2",
+   "category": "no_tool_expected",
+   "required_tools": [],
+   "content_check": false,
+   "expect_tool_error": false
+  },
+  {
+   "id": "adversarial_negative_multiply",
+   "category": "adversarial_math",
+   "required_tools": [
+    "calculator"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "adversarial_decimal_division",
+   "category": "adversarial_math",
+   "required_tools": [
+    "calculator"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "adversarial_percentage",
+   "category": "adversarial_math",
+   "required_tools": [
+    "calculator"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "adversarial_false_premise",
+   "category": "adversarial_reasoning",
+   "required_tools": [
+    "web_search"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "adversarial_chained_search_calc",
+   "category": "adversarial_reasoning",
+   "required_tools": [
+    "calculator",
+    "web_search"
+   ],
+   "content_check": true,
+   "expect_tool_error": false
+  },
+  {
+   "id": "adversarial_division_by_zero",
+   "category": "adversarial_error_handling",
+   "required_tools": [
+    "calculator"
+   ],
+   "content_check": true,
+   "expect_tool_error": true
+  },
+  {
+   "id": "adversarial_ambiguous_city",
+   "category": "adversarial_ambiguity",
+   "required_tools": [
+    "get_weather"
+   ],
+   "content_check": false,
+   "expect_tool_error": false
+  }
+ ],
+ "outcomes": {
+  "Base": {
+   "calc_basic_1": true,
+   "calc_basic_2": true,
+   "calc_order_of_ops": true,
+   "wordcount_basic": true,
+   "weather_basic_1": true,
+   "weather_basic_2": true,
+   "search_basic_1": true,
+   "search_basic_2": true,
+   "multi_weather_calc": true,
+   "multi_wordcount_calc": true,
+   "multi_search_weather": true,
+   "multi_three_tools": true,
+   "chain_weather_then_calc": true,
+   "time_sensitive_1": true,
+   "no_tool_needed_1": true,
+   "no_tool_needed_2": true,
+   "adversarial_negative_multiply": true,
+   "adversarial_decimal_division": true,
+   "adversarial_percentage": true,
+   "adversarial_false_premise": true,
+   "adversarial_chained_search_calc": true,
+   "adversarial_division_by_zero": false,
+   "adversarial_ambiguous_city": true
+  },
+  "V1": {
+   "calc_basic_1": true,
+   "calc_basic_2": true,
+   "calc_order_of_ops": true,
+   "wordcount_basic": true,
+   "weather_basic_1": true,
+   "weather_basic_2": true,
+   "search_basic_1": true,
+   "search_basic_2": true,
+   "multi_weather_calc": true,
+   "multi_wordcount_calc": false,
+   "multi_search_weather": true,
+   "multi_three_tools": false,
+   "chain_weather_then_calc": false,
+   "time_sensitive_1": true,
+   "no_tool_needed_1": true,
+   "no_tool_needed_2": true,
+   "adversarial_negative_multiply": true,
+   "adversarial_decimal_division": true,
+   "adversarial_percentage": true,
+   "adversarial_false_premise": false,
+   "adversarial_chained_search_calc": true,
+   "adversarial_division_by_zero": false,
+   "adversarial_ambiguous_city": true
+  },
+  "E4": {
+   "calc_basic_1": true,
+   "calc_basic_2": true,
+   "calc_order_of_ops": true,
+   "wordcount_basic": true,
+   "weather_basic_1": true,
+   "weather_basic_2": true,
+   "search_basic_1": true,
+   "search_basic_2": true,
+   "multi_weather_calc": true,
+   "multi_wordcount_calc": false,
+   "multi_search_weather": false,
+   "multi_three_tools": true,
+   "chain_weather_then_calc": false,
+   "time_sensitive_1": true,
+   "no_tool_needed_1": true,
+   "no_tool_needed_2": true,
+   "adversarial_negative_multiply": true,
+   "adversarial_decimal_division": true,
+   "adversarial_percentage": true,
+   "adversarial_false_premise": true,
+   "adversarial_chained_search_calc": false,
+   "adversarial_division_by_zero": false,
+   "adversarial_ambiguous_city": true
+  },
+  "V2": {
+   "calc_basic_1": true,
+   "calc_basic_2": true,
+   "calc_order_of_ops": true,
+   "wordcount_basic": true,
+   "weather_basic_1": true,
+   "weather_basic_2": true,
+   "search_basic_1": true,
+   "search_basic_2": true,
+   "multi_weather_calc": true,
+   "multi_wordcount_calc": true,
+   "multi_search_weather": true,
+   "multi_three_tools": true,
+   "chain_weather_then_calc": true,
+   "time_sensitive_1": true,
+   "no_tool_needed_1": true,
+   "no_tool_needed_2": true,
+   "adversarial_negative_multiply": true,
+   "adversarial_decimal_division": true,
+   "adversarial_percentage": true,
+   "adversarial_false_premise": true,
+   "adversarial_chained_search_calc": true,
+   "adversarial_division_by_zero": true,
+   "adversarial_ambiguous_city": true
+  }
+ },
+ "traces": {
+  "Base": {
+   "calc_basic_1": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "calc_basic_2": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "calc_order_of_ops": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "wordcount_basic": {
+    "tools": [
+     "word_count"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "weather_basic_1": {
+    "tools": [
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "weather_basic_2": {
+    "tools": [
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "search_basic_1": {
+    "tools": [
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "search_basic_2": {
+    "tools": [
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "multi_weather_calc": {
+    "tools": [
+     "get_weather",
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "multi_wordcount_calc": {
+    "tools": [
+     "word_count",
+     "calculator",
+     "word_count"
+    ],
+    "tool_errors": [],
+    "steps": 3,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "multi_search_weather": {
+    "tools": [
+     "web_search",
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "multi_three_tools": {
+    "tools": [
+     "get_weather",
+     "calculator",
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "chain_weather_then_calc": {
+    "tools": [
+     "get_weather",
+     "calculator",
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 3,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "time_sensitive_1": {
+    "tools": [
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "no_tool_needed_1": {
+    "tools": [],
+    "tool_errors": [],
+    "steps": 1,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "no_tool_needed_2": {
+    "tools": [],
+    "tool_errors": [],
+    "steps": 1,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_negative_multiply": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_decimal_division": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_percentage": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_false_premise": {
+    "tools": [
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_chained_search_calc": {
+    "tools": [
+     "web_search",
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_division_by_zero": {
+    "tools": [],
+    "tool_errors": [],
+    "steps": 1,
+    "hit_max_steps": false,
+    "failure_reasons": [
+     "missing_required_tools:['calculator']",
+     "expected_tool_error_but_none_occurred"
+    ]
+   },
+   "adversarial_ambiguous_city": {
+    "tools": [
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   }
+  },
+  "V1": {
+   "calc_basic_1": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "calc_basic_2": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "calc_order_of_ops": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "wordcount_basic": {
+    "tools": [
+     "word_count"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "weather_basic_1": {
+    "tools": [
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "weather_basic_2": {
+    "tools": [
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "search_basic_1": {
+    "tools": [
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "search_basic_2": {
+    "tools": [
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "multi_weather_calc": {
+    "tools": [
+     "get_weather",
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 3,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "multi_wordcount_calc": {
+    "tools": [
+     "word_count"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": [
+     "missing_required_tools:['calculator']"
+    ]
+   },
+   "multi_search_weather": {
+    "tools": [
+     "web_search",
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "multi_three_tools": {
+    "tools": [
+     "get_weather",
+     "calculator",
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 3,
+    "hit_max_steps": true,
+    "failure_reasons": [
+     "hit_max_steps",
+     "numeric_mismatch:expected=305989,found=[]"
+    ]
+   },
+   "chain_weather_then_calc": {
+    "tools": [
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": [
+     "missing_required_tools:['calculator']"
+    ]
+   },
+   "time_sensitive_1": {
+    "tools": [
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "no_tool_needed_1": {
+    "tools": [],
+    "tool_errors": [],
+    "steps": 1,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "no_tool_needed_2": {
+    "tools": [],
+    "tool_errors": [],
+    "steps": 1,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_negative_multiply": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_decimal_division": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_percentage": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_false_premise": {
+    "tools": [
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": [
+     "missing_expected_content_any:['fictional', \"doesn't exist\", 'does not exist', 'not a real country', 'not real', 'marvel']"
+    ]
+   },
+   "adversarial_chained_search_calc": {
+    "tools": [
+     "web_search",
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_division_by_zero": {
+    "tools": [],
+    "tool_errors": [],
+    "steps": 1,
+    "hit_max_steps": false,
+    "failure_reasons": [
+     "missing_required_tools:['calculator']",
+     "expected_tool_error_but_none_occurred"
+    ]
+   },
+   "adversarial_ambiguous_city": {
+    "tools": [
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   }
+  },
+  "V2": {
+   "calc_basic_1": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "calc_basic_2": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "calc_order_of_ops": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "wordcount_basic": {
+    "tools": [
+     "word_count"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "weather_basic_1": {
+    "tools": [
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "weather_basic_2": {
+    "tools": [
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "search_basic_1": {
+    "tools": [
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "search_basic_2": {
+    "tools": [
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "multi_weather_calc": {
+    "tools": [
+     "get_weather",
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "multi_wordcount_calc": {
+    "tools": [
+     "word_count",
+     "calculator",
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 3,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "multi_search_weather": {
+    "tools": [
+     "web_search",
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "multi_three_tools": {
+    "tools": [
+     "get_weather",
+     "calculator",
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "chain_weather_then_calc": {
+    "tools": [
+     "get_weather",
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "time_sensitive_1": {
+    "tools": [
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "no_tool_needed_1": {
+    "tools": [],
+    "tool_errors": [],
+    "steps": 1,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "no_tool_needed_2": {
+    "tools": [],
+    "tool_errors": [],
+    "steps": 1,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_negative_multiply": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_decimal_division": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_percentage": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_false_premise": {
+    "tools": [
+     "web_search"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_chained_search_calc": {
+    "tools": [
+     "web_search",
+     "calculator"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_division_by_zero": {
+    "tools": [
+     "calculator"
+    ],
+    "tool_errors": [
+     "calculator"
+    ],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   },
+   "adversarial_ambiguous_city": {
+    "tools": [
+     "get_weather"
+    ],
+    "tool_errors": [],
+    "steps": 2,
+    "hit_max_steps": false,
+    "failure_reasons": []
+   }
+  }
+ }
+}

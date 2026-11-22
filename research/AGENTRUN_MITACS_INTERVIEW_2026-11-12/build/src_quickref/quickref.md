@@ -1,0 +1,77 @@
+# AGENTRUN — interview quick reference
+
+All numbers are recomputed from raw outputs; full detail and sources are in the research dossier.
+
+## 30-second introduction
+
+AGENTRUN is a multi-tool LLM agent runtime I built: a model calls tools such as search, weather and a calculator through MCP, and keeps a persistent memory across sessions. I asked whether that memory actually makes the agent more *reliable*, not just more capable. On our institute's GPU cluster I ran controlled ablations: the same tasks with no memory, with memory, with a verifier, with provenance and with a rule-based staleness check, across models from 1.5 to 14 billion parameters. Memory roughly doubles task success. A verifier that cannot see where evidence came from makes things worse, and memory can stop an agent from saying "I don't know". Provenance, a simple staleness rule and two prompt rules fix most of that.
+
+## Two-minute explanation
+
+- **Origin.** QLoRA fine-tuning of Qwen2.5-7B on a 23-task benchmark on a Colab T4. One drop was partly a parser and client artefact; the later 23/23 came from an adapter whose extra training data was designed from failures on those same tasks. Re-run with a matched client: 23/23 five times, but no better than the base model on 55 fresh tasks (92.7% vs 94.5%).
+- **Question.** Memory had never been tested. Does it make a multi-tool agent more reliable, and which reliability mechanisms matter?
+- **Design.** Six scenarios (lost context, distractors, conflicts, stale records, unanswerable questions, tool failures). Five configurations adding one component each: A stateless, B memory, C + text verifier, D + provenance, E + staleness gate. Fictional entities, frozen tasks, a 77-check leakage audit, and scoring that separates success from harmful assertions.
+- **Result.** On 96 fresh tasks (Qwen2.5-7B and Qwen3-8B): 25% → 57% with memory, 52% with a text verifier, 62% with provenance, 75% with the gate; stale records 4 → 25 of 32.
+- **Surprise.** With memory, Qwen3-8B stopped abstaining: it searched in a loop until the step limit. Two prompt rules fixed it and lifted the full system to 92%.
+- **Capacity.** Inside Qwen2.5, the components helped most at 7B; 1.5B never uses memory, and 14B needs little beyond it.
+
+## Five strongest numerical findings
+
+Table: The five findings to quote, with their denominators.
+
+| Finding | Number | Denominator and test |
+|---|---|---|
+| Memory helps | 24.5% → 56.8% (+32.3 pp, 95% CI +21.9 to +42.2) | 192 paired task blocks (96 fresh tasks × 2 models); McNemar p < 0.0001 |
+| Text-only verifier hurts | −5.2 pp (original harness), −11.5 pp (revised) | same 192 pairs; p = 0.006 and p < 0.0001 |
+| Provenance + staleness gate help | +10.4 pp then +13.0 pp; stale tasks 4 → 25 of 32 | same 192 pairs; p = 0.002 and p < 0.0001 |
+| Memory suppresses abstention; a stopping rule fixes it | Qwen3-8B unanswerable questions: 15/16 (no memory), 1/16 (full system), 16/16 (with the rules); +15.8 pp overall | 16 tasks per cell; 480 paired runs per model, p < 0.0001 |
+| Retrieval quality reaches the answers | 71.4% → 41.7% with 2,000 extra records (hash), 70.3% with BM25 | 192 paired runs, Qwen2.5-7B; p < 0.0001 |
+
+## Five major limitations
+
+1. **Synthetic memories.** Templated facts with clean entity–attribute keys, written by the harness; I designed both the method and the tasks.
+2. **One trial per cell; Qwen-only local models.** The size sweep is one family; the hosted comparison was truncated by quota.
+3. **Harmful answers are rare** (1–7 per 480 runs at 7–8B), so I cannot show a component reduces them.
+4. **Incomplete HPC campaign.** 7 of 21 jobs never started: dense retrieval in the agent, the repair-only variant, the adapter on the memory benchmark, sampled repeats.
+5. **No sealed-test result yet**, and an unexplained switch to Thai in the 14B model's reasoning.
+
+## Ten difficult questions
+
+**Why did text-only verification hurt?** The same-model verifier saw the right record mixed with distractors and a "not found" from another tool, and called it unsupported; in campaign 1 it made 14 wrong rejections against 2 right ones. Self-correction without external feedback often fails (Huang et al., 2023).
+
+**Then why keep a verifier?** It reliably rejects answers with no evidence: when Qwen2.5-7B invented 12500.00 without calling any tool, the verifier rejected it in all 12 runs.
+
+**How did you prevent leakage?** Invented names; a check that none occurs in training data or other benchmarks; per-task memory stores verified after each run; ground truth never sent to the model, with every transcript scanned; freeze hashes the runner enforces; the revised harness built on dev tasks only. 77 checks pass.
+
+**Why was the 23-task benchmark insufficient?** It was too small (one task = 4.3 points), run once per condition, used during development, and the V2 training data was designed from it. The fresh-task re-run shows the adapter's gain was benchmark-specific.
+
+**Why does Qwen3 loop?** With a memory tool and no stopping rule, "not found" and near-miss records each invite another search. It never invented an answer; it ran out of steps (15 of 16 unanswerable questions in E).
+
+**Why did the revised harness work?** One repair turn plus two rules (search memory before giving up; never repeat a call that answered, else abstain). For Qwen3-8B the repair turn never fired, so its +15.8 came from the rules. For Qwen2.5-7B both were active; the separating run did not complete.
+
+**Why did false conflicts increase?** The models searched more and saw more old/new pairs; even with dates visible they called many of them conflicts (22, 22, 20 in B–D). Only the gate removed them (0 in E).
+
+**What did the size sweep show?** An inverted U: 1.5B never calls memory; 3B gains from memory only; 7B gains from every component (best: 85/96); 14B gains mostly from memory, with calculator loops and Thai output as caveats.
+
+**Does fine-tuning improve generalisation?** Not here: the V2 adapter scores 23/23 on the benchmark its extra data came from, but 92.7% vs the base model's 94.5% on 55 fresh tasks.
+
+**What is novel?** Not the mechanisms (last-write-wins, verification, provenance all exist; see STALE, MemoryAgentBench). The contribution is a controlled, paired, replicated measurement of their marginal value inside a multi-tool agent across model sizes, including the negative result for verification without provenance.
+
+## Essential terminology
+
+Table: Terms you may need to define on the spot.
+
+| Term | One-line definition |
+|---|---|
+| Configurations A–E | stateless; memory; + text-only verifier; + provenance; + deterministic staleness/conflict gate |
+| Task block | one task under all five configurations by one model; the unit of every paired test |
+| Harmful assertion | wrong value, stale value, unsupported claim or arbitrary pick between conflicting records |
+| Safe miss | over-abstention or false conflict: not correct, but nothing false asserted |
+| Provenance | record id, recording date and source attached to each memory result |
+| Reliability gate | code that labels each record current, superseded, conflicting or unchallenged |
+| Harness v1 / v2 | original prompt and loop / plus one repair turn and two stopping/search rules |
+| McNemar test | paired test on the tasks where two configurations disagree |
+| Task bootstrap | confidence interval from resampling tasks, keeping both models' results for a task together |
+| QLoRA | LoRA adapter (here r = 16, 10.1M parameters) trained on a 4-bit quantised frozen base |
+| Evaluation adaptation | designing training data from failures on the benchmark later used to score it |
+| MCP | Model Context Protocol; in AGENTRUN it carries the tools, not the memory |

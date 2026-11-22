@@ -1,0 +1,340 @@
+{
+  "hard_failures": [],
+  "checks": {
+    "eval_file_matches_freeze": {
+      "pass": true,
+      "detail": "42552d7b4b8502f67b9e901818681ffabca685bca75997a6b7113ca88b1048a2"
+    },
+    "prompts_match_freeze": {
+      "pass": true,
+      "detail": null
+    },
+    "eval_regenerates_from_seed": {
+      "pass": true,
+      "detail": null
+    },
+    "dev_eval_entities_disjoint": {
+      "pass": true,
+      "detail": 664
+    },
+    "eval2_entities_disjoint_from_first_eval_split": {
+      "pass": true,
+      "detail": null
+    },
+    "eval2_prompts_disjoint_from_first_eval_split": {
+      "pass": true,
+      "detail": null
+    },
+    "harness_variants_match_freeze": {
+      "pass": true,
+      "detail": null
+    },
+    "dev_eval_prompts_disjoint": {
+      "pass": true,
+      "detail": null
+    },
+    "eval_prompts_unique": {
+      "pass": true,
+      "detail": null
+    },
+    "dev_eval_person_names_disjoint": {
+      "pass": true,
+      "detail": []
+    },
+    "expected_values_absent_from_prompts": {
+      "pass": true,
+      "detail": []
+    },
+    "expected_values_absent_from_system_prompt_and_schemas": {
+      "pass": true,
+      "detail": []
+    },
+    "no_eval_entity_in_system_prompt_or_schemas": {
+      "pass": true,
+      "detail": null
+    },
+    "scenario_fixtures_consistent": {
+      "pass": true,
+      "detail": []
+    },
+    "no_entity_shared_between_eval_tasks": {
+      "pass": true,
+      "detail": []
+    },
+    "no_eval_entity_name_in_training_or_existing_benchmarks": {
+      "pass": true,
+      "detail": {
+        "files_checked": [
+          "training/training_data.jsonl",
+          "training/training_data_augmented.jsonl",
+          "eval/tasks.py",
+          "benchmark_v2/dev.jsonl",
+          "agentrun_v2/env/env_data/corpus.jsonl",
+          "memory_store.json"
+        ],
+        "hits": {}
+      }
+    },
+    "no_exact_or_template_match_with_training_and_legacy_prompts": {
+      "pass": true,
+      "detail": {
+        "tfidf_max_overall": 0.1421,
+        "tfidf_flagged_ge_0.80": [],
+        "n_reference_prompts": 69
+      }
+    },
+    "real_memory_store_sha256": "efbe8bd79debd5481120cac901384e605b0c1cf85d507864c9d4869c4cba4c20",
+    "c2_qwen25_14b_v1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_14b_v1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_14b_v1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_14b_v1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_14b_v1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_14b_v1:n_runs": 480,
+    "c2_qwen25_14b_v2:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_14b_v2:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_14b_v2:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_14b_v2:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_14b_v2:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_14b_v2:n_runs": 480,
+    "c2_qwen25_1p5b_v1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_1p5b_v1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_1p5b_v1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_1p5b_v1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_1p5b_v1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_1p5b_v1:n_runs": 480,
+    "c2_qwen25_1p5b_v2:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_1p5b_v2:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_1p5b_v2:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_1p5b_v2:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_1p5b_v2:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_1p5b_v2:n_runs": 480,
+    "c2_qwen25_3b_v1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_3b_v1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_3b_v1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_3b_v1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_3b_v1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_3b_v1:n_runs": 480,
+    "c2_qwen25_3b_v2:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_3b_v2:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_3b_v2:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_3b_v2:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_3b_v2:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_3b_v2:n_runs": 480,
+    "c2_qwen25_7b_v1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v1:n_runs": 480,
+    "c2_qwen25_7b_v2:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2:n_runs": 480,
+    "c2_qwen25_7b_v2_bm25_pad2000:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2_bm25_pad2000:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2_bm25_pad2000:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2_bm25_pad2000:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2_bm25_pad2000:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2_bm25_pad2000:n_runs": 192,
+    "c2_qwen25_7b_v2_hash_pad2000:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2_hash_pad2000:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2_hash_pad2000:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2_hash_pad2000:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2_hash_pad2000:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen25_7b_v2_hash_pad2000:n_runs": 192,
+    "c2_qwen3_8b_v1:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen3_8b_v1:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen3_8b_v1:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen3_8b_v1:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen3_8b_v1:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen3_8b_v1:n_runs": 480,
+    "c2_qwen3_8b_v2:no_ground_truth_fields_in_any_message": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen3_8b_v2:provenance_and_reliability_fields_only_in_their_configs": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen3_8b_v2:baseline_never_received_memory": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen3_8b_v2:baseline_tools_never_returned_a_memory_only_answer": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen3_8b_v2:each_store_holds_exactly_its_own_task_records": {
+      "pass": true,
+      "detail": []
+    },
+    "c2_qwen3_8b_v2:n_runs": 480
+  }
+}
